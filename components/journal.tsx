@@ -74,6 +74,11 @@ export function ArticleCard({
 
       <div className="card-copy">
         <div className="card-meta-top">
+          {isReview &&
+            'propertyType' in article &&
+            typeof article.propertyType === 'string' && (
+            <span className="property-type-chip">{article.propertyType}</span>
+          )}
           <span className="tag-chip">{article.tag}</span>
           <span className="episode-chip">
             {isReview
@@ -266,6 +271,12 @@ export function SeriesPage({ id }: { id: SeriesKey }) {
   const isProperty = id === 'property-reviews';
   const isPodcast = id === 'iherng-podcast';
   const isGuide = id === 'buyer-guides';
+  const landedCount = entries.filter(
+    (article) => 'propertyType' in article && article.propertyType === 'Landed'
+  ).length;
+  const highRiseCount = entries.filter(
+    (article) => 'propertyType' in article && article.propertyType === 'High-Rise'
+  ).length;
 
   const otherSeriesKeys = (Object.keys(series) as SeriesKey[]).filter(
     (k) => k !== id
@@ -298,6 +309,16 @@ export function SeriesPage({ id }: { id: SeriesKey }) {
             <span className="metric-chip">
               <strong>{String(entries.length).padStart(2, '0')}</strong> Published Reads
             </span>
+            {isProperty && (
+              <>
+                <span className="metric-chip">
+                  <strong>{String(landedCount).padStart(2, '0')}</strong> Landed
+                </span>
+                <span className="metric-chip">
+                  <strong>{String(highRiseCount).padStart(2, '0')}</strong> High-Rise
+                </span>
+              </>
+            )}
             <span className="metric-chip">
               <strong>100%</strong> Verified Sources
             </span>
@@ -309,7 +330,11 @@ export function SeriesPage({ id }: { id: SeriesKey }) {
         className="series-content-hub"
         aria-label={`${info.title} directory`}
       >
-        <ArticleFilterGrid articles={entries} />
+        <ArticleFilterGrid
+          articles={entries}
+          availableTags={isProperty ? ['Landed', 'High-Rise'] : undefined}
+          filterMode={isProperty ? 'propertyType' : 'tag'}
+        />
       </section>
 
       <aside className="other-series-banner">

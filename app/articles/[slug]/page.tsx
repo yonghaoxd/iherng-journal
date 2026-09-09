@@ -102,6 +102,11 @@ export default async function ArticlePage({
             {info.title.toUpperCase()} ·{' '}
             {isReview ? 'REVIEW' : isPodcast ? 'EPISODE' : 'GUIDE'} #{article.episode}
           </span>
+          {isReview &&
+            'propertyType' in article &&
+            typeof article.propertyType === 'string' && (
+            <span className="article-property-type-pill">{article.propertyType}</span>
+          )}
           <span className="article-topic-pill">{article.tag}</span>
           {'location' in article && article.location && (
             <span className="article-location-pill">

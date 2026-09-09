@@ -8,14 +8,19 @@ import { Search, Sparkles, SlidersHorizontal } from 'lucide-react';
 interface ArticleFilterGridProps {
   articles: Article[];
   availableTags?: string[];
-  initialSeries?: string;
-  showSeriesFilter?: boolean;
+  filterMode?: 'tag' | 'propertyType';
+}
+
+function propertyTypeFor(article: Article) {
+  return 'propertyType' in article && typeof article.propertyType === 'string'
+    ? article.propertyType
+    : undefined;
 }
 
 export function ArticleFilterGrid({
   articles,
   availableTags,
-  showSeriesFilter = false,
+  filterMode = 'tag',
 }: ArticleFilterGridProps) {
   const [selectedTag, setSelectedTag] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -26,14 +31,17 @@ export function ArticleFilterGrid({
     }
     const set = new Set<string>();
     articles.forEach((a) => {
-      if (a.tag) set.add(a.tag);
+      const value = filterMode === 'propertyType' ? propertyTypeFor(a) : a.tag;
+      if (value) set.add(value);
     });
     return ['All', ...Array.from(set)];
-  }, [articles, availableTags]);
+  }, [articles, availableTags, filterMode]);
 
   const filtered = useMemo(() => {
     return articles.filter((article) => {
-      const matchesTag = selectedTag === 'All' || article.tag === selectedTag;
+      const filterValue =
+        filterMode === 'propertyType' ? propertyTypeFor(article) : article.tag;
+      const matchesTag = selectedTag === 'All' || filterValue === selectedTag;
       const query = searchQuery.trim().toLowerCase();
       if (!query) return matchesTag;
 
@@ -41,12 +49,13 @@ export function ArticleFilterGrid({
         article.title.toLowerCase().includes(query) ||
         article.excerpt.toLowerCase().includes(query) ||
         article.tag.toLowerCase().includes(query) ||
+        (propertyTypeFor(article)?.toLowerCase().includes(query) ?? false) ||
         (article.location && article.location.toLowerCase().includes(query)) ||
         article.takeaways.some((t) => t.toLowerCase().includes(query));
 
       return matchesTag && matchesQuery;
     });
-  }, [articles, selectedTag, searchQuery]);
+  }, [articles, filterMode, selectedTag, searchQuery]);
 
   return (
     <div className="filter-system">
@@ -73,7 +82,11 @@ export function ArticleFilterGrid({
           )}
         </div>
 
-        <div className="tag-pills" role="tablist" aria-label="Topic filters">
+        <div
+          className="tag-pills"
+          role="tablist"
+          aria-label={filterMode === 'propertyType' ? 'Property type filters' : 'Topic filters'}
+        >
           {tags.map((tag) => (
             <button
               key={tag}
