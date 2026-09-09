@@ -10,7 +10,6 @@ import {
   Headphones,
   MapPin,
   Calendar,
-  CheckCircle2,
   Info,
   BookOpen,
   ThumbsUp,
@@ -177,71 +176,10 @@ export default async function ArticlePage({
         </figcaption>
       </figure>
 
-      {/* Main Reading Two-Column Layout */}
+      {/* Main Reading Layout */}
       <div className="reading-layout">
-        {/* Sticky Table of Contents & Social Share Sidebar */}
-        <aside className="reading-sidebar" aria-label="Table of contents and tools">
-          <div className="sidebar-sticky-box">
-            <div className="sidebar-section-title">
-              <span>IN THIS ARTICLE</span>
-            </div>
-            <nav className="toc-nav" aria-label="Story chapters">
-              <a href="#takeaways" className="toc-link">
-                <span>The Quick Read</span>
-              </a>
-              {article.sections.map((sec, i) => (
-                <a key={sec.heading} href={`#section-${i + 1}`} className="toc-link">
-                  <span className="toc-num">0{i + 1}</span>
-                  <span className="toc-text">{sec.heading}</span>
-                </a>
-              ))}
-              {'seanTake' in article && isReview && (
-                <a href="#sean-take" className="toc-link">
-                  <span>Sean&apos;s Take 3 on 3</span>
-                </a>
-              )}
-              <a href="#reflection" className="toc-link">
-                <span>Editorial Verdict</span>
-              </a>
-              <a href="#original-video" className="toc-link">
-                <span>Watch Episode</span>
-              </a>
-              <a href="#sources" className="toc-link">
-                <span>Sources & Context</span>
-              </a>
-            </nav>
-
-            <div className="sidebar-divider" />
-
-            <ShareButtons title={article.title} />
-
-            <div className="sidebar-divider" />
-
-            <Link href={`/${article.series}`} className="sidebar-back-link">
-              <ArrowLeft size={14} />
-              <span>Back to all {info.title}</span>
-            </Link>
-          </div>
-        </aside>
-
         {/* Article Body */}
         <article className="reading-body">
-          {/* Key Takeaways Card */}
-          <section id="takeaways" className="takeaways-card">
-            <div className="takeaways-header">
-              <span className="takeaways-badge">KEY TAKEAWAYS</span>
-              <span className="takeaways-subtitle">The 60-second summary</span>
-            </div>
-            <ul className="takeaways-list">
-              {article.takeaways.map((item, idx) => (
-                <li key={idx} className="takeaways-item">
-                  <CheckCircle2 size={18} className="takeaways-icon" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
           {/* Editorial Transparency Note */}
           <div className="editorial-transparency-note">
             <Info size={16} className="note-icon" />
@@ -385,6 +323,14 @@ export default async function ArticlePage({
               ))}
             </ul>
           </section>
+
+          <div className="article-end-tools">
+            <ShareButtons title={article.title} />
+            <Link href={`/${article.series}`} className="article-back-link">
+              <ArrowLeft size={14} />
+              <span>Back to all {info.title}</span>
+            </Link>
+          </div>
 
           {/* In-Series Next / Prev Navigation */}
           <nav className="in-series-nav" aria-label="In-series story navigation">
