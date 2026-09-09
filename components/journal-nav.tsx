@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { articles } from '@/lib/articles';
-import { Home, Building2, Mic, BookOpen, Menu, X } from 'lucide-react';
+import { Home, Building2, Mic, BookOpen, Calculator, Menu, X } from 'lucide-react';
 
 export function JournalNav() {
   const path = usePathname();
@@ -33,6 +33,7 @@ export function JournalNav() {
       badge: countFor('buyer-guides'),
       icon: BookOpen,
     },
+    { href: '/calculator', title: 'Calculator', icon: Calculator },
   ];
 
   return (

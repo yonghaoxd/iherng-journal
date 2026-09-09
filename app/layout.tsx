@@ -172,6 +172,9 @@ export default function RootLayout({
                   <Link href="/buyer-guides">Series 03: Buyer Guides</Link>
                 </li>
                 <li>
+                  <Link href="/calculator">Property Cost Calculator</Link>
+                </li>
+                <li>
                   {/* A generated static file, not a route: next/link would
                       try to client-navigate to it. */}
                   {/* oxlint-disable-next-line no-html-link-for-pages */}

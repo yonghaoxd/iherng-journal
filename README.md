@@ -13,13 +13,33 @@ npm run dev
 
 - React + Vinext App Router, using the Sites starter.
 - Static export configured in `next.config.ts`; public build output is `dist/client`.
-- Home: `/`; series: `/property-reviews`, `/iherng-podcast`, and `/buyer-guides`.
+- Home: `/`; series: `/property-reviews`, `/iherng-podcast`, and `/buyer-guides`; tools: `/calculator`.
 - Each article has a permanent `/articles/[slug]` route.
 - Article content lives in individual JSON files in `content/articles`.
 - `lib/articles.ts` registers articles; series definitions are in `content/series.json` and site-wide constants in `site.config.json`.
 - Shared editorial components live in `components/journal.tsx`; styles in `app/globals.css`.
 - `lib/seo.ts` builds the canonical URLs, Open Graph metadata and JSON-LD; `components/json-ld.tsx` renders it.
 - There is no database, admin dashboard, or automatic publishing pipeline.
+
+## Property cost calculator
+
+`/calculator` estimates the upfront cash and monthly instalment on a Malaysian
+purchase. It is entirely client-side, so it works under static export.
+
+- `lib/calculator.ts` holds the model and, at the top, the statutory scales:
+  MOT stamp duty (Stamp Act 1949 First Schedule Item 32(a)), the solicitors'
+  remuneration scale (SRO 2023) applied separately to the SPA and the loan
+  agreement, and the flat 0.5% loan agreement stamp duty.
+- `RATES_REVIEWED` dates that review and is shown to the reader. Update it
+  whenever a rate changes.
+- Temporary first-home stamp duty exemptions from the annual Budget are
+  deliberately not modelled, because they lapse and vary by year; `RATE_NOTES`
+  says so on the page.
+- The figures are presented as an estimate, not a quotation. Bank valuation,
+  margin of finance and debt service ratio rules are out of scope.
+
+Verify any change to the scales against the current source before shipping —
+these numbers inform real purchase decisions.
 
 ## Search engine assets
 
@@ -42,6 +62,7 @@ Structured data emitted per page:
 | Every page | `WebSite` |
 | `/articles/[slug]` | `Article`, `VideoObject`, `BreadcrumbList` |
 | Series pages | `CollectionPage` with `ItemList`, `BreadcrumbList` |
+| `/calculator` | `WebApplication`, `BreadcrumbList` |
 
 The `VideoObject` describes Sean's original episode, which the page embeds — he
 is marked as its creator and uploader, and `contentUrl` points at YouTube. The

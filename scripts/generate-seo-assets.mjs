@@ -79,6 +79,14 @@ function buildSitemap() {
     });
   }
 
+  // Standalone pages that are not part of a series.
+  urls.push({
+    loc: `${site.url}/calculator`,
+    lastmod: isoDate(latestDate(articles)),
+    changefreq: 'monthly',
+    priority: '0.6',
+  });
+
   for (const article of articles) {
     urls.push({
       loc: articleUrl(article),
