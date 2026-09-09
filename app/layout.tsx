@@ -123,7 +123,7 @@ export default function RootLayout({
                   <Mic size={12} /> 3 Podcast Summaries
                 </span>
                 <span className="badge-pill">
-                  <BookOpen size={12} /> 3 Buyer Guides
+                  <BookOpen size={12} /> 9 Buyer Guides
                 </span>
               </div>
             </div>

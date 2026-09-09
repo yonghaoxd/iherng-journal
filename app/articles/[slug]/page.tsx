@@ -374,7 +374,7 @@ export default async function ArticlePage({
                     <ArrowRight size={14} />
                   </div>
                   <h4 className="card-story-title">Explore All {info.title}</h4>
-                  <span className="card-tag">3 Published Articles</span>
+                  <span className="card-tag">{seriesArticles.length} Published Articles</span>
                 </Link>
               )}
             </div>

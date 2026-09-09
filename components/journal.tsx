@@ -244,10 +244,10 @@ export function BuyerGuidesSection() {
             <span className="eyebrow">SERIES 03 / THE PLAYBOOK</span>
           </div>
           <h2 className="section-title">
-            Buyer Guides &amp; Playbooks <span className="count-pill">03</span>
+            Buyer Guides &amp; Playbooks <span className="count-pill">{String(guideArticles.length).padStart(2, '0')}</span>
           </h2>
           <p className="section-subtitle">
-            Practical frameworks on defect inspections, purchasing channels, and avoiding costly homebuyer mistakes.
+            Practical frameworks for research, financing, risk checks, renovation and ownership decisions.
           </p>
         </div>
         <Link className="editorial-btn" href="/buyer-guides">

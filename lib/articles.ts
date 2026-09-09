@@ -10,6 +10,12 @@ import hiddenCosts from '@/content/articles/hidden-costs-property-malaysia.json'
 import dedaunRimba from '@/content/articles/dedaun-rimba-kwasa-damansara.json';
 import sunwayDhill from '@/content/articles/sunway-dhill-kota-damansara.json';
 import allevia from '@/content/articles/allevia-mont-kiara.json';
+import propertyResearch from '@/content/articles/property-research-before-buying.json';
+import ownStay from '@/content/articles/choosing-own-stay-home.json';
+import oldVsNew from '@/content/articles/old-house-vs-new-property.json';
+import earlyRepayment from '@/content/articles/settle-housing-loan-early.json';
+import guaranteedReturns from '@/content/articles/guaranteed-rental-return-risks.json';
+import marketTiming from '@/content/articles/when-to-buy-property-data-guide.json';
 
 export const articles = [
   manor,
@@ -24,6 +30,12 @@ export const articles = [
   dedaunRimba,
   sunwayDhill,
   allevia,
+  propertyResearch,
+  ownStay,
+  oldVsNew,
+  earlyRepayment,
+  guaranteedReturns,
+  marketTiming,
 ];
 
 export type Article = (typeof articles)[number];

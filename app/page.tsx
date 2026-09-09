@@ -75,10 +75,10 @@ export default function Home() {
               <div className="icon-badge">
                 <BookOpen size={16} />
               </div>
-              <span className="series-episodes">03 STORIES</span>
+              <span className="series-episodes">09 STORIES</span>
             </div>
             <h3>Buyer Guides</h3>
-            <p>Essential playbooks on defect checks, hidden costs, and new launch vs. subsale.</p>
+            <p>Practical playbooks for research, financing, risk checks, renovation and ownership decisions.</p>
             <div className="quick-footer">
               <span>View collection</span>
               <ArrowRight size={14} />
