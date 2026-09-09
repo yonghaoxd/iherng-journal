@@ -13,7 +13,7 @@ npm run dev
 
 - React + Vinext App Router, using the Sites starter.
 - Static export configured in `next.config.ts`; public build output is `dist/client`.
-- Home: `/`; series: `/property-reviews`, `/iherng-podcast`, and `/buyer-guides`; tools: `/calculator`.
+- Home: `/`; series: `/property-reviews`, `/iherng-podcast`, and `/buyer-guides`; tools: `/calculator` and `/rental-calculator`.
 - Each article has a permanent `/articles/[slug]` route.
 - Article content lives in individual JSON files in `content/articles`.
 - `lib/articles.ts` registers articles; series definitions are in `content/series.json` and site-wide constants in `site.config.json`.
@@ -21,7 +21,7 @@ npm run dev
 - `lib/seo.ts` builds the canonical URLs, Open Graph metadata and JSON-LD; `components/json-ld.tsx` renders it.
 - There is no database, admin dashboard, or automatic publishing pipeline.
 
-## Property cost calculator
+## Calculators
 
 `/calculator` estimates the upfront cash and monthly instalment on a Malaysian
 purchase. It is entirely client-side, so it works under static export.
@@ -40,6 +40,22 @@ purchase. It is entirely client-side, so it works under static export.
 
 Verify any change to the scales against the current source before shipping —
 these numbers inform real purchase decisions.
+
+`/rental-calculator` answers the landlord question: does the rent cover the
+loan? `lib/rental.ts` takes price, loan margin, rate, tenure, expected rent,
+maintenance, yearly costs and a vacancy allowance, and returns net monthly cash
+flow, shown green when positive and red when negative, alongside break-even
+rent and gross and net yield.
+
+- Cash flow excludes one-off purchase costs, which `/calculator` covers.
+- Income tax on rent is excluded, since it depends on the owner's band.
+- Net yield is a property-level figure and so excludes financing, while cash
+  flow includes the instalment. They answer different questions on purpose.
+- The page states plainly that cash flow alone does not decide whether a
+  purchase is sound.
+
+Both calculators share the form controls in `components/calc-field.tsx` and the
+`CalculatorTabs` strip that links them.
 
 ## Search engine assets
 
@@ -62,7 +78,7 @@ Structured data emitted per page:
 | Every page | `WebSite` |
 | `/articles/[slug]` | `Article`, `VideoObject`, `BreadcrumbList` |
 | Series pages | `CollectionPage` with `ItemList`, `BreadcrumbList` |
-| `/calculator` | `WebApplication`, `BreadcrumbList` |
+| `/calculator`, `/rental-calculator` | `WebApplication`, `BreadcrumbList` |
 
 The `VideoObject` describes Sean's original episode, which the page embeds — he
 is marked as its creator and uploader, and `contentUrl` points at YouTube. The

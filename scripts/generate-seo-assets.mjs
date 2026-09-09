@@ -79,13 +79,15 @@ function buildSitemap() {
     });
   }
 
-  // Standalone pages that are not part of a series.
-  urls.push({
-    loc: `${site.url}/calculator`,
-    lastmod: isoDate(latestDate(articles)),
-    changefreq: 'monthly',
-    priority: '0.6',
-  });
+  // Standalone tool pages that are not part of a series.
+  for (const slug of ['calculator', 'rental-calculator']) {
+    urls.push({
+      loc: `${site.url}/${slug}`,
+      lastmod: isoDate(latestDate(articles)),
+      changefreq: 'monthly',
+      priority: '0.6',
+    });
+  }
 
   for (const article of articles) {
     urls.push({

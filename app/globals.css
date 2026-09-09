@@ -3094,3 +3094,207 @@ p {
     font-size: 32px;
   }
 }
+
+/* ============================================
+   Rental Cash Flow Calculator
+   ============================================ */
+
+:root {
+  --signal-positive: #5FBF8F;
+  --signal-positive-soft: rgba(95, 191, 143, 0.12);
+  --signal-positive-line: rgba(95, 191, 143, 0.34);
+  --signal-negative: #F0685E;
+  --signal-negative-soft: rgba(240, 104, 94, 0.12);
+  --signal-negative-line: rgba(240, 104, 94, 0.34);
+}
+
+/* --- Tool tabs --- */
+
+.calc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.calc-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 240px;
+  padding: 13px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.calc-tab:hover {
+  border-color: var(--border-dark);
+  color: var(--text-main);
+}
+
+.calc-tab.active {
+  border-color: rgba(255, 107, 61, 0.5);
+  background: var(--accent-terracotta-soft);
+  color: var(--accent-terracotta);
+}
+
+.calc-tab-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.calc-tab-text strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.calc-tab.active .calc-tab-text strong {
+  color: var(--accent-terracotta);
+}
+
+.calc-tab-text span {
+  font-size: 11px;
+  color: var(--text-subtle);
+}
+
+/* --- Verdict banner --- */
+
+.cashflow-verdict {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: var(--bg-muted);
+}
+
+.cashflow-verdict.positive {
+  border-color: var(--signal-positive-line);
+  background: var(--signal-positive-soft);
+}
+
+.cashflow-verdict.negative {
+  border-color: var(--signal-negative-line);
+  background: var(--signal-negative-soft);
+}
+
+.cashflow-verdict-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-canvas);
+}
+
+.cashflow-verdict.positive .cashflow-verdict-icon {
+  color: var(--signal-positive);
+  border: 1px solid var(--signal-positive-line);
+}
+
+.cashflow-verdict.negative .cashflow-verdict-icon {
+  color: var(--signal-negative);
+  border: 1px solid var(--signal-negative-line);
+}
+
+.cashflow-verdict-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cashflow-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.cashflow-verdict.positive .cashflow-label {
+  color: var(--signal-positive);
+}
+
+.cashflow-verdict.negative .cashflow-label {
+  color: var(--signal-negative);
+}
+
+.cashflow-amount {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-main);
+}
+
+.cashflow-period {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-subtle);
+  margin-left: 8px;
+}
+
+.cashflow-sub {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+/* --- Rental rows --- */
+
+.calc-subhead {
+  margin: 26px 0 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.calc-row-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  font-style: normal;
+  color: var(--text-subtle);
+}
+
+.calc-row-value.in {
+  color: var(--signal-positive);
+}
+
+.calc-row-value.out {
+  color: var(--text-muted);
+}
+
+.calc-rows li.calc-total.positive .calc-row-value {
+  color: var(--signal-positive);
+}
+
+.calc-rows li.calc-total.negative .calc-row-value {
+  color: var(--signal-negative);
+}
+
+.calc-disclaimer a {
+  color: var(--accent-terracotta);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .cashflow-amount {
+    font-size: 30px;
+  }
+}

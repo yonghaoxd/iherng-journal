@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Calculator, ArrowRight } from 'lucide-react';
 import { PropertyCalculator } from '@/components/property-calculator';
+import { CalculatorTabs } from '@/components/calculator-tabs';
 import { JsonLd } from '@/components/json-ld';
 import {
   DEFAULT_OG_IMAGE,
@@ -85,6 +86,8 @@ export default function CalculatorPage() {
           </p>
         </div>
       </section>
+
+      <CalculatorTabs active="/calculator" />
 
       <PropertyCalculator />
 

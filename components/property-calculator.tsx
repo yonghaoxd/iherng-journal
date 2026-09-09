@@ -16,6 +16,7 @@ import {
   RATE_NOTES,
   type PurchaseInput,
 } from '@/lib/calculator';
+import { CalcNumberField, CalcToggle } from '@/components/calc-field';
 
 const DEFAULTS: PurchaseInput = {
   price: 500_000,
@@ -26,99 +27,6 @@ const DEFAULTS: PurchaseInput = {
   developerAbsorbsStampDuty: false,
   disbursements: 1_500,
 };
-
-function NumberField({
-  label,
-  hint,
-  value,
-  onChange,
-  min,
-  max,
-  step = 1,
-  prefix,
-  suffix,
-  slider = true,
-}: {
-  label: string;
-  hint?: string;
-  value: number;
-  onChange: (next: number) => void;
-  min: number;
-  max: number;
-  step?: number;
-  prefix?: string;
-  suffix?: string;
-  slider?: boolean;
-}) {
-  const id = `calc-${label.toLowerCase().replace(/[^a-z]+/g, '-')}`;
-  const clamp = (next: number) => Math.min(max, Math.max(min, next));
-
-  return (
-    <div className="calc-field">
-      <div className="calc-field-head">
-        <label htmlFor={id}>{label}</label>
-        {hint && <span className="calc-hint">{hint}</span>}
-      </div>
-      <div className="calc-input-row">
-        {prefix && <span className="calc-affix">{prefix}</span>}
-        <input
-          id={id}
-          type="number"
-          className="calc-input"
-          value={Number.isFinite(value) ? value : ''}
-          min={min}
-          max={max}
-          step={step}
-          onChange={(e) => {
-            const next = Number.parseFloat(e.target.value);
-            onChange(Number.isNaN(next) ? min : clamp(next));
-          }}
-        />
-        {suffix && <span className="calc-affix suffix">{suffix}</span>}
-      </div>
-      {slider && (
-        <input
-          type="range"
-          className="calc-range"
-          aria-label={`${label} slider`}
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          onChange={(e) => onChange(clamp(Number.parseFloat(e.target.value)))}
-        />
-      )}
-    </div>
-  );
-}
-
-function Toggle({
-  label,
-  hint,
-  checked,
-  onChange,
-}: {
-  label: string;
-  hint: string;
-  checked: boolean;
-  onChange: (next: boolean) => void;
-}) {
-  return (
-    <label className={`calc-toggle ${checked ? 'on' : ''}`}>
-      <input
-        type="checkbox"
-        aria-label={label}
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-      />
-      <span className="calc-toggle-box" aria-hidden="true" />
-      <span className="calc-toggle-text">
-        <strong>{label}</strong>
-        <span>{hint}</span>
-      </span>
-    </label>
-  );
-}
 
 export function PropertyCalculator() {
   const [input, setInput] = useState<PurchaseInput>(DEFAULTS);
@@ -149,7 +57,7 @@ export function PropertyCalculator() {
             <h2>Assumptions</h2>
           </div>
 
-          <NumberField
+          <CalcNumberField
             label="Property price"
             value={input.price}
             onChange={(v) => set('price', v)}
@@ -158,7 +66,7 @@ export function PropertyCalculator() {
             step={10_000}
             prefix="RM"
           />
-          <NumberField
+          <CalcNumberField
             label="Down payment"
             hint={formatMYR(result.downPayment)}
             value={input.downPaymentPercent}
@@ -168,7 +76,7 @@ export function PropertyCalculator() {
             step={1}
             suffix="%"
           />
-          <NumberField
+          <CalcNumberField
             label="Interest rate"
             hint="Typical Malaysian home loans sit near 4%"
             value={input.interestRate}
@@ -178,7 +86,7 @@ export function PropertyCalculator() {
             step={0.05}
             suffix="% p.a."
           />
-          <NumberField
+          <CalcNumberField
             label="Loan tenure"
             hint={`Ends after ${Math.round(input.tenureYears * 12)} instalments`}
             value={input.tenureYears}
@@ -188,7 +96,7 @@ export function PropertyCalculator() {
             step={1}
             suffix="years"
           />
-          <NumberField
+          <CalcNumberField
             label="Legal disbursements"
             hint="Searches, registration and stamping"
             value={input.disbursements}
@@ -201,13 +109,13 @@ export function PropertyCalculator() {
           />
 
           <div className="calc-toggles">
-            <Toggle
+            <CalcToggle
               label="Developer absorbs legal fees"
               hint="Common on new launches"
               checked={input.developerAbsorbsLegalFees}
               onChange={(v) => set('developerAbsorbsLegalFees', v)}
             />
-            <Toggle
+            <CalcToggle
               label="Developer absorbs MOT stamp duty"
               hint="Often bundled into the same package"
               checked={input.developerAbsorbsStampDuty}
