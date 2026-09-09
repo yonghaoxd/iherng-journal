@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import {
-  ArrowUpRight,
   ArrowRight,
   Play,
-  Clock,
   MapPin,
   Sparkles,
   Building2,
@@ -149,8 +147,8 @@ export default function Home() {
             </div>
 
             <Link className="feature-cta-btn" href="/articles/manor-born-ipoh">
-              <span>Read complete summary</span>
-              <ArrowUpRight size={18} />
+              <span>Read the full review</span>
+              <ArrowRight size={18} />
             </Link>
           </div>
         </div>

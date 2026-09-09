@@ -685,7 +685,7 @@ p {
   justify-content: space-between;
   padding: 14px 22px;
   background: var(--text-main);
-  color: white;
+  color: var(--bg-canvas);
   border-radius: var(--radius-md);
   font-size: 14px;
   font-weight: 600;
@@ -694,6 +694,7 @@ p {
 
 .feature-cta-btn:hover {
   background: var(--accent-terracotta);
+  color: var(--bg-canvas);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -1611,7 +1612,7 @@ p {
   gap: 12px;
   padding: 14px 22px;
   background: var(--text-main);
-  color: white;
+  color: var(--bg-canvas);
   border-radius: var(--radius-md);
   font-size: 14px;
   font-weight: 600;
@@ -1621,6 +1622,7 @@ p {
 
 .other-series-link:hover {
   background: var(--accent-terracotta);
+  color: var(--bg-canvas);
   transform: translateX(4px);
 }
 
