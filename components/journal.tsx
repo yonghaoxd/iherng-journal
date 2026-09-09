@@ -20,6 +20,8 @@ import {
   type SeriesKey,
 } from '@/lib/articles';
 import { ArticleFilterGrid } from '@/components/article-filters';
+import { JsonLd } from '@/components/json-ld';
+import { breadcrumbJsonLd, seriesJsonLd } from '@/lib/seo';
 
 export function ArticleCard({
   article,
@@ -284,6 +286,14 @@ export function SeriesPage({ id }: { id: SeriesKey }) {
 
   return (
     <main id="main" className="container series-page">
+      <JsonLd data={seriesJsonLd(id)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: info.title, path: `/${id}` },
+        ])}
+      />
+
       <div className="breadcrumb">
         <Link href="/">Home</Link>
         <span className="slash">/</span>

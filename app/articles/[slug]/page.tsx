@@ -21,10 +21,17 @@ import {
   imageFor,
   dateFor,
   readingTime,
-  type Article,
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
 import { ShareButtons } from '@/components/share-buttons';
+import { JsonLd } from '@/components/json-ld';
+import {
+  SITE_NAME,
+  articleJsonLd,
+  breadcrumbJsonLd,
+  publishedAt,
+  videoJsonLd,
+} from '@/lib/seo';
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -39,14 +46,30 @@ export async function generateMetadata({
   const a = articles.find((item) => item.slug === slug);
   if (!a) return { title: 'Story not found | iherng Journal' };
 
+  // The root layout already applies the "%s | iherng Journal" template.
   return {
-    title: `${a.title} | iherng Journal`,
+    title: a.title,
     description: a.excerpt,
     alternates: { canonical: `/articles/${a.slug}` },
+    // A page-level `openGraph` replaces the layout's rather than merging into
+    // it, so siteName and locale are repeated here on purpose.
     openGraph: {
+      type: 'article',
+      url: `/articles/${a.slug}`,
+      siteName: SITE_NAME,
+      locale: 'en_US',
       title: a.title,
       description: a.excerpt,
+      publishedTime: publishedAt(a),
+      section: seriesFor(a).title,
+      tags: [a.tag],
       images: [{ url: imageFor(a), width: 1280, height: 720, alt: a.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: a.title,
+      description: a.excerpt,
+      images: [imageFor(a)],
     },
   };
 }
@@ -77,6 +100,16 @@ export default async function ArticlePage({
 
   return (
     <main id="main" className="container article-page">
+      <JsonLd data={articleJsonLd(article)} />
+      <JsonLd data={videoJsonLd(article)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: info.title, path: `/${article.series}` },
+          { name: article.shortTitle, path: `/articles/${article.slug}` },
+        ])}
+      />
+
       {/* Breadcrumb Bar */}
       <nav className="breadcrumb" aria-label="Breadcrumb navigation">
         <Link href="/">Home</Link>

@@ -32,6 +32,11 @@ yarn-error.log*
 # deployment and generated files
 .vercel
 next-env.d.ts
+
+# written by scripts/generate-seo-assets.mjs on every build
+/public/sitemap.xml
+/public/robots.txt
+/public/feed.xml
 /dist/
 /.wrangler/
 /outputs/
@@ -39,3 +44,6 @@ next-env.d.ts
 /.research/
 /artifacts/
 *.tsbuildinfo
+
+# local Claude Code state
+/.claude/settings.local.json

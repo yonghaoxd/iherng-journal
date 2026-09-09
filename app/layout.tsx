@@ -4,9 +4,11 @@ import { ArrowUpRight, Building2, Mic, BookOpen, Heart } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
 import { ReadingProgress } from '@/components/reading-progress';
+import { JsonLd } from '@/components/json-ld';
+import { DEFAULT_OG_IMAGE, SITE_URL, websiteJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iherng-journal.showtv1688ai.chatgpt.site'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'iherng Journal — Property Reviews & Podcast Editorial',
     template: '%s | iherng Journal',
@@ -24,6 +26,10 @@ export const metadata: Metadata = {
     'real estate blog',
   ],
   authors: [{ name: 'iherng Journal Editorial' }],
+  alternates: {
+    canonical: '/',
+    types: { 'application/rss+xml': '/feed.xml' },
+  },
   openGraph: {
     title: 'iherng Journal — Property Reviews & Podcast Editorial',
     description:
@@ -31,6 +37,27 @@ export const metadata: Metadata = {
     siteName: 'iherng Journal',
     locale: 'en_US',
     type: 'website',
+    url: '/',
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'iherng Journal — an editorial companion to Sean Tan\'s property channel',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'iherng Journal — Property Reviews & Podcast Editorial',
+    description:
+      'Malaysian property walkthroughs and honest conversations distilled into high-value editorial reads.',
+    images: [DEFAULT_OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-video-preview': -1 },
   },
 };
 
@@ -55,6 +82,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <JsonLd data={websiteJsonLd()} />
         <ReadingProgress />
         <a className="skip-link" href="#main">
           Skip to content
@@ -142,6 +170,12 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link href="/buyer-guides">Series 03: Buyer Guides</Link>
+                </li>
+                <li>
+                  {/* A generated static file, not a route: next/link would
+                      try to client-navigate to it. */}
+                  {/* oxlint-disable-next-line no-html-link-for-pages */}
+                  <a href="/feed.xml">RSS Feed</a>
                 </li>
                 <li>
                   <a

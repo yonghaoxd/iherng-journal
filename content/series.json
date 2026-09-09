@@ -1,0 +1,23 @@
+{
+  "property-reviews": {
+    "title": "Property Reviews",
+    "number": "01",
+    "label": "ON LOCATION",
+    "description": "Step inside the homes. Look beyond the brochure.",
+    "intro": "Walk through Malaysian homes with Sean, from the spaces that work to the details worth questioning."
+  },
+  "iherng-podcast": {
+    "title": "iherng Podcast",
+    "number": "02",
+    "label": "IN CONVERSATION",
+    "description": "Real questions. A little more perspective.",
+    "intro": "A reading companion to Asking Sean. Conversations about choosing a home, family expectations, and the thinking behind a purchase."
+  },
+  "buyer-guides": {
+    "title": "Buyer Guides",
+    "number": "03",
+    "label": "THE PLAYBOOK",
+    "description": "Practical checklists and clear-eyed guidance for Malaysian real estate.",
+    "intro": "Step-by-step buyer playbooks on defect inspections, purchasing channels, and avoiding costly real estate traps."
+  }
+}

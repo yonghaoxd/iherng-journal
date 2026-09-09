@@ -16,6 +16,7 @@ import oldVsNew from '@/content/articles/old-house-vs-new-property.json';
 import earlyRepayment from '@/content/articles/settle-housing-loan-early.json';
 import guaranteedReturns from '@/content/articles/guaranteed-rental-return-risks.json';
 import marketTiming from '@/content/articles/when-to-buy-property-data-guide.json';
+import seriesData from '@/content/series.json';
 
 export const articles = [
   manor,
@@ -40,33 +41,11 @@ export const articles = [
 
 export type Article = (typeof articles)[number];
 
-export const series = {
-  'property-reviews': {
-    title: 'Property Reviews',
-    number: '01',
-    label: 'ON LOCATION',
-    description: 'Step inside the homes. Look beyond the brochure.',
-    intro:
-      'Walk through Malaysian homes with Sean, from the spaces that work to the details worth questioning.',
-  },
-  'iherng-podcast': {
-    title: 'iherng Podcast',
-    number: '02',
-    label: 'IN CONVERSATION',
-    description: 'Real questions. A little more perspective.',
-    intro:
-      'A reading companion to Asking Sean. Conversations about choosing a home, family expectations, and the thinking behind a purchase.',
-  },
-  'buyer-guides': {
-    title: 'Buyer Guides',
-    number: '03',
-    label: 'THE PLAYBOOK',
-    description:
-      'Practical checklists and clear-eyed guidance for Malaysian real estate.',
-    intro:
-      'Step-by-step buyer playbooks on defect inspections, purchasing channels, and avoiding costly real estate traps.',
-  },
-};
+/**
+ * Series definitions live in JSON so the build-time SEO generator in
+ * `scripts/generate-seo-assets.mjs` can read them without a TypeScript step.
+ */
+export const series = seriesData;
 
 export type SeriesKey = keyof typeof series;
 
