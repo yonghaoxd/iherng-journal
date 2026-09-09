@@ -108,4 +108,4 @@ Research downloads are ignored in `.research/` and are excluded from deployment.
 
 ## Publishing
 
-The private Sites project is recorded in `.openai/hosting.json`. Publish the exact validated source and static build using the Sites workflow. Site access remains owner-only unless explicitly changed.
+The site is a static export. Run `npm run build` and deploy the contents of `dist/client` to any static host (Cloudflare Pages, GitHub Pages, Netlify). Update `url` in `site.config.json` to the deployed origin first, then re-run the build so canonical URLs, the sitemap and the RSS feed match.
