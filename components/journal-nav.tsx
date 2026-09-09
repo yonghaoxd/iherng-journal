@@ -10,25 +10,27 @@ export function JournalNav() {
   const path = usePathname();
   const current = articles.find((a) => path === `/articles/${a.slug}`)?.series;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const countFor = (series: string) =>
+    String(articles.filter((article) => article.series === series).length).padStart(2, '0');
 
   const links = [
     { href: '/', title: 'Home', icon: Home },
     {
       href: '/property-reviews',
       title: 'Property Reviews',
-      badge: '03',
+      badge: countFor('property-reviews'),
       icon: Building2,
     },
     {
       href: '/iherng-podcast',
       title: 'iherng Podcast',
-      badge: '03',
+      badge: countFor('iherng-podcast'),
       icon: Mic,
     },
     {
       href: '/buyer-guides',
       title: 'Buyer Guides',
-      badge: '03',
+      badge: countFor('buyer-guides'),
       icon: BookOpen,
     },
   ];
