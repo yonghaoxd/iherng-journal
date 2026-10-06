@@ -162,9 +162,11 @@ export function PropertySection() {
 }
 
 export function PodcastSection() {
-  const podcastArticles = articles.filter(
-    (a) => a.series === 'iherng-podcast'
-  );
+  // The homepage previews the latest three; the series page lists them all.
+  const podcastArticles = articles
+    .filter((a) => a.series === 'iherng-podcast')
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
 
   return (
     <section className="podcast-section" id="podcast-preview">

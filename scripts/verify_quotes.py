@@ -18,7 +18,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-TRANSCRIPT_DIRS = ('.research/buyer-guides', '.research/missing')
+TRANSCRIPT_DIRS = ('.research/buyer-guides', '.research/missing', '.research/podcast')
 
 
 def words(text):

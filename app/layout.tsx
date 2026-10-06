@@ -148,7 +148,7 @@ export default function RootLayout({
                   <Building2 size={12} /> 6 Property Reviews
                 </span>
                 <span className="badge-pill">
-                  <Mic size={12} /> 3 Podcast Summaries
+                  <Mic size={12} /> 9 Podcast Summaries
                 </span>
                 <span className="badge-pill">
                   <BookOpen size={12} /> 9 Buyer Guides

@@ -58,7 +58,7 @@ export default function Home() {
               <div className="icon-badge">
                 <Headphones size={16} />
               </div>
-              <span className="series-episodes">03 STORIES</span>
+              <span className="series-episodes">09 STORIES</span>
             </div>
             <h3>iherng Podcast</h3>
             <p>Asking Sean: Candid discussions on mortgages, family, and homeownership.</p>

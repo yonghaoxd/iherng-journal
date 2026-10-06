@@ -16,14 +16,27 @@ import oldVsNew from '@/content/articles/old-house-vs-new-property.json';
 import earlyRepayment from '@/content/articles/settle-housing-loan-early.json';
 import guaranteedReturns from '@/content/articles/guaranteed-rental-return-risks.json';
 import marketTiming from '@/content/articles/when-to-buy-property-data-guide.json';
+import newBaby from '@/content/articles/new-baby-investment-strategy.json';
+import cancelledBooking from '@/content/articles/cancelled-booking-fomo.json';
+import parentsPayingHalf from '@/content/articles/parents-paying-half-for-house.json';
+import stalledProject from '@/content/articles/stalled-project-projek-sakit.json';
+import discountTrap from '@/content/articles/discount-price-still-losing-money.json';
+import investingAt60 from '@/content/articles/investing-in-property-at-60.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
   manor,
   cempaka,
   avisa,
-  apartment,
+  // iherng Podcast, newest episode first; series pages keep this order.
+  newBaby,
+  cancelledBooking,
+  parentsPayingHalf,
+  stalledProject,
+  discountTrap,
+  investingAt60,
   firstHome,
+  apartment,
   location,
   defects,
   channels,
