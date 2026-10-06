@@ -379,7 +379,9 @@ p {
   margin-top: 12px;
 }
 
-@media (max-width: 860px) {
+/* The full nav plus the channel button needs about 1,100px; below that the
+   labels wrap and the header overflows, so the menu button takes over. */
+@media (max-width: 1120px) {
   .desktop-nav, .header-actions {
     display: none;
   }
@@ -3298,5 +3300,245 @@ p {
 @media (max-width: 900px) {
   .cashflow-amount {
     font-size: 30px;
+  }
+}
+
+/* ============================================
+   Ask Sean summary (podcast + buyer guides)
+   ============================================ */
+
+.ask-sean {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 8px 0 40px;
+}
+
+.ask-block {
+  border-radius: var(--radius-lg);
+}
+
+.ask-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--text-subtle);
+}
+
+.ask-label.accent {
+  color: var(--accent-terracotta);
+}
+
+.ask-label.amber {
+  color: var(--accent-amber);
+}
+
+/* --- The question --- */
+
+.ask-question {
+  padding: 26px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.ask-asker {
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.ask-context {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.ask-question-text {
+  margin-top: 14px;
+  padding-left: 16px;
+  border-left: 3px solid var(--border-dark);
+  font-family: var(--font-serif);
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* --- Sean's answer --- */
+
+.ask-answer {
+  padding: 28px 28px 26px;
+  background: linear-gradient(160deg, rgba(255, 107, 61, 0.11) 0%, var(--bg-card) 62%);
+  border: 1px solid rgba(255, 107, 61, 0.38);
+  box-shadow: var(--shadow-md);
+}
+
+.ask-quote {
+  margin: 14px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.ask-quote p {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-main);
+}
+
+.ask-answer-text {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+/* --- Why --- */
+
+.ask-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.ask-why {
+  padding-top: 10px;
+}
+
+.ask-reasons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ask-reason {
+  display: flex;
+  gap: 16px;
+  padding: 20px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.ask-reason-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent-terracotta-soft);
+  border: 1px solid rgba(255, 107, 61, 0.35);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent-terracotta);
+}
+
+.ask-reason-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-main);
+}
+
+.ask-reason-body {
+  margin-top: 6px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+/* --- What to do --- */
+
+.ask-actions {
+  padding: 26px 28px;
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-color);
+}
+
+.ask-action-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ask-action-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.ask-check {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 5px;
+  background: var(--signal-positive-soft);
+  border: 1px solid var(--signal-positive-line);
+  color: var(--signal-positive);
+}
+
+/* --- Caveat --- */
+
+.ask-caveat {
+  padding: 20px 24px;
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-amber);
+  border-radius: var(--radius-md);
+}
+
+.ask-caveat p {
+  margin-top: 9px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+@media (max-width: 640px) {
+  .ask-question,
+  .ask-answer,
+  .ask-actions {
+    padding: 22px 20px;
+  }
+
+  .ask-question-text {
+    font-size: 20px;
+  }
+
+  .ask-quote p {
+    font-size: 25px;
+  }
+
+  .ask-reason {
+    padding: 18px;
+    gap: 13px;
   }
 }

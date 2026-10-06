@@ -66,13 +66,59 @@ export function dateFor(article: Article) {
   });
 }
 
+/**
+ * The podcast and buyer guide articles use a problem-and-answer structure
+ * instead of chaptered prose. Property reviews keep their chapters.
+ */
+export interface AskSean {
+  /** "question" when a viewer wrote in; "problem" for a topic Sean raises himself. */
+  kind: 'question' | 'problem';
+  asker?: string;
+  context: string;
+  question: string;
+  /** Sean's verdict, verbatim and short. Everything else is paraphrase. */
+  quote: string;
+  answer: string;
+  reasons: Array<{ title: string; body: string }>;
+  actions: string[];
+  caveat: string;
+}
+
+export function askSeanFor(article: Article): AskSean | null {
+  return 'qa' in article ? (article.qa as AskSean) : null;
+}
+
+/** Headline points, used for search, the RSS description and structured data. */
+export function keyPointsFor(article: Article): string[] {
+  const qa = askSeanFor(article);
+  if (qa) return [qa.answer, ...qa.reasons.map((r) => `${r.title}: ${r.body}`)];
+  return 'takeaways' in article ? article.takeaways : [];
+}
+
+/** Every piece of body copy, in reading order, whichever structure the article uses. */
+export function bodyTextFor(article: Article): string[] {
+  const qa = askSeanFor(article);
+  if (qa) {
+    return [
+      qa.context,
+      qa.question,
+      qa.quote,
+      qa.answer,
+      ...qa.reasons.flatMap((r) => [r.title, r.body]),
+      ...qa.actions,
+      qa.caveat,
+    ];
+  }
+  return [
+    ...('takeaways' in article ? article.takeaways : []),
+    ...('sections' in article
+      ? article.sections.flatMap((s) => [s.heading, ...s.paragraphs])
+      : []),
+    ...('closing' in article ? [article.closing] : []),
+  ];
+}
+
 export function readingTime(article: Article) {
-  const text = [
-    article.excerpt,
-    ...article.takeaways,
-    ...article.sections.flatMap((s) => [s.heading, ...s.paragraphs]),
-    article.closing,
-    article.sourceNote,
-  ].join(' ');
+  const text = [article.excerpt, ...bodyTextFor(article), article.sourceNote].join(' ');
   return Math.max(1, Math.ceil(text.split(/\s+/).length / 200));
 }

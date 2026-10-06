@@ -165,10 +165,11 @@ function buildFeed() {
   const items = articles
     .map((article) => {
       const info = series[article.series];
-      const summary = [
-        article.excerpt,
-        ...article.takeaways.map((takeaway) => `• ${takeaway}`),
-      ].join('\n\n');
+      // Mirrors keyPointsFor() in lib/articles.ts.
+      const points = article.qa
+        ? [article.qa.answer, ...article.qa.reasons.map((r) => `${r.title}: ${r.body}`)]
+        : article.takeaways ?? [];
+      const summary = [article.excerpt, ...points.map((point) => `• ${point}`)].join('\n\n');
 
       return `    <item>
       <title>${escapeXml(article.title)}</title>

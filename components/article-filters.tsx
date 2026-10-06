@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import type { Article } from '@/lib/articles';
+import { keyPointsFor, type Article } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
 import { Search, Sparkles, SlidersHorizontal } from 'lucide-react';
 
@@ -51,7 +51,7 @@ export function ArticleFilterGrid({
         article.tag.toLowerCase().includes(query) ||
         (propertyTypeFor(article)?.toLowerCase().includes(query) ?? false) ||
         (article.location && article.location.toLowerCase().includes(query)) ||
-        article.takeaways.some((t) => t.toLowerCase().includes(query));
+        keyPointsFor(article).some((t) => t.toLowerCase().includes(query));
 
       return matchesTag && matchesQuery;
     });

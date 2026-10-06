@@ -1,4 +1,10 @@
-import { articles, series, type Article, type SeriesKey } from '@/lib/articles';
+import {
+  articles,
+  bodyTextFor,
+  series,
+  type Article,
+  type SeriesKey,
+} from '@/lib/articles';
 import siteConfig from '@/site.config.json';
 
 export const SITE_URL = siteConfig.url;
@@ -130,7 +136,7 @@ export function videoJsonLd(article: Article) {
 
 export function articleJsonLd(article: Article) {
   const info = series[article.series as SeriesKey];
-  const body = article.sections.flatMap((section) => section.paragraphs).join('\n\n');
+  const body = bodyTextFor(article).join('\n\n');
 
   return {
     '@context': 'https://schema.org',

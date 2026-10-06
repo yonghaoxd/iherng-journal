@@ -4,47 +4,52 @@
   "episode": 7,
   "title": "Should You Settle Your Housing Loan Early?",
   "shortTitle": "Early Mortgage Repayment",
-  "location": "Malaysia Nationwide",
   "tag": "Mortgage Strategy",
-  "date": "2025-05-13",
+  "date": "2025-05-14",
   "videoId": "jA5cBaGWCPI",
   "videoTitle": "ASKING SEAN #283 | SETTLE THE LOAN EARLY TO SAVE ON INTEREST?",
   "duration": "26:08",
-  "excerpt": "A framework for weighing interest savings and peace of mind against liquidity, alternative returns and the operating needs of rental property.",
-  "takeaways": [
-    "Compare the mortgage rate with realistic after-tax returns elsewhere while preserving cash for emergencies.",
-    "Rental-property interest and expenses may receive different tax treatment, so confirm the current rules before repaying.",
-    "Peace of mind is a valid goal, but the decision should reflect age, risk appetite, income stability and future commitments."
-  ],
-  "sections": [
-    {
-      "heading": "Define what repayment is meant to achieve",
-      "paragraphs": [
-        "Early repayment creates a guaranteed saving equal to the interest avoided and can remove a major source of anxiety. Sean also sees a different value in a long housing loan: relatively low-cost credit leaves capital available for investments, career development, health and future family needs.",
-        "Neither goal is automatically correct. A buyer who sleeps better without debt may accept a lower mathematical return. A younger owner with stable income, cash-flowing rentals and a long time horizon may prefer to preserve liquidity. The decision begins with risk appetite and the life the money must support."
-      ]
-    },
-    {
-      "heading": "Compare the real alternatives",
-      "paragraphs": [
-        "Sean illustrates the choice by comparing the loan rate with returns available elsewhere. If a suitably low-risk alternative is expected to earn more after fees and tax than the mortgage costs, keeping the loan can be rational. That comparison must use realistic returns rather than optimistic projections.",
-        "Rental properties also require a tax-aware calculation because eligible interest and operating expenses may reduce taxable rental income. Paying down the loan changes that equation. Tax rules and personal circumstances differ, so current advice from a qualified tax professional matters before making a large repayment."
-      ]
-    },
-    {
-      "heading": "Protect the property operation",
-      "paragraphs": [
-        "Liquidity keeps a portfolio functioning when a unit is vacant, a tenant causes damage or a kitchen, bathroom or utility system needs replacement. Sean describes maintaining roughly six months of instalments for each property as an operating buffer before deploying surplus capital elsewhere.",
-        "Owners also need a system for utilities, assessment and quit rent, maintenance, sinking funds and repairs. A reliable agent or manager can reduce the time cost, but their fees belong in the return calculation. Mortgage-free ownership is valuable; reaching it by emptying the reserve that protects the property can create a different risk."
-      ]
-    }
-  ],
-  "closing": "An early repayment decision should improve both the numbers and your resilience. Preserve enough liquidity to operate the property and live through change before sending surplus cash to the loan.",
-  "sourceNote": "Based on the full public English captions and published episode notes for Asking Sean #283. This is educational commentary; verify loan terms, taxes and investment alternatives with qualified professionals.",
+  "excerpt": "A reader with three mortgages dreams of being debt-free. Sean explains why he would keep the loans running, and what to do with the spare cash instead.",
+  "qa": {
+    "kind": "question",
+    "asker": "Miss N, a viewer who wrote in by email",
+    "context": "Miss N is in her early 30s, single, and earns about RM15,000 a month. She has three mortgages: a rented unit, a commercial lot and a landed home under renovation. Her other savings sit in low-risk investments, and her dream is to be mortgage-free and simply collect rent.",
+    "question": "Should she pay the loans off as fast as possible to save on interest, or let them run the full term?",
+    "quote": "I will definitely not settle the loan.",
+    "answer": "Keep the loans running. At around 4%, a housing loan is the cheapest money you can get, below the rate of inflation, so spare cash should go where it earns more than the loan costs.",
+    "reasons": [
+      {
+        "title": "Settling early can raise your tax bill",
+        "body": "Rent counts as taxable income, but the interest on a rental property loan is a deductible expense. On a 35-year loan, Sean estimates about 85% of an early instalment is interest: roughly RM2,550 of a RM3,000 payment. Clear the loan and that deduction disappears, so part of the interest you save comes back as tax. Meanwhile the bank still counts the full rent as income when you apply for more financing."
+      },
+      {
+        "title": "Your cash can earn more elsewhere",
+        "body": "EPF has paid around 5.5 to 6% in recent years, while paying down the loan saves at most about 4%. Sean adds that if interest rates fall as expected, even fixed deposits could end up paying less than the mortgage costs."
+      },
+      {
+        "title": "Her loans already pay for themselves",
+        "body": "Over a million ringgit of property needed only 10 to 15% of her own money upfront. The rented unit brings in RM2,800 against a RM2,100 instalment, and the commercial lot clears about RM1,000 a month. Only the new landed home is a real cost, and her income covers it easily."
+      },
+      {
+        "title": "Her age favours more borrowing, not less",
+        "body": "In her early 30s, with no family commitments yet and an income likely to keep rising until around 40, she is a strong candidate for credit. The loans will be largely paid off by her mid-50s anyway. Sean would rather she spent the energy on her health, skills and career."
+      }
+    ],
+    "actions": [
+      "Leave loans alone on units whose rent already covers the instalment.",
+      "Keep a buffer of about six months of instalments for every unit, for vacancies, repairs and difficult tenants. Sean recently spent about RM15,000 refitting one unit after eight years.",
+      "Put the remaining cash into investments that beat the loan rate and suit your risk appetite.",
+      "Read up on how rental income is taxed and which expenses are deductible before deciding.",
+      "Pay a good agent or management company well. Sean pays 1.25 to 1.5 months of rent instead of one, so they serve him first."
+    ],
+    "caveat": "If owing the bank keeps you up at night, settling is a legitimate choice. Sean treats it as a question of peace of mind rather than maths, and says a conservative, debt-free approach makes more sense in your 60s than in your 30s."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #283. The quoted answer is verbatim; everything else is paraphrased. Figures are as Sean stated them in the episode. EPF dividends, loan rates and tax rules change, so check current ones for your own situation.",
   "sources": [
     {
-      "label": "Original video, captions and Sean's episode notes · 13 May 2025",
+      "label": "Original video and English captions · 14 May 2025",
       "url": "https://www.youtube.com/watch?v=jA5cBaGWCPI"
     }
-  ]
+  ],
+  "location": "Malaysia Nationwide"
 }

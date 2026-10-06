@@ -17,12 +17,14 @@ import {
 } from 'lucide-react';
 import {
   articles,
+  askSeanFor,
   seriesFor,
   imageFor,
   dateFor,
   readingTime,
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
+import { AskSeanSummary } from '@/components/ask-sean-summary';
 import { ShareButtons } from '@/components/share-buttons';
 import { JsonLd } from '@/components/json-ld';
 import {
@@ -84,6 +86,7 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   const info = seriesFor(article);
+  const qa = askSeanFor(article);
   const isReview = article.series === 'property-reviews';
   const isPodcast = article.series === 'iherng-podcast';
   const isGuide = article.series === 'buyer-guides';
@@ -182,7 +185,9 @@ export default async function ArticlePage({
         </div>
       </header>
 
-      {/* Featured Cover / Video Thumbnail */}
+      {/* Featured Cover / Video Thumbnail — property reviews only. Q&A articles
+          lead with the question and answer; their episode is embedded below. */}
+      {!qa && (
       <figure className="article-cover">
         <div className="cover-wrap">
           <img
@@ -213,6 +218,7 @@ export default async function ArticlePage({
           </a>
         </figcaption>
       </figure>
+      )}
 
       {/* Main Reading Layout */}
       <div className="reading-layout">
@@ -221,14 +227,26 @@ export default async function ArticlePage({
           {/* Editorial Transparency Note */}
           <div className="editorial-transparency-note">
             <Info size={16} className="note-icon" />
-            <p>
-              <strong>Editorial Note:</strong> This summary is distilled from Sean Tan&apos;s
-              public video breakdown and verified episode documentation. All property specifications
-              and opinions reflect the recording date and should be verified for present-day listings.
-            </p>
+            {qa ? (
+              <p>
+                <strong>Editorial Note:</strong> Summarised from Sean Tan&apos;s full episode.
+                The quoted answer is in his own words; the rest is our paraphrase. Figures reflect
+                the recording date, so check current rates and rules before acting on them.
+              </p>
+            ) : (
+              <p>
+                <strong>Editorial Note:</strong> This summary is distilled from Sean Tan&apos;s
+                public video breakdown and verified episode documentation. All property
+                specifications and opinions reflect the recording date and should be verified for
+                present-day listings.
+              </p>
+            )}
           </div>
 
-          {/* Formatted Story Sections */}
+          {qa && <AskSeanSummary qa={qa} />}
+
+          {/* Formatted Story Sections — property reviews */}
+          {'sections' in article && (
           <div className="story-sections">
             {article.sections.map((section, idx) => (
               <section
@@ -248,6 +266,7 @@ export default async function ArticlePage({
               </section>
             ))}
           </div>
+          )}
 
           {/* Sean's Take 3 on 3 — property reviews only */}
           {'seanTake' in article && isReview && (
@@ -290,12 +309,14 @@ export default async function ArticlePage({
             </section>
           )}
 
-          {/* Editorial Verdict / Closing Quote */}
-          <section id="reflection" className="editorial-reflection-box">
-            <span className="quote-mark">&ldquo;</span>
-            <p className="reflection-text">{article.closing}</p>
-            <span className="reflection-author">— iherng Journal editorial note</span>
-          </section>
+          {/* Editorial Verdict / Closing Quote — property reviews */}
+          {'closing' in article && (
+            <section id="reflection" className="editorial-reflection-box">
+              <span className="quote-mark">&ldquo;</span>
+              <p className="reflection-text">{article.closing}</p>
+              <span className="reflection-author">— iherng Journal editorial note</span>
+            </section>
+          )}
 
           {/* Original YouTube Video Embed */}
           <section id="original-video" className="video-player-section">
