@@ -14,6 +14,11 @@ on:
   schedule:
     - cron: "0 2 * * *" # 10:00 Malaysia time, after the 9:00 auto-journal run
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Run the eval and redeploy even if no article changed (checks the secrets)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -55,17 +60,17 @@ jobs:
           fi
 
       - name: Generate aliases and rebuild the catalog
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || inputs.force
         run: |
           npm run kb:enrich
           npm run kb:build
 
       - name: Routing eval (every case must pass)
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || inputs.force
         run: npm run eval:route -- --strict
 
       - name: Deploy the Worker
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || inputs.force
         run: npx wrangler deploy
 
       - name: Commit the updated knowledge base
