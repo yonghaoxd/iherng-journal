@@ -1,0 +1,53 @@
+{
+  "id": "settle-housing-loan-early",
+  "series": "buyer-guides",
+  "title": "Should You Settle Your Housing Loan Early?",
+  "excerpt": "A reader with three mortgages dreams of being debt-free. Sean explains why he would keep the loans running, and what to do with the spare cash instead.",
+  "date": "2025-05-14",
+  "tag": "Mortgage Strategy",
+  "question": {
+    "asker": "From Miss N, a viewer who wrote in by email",
+    "context": "Miss N is in her early 30s, single, and earns about RM15,000 a month. She has three mortgages: a rented unit, a commercial lot and a landed home under renovation. Her other savings sit in low-risk investments, and her dream is to be mortgage-free and simply collect rent.",
+    "text": "Should she pay the loans off as fast as possible to save on interest, or let them run the full term?"
+  },
+  "answer": {
+    "quote": "I will definitely not settle the loan.",
+    "summary": "Keep the loans running. At around 4%, a housing loan is the cheapest money you can get, below the rate of inflation, so spare cash should go where it earns more than the loan costs."
+  },
+  "reasons": [
+    {
+      "title": "Settling early can raise your tax bill",
+      "body": "Rent counts as taxable income, but the interest on a rental property loan is a deductible expense. On a 35-year loan, Sean estimates about 85% of an early instalment is interest: roughly RM2,550 of a RM3,000 payment. Clear the loan and that deduction disappears, so part of the interest you save comes back as tax. Meanwhile the bank still counts the full rent as income when you apply for more financing."
+    },
+    {
+      "title": "Your cash can earn more elsewhere",
+      "body": "EPF has paid around 5.5 to 6% in recent years, while paying down the loan saves at most about 4%. Sean adds that if interest rates fall as expected, even fixed deposits could end up paying less than the mortgage costs."
+    },
+    {
+      "title": "Her loans already pay for themselves",
+      "body": "Over a million ringgit of property needed only 10 to 15% of her own money upfront. The rented unit brings in RM2,800 against a RM2,100 instalment, and the commercial lot clears about RM1,000 a month. Only the new landed home is a real cost, and her income covers it easily."
+    },
+    {
+      "title": "Her age favours more borrowing, not less",
+      "body": "In her early 30s, with no family commitments yet and an income likely to keep rising until around 40, she is a strong candidate for credit. The loans will be largely paid off by her mid-50s anyway. Sean would rather she spent the energy on her health, skills and career."
+    }
+  ],
+  "actions": [
+    "Leave loans alone on units whose rent already covers the instalment.",
+    "Keep a buffer of about six months of instalments for every unit, for vacancies, repairs and difficult tenants. Sean recently spent about RM15,000 refitting one unit after eight years.",
+    "Put the remaining cash into investments that beat the loan rate and suit your risk appetite.",
+    "Read up on how rental income is taxed and which expenses are deductible before deciding.",
+    "Pay a good agent or management company well. Sean pays 1.25 to 1.5 months of rent instead of one, so they serve him first."
+  ],
+  "caveat": "If owing the bank keeps you up at night, settling is a legitimate choice. Sean treats it as a question of peace of mind rather than maths, and says a conservative, debt-free approach makes more sense in your 60s than in your 30s.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #283. The quoted answer is verbatim; everything else is paraphrased. Figures are as Sean stated them in the episode. EPF dividends, loan rates and tax rules change, so check current ones for your own situation.",
+  "askingSeanEpisode": 283,
+  "video": {
+    "id": "jA5cBaGWCPI",
+    "title": "ASKING SEAN #283 | SETTLE THE LOAN EARLY TO SAVE ON INTEREST?",
+    "duration": "26:08",
+    "url": "https://www.youtube.com/watch?v=jA5cBaGWCPI"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/settle-housing-loan-early"
+}

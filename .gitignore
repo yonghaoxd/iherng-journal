@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.env
+.env.local
+.dev.vars
+# Local Wrangler state, including the local D1 test database.
+.wrangler/
+evals/results/
+*.log

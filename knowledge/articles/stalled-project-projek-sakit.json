@@ -1,0 +1,53 @@
+{
+  "id": "stalled-project-projek-sakit",
+  "series": "iherng-podcast",
+  "title": "My project has stalled. Will it be abandoned?",
+  "excerpt": "A buyer sees construction slowing and fears the project will be abandoned. Sean, a buyer in the same project, explains the difference between ailing and abandoned, and the real options for getting out or staying in.",
+  "date": "2026-07-14",
+  "tag": "Delayed projects",
+  "question": {
+    "asker": "From A viewer who wrote in about Solasta",
+    "context": "A viewer and their family bought into Solasta, a high-rise in the Dutamas area of KL. Sean bought a unit there too. Driving past the site, they notice construction has slowed, and it looks unlikely to finish by the promised fourth quarter. Owners' chat groups are full of talk that the project will die.",
+    "text": "Is the project in trouble, and what can a buyer actually do if it ends up abandoned?"
+  },
+  "answer": {
+    "quote": "Is this the worst-case scenario? No.",
+    "summary": "An ailing project is not an abandoned one. Check its official status, then choose between staying in for delay compensation or walking away at a cost. A full refund is very hard to get."
+  },
+  "reasons": [
+    {
+      "title": "Ailing is not the same as abandoned",
+      "body": "The housing ministry's PERDA portal lists \"projek sakit\" (ailing projects) separately from \"projek terbengkalai\" (abandoned ones). A project is ailing if it falls 30% behind schedule or passes its completion date. Developers take it seriously: one ailing project can freeze the advertising permits and licences for their other projects."
+    },
+    {
+      "title": "The developer is selling assets to fix it",
+      "body": "This developer has a cash flow problem but is raising money: it sold its Mont Kiara mall to Sunway and a KL land plot to Chin Hin for about half a billion ringgit. Sales like that are slow, because a seller seen as desperate gets lowballed."
+    },
+    {
+      "title": "Walking away costs money; a full refund is rare",
+      "body": "Cancelling the sale agreement usually means forfeiting your 10% deposit. A full refund under section 8A of the Housing Development Act needs six months with no work at all (one worker on site counts as work), your bank's consent, and certification by the housing ministry."
+    },
+    {
+      "title": "Staying in can still pay off",
+      "body": "Buyers who stay are owed compensation for every day of delay, usually paid at handover. Early buyers paid around RM700 to RM800 per sq ft, while completed units nearby trade near RM1,100 and new launches ask RM1,500 to RM1,600. The true worst case is outright abandonment, where you keep paying interest on whatever the bank has already released."
+    }
+  ],
+  "actions": [
+    "Look the project up on the housing ministry's PERDA site (\"carian projek sakit\") instead of relying on chat-group rumours.",
+    "Follow the developer's announcements: asset sales and new funding are signs it intends to finish.",
+    "Decide honestly whether you can carry the interest until handover. If not, losing the deposit may beat months of stress.",
+    "Keep a buffer of about six months of instalments for every property, so a delay or vacancy never forces your hand.",
+    "Do not treat \"publicly listed developer\" as a guarantee; check its track record and finances."
+  ],
+  "caveat": "If this is your first and only home and the delay threatens your finances, joining other owners to press the developer, or to seek release without penalty, makes sense. Sean is calmer partly because he holds other properties and keeps cash buffers.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #316. The quoted answer is verbatim; everything else is paraphrased. Sean is a buyer in the same project with no link to the developer. Prices and the project's status are as described in July 2026.",
+  "askingSeanEpisode": 316,
+  "video": {
+    "id": "GQWJKrZZ2Eg",
+    "title": "ASKING SEAN #316 | MY INVESTMENT IS NOW PROJEK SAKIT",
+    "duration": "21:59",
+    "url": "https://www.youtube.com/watch?v=GQWJKrZZ2Eg"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/stalled-project-projek-sakit"
+}
