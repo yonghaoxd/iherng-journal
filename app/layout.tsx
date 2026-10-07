@@ -178,6 +178,9 @@ export default function RootLayout({
                   <Link href="/rental-calculator">Rental Cash Flow Calculator</Link>
                 </li>
                 <li>
+                  <Link href="/ask">Ask Sean (AI Q&amp;A)</Link>
+                </li>
+                <li>
                   {/* A generated static file, not a route: next/link would
                       try to client-navigate to it. */}
                   {/* oxlint-disable-next-line no-html-link-for-pages */}
