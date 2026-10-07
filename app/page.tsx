@@ -15,6 +15,9 @@ import {
   PodcastSection,
   BuyerGuidesSection,
 } from '@/components/journal';
+import { seriesCount, type SeriesKey } from '@/lib/articles';
+
+const storyCount = (seriesKey: SeriesKey) => `${String(seriesCount(seriesKey)).padStart(2, '0')} STORIES`;
 
 export default function Home() {
   return (
@@ -43,7 +46,7 @@ export default function Home() {
               <div className="icon-badge">
                 <Building2 size={16} />
               </div>
-              <span className="series-episodes">06 STORIES</span>
+              <span className="series-episodes">{storyCount('property-reviews')}</span>
             </div>
             <h3>Property Reviews</h3>
             <p>Room-by-room architectural inspections &amp; neighbourhood trade-offs.</p>
@@ -58,7 +61,7 @@ export default function Home() {
               <div className="icon-badge">
                 <Headphones size={16} />
               </div>
-              <span className="series-episodes">09 STORIES</span>
+              <span className="series-episodes">{storyCount('iherng-podcast')}</span>
             </div>
             <h3>iherng Podcast</h3>
             <p>Asking Sean: Candid discussions on mortgages, family, and homeownership.</p>
@@ -73,7 +76,7 @@ export default function Home() {
               <div className="icon-badge">
                 <BookOpen size={16} />
               </div>
-              <span className="series-episodes">09 STORIES</span>
+              <span className="series-episodes">{storyCount('buyer-guides')}</span>
             </div>
             <h3>Buyer Guides</h3>
             <p>Practical playbooks for research, financing, risk checks, renovation and ownership decisions.</p>

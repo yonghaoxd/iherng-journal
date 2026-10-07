@@ -62,6 +62,11 @@ export const series = seriesData;
 
 export type SeriesKey = keyof typeof series;
 
+/** Number of published articles in a series; counts on the page update as articles are added. */
+export function seriesCount(seriesKey: SeriesKey): number {
+  return articles.filter((article) => article.series === seriesKey).length;
+}
+
 export function seriesFor(article: Article) {
   return series[article.series as SeriesKey];
 }
