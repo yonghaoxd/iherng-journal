@@ -64,6 +64,8 @@ export interface ChatRequest {
   maxTokens: number;
   json?: boolean;
   temperature?: number;
+  /** Let the model reason first. Only for rare, quality-critical jobs: reasoning bills as output. */
+  thinking?: boolean;
 }
 
 export interface ChatResult {
@@ -83,10 +85,11 @@ export async function chat(request: ChatRequest): Promise<ChatResult> {
       { role: "user", content: request.user },
     ],
     max_tokens: request.maxTokens,
-    temperature: request.temperature ?? 0.2,
-    // Thinking is on by default and its reasoning bills as output tokens.
-    // Every call here is short and grounded in supplied text, so turn it off.
-    thinking: { type: "disabled" },
+    // Thinking is on by default and its reasoning bills as output tokens. Answers and
+    // routing are short and grounded in supplied text, so they turn it off.
+    ...(request.thinking
+      ? { thinking: { type: "enabled" } }
+      : { thinking: { type: "disabled" }, temperature: request.temperature ?? 0.2 }),
     ...(request.json ? { response_format: { type: "json_object" } } : {}),
   });
 

@@ -60,3 +60,30 @@ Hide a question from the public feed:
 ```sh
 npx wrangler d1 execute ask-sean --remote --command "UPDATE questions SET hidden = 1 WHERE id = '<id>'"
 ```
+## Automatic updates
+
+```
+new Asking Sean video ──(your PC, daily 9:00)──▶ Journal article, published
+Journal feed changes  ──(GitHub Actions, daily 10:00 + after each article)──▶ chatbot updated
+```
+
+**`scripts/auto-journal.ts`** runs from Windows Task Scheduler ("Ask Sean - auto journal",
+installed by `scripts/install-auto-journal.ps1`). For each Asking Sean video uploaded after
+the job's first run that has no article, it downloads the English captions (yt-dlp in
+`.venv`), has DeepSeek write the article in the Journal's Ask Sean format, checks every
+field and that Sean's quote appears word for word in the captions, builds the Journal,
+then commits, pushes and deploys it and starts the GitHub workflow below. Any failure
+leaves the Journal untouched and the video is retried daily, up to 5 times. It does
+nothing while the Journal has uncommitted changes. Needs `JOURNAL_DIR` and
+`DEEPSEEK_API_KEY` in `.env`, and the local `gh` and `wrangler` logins.
+
+Log: `.cache/auto-journal/log.txt`. Try it without publishing:
+
+```sh
+npm run auto:journal -- --dry-run --video <youtube id>
+```
+
+**`.github/workflows/update-knowledge.yml`** syncs from the live Journal, enriches
+new articles, requires `npm run eval:route -- --strict` to pass, deploys the Worker,
+commits the knowledge files and opens an issue listing the unreviewed aliases.
+Repository secrets: `DEEPSEEK_API_KEY` and `CLOUDFLARE_API_TOKEN`.

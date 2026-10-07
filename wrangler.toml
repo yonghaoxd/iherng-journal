@@ -1,5 +1,7 @@
 name = "ask-sean-api"
 main = "worker/index.ts"
+# Not a secret; lets `wrangler deploy` run from GitHub Actions with just an API token.
+account_id = "8ab6ac3fe728d708b5871b2cd858dd91"
 compatibility_date = "2026-10-01"
 # Fills process.env from vars and secrets, which lib/deepseek.ts reads.
 compatibility_flags = ["nodejs_compat"]

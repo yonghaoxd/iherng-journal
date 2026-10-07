@@ -1,4 +1,7 @@
 node_modules/
+.venv/
+# Captions and logs written by the daily auto-publish job.
+.cache/
 .next/
 .env
 .env.local

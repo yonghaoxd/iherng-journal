@@ -88,6 +88,13 @@ async function main() {
   const file = `evals/results/route-${new Date().toISOString().replace(/[:.]/g, "-")}.json`;
   await writeFile(file, JSON.stringify({ catalog: catalog.version, usage, outcomes }, null, 2) + "\n");
   console.log(`  details: ${file}`);
+
+  // --strict lets the automated update refuse to deploy a knowledge base that routes worse.
+  const failed = outcomes.filter((outcome) => !outcome.pass).length;
+  if (process.argv.includes("--strict") && failed > 0) {
+    console.error(`\n${failed} case(s) failed; not deploying.`);
+    process.exit(1);
+  }
 }
 
 main().catch((error) => {

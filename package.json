@@ -12,6 +12,7 @@
     "kb:build": "tsx scripts/build.ts",
     "kb": "npm run kb:sync && npm run kb:enrich && npm run kb:build",
     "ask": "tsx scripts/ask.ts",
+    "auto:journal": "tsx scripts/auto-journal.ts",
     "eval:route": "tsx scripts/eval-route.ts",
     "eval:answers": "tsx scripts/eval-answers.ts",
     "db:migrate:local": "wrangler d1 migrations apply ask-sean --local",
