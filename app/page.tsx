@@ -1,13 +1,10 @@
 import Link from 'next/link';
 import {
   ArrowRight,
-  Play,
-  MapPin,
   Sparkles,
   Building2,
   Headphones,
   BookOpen,
-  CheckCircle2,
   ExternalLink,
 } from 'lucide-react';
 import {
@@ -85,75 +82,6 @@ export default function Home() {
               <ArrowRight size={14} />
             </div>
           </Link>
-        </div>
-      </section>
-
-      {/* Featured Story / Editor's Pick */}
-      <section className="feature-grid" aria-label="Editor's Pick Story">
-        <Link
-          href="/articles/manor-born-ipoh"
-          className="feature-photo-wrap group"
-          aria-label="Read Manor Born feature story"
-        >
-          <img
-            src="https://i.ytimg.com/vi/Em5Ls6ECFJ8/maxresdefault.jpg"
-            alt="iherng's Manor Born property review in Ipoh"
-            width={1280}
-            height={720}
-            className="feature-photo"
-          />
-          <div className="feature-photo-overlay" />
-          <span className="image-chip">
-            <Play size={12} fill="currentColor" />
-            <span>ORIGINAL VIDEO · 14:34</span>
-          </span>
-        </Link>
-
-        <div className="feature-story">
-          <div className="feature-story-top">
-            <div className="feature-eyebrow">
-              <span className="badge-pick">THE EDITOR&apos;S PICK</span>
-              <span className="feature-ep">EPISODE #159</span>
-            </div>
-
-            <div className="feature-meta-info">
-              <p className="feature-category">
-                PROPERTY REVIEWS <span className="sep">·</span>{' '}
-                <span className="inline-flex items-center gap-1">
-                  <MapPin size={11} /> IPOH, PERAK
-                </span>
-              </p>
-              <Link href="/articles/manor-born-ipoh">
-                <h2 className="feature-heading">
-                  Manor Born:<br />
-                  big spaces,<br />
-                  <em>small community.</em>
-                </h2>
-              </Link>
-              <p className="story-deck">
-                An intimate bungalow development with mountain views and a thoughtful central
-                courtyard—balanced by real-world trade-offs in accessibility and shared grounds.
-              </p>
-            </div>
-          </div>
-
-          <div className="feature-story-bottom">
-            <div className="feature-highlights">
-              <div className="highlight-item">
-                <CheckCircle2 size={14} className="text-accent" />
-                <span>Central courtyard ventilation</span>
-              </div>
-              <div className="highlight-item">
-                <CheckCircle2 size={14} className="text-accent" />
-                <span>Distinct basement workspace</span>
-              </div>
-            </div>
-
-            <Link className="feature-cta-btn" href="/articles/manor-born-ipoh">
-              <span>Read the full review</span>
-              <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
 
