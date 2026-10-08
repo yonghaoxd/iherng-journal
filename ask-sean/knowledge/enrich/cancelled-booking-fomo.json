@@ -1,0 +1,24 @@
+{
+  "id": "cancelled-booking-fomo",
+  "sourceHash": "7653cdf29564",
+  "reviewed": true,
+  "aliases": [
+    "leasehold",
+    "cash back",
+    "rebate",
+    "rental yield",
+    "student rental",
+    "airbnb",
+    "sinking fund",
+    "price per sq ft",
+    "emergency fund",
+    "fomo"
+  ],
+  "questions": [
+    "Did I make a mistake cancelling my property booking?",
+    "How much property can I afford on my income?",
+    "Is it safe to buy a property with a 15% promised return?",
+    "What should I check before paying a booking fee?",
+    "How do I compare property prices per square foot across areas?"
+  ]
+}

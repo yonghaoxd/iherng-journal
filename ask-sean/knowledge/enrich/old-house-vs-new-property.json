@@ -1,0 +1,26 @@
+{
+  "id": "old-house-vs-new-property",
+  "sourceHash": "73eb6f469f93",
+  "reviewed": true,
+  "aliases": [
+    "subsale",
+    "second-hand house",
+    "old house",
+    "renovation",
+    "refurbishment",
+    "joint loan",
+    "joint name",
+    "single name",
+    "down payment",
+    "zero down payment",
+    "monthly instalment",
+    "market value"
+  ],
+  "questions": [
+    "Should I buy an old house that needs renovation or a new house with no down payment?",
+    "Should an unmarried couple buy a house in joint names?",
+    "How much renovation cost should I budget for an old house?",
+    "Is it safe to take a bigger loan based on my partner's income?",
+    "How do I check if an old house is priced fairly?"
+  ]
+}

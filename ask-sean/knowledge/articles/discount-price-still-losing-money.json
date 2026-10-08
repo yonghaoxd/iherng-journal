@@ -1,0 +1,53 @@
+{
+  "id": "discount-price-still-losing-money",
+  "series": "iherng-podcast",
+  "title": "I bought at a discount. Why am I still losing money?",
+  "excerpt": "A homeowner who bought \"at a good rate\" during COVID now struggles with the instalment and cannot find tenants. Sean explains why a discount is not a bargain, and how to decide whether to hold, rent or sell.",
+  "date": "2026-04-02",
+  "tag": "Pricing & value",
+  "question": {
+    "asker": "From Mr A, a viewer who wrote in by email",
+    "context": "Mr A bought a 1,500 sq ft condo at Subang Park Homes in SS19 during COVID, because the price looked like a good deal. He lives there with his wife and child, but the loan and maintenance now cost about RM4,000 a month, and similar units listed for rent at RM3,000 to RM3,500 find no takers.",
+    "text": "Did he buy into a money-losing development, and what should he do now?"
+  },
+  "answer": {
+    "quote": "Is it cheaper? Yes. Is it still expensive? Yes.",
+    "summary": "A discount only helps if the price ends up below the area's median, not just below the project's old price. For a home already bought, the question now is whether to hold, rent or sell, and that depends on valuation, recent sales and the loan balance."
+  },
+  "reasons": [
+    {
+      "title": "The discount was measured against the wrong number",
+      "body": "\"20% below market value\" usually means below a bank valuation or the developer's old asking price. The real market price is what similar units actually sold for. If the area median is RM900 per sq ft and a project drops from RM1,300 to RM1,100, it is cheaper and still expensive."
+    },
+    {
+      "title": "A quiet address does not draw tenants",
+      "body": "High rents come from temporary demand: jobs, universities and tourism. A hidden residential corner suits a family, but most renters will pay more to live near a train station or highway."
+    },
+    {
+      "title": "The 85% test was never done",
+      "body": "For an own-stay home, Sean checks that local rent covers about 85% of the instalment, so you have an exit if plans change. On a RM3,500 instalment that means rent of about RM3,000. Checking demand first would have shown the risk."
+    },
+    {
+      "title": "Who loses depends on when they bought",
+      "body": "The developer profited at launch, and early buyers likely gained, but later buyers at peak prices often have not. Across the market, people who bought at the 2015 to 2016 peak are still underwater, while those who bought in the 2019 to 2021 dip gained equity."
+    }
+  ],
+  "actions": [
+    "Ask your bank for a current valuation; it sets what your buyer can borrow.",
+    "Check the latest transacted prices in your project. If the last sale was a year ago, demand is thin.",
+    "Compare your outstanding loan with a realistic sale price. If selling leaves you owing the bank, decide whether to pay the gap now or keep paying monthly.",
+    "If you rent it out, check the competition: unfurnished listings with no takers leave room to win; furnished ones with no takers signal real trouble.",
+    "Next time, decide own stay or investment first, and check local rent before you buy."
+  ],
+  "caveat": "As a family home, the property is doing its job, so it is not automatically a failure; the pain is the instalment. On smart-home features, which Mr A also asked about, Sean thinks they add little to rent or resale and suit owners furnishing a home for themselves.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #309. The quoted answer is verbatim; everything else is paraphrased. Figures are as stated in April 2026.",
+  "askingSeanEpisode": 309,
+  "video": {
+    "id": "-qxaAp04k-Y",
+    "title": "ASKING SEAN #309 | BOUGHT AT DISCOUNT PRICE STILL LOSE MONEY",
+    "duration": "23:26",
+    "url": "https://www.youtube.com/watch?v=-qxaAp04k-Y"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/discount-price-still-losing-money"
+}

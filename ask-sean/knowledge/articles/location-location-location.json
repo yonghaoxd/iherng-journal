@@ -1,0 +1,53 @@
+{
+  "id": "location-location-location",
+  "series": "iherng-podcast",
+  "title": "Is \"location, location, location\" still the rule?",
+  "excerpt": "A young investor has shortlisted Bangsar South by its rental demand. Sean argues that location is not what makes you money; the price you pay against the area median is.",
+  "date": "2024-02-02",
+  "tag": "Location & price",
+  "question": {
+    "asker": "From An anonymous viewer who wrote in by email",
+    "context": "The reader is 26, works for a multinational in Johor and takes home about RM9,500 a month. He already owns a PJ serviced apartment whose RM2,200 rent nearly covers its RM2,300 instalment, plus RM150,000 in US stocks and RM50,000 in spare cash. He has shortlisted Bangsar South for its rental demand and compared units on tenure, age, size, furnishing, distance to the LRT and price per square foot.",
+    "text": "Is \"location, location, location\" still the rule? Should he pay more for a newer project or buy an older subsale, and could he fund it with a 36-month interest-free credit card plan?"
+  },
+  "answer": {
+    "quote": "That's just a very cool way to say things in a lazy manner.",
+    "summary": "Location matters less than people think. Most KL areas will end up with the same amenities, so your profit is decided by your entry price: buy below the area's median price."
+  },
+  "reasons": [
+    {
+      "title": "Entry price decides profit, not the postcode",
+      "body": "In time, every KL location gets a mall, schools, a hospital and parks. What separates a good buy is paying below the local median. Sean would rather buy in Rawang at RM480 per sq ft where the median is RM600 than in KL Sentral at RM800 where the median is RM700."
+    },
+    {
+      "title": "High rent follows temporary demand",
+      "body": "Strong rents come from people posted somewhere for two or three years, so job hubs such as Mont Kiara, KL Sentral, KLCC and Bangsar South do well, with Cheras, Subang and Bukit Jalil rising. In purely residential areas, long-term residents would rather buy than pay rent above an instalment, so yields are lower."
+    },
+    {
+      "title": "New costs more but ages better",
+      "body": "Malaysian building and strata rules mean an old apartment's layout cannot be changed. Newer projects have brighter rooms, better ventilation and corridors, so they tend to appreciate more, while older ones usually yield more. Decide which you are buying for."
+    },
+    {
+      "title": "A subsale starts earning sooner",
+      "body": "With cash on hand, a completed subsale lets you negotiate on price and collect rent within about nine months of signing. A new launch ties up one of your loan slots for three to four years before it earns anything."
+    }
+  ],
+  "actions": [
+    "Check every shortlisted unit's price per sq ft against the area median, and only buy below it.",
+    "Decide whether you want rental yield or capital growth before choosing between an older subsale and a newer project.",
+    "Skip the interest-free credit card plan if you can pay cash. Sean would take the safe route rather than leave no room for error.",
+    "Visit the buildings in person; a spreadsheet cannot show you what a project is really like.",
+    "Avoid low-cost flats bought purely for yield. Sean will not buy social housing meant for people in need."
+  ],
+  "caveat": "Sean holds any unit whose rent covers its instalment for the full 30 years, while others prefer to sell after seven or eight years, once yields fall from about 7% to 5.5%. Both can work. Sean also mentions buying through FAR Capital, a deal-sourcing service he pays to use, for readers short on research time.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #239. The quoted answer is verbatim; everything else is paraphrased. Prices per square foot are Sean's illustrations from February 2024. Sean is a paying member of FAR Capital, not its owner.",
+  "askingSeanEpisode": 239,
+  "video": {
+    "id": "2YZ4YG0DZJg",
+    "title": "ASKING SEAN #239 | \"LOCATION LOCATION LOCATION\" STILL VALID?",
+    "duration": "27:56",
+    "url": "https://www.youtube.com/watch?v=2YZ4YG0DZJg"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/location-location-location"
+}
