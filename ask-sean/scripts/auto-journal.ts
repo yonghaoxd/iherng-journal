@@ -9,9 +9,10 @@
  *      (one rewrite is allowed with the problems fed back)
  *   4. add it to the Journal, then typecheck and build the site
  *   5. commit, push and deploy the Journal to Cloudflare Pages
- *   6. start the asking-iherng GitHub workflow so the chatbot picks the article up
+ *   6. start the update-knowledge GitHub workflow so the chatbot picks the article up
  * Any failure leaves the Journal as it was; the video is retried the next day, up to
- * MAX_ATTEMPTS days. The job never runs while the Journal has uncommitted changes.
+ * MAX_ATTEMPTS days. The job never runs while the Journal has uncommitted changes
+ * (changes inside ask-sean/ itself do not count).
  *
  *   npm run auto:journal                         normal daily run
  *   npm run auto:journal -- --dry-run --video ID  write a draft to .cache/auto-journal/drafts only
@@ -21,12 +22,13 @@ import { existsSync } from "node:fs";
 import { appendFile, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { addUsage, chat, NO_USAGE, type Usage } from "../lib/deepseek";
-import { loadEnv, requireEnv } from "../lib/env";
+import { loadEnv } from "../lib/env";
 import { readJsonIfExists, writeJson } from "../lib/knowledge";
 
 const CHANNEL_FEED = "https://www.youtube.com/feeds/videos.xml?channel_id=UCXXg22fFnTvH5ptRlTaxORQ";
 const PAGES_PROJECT = "iherng-journal";
-const CHATBOT_REPO = "yonghaoxd/asking-iherng";
+// The chatbot lives in the Journal repository (ask-sean/), so its workflow does too.
+const CHATBOT_REPO = "yonghaoxd/iherng-journal";
 const MAX_ATTEMPTS = 5;
 const MAX_PER_RUN = 2;
 const MIN_TRANSCRIPT_WORDS = 1500;
@@ -445,8 +447,8 @@ async function publish(journalDir: string, article: JournalArticle): Promise<voi
   await writeFile(
     message,
     `Add Asking Sean #${article.episode}: ${article.title}\n\n` +
-      "Written automatically from the episode's English captions by asking-iherng's\n" +
-      "scripts/auto-journal.ts. Sean's quoted answer was checked word for word against\n" +
+      "Written automatically from the episode's English captions by\n" +
+      "ask-sean/scripts/auto-journal.ts. Sean's quoted answer was checked word for word against\n" +
       "the captions; everything else is paraphrased.\n",
     "utf8",
   );
@@ -460,7 +462,8 @@ async function publish(journalDir: string, article: JournalArticle): Promise<voi
 
 async function main() {
   loadEnv();
-  const journalDir = path.resolve(requireEnv("JOURNAL_DIR"));
+  // The Journal is the repository this folder sits in; JOURNAL_DIR can still override it.
+  const journalDir = path.resolve(process.env.JOURNAL_DIR || "..");
   const dryRun = process.argv.includes("--dry-run");
   const forced = process.argv.includes("--video") ? process.argv[process.argv.indexOf("--video") + 1] : undefined;
 
@@ -475,7 +478,8 @@ async function main() {
   if (!dryRun) {
     // Never mix automatic commits with someone's work in progress.
     const branch = run("git", ["rev-parse", "--abbrev-ref", "HEAD"], journalDir).trim();
-    const dirty = run("git", ["status", "--porcelain"], journalDir).trim();
+    // The chatbot's own folder is excluded: local knowledge-base work must not block publishing.
+    const dirty = run("git", ["status", "--porcelain", "--", ".", ":(exclude)ask-sean"], journalDir).trim();
     if (branch !== "main" || dirty) {
       await log(`Skipped: the Journal is on "${branch}"${dirty ? " with uncommitted changes" : ""}. Commit or stash first.`);
       return;

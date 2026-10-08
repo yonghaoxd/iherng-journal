@@ -1,4 +1,4 @@
-# Keeps the chatbot in step with the iherng Journal.
+# Keeps the chatbot (ask-sean/) in step with the iherng Journal.
 #
 # Daily, and whenever scripts/auto-journal.ts publishes an article, this reads the
 # live Journal's feed. If any Buyer Guides or iherng Podcast article is new or
@@ -32,6 +32,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: ask-sean
     env:
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -42,6 +45,7 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: ask-sean/package-lock.json
 
       - run: npm ci
 
@@ -71,7 +75,7 @@ jobs:
 
       - name: Deploy the Worker
         if: steps.changes.outputs.changed == 'true' || inputs.force
-        run: npx wrangler deploy
+        run: npx wrangler deploy --config wrangler.toml
 
       - name: Commit the updated knowledge base
         if: steps.changes.outputs.changed == 'true'
@@ -80,6 +84,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add knowledge
           git commit -m "Update knowledge base from the live Journal"
+          git pull --rebase -q origin main
           git push
 
       - name: List new aliases for review
@@ -87,7 +92,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          changed=$(git diff --name-only HEAD~1 -- knowledge/enrich)
+          changed=$(git diff --name-only --relative HEAD~1 -- knowledge/enrich)
           if [ -z "$changed" ]; then echo "No new aliases."; exit 0; fi
           {
             echo "The chatbot was updated automatically and the routing eval passed."

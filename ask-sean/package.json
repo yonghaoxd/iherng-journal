@@ -15,10 +15,10 @@
     "auto:journal": "tsx scripts/auto-journal.ts",
     "eval:route": "tsx scripts/eval-route.ts",
     "eval:answers": "tsx scripts/eval-answers.ts",
-    "db:migrate:local": "wrangler d1 migrations apply ask-sean --local",
-    "db:migrate:remote": "wrangler d1 migrations apply ask-sean --remote",
-    "worker:dev": "wrangler dev",
-    "worker:deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply ask-sean --local --config wrangler.toml",
+    "db:migrate:remote": "wrangler d1 migrations apply ask-sean --remote --config wrangler.toml",
+    "worker:dev": "wrangler dev --config wrangler.toml",
+    "worker:deploy": "wrangler deploy --config wrangler.toml",
     "typecheck": "tsc --noEmit && tsc --noEmit -p worker"
   },
   "devDependencies": {

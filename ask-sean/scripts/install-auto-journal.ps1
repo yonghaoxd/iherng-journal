@@ -15,7 +15,7 @@ $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -RunOnlyIfNetworkAv
   -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 1)
 
 Register-ScheduledTask -TaskName "Ask Sean - auto journal" -Action $action -Trigger $trigger -Settings $settings `
-  -Description "Writes iherng Journal articles for new Asking Sean videos and publishes them (asking_iherng/scripts/auto-journal.ts)." `
+  -Description "Writes iherng Journal articles for new Asking Sean videos and publishes them (iherng_blog/ask-sean/scripts/auto-journal.ts)." `
   -Force | Out-Null
 
 Get-ScheduledTask -TaskName "Ask Sean - auto journal" | Get-ScheduledTaskInfo | Select-Object TaskName, NextRunTime

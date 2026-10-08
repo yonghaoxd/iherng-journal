@@ -3,6 +3,12 @@
 An English Q&A bot that answers Malaysian property questions only from the iherng Journal's
 Buyer Guides and iherng Podcast articles. Design and decisions: [DESIGN.md](DESIGN.md).
 
+It lives in the Journal repository as `ask-sean/` (it was the separate `asking-iherng`
+repository until October 2026). Run every command below from this folder.
+
+Run Wrangler with `--config wrangler.toml` here (the npm scripts already do). Without it,
+Wrangler also finds the site's build output in `../.wrangler/` and refuses to choose.
+
 ## Setup
 
 ```sh
@@ -74,8 +80,9 @@ the job's first run that has no article, it downloads the English captions (yt-d
 field and that Sean's quote appears word for word in the captions, builds the Journal,
 then commits, pushes and deploys it and starts the GitHub workflow below. Any failure
 leaves the Journal untouched and the video is retried daily, up to 5 times. It does
-nothing while the Journal has uncommitted changes. Needs `JOURNAL_DIR` and
-`DEEPSEEK_API_KEY` in `.env`, and the local `gh` and `wrangler` logins.
+nothing while the Journal has uncommitted changes outside `ask-sean/`. Needs
+`DEEPSEEK_API_KEY` in `.env`, and the local `gh` and `wrangler` logins; the Journal is
+the repository this folder sits in, unless `JOURNAL_DIR` says otherwise.
 
 Log: `.cache/auto-journal/log.txt`. Try it without publishing:
 
@@ -83,7 +90,8 @@ Log: `.cache/auto-journal/log.txt`. Try it without publishing:
 npm run auto:journal -- --dry-run --video <youtube id>
 ```
 
-**`.github/workflows/update-knowledge.yml`** syncs from the live Journal, enriches
+**`.github/workflows/update-knowledge.yml`** (at the repository root; it runs inside
+`ask-sean/`) syncs from the live Journal, enriches
 new articles, requires `npm run eval:route -- --strict` to pass, deploys the Worker,
 commits the knowledge files and opens an issue listing the unreviewed aliases.
-Repository secrets: `DEEPSEEK_API_KEY` and `CLOUDFLARE_API_TOKEN`.
+Repository secrets on `iherng-journal`: `DEEPSEEK_API_KEY` and `CLOUDFLARE_API_TOKEN`.
