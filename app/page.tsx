@@ -21,19 +21,58 @@ export default function Home() {
     <main id="main" className="container home-page">
       {/* Intro Headline */}
       <section className="intro-hero" aria-label="Editorial introduction">
-        <div className="intro-content">
-          <div className="edition-badge">
-            <Sparkles size={13} className="text-accent" />
-            <span>EDITORIAL COMPANION · INDEPENDENT CURATION</span>
+        <div className="hero-stage">
+          {/* iherng's YouTube channel art, with its baked-in tagline removed so it
+              does not compete with the headline. */}
+          <img
+            className="hero-bg"
+            src="/hero/iherng-rooftop-2000.jpg"
+            srcSet="/hero/iherng-rooftop-1100.jpg 1100w, /hero/iherng-rooftop-2000.jpg 2000w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            alt=""
+            width={2000}
+            height={1132}
+            fetchPriority="high"
+          />
+          <div className="hero-scrim" aria-hidden="true" />
+
+          <div className="hero-copy">
+            <div className="edition-badge">
+              <Sparkles size={13} className="text-accent" />
+              <span>EDITORIAL COMPANION · INDEPENDENT CURATION</span>
+            </div>
+            <h1 className="intro-title">
+              A little perspective.<br />
+              <span className="serif-accent">A better place to call home.</span>
+            </h1>
+            <p className="intro-lead">
+              Malaysian property walkthroughs, honest conversations, and practical buyer
+              playbooks from Sean Tan (@iherng), distilled into focused, source-linked articles.
+            </p>
+
+            <div className="hero-actions">
+              <Link href="/ask" className="hero-btn primary">
+                <span>Ask Sean a question</span>
+                <ArrowRight size={16} />
+              </Link>
+              <a
+                href="https://www.youtube.com/@iherng"
+                target="_blank"
+                rel="noreferrer"
+                className="hero-btn ghost"
+              >
+                <span>Watch on YouTube</span>
+                <ExternalLink size={15} />
+              </a>
+            </div>
+
+            <p className="hero-proof">
+              <strong>130K</strong> subscribers <span aria-hidden="true">·</span>{' '}
+              <strong>1,200+</strong> videos on YouTube
+            </p>
           </div>
-          <h1 className="intro-title">
-            A little perspective.<br />
-            <span className="serif-accent">A better place to call home.</span>
-          </h1>
-          <p className="intro-lead">
-            Malaysian property walkthroughs, honest conversations, and practical buyer playbooks
-            from Sean Tan (@iherng), distilled into focused, source-linked articles.
-          </p>
+
+          <span className="hero-credit">Photo: iherng on YouTube</span>
         </div>
 
         {/* Quick Series Directory Quick-Cards */}
@@ -107,12 +146,12 @@ export default function Home() {
             </p>
             <div className="creator-badges">
               <div className="stat-box">
-                <strong>350+</strong>
-                <span>Episodes &amp; Reviews</span>
+                <strong>1,200+</strong>
+                <span>Videos on YouTube</span>
               </div>
               <div className="stat-box">
-                <strong>100K+</strong>
-                <span>Community Followers</span>
+                <strong>130K+</strong>
+                <span>YouTube Subscribers</span>
               </div>
               <div className="stat-box">
                 <strong>100%</strong>
