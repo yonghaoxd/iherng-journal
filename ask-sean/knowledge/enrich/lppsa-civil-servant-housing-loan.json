@@ -1,0 +1,26 @@
+{
+  "id": "lppsa-civil-servant-housing-loan",
+  "sourceHash": "5e253eed58eb",
+  "reviewed": false,
+  "aliases": [
+    "lppsa",
+    "government housing loan",
+    "public sector loan",
+    "pension scheme loan",
+    "pencen loan",
+    "civil servant housing loan",
+    "loan order",
+    "bank loan first",
+    "third property loan",
+    "takaful cover",
+    "payslip deduction",
+    "ccris"
+  ],
+  "questions": [
+    "How does an LPPSA loan differ from a bank loan?",
+    "Should I use my LPPSA loan first or my bank loans first?",
+    "How many properties can I buy with LPPSA and bank loans?",
+    "What is the maximum LPPSA loan amount?",
+    "What happens to my LPPSA loan if I leave government service?"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "housing-loan-eligibility-dsr",
+  "sourceHash": "cf33f719cfea",
+  "reviewed": false,
+  "aliases": [
+    "dsr",
+    "debt service ratio",
+    "ccris",
+    "ctos",
+    "loan eligibility",
+    "housing loan",
+    "home loan",
+    "credit score",
+    "credit report",
+    "bank loan",
+    "mortgage",
+    "ptptn"
+  ],
+  "questions": [
+    "How do banks calculate how much housing loan I can get?",
+    "What is a debt service ratio and how do I calculate it?",
+    "How does CCRIS affect my housing loan application?",
+    "How can I check my loan eligibility before buying a house?",
+    "What can I do to improve my chances of getting a housing loan approved?"
+  ]
+}

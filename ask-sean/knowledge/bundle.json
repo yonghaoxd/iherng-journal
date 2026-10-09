@@ -1,6 +1,6 @@
 {
   "catalog": {
-    "version": "246ef79bc91a",
+    "version": "e081a7981733",
     "articles": [
       {
         "id": "apartment-vs-landed",
@@ -293,6 +293,120 @@
         ]
       },
       {
+        "id": "housing-loan-eligibility-dsr",
+        "title": "How much housing loan can I actually get?",
+        "date": "2022-08-18",
+        "series": "buyer-guides",
+        "askingSeanEpisode": null,
+        "tag": "Housing loans",
+        "excerpt": "Banks decide with one number, your debt service ratio. Rena Choong shows how to estimate your own loan eligibility before visiting a sales gallery, and what CCRIS and CTOS reveal.",
+        "viewerQuestion": "How do banks decide how much housing loan you can get, and how can you work it out yourself before you start looking?",
+        "answer": "Banks use your debt service ratio: all your loan repayments, existing and new, divided by your net income. Work out your own figure first, so you only look at properties you can finance and don't collect rejections.",
+        "points": [
+          "The DSR limit rises with income",
+          "A quick formula gives your limit",
+          "Your repayment record sets your rate",
+          "Card balances count, not card limits"
+        ],
+        "aliases": [
+          "dsr",
+          "debt service ratio",
+          "ccris",
+          "ctos",
+          "loan eligibility",
+          "housing loan",
+          "home loan",
+          "credit score",
+          "credit report",
+          "bank loan",
+          "mortgage",
+          "ptptn"
+        ],
+        "questions": [
+          "How do banks calculate how much housing loan I can get?",
+          "What is a debt service ratio and how do I calculate it?",
+          "How does CCRIS affect my housing loan application?",
+          "How can I check my loan eligibility before buying a house?",
+          "What can I do to improve my chances of getting a housing loan approved?"
+        ]
+      },
+      {
+        "id": "housing-loan-interest-flexi-explained",
+        "title": "Flexi, semi-flexi or fixed: how does housing loan interest work?",
+        "date": "2022-08-09",
+        "series": "buyer-guides",
+        "askingSeanEpisode": null,
+        "tag": "Housing loans",
+        "excerpt": "Most buyers compare loans only by the monthly instalment. Rena Choong explains how housing loans charge interest, why a lump sum belongs there, and when full flexi is worth its fee.",
+        "viewerQuestion": "How does a housing loan charge interest compared with a personal or car loan, and which type should you take if you want to pay it down faster?",
+        "answer": "A housing loan charges interest only on what you still owe, so a lump-sum prepayment cuts the interest and can shorten the loan, while personal and car loans fix the interest up front. If you will prepay or draw money back often, take a full flexi loan; on a semi-flexi loan you must ask the bank to apply any extra payment to the principal.",
+        "points": [
+          "Flat-rate loans charge all interest up front",
+          "Housing loan interest falls as you pay",
+          "Extra money in semi-flexi just sits there",
+          "Full flexi works like a cheaper overdraft"
+        ],
+        "aliases": [
+          "flexi loan",
+          "full flexi",
+          "semi-flexi",
+          "fixed rate loan",
+          "flat rate",
+          "balance reducing",
+          "prepayment",
+          "lump sum",
+          "housing loan interest",
+          "mortgage",
+          "home loan",
+          "refinance"
+        ],
+        "questions": [
+          "How does a housing loan charge interest compared to a personal loan?",
+          "What is the difference between full flexi and semi-flexi housing loans?",
+          "How can I pay off my housing loan faster?",
+          "Does making a lump sum payment reduce my housing loan interest?",
+          "Should I choose a full flexi loan or a fixed rate loan?"
+        ]
+      },
+      {
+        "id": "housing-loan-rejection-reasons",
+        "title": "Why was my housing loan rejected?",
+        "date": "2022-09-23",
+        "series": "buyer-guides",
+        "askingSeanEpisode": null,
+        "tag": "Housing loans",
+        "excerpt": "A rejected loan stays on record and makes the next bank wary. Rena Choong goes through the most common reasons banks say no, and what to fix before you apply again.",
+        "viewerQuestion": "What are the most common reasons banks reject a housing loan, and how do you avoid them?",
+        "answer": "Most rejections are predictable: a DSR over the limit, recent arrears in CCRIS, a restructured loan, or a legal or AKPK record. Fix what you can and wait for a clean record before applying, because each rejection is visible to the next bank.",
+        "points": [
+          "Recent arrears mean an upfront no",
+          "Restructuring is worse than refinancing",
+          "Legal records block even eligible buyers",
+          "Every application leaves a mark"
+        ],
+        "aliases": [
+          "ccris",
+          "dsr",
+          "debt service ratio",
+          "akpk",
+          "ptptn",
+          "bankruptcy",
+          "restructured loan",
+          "refinancing",
+          "loan arrears",
+          "credit card balances",
+          "loan rejection",
+          "credit history"
+        ],
+        "questions": [
+          "What are the most common reasons a housing loan gets rejected?",
+          "How many months of arrears in CCRIS will cause a loan rejection?",
+          "Does restructuring a loan affect my chances of getting a housing loan?",
+          "How many banks should I apply to for a housing loan?",
+          "How do I improve my chances of loan approval after a rejection?"
+        ]
+      },
+      {
         "id": "investing-in-property-at-60",
         "title": "I'm over 60. Should I still invest in property?",
         "date": "2025-07-08",
@@ -367,6 +481,44 @@
         ]
       },
       {
+        "id": "loan-application-mistakes-by-income",
+        "title": "Salaried, on commission or self-employed: what trips up a loan?",
+        "date": "2022-10-19",
+        "series": "buyer-guides",
+        "askingSeanEpisode": null,
+        "tag": "Housing loans",
+        "excerpt": "Banks judge your income by how you earn it. Rena Choong explains where employees, commission earners and business owners go wrong, and which records to prepare months ahead.",
+        "viewerQuestion": "What mistakes get housing loans rejected for employees, commission earners and the self-employed, and how should each prepare?",
+        "answer": "Know which income group you are in, because each is judged on different records: payslips and EPF for employees, commission statements and tax returns for agents, and company accounts and bank statements for business owners. Prepare them months before you buy, and never dress your income up.",
+        "points": [
+          "Employees: the documents must match",
+          "Bonuses count for less than basic pay",
+          "Commission earners need tax returns",
+          "Business owners are judged by the company"
+        ],
+        "aliases": [
+          "commission",
+          "self-employed",
+          "business owner",
+          "payslip",
+          "epf",
+          "tax return",
+          "company account",
+          "bank statement",
+          "bonus",
+          "probation",
+          "ctos",
+          "income documentation"
+        ],
+        "questions": [
+          "How do banks assess income for housing loans?",
+          "What documents do commission earners need for a mortgage?",
+          "Why do business owners get rejected for home loans?",
+          "How does bonus income affect loan eligibility?",
+          "What mistakes can cause a housing loan rejection?"
+        ]
+      },
+      {
         "id": "location-location-location",
         "title": "Is \"location, location, location\" still the rule?",
         "date": "2024-02-02",
@@ -400,6 +552,44 @@
           "How do I know if I'm paying a good price for a property?",
           "Can I use a 0% credit card instalment plan to fund a property purchase?",
           "Which gives better returns: rental yield or capital appreciation?"
+        ]
+      },
+      {
+        "id": "lppsa-civil-servant-housing-loan",
+        "title": "I'm a civil servant. How should I use my LPPSA housing loan?",
+        "date": "2022-11-16",
+        "series": "buyer-guides",
+        "askingSeanEpisode": null,
+        "tag": "Housing loans",
+        "excerpt": "Civil servants can borrow from LPPSA on top of the usual bank loans. Rena Choong explains why the order you use them in matters, and the catches in LPPSA's terms.",
+        "viewerQuestion": "How does an LPPSA loan differ from a bank loan, and when should a civil servant use it?",
+        "answer": "Use your two 90% bank loans first and keep LPPSA, which can finance 100%, for the third property. LPPSA repayments come off your payslip, so using it first lowers the net income banks see and leaves your next bank loan at 70%.",
+        "points": [
+          "The order changes your margins",
+          "A fixed 4% over a very long term",
+          "Full instalments start after two years",
+          "LPPSA has its own limits"
+        ],
+        "aliases": [
+          "lppsa",
+          "government housing loan",
+          "public sector loan",
+          "pension scheme loan",
+          "pencen loan",
+          "civil servant housing loan",
+          "loan order",
+          "bank loan first",
+          "third property loan",
+          "takaful cover",
+          "payslip deduction",
+          "ccris"
+        ],
+        "questions": [
+          "How does an LPPSA loan differ from a bank loan?",
+          "Should I use my LPPSA loan first or my bank loans first?",
+          "How many properties can I buy with LPPSA and bank loans?",
+          "What is the maximum LPPSA loan amount?",
+          "What happens to my LPPSA loan if I leave government service?"
         ]
       },
       {
@@ -732,6 +922,44 @@
           "How does rental income tax affect early loan settlement?",
           "Can EPF dividends beat housing loan interest?",
           "What buffer should I keep for rental properties?"
+        ]
+      },
+      {
+        "id": "singapore-income-malaysia-housing-loan",
+        "title": "I work in Singapore. Can I get a housing loan in Malaysia?",
+        "date": "2023-06-19",
+        "series": "buyer-guides",
+        "askingSeanEpisode": null,
+        "tag": "Working abroad",
+        "excerpt": "Singapore income converts well, so qualifying is rarely the problem. Rena Choong explains what Malaysian banks check for Malaysians working in Singapore, and what changes if you take up citizenship.",
+        "viewerQuestion": "How do Malaysian banks treat Singapore income, and what should Malaysians working in Singapore prepare before applying?",
+        "answer": "Converted to ringgit, Singapore income usually qualifies easily; paperwork is what trips people up. Have at least a year of steady employment, clear savings records and your Singapore documents ready, and decide first whether you plan to settle there.",
+        "points": [
+          "Income converts generously",
+          "Malaysians keep Malaysian margins",
+          "Citizenship changes the terms",
+          "Savings and history reassure the bank"
+        ],
+        "aliases": [
+          "singapore pr",
+          "work in singapore",
+          "singapore income",
+          "loan margin",
+          "housing loan",
+          "bank loan",
+          "cpf",
+          "epf",
+          "ccris",
+          "cbs report",
+          "employment history",
+          "foreign buyer"
+        ],
+        "questions": [
+          "How do Malaysian banks assess income earned in Singapore for a housing loan?",
+          "What documents do I need to prepare for a Malaysian housing loan if I work in Singapore?",
+          "Does holding a Singapore PR affect my housing loan margin in Malaysia?",
+          "What happens to my Malaysian housing loan eligibility if I become a Singapore citizen?",
+          "Can I buy a property in Malaysia while owning an HDB flat in Singapore?"
         ]
       },
       {
@@ -1422,6 +1650,177 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/hidden-costs-property-malaysia"
     },
     {
+      "id": "housing-loan-eligibility-dsr",
+      "series": "buyer-guides",
+      "title": "How much housing loan can I actually get?",
+      "excerpt": "Banks decide with one number, your debt service ratio. Rena Choong shows how to estimate your own loan eligibility before visiting a sales gallery, and what CCRIS and CTOS reveal.",
+      "date": "2022-08-18",
+      "tag": "Housing loans",
+      "question": {
+        "asker": "",
+        "context": "Sean's second step for every buyer is to find out how much they can borrow, yet many people avoid checking. In the second episode of his mortgage series, he asks Rena Choong, FAR Capital's head of mortgage, how banks work it out.",
+        "text": "How do banks decide how much housing loan you can get, and how can you work it out yourself before you start looking?"
+      },
+      "answer": {
+        "by": {
+          "name": "Rena Choong",
+          "role": "head of mortgage at FAR Capital"
+        },
+        "quote": "You should at least go and calculate your loan eligibility.",
+        "summary": "Banks use your debt service ratio: all your loan repayments, existing and new, divided by your net income. Work out your own figure first, so you only look at properties you can finance and don't collect rejections."
+      },
+      "reasons": [
+        {
+          "title": "The DSR limit rises with income",
+          "body": "Banks cap repayments at about 60% of net income for those earning under RM3,000 gross, 70% to 75% at RM3,000 to RM5,000, 75% to 80% above RM5,000, and up to 85% or 90% at some banks above RM10,000. Only debts in CCRIS count, such as housing, car, personal and PTPTN loans, credit cards and ASB financing; living costs and insurance don't."
+        },
+        {
+          "title": "A quick formula gives your limit",
+          "body": "Take 80% of gross income as net, apply the bank's DSR limit, subtract existing repayments, then multiply by 250 for a 35-year loan. On RM6,000 gross, RM4,800 at 75% is RM3,600; less RM500 of debts leaves RM3,100, or about RM775,000. The multiplier falls with age, to about 230, 220 and 210, because loans end at around 70."
+        },
+        {
+          "title": "Your repayment record sets your rate",
+          "body": "CCRIS shows the last 12 months, and each digit is the number of months in arrears; twos appearing more than once can sink an application. A weaker bank credit score still gets a loan, but at a higher rate, for example 3.4% or 3.5% instead of 3.3%."
+        },
+        {
+          "title": "Card balances count, not card limits",
+          "body": "Banks count 5% of your outstanding credit card balance as a monthly commitment, and instalment plans count in full, so a big purchase just before applying can tip your DSR. Rena advises keeping card use below 30% of the limit."
+        }
+      ],
+      "actions": [
+        "Get your free CCRIS report from Bank Negara (you register in person once), and consider a CTOS report, which also shows legal and trade records.",
+        "Calculate your DSR and loan eligibility before visiting sales galleries, and shortlist only properties within it.",
+        "Keep every repayment on time for at least the 12 months before you apply.",
+        "If your CCRIS is empty, take a credit card, spend a little and pay it off in full for about six months to build a record.",
+        "If you are self-employed or own over about 20% of a company, file and pay tax: banks will use your last two years of tax returns, not your payslip."
+      ],
+      "caveat": "Limits vary between banks and with Bank Negara rules; these are 2022 figures. A borderline DSR can sometimes still pass if you pledge a fixed deposit, while a poor repayment record can fail you even with eligibility to spare.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for episode 2 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (August 2022). The quoted answer is Rena's own words; everything else is paraphrased. DSR limits and rates are as stated in 2022 and differ between banks. Sean is a customer of FAR Capital, not its owner.",
+      "askingSeanEpisode": null,
+      "video": {
+        "id": "6m2tuV6g9hE",
+        "title": "HOW TO CALCULATE YOUR LOAN ELIGIBILITY (EP 2)",
+        "duration": "37:13",
+        "url": "https://www.youtube.com/watch?v=6m2tuV6g9hE"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/housing-loan-eligibility-dsr"
+    },
+    {
+      "id": "housing-loan-interest-flexi-explained",
+      "series": "buyer-guides",
+      "title": "Flexi, semi-flexi or fixed: how does housing loan interest work?",
+      "excerpt": "Most buyers compare loans only by the monthly instalment. Rena Choong explains how housing loans charge interest, why a lump sum belongs there, and when full flexi is worth its fee.",
+      "date": "2022-08-09",
+      "tag": "Housing loans",
+      "question": {
+        "asker": "",
+        "context": "Sean admits he rarely talks about the loan side of buying, even though rules on eligibility change often. In the first episode of his mortgage series, he asks Rena Choong, FAR Capital's head of mortgage and his own investment coach, how different loans charge interest.",
+        "text": "How does a housing loan charge interest compared with a personal or car loan, and which type should you take if you want to pay it down faster?"
+      },
+      "answer": {
+        "by": {
+          "name": "Rena Choong",
+          "role": "head of mortgage at FAR Capital"
+        },
+        "quote": "What you should do right now is actually first take a full flexi loan.",
+        "summary": "A housing loan charges interest only on what you still owe, so a lump-sum prepayment cuts the interest and can shorten the loan, while personal and car loans fix the interest up front. If you will prepay or draw money back often, take a full flexi loan; on a semi-flexi loan you must ask the bank to apply any extra payment to the principal."
+      },
+      "reasons": [
+        {
+          "title": "Flat-rate loans charge all interest up front",
+          "body": "A RM100,000 personal loan at 6% over 10 years adds RM60,000 of interest at the start, so you repay RM160,000, about RM1,333 a month. Paying it off early saves nothing unless you settle the whole amount."
+        },
+        {
+          "title": "Housing loan interest falls as you pay",
+          "body": "On RM500,000 at 3.3% over 35 years, the instalment is about RM2,000, and early on roughly 70% of it, about RM1,300, is interest. Prepay RM100,000 and interest is charged on RM400,000 instead, so more of each instalment goes to principal and the term could shrink to 20 or 25 years."
+        },
+        {
+          "title": "Extra money in semi-flexi just sits there",
+          "body": "Pay RM2,500 instead of RM2,000 on a semi-flexi loan and the bank still takes RM2,000; the rest is carried to next month without cutting interest. You have to register a prepayment by form, phone or email, and withdrawals need an application and a fee. Sean found his own surplus rent had been sitting idle this way."
+        },
+        {
+          "title": "Full flexi works like a cheaper overdraft",
+          "body": "A full flexi loan lets you prepay and withdraw online at any time for a monthly fee of about RM10 to RM15. It suits business owners and the self-employed with uneven cash, and costs far less than an overdraft at 5% to 6%."
+        }
+      ],
+      "actions": [
+        "Check whether each loan you hold is flat-rate or balance-reducing before deciding which to pay down.",
+        "Put spare lump sums against a balance-reducing loan's principal, not into a flat-rate loan you can't settle in full.",
+        "On a semi-flexi loan, save extra money into a lump sum and tell the bank in writing to apply it as a prepayment.",
+        "Choose full flexi if your income is irregular or you may need to draw the money back out.",
+        "Clear credit card debt first: it costs about 18% a year, against under 3% on Sean's latest housing loan in 2022."
+      ],
+      "caveat": "A fixed-rate housing loan protects you if the OPR rises but costs more if it falls, and banks offer it as a promotion rather than at your choosing. Rates, fees and prepayment terms differ between banks and have changed since 2022.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for episode 1 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (August 2022). The quoted answer is Rena's own words; everything else is paraphrased. Rates are as stated in 2022, so check current ones. Sean is a customer of FAR Capital, not its owner.",
+      "askingSeanEpisode": null,
+      "video": {
+        "id": "fFdh_UIMs0A",
+        "title": "THINGS TO KNOW BEFORE APPLYING FOR HOUSING LOAN (EP 1)",
+        "duration": "32:40",
+        "url": "https://www.youtube.com/watch?v=fFdh_UIMs0A"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/housing-loan-interest-flexi-explained"
+    },
+    {
+      "id": "housing-loan-rejection-reasons",
+      "series": "buyer-guides",
+      "title": "Why was my housing loan rejected?",
+      "excerpt": "A rejected loan stays on record and makes the next bank wary. Rena Choong goes through the most common reasons banks say no, and what to fix before you apply again.",
+      "date": "2022-09-23",
+      "tag": "Housing loans",
+      "question": {
+        "asker": "",
+        "context": "A rejection doesn't only cost you the property; it stays on record and makes the next bank cautious. In the third episode of his mortgage series, Sean asks Rena Choong which problems most often get a housing loan turned down.",
+        "text": "What are the most common reasons banks reject a housing loan, and how do you avoid them?"
+      },
+      "answer": {
+        "by": {
+          "name": "Rena Choong",
+          "role": "head of mortgage at FAR Capital"
+        },
+        "quote": "Please don't submit, wait until you fully settle it.",
+        "summary": "Most rejections are predictable: a DSR over the limit, recent arrears in CCRIS, a restructured loan, or a legal or AKPK record. Fix what you can and wait for a clean record before applying, because each rejection is visible to the next bank."
+      },
+      "reasons": [
+        {
+          "title": "Recent arrears mean an upfront no",
+          "body": "One month late is usually acceptable, but two or three months of arrears in CCRIS is treated as an upfront rejection. Settle in full and wait until the latest six months show zeros; late credit card payments are easier to explain than housing loan arrears."
+        },
+        {
+          "title": "Restructuring is worse than refinancing",
+          "body": "Restructuring or rescheduling, stretching a loan because you can't keep up, signals distress and often leads to rejection. Refinancing to draw cash from a property's built-up equity is different, and a government-backed moratorium doesn't mark CCRIS, though applying to the same bank that granted it is awkward."
+        },
+        {
+          "title": "Legal records block even eligible buyers",
+          "body": "Summonses and court cases, including against a company you direct, trade references such as unpaid phone or instalment bills above about RM300, AKPK and bankruptcy lead to rejection however good your income. A PTPTN arrears flag is lighter: settle the overdue amount, get the settlement letter, and you can apply within a month or two."
+        },
+        {
+          "title": "Every application leaves a mark",
+          "body": "CCRIS shows pending applications, and banks notice when others have turned you down, so submitting to five or six banks at once looks bad. Rena suggests two or three at most."
+        }
+      ],
+      "actions": [
+        "Check your DSR, loan eligibility and CCRIS before you apply.",
+        "Clear any arrears and wait for clean months before submitting.",
+        "Apply to two or three banks, not every panel bank at once.",
+        "If your DSR is borderline, pay down credit card balances, which count at 5% of what you owe, before applying.",
+        "If you have little credit history, use one credit card lightly and pay it in full each month, rather than collecting several cards."
+      ],
+      "caveat": "Banks weigh these things differently, so a case one bank rejects may suit another, and these are 2022 practices. With AKPK or bankruptcy on record, Sean's view is that buying property shouldn't be the priority for now.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for episode 3 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (September 2022). The quoted answer is Rena's own words; everything else is paraphrased. Bank practices are as described in 2022 and change over time. Sean is a customer of FAR Capital, not its owner.",
+      "askingSeanEpisode": null,
+      "video": {
+        "id": "ndDQECzVp14",
+        "title": "COMMON REASONS FOR LOAN REJECTIONS (EP 3)",
+        "duration": "29:36",
+        "url": "https://www.youtube.com/watch?v=ndDQECzVp14"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/housing-loan-rejection-reasons"
+    },
+    {
       "id": "investing-in-property-at-60",
       "series": "iherng-podcast",
       "title": "I'm over 60. Should I still invest in property?",
@@ -1528,6 +1927,63 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/leasehold-condo-resale-risk"
     },
     {
+      "id": "loan-application-mistakes-by-income",
+      "series": "buyer-guides",
+      "title": "Salaried, on commission or self-employed: what trips up a loan?",
+      "excerpt": "Banks judge your income by how you earn it. Rena Choong explains where employees, commission earners and business owners go wrong, and which records to prepare months ahead.",
+      "date": "2022-10-19",
+      "tag": "Housing loans",
+      "question": {
+        "asker": "",
+        "context": "Banks look at income differently depending on how you earn it. In the fourth episode of his mortgage series, Sean asks Rena Choong where salaried employees, commission earners and business owners most often go wrong when they apply.",
+        "text": "What mistakes get housing loans rejected for employees, commission earners and the self-employed, and how should each prepare?"
+      },
+      "answer": {
+        "by": {
+          "name": "Rena Choong",
+          "role": "head of mortgage at FAR Capital"
+        },
+        "quote": "First of all, know which one is your income segment.",
+        "summary": "Know which income group you are in, because each is judged on different records: payslips and EPF for employees, commission statements and tax returns for agents, and company accounts and bank statements for business owners. Prepare them months before you buy, and never dress your income up."
+      },
+      "reasons": [
+        {
+          "title": "Employees: the documents must match",
+          "body": "The salary credited to your account should match your payslip, EPF should be paid, and you should be past probation; contracts shorter than six months are hard to finance. A sudden pay rise of around 50% needs a letter explaining it, and banks may call or email HR to check your job."
+        },
+        {
+          "title": "Bonuses count for less than basic pay",
+          "body": "Some banks ignore performance bonuses or count about half, often only from multinationals and only after two years of history. A higher basic salary helps a loan more than a large bonus."
+        },
+        {
+          "title": "Commission earners need tax returns",
+          "body": "Banks want six months of commission statements plus your latest tax return, so new agents who haven't filed one struggle. If income swings by more than about 30% from month to month, some banks count only half of the six-month average."
+        },
+        {
+          "title": "Business owners are judged by the company",
+          "body": "Most banks want the company registered for at least two years, a busy bank account, month-end balances that aren't too low (Rena treats under RM50,000 as low), and invoices for large one-off credits. Declaring losses to cut tax shows up in CTOS and works against you."
+        }
+      ],
+      "actions": [
+        "Keep a monthly file of payslips, bank statements and tax returns, so you can apply when a good deal appears.",
+        "If you are employed, wait until you are confirmed, and get a letter from HR for any big salary increase.",
+        "If you earn commission or run a business, file and pay tax on your full income for at least the last year or two.",
+        "If your income is complicated, ask a mortgage adviser who knows which banks favour your profile.",
+        "Never use arranged employment or inflated payslips to qualify; Rena and Sean call it fraud."
+      ],
+      "caveat": "Bank policies vary widely, especially for side income and mixed earnings, and these are 2022 practices. Income from investments or trading counts only once it is declared for tax, so declare it before you apply.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for episode 4 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (October 2022). The quoted answer is Rena's own words; everything else is paraphrased. Bank practices are as described in 2022. Sean is a customer of FAR Capital, which offers mortgage advice, not its owner.",
+      "askingSeanEpisode": null,
+      "video": {
+        "id": "AulsutOcnT0",
+        "title": "COMMON MISTAKES MADE DURING LOAN APPLICATION (EP4)",
+        "duration": "42:13",
+        "url": "https://www.youtube.com/watch?v=AulsutOcnT0"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/loan-application-mistakes-by-income"
+    },
+    {
       "id": "location-location-location",
       "series": "iherng-podcast",
       "title": "Is \"location, location, location\" still the rule?",
@@ -1579,6 +2035,63 @@
         "url": "https://www.youtube.com/watch?v=2YZ4YG0DZJg"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/location-location-location"
+    },
+    {
+      "id": "lppsa-civil-servant-housing-loan",
+      "series": "buyer-guides",
+      "title": "I'm a civil servant. How should I use my LPPSA housing loan?",
+      "excerpt": "Civil servants can borrow from LPPSA on top of the usual bank loans. Rena Choong explains why the order you use them in matters, and the catches in LPPSA's terms.",
+      "date": "2022-11-16",
+      "tag": "Housing loans",
+      "question": {
+        "asker": "",
+        "context": "Civil servants can borrow from LPPSA, the government's housing loan scheme for public-sector staff, on top of the bank loans everyone else uses. In the fifth episode of his mortgage series, Sean asks Rena Choong how it works and when to use it.",
+        "text": "How does an LPPSA loan differ from a bank loan, and when should a civil servant use it?"
+      },
+      "answer": {
+        "by": {
+          "name": "Rena Choong",
+          "role": "head of mortgage at FAR Capital"
+        },
+        "quote": "Please don't use it for your first and second.",
+        "summary": "Use your two 90% bank loans first and keep LPPSA, which can finance 100%, for the third property. LPPSA repayments come off your payslip, so using it first lowers the net income banks see and leaves your next bank loan at 70%."
+      },
+      "reasons": [
+        {
+          "title": "The order changes your margins",
+          "body": "LPPSA doesn't appear in CCRIS, but its deduction shows on your payslip, and banks count it. Banks give 90% on your first two residential loans; use LPPSA first and your third property needs a 70% bank loan, whereas two bank loans first leave LPPSA's 100% for the third."
+        },
+        {
+          "title": "A fixed 4% over a very long term",
+          "body": "LPPSA charges a fixed 4%, close to banks' best rates of 3.7% to 3.8% at the time, and for those on the pension scheme it can run to age 90, against 70 or 75 at banks. But takaful cover is compulsory for the whole term, which becomes expensive if you borrow after about 45."
+        },
+        {
+          "title": "Full instalments start after two years",
+          "body": "On a property under construction, LPPSA deductions begin about 24 months after you borrow, and from then you pay the full instalment even if the building isn't finished. A bank charges only progressive interest on what it has released, so a long or delayed project costs more under LPPSA."
+        },
+        {
+          "title": "LPPSA has its own limits",
+          "body": "The maximum LPPSA loan is RM750,000 including takaful, and valuations by the government valuer tend to be conservative. If you leave government service, you must refinance with a commercial bank, and banks often don't recognise a civil servant's side income."
+        }
+      ],
+      "actions": [
+        "Check how much you can borrow with LPPSA's own online calculator, which works from a fixed table by gross income.",
+        "Take your first two residential properties with bank loans, and save LPPSA for the third.",
+        "Prefer completed properties or short builds when using LPPSA, since full instalments start after 24 months.",
+        "Apply online and submit the physical documents yourself, or pay a runner to handle them.",
+        "Send loan documents only through a company's official channels, never to a personal email address, and guard your IC number."
+      ],
+      "caveat": "This only suits civil servants whose income comfortably covers several loans and whose properties earn rent; Sean warns against borrowing more just because the facility exists. Rates and limits are as stated in November 2022.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for episode 5 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (November 2022). The quoted answer is Rena's own words; everything else is paraphrased. LPPSA rates and limits are as stated in 2022, so check LPPSA's current terms. Sean is a customer of FAR Capital, not its owner.",
+      "askingSeanEpisode": null,
+      "video": {
+        "id": "q300PGWZXWI",
+        "title": "LPPSA for Government Sector Employees",
+        "duration": "45:04",
+        "url": "https://www.youtube.com/watch?v=q300PGWZXWI"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/lppsa-civil-servant-housing-loan"
     },
     {
       "id": "new-baby-investment-strategy",
@@ -2056,6 +2569,63 @@
         "url": "https://www.youtube.com/watch?v=jA5cBaGWCPI"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/settle-housing-loan-early"
+    },
+    {
+      "id": "singapore-income-malaysia-housing-loan",
+      "series": "buyer-guides",
+      "title": "I work in Singapore. Can I get a housing loan in Malaysia?",
+      "excerpt": "Singapore income converts well, so qualifying is rarely the problem. Rena Choong explains what Malaysian banks check for Malaysians working in Singapore, and what changes if you take up citizenship.",
+      "date": "2023-06-19",
+      "tag": "Working abroad",
+      "question": {
+        "asker": "",
+        "context": "Many Malaysians working in Singapore want to buy back home but aren't sure how banks treat Singapore income, or how a Malaysian property affects an HDB flat. After both had met Malaysians working there, Sean and Rena Choong cover the loan rules in the sixth episode of his mortgage series.",
+        "text": "How do Malaysian banks treat Singapore income, and what should Malaysians working in Singapore prepare before applying?"
+      },
+      "answer": {
+        "by": {
+          "name": "Rena Choong",
+          "role": "head of mortgage at FAR Capital"
+        },
+        "quote": "It's more to the compliance that you need to fulfill rather than your income.",
+        "summary": "Converted to ringgit, Singapore income usually qualifies easily; paperwork is what trips people up. Have at least a year of steady employment, clear savings records and your Singapore documents ready, and decide first whether you plan to settle there."
+      },
+      "reasons": [
+        {
+          "title": "Income converts generously",
+          "body": "Banks convert Singapore dollars at about three ringgit, or their own rate, and count 80% to 100% of a fixed salary and 50% to 70% of commission. S$4,000 a month is about RM12,000, and many banks set a minimum income of S$2,000 to S$3,000."
+        },
+        {
+          "title": "Malaysians keep Malaysian margins",
+          "body": "While you hold a Malaysian IC, including as a Singapore PR, the usual margins apply: 90% on your first two residential loans, then 70%. Banks read your Singapore CBS credit report alongside CCRIS, so a Singapore property or loan counts too."
+        },
+        {
+          "title": "Citizenship changes the terms",
+          "body": "Once you become a Singapore citizen, you buy in Malaysia as a foreigner: margins of about 80% to 85%, a maximum tenure of around 30 years, and the minimum prices set for foreign buyers."
+        },
+        {
+          "title": "Savings and history reassure the bank",
+          "body": "Without EPF contributions to show, banks lean on savings proof such as CPF, EPF, fixed deposits, ASB or account balances. Weak savings or less than a year in the job can mean a margin cut from 90% to 80%, or a rejection."
+        }
+      ],
+      "actions": [
+        "Wait until you have at least a year of employment history in Singapore, and don't apply while on probation.",
+        "Prepare three months of payslips and bank statements, your CPF statement, an employment confirmation letter, your CBS report and, if you are a PR, your Notice of Assessment.",
+        "Get any payslip that isn't in English translated and certified.",
+        "Build visible savings before you apply.",
+        "Plan at least one trip back to Malaysia to sign and open the loan account."
+      ],
+      "caveat": "If you want an HDB flat, settle that first: Rena says HDB buyers can't own property overseas, and the rules change, so check HDB's current terms before buying in Malaysia. Converting money back to Singapore dollars also carries exchange-rate risk.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for episode 6 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (June 2023). The quoted answer is Rena's own words; everything else is paraphrased. Bank rules are as described in 2023 and differ between banks. Sean is a customer of FAR Capital, not its owner.",
+      "askingSeanEpisode": null,
+      "video": {
+        "id": "VC4FharQZNs",
+        "title": "DILEMMA OF MALAYSIANS WORKING IN SINGAPORE",
+        "duration": "55:41",
+        "url": "https://www.youtube.com/watch?v=VC4FharQZNs"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/singapore-income-malaysia-housing-loan"
     },
     {
       "id": "singapore-pr-malaysia-property",

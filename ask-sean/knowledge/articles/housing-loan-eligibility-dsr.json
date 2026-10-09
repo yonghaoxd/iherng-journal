@@ -1,0 +1,57 @@
+{
+  "id": "housing-loan-eligibility-dsr",
+  "series": "buyer-guides",
+  "title": "How much housing loan can I actually get?",
+  "excerpt": "Banks decide with one number, your debt service ratio. Rena Choong shows how to estimate your own loan eligibility before visiting a sales gallery, and what CCRIS and CTOS reveal.",
+  "date": "2022-08-18",
+  "tag": "Housing loans",
+  "question": {
+    "asker": "",
+    "context": "Sean's second step for every buyer is to find out how much they can borrow, yet many people avoid checking. In the second episode of his mortgage series, he asks Rena Choong, FAR Capital's head of mortgage, how banks work it out.",
+    "text": "How do banks decide how much housing loan you can get, and how can you work it out yourself before you start looking?"
+  },
+  "answer": {
+    "by": {
+      "name": "Rena Choong",
+      "role": "head of mortgage at FAR Capital"
+    },
+    "quote": "You should at least go and calculate your loan eligibility.",
+    "summary": "Banks use your debt service ratio: all your loan repayments, existing and new, divided by your net income. Work out your own figure first, so you only look at properties you can finance and don't collect rejections."
+  },
+  "reasons": [
+    {
+      "title": "The DSR limit rises with income",
+      "body": "Banks cap repayments at about 60% of net income for those earning under RM3,000 gross, 70% to 75% at RM3,000 to RM5,000, 75% to 80% above RM5,000, and up to 85% or 90% at some banks above RM10,000. Only debts in CCRIS count, such as housing, car, personal and PTPTN loans, credit cards and ASB financing; living costs and insurance don't."
+    },
+    {
+      "title": "A quick formula gives your limit",
+      "body": "Take 80% of gross income as net, apply the bank's DSR limit, subtract existing repayments, then multiply by 250 for a 35-year loan. On RM6,000 gross, RM4,800 at 75% is RM3,600; less RM500 of debts leaves RM3,100, or about RM775,000. The multiplier falls with age, to about 230, 220 and 210, because loans end at around 70."
+    },
+    {
+      "title": "Your repayment record sets your rate",
+      "body": "CCRIS shows the last 12 months, and each digit is the number of months in arrears; twos appearing more than once can sink an application. A weaker bank credit score still gets a loan, but at a higher rate, for example 3.4% or 3.5% instead of 3.3%."
+    },
+    {
+      "title": "Card balances count, not card limits",
+      "body": "Banks count 5% of your outstanding credit card balance as a monthly commitment, and instalment plans count in full, so a big purchase just before applying can tip your DSR. Rena advises keeping card use below 30% of the limit."
+    }
+  ],
+  "actions": [
+    "Get your free CCRIS report from Bank Negara (you register in person once), and consider a CTOS report, which also shows legal and trade records.",
+    "Calculate your DSR and loan eligibility before visiting sales galleries, and shortlist only properties within it.",
+    "Keep every repayment on time for at least the 12 months before you apply.",
+    "If your CCRIS is empty, take a credit card, spend a little and pay it off in full for about six months to build a record.",
+    "If you are self-employed or own over about 20% of a company, file and pay tax: banks will use your last two years of tax returns, not your payslip."
+  ],
+  "caveat": "Limits vary between banks and with Bank Negara rules; these are 2022 figures. A borderline DSR can sometimes still pass if you pledge a fixed deposit, while a poor repayment record can fail you even with eligibility to spare.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for episode 2 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (August 2022). The quoted answer is Rena's own words; everything else is paraphrased. DSR limits and rates are as stated in 2022 and differ between banks. Sean is a customer of FAR Capital, not its owner.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "6m2tuV6g9hE",
+    "title": "HOW TO CALCULATE YOUR LOAN ELIGIBILITY (EP 2)",
+    "duration": "37:13",
+    "url": "https://www.youtube.com/watch?v=6m2tuV6g9hE"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/housing-loan-eligibility-dsr"
+}

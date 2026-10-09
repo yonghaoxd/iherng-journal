@@ -1,0 +1,26 @@
+{
+  "id": "housing-loan-rejection-reasons",
+  "sourceHash": "3424b3d1a5e2",
+  "reviewed": false,
+  "aliases": [
+    "ccris",
+    "dsr",
+    "debt service ratio",
+    "akpk",
+    "ptptn",
+    "bankruptcy",
+    "restructured loan",
+    "refinancing",
+    "loan arrears",
+    "credit card balances",
+    "loan rejection",
+    "credit history"
+  ],
+  "questions": [
+    "What are the most common reasons a housing loan gets rejected?",
+    "How many months of arrears in CCRIS will cause a loan rejection?",
+    "Does restructuring a loan affect my chances of getting a housing loan?",
+    "How many banks should I apply to for a housing loan?",
+    "How do I improve my chances of loan approval after a rejection?"
+  ]
+}

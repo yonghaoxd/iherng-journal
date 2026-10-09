@@ -1,0 +1,57 @@
+{
+  "id": "lppsa-civil-servant-housing-loan",
+  "series": "buyer-guides",
+  "title": "I'm a civil servant. How should I use my LPPSA housing loan?",
+  "excerpt": "Civil servants can borrow from LPPSA on top of the usual bank loans. Rena Choong explains why the order you use them in matters, and the catches in LPPSA's terms.",
+  "date": "2022-11-16",
+  "tag": "Housing loans",
+  "question": {
+    "asker": "",
+    "context": "Civil servants can borrow from LPPSA, the government's housing loan scheme for public-sector staff, on top of the bank loans everyone else uses. In the fifth episode of his mortgage series, Sean asks Rena Choong how it works and when to use it.",
+    "text": "How does an LPPSA loan differ from a bank loan, and when should a civil servant use it?"
+  },
+  "answer": {
+    "by": {
+      "name": "Rena Choong",
+      "role": "head of mortgage at FAR Capital"
+    },
+    "quote": "Please don't use it for your first and second.",
+    "summary": "Use your two 90% bank loans first and keep LPPSA, which can finance 100%, for the third property. LPPSA repayments come off your payslip, so using it first lowers the net income banks see and leaves your next bank loan at 70%."
+  },
+  "reasons": [
+    {
+      "title": "The order changes your margins",
+      "body": "LPPSA doesn't appear in CCRIS, but its deduction shows on your payslip, and banks count it. Banks give 90% on your first two residential loans; use LPPSA first and your third property needs a 70% bank loan, whereas two bank loans first leave LPPSA's 100% for the third."
+    },
+    {
+      "title": "A fixed 4% over a very long term",
+      "body": "LPPSA charges a fixed 4%, close to banks' best rates of 3.7% to 3.8% at the time, and for those on the pension scheme it can run to age 90, against 70 or 75 at banks. But takaful cover is compulsory for the whole term, which becomes expensive if you borrow after about 45."
+    },
+    {
+      "title": "Full instalments start after two years",
+      "body": "On a property under construction, LPPSA deductions begin about 24 months after you borrow, and from then you pay the full instalment even if the building isn't finished. A bank charges only progressive interest on what it has released, so a long or delayed project costs more under LPPSA."
+    },
+    {
+      "title": "LPPSA has its own limits",
+      "body": "The maximum LPPSA loan is RM750,000 including takaful, and valuations by the government valuer tend to be conservative. If you leave government service, you must refinance with a commercial bank, and banks often don't recognise a civil servant's side income."
+    }
+  ],
+  "actions": [
+    "Check how much you can borrow with LPPSA's own online calculator, which works from a fixed table by gross income.",
+    "Take your first two residential properties with bank loans, and save LPPSA for the third.",
+    "Prefer completed properties or short builds when using LPPSA, since full instalments start after 24 months.",
+    "Apply online and submit the physical documents yourself, or pay a runner to handle them.",
+    "Send loan documents only through a company's official channels, never to a personal email address, and guard your IC number."
+  ],
+  "caveat": "This only suits civil servants whose income comfortably covers several loans and whose properties earn rent; Sean warns against borrowing more just because the facility exists. Rates and limits are as stated in November 2022.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for episode 5 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (November 2022). The quoted answer is Rena's own words; everything else is paraphrased. LPPSA rates and limits are as stated in 2022, so check LPPSA's current terms. Sean is a customer of FAR Capital, not its owner.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "q300PGWZXWI",
+    "title": "LPPSA for Government Sector Employees",
+    "duration": "45:04",
+    "url": "https://www.youtube.com/watch?v=q300PGWZXWI"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/lppsa-civil-servant-housing-loan"
+}
