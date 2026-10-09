@@ -23,6 +23,9 @@ import stalledProject from '@/content/articles/stalled-project-projek-sakit.json
 import discountTrap from '@/content/articles/discount-price-still-losing-money.json';
 import investingAt60 from '@/content/articles/investing-in-property-at-60.json';
 import secondPropertyVsEquities from '@/content/articles/second-property-vs-equities.json';
+import guruUnitsExit from '@/content/articles/property-guru-units-exit-plan.json';
+import unsoldUnits from '@/content/articles/unsold-units-near-completion.json';
+import leaseholdResale from '@/content/articles/leasehold-condo-resale-risk.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -52,6 +55,9 @@ export const articles = [
   earlyRepayment,
   guaranteedReturns,
   marketTiming,
+  guruUnitsExit,
+  unsoldUnits,
+  leaseholdResale,
 ];
 
 export type Article = (typeof articles)[number];
