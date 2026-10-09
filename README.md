@@ -28,7 +28,8 @@ npm run dev
 
 Property reviews are kept short: two sections, "What sets it apart" (what this
 project has that others don't, with Sean's figures) and "Where it is" (the
-location as Sean describes it), then "Sean's Take 3 on 3", the heart of the
+location as Sean describes it), an optional "Rent and returns" when Sean
+discusses rent, then "Sean's Take 3 on 3", the heart of the
 review. Every review episode ends with Sean naming three things he likes and
 three he doesn't; the 3 on 3 follows that list, in his order and with his
 specifics, and the page labels it "What Sean likes" and "What Sean doesn't".

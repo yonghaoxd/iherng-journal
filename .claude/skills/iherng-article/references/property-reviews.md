@@ -10,12 +10,17 @@ skim reviews, and the embedded episode carries the detail.
 number in the video title. Copy the fields of an existing review such as
 `sunway-dhill-kota-damansara.json`.
 
-- `sections`: exactly two, each 1–2 short paragraphs (about 130–150 words in
-  all):
+- `sections`: two, each 1–2 short paragraphs (about 130–150 words in all), plus
+  an optional third:
   1. **"What sets it apart"**: the features that distinguish this project, with
-     Sean's figures (units, sizes, layout, price and psf, rent if he gives it).
+     Sean's figures (units, sizes, layout, price and psf).
   2. **"Where it is"**: the location as Sean describes it: roads, transit,
      schools, malls, neighbours, and anything he flags about the surroundings.
+  3. **"Rent and returns"**, only when Sean talks about it: rents he quotes (say
+     who gave the figure, e.g. the developer's team), who rents there, whether
+     rent covers the instalment, subsale or capital-gain figures, investor tips,
+     and whether he sees it as own-stay or investment. If he doesn't discuss
+     rent, leave this section out rather than guess.
 - `seanTake`: `pros` and `cons`, three each. Every review episode ends with
   "Sean's take three on three": three things he likes, then three he doesn't.
   Find that segment near the end of the transcript and follow it **in his
