@@ -69,16 +69,20 @@ function problems(testCase: EvalCase, result: AskResult): string[] {
   const uncited = paragraphs.filter((paragraph) => !MARKER.test(paragraph)).length;
   if (uncited) found.push(`${uncited} paragraph(s) without a citation`);
 
-  const years = result.citations.map(({ article }) => article.date.slice(0, 4));
-  if (years.length && !years.some((year) => result.body.includes(year))) found.push("no year given for Sean's view");
-
-  const notesOnly = result.citations.some(({ article }) => article.basis === "episode-notes");
-  if (notesOnly && !/video|episode|视频|节目/i.test(result.body)) {
-    found.push("notes-only source without pointing to the video");
+  // Answers go straight to the solution; the source card shows the episode and its date.
+  const background = result.body.match(
+    /(19|20)\d{2}\s*年|节目|这一?集|那一?集|Asking Sean #|episode|一位.{0,15}(观众|买家|租房者|夫妇|读者)/i,
+  );
+  if (background) found.push(`mentions the episode or viewer ("${background[0]}")`);
+  for (const { article } of result.citations) {
+    const name = article.question.asker.split(/[\s,]/)[0].replace(/\.$/, "");
+    if (name.length >= 2 && new RegExp(`(^|[^A-Za-z])${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z]|$)`).test(result.body)) {
+      found.push(`names the viewer ("${name}")`);
+    }
   }
 
   // Direct advice is wanted, but it must read as Sean's, not the bot's own.
-  if (!/Sean/.test(result.body)) found.push("advice not attributed to Sean");
+  if (!/Sean/.test(`${result.tldr}\n${result.body}`)) found.push("advice not attributed to Sean");
   if ((result.body.match(CJK) ?? []).length < 50) found.push("not written in Chinese");
   return found;
 }

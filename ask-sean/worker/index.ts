@@ -9,6 +9,7 @@
  *   GET  /api/health
  */
 import bundleJson from "../knowledge/bundle.json";
+import { ANSWER_STYLE } from "../lib/answer";
 import { ask, checkQuestion } from "../lib/ask";
 import type { FollowUp } from "../lib/router";
 import { normalizeQuestion, REUSE_THRESHOLD, similarity } from "../lib/similar";
@@ -43,7 +44,9 @@ const knowledge: Knowledge = {
   catalog: bundle.catalog,
   articles: new Map(bundle.articles.map((article) => [article.id, article])),
 };
-const KB_VERSION = bundle.catalog.version;
+// Stored with every answer; an answer is only reused when both the knowledge base
+// and the answer style match, so changing either stops old answers being served.
+const KB_VERSION = `${bundle.catalog.version}:${ANSWER_STYLE}`;
 
 /** How many recent questions to compare a new one against when looking for a reusable answer. */
 const REUSE_CANDIDATES = 500;
