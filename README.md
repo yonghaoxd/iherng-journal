@@ -1,6 +1,6 @@
 # iherng Journal
 
-A responsive editorial reading companion to iherng's YouTube channel, with six property-review articles, nine Asking Sean podcast articles, and nine buyer guides.
+A responsive editorial reading companion to iherng's YouTube channel, with six property-review articles, ten Asking Sean podcast articles, and nine buyer guides.
 
 ## Run locally
 

@@ -22,6 +22,7 @@ import parentsPayingHalf from '@/content/articles/parents-paying-half-for-house.
 import stalledProject from '@/content/articles/stalled-project-projek-sakit.json';
 import discountTrap from '@/content/articles/discount-price-still-losing-money.json';
 import investingAt60 from '@/content/articles/investing-in-property-at-60.json';
+import secondPropertyVsEquities from '@/content/articles/second-property-vs-equities.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -29,6 +30,7 @@ export const articles = [
   cempaka,
   avisa,
   // iherng Podcast, newest episode first; series pages keep this order.
+  secondPropertyVsEquities,
   newBaby,
   cancelledBooking,
   parentsPayingHalf,
