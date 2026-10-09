@@ -40,6 +40,7 @@ import singaporeIncomeLoan from '@/content/articles/singapore-income-malaysia-ho
 import timurbay from '@/content/articles/timurbay-seafront-residence-kuantan.json';
 import teja from '@/content/articles/teja-subang-jaya.json';
 import selayangMulia from '@/content/articles/selayang-mulia-selayang.json';
+import metaResidences from '@/content/articles/meta-residences-seri-kembangan.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -51,6 +52,7 @@ export const articles = [
   sunwayDhill,
   allevia,
   avisa,
+  metaResidences,
   manor,
   cempaka,
   // iherng Podcast, newest episode first; series pages keep this order.
