@@ -1,6 +1,6 @@
 # iherng Journal
 
-A responsive editorial reading companion to iherng's YouTube channel, with six property-review articles, thirteen Asking Sean podcast articles, and twenty buyer guides.
+A responsive editorial reading companion to iherng's YouTube channel, with nine property-review articles, thirteen Asking Sean podcast articles, and twenty buyer guides.
 
 ## Run locally
 
@@ -143,7 +143,7 @@ The original six video IDs, titles, publication timestamps, durations and thumbn
 
 On 6 October 2026 all twelve iherng Podcast and Buyer Guide articles were rewritten in the problem-and-answer format from Sean's full English captions. Six of them had previously been written without a transcript: the three podcast episodes, whose earlier caption fetch returned nothing, and three guides based only on their titles. Their captions were retrieved with yt-dlp and cleaned with `scripts/clean_youtube_vtt.py`. Older automatic captions (2017 to 2020) are unclear in places, so those articles include only clearly stated points. Captions spell ringgit amounts as spoken, so "2008" means RM2,800, which Sean's own arithmetic in the episodes confirms. Publication dates use Malaysia time (MYT).
 
-Three further property reviews—Dedaun Rimba, Sunway D'Hill and Allevia—were verified on 9 September 2026 using their public YouTube metadata and English captions. On 9 October 2026 all six reviews were rewritten from Sean's full English captions, which were then available for every episode, in the shorter format described under Article formats; each 3 on 3 now follows the list Sean gives at the end of the video, and source notes say where the developer's team or an owner hosted the visit. Every article states its source basis and links to the original episode. No current asking prices or investment returns have been inferred.
+Three further property reviews—Dedaun Rimba, Sunway D'Hill and Allevia—were verified on 9 September 2026 using their public YouTube metadata and English captions. On 9 October 2026 all six reviews were rewritten from Sean's full English captions, which were then available for every episode, in the shorter format described under Article formats; each 3 on 3 now follows the list Sean gives at the end of the video, and source notes say where the developer's team or an owner hosted the visit. Timurbay Seafront Residence, Teja and Selayang Mulia (reviews #472 to #474) were added the same day in that format. Every article states its source basis and links to the original episode. Prices, rents and returns are only those Sean quotes in the episode, attributed where he names a source; none are inferred.
 
 The site is labelled as an independent editorial prototype. Thumbnails are served from YouTube and videos are embedded through youtube-nocookie.com; both require external network access. Original videos may impose their own playback restrictions. Every embed has a direct YouTube fallback link.
 

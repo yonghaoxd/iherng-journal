@@ -37,12 +37,22 @@ import loanRejections from '@/content/articles/housing-loan-rejection-reasons.js
 import loanMistakesByIncome from '@/content/articles/loan-application-mistakes-by-income.json';
 import lppsaLoan from '@/content/articles/lppsa-civil-servant-housing-loan.json';
 import singaporeIncomeLoan from '@/content/articles/singapore-income-malaysia-housing-loan.json';
+import timurbay from '@/content/articles/timurbay-seafront-residence-kuantan.json';
+import teja from '@/content/articles/teja-subang-jaya.json';
+import selayangMulia from '@/content/articles/selayang-mulia-selayang.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
+  // Property reviews, newest first; the homepage and series page keep this order.
+  timurbay,
+  teja,
+  selayangMulia,
+  dedaunRimba,
+  sunwayDhill,
+  allevia,
+  avisa,
   manor,
   cempaka,
-  avisa,
   // iherng Podcast, newest episode first; series pages keep this order.
   secondPropertyVsEquities,
   newBaby,
@@ -60,9 +70,6 @@ export const articles = [
   defects,
   channels,
   hiddenCosts,
-  dedaunRimba,
-  sunwayDhill,
-  allevia,
   propertyResearch,
   ownStay,
   oldVsNew,
