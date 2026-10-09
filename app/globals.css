@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+/* The chatbot's code and knowledge files are not site markup; don't mine them for class names. */
+@source not '../ask-sean';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
