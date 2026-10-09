@@ -104,7 +104,8 @@ Series pages filter by a fixed, short list so the filter doesn't grow with every
 article: property reviews by `propertyType` (Landed or High-Rise) and by
 `stage` (`show-unit` if Sean filmed a show unit while the project was being
 built, `completed` if he saw the finished project; show-unit reviews also carry a
-badge and a note saying so), podcast and
+badge and a note saying so) and by `state` (from `content/states.json`; only
+states with a review appear), podcast and
 buyer guide articles by `category`, one of the six ids in
 `content/categories.json` (Loans & finance, Buying process, Choosing a home,
 Investing & risk, Family & life stage, Retirement & legacy). Each article's

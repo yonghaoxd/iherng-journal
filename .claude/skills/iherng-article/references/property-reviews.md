@@ -20,6 +20,11 @@ the title. It is the stage at filming, not today. Show-unit reviews get a
 badge and a note on the page that the project was still being built, and the
 series page filters by it.
 
+`state` is the project's state or federal territory, exactly as listed in
+`content/states.json` (e.g. `Kuala Lumpur`, `Selangor`, `Negeri Sembilan`), and
+`location` ends with it: `"location": "Subang Jaya, Selangor"`, `"state":
+"Selangor"`. The State filter shows only states that have a review.
+
 - `sections`: two, each 1–2 short paragraphs (about 130–150 words in all), plus
   an optional third:
   1. **"What sets it apart"**: the features that distinguish this project, with

@@ -8,7 +8,9 @@
  *   as articles are added; a new topic means editing that file on purpose.
  * - Property reviews need a `propertyType` of Landed or High-Rise, and a
  *   `stage`: `show-unit` if Sean filmed a show unit while the project was
- *   being built, `completed` if he saw the finished project.
+ *   being built, `completed` if he saw the finished project. Their `state`
+ *   must be in content/states.json and end their `location`
+ *   ("Subang Jaya, Selangor" has state "Selangor").
  * - Every article file is registered in lib/articles.ts, and slugs and video
  *   IDs are unique.
  */
@@ -27,6 +29,7 @@ const CATEGORY_IDS = readJson(
 ).map((category) => category.id);
 const PROPERTY_TYPES = ['Landed', 'High-Rise'];
 const STAGES = ['show-unit', 'completed'];
+const STATES = readJson(path.join(ROOT, 'content', 'states.json'));
 const registry = fs.readFileSync(path.join(ROOT, 'lib', 'articles.ts'), 'utf8');
 
 const problems = [];
@@ -49,6 +52,15 @@ for (const file of fs
     if (!STAGES.includes(article.stage)) {
       problems.push(
         `${where}: stage must be ${STAGES.join(' or ')} (what Sean filmed), not "${article.stage}"`,
+      );
+    }
+    if (!STATES.includes(article.state)) {
+      problems.push(
+        `${where}: state must be one of content/states.json, not "${article.state}"`,
+      );
+    } else if (article.location.split(',').pop().trim() !== article.state) {
+      problems.push(
+        `${where}: location "${article.location}" should end with its state, "${article.state}"`,
       );
     }
   } else if (!CATEGORY_IDS.includes(article.category)) {

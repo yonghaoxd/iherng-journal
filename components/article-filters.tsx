@@ -8,6 +8,8 @@ import {
   propertyTypes,
   stages,
   stageFor,
+  states,
+  stateFor,
   viewsFor,
   viewsAsOf,
   type Article,
@@ -61,6 +63,13 @@ const FACETS: Record<
       ariaLabel: 'Project stage filters',
       options: stages.map(({ id, label }) => ({ value: id, label })),
       valueOf: (article) => stageFor(article)?.id,
+    },
+    {
+      key: 'state',
+      label: 'State',
+      ariaLabel: 'State filters',
+      options: states.map((state) => ({ value: state, label: state })),
+      valueOf: stateFor,
     },
   ],
   category: [
@@ -234,6 +243,10 @@ export function ArticleFilterGrid({
                   type="button"
                   role="tab"
                   aria-selected={chosen(facet) === option.value}
+                  // Nothing to show with the other filters as they are.
+                  disabled={
+                    option.count === 0 && chosen(facet) !== option.value
+                  }
                   onClick={() =>
                     setSelected((current) => ({
                       ...current,

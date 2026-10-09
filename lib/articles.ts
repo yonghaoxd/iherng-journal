@@ -58,6 +58,7 @@ import nestree from '@/content/articles/nestree-residence-pantai-sentral-park.js
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
+import stateList from '@/content/states.json';
 
 export const articles = [
   // Property reviews, newest first; the homepage and series page keep this order.
@@ -198,6 +199,19 @@ export const stages = [
 ] as const;
 
 export type Stage = (typeof stages)[number];
+
+/**
+ * Malaysia's states and federal territories, in the order the State filter
+ * lists them. A review's `state` must be one of these and end its `location`;
+ * check-content.mjs enforces both.
+ */
+export const states = stateList;
+
+export function stateFor(article: Article): string | undefined {
+  return 'state' in article && typeof article.state === 'string'
+    ? article.state
+    : undefined;
+}
 
 export function stageFor(article: Article): Stage | undefined {
   const id = 'stage' in article ? article.stage : undefined;

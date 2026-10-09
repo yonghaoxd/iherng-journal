@@ -1575,9 +1575,14 @@ p {
     border-color 0.15s ease;
 }
 
-.tag-pill:hover {
+.tag-pill:hover:not(:disabled) {
   color: var(--text-main);
   background: var(--bg-muted);
+}
+
+.tag-pill:disabled {
+  opacity: 0.35;
+  cursor: default;
 }
 
 .tag-pill:focus-visible {
