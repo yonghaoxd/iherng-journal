@@ -4,7 +4,7 @@ import { AskSeanChat } from '@/components/ask-sean-chat';
 import { JsonLd } from '@/components/json-ld';
 import { DEFAULT_OG_IMAGE, SITE_NAME, breadcrumbJsonLd } from '@/lib/seo';
 
-const TITLE = 'Ask Sean — 问 Sean';
+const TITLE = 'Asking Sean — 问问 Sean';
 const DESCRIPTION =
   '用中文问马来西亚买房问题，AI 根据 iherng Journal 整理的 Asking Sean 节目和 Buyer Guides 回答，每个回答都附原文和原视频。';
 
@@ -35,14 +35,14 @@ export default function AskPage() {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
-          { name: 'Ask Sean', path: '/ask' },
+          { name: 'Asking Sean', path: '/ask' },
         ])}
       />
 
       <div className="breadcrumb">
         <Link href="/">Home</Link>
         <span className="slash">/</span>
-        <span className="active">Ask Sean</span>
+        <span className="active">Asking Sean</span>
       </div>
 
       <section className="series-hero-banner">
@@ -51,7 +51,7 @@ export default function AskPage() {
           <span>AI 问答 · 根据 SEAN 的节目</span>
         </div>
         <h1 className="series-heading">
-          问 Sean
+          问问 Sean
           <span className="orange-dot">.</span>
         </h1>
         <div className="series-intro-row">

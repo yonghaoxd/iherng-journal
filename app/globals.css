@@ -247,7 +247,8 @@ p {
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  /* Six items, with icons and the full channel label, must fit the 1320px header. */
+  gap: 18px;
 }
 
 .nav-item {
@@ -303,6 +304,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
   padding: 9px 15px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
