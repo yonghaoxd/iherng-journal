@@ -44,7 +44,7 @@ def fetch(video_id: str, folder: pathlib.Path) -> None:
     if not vtt.exists():
         subprocess.run(
             [str(PYTHON), "-m", "yt_dlp", "--skip-download", "--write-auto-subs", "--write-subs",
-             "--sub-langs", "en-orig", "--sub-format", "vtt", "--write-info-json", "--no-warnings",
+             "--sub-langs", "en-orig", "--sub-format", "vtt", "--write-info-json", "--no-warnings", "--quiet",
              "-o", str(folder / "%(id)s.%(ext)s"), f"https://www.youtube.com/watch?v={video_id}"],
             check=False,
         )

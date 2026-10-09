@@ -71,11 +71,13 @@ punctuation and mishear words, so read for meaning:
   "B purchase" = bulk purchase, "Jalamong Kiara" = Jalan Mont Kiara). Use the
   correct term in paraphrase, but leave out anything you can't identify with
   confidence.
-- Note any sponsor, partnership or personal stake Sean declares in the episode
-  (for example, being a client of a bulk-purchase club, or owning a unit in the
-  project discussed). The article must say so, in `sourceNote`, as
+- Note any sponsor, partnership or personal stake Sean declares that touches the
+  advice (for example, being a client of a bulk-purchase club, owning a unit in
+  the project discussed, or recommending a company his channel promotes). The
+  article must say so, in `sourceNote`, as
   `property-research-before-buying.json` does ("Sean is a customer of FAR
-  Capital, not its owner").
+  Capital, not its owner"). A sponsor of an unrelated product, such as a
+  water filter read out at the start, needs no mention.
 
 ### 3. Write the article JSON
 
