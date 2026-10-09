@@ -310,7 +310,7 @@ export function AskSeanChat() {
         </div>
         <p className="askbot-disclaimer">
           问答会公开显示，但不记名，请不要写电话、地址等个人资料。回答由 AI 根据 iherng Journal 的文章整理，不是 Sean
-          本人回复，也不构成理财建议；数字以节目录制时为准。每人每天可以问 3 个问题（马来西亚时间午夜重置），看别人问过的不限次数。
+          本人回复，也不构成理财建议；数字以节目录制时为准。
         </p>
       </section>
 

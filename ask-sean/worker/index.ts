@@ -198,19 +198,22 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
     }
   }
 
-  const ipHash = await hashIp(request, env);
   const day = today();
-  const used = await env.DB.prepare("SELECT count FROM rate_limits WHERE ip_hash = ? AND day = ?")
-    .bind(ipHash, day)
-    .first<number>("count");
-  const limit = Number(env.DAILY_NEW_ANSWERS_PER_IP);
-  if ((used ?? 0) >= limit) {
-    return fail(
-      request,
-      env,
-      429,
-      `今天的 ${limit} 次提问已经用完，马来西亚时间午夜 12 点后重置。看别人问过的问题不受限制。`,
-    );
+  // 0 (the current setting) means no per-visitor limit; DAILY_BUDGET_USD still caps spending.
+  const limit = Number(env.DAILY_NEW_ANSWERS_PER_IP) || 0;
+  const ipHash = limit > 0 ? await hashIp(request, env) : null;
+  if (ipHash) {
+    const used = await env.DB.prepare("SELECT count FROM rate_limits WHERE ip_hash = ? AND day = ?")
+      .bind(ipHash, day)
+      .first<number>("count");
+    if ((used ?? 0) >= limit) {
+      return fail(
+        request,
+        env,
+        429,
+        `今天的 ${limit} 次提问已经用完，马来西亚时间午夜 12 点后重置。看别人问过的问题不受限制。`,
+      );
+    }
   }
 
   const spent = await env.DB.prepare("SELECT COALESCE(SUM(cost_usd), 0) AS spent FROM questions WHERE created_at >= ?")
@@ -273,10 +276,14 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
       row.created_at,
       row.last_asked_at,
     ),
-    env.DB.prepare(
-      `INSERT INTO rate_limits (ip_hash, day, count) VALUES (?, ?, 1)
-       ON CONFLICT (ip_hash, day) DO UPDATE SET count = count + 1`,
-    ).bind(ipHash, day),
+    ...(ipHash
+      ? [
+          env.DB.prepare(
+            `INSERT INTO rate_limits (ip_hash, day, count) VALUES (?, ?, 1)
+             ON CONFLICT (ip_hash, day) DO UPDATE SET count = count + 1`,
+          ).bind(ipHash, day),
+        ]
+      : []),
   ]);
 
   return json(request, env, present(row, { reused: false }));
