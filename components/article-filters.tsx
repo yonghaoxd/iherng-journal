@@ -9,7 +9,7 @@ import {
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
 import { SortMenu, type SortOrder } from '@/components/sort-menu';
-import { Search, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { Search, SlidersHorizontal } from 'lucide-react';
 
 interface ArticleFilterGridProps {
   articles: Article[];
@@ -99,7 +99,7 @@ export function ArticleFilterGrid({
           <Search size={16} className="search-icon" />
           <input
             type="search"
-            placeholder="Search topics, properties, advice..."
+            placeholder="Search stories…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="search-input"
@@ -117,36 +117,38 @@ export function ArticleFilterGrid({
           )}
         </div>
 
-        <div className="filter-actions">
-          <div
-            className="tag-pills"
-            role="tablist"
-            aria-label={
-              filterMode === 'propertyType'
-                ? 'Property type filters'
-                : 'Topic filters'
-            }
-          >
-            {tags.map((tag) => (
-              <button
-                key={tag}
-                type="button"
-                role="tab"
-                aria-selected={selectedTag === tag}
-                onClick={() => setSelectedTag(tag)}
-                className={`tag-pill ${selectedTag === tag ? 'active' : ''}`}
-              >
-                {tag === 'All' && <Sparkles size={12} className="pill-icon" />}
-                {tag}
-              </button>
-            ))}
-          </div>
+        <SortMenu
+          value={sortOrder}
+          onChange={setSortOrder}
+          seriesOrderLabel={seriesOrderLabel}
+        />
+      </div>
 
-          <SortMenu
-            value={sortOrder}
-            onChange={setSortOrder}
-            seriesOrderLabel={seriesOrderLabel}
-          />
+      <div className="topic-bar">
+        <span className="topic-bar-label" aria-hidden="true">
+          {filterMode === 'propertyType' ? 'Type' : 'Topics'}
+        </span>
+        <div
+          className="tag-pills"
+          role="tablist"
+          aria-label={
+            filterMode === 'propertyType'
+              ? 'Property type filters'
+              : 'Topic filters'
+          }
+        >
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              type="button"
+              role="tab"
+              aria-selected={selectedTag === tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`tag-pill ${selectedTag === tag ? 'active' : ''}`}
+            >
+              {tag}
+            </button>
+          ))}
         </div>
       </div>
 
