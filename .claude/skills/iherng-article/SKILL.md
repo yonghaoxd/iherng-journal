@@ -1,6 +1,6 @@
 ---
 name: iherng-article
-description: Write a new iherng Journal article for the iherng Podcast or Buyer Guides series from one of Sean Tan's (iherng) YouTube videos, in the Journal's "Ask Sean" question-and-answer format, from the full English captions, with a verbatim quote check, registration, build, and commit. Use this whenever the user asks to add, write, publish or rewrite a podcast or buyer guide article, turn an Asking Sean episode or an iherng video into an article, "add N more articles", fill the Buyer Guides or iherng Podcast series, or fix an article's summary, even if they only paste a YouTube link or say "加多几篇 article". Not for property reviews (those keep the chaptered format) or for the Ask Sean chatbot's knowledge base.
+description: Write a new iherng Journal article for the iherng Podcast or Buyer Guides series from one of Sean Tan's (iherng) YouTube videos, in the Journal's "Ask Sean" question-and-answer format, from the full English captions, with a verbatim quote check, registration, build, and commit. Use this whenever the user asks to add, write, publish or rewrite a podcast or buyer guide article, turn an Asking Sean episode or an iherng video into an article, "add N more articles", fill the Buyer Guides or iherng Podcast series, or fix an article's summary, even if they only paste a YouTube link or say "加多几篇 article". Also covers adding or rewriting a Property Review (short sections plus Sean's 3 on 3; see references/property-reviews.md). Not for the Ask Sean chatbot's knowledge base.
 ---
 
 # Writing an iherng Journal article
@@ -178,6 +178,13 @@ npx.cmd wrangler pages deploy dist/client --project-name iherng-journal --branch
 On macOS or Linux, use `npx` in place of `npx.cmd`. After deploying, load
 `https://iherng-journal.pages.dev/articles/<slug>` to confirm it is live. The
 chatbot's daily workflow picks new articles up from the live site on its own.
+
+## Property reviews
+
+Reviews use a different shape from the Q&A articles. Read
+`references/property-reviews.md` before writing or rewriting one; fetch its
+captions with `--series property-reviews` (add `--rewrite` for an existing
+review, and put the video IDs after `--` when one starts with a dash).
 
 ## Reporting back
 

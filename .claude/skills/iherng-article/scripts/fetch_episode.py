@@ -1,6 +1,7 @@
 """Fetch one of Sean's videos for an iherng Journal article and print what the article needs.
 
     python .claude/skills/iherng-article/scripts/fetch_episode.py VIDEO_ID [VIDEO_ID ...] --series buyer-guides
+    (add --rewrite to fetch a video that already has an article)
 
 For each video this downloads Sean's own English captions (en-orig) and the
 metadata into the transcript folder that scripts/verify_quotes.py reads,
@@ -24,7 +25,11 @@ import sys
 import time
 
 ROOT = pathlib.Path(__file__).resolve().parents[4]
-FOLDERS = {"iherng-podcast": ".research/podcast", "buyer-guides": ".research/buyer-guides"}
+FOLDERS = {
+    "iherng-podcast": ".research/podcast",
+    "buyer-guides": ".research/buyer-guides",
+    "property-reviews": ".research/reviews",
+}
 PYTHON = ROOT / "ask-sean" / ".venv" / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
 MYT = dt.timezone(dt.timedelta(hours=8))
 GUEST_HINTS = re.compile(r"\b(lawyer|shout[- ]?out to|special thanks|with (?:mr|ms|dr|datuk|dato)\b|guest|panel|keynote|forum|interview)", re.I)
@@ -72,6 +77,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("video_ids", nargs="+")
     parser.add_argument("--series", choices=sorted(FOLDERS), required=True)
+    parser.add_argument("--rewrite", action="store_true", help="fetch even if an article already exists, to rewrite it")
     args = parser.parse_args()
 
     if not PYTHON.exists():
@@ -81,7 +87,7 @@ def main() -> None:
     covered = covered_video_ids()
 
     for index, video_id in enumerate(args.video_ids):
-        if video_id in covered:
+        if video_id in covered and not args.rewrite:
             print(f"\n{video_id}: already published as /articles/{covered[video_id]}; skipping")
             continue
         if index:

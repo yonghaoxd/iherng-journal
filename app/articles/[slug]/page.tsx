@@ -280,13 +280,13 @@ export default async function ArticlePage({
               <div className="sean-take-header">
                 <span className="sean-take-badge">SEAN&apos;S TAKE</span>
                 <h2 className="sean-take-title">3 on 3</h2>
-                <p className="sean-take-subtitle">Three reasons to consider this home. Three things worth watching.</p>
+                <p className="sean-take-subtitle">The three things Sean likes and the three he doesn&apos;t, from his own list at the end of the episode.</p>
               </div>
               <div className="sean-take-grid">
                 <div className="sean-take-col pros">
                   <div className="take-col-label">
                     <ThumbsUp size={16} />
-                    <span>WORTH CONSIDERING</span>
+                    <span>WHAT SEAN LIKES</span>
                   </div>
                   <ul className="take-list">
                     {(article as typeof article & { seanTake: { pros: string[]; cons: string[] } }).seanTake.pros.map((pro, i) => (
@@ -300,7 +300,7 @@ export default async function ArticlePage({
                 <div className="sean-take-col cons">
                   <div className="take-col-label">
                     <ThumbsDown size={16} />
-                    <span>WORTH WATCHING</span>
+                    <span>WHAT SEAN DOESN&apos;T</span>
                   </div>
                   <ul className="take-list">
                     {(article as typeof article & { seanTake: { pros: string[]; cons: string[] } }).seanTake.cons.map((con, i) => (

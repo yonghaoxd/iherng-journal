@@ -26,7 +26,12 @@ npm run dev
 
 ## Article formats
 
-Property reviews keep chaptered prose with "Sean's Take 3 on 3".
+Property reviews are kept short: two sections, "What sets it apart" (what this
+project has that others don't, with Sean's figures) and "Where it is" (the
+location as Sean describes it), then "Sean's Take 3 on 3", the heart of the
+review. Every review episode ends with Sean naming three things he likes and
+three he doesn't; the 3 on 3 follows that list, in his order and with his
+specifics, and the page labels it "What Sean likes" and "What Sean doesn't".
 
 The iherng Podcast and Buyer Guides series use a problem-and-answer format
 instead, because readers arrive with a specific question. Each of those
@@ -133,11 +138,11 @@ Article pages use the episode's own YouTube thumbnail instead.
 
 ## Editorial provenance
 
-The original six video IDs, titles, publication timestamps, durations and thumbnail URLs were verified against YouTube on 8 September 2026. Captions were unavailable at the time, so the three original property reviews stay within Sean's public episode descriptions; Manor Born and Cempaka Seri also reference their linked Pokok.Asia write-ups.
+The original six video IDs, titles, publication timestamps, durations and thumbnail URLs were verified against YouTube on 8 September 2026. Captions were unavailable at the time, so the three original property reviews were first written from Sean's public episode descriptions.
 
 On 6 October 2026 all twelve iherng Podcast and Buyer Guide articles were rewritten in the problem-and-answer format from Sean's full English captions. Six of them had previously been written without a transcript: the three podcast episodes, whose earlier caption fetch returned nothing, and three guides based only on their titles. Their captions were retrieved with yt-dlp and cleaned with `scripts/clean_youtube_vtt.py`. Older automatic captions (2017 to 2020) are unclear in places, so those articles include only clearly stated points. Captions spell ringgit amounts as spoken, so "2008" means RM2,800, which Sean's own arithmetic in the episodes confirms. Publication dates use Malaysia time (MYT).
 
-Three further property reviews—Dedaun Rimba, Sunway D'Hill and Allevia—were verified on 9 September 2026 using their public YouTube metadata and English captions. Each includes a “Sean's Take 3 on 3” that paraphrases the three strengths and three concerns presented in the corresponding review. Every article states its source basis and links to the original episode. No current asking prices or investment returns have been inferred.
+Three further property reviews—Dedaun Rimba, Sunway D'Hill and Allevia—were verified on 9 September 2026 using their public YouTube metadata and English captions. On 9 October 2026 all six reviews were rewritten from Sean's full English captions, which were then available for every episode, in the shorter format described under Article formats; each 3 on 3 now follows the list Sean gives at the end of the video, and source notes say where the developer's team or an owner hosted the visit. Every article states its source basis and links to the original episode. No current asking prices or investment returns have been inferred.
 
 The site is labelled as an independent editorial prototype. Thumbnails are served from YouTube and videos are embedded through youtube-nocookie.com; both require external network access. Original videos may impose their own playback restrictions. Every embed has a direct YouTube fallback link.
 
