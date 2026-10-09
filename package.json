@@ -10,6 +10,7 @@
     "prebuild": "node scripts/generate-seo-assets.mjs",
     "build": "vinext build",
     "seo": "node scripts/generate-seo-assets.mjs",
+    "views": "node scripts/fetch-view-counts.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"

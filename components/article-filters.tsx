@@ -1,14 +1,56 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { keyPointsFor, type Article } from '@/lib/articles';
+import {
+  keyPointsFor,
+  viewsFor,
+  viewsAsOf,
+  type Article,
+} from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
-import { Search, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { Search, Sparkles, SlidersHorizontal, ArrowDownUp } from 'lucide-react';
 
 interface ArticleFilterGridProps {
   articles: Article[];
   availableTags?: string[];
   filterMode?: 'tag' | 'propertyType';
+  /** Label for the series' own order (e.g. "Guide order"); when set, it is the default sort. */
+  seriesOrderLabel?: string;
+}
+
+type SortOrder =
+  | 'series'
+  | 'latest'
+  | 'oldest'
+  | 'most-viewed'
+  | 'least-viewed';
+
+const SORT_LABELS: Record<Exclude<SortOrder, 'series'>, string> = {
+  latest: 'Latest first',
+  oldest: 'Oldest first',
+  'most-viewed': 'Most viewed',
+  'least-viewed': 'Least viewed',
+};
+
+/** Ties, and videos without a view count yet, keep the series' own order. */
+function sortArticles(list: Article[], order: SortOrder) {
+  if (order === 'series') return list;
+  const indexed = list.map((article, index) => ({ article, index }));
+  indexed.sort((a, b) => {
+    let diff = 0;
+    if (order === 'latest') diff = b.article.date.localeCompare(a.article.date);
+    else if (order === 'oldest')
+      diff = a.article.date.localeCompare(b.article.date);
+    else {
+      const va = viewsFor(a.article);
+      const vb = viewsFor(b.article);
+      if (va === undefined || vb === undefined)
+        diff = (va === undefined ? 1 : 0) - (vb === undefined ? 1 : 0);
+      else diff = order === 'most-viewed' ? vb - va : va - vb;
+    }
+    return diff || a.index - b.index;
+  });
+  return indexed.map(({ article }) => article);
 }
 
 function propertyTypeFor(article: Article) {
@@ -21,8 +63,11 @@ export function ArticleFilterGrid({
   articles,
   availableTags,
   filterMode = 'tag',
+  seriesOrderLabel,
 }: ArticleFilterGridProps) {
+  const defaultOrder: SortOrder = seriesOrderLabel ? 'series' : 'latest';
   const [selectedTag, setSelectedTag] = useState<string>('All');
+  const [sortOrder, setSortOrder] = useState<SortOrder>(defaultOrder);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const tags = useMemo(() => {
@@ -38,7 +83,7 @@ export function ArticleFilterGrid({
   }, [articles, availableTags, filterMode]);
 
   const filtered = useMemo(() => {
-    return articles.filter((article) => {
+    const matches = articles.filter((article) => {
       const filterValue =
         filterMode === 'propertyType' ? propertyTypeFor(article) : article.tag;
       const matchesTag = selectedTag === 'All' || filterValue === selectedTag;
@@ -55,7 +100,10 @@ export function ArticleFilterGrid({
 
       return matchesTag && matchesQuery;
     });
-  }, [articles, filterMode, selectedTag, searchQuery]);
+    return sortArticles(matches, sortOrder);
+  }, [articles, filterMode, selectedTag, searchQuery, sortOrder]);
+
+  const byViews = sortOrder === 'most-viewed' || sortOrder === 'least-viewed';
 
   return (
     <div className="filter-system">
@@ -82,39 +130,79 @@ export function ArticleFilterGrid({
           )}
         </div>
 
-        <div
-          className="tag-pills"
-          role="tablist"
-          aria-label={filterMode === 'propertyType' ? 'Property type filters' : 'Topic filters'}
-        >
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              role="tab"
-              aria-selected={selectedTag === tag}
-              onClick={() => setSelectedTag(tag)}
-              className={`tag-pill ${selectedTag === tag ? 'active' : ''}`}
+        <div className="filter-actions">
+          <div
+            className="tag-pills"
+            role="tablist"
+            aria-label={
+              filterMode === 'propertyType'
+                ? 'Property type filters'
+                : 'Topic filters'
+            }
+          >
+            {tags.map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                role="tab"
+                aria-selected={selectedTag === tag}
+                onClick={() => setSelectedTag(tag)}
+                className={`tag-pill ${selectedTag === tag ? 'active' : ''}`}
+              >
+                {tag === 'All' && <Sparkles size={12} className="pill-icon" />}
+                {tag}
+              </button>
+            ))}
+          </div>
+
+          <label className="sort-select">
+            <ArrowDownUp size={14} className="sort-icon" aria-hidden="true" />
+            <span className="sr-only">Sort stories</span>
+            <select
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value as SortOrder)}
+              className="sort-input"
             >
-              {tag === 'All' && <Sparkles size={12} className="pill-icon" />}
-              {tag}
-            </button>
-          ))}
+              {seriesOrderLabel && (
+                <option value="series">{seriesOrderLabel}</option>
+              )}
+              {Object.entries(SORT_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
       </div>
 
       <div className="filter-status">
         <span>
-          Showing <strong>{filtered.length}</strong> of {articles.length} stories
-          {selectedTag !== 'All' && <span> in <em>{selectedTag}</em></span>}
+          Showing <strong>{filtered.length}</strong> of {articles.length}{' '}
+          stories
+          {selectedTag !== 'All' && (
+            <span>
+              {' '}
+              in <em>{selectedTag}</em>
+            </span>
+          )}
           {searchQuery && <span> matching &ldquo;{searchQuery}&rdquo;</span>}
+          {byViews && (
+            <span className="views-note">
+              {' '}
+              · YouTube views as of {viewsAsOf()}
+            </span>
+          )}
         </span>
-        {(selectedTag !== 'All' || searchQuery) && (
+        {(selectedTag !== 'All' ||
+          searchQuery ||
+          sortOrder !== defaultOrder) && (
           <button
             type="button"
             onClick={() => {
               setSelectedTag('All');
               setSearchQuery('');
+              setSortOrder(defaultOrder);
             }}
             className="reset-filters"
           >
@@ -138,6 +226,7 @@ export function ArticleFilterGrid({
             onClick={() => {
               setSelectedTag('All');
               setSearchQuery('');
+              setSortOrder(defaultOrder);
             }}
             className="btn-outline"
           >

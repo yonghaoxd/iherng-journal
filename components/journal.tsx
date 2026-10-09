@@ -9,6 +9,7 @@ import {
   Sparkles,
   Building2,
   BookOpen,
+  Eye,
 } from 'lucide-react';
 import {
   articles,
@@ -16,6 +17,8 @@ import {
   dateFor,
   readingTime,
   series,
+  viewsFor,
+  formatViews,
   type Article,
   type SeriesKey,
 } from '@/lib/articles';
@@ -33,6 +36,7 @@ export function ArticleCard({
   const isReview = article.series === 'property-reviews';
   const isPodcast = article.series === 'iherng-podcast';
   const isGuide = article.series === 'buyer-guides';
+  const views = viewsFor(article);
 
   return (
     <article className="article-card group">
@@ -111,6 +115,15 @@ export function ArticleCard({
             </span>
             <span className="dot-sep">·</span>
             <span className="pub-date">{dateFor(article)}</span>
+            {views !== undefined && (
+              <>
+                <span className="dot-sep">·</span>
+                <span className="view-count" title={`${views.toLocaleString('en-US')} YouTube views`}>
+                  <Eye size={12} />
+                  {formatViews(views)}
+                </span>
+              </>
+            )}
           </div>
           <Link
             href={`/articles/${article.slug}`}
@@ -346,6 +359,7 @@ export function SeriesPage({ id }: { id: SeriesKey }) {
           articles={entries}
           availableTags={isProperty ? ['Landed', 'High-Rise'] : undefined}
           filterMode={isProperty ? 'propertyType' : 'tag'}
+          seriesOrderLabel={isGuide ? 'Guide order' : undefined}
         />
       </section>
 

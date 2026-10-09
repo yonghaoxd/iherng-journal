@@ -977,6 +977,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   padding-top: 16px;
   border-top: 1px solid var(--border-color);
   font-size: 12px;
@@ -987,9 +989,11 @@ p {
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
 }
 
-.read-time {
+.read-time,
+.view-count {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -1003,6 +1007,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
   font-weight: 600;
   color: var(--text-main);
   transition: all 0.2s ease;
@@ -1530,6 +1535,60 @@ p {
 
 .tag-pill .pill-icon {
   color: currentColor;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sort-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sort-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-subtle);
+  pointer-events: none;
+}
+
+.sort-input {
+  appearance: none;
+  padding: 7px 34px 7px 34px;
+  background: var(--bg-card)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23858981' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sort-input:hover {
+  border-color: var(--accent-terracotta);
+}
+
+.sort-input:focus-visible {
+  outline: none;
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 3px var(--accent-terracotta-soft);
+}
+
+.sort-input option {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.views-note {
+  color: var(--text-subtle);
 }
 
 .filter-status {

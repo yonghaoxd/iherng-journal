@@ -51,6 +51,7 @@ import dianII from '@/content/articles/dian-ii-residency-shah-alam.json';
 import oskOmbak from '@/content/articles/osk-ombak-kuantan.json';
 import residensiPitta from '@/content/articles/residensi-pitta-taman-miharja.json';
 import seriesData from '@/content/series.json';
+import viewCounts from '@/content/view-counts.json';
 
 export const articles = [
   // Property reviews, newest first; the homepage and series page keep this order.
@@ -139,6 +140,32 @@ export function dateFor(article: Article) {
     year: 'numeric',
     timeZone: 'UTC',
   });
+}
+
+/**
+ * YouTube views of the article's video, as of `viewsAsOf()`. Refreshed with
+ * `npm run views` (scripts/fetch-view-counts.mjs); undefined until fetched.
+ */
+export function viewsFor(article: Article): number | undefined {
+  return (viewCounts.views as Record<string, number>)[article.videoId];
+}
+
+export function viewsAsOf() {
+  return new Date(viewCounts.fetchedAt + 'T12:00:00Z').toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+/** "950", "12K", "1.2M": formatted by hand so server and browser render the same text. */
+export function formatViews(count: number) {
+  const compact = (n: number, unit: string) =>
+    `${n >= 100 ? Math.round(n) : Math.round(n * 10) / 10}${unit}`;
+  if (count >= 999_500) return compact(count / 1_000_000, 'M'); // not "1000K"
+  if (count >= 1_000) return compact(count / 1_000, 'K');
+  return String(count);
 }
 
 /**

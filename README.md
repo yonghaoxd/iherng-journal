@@ -98,6 +98,19 @@ rent and gross and net yield.
 Both calculators share the form controls in `components/calc-field.tsx` and the
 `CalculatorTabs` strip that links them.
 
+## Sorting and view counts
+
+Each series page can be sorted latest first, oldest first, most viewed or least
+viewed (buyer guides also keep "Guide order", their default). "Views" are the
+YouTube views of each article's video, shown on every card and stored in
+`content/view-counts.json` with the date they were fetched, which the page
+shows when sorting by views.
+
+Refresh them before a deploy with `npm run views`, then commit the file. It is
+not part of `prebuild`, so builds stay offline and never dirty the tree; a video
+YouTube won't answer for keeps its previous count, and a new article without a
+count sorts last until the next refresh.
+
 ## Search engine assets
 
 `sitemap.xml`, `robots.txt` and `feed.xml` are generated into `public/` by
