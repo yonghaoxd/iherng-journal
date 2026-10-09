@@ -250,7 +250,7 @@ Reply with JSON only, in this shape:
     "asker": "e.g. \\"JC, a viewer who wrote in by email\\"; empty string if no viewer",
     "context": "2-4 sentences of the viewer's facts as stated: age, income, savings, the property, prices",
     "question": "The viewer's question in one sentence",
-    "quote": "Sean's most direct answer, 5-25 words, copied WORD FOR WORD from the captions (you may add punctuation and capitals, nothing else)",
+    "quote": "Sean's most direct answer, 5-14 words (never 15 or more), copied WORD FOR WORD from the captions (you may add punctuation and capitals, nothing else)",
     "answer": "1-3 sentences: Sean's verdict, stated directly",
     "reasons": [{"title": "short claim, max 8 words", "body": "1-3 sentences with the figures as stated"}],
     "actions": ["imperative sentence"],
@@ -294,7 +294,8 @@ function problemsWith(draft: Draft, transcript: string): string[] {
   if (text(draft.title) && draft.title.length > 90) problems.push("title is longer than 90 characters");
   if (text(qa.quote)) {
     const quoteWords = words(qa.quote).length;
-    if (quoteWords < 3 || quoteWords > 40) problems.push(`quote has ${quoteWords} words; keep it to 5-25`);
+    // The Journal quotes Sean in under 15 words; everything else is paraphrase.
+    if (quoteWords < 3 || quoteWords > 14) problems.push(`quote has ${quoteWords} words; keep it to 5-14`);
     if (!isVerbatim(qa.quote, transcript)) {
       problems.push(`quote "${qa.quote}" does not appear word for word in the captions; copy Sean's exact words`);
     }
