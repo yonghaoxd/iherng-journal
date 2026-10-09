@@ -16,6 +16,9 @@ import oldVsNew from '@/content/articles/old-house-vs-new-property.json';
 import earlyRepayment from '@/content/articles/settle-housing-loan-early.json';
 import guaranteedReturns from '@/content/articles/guaranteed-rental-return-risks.json';
 import marketTiming from '@/content/articles/when-to-buy-property-data-guide.json';
+import dorsettWaterfront from '@/content/articles/dorsett-waterfront-subang-subang-jaya.json';
+import residensiAva from '@/content/articles/residensi-ava-kiara-bay.json';
+import centrumIris from '@/content/articles/centrum-iris-brinchang.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
