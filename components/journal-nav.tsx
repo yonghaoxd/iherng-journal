@@ -61,7 +61,7 @@ export function JournalNav() {
       icon: BookOpen,
     },
     { href: '/calculator', title: 'Calculator', icon: Calculator },
-    { href: '/ask', title: 'Asking Sean', icon: MessageCircleQuestion },
+    { href: '/ask', title: 'AIherng', icon: MessageCircleQuestion },
   ];
 
   return (

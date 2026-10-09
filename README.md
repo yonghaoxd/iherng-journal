@@ -19,7 +19,7 @@ npm run dev
 - `lib/articles.ts` registers articles; series definitions are in `content/series.json` and site-wide constants in `site.config.json`.
 - Shared editorial components live in `components/journal.tsx`; styles in `app/globals.css`.
 - `lib/seo.ts` builds the canonical URLs, Open Graph metadata and JSON-LD; `components/json-ld.tsx` renders it.
-- `ask-sean/` holds the Ask Sean chatbot behind `/ask`: a Cloudflare Worker with its own
+- `ask-sean/` holds the AIherng chatbot (formerly "Ask Sean") behind `/ask`: a Cloudflare Worker with its own
   `package.json`, knowledge base and README. It also runs the daily job that turns new
   Asking Sean videos into articles here. The site's typecheck and lint skip that folder.
 - `.github/workflows/update-knowledge.yml` refreshes the chatbot from the live site.

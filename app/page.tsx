@@ -52,7 +52,7 @@ export default function Home() {
 
             <div className="hero-actions">
               <Link href="/ask" className="hero-btn primary">
-                <span>Ask Sean a question</span>
+                <span>Ask AIherng a question</span>
                 <ArrowRight size={16} />
               </Link>
               <a
