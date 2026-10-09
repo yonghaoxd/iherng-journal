@@ -18,7 +18,7 @@ the field order below.
 | `videoTitle` | The video's title exactly as on YouTube |
 | `duration` | `m:ss` or `h:mm:ss`, from `fetch_episode.py` |
 | `excerpt` | 1–2 sentences, ≤ 220 characters: the situation, then what Sean explains. Used on cards, in search and in the RSS feed |
-| `qa` | See SKILL.md; 3–4 `reasons`, 3–5 `actions` |
+| `qa` | See SKILL.md; 3–4 `reasons`, 3–5 `actions`; `answeredBy` (between `question` and `quote`) only when a guest answers, as in `tenant-not-paying-rent.json` |
 | `sourceNote` | Fixed pattern, see below |
 | `sources` | `[{ "label": "Original video and English captions · <D Month YYYY>", "url": "https://www.youtube.com/watch?v=<id>" }]` |
 | `location` | Guides: `"Malaysia Nationwide"` unless the topic is local. Podcast: who or where it concerns |

@@ -41,11 +41,18 @@ duration, title) to choose from; it can be stale, so newer uploads may be missin
   defects, purchase channels, unsold stock). It can come from an Asking Sean
   episode or a standalone video. `episode` is the guide's sequence number: one
   more than the current highest buyer guide.
-- **Skip videos where someone else gives the answer** (a lawyer consultation,
-  a panel, a keynote with guests). The page labels the answer "Sean's answer"
-  and quotes him, so a guest-led video would credit him with someone else's
-  advice. Tell the user why you skipped it. If they still want it, the component
-  would first need a way to name the speaker, which is a separate change.
+- **When a guest gives the answer** (Sean interviewing a lawyer, say), credit
+  them with `qa.answeredBy: { "name", "role" }`. The page then labels it "LAWYER
+  TEA'S ANSWER" rather than "Sean's answer", and the chatbot attributes the advice
+  to them. Without it, the guest's advice would be credited to Sean.
+  - Take the name as the video description gives it (e.g. "Lawyer Tea"), and
+    leave out contact details.
+  - The quote must be the guest's own words. Captions have no speaker labels,
+    so tell speakers apart by what they say (Sean asks, the guest explains).
+  - If two guests can't be told apart, credit both in `name` ("Gary and Xin
+    Hui") and say so in `sourceNote`.
+  - Panels and keynotes with several people talking over each other are still
+    best skipped, because no single answer can be fairly credited.
 
 ### 2. Fetch and read the captions
 
@@ -95,7 +102,8 @@ The `qa` object:
 | `asker` | Initials or first name only, e.g. `"Miss N, a viewer who wrote in by email"`; leave the field out for a problem |
 | `context` | 2–4 sentences of the viewer's facts as they stated them |
 | `question` | The question, in one sentence |
-| `quote` | **One** line of Sean's own words: verbatim, **under 15 words**, his verdict if possible |
+| `answeredBy` | Only when a guest answers: `{ "name": "Lawyer Tea", "role": "a lawyer who acts for landlords…" }`; leave it out when Sean answers |
+| `quote` | **One** line of the answerer's own words: verbatim, **under 15 words**, the verdict if possible |
 | `answer` | 1–3 sentences: his verdict stated directly |
 | `reasons` | 3–4 `{title, body}`; title a short claim, body 1–3 sentences with his figures |
 | `actions` | 3–5 imperative steps the reader can take |

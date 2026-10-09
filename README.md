@@ -1,6 +1,6 @@
 # iherng Journal
 
-A responsive editorial reading companion to iherng's YouTube channel, with six property-review articles, thirteen Asking Sean podcast articles, and twelve buyer guides.
+A responsive editorial reading companion to iherng's YouTube channel, with six property-review articles, thirteen Asking Sean podcast articles, and fourteen buyer guides.
 
 ## Run locally
 
@@ -41,6 +41,11 @@ articles has a `qa` object in its JSON, rendered by
 3. **Why**: three or four `reasons`, each carrying Sean's own figures.
 4. **What to do**: three to five `actions`.
 5. **When this doesn't apply**: the `caveat`.
+
+When a guest on Sean's channel gives the answer (a lawyer he interviews, say),
+`qa.answeredBy` names them: the page then reads "Lawyer Tea's answer" rather than
+"Sean's answer", the editorial note says the advice is theirs, and the Ask Sean
+chatbot attributes it to them too.
 
 Only the quote is verbatim, and it stays under 15 words; everything else is
 paraphrase. Run `python scripts/verify_quotes.py` after editing any article to
