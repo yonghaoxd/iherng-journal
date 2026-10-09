@@ -8,7 +8,8 @@ import {
   type Article,
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
-import { Search, Sparkles, SlidersHorizontal, ArrowDownUp } from 'lucide-react';
+import { SortMenu, type SortOrder } from '@/components/sort-menu';
+import { Search, Sparkles, SlidersHorizontal } from 'lucide-react';
 
 interface ArticleFilterGridProps {
   articles: Article[];
@@ -17,20 +18,6 @@ interface ArticleFilterGridProps {
   /** Label for the series' own order (e.g. "Guide order"); when set, it is the default sort. */
   seriesOrderLabel?: string;
 }
-
-type SortOrder =
-  | 'series'
-  | 'latest'
-  | 'oldest'
-  | 'most-viewed'
-  | 'least-viewed';
-
-const SORT_LABELS: Record<Exclude<SortOrder, 'series'>, string> = {
-  latest: 'Latest first',
-  oldest: 'Oldest first',
-  'most-viewed': 'Most viewed',
-  'least-viewed': 'Least viewed',
-};
 
 /** Ties, and videos without a view count yet, keep the series' own order. */
 function sortArticles(list: Article[], order: SortOrder) {
@@ -155,24 +142,11 @@ export function ArticleFilterGrid({
             ))}
           </div>
 
-          <label className="sort-select">
-            <ArrowDownUp size={14} className="sort-icon" aria-hidden="true" />
-            <span className="sr-only">Sort stories</span>
-            <select
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value as SortOrder)}
-              className="sort-input"
-            >
-              {seriesOrderLabel && (
-                <option value="series">{seriesOrderLabel}</option>
-              )}
-              {Object.entries(SORT_LABELS).map(([value, label]) => (
-                <option key={value} value={value}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          </label>
+          <SortMenu
+            value={sortOrder}
+            onChange={setSortOrder}
+            seriesOrderLabel={seriesOrderLabel}
+          />
         </div>
       </div>
 
