@@ -221,15 +221,6 @@ export default async function ArticlePage({
         </div>
 
         <h1 className="article-title">{article.title}</h1>
-        {stage?.id === 'show-unit' && (
-          <p className="article-stage-note">
-            <HardHat size={14} aria-hidden="true" />
-            <span>
-              Filmed at the show unit in {monthYearFor(article)}, while the project was still
-              being built. Finishes, prices and surroundings may have changed since.
-            </span>
-          </p>
-        )}
 
       </header>
 
@@ -273,6 +264,16 @@ export default async function ArticlePage({
         {/* Article Body */}
         <article className="reading-body">
           {qa && <AskSeanSummary qa={qa} />}
+
+          {stage?.id === 'show-unit' && (
+            <p className="article-stage-note">
+              <HardHat size={14} aria-hidden="true" />
+              <span>
+                Filmed at the show unit in {monthYearFor(article)}, while the project was
+                still being built. Finishes, prices and surroundings may have changed since.
+              </span>
+            </p>
+          )}
 
           {/* Formatted Story Sections — property reviews */}
           {'sections' in article && (
