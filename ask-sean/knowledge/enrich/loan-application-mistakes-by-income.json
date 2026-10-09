@@ -1,0 +1,26 @@
+{
+  "id": "loan-application-mistakes-by-income",
+  "sourceHash": "9a01e1a48651",
+  "reviewed": false,
+  "aliases": [
+    "commission",
+    "self-employed",
+    "business owner",
+    "payslip",
+    "epf",
+    "tax return",
+    "company account",
+    "bank statement",
+    "bonus",
+    "probation",
+    "ctos",
+    "income documentation"
+  ],
+  "questions": [
+    "How do banks assess income for housing loans?",
+    "What documents do commission earners need for a mortgage?",
+    "Why do business owners get rejected for home loans?",
+    "How does bonus income affect loan eligibility?",
+    "What mistakes can cause a housing loan rejection?"
+  ]
+}

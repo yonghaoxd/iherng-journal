@@ -7,12 +7,13 @@
   "location": "Kota Damansara, Selangor",
   "propertyType": "High-Rise",
   "tag": "Forest-edge high-rise",
-  "date": "2026-07-24",
+  "date": "2026-07-25",
   "videoId": "-dcfPuc4d6I",
   "videoTitle": "PROPERTY REVIEW #459 | SUNWAY D'HILL, KOTA DAMANSARA",
   "duration": "40:18",
   "excerpt": "A completed mixed development backing onto a forest reserve, where the arrival sequence, the car park and the landscape deck all show a developer refining the same playbook.",
   "takeaways": [
+<<<<<<< HEAD
     "Separating the commercial entrance at the front from the residential entrance at the back is the single decision Sean rates most highly here.",
     "The facilities deck is the densest landscape treatment he has reviewed, designed across sunken and elevated levels to slow residents down.",
     "Buying a completed project removes the three-to-four year wait, but five or six new launches are already coming up one street away."
@@ -80,11 +81,36 @@
         "His concerns start with the micro-site. Persiaran Mahogani is wide and straight, and against such quiet surroundings every acceleration on a four-lane road carries. The immediate neighbourhood also mixes social housing and older apartments with the large private homes — the original character of a location that only recently became desirable.",
         "The retail is a double-edged benefit. As the nearest grocer for the area it will draw crowds, and he expects congestion once more food and beverage operators move in; traffic here is still managed only by traffic lights. That the developer owns and manages the whole commercial component, with the service lane keeping lorries out of sight, is what keeps him comfortable with it.",
         "The last concern is competition: five or six new projects are already rising in the township across the street, which means more homework for buyers. But he turns that into D'Hill's strongest practical argument — it is finished. You can pick your block, orientation and unit, inspect the actual build quality, and move in now rather than waiting three or four years. Pricing discussed in the episode worked out around RM700 per square foot, with the four-bedroom unit filmed at about RM850,000; those figures reflect the recording date and one specific unit."
+=======
+    "Two towers beside a forest reserve, with every unit facing the hill.",
+    "Separate shop and residential entrances, and the densest landscaped deck Sean has seen.",
+    "A four-lane road, a busy retail podium and nearby new supply are the concerns."
+  ],
+  "sections": [
+    {
+      "heading": "What sets it apart",
+      "paragraphs": [
+        "Sunway D'Hill is a two-tower mixed development of 976 homes next to a forest reserve, with every unit facing the hill. Shoppers use a front entrance and residents a separate one at the back, and all 29 shops are held and leased by the developer. A weatherproof drop-off, speed ramps to six car park levels and a step-free route lead home.",
+        "The facility deck is the most densely landscaped Sean has seen, with an infinity lap pool, elevated walkways, sunken courts and a glass gym. The 1,238 sq ft, four-bedroom Type D, with a glass-walled wet kitchen, was RM850,000, about RM700 psf, on leasehold commercial land."
+      ]
+    },
+    {
+      "heading": "Where it is",
+      "paragraphs": [
+        "It is on Persiaran Mahogany, the quieter, residential side of Kota Damansara lined with bungalows and schools, one road from Persiaran Surian's Thomson Hospital, SRI KDU, malls, MRT and the DASH highway. Kwasa Damansara is across the street."
+      ]
+    },
+    {
+      "heading": "Rent and returns",
+      "paragraphs": [
+        "Sean calls D'Hill a project designed for own stay, and says he wouldn't mind living there himself. With other completed projects nearby, he puts three-bedroom rents at about RM3 psf, which he says makes sense at this price."
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
       ]
     }
   ],
   "seanTake": {
     "pros": [
+<<<<<<< HEAD
       "The commercial entrance sits at the front and the residential entrance at the back, so residents never share a queue with shoppers, and the enclosed drop-off within the car park structure stays weatherproof and private.",
       "The facilities deck is the densest landscape treatment he has reviewed — circulation that deliberately slows you down, sunken and elevated levels, and structural elements tidy enough to keep the car park below efficient.",
       "The site strikes a genuine balance between urbanism and nature: schools, hospital, MRT, university and the DASH highway are all close by one road, while every unit is turned to face the forest reserve."
@@ -97,9 +123,23 @@
   },
   "closing": "Sunway D'Hill reads as a developer refining a playbook it has used before — the drop-off, the speed ramps, the zero transition — and applying it to a site whose forest backdrop does the rest. Its clearest advantage over everything rising across the street is simply that you can move in and see exactly what you bought.",
   "sourceNote": "Based on Sean's full public English captions and his published YouTube episode notes. Measurements, unit size and pricing are as stated in the video and reflect the recording date; the unit filmed was a show unit. The 3 on 3 section paraphrases the three things Sean says he likes and the three he has concerns about, presented near the end of the episode.",
+=======
+      "A developer that keeps improving: separate commercial and residential entrances, a covered, naturally ventilated drop-off that feels like a convention centre, and a private lobby for each tower.",
+      "The landscape and details: winding paths on several levels, sunken courts next to visitor parking, two speed ramps, step-free access, magnetic fire doors and every unit framing the hill.",
+      "A balance of town and nature on a tight budget: the calm of Persiaran Mahogany, with the hospital, MRT, university, industry and DASH one road away."
+    ],
+    "cons": [
+      "The micro site: Persiaran Mahogany is a four-lane road, so engines will be loud against the quiet, and social housing and old apartments surround the site.",
+      "The mixed development: the shops are almost fully let and are the nearest groceries, so the podium may get crowded, though developer management and a back service lane help.",
+      "Competition: five or six new projects across the road in Kwasa Damansara. D'Hill's edge is that it is finished, with three-bedroom rents of around RM3 psf."
+    ]
+  },
+  "closing": "Among the hillside projects Sean has seen lately, this one stands out at its price, especially for buyers who want to move in now.",
+  "sourceNote": "Based on Sean's full English captions for this July 2026 episode. The 3 on 3 follows the three things he likes and the three he doesn't, in his order, at the end of the video. The developer let Sean view the completed project.",
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
   "sources": [
     {
-      "label": "Original video, captions & Sean's episode notes · 24 July 2026",
+      "label": "Original video and English captions · 25 July 2026",
       "url": "https://www.youtube.com/watch?v=-dcfPuc4d6I"
     }
   ]

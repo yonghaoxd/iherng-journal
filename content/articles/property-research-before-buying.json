@@ -2,49 +2,53 @@
   "slug": "property-research-before-buying",
   "series": "buyer-guides",
   "episode": 4,
-  "title": "Research Before You Buy: A Practical Property Due-Diligence Framework",
-  "shortTitle": "Property Research Framework",
-  "location": "Malaysia Nationwide",
-  "tag": "Property Research",
+  "title": "How do you know a project is not overpriced?",
+  "shortTitle": "Research before buying",
+  "tag": "Property research",
   "date": "2024-07-10",
   "videoId": "78PkfsD4iBQ",
   "videoTitle": "RESEARCH WORK REQUIRED BEFORE BUYING A PROPERTY",
   "duration": "25:39",
-  "excerpt": "A repeatable way to test an address, its real market tier, comparable prices and rental demand before committing to a property.",
-  "takeaways": [
-    "Define the exact micro-market instead of accepting a premium neighbourhood label from an advertisement.",
-    "Compare like with like: the correct area tier, recent transactions, and new homes against an appropriate new-home benchmark.",
-    "An investment property should have more than one realistic rental strategy and a clear break-even plan."
-  ],
-  "sections": [
-    {
-      "heading": "Map the real address",
-      "paragraphs": [
-        "Sean begins with a deceptively simple requirement: know the location inside out. Neighbourhood branding can blur meaningful boundaries, especially when a project borrows the name of a nearby premium address. Two homes five minutes apart may attract different residents, support different rents and sit in very different price bands.",
-        "Research should therefore start with roads, access points, employment centres, transport links and the people who actually choose to live there. A future commercial district or rail connection can strengthen demand, but the buyer still needs to identify who will pay rent and why that tenant would choose this address over the alternatives."
-      ]
-    },
-    {
-      "heading": "Build the right comparison set",
-      "paragraphs": [
-        "A nearby launch is not automatically a valid price benchmark. Sean separates prime and local-market tiers, then separates newer and older stock within those tiers. The useful question is whether the asking price makes sense beside recent transactions for genuinely comparable homes, rather than whether another developer is asking even more.",
-        "Newer buildings can command a premium through layouts, facilities and condition, but that premium still needs evidence. If a new project can be bought close to the transacted price of older alternatives in the same demand area, the proposition becomes easier to defend. If the gap is large, the buyer needs a strong reason for paying it."
-      ]
-    },
-    {
-      "heading": "Stress-test demand and the exit",
-      "paragraphs": [
-        "Sean prefers investments with multiple ways to reach break-even. Depending on the location, those routes might include a conventional family tenancy, shorter corporate stays or room rental. The correct options come from observed demand; a strategy that works in one district may perform poorly a few kilometres away.",
-        "Before signing, write down the target tenant, achievable rent, operating costs and at least one fallback. Then ask what happens if the promised infrastructure is delayed, the preferred rental model weakens or competing supply arrives. Research earns its value when it exposes those weak points before the loan begins."
-      ]
-    }
-  ],
-  "closing": "A convincing brochure explains the project. Proper due diligence explains the market around it, the price you are paying and the demand that must support your decision.",
-  "sourceNote": "Based on the full public English captions and published episode notes for Sean Tan's video. Market examples reflect the recording date; verify current transactions, rents and planning information before acting.",
+  "excerpt": "Projects borrow the name of a famous neighbourhood to charge its prices. Sean walks through the research that shows what an address is really worth.",
+  "qa": {
+    "kind": "problem",
+    "context": "Most buyers research a property by scrolling a listings portal. Developers know it, and borrow the name of a famous neighbourhood: projects next to Mont Kiara or Dutamas market themselves as part of it. Buyers end up paying the famous address's price without getting its tenants or its rents.",
+    "question": "What research do you need to do to know whether a project is priced right?",
+    "quote": "We got to know the location inside out.",
+    "answer": "Go beyond the listing. Work out where the real neighbourhood ends, which tier of tenant it attracts, and compare the project only against like-for-like transacted prices: new against new, old against old, in the same tier.",
+    "reasons": [
+      {
+        "title": "A borrowed name does not bring borrowed rents",
+        "body": "In June 2024, older projects in the Dutamas area averaged RM538 per sq ft outside Dutamas proper against RM818 inside it, and newer ones about RM641 against roughly RM1,070. Five minutes apart, the tenants and the premiums they will pay are completely different."
+      },
+      {
+        "title": "Know which tier you are buying into",
+        "body": "Tier 1 areas such as Mont Kiara, Dutamas, KLCC and Bangsar South draw expatriates and have no real ceiling on rent. Tier 2 areas such as TTDI and Kota Damansara attract well-off locals; prices per sq ft can be similar, but rents hit a ceiling. Tier 3 is further out, with landed homes under RM500,000."
+      },
+      {
+        "title": "Compare new with new and old with old",
+        "body": "At the same rent, about 95% of tenants will choose the newer unit, so buying new at an old unit's price is close to a sure win. For older Dutamas projects, the session suggested not paying above RM700 per sq ft, or RM550 in the surrounding areas."
+      },
+      {
+        "title": "Make sure two rental plans break even",
+        "body": "Whole-unit leases, short stays and room-by-room rental each suit different tiers. Sean's one-plus-one in Mont Kiara earns RM5,000 from a single tenant but would make about RM4,000 by the room. Short-stay occupancy data showed demand only in Dutamas and Mont Kiara proper."
+      }
+    ],
+    "actions": [
+      "Walk the area and map where the real neighbourhood ends, whatever the project calls itself.",
+      "Pull recent transacted prices, not asking prices, and find the median for your tier, split into new and old.",
+      "Aim to buy below that median. Sean bought in Mont Kiara at about RM900 per sq ft, roughly 20% below completed transactions near RM1,100.",
+      "Before buying, confirm at least two ways of renting the unit that would each cover the instalment.",
+      "Visit the site: a portal cannot show you access roads, traffic or what is being built next door."
+    ],
+    "caveat": "The tier system and price ceilings come from research by FAR Capital, the deal-sourcing company Sean buys through as a paying member, presented in a June 2024 live session. They are a snapshot of one area; repeat the work for your own location rather than reusing the numbers."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for this episode, which recaps a live research session with FAR Capital. The quoted answer is verbatim; everything else is paraphrased. Price data is as of June 2024. Sean is a customer of FAR Capital, not its owner.",
   "sources": [
     {
-      "label": "Original video, captions and Sean's episode notes · 10 July 2024",
+      "label": "Original video and English captions · 10 July 2024",
       "url": "https://www.youtube.com/watch?v=78PkfsD4iBQ"
     }
-  ]
+  ],
+  "location": "Malaysia Nationwide"
 }

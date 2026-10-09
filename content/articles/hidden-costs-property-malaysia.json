@@ -2,49 +2,53 @@
   "slug": "hidden-costs-property-malaysia",
   "series": "buyer-guides",
   "episode": 3,
-  "title": "The Hidden Costs of Buying a Home in Malaysia",
-  "shortTitle": "Hidden Costs Guide",
-  "location": "Malaysia Nationwide",
-  "tag": "Financing & Fees",
-  "date": "2019-04-08",
+  "title": "What does buying a property really cost beyond the 10%?",
+  "shortTitle": "Hidden costs",
+  "tag": "Financing & fees",
+  "date": "2019-04-09",
   "videoId": "AQtkorLSEUQ",
   "videoTitle": "HIDDEN COST WHEN YOU BUY PROPERTY IN MALAYSIA",
   "duration": "6:01",
-  "excerpt": "Beyond the 10% down payment: legal fees, stamp duty, valuation fees, sinking fund deposits, and the true capital required before taking the keys.",
-  "takeaways": [
-    "Prepare an extra 3% to 5% of purchase price for SPA legal fees, loan documentation fees, and MOT stamp duty.",
-    "Strata properties require upfront deposits for maintenance fees (3 months advance), sinking fund, and utility meters.",
-    "Never wipe out your entire emergency savings account to satisfy the property down payment."
-  ],
-  "sections": [
-    {
-      "heading": "The ancillary legal bill",
-      "paragraphs": [
-        "A common trap for eager first-time homebuyers in Malaysia is assuming that saving the 10% down payment is sufficient to conclude a transaction. In reality, purchasing a property triggers two distinct legal packages: the Sales & Purchase Agreement (SPA) and the Loan Agreement.",
-        "Both packages involve professional legal fees (governed by the Solicitors' Remuneration Order), Memorandum of Transfer (MOT) stamp duty, loan stamp duty (0.5% of total loan amount), and administrative disbursements for title searches, bankruptcy screenings, and registration fees."
-      ]
-    },
-    {
-      "heading": "Upfront strata deposits & utilities",
-      "paragraphs": [
-        "Upon handover or vacant possession, purchasers encounter a secondary wave of out-of-pocket costs that developers seldom feature in marketing brochures.",
-        "These include three months of advance maintenance fee contributions, a sinking fund deposit (typically 10% of the maintenance rate), fire insurance premiums, quit rent and assessment apportionments, and utility deposit charges with Tenaga Nasional Berhad (TNB) and state water authorities."
-      ]
-    },
-    {
-      "heading": "The emergency liquidity buffer",
-      "paragraphs": [
-        "Sean cautions buyers against stretching their bank accounts to the exact cent just to seal a property deal. Property ownership inevitably uncovers unanticipated expenses—minor repairs, essential air-conditioning installation, basic grilles, and water heater fit-outs.",
-        "Maintaining a dedicated liquid emergency fund equivalent to at least six months of mortgage instalments ensures that unforeseen interest rate hikes or personal cash flow fluctuations never turn a dream home into a financial crisis."
-      ]
-    }
-  ],
-  "closing": "Financial peace of mind is not about buying the most expensive property the bank approves you for; it is about leaving enough breathing room in your bank account to live comfortably after the keys are yours.",
-  "sourceNote": "Based on Sean Tan's guide 'HIDDEN COST WHEN YOU BUY PROPERTY IN MALAYSIA'.",
+  "excerpt": "Most first-time buyers budget the deposit and nothing else. Sean lists the costs that kept surprising him on his first purchase.",
+  "qa": {
+    "kind": "problem",
+    "context": "Ask what you need to buy a property in Malaysia and most people say 10%. Sean had exactly that for his first purchase, and the bills he had not budgeted for kept arriving one after another.",
+    "question": "What else do you actually have to pay when you buy a property?",
+    "quote": "It's never 10%.",
+    "answer": "Budget well beyond the deposit. Legal fees on both the purchase and the loan, transfer stamp duty, valuation, handover deposits, compulsory insurance and yearly taxes all fall on the buyer, and a subsale costs the most upfront.",
+    "reasons": [
+      {
+        "title": "Legal fees come with more than one agreement",
+        "body": "Developers often advertise a \"free SPA\", but that covers only the sale agreement. You also pay legal fees on the loan agreement with your bank, and owners of older blocks later pay again when the strata title is issued."
+      },
+      {
+        "title": "The transfer duty is the big one",
+        "body": "Stamp duty on the memorandum of transfer (MOT) is due when ownership passes to you. Sean puts it at up to about 2% of the price, around RM14,000 on a RM700,000 home, and says few developers cover it."
+      },
+      {
+        "title": "Handover comes with deposits",
+        "body": "Before you get the keys, a strata property usually needs about three months of maintenance fees as deposit, plus deposits for water, electricity and telecoms. A subsale also needs an independent valuation, paid by the buyer, before the bank will lend."
+      },
+      {
+        "title": "Some costs never stop",
+        "body": "Banks effectively require mortgage insurance (MRTA or MLTA) before lending, and many require fire insurance too. Every year you also pay quit rent to the state and assessment tax to the local council; in strata buildings these often appear as a jump in the January or February maintenance bill."
+      }
+    ],
+    "actions": [
+      "Plan for upfront cash well above 10% of the price, and more for a subsale.",
+      "Ask the developer in writing exactly which legal fees, and whether the MOT duty, are covered.",
+      "Set aside handover money: about three months of maintenance plus utility deposits.",
+      "Add mortgage and fire insurance to your loan costs, and quit rent and assessment tax to your yearly budget.",
+      "Estimate the legal fees and stamp duty for your price with the purchase cost calculator on this site."
+    ],
+    "caveat": "This is a 2019 episode. Fee scales have been revised since, and first-home stamp duty exemptions come and go with each Budget, so use these costs as a checklist and get current figures from your lawyer."
+  },
+  "sourceNote": "Summarised from Sean's English captions for this April 2019 episode. The quoted answer is verbatim; everything else is paraphrased. Fee levels are as Sean described them at the time and have since changed.",
   "sources": [
     {
-      "label": "Original video on YouTube",
+      "label": "Original video and English captions · 9 April 2019",
       "url": "https://www.youtube.com/watch?v=AQtkorLSEUQ"
     }
-  ]
+  ],
+  "location": "Malaysia Nationwide"
 }

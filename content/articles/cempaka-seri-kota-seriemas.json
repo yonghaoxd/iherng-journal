@@ -13,6 +13,7 @@
   "duration": "16:29",
   "excerpt": "A townhouse that answers the three complaints the format usually attracts — narrow entry, tangled structure and dark corners — inside a township that spent its land on infrastructure.",
   "takeaways": [
+<<<<<<< HEAD
     "A four-foot staircase sounds like a small decision, but it removes the objection most buyers have to townhouses: getting furniture upstairs.",
     "The double-height living space lights the unit without artificial light, and a slit window carries that daylight into the bedrooms above.",
     "The township spent twenty years building lakes, cycle paths and mature tree cover on land it could have sold instead."
@@ -64,11 +65,36 @@
         "Two of the three bedrooms share a bathroom finished with full-height tiling and, in a pattern Sean keeps noticing, not one but two windows for ventilation, with obscured glazing preserving privacy.",
         "The first bedroom carries timber flooring under a three-metre ceiling with its own balcony that opens on both sides, encouraging air to move right through the space. He also notes the window treatment differs deliberately between panels.",
         "The principal bedroom measures about 3.5 by 4 m, and its best feature is an opening onto the double-height void — borrowing both the light and the park view from a different level. A slit window adds more brightness still, and Sean names it his single favourite detail in the house."
+=======
+    "A strata townhouse built into sloping ground, with green buffers between rows.",
+    "An upper unit of about 1,800 sq ft with a double-height living room, priced around RM380,000.",
+    "A quiet own-stay location that suits people working around KLIA and Nilai."
+  ],
+  "sections": [
+    {
+      "heading": "What sets it apart",
+      "paragraphs": [
+        "Cempaka Seri is a strata townhouse in Kota Seriemas built into sloping ground, so the rows step with the terrain and green strips separate them. It avoids the usual townhouse complaints of a narrow entrance, awkward structure and dark corners.",
+        "The upper unit Sean visits has about 1,800 sq ft: a ground-level store room for heavy things, a 4-ft-wide staircase, a double-height living room about six metres high and two windows in almost every room. It was selling for around RM380,000."
+      ]
+    },
+    {
+      "heading": "Where it is",
+      "paragraphs": [
+        "Kota Seriemas is a 2,400-acre township started in 2000, beside Nilai and close to KLIA and Putrajaya, linked by LEKAS and the North-South Expressway. Inside are tree-lined roads, cycle paths, a lake park, a golf club and a university college; the back way in, past Kampung Salak Tinggi, is far more rural."
+      ]
+    },
+    {
+      "heading": "Rent and returns",
+      "paragraphs": [
+        "The developer's team told Sean the lower units rent for about RM1,500 a month, which surprised him at this price. He still sees Cempaka Seri mainly as a home to live in: quiet, and best suited to families working around KLIA or Nilai."
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
       ]
     }
   ],
   "seanTake": {
     "pros": [
+<<<<<<< HEAD
       "The spatial arrangement and build quality answer every standard townhouse complaint: no narrow pinched entrance, no tangled structural arrangement, no dark corners, with the store room sensibly placed downstairs for heavy loads.",
       "The balance between built-up and open space is unusually good, with organic block arrangement responding to the natural level changes rather than flattening them.",
       "The pricing makes sense for the space and the position — roughly RM380,000 for about 1,800 sq ft near Nilai and the airport, with tertiary education on the doorstep and workable rental for the lower units."
@@ -81,6 +107,20 @@
   },
   "closing": "Cempaka Seri is the rare townhouse that reads as a considered house rather than a compromise, and the township around it has spent twenty years earning that setting. Whether it suits you comes down to one question Sean asks himself out loud: it makes complete sense if you work at the airport, and very little if you would be driving to the city every morning.",
   "sourceNote": "Based on Sean's full public English captions and his published YouTube episode notes. Measurements, unit size, price and rental figures are as discussed in the video and reflect the recording date in March 2021. The 3 on 3 section paraphrases the three things Sean says he likes and the three he has concerns about, presented near the end of the episode.",
+=======
+      "Space and build quality: no narrow entrance, no awkward structure and no dark corners, with the store room downstairs, the double-height living room and slit windows in the bedrooms as highlights.",
+      "Open space in balance with buildings: green areas between rows and an organic layout that works with the changes in level.",
+      "The price: about RM380,000 for some 1,800 sq ft near Nilai, KLIA and several colleges, with lower units renting for about RM1,500 according to the developer's team."
+    ],
+    "cons": [
+      "The pandemic hit its core buyers, many of whom work in aviation.",
+      "Arriving through the rural roads around Kampung Salak Tinggi makes it feel undeveloped; the highway approach doesn't.",
+      "It is purely an own-stay location: very quiet, with little commercial activity, so it suits families working nearby, not people commuting to KL."
+    ]
+  },
+  "closing": "A well-designed, affordable family home if you work around KLIA or Nilai; hard to justify for a daily commute to KL.",
+  "sourceNote": "Based on Sean's full English captions for this March 2021 episode. The 3 on 3 follows the three things he likes and the three concerns he names, in his order, at the end of the video. The developer's team showed Sean around.",
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
   "sources": [
     {
       "label": "Original video, captions & Sean's episode notes · 18 March 2021",

@@ -1,0 +1,53 @@
+{
+  "id": "property-guru-units-exit-plan",
+  "series": "buyer-guides",
+  "title": "Our family bought units through a property guru. How do we get out?",
+  "excerpt": "A viewer's parents bought several units through a property guru at the 2018 peak and now pay thousands a month to hold them. Sean explains how the scheme worked and how to decide what to sell.",
+  "date": "2025-09-12",
+  "tag": "Debt & exit strategy",
+  "question": {
+    "asker": "From Miss C, a viewer who wrote in on Instagram",
+    "context": "Miss C is 34. In 2017 and 2018 her parents followed property gurus and bought several units at marked-up prices, through compressed loans and with cash back that has since disappeared. The loans are in her and her mother's names, and most carry no MRTA. Her mother, 65 and seriously ill, uses her EPF to cover about RM6,000 to RM7,000 a month after rent. Selling now means a loss, and her father refuses to sell the family's landed house. Miss C has fully paid one unit of her own.",
+    "text": "How deep is the trouble, and what can the family do when selling most of the units means taking a loss?"
+  },
+  "answer": {
+    "quote": "You are in a bad situation, but not the worst.",
+    "summary": "Bad, but recoverable. Put every unit into one table to see which can be sold and which must be held, and ask her father to refinance the family house for a standby credit line instead of selling it."
+  },
+  "reasons": [
+    {
+      "title": "The cash back was never spare money",
+      "body": "Guru deals came with large cash back, meant to pay for renovation and to cover the negative cash flow until the next upturn. Sean says many buyers spent it instead and forgot it was borrowed money they still pay interest on."
+    },
+    {
+      "title": "Compressed loans hid the real risk",
+      "body": "Buyers applied for several similar units with different banks at the same time, so the credit system read it as one buyer comparing rates, and all the loans went through. Sean says the system now records each property's address, so this no longer works, but the debt taken on then remains."
+    },
+    {
+      "title": "A table shows which units to release",
+      "body": "Compare each unit's outstanding loan with its current selling price, and its rent with its instalment and maintenance. Where the loan is close to the selling price, sell to exit. Where the rent covers the instalment, hold. Where a sale would still need a top-up, hold unless you can afford the difference."
+    },
+    {
+      "title": "Without cover, debt passes to the family",
+      "body": "With no MRTA, the loans fall on the family rather than being cleared if the borrower dies. Sean says the point of property investing is to help the family, so every loan should come with mortgage cover such as MRTA or MLTA."
+    }
+  ],
+  "actions": [
+    "List every unit with its outstanding loan, current market price, instalment plus maintenance, and rent, and update the list every quarter.",
+    "Sell the units whose loan is close to their selling price, and hold those whose rent already covers the instalment.",
+    "Refinance a fully owned home for an overdraft rather than selling it. On a RM1 million house at 60%, that is about RM600,000 of standby credit, charged daily only on what you use.",
+    "Rent out any unit you own outright and live with family for now; Sean estimates RM1,000 to RM2,000 a month to put towards the shortfall.",
+    "Give each unit to an agent who specialises in that area, instead of one company for all of them, which may sit on the listings."
+  ],
+  "caveat": "The sell-or-hold rules assume the family can keep paying while they wait; if no one can cover the shortfall, losses have to be taken sooner. Sean also points out that the parents' own savings, which the message doesn't mention, could change the picture.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #296. The quoted answer is verbatim; everything else is paraphrased. Figures are as Sean stated them in September 2025; his rough estimate of the portfolio's total debt is left out.",
+  "askingSeanEpisode": 296,
+  "video": {
+    "id": "BCDSPqGbCIE",
+    "title": "ASKING SEAN #296 | GETTING OUT OF MULTIPLE SUBMISSION MESS?",
+    "duration": "31:00",
+    "url": "https://www.youtube.com/watch?v=BCDSPqGbCIE"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/property-guru-units-exit-plan"
+}

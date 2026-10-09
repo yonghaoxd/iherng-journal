@@ -1,0 +1,26 @@
+{
+  "id": "new-launch-vs-subsale",
+  "sourceHash": "ad3b49b301fd",
+  "reviewed": true,
+  "aliases": [
+    "subsale",
+    "subsale unit",
+    "new launch",
+    "developer unit",
+    "under construction",
+    "completed unit",
+    "first-time buyer",
+    "cash upfront",
+    "downpayment",
+    "rental yield",
+    "handover",
+    "vacant possession"
+  ],
+  "questions": [
+    "Should I buy a new launch or a subsale unit?",
+    "How much cash do I need for a new launch versus a subsale?",
+    "Is a subsale better than a new launch for first-time buyers?",
+    "Which is better for rental income, a new launch or a subsale?",
+    "How long does a new launch take to complete compared to a subsale?"
+  ]
+}

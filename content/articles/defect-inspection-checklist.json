@@ -2,49 +2,53 @@
   "slug": "defect-inspection-checklist",
   "series": "buyer-guides",
   "episode": 1,
-  "title": "The Defect Inspection Checklist: Utility vs. Aesthetic Realities",
-  "shortTitle": "Defect Inspection Guide",
-  "location": "Malaysia Nationwide",
-  "tag": "Defect Inspection",
+  "title": "What should you check when you get your keys?",
+  "shortTitle": "Defect inspection",
+  "tag": "Defect inspection",
   "date": "2020-01-08",
   "videoId": "mYiV-w5E31U",
   "videoTitle": "CHECK FOR DEFECTS IN YOUR PROPERTY",
   "duration": "10:46",
-  "excerpt": "A practical framework for inspecting newly handed-over homes: distinguishing essential utility defects from cosmetic flaws before starting renovation.",
-  "takeaways": [
-    "Prioritise utility defects (water supply, piping, drainage, electrical circuits, and window locks) over cosmetic flaws.",
-    "Do not begin wet works or heavy renovations before officially lodging and rectifying defects with the developer.",
-    "Inspect common corridors, lift lobbies, and car park bays as they constitute shared strata ownership."
-  ],
-  "sections": [
-    {
-      "heading": "Utility defects vs cosmetic flaws",
-      "paragraphs": [
-        "When taking vacant possession of a new home, excitement often leads owners to fixate on minor aesthetic imperfections like paint smudges or slight hairline plaster marks. Sean emphasises that the true priority must always be utility defects: water leakage, drainage blockages, uneven water pressure, faulty electrical wiring, and malfunctioning window latches.",
-        "While cosmetic blemishes are frustrating, utility failures can compromise living conditions, damage furniture, or create dangerous hazards. Categorising your inspection into functional essentials versus aesthetic tolerance ensures the developer addresses high-risk problems first."
-      ]
-    },
-    {
-      "heading": "The common area blind spot",
-      "paragraphs": [
-        "A frequent mistake among strata property purchasers is limiting their inspection strictly within their own four walls. In Malaysia, your strata title gives you co-ownership of common property, including corridors, staircases, refuse chutes, and recreational facilities.",
-        "Sean encourages homeowners to check the condition of their designated parking bays, corridor tiles, and lift operations during the Defect Liability Period (DLP). Identifying shared water leaks or structural cracks early allows the Joint Management Body (JMB) to hold the developer accountable before the warranty window closes."
-      ]
-    },
-    {
-      "heading": "Why renovation timing matters",
-      "paragraphs": [
-        "A critical warning highlighted in the guide is the temptation to rush into interior design and renovation immediately upon receiving the keys. If an owner commences hacking, tile replacement, or major carpentry before the developer rectifies defects, the developer may void warranty claims, arguing that damage was caused by third-party contractors.",
-        "Allowing the developer their stipulated rectification window (typically 30 days under the standard Housing Development Act schedule) provides a clean baseline. Once structural integrity and utilities are verified, interior renovation can proceed with total peace of mind."
-      ]
-    }
-  ],
-  "closing": "Prioritise function and safety over surface perfection. Resolving critical water and electrical defects early protects your renovation investment from day one.",
-  "sourceNote": "Based on Sean Tan's published guide 'CHECK FOR DEFECTS IN YOUR PROPERTY' and Malaysian strata handover best practices.",
+  "excerpt": "Most buyers hunt for scratches and hollow tiles and miss what stops a home from working. Sean sets out what to check first in a defect inspection.",
+  "qa": {
+    "kind": "problem",
+    "context": "You have collected the keys to a new home, and the developer gives you a limited window to report defects. Most buyers walk in looking for stains and scratches, and miss the things that actually stop a home from working.",
+    "question": "What should you check during a defect inspection, and in what order?",
+    "quote": "These are things that you cannot really live without.",
+    "answer": "Check function before looks. Test every power point, water point, door and window first, compare the unit against your sale agreement, then move on to cosmetic flaws, and report everything through the proper channel.",
+    "reasons": [
+      {
+        "title": "Utilities come first",
+        "body": "Test every power point with a phone charger, plus the distribution board, doorbell and any water heater or appliances supplied. Doors and windows should open and close smoothly, and window seals should feel firm."
+      },
+      {
+        "title": "Water problems hide",
+        "body": "Fill each sink and check the joints underneath. Pour water on bathroom floors, especially in the shower, to see that it runs to the drain. Look for stains on ceilings and around windows that point to leaks, particularly in landed homes."
+      },
+      {
+        "title": "Your sale agreement is the checklist",
+        "body": "If the agreement promises laminated flooring in the bedrooms or full-height tiles in the kitchen, check that is what you got; a mismatch matters more than a stain. Some buyers even measure wall to wall, after stories of 900 sq ft units measuring 850."
+      },
+      {
+        "title": "Hollow tiles are more serious than they look",
+        "body": "A hollow wall tile can eventually fall off; a hollow floor tile can crack under heavy furniture because there is no mortar beneath it. Straight walls and even floors are not a luxury at any price point."
+      }
+    ],
+    "actions": [
+      "Bring a phone charger, your sale agreement and a measuring tape, and mark each defect with a sticker as you go.",
+      "Check the common facilities too: the building should have its certificate of completion, and the gym and pool should be working, not \"under maintenance\".",
+      "Submit defects through the developer's official channel; the staff follow process, so be thorough rather than confrontational.",
+      "Note the defect liability period, usually 24 months; leaks or cracks in that time are the developer's to fix. Structural renovation in a landed home can void claims for related cracks.",
+      "For a rental unit, prioritise whatever stops a tenant moving in; each round of repairs can cost two to three months of instalments."
+    ],
+    "caveat": "The quality of supplied furniture and finishes is usually not a claimable defect, because it cannot be measured. For a rental, cosmetic flaws rarely matter to tenants; for your own home, ones that bother you every day are worth pursuing."
+  },
+  "sourceNote": "Summarised from Sean's English captions for this January 2020 walk-through. The quoted answer is verbatim; everything else is paraphrased. Parts of the older automatic captions are unclear, so only clearly stated points are included.",
   "sources": [
     {
-      "label": "Original video on YouTube",
+      "label": "Original video and English captions · 8 January 2020",
       "url": "https://www.youtube.com/watch?v=mYiV-w5E31U"
     }
-  ]
+  ],
+  "location": "Malaysia Nationwide"
 }

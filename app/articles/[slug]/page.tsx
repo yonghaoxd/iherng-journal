@@ -17,12 +17,14 @@ import {
 } from 'lucide-react';
 import {
   articles,
+  askSeanFor,
   seriesFor,
   imageFor,
   dateFor,
   readingTime,
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
+import { AskSeanSummary } from '@/components/ask-sean-summary';
 import { ShareButtons } from '@/components/share-buttons';
 import { JsonLd } from '@/components/json-ld';
 import {
@@ -84,6 +86,7 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   const info = seriesFor(article);
+  const qa = askSeanFor(article);
   const isReview = article.series === 'property-reviews';
   const isPodcast = article.series === 'iherng-podcast';
   const isGuide = article.series === 'buyer-guides';
@@ -97,6 +100,61 @@ export default async function ArticlePage({
 
   // Other related articles (same series, excluding current)
   const related = seriesArticles.filter((a) => a.slug !== slug);
+
+  // Byline: date, reading time and video length.
+  const metaBar = (
+    <div className="article-meta-bar">
+      <div className="byline-group">
+        <div className="byline-avatar">i<span>.</span></div>
+        <div className="byline-details">
+          <strong>Editorial Summary from Sean Tan</strong>
+          <div className="byline-sub">
+            <span className="flex items-center gap-1">
+              <Calendar size={12} /> {dateFor(article)}
+            </span>
+            <span className="sep">·</span>
+            <span className="flex items-center gap-1">
+              <Clock size={12} /> {readingTime(article)} min read
+            </span>
+            <span className="sep">·</span>
+            <span className="flex items-center gap-1">
+              <Play size={12} /> {article.duration} video
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Editorial transparency note
+  const editorialNote = (
+    <div className="editorial-transparency-note">
+      <Info size={16} className="note-icon" />
+      {qa ? (
+        <p>
+          <strong>Editorial Note:</strong> Summarised from Sean Tan&apos;s full episode
+          {qa.answeredBy ? (
+            <>
+              {' '}
+              with {qa.answeredBy.name}. The answer is theirs, not Sean&apos;s; the quote is in
+              their own words and the rest is our paraphrase. This is general information, not
+              legal advice for your situation.
+            </>
+          ) : (
+            <>. The quoted answer is in his own words; the rest is our paraphrase.</>
+          )}{' '}
+          Figures reflect the recording date, so check current rates and rules before acting on
+          them.
+        </p>
+      ) : (
+        <p>
+          <strong>Editorial Note:</strong> This summary is distilled from Sean Tan&apos;s public
+          video breakdown and verified episode documentation. All property specifications and
+          opinions reflect the recording date and should be verified for present-day listings.
+        </p>
+      )}
+    </div>
+  );
 
   return (
     <main id="main" className="container article-page">
@@ -150,39 +208,11 @@ export default async function ArticlePage({
 
         <h1 className="article-title">{article.title}</h1>
 
-        <p className="article-deck">{article.excerpt}</p>
-
-        <div className="article-meta-bar">
-          <div className="byline-group">
-            <div className="byline-avatar">i<span>.</span></div>
-            <div className="byline-details">
-              <strong>Editorial Summary from Sean Tan</strong>
-              <div className="byline-sub">
-                <span className="flex items-center gap-1">
-                  <Calendar size={12} /> {dateFor(article)}
-                </span>
-                <span className="sep">·</span>
-                <span className="flex items-center gap-1">
-                  <Clock size={12} /> {readingTime(article)} min read
-                </span>
-                <span className="sep">·</span>
-                <span className="flex items-center gap-1">
-                  <Play size={12} /> {article.duration} video
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="header-actions">
-            <a href="#original-video" className="jump-video-btn">
-              <Play size={14} fill="currentColor" />
-              <span>Watch Video</span>
-            </a>
-          </div>
-        </div>
       </header>
 
-      {/* Featured Cover / Video Thumbnail */}
+      {/* Featured Cover / Video Thumbnail — property reviews only. Q&A articles
+          lead with the question and answer; their episode is embedded below. */}
+      {!qa && (
       <figure className="article-cover">
         <div className="cover-wrap">
           <img
@@ -213,22 +243,16 @@ export default async function ArticlePage({
           </a>
         </figcaption>
       </figure>
+      )}
 
       {/* Main Reading Layout */}
       <div className="reading-layout">
         {/* Article Body */}
         <article className="reading-body">
-          {/* Editorial Transparency Note */}
-          <div className="editorial-transparency-note">
-            <Info size={16} className="note-icon" />
-            <p>
-              <strong>Editorial Note:</strong> This summary is distilled from Sean Tan&apos;s
-              public video breakdown and verified episode documentation. All property specifications
-              and opinions reflect the recording date and should be verified for present-day listings.
-            </p>
-          </div>
+          {qa && <AskSeanSummary qa={qa} />}
 
-          {/* Formatted Story Sections */}
+          {/* Formatted Story Sections — property reviews */}
+          {'sections' in article && (
           <div className="story-sections">
             {article.sections.map((section, idx) => (
               <section
@@ -248,6 +272,7 @@ export default async function ArticlePage({
               </section>
             ))}
           </div>
+          )}
 
           {/* Sean's Take 3 on 3 — property reviews only */}
           {'seanTake' in article && isReview && (
@@ -255,13 +280,13 @@ export default async function ArticlePage({
               <div className="sean-take-header">
                 <span className="sean-take-badge">SEAN&apos;S TAKE</span>
                 <h2 className="sean-take-title">3 on 3</h2>
-                <p className="sean-take-subtitle">Three reasons to consider this home. Three things worth watching.</p>
+                <p className="sean-take-subtitle">The three things Sean likes and the three he doesn&apos;t, from his own list at the end of the episode.</p>
               </div>
               <div className="sean-take-grid">
                 <div className="sean-take-col pros">
                   <div className="take-col-label">
                     <ThumbsUp size={16} />
-                    <span>WORTH CONSIDERING</span>
+                    <span>WHAT SEAN LIKES</span>
                   </div>
                   <ul className="take-list">
                     {(article as typeof article & { seanTake: { pros: string[]; cons: string[] } }).seanTake.pros.map((pro, i) => (
@@ -275,7 +300,7 @@ export default async function ArticlePage({
                 <div className="sean-take-col cons">
                   <div className="take-col-label">
                     <ThumbsDown size={16} />
-                    <span>WORTH WATCHING</span>
+                    <span>WHAT SEAN DOESN&apos;T</span>
                   </div>
                   <ul className="take-list">
                     {(article as typeof article & { seanTake: { pros: string[]; cons: string[] } }).seanTake.cons.map((con, i) => (
@@ -290,12 +315,22 @@ export default async function ArticlePage({
             </section>
           )}
 
-          {/* Editorial Verdict / Closing Quote */}
-          <section id="reflection" className="editorial-reflection-box">
-            <span className="quote-mark">&ldquo;</span>
-            <p className="reflection-text">{article.closing}</p>
-            <span className="reflection-author">— iherng Journal editorial note</span>
-          </section>
+          {/* Editorial Verdict / Closing Quote — property reviews */}
+          {'closing' in article && (
+            <section id="reflection" className="editorial-reflection-box">
+              <span className="quote-mark">&ldquo;</span>
+              <p className="reflection-text">{article.closing}</p>
+              <span className="reflection-author">— iherng Journal editorial note</span>
+            </section>
+          )}
+
+          {/* The top of the page is kept for the content itself (the question and
+              answer, or the cover and chapters); the byline and editorial note sit
+              here, just above the episode. */}
+          <div className="article-colophon">
+            {metaBar}
+            {editorialNote}
+          </div>
 
           {/* Original YouTube Video Embed */}
           <section id="original-video" className="video-player-section">

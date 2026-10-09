@@ -1,0 +1,53 @@
+{
+  "id": "property-research-before-buying",
+  "series": "buyer-guides",
+  "title": "How do you know a project is not overpriced?",
+  "excerpt": "Projects borrow the name of a famous neighbourhood to charge its prices. Sean walks through the research that shows what an address is really worth.",
+  "date": "2024-07-10",
+  "tag": "Property research",
+  "question": {
+    "asker": "",
+    "context": "Most buyers research a property by scrolling a listings portal. Developers know it, and borrow the name of a famous neighbourhood: projects next to Mont Kiara or Dutamas market themselves as part of it. Buyers end up paying the famous address's price without getting its tenants or its rents.",
+    "text": "What research do you need to do to know whether a project is priced right?"
+  },
+  "answer": {
+    "quote": "We got to know the location inside out.",
+    "summary": "Go beyond the listing. Work out where the real neighbourhood ends, which tier of tenant it attracts, and compare the project only against like-for-like transacted prices: new against new, old against old, in the same tier."
+  },
+  "reasons": [
+    {
+      "title": "A borrowed name does not bring borrowed rents",
+      "body": "In June 2024, older projects in the Dutamas area averaged RM538 per sq ft outside Dutamas proper against RM818 inside it, and newer ones about RM641 against roughly RM1,070. Five minutes apart, the tenants and the premiums they will pay are completely different."
+    },
+    {
+      "title": "Know which tier you are buying into",
+      "body": "Tier 1 areas such as Mont Kiara, Dutamas, KLCC and Bangsar South draw expatriates and have no real ceiling on rent. Tier 2 areas such as TTDI and Kota Damansara attract well-off locals; prices per sq ft can be similar, but rents hit a ceiling. Tier 3 is further out, with landed homes under RM500,000."
+    },
+    {
+      "title": "Compare new with new and old with old",
+      "body": "At the same rent, about 95% of tenants will choose the newer unit, so buying new at an old unit's price is close to a sure win. For older Dutamas projects, the session suggested not paying above RM700 per sq ft, or RM550 in the surrounding areas."
+    },
+    {
+      "title": "Make sure two rental plans break even",
+      "body": "Whole-unit leases, short stays and room-by-room rental each suit different tiers. Sean's one-plus-one in Mont Kiara earns RM5,000 from a single tenant but would make about RM4,000 by the room. Short-stay occupancy data showed demand only in Dutamas and Mont Kiara proper."
+    }
+  ],
+  "actions": [
+    "Walk the area and map where the real neighbourhood ends, whatever the project calls itself.",
+    "Pull recent transacted prices, not asking prices, and find the median for your tier, split into new and old.",
+    "Aim to buy below that median. Sean bought in Mont Kiara at about RM900 per sq ft, roughly 20% below completed transactions near RM1,100.",
+    "Before buying, confirm at least two ways of renting the unit that would each cover the instalment.",
+    "Visit the site: a portal cannot show you access roads, traffic or what is being built next door."
+  ],
+  "caveat": "The tier system and price ceilings come from research by FAR Capital, the deal-sourcing company Sean buys through as a paying member, presented in a June 2024 live session. They are a snapshot of one area; repeat the work for your own location rather than reusing the numbers.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this episode, which recaps a live research session with FAR Capital. The quoted answer is verbatim; everything else is paraphrased. Price data is as of June 2024. Sean is a customer of FAR Capital, not its owner.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "78PkfsD4iBQ",
+    "title": "RESEARCH WORK REQUIRED BEFORE BUYING A PROPERTY",
+    "duration": "25:39",
+    "url": "https://www.youtube.com/watch?v=78PkfsD4iBQ"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/property-research-before-buying"
+}

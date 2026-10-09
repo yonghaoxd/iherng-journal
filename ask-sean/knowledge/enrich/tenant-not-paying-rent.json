@@ -1,0 +1,26 @@
+{
+  "id": "tenant-not-paying-rent",
+  "sourceHash": "1e205af2c4ee",
+  "reviewed": false,
+  "aliases": [
+    "distress order",
+    "letter of demand",
+    "writ of possession",
+    "stamped tenancy agreement",
+    "eviction",
+    "court bailiff",
+    "tenant won't leave",
+    "rent arrears",
+    "seize belongings",
+    "auction",
+    "quiet enjoyment",
+    "ctos check"
+  ],
+  "questions": [
+    "What is the legal process to evict a tenant who hasn't paid rent?",
+    "How long does a distress order take to recover possession?",
+    "Can I cut off utilities or change locks if my tenant stops paying?",
+    "What documents do I need to prove a tenancy in court?",
+    "How much does it cost to get a letter of demand and distress order?"
+  ]
+}

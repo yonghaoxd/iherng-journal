@@ -3,7 +3,7 @@ import { seriesMetadata } from '@/lib/seo';
 
 export const metadata = seriesMetadata(
   'iherng-podcast',
-  'Read Asking Sean episode summaries about apartments versus landed homes, first purchases, and the relationship between location and price.'
+  'Asking Sean answers to real Malaysian property questions: first homes, stalled projects, family money, affordability, discounts and investing later in life.'
 );
 
 export default function Page() {

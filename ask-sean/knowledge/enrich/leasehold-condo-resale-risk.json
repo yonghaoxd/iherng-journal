@@ -1,0 +1,26 @@
+{
+  "id": "leasehold-condo-resale-risk",
+  "sourceHash": "3d8ccbe70300",
+  "reviewed": false,
+  "aliases": [
+    "leasehold",
+    "freehold",
+    "condo",
+    "apartment",
+    "lease renewal",
+    "lease extension",
+    "bank loan",
+    "financing",
+    "rental yield",
+    "joint purchase",
+    "unmarried couple",
+    "spa"
+  ],
+  "questions": [
+    "Is a leasehold condo with 60 years left a bad buy?",
+    "Will it be hard to sell a condo with a short lease?",
+    "Can I get a bank loan for a property with 60 years lease left?",
+    "Should unmarried couples buy property together?",
+    "How does lease renewal affect property value?"
+  ]
+}

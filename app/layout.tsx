@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight, Building2, Mic, BookOpen, Heart } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
+import { seriesCount } from '@/lib/articles';
 import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
 import { DEFAULT_OG_IMAGE, SITE_URL, websiteJsonLd } from '@/lib/seo';
@@ -145,13 +146,13 @@ export default function RootLayout({
               </p>
               <div className="footer-badges">
                 <span className="badge-pill">
-                  <Building2 size={12} /> 6 Property Reviews
+                  <Building2 size={12} /> {seriesCount('property-reviews')} Property Reviews
                 </span>
                 <span className="badge-pill">
-                  <Mic size={12} /> 3 Podcast Summaries
+                  <Mic size={12} /> {seriesCount('iherng-podcast')} Podcast Summaries
                 </span>
                 <span className="badge-pill">
-                  <BookOpen size={12} /> 9 Buyer Guides
+                  <BookOpen size={12} /> {seriesCount('buyer-guides')} Buyer Guides
                 </span>
               </div>
             </div>
@@ -176,6 +177,9 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link href="/rental-calculator">Rental Cash Flow Calculator</Link>
+                </li>
+                <li>
+                  <Link href="/ask">Asking Sean (AI Q&amp;A)</Link>
                 </li>
                 <li>
                   {/* A generated static file, not a route: next/link would

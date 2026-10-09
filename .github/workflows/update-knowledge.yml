@@ -1,0 +1,108 @@
+# Keeps the chatbot (ask-sean/) in step with the iherng Journal.
+#
+# Daily, and whenever scripts/auto-journal.ts publishes an article, this reads the
+# live Journal's feed. If any Buyer Guides or iherng Podcast article is new or
+# changed, it generates aliases for it, rebuilds the catalog, re-runs the routing
+# eval (all cases must pass) and redeploys the Worker. The updated knowledge files
+# are committed back, and an issue lists the new aliases for a later look.
+#
+# Repository secrets: DEEPSEEK_API_KEY, CLOUDFLARE_API_TOKEN (Workers Scripts: Edit,
+# D1: Edit). The Cloudflare account id is in wrangler.toml.
+name: Update knowledge base
+
+on:
+  schedule:
+    - cron: "0 2 * * *" # 10:00 Malaysia time, after the 9:00 auto-journal run
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run the eval and redeploy even if no article changed (checks the secrets)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: update-knowledge
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: ask-sean
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ask-sean/package-lock.json
+
+      - run: npm ci
+
+      - name: Read the live Journal
+        run: npm run kb:sync
+
+      - name: Check for new or changed articles
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain knowledge)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Knowledge base is up to date."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git status --short knowledge
+          fi
+
+      - name: Generate aliases and rebuild the catalog
+        if: steps.changes.outputs.changed == 'true' || inputs.force
+        run: |
+          npm run kb:enrich
+          npm run kb:build
+
+      - name: Routing eval (every case must pass)
+        if: steps.changes.outputs.changed == 'true' || inputs.force
+        run: npm run eval:route -- --strict
+
+      - name: Deploy the Worker
+        if: steps.changes.outputs.changed == 'true' || inputs.force
+        run: npx wrangler deploy --config wrangler.toml
+
+      - name: Commit the updated knowledge base
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add knowledge
+          git commit -m "Update knowledge base from the live Journal"
+          git pull --rebase -q origin main
+          git push
+
+      - name: List new aliases for review
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          changed=$(git diff --name-only --relative HEAD~1 -- knowledge/enrich)
+          if [ -z "$changed" ]; then echo "No new aliases."; exit 0; fi
+          {
+            echo "The chatbot was updated automatically and the routing eval passed."
+            echo "These generated aliases and example questions have not been reviewed;"
+            echo "remove anything the article does not cover, set \"reviewed\": true, and push."
+            echo
+            for file in $changed; do
+              echo "### $(basename "$file" .json)"
+              node -e "const e = require('./$file'); console.log('- Aliases: ' + e.aliases.join(', ')); e.questions.forEach(q => console.log('- ' + q));"
+              echo
+            done
+          } > review.md
+          gh issue create --title "Review new chatbot aliases ($(date -u +%Y-%m-%d))" --body-file review.md

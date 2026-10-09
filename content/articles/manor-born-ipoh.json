@@ -13,6 +13,7 @@
   "duration": "14:34",
   "excerpt": "Eighteen strata bungalows placed inside an existing guarded estate, where a central air well solves the problem every very large house has — and the arrival never quite matches the arrival hall.",
   "takeaways": [
+<<<<<<< HEAD
     "A house this wide would go dark in the middle; a central courtyard and air well are what keep it usable.",
     "Strata inside an existing guarded community means two guard houses, a uniform design and certainty about who your neighbours are.",
     "The house is magnificent and the approach to it is not — narrow roads, minimal landscaping and a discreet entrance below a bridge."
@@ -72,11 +73,30 @@
         "Sean's reservations all concern what surrounds the house rather than the house. The highway is the first: birdsong on one side and traffic on the other. Inside with the windows shut it is a non-issue, but it takes the magic out of stepping onto a balcony.",
         "The second is the entrance to the estate — a small corner below a bridge reached by a narrow road, which he says feels almost accidental as a piece of design. Then he turns it over: if you want to live without anyone knowing where, an address nobody can find is exactly right.",
         "The third is the common areas. Roads, road shoulders and landscaping are all minimal. He explains why — with only eighteen units, most of the land is carved out to individual owners and very little sits under management — but the conclusion stands. The house is superbly designed and enormous, and the experience of arriving at it does not match."
+=======
+    "An 18-bungalow strata enclave inside The Dales, behind two guardhouses.",
+    "A squarish 70 by 88 ft lot, an air well and windows on every side keep a 7,631 sq ft house bright and practical.",
+    "Highway noise outside and thin common areas are the trade-offs."
+  ],
+  "sections": [
+    {
+      "heading": "What sets it apart",
+      "paragraphs": [
+        "Manor Born is a gated strata enclave of just 18 bungalows inside The Dales, one of Ipoh's most exclusive addresses, so residents pass two guardhouses on the way home. The house Sean tours, listed in the episode title at RM2.7 million, sits on a squarish 70 by 88 ft lot with 7,631 sq ft over three floors, eight bedrooms and eight bathrooms.",
+        "Windows on all four sides, a central air well and windows in the basement keep even the middle of such a large house bright. Residents share a pool, gym and barbecue area."
+      ]
+    },
+    {
+      "heading": "Where it is",
+      "paragraphs": [
+        "It is on Jalan Tambun, the road between Tambun and Ipoh town, on the same high-end stretch as The Thompson, The Enclave and Tiger Lane. Limestone hills rise behind the houses; a highway runs in front."
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
       ]
     }
   ],
   "seanTake": {
     "pros": [
+<<<<<<< HEAD
       "The design is genuinely practical at this scale — an almost square lot, rooms with sufficient width, length and height, openings on every side, and an air well resolving the dark centre a house this wide would otherwise have.",
       "Making it strata inside an existing guarded estate gives two guard houses, a uniform design, and shared pool and gym that neighbouring individual-title plots do not enjoy; being complete, buyers can see the community before buying.",
       "The setting sits among Ipoh's established high-end addresses, with a park behind and a limestone hill as backdrop — the staircase window frames a view he compares to a painting."
@@ -89,6 +109,20 @@
   },
   "closing": "Manor Born answers the assumption that a suburban house must be a modest one, and the design thinking inside it — the air well, the two entrances, the garden-level work zone — is the most interesting thing in this review. The gap Sean keeps returning to is between a house of this quality and the sparse, narrow approach that delivers you to its door.",
   "sourceNote": "Based on Sean's full public English captions and his published YouTube episode notes. Lot size, built-up and room counts are as stated in the video and reflect the recording date in May 2021; the price cited in the episode title is the developer's figure at that time. The 3 on 3 section paraphrases the three things Sean says he likes and the three he has concerns about, presented near the end of the episode.",
+=======
+      "Practical design at every scale: the squarish lot gives every room real width, length and height, and the air well and basement windows solve the dark spots a house this big usually has.",
+      "Strata inside an already guarded estate: two guardhouses, a uniform design, a shared pool and gym, and because it is completed, you can see who your neighbours are before you buy.",
+      "The setting: Ipoh's top addresses on one street, and a limestone backdrop that Sean says looks like a painting from the staircase window."
+    ],
+    "cons": [
+      "Highway noise: fine once the windows are shut, but it intrudes on the balconies and outdoor spaces.",
+      "An awkward entrance: the way into The Dales is a narrow road through a small corner under a bridge that feels accidental, though it keeps the address discreet.",
+      "Thin common areas: most of the land went to the 18 private plots, so roads, verges and landscaping are minimal and the arrival doesn't match the houses."
+    ]
+  },
+  "closing": "For buyers who want a large, practical bungalow in a small, known community, provided the highway in front doesn't bother them.",
+  "sourceNote": "Based on Sean's full English captions for this May 2021 episode. The 3 on 3 follows the three things he likes and the three he doesn't, in his order, at the end of the video. The developer's team invited Sean to view the project.",
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
   "sources": [
     {
       "label": "Original video, captions & Sean's episode notes · 16 May 2021",

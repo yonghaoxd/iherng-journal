@@ -1,0 +1,57 @@
+{
+  "id": "housing-loan-rejection-reasons",
+  "series": "buyer-guides",
+  "title": "Why was my housing loan rejected?",
+  "excerpt": "A rejected loan stays on record and makes the next bank wary. Rena Choong goes through the most common reasons banks say no, and what to fix before you apply again.",
+  "date": "2022-09-23",
+  "tag": "Housing loans",
+  "question": {
+    "asker": "",
+    "context": "A rejection doesn't only cost you the property; it stays on record and makes the next bank cautious. In the third episode of his mortgage series, Sean asks Rena Choong which problems most often get a housing loan turned down.",
+    "text": "What are the most common reasons banks reject a housing loan, and how do you avoid them?"
+  },
+  "answer": {
+    "by": {
+      "name": "Rena Choong",
+      "role": "head of mortgage at FAR Capital"
+    },
+    "quote": "Please don't submit, wait until you fully settle it.",
+    "summary": "Most rejections are predictable: a DSR over the limit, recent arrears in CCRIS, a restructured loan, or a legal or AKPK record. Fix what you can and wait for a clean record before applying, because each rejection is visible to the next bank."
+  },
+  "reasons": [
+    {
+      "title": "Recent arrears mean an upfront no",
+      "body": "One month late is usually acceptable, but two or three months of arrears in CCRIS is treated as an upfront rejection. Settle in full and wait until the latest six months show zeros; late credit card payments are easier to explain than housing loan arrears."
+    },
+    {
+      "title": "Restructuring is worse than refinancing",
+      "body": "Restructuring or rescheduling, stretching a loan because you can't keep up, signals distress and often leads to rejection. Refinancing to draw cash from a property's built-up equity is different, and a government-backed moratorium doesn't mark CCRIS, though applying to the same bank that granted it is awkward."
+    },
+    {
+      "title": "Legal records block even eligible buyers",
+      "body": "Summonses and court cases, including against a company you direct, trade references such as unpaid phone or instalment bills above about RM300, AKPK and bankruptcy lead to rejection however good your income. A PTPTN arrears flag is lighter: settle the overdue amount, get the settlement letter, and you can apply within a month or two."
+    },
+    {
+      "title": "Every application leaves a mark",
+      "body": "CCRIS shows pending applications, and banks notice when others have turned you down, so submitting to five or six banks at once looks bad. Rena suggests two or three at most."
+    }
+  ],
+  "actions": [
+    "Check your DSR, loan eligibility and CCRIS before you apply.",
+    "Clear any arrears and wait for clean months before submitting.",
+    "Apply to two or three banks, not every panel bank at once.",
+    "If your DSR is borderline, pay down credit card balances, which count at 5% of what you owe, before applying.",
+    "If you have little credit history, use one credit card lightly and pay it in full each month, rather than collecting several cards."
+  ],
+  "caveat": "Banks weigh these things differently, so a case one bank rejects may suit another, and these are 2022 practices. With AKPK or bankruptcy on record, Sean's view is that buying property shouldn't be the priority for now.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for episode 3 of his mortgage series with Rena Choong, FAR Capital's head of mortgage (September 2022). The quoted answer is Rena's own words; everything else is paraphrased. Bank practices are as described in 2022 and change over time. Sean is a customer of FAR Capital, not its owner.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "ndDQECzVp14",
+    "title": "COMMON REASONS FOR LOAN REJECTIONS (EP 3)",
+    "duration": "29:36",
+    "url": "https://www.youtube.com/watch?v=ndDQECzVp14"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/housing-loan-rejection-reasons"
+}

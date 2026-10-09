@@ -1,0 +1,26 @@
+{
+  "id": "unsold-units-near-completion",
+  "sourceHash": "2d77b4490b5b",
+  "reviewed": false,
+  "aliases": [
+    "condo",
+    "apartment",
+    "dual key",
+    "tri key",
+    "bulk purchase",
+    "unsold units",
+    "vacant possession",
+    "late delivery damages",
+    "developer discount",
+    "subsale",
+    "rental yield",
+    "instalment"
+  ],
+  "questions": [
+    "Do unsold units near completion mean the project is in trouble?",
+    "Are dual-key or tri-key units worth buying?",
+    "Does a late delivery matter if I buy close to completion?",
+    "How do I compare expected rent with my instalment?",
+    "Should I buy a completed unsold unit instead of one under construction?"
+  ]
+}

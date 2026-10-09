@@ -2,46 +2,54 @@
   "slug": "apartment-vs-landed",
   "series": "iherng-podcast",
   "episode": 241,
-  "title": "Apartment or landed? Start with the life you want.",
-  "shortTitle": "Apartment vs landed",
-  "location": "Housing choices",
-  "tag": "Own stay",
+  "title": "Landed or condo: which holds its value better?",
+  "shortTitle": "Landed vs condo",
+  "tag": "Landed vs high-rise",
   "date": "2024-02-20",
   "videoId": "elQNiT-fzkM",
   "videoTitle": "ASKING SEAN #241 | APARTMENT VS LANDED",
   "duration": "23:21",
-  "excerpt": "Sean revisits a familiar debate through land scarcity, changing priorities and the purpose of a home.",
-  "takeaways": [
-    "The two formats emerge in different development conditions.",
-    "Income and life priorities affect housing preferences.",
-    "Safety and security remain central to a home."
-  ],
-  "sections": [
-    {
-      "heading": "A comparison with context",
-      "paragraphs": [
-        "Sean's episode notes frame the apartment-versus-landed debate around development conditions. High-rise homes tend to appear as land becomes scarce, so comparing the formats also means considering the setting in which they are built."
-      ]
-    },
-    {
-      "heading": "Preferences change with circumstances",
-      "paragraphs": [
-        "The notes raise an argument about a possible ceiling on non-landed resale prices as the income needed to buy increases and buyers' priorities shift. This is a discussion point from the episode, not a verified rule for every apartment market."
-      ]
-    },
-    {
-      "heading": "Return to the purpose of the home",
-      "paragraphs": [
-        "Sean identifies safety and security as a fundamental priority. The discussion therefore extends beyond choosing a housing label to what a home should provide."
-      ]
-    }
-  ],
-  "closing": "As a reading prompt, write down the three things your home needs to do for you before comparing formats. This prompt is editorial, not a quotation from Sean.",
-  "sourceNote": "Based on the original video's published episode notes. Full captions were unavailable; the summary covers those notes rather than the complete conversation.",
+  "excerpt": "A reader assumes landed homes are guaranteed to appreciate while condos age. Sean explains why that view is hindsight, where condos win, and the price ceiling open landed homes run into.",
+  "qa": {
+    "kind": "question",
+    "asker": "Lau, a viewer who wrote in by email",
+    "context": "Lau believes that because land is limited, a landed home in KL is almost guaranteed to appreciate over 20 to 30 years. Condos, on the other hand, age: however well managed, the building and facilities start to look old.",
+    "question": "In a sought-after area such as Bukit Jalil, Hartamas or PJ, how would a condo's value hold up against a landed home over the long run?",
+    "quote": "The moral of the story is it's very easy to look back.",
+    "answer": "Landed terrace houses do appreciate fastest, but \"guaranteed\" is hindsight. Condos in good locations grow a little more slowly yet earn far more rent, and older landed homes without security face a ceiling on what buyers will pay.",
+    "reasons": [
+      {
+        "title": "Landed wins on growth, condos win on rent",
+        "body": "Official statistics rank landed terrace houses first for capital appreciation, with apartments close behind; corner lots do best of all. But a two- to three-bedroom condo in PJ rents for about RM2,500 to RM2,800, a rate tenants will not pay for a terrace, because condos offer security, facilities and less space to clean and maintain."
+      },
+      {
+        "title": "Yesterday's safe bet was once the fringe",
+        "body": "Subang Jaya, PJ and Damansara Utama were on the edge of development 20 to 30 years ago, and people who bought early apartments in Mont Kiara, Hartamas or Puchong made money too. Townships launch terraces first because they sell easily; condos come later, once land is scarce."
+      },
+      {
+        "title": "Open landed homes hit a price ceiling",
+        "body": "Individual-title terraces sit on public roads that often become shortcuts, and guarding them depends on a residents' association. A household paying RM1.2 to 1.5 million earns around RM18,000 to RM20,000 a month and expects security. Sean believes unguarded landed homes will hit a price cap, and notes many older owners downsize into 1,500 to 1,800 sq ft condos."
+      },
+      {
+        "title": "Big landed homes are hard to sell",
+        "body": "Luxury homes bought for RM800,000 years ago are now listed at RM3 to 4 million and struggling to sell. On a RM3 million home, a buyer needs about RM300,000 down plus RM300,000 to RM400,000 for renovation before moving in, which only the top 5% or so of Malaysians can afford."
+      }
+    ],
+    "actions": [
+      "Decide first whether you want capital growth or rental income; they point to different property types.",
+      "If you buy landed, favour guarded or strata projects and avoid lots facing a main road or a likely shortcut.",
+      "Look at today's early-stage townships, rather than chasing locations that have already made their money.",
+      "Before buying a large landed home, ask who could afford to buy it from you in 20 years.",
+      "Consider renting the dream home and putting your capital into rental apartments instead, as Sean suggests."
+    ],
+    "caveat": "With unlimited capital, Sean says he would happily buy landed and commercial property in prime city areas; these trade-offs bite hardest for buyers stretching to afford. He also warns against copying US house-flipping advice, since Malaysian financing works very differently."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #241. The quoted answer is verbatim; everything else is paraphrased. Rents and prices are as Sean stated them in February 2024.",
   "sources": [
     {
-      "label": "Original video & Sean's episode notes · 20 February 2024 (MYT)",
+      "label": "Original video and English captions · 20 February 2024",
       "url": "https://www.youtube.com/watch?v=elQNiT-fzkM"
     }
-  ]
+  ],
+  "location": "Housing choices"
 }

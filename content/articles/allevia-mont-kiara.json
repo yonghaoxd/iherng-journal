@@ -7,12 +7,13 @@
   "location": "Mont'Kiara, Kuala Lumpur",
   "propertyType": "High-Rise",
   "tag": "Urban luxury",
-  "date": "2025-10-25",
+  "date": "2025-10-26",
   "videoId": "GtovUptGuAg",
   "videoTitle": "PROPERTY REVIEW #409 | ALLEVIA, MONT'KIARA",
   "duration": "46:52",
   "excerpt": "Four years after covering the launch, Sean returns to a completed tower whose unit layout he calls his favourite of all time — and whose quiet dead-end street may not stay quiet.",
   "takeaways": [
+<<<<<<< HEAD
     "In Mont'Kiara the specific road matters more than the project: frontage toward the main street carries a premium because so much of life here is done on foot.",
     "Almost 2,000 sq ft holding only three bedrooms is the point — the space goes into the living, dining, kitchen and circulation instead.",
     "A planned road connection would trade the street's current privacy for convenience, and Sean is genuinely unsure which owners should prefer."
@@ -79,11 +80,37 @@
         "The deck sits between the two towers, which is itself the design move — placing the amenity where the gap between buildings is widest. The landscape architecture is expressive: cascading linear platforms, perforated screens, slanted landscape islands cutting across a rectangular canvas, and a cantilevered column-free walkway linking the towers.",
         "The pool runs roughly 40 to 50 m with an overflow edge whose sound helps mask traffic, finished with stone rather than the usual pebble wash. A jacuzzi and children's water play are screened by planting for privacy, and the indoor badminton court is a 9 m volume with windows on all sides, air conditioning and timber flooring. The sky gym and sky lounge occupy the upper floor.",
         "But his third concern lands here. Strip away the forms and the planting, and the list is one badminton court, a pool, a playground and a gym that was not finished at the time of filming. For a project in this price bracket he expected more, and says so — the design camouflages the facilities rather than the facilities justifying the address."
+=======
+    "Two towers with four units per floor and step-free access throughout.",
+    "A 1,971 sq ft unit with only three bedrooms, renting fully furnished for RM11,000.",
+    "Density, a planned road link and basic facilities are the concerns."
+  ],
+  "sections": [
+    {
+      "heading": "What sets it apart",
+      "paragraphs": [
+        "Allevia has two square towers with just four units per floor, served by four lifts, and a level, step-free route from the drop-off to the front door. The 1,971 sq ft Type C1 has only three bedrooms plus a utility room, so the space goes to the shared rooms: a column-free living and dining area of about 7 by 8 metres under a 3-metre ceiling, a separate wet kitchen beside the pantry, and a large helper's room.",
+        "Units were changing hands at around RM1,000 psf, about RM1.9 million to RM2 million."
+      ]
+    },
+    {
+      "heading": "Where it is",
+      "paragraphs": [
+        "It is on Jalan Mont Kiara 4, for now a dead end used only by residents of a few blocks, with a side gate to Jalan Mont Kiara 3. Mont Kiara International School, Garden International School and the 163 and Arcoris shops and offices are within walking distance."
+      ]
+    },
+    {
+      "heading": "Rent and returns",
+      "paragraphs": [
+        "This fully furnished unit rents for RM11,000 a month, and a one-bedroom at 163 for about RM6,000. The demand comes from expatriates on three- to five-year postings, who would rather rent somewhere comfortable than buy. At about RM2 million, Sean puts the instalment at RM8,000 to RM10,000, so the rent covers it.",
+        "An investor's tip from the unit: the owner left the smallest bedroom empty, so a tenant can make it a study, nursery or hobby room without furniture having to be moved out."
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
       ]
     }
   ],
   "seanTake": {
     "pros": [
+<<<<<<< HEAD
       "Mont'Kiara's international schools, mature amenities and walkability let residents live without a car, which is why the expatriate community concentrates here and why short-stay tenants pay strong rents.",
       "The towers are placed as far apart as the site allows and oriented to protect views, and the architecture — fabric-like columns, considered lighting, zero step-up throughout, expressive landscape islands — is unlike anything else on the street.",
       "The unit typology is his all-time favourite: a horizontal layout with living and dining together and bedrooms split to the sides, where nearly 2,000 sq ft buys generous in-between space rather than a fourth bedroom."
@@ -96,9 +123,23 @@
   },
   "closing": "Allevia's argument is made inside the unit, not on the facilities deck. Whether that is enough depends on how much a buyer values the address, the walkability and a layout that spends its square footage on living space — and on which way the road at the end of the street eventually goes.",
   "sourceNote": "Based on Sean's full public English captions and his published YouTube episode notes. Measurements, unit size, asking prices and rents are as discussed in the video and reflect the recording date; the unit filmed had been furnished for rental rather than left as handed over. The 3 on 3 section paraphrases the three things Sean says he likes and the three he has concerns about, presented near the end of the episode.",
+=======
+      "Mont Kiara itself: mature amenities, walkable without a car, and more international schools than anywhere else, which keeps expatriate demand and rents high. This unit fetches RM11,000; a one-bedroom at 163 about RM6,000.",
+      "The design: towers spaced apart and angled for views, speed ramps in the car park, fabric-textured concrete, step-free access and an inventive landscaped deck.",
+      "Sean's favourite layout: nearly 2,000 sq ft with only three bedrooms, so the living, dining, kitchen and in-between spaces are generous, with big windows throughout."
+    ],
+    "cons": [
+      "Density and new supply, with more plots still to be built along Jalan Mont Kiara 3; the numbers still work, as an instalment of about RM8,000 to RM10,000 is covered by rent of RM10,000 to RM11,000.",
+      "A planned link from Jalan Mont Kiara 4 to Jalan Mont Kiara 3 would make trips such as the school run easier, but end the privacy of the dead end.",
+      "Basic facilities for about RM1,000 psf: one badminton court, a pool, a playground, an unfinished gym and an unremarkable rooftop, dressed up by good design."
+    ]
+  },
+  "closing": "For walkable Mont Kiara living with generous space, Allevia delivers; just don't buy it for the facilities.",
+  "sourceNote": "Based on Sean's full English captions for this October 2025 episode. The 3 on 3 follows the three things he likes and the three concerns he names, in his order, at the end of the video. An owner let Sean view the unit; prices and rents are as he quoted them.",
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
   "sources": [
     {
-      "label": "Original video, captions & Sean's episode notes · 25 October 2025",
+      "label": "Original video and English captions · 26 October 2025",
       "url": "https://www.youtube.com/watch?v=GtovUptGuAg"
     }
   ]

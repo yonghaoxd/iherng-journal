@@ -13,6 +13,7 @@
   "duration": "35:30",
   "excerpt": "The first completed homes in a long-hyped master plan arrive with the roads, parks and MRT already finished — and with the compromises a townhouse always carries.",
   "takeaways": [
+<<<<<<< HEAD
     "Kwasa Damansara inverted the usual order: infrastructure, MRT and parks were completed before the first homes were handed over.",
     "The strata landed format is what lets the architecture survive — common areas, facades and parking stay under management control.",
     "The townhouse trade-offs are real: a narrow frontage, two staircases threaded through one structure, and a living room opening onto a public walkway."
@@ -78,11 +79,36 @@
         "The owner tells Sean he paid around RM780,000 at launch, roughly three years before filming. Sean treats that as the crux: a strata landed home from a reputable developer, under RM800,000, in the Klang Valley, within walking distance of a public park and an MRT station, is genuinely rare. Those figures reflect the recording date and one specific unit — present-day prices need fresh evidence.",
         "He is equally clear about what that money now competes with. A similar layout in a condo can cost about the same, the site is leasehold while land next door is freehold, and the debate against a link house in an established township is a real one.",
         "The strata format is his strongest structural argument. Because a maintenance fee covers boundaries, landscape, security and cleanliness, the facade survives intact instead of each owner painting their own colours and adding fences within the first week. Parking disputes go to management rather than to neighbours, and there is dedicated visitor parking — protections an individual-title scheme simply cannot offer."
+=======
+    "The first completed homes in Kwasa Damansara, built after the roads, parks and MRT.",
+    "Strata landed homes arranged around a central park, with no back lanes.",
+    "No shops yet, some puzzling details and rising competition are the concerns."
+  ],
+  "sections": [
+    {
+      "heading": "What sets it apart",
+      "paragraphs": [
+        "Dedaun Rimba is the first completed project in Kwasa Damansara: about 264 leasehold strata homes, with link houses around a central park and an outer ring of townhouses. The rows are single-loaded, so homes face the garden and there are no back lanes.",
+        "The 1,396 sq ft lower townhouse reverses the usual layout, with the kitchen at the front and the living room opening onto the garden, plus a ground-floor bedroom, three bathrooms and two tandem parking bays. The owner paid about RM780,000."
+      ]
+    },
+    {
+      "heading": "Where it is",
+      "paragraphs": [
+        "Kwasa Damansara's roads, parks and MRT station were finished before the homes; the owner commutes by MRT, which you can hear from the garden. For now, residents rely on neighbouring Kota Damansara for shops."
+      ]
+    },
+    {
+      "heading": "Rent and returns",
+      "paragraphs": [
+        "It is too new for rents to be known, and most early buyers appear to be moving in themselves. Prices are already moving: garden-facing link houses sold at about RM1.38 million are being offered on the subsale market at about RM1.9 million."
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
       ]
     }
   ],
   "seanTake": {
     "pros": [
+<<<<<<< HEAD
       "The master plan was activated in the right order — roads, parks, street lighting, walkways and a running MRT station were all completed before the first homes were handed over, with the developer building its own headquarters on site to show commitment.",
       "The strata landed format keeps the scheme coherent: common areas, facades, security and parking stay under management, and the single-loaded site plan lets every home address a central garden instead of a back lane.",
       "The design flair is consistent with the team's earlier work at KLPAC, Fennel, Capers and Danau — restrained landscaping, considered material textures and subtle structural detailing rather than showpiece facilities."
@@ -95,6 +121,20 @@
   },
   "closing": "Dedaun Rimba's real argument is not the house but the order things were built in. Whether it suits you depends on how much you value a finished master plan and a strata-managed street over the width and freehold title a link house elsewhere would give you for similar money.",
   "sourceNote": "Based on Sean's full public English captions and his published YouTube episode notes. Measurements, unit size and the purchase price are as stated in the video and reflect the recording date. The 3 on 3 section paraphrases the three things Sean says he likes and the three he has concerns about, presented near the end of the episode.",
+=======
+      "A master plan that built the infrastructure first: roads, walkways, parks, street lighting and an operating MRT station, with the master developer's own headquarters up before land was parcelled out to other developers.",
+      "Strata landed living: maintained common areas and facades, homes that open onto a central park, managed parking, and deliberately simple, low-maintenance facilities.",
+      "The developer's design flair: subtle wall textures, angled columns, a Santorini-toned pool and careful partitions, which is why many buyers trust the brand."
+    ],
+    "cons": [
+      "The township will take years: there are no shops yet, so families rely on Kota Damansara, and prices already match similar condo layouts.",
+      "Puzzling details: feeder pillars painted green rather than screened with planting, lower townhouses whose living rooms open straight onto a shared walkway, and outer units facing very wide roads.",
+      "Competition: Sunsuria, MRCB, YTL and others are building here, which matters most for high-rise buyers, and the area's appeal rests on the MRT and the new roads."
+    ]
+  },
+  "closing": "Sean's punchline: strata landed homes from a reputable developer, under RM800,000 in the Klang Valley and within walking distance of a park and an MRT station, are now rare.",
+  "sourceNote": "Based on Sean's full English captions for this September 2026 episode. The 3 on 3 follows the three things he likes and the three concerns he names, in his order, at the end of the video. A viewer who bought a unit let Sean view it.",
+>>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
   "sources": [
     {
       "label": "Original video, captions & Sean's episode notes · 7 September 2026",
