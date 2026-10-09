@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { articles } from '@/lib/articles';
+import { AIherngName } from '@/components/aiherng-name';
 import { Home, Building2, Mic, BookOpen, Calculator, MessageCircleQuestion, Menu, X } from 'lucide-react';
 
 export function JournalNav() {
@@ -61,7 +62,7 @@ export function JournalNav() {
       icon: BookOpen,
     },
     { href: '/calculator', title: 'Calculator', icon: Calculator },
-    { href: '/ask', title: 'AIherng', icon: MessageCircleQuestion },
+    { href: '/ask', title: 'AIherng', label: <AIherngName />, icon: MessageCircleQuestion },
   ];
 
   return (
@@ -79,7 +80,7 @@ export function JournalNav() {
               aria-current={active ? 'page' : undefined}
             >
               <Icon size={14} className="nav-icon" />
-              <span>{link.title}</span>
+              <span>{'label' in link ? link.label : link.title}</span>
               {link.badge && <span className="nav-badge">{link.badge}</span>}
             </Link>
           );
@@ -116,7 +117,7 @@ export function JournalNav() {
                 >
                   <div className="flex items-center gap-3">
                     <Icon size={18} />
-                    <span>{link.title}</span>
+                    <span>{'label' in link ? link.label : link.title}</span>
                   </div>
                   {link.badge && <span className="nav-badge">{link.badge}</span>}
                 </Link>

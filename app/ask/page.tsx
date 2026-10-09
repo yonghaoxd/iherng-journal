@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MessageCircleQuestion } from 'lucide-react';
 import { AskSeanChat } from '@/components/ask-sean-chat';
+import { AIherngName } from '@/components/aiherng-name';
 import { JsonLd } from '@/components/json-ld';
 import { DEFAULT_OG_IMAGE, SITE_NAME, breadcrumbJsonLd } from '@/lib/seo';
 
@@ -42,7 +43,9 @@ export default function AskPage() {
       <div className="breadcrumb">
         <Link href="/">Home</Link>
         <span className="slash">/</span>
-        <span className="active">AIherng</span>
+        <span className="active">
+          <AIherngName />
+        </span>
       </div>
 
       <section className="series-hero-banner">
@@ -51,7 +54,7 @@ export default function AskPage() {
           <span>AI 问答 · 根据 SEAN 的节目</span>
         </div>
         <h1 className="series-heading">
-          AIherng
+          <AIherngName variant="serif" />
           <span className="orange-dot">.</span>
         </h1>
         <div className="series-intro-row">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight, Building2, Mic, BookOpen, Heart } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
+import { AIherngName } from '@/components/aiherng-name';
 import { seriesCount } from '@/lib/articles';
 import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
@@ -179,7 +180,9 @@ export default function RootLayout({
                   <Link href="/rental-calculator">Rental Cash Flow Calculator</Link>
                 </li>
                 <li>
-                  <Link href="/ask">AIherng (AI Q&amp;A)</Link>
+                  <Link href="/ask">
+                    <AIherngName /> (AI Q&amp;A)
+                  </Link>
                 </li>
                 <li>
                   {/* A generated static file, not a route: next/link would

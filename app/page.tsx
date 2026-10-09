@@ -13,6 +13,7 @@ import {
   BuyerGuidesSection,
 } from '@/components/journal';
 import { seriesCount, type SeriesKey } from '@/lib/articles';
+import { AIherngName } from '@/components/aiherng-name';
 
 const storyCount = (seriesKey: SeriesKey) => `${String(seriesCount(seriesKey)).padStart(2, '0')} STORIES`;
 
@@ -52,7 +53,9 @@ export default function Home() {
 
             <div className="hero-actions">
               <Link href="/ask" className="hero-btn primary">
-                <span>Ask AIherng a question</span>
+                <span>
+                  Ask <AIherngName /> a question
+                </span>
                 <ArrowRight size={16} />
               </Link>
               <a

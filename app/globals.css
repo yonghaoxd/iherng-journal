@@ -1427,6 +1427,24 @@ p {
   color: var(--accent-terracotta);
 }
 
+/* AIherng: "AI" is set apart so the capital I can't read as an l. */
+.aiherng-name {
+  white-space: nowrap;
+}
+
+.aiherng-name.serif .aiherng-ai {
+  font-style: italic;
+  color: var(--accent-terracotta);
+  /* Room for the italic I's overhang before the upright h. */
+  margin-right: 0.04em;
+}
+
+.aiherng-name.sans .aiherng-ai {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-right: 0.06em;
+}
+
 .series-intro-row {
   display: flex;
   justify-content: space-between;
