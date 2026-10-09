@@ -3392,6 +3392,15 @@ p {
   border: none;
 }
 
+/* Credits a guest answerer, e.g. a lawyer Sean interviews. */
+.ask-answerer {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
 .ask-quote p {
   font-family: var(--font-serif);
   font-size: 30px;

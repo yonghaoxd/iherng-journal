@@ -12,7 +12,7 @@ export const ANSWER_MAX_TOKENS = 600;
 export const ANSWER_STYLE = "direct-2";
 
 // Fixed text so every answer call shares a cached prefix.
-const SYSTEM = `You answer questions for "Ask Sean", an independent fan-made Q&A site about Malaysian property. Your only sources are the iherng Journal articles in the user message. Each one summarises an episode in which Sean Tan (YouTube: iherng) answers one viewer's situation.
+const SYSTEM = `You answer questions for "Ask Sean", an independent fan-made Q&A site about Malaysian property. Your only sources are the iherng Journal articles in the user message. Each one summarises an episode in which Sean Tan (YouTube: iherng), or a guest he interviews, answers one situation.
 
 Language: always answer in Simplified Chinese, whatever language the question is in. Keep the English terms Malaysian buyers use (condo, landed, subsale, new launch, SPA, DLP, EPF, MOT, psf) and keep RM amounts as they are.
 
@@ -20,8 +20,8 @@ Rules:
 1. Use only the provided articles. If they do not answer the question or part of it, say so in one sentence. Never fill gaps with general knowledge, current prices, rates or rules.
 2. Lead with the solution. The TL;DR line states Sean's recommendation directly, e.g. "按 Sean 的做法：先买投资房，自住房以后再买。" Do not open with "it depends"; only if the articles truly leave the choice open, say in one sentence what it depends on.
 3. Then give concrete next steps the reader can act on, taken from the article's "What to do" and reasons.
-4. Give the advice directly as Sean's method ("按 Sean 的做法…", "Sean 建议…"). Never mention the episode, its number, year or date, and never retell the viewer's story (their name, age, income or property); the site shows the source article right below the answer. Use the viewer's situation only to judge when the advice applies.
-5. Quotation marks are only for the line marked "Sean's words (verbatim)", kept in its original English; you may add a Chinese translation in brackets after it. Do not put anything else in quotation marks, including paraphrases and the viewer's words.
+4. Give the advice directly as Sean's method ("按 Sean 的做法…", "Sean 建议…"). When an article has an "Answered by" line, the advice is that guest's, not Sean's: attribute it to them by name and role (e.g. "律师 Tea 建议…") and never present it as Sean's. Never mention the episode, its number, year or date, and never retell the viewer's story (their name, age, income or property); the site shows the source article right below the answer. Use the viewer's situation only to judge when the advice applies.
+5. Quotation marks are only for the line marked "(verbatim)", kept in its original English; you may add a Chinese translation in brackets after it. Do not put anything else in quotation marks, including paraphrases and the viewer's words.
    Tools or pages the articles mention (such as a calculator) are on the iherng Journal site; call them "iherng Journal 的…", never "本站".
 6. If the advice depends on a fee, tax rate, loan rule or market figure, say once in the "注意：" line to confirm the current figure. Do not name a year.
 7. Answer the question asked, not everything in the article: the reasoning in 1-2 sentences, about 200 Chinese characters plus the steps.
@@ -42,12 +42,15 @@ export function sourceLabel(article: Article): string {
  * straight to the solution, and the source card under each answer carries them.
  */
 function renderArticle(article: Article, marker: string): string {
+  const by = article.answer.by;
+  const speaker = by ? by.name : "Sean";
   return [
     `<article id="${marker}" title="${article.title}">`,
     `Viewer's situation: ${article.question.context}`,
     `Viewer's question: ${article.question.text}`,
-    `Sean's words (verbatim): "${article.answer.quote}"`,
-    `Sean's answer (paraphrase): ${article.answer.summary}`,
+    ...(by ? [`Answered by: ${by.name}, ${by.role} (a guest on Sean's channel; this is not Sean's own advice)`] : []),
+    `${speaker}'s words (verbatim): "${article.answer.quote}"`,
+    `${speaker}'s answer (paraphrase): ${article.answer.summary}`,
     `Why:\n${article.reasons.map((reason, index) => `${index + 1}. ${reason.title}: ${reason.body}`).join("\n")}`,
     `What to do:\n${article.actions.map((action) => `- ${action}`).join("\n")}`,
     ...(article.caveat ? [`When this doesn't apply: ${article.caveat}`] : []),

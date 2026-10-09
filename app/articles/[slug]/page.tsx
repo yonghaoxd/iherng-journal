@@ -229,9 +229,21 @@ export default async function ArticlePage({
             <Info size={16} className="note-icon" />
             {qa ? (
               <p>
-                <strong>Editorial Note:</strong> Summarised from Sean Tan&apos;s full episode.
-                The quoted answer is in his own words; the rest is our paraphrase. Figures reflect
-                the recording date, so check current rates and rules before acting on them.
+                <strong>Editorial Note:</strong> Summarised from Sean Tan&apos;s full episode
+                {qa.answeredBy ? (
+                  <>
+                    {' '}
+                    with {qa.answeredBy.name}. The answer is theirs, not Sean&apos;s; the quote is
+                    in their own words and the rest is our paraphrase. This is general
+                    information, not legal advice for your situation.
+                  </>
+                ) : (
+                  <>
+                    . The quoted answer is in his own words; the rest is our paraphrase.
+                  </>
+                )}{' '}
+                Figures reflect the recording date, so check current rates and rules before
+                acting on them.
               </p>
             ) : (
               <p>

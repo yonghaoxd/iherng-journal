@@ -1,0 +1,58 @@
+{
+  "slug": "tenant-not-paying-rent",
+  "series": "buyer-guides",
+  "episode": 13,
+  "title": "My tenant has stopped paying rent. What can I legally do?",
+  "shortTitle": "Tenant not paying rent",
+  "tag": "Landlord & tenancy",
+  "date": "2026-05-25",
+  "videoId": "Sq9b3uDQjzU",
+  "videoTitle": "WHAT CAN I DO WHEN MY TENANTS REFUSE TO PAY RENT?",
+  "duration": "37:55",
+  "excerpt": "A tenant who stops paying but won't leave is every landlord's nightmare. Lawyer Tea explains the legal route Sean's viewers can take: a letter of demand, then a court distress order.",
+  "qa": {
+    "kind": "problem",
+    "context": "Sean counts a tenant who stops paying but won't leave among a landlord's two worst cases. Many owners don't know the legal steps, so they wait months or even years, or try cutting off the water or changing the locks. Sean puts the problem to Lawyer Tea, who handles distress proceedings for landlords.",
+    "question": "When a tenant stops paying rent and won't leave, what is the legal way to get your money and your property back?",
+    "answeredBy": {
+      "name": "Lawyer Tea",
+      "role": "a lawyer who acts for landlords against non-paying tenants"
+    },
+    "quote": "So yeah, the best way I would say it will be the distress orders.",
+    "answer": "Act on the first missed month: send a letter of demand, and if the tenant hasn't paid within 14 days, apply to court for a distress order. The order lets you seize and auction the tenant's belongings and take the unit back, in two to three months at best.",
+    "reasons": [
+      {
+        "title": "Start while the deposit still covers you",
+        "body": "Landlords usually hold two months' deposit. Sending the letter of demand after the first missed month means the court order can be ready by about the third month, before the losses run far beyond the deposit."
+      },
+      {
+        "title": "A distress order moves quickly",
+        "body": "The landlord applies alone, without the tenant appearing in court, which is why it can take as little as two to three months. The tenant is normally given 14 days to leave, and anything left in the unit is presumed theirs and sold at a court auction."
+      },
+      {
+        "title": "Doing it yourself can backfire",
+        "body": "A tenancy agreement normally promises the tenant quiet enjoyment of the unit. Cutting off water or electricity, or locking them out, can let them sue you for their losses or for belongings they say went missing."
+      },
+      {
+        "title": "Paperwork decides what you recover",
+        "body": "An agreement has to be stamped to be admissible in court, which costs only a few hundred ringgit, and an expired agreement still counts. Without one you can apply for a writ of possession to get the unit back, but recovering money is hard; rent paid by bank transfer, not cash, helps prove the tenancy."
+      }
+    ],
+    "actions": [
+      "Use a proper, stamped tenancy agreement that sets out each side's rights and what happens if rent isn't paid, not an agent's copied template.",
+      "Collect rent by bank transfer, and put the electricity account in the tenant's name.",
+      "Run a CTOS check on prospective tenants. Sean also treats an offer of a year's rent in cash, or a rush to move in the next day, as warning signs.",
+      "Send a letter of demand after the first missed month, and apply for a distress order if 14 days pass without payment.",
+      "Budget about RM10,000 in legal fees for the letter and the order, and let the court bailiff and the police carry out the eviction."
+    ],
+    "caveat": "Against squatters, or with no agreement or payment record, you can usually recover only the property, not the rent. If you suspect illegal activity in the unit, report it to the police at once; an owner who knew and said nothing can be held responsible."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for this May 2026 conversation with Lawyer Tea, who acts for landlords in distress proceedings. The quoted answer is Lawyer Tea's own words; everything else is paraphrased. Fees are as quoted in the episode. This is general information, not legal advice for your case.",
+  "sources": [
+    {
+      "label": "Original video and English captions · 25 May 2026",
+      "url": "https://www.youtube.com/watch?v=Sq9b3uDQjzU"
+    }
+  ],
+  "location": "Malaysia Nationwide"
+}

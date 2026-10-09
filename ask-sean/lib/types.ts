@@ -19,7 +19,12 @@ export interface Article {
     text: string;
   };
   answer: {
-    /** Sean's words, verbatim from the captions. The only text that may be quoted as his. */
+    /**
+     * Set when a guest on Sean's channel (e.g. a lawyer) gives the answer: the advice is
+     * theirs, not Sean's. Absent for Sean's own answers.
+     */
+    by?: { name: string; role: string };
+    /** The answerer's words, verbatim from the captions. The only text that may be quoted. */
     quote: string;
     /** The Journal's paraphrase of his answer. */
     summary: string;

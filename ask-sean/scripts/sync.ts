@@ -90,6 +90,14 @@ function detectBasis(sourceNote: string): Basis {
   return "sean-guide";
 }
 
+/** A guest answerer (e.g. a lawyer) named on the page; absent when Sean answers. */
+function answeredBy(root: HTMLElement): { by?: { name: string; role: string } } {
+  const section = root.querySelector(".ask-answer");
+  const name = section?.getAttribute("data-answerer-name")?.trim();
+  const role = section?.getAttribute("data-answerer-role")?.trim();
+  return name ? { by: { name, role: role ?? "" } } : {};
+}
+
 function parseArticle(html: string, url: string, series: Series): Article {
   const root = parse(html);
   const page = jsonLd(root, "Article");
@@ -112,6 +120,7 @@ function parseArticle(html: string, url: string, series: Series): Article {
       text: required(root, ".ask-question-text", url),
     },
     answer: {
+      ...answeredBy(root),
       quote: required(root, ".ask-quote", url).replace(/^[“"]\s*|\s*[”"]$/g, ""),
       summary: required(root, ".ask-answer-text", url),
     },

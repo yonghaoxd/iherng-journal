@@ -5,12 +5,14 @@ import type { AskSean } from '@/lib/articles';
  * The problem-and-answer layout used by the podcast and buyer guide series.
  *
  * Every article leads with the reader's actual situation and question, gives
- * Sean's verdict before his reasoning, and ends with what to do and when the
+ * the verdict before the reasoning (Sean's, or a named guest's when `answeredBy`
+ * is set), and ends with what to do and when the
  * advice stops applying — so a reader who stops after the first screen still
  * leaves with the answer.
  */
 export function AskSeanSummary({ qa }: { qa: AskSean }) {
   const isQuestion = qa.kind === 'question';
+  const guest = qa.answeredBy;
 
   return (
     <div className="ask-sean">
@@ -24,14 +26,24 @@ export function AskSeanSummary({ qa }: { qa: AskSean }) {
         <p className="ask-question-text">{qa.question}</p>
       </section>
 
-      <section className="ask-block ask-answer" aria-labelledby="ask-answer-label">
+      <section
+        className="ask-block ask-answer"
+        aria-labelledby="ask-answer-label"
+        data-answerer-name={guest?.name}
+        data-answerer-role={guest?.role}
+      >
         <span className="ask-label accent" id="ask-answer-label">
           <Quote size={13} />
-          SEAN&apos;S ANSWER
+          {guest ? `${guest.name.toUpperCase()}'S ANSWER` : "SEAN'S ANSWER"}
         </span>
         <blockquote className="ask-quote">
           <p>&ldquo;{qa.quote}&rdquo;</p>
         </blockquote>
+        {guest && (
+          <p className="ask-answerer">
+            {guest.name}, {guest.role}, in conversation with Sean
+          </p>
+        )}
         <p className="ask-answer-text">{qa.answer}</p>
       </section>
 

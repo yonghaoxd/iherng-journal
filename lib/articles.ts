@@ -29,6 +29,8 @@ import leaseholdResale from '@/content/articles/leasehold-condo-resale-risk.json
 import sixPropertiesHoldOrSell from '@/content/articles/six-properties-hold-or-sell.json';
 import singaporePrUnit from '@/content/articles/singapore-pr-malaysia-property.json';
 import tenPaidCondos from '@/content/articles/selling-fully-paid-properties-retirement.json';
+import tenantNotPaying from '@/content/articles/tenant-not-paying-rent.json';
+import willAndInheritance from '@/content/articles/will-and-property-inheritance.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -64,6 +66,8 @@ export const articles = [
   guruUnitsExit,
   unsoldUnits,
   leaseholdResale,
+  tenantNotPaying,
+  willAndInheritance,
 ];
 
 export type Article = (typeof articles)[number];
@@ -108,7 +112,12 @@ export interface AskSean {
   asker?: string;
   context: string;
   question: string;
-  /** Sean's verdict, verbatim and short. Everything else is paraphrase. */
+  /**
+   * Set when a guest on Sean's channel (a lawyer, say) gives the answer, so the page
+   * credits them instead of Sean. Absent means Sean answers.
+   */
+  answeredBy?: { name: string; role: string };
+  /** The answerer's verdict, verbatim and short. Everything else is paraphrase. */
   quote: string;
   answer: string;
   reasons: Array<{ title: string; body: string }>;
