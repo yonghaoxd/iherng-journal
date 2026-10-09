@@ -153,6 +153,15 @@ export function dateFor(article: Article) {
   });
 }
 
+/** "August 2026": when the episode was published. */
+export function monthYearFor(article: Article) {
+  return new Date(article.date + 'T12:00:00Z').toLocaleDateString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 /**
  * The fixed topic categories that podcast and buyer guide articles filter by.
  * Keeping the list short and fixed stops the filter growing with every article;
@@ -169,6 +178,31 @@ export function categoryFor(article: Article): Category | undefined {
 
 /** Property reviews filter by these two types; check-content.mjs enforces them. */
 export const propertyTypes = ['Landed', 'High-Rise'] as const;
+
+/**
+ * What Sean saw when he filmed a review: a show unit while the project was
+ * still being built, or the finished project. It is the stage at filming, not
+ * today; check-content.mjs enforces the two ids.
+ */
+export const stages = [
+  {
+    id: 'show-unit',
+    label: 'Show unit',
+    note: 'Reviewed at the show unit, while the project was being built',
+  },
+  {
+    id: 'completed',
+    label: 'Completed',
+    note: 'Reviewed after the project was completed',
+  },
+] as const;
+
+export type Stage = (typeof stages)[number];
+
+export function stageFor(article: Article): Stage | undefined {
+  const id = 'stage' in article ? article.stage : undefined;
+  return stages.find((stage) => stage.id === id);
+}
 
 /**
  * YouTube views of the article's video, as of `viewsAsOf()`. Refreshed with

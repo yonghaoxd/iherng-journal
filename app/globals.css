@@ -886,6 +886,33 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
+.stage-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  background: rgba(23, 26, 24, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-main);
+  backdrop-filter: blur(6px);
+}
+
+.stage-badge.show-unit svg,
+.article-stage-pill.show-unit {
+  color: var(--accent-amber);
+}
+
+.stage-badge.completed svg,
+.article-stage-pill.completed {
+  color: var(--signal-positive);
+}
+
 .series-badge.review {
   color: var(--accent-terracotta);
 }
@@ -1500,12 +1527,19 @@ p {
   padding: 2px;
 }
 
+.topic-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
 .topic-bar {
   display: grid;
-  grid-template-columns: auto 1fr;
+  /* A fixed label column keeps every row's options aligned. */
+  grid-template-columns: 56px 1fr;
   align-items: start;
-  gap: 18px;
-  margin-bottom: 20px;
+  gap: 12px;
 }
 
 .topic-bar-label {
@@ -1620,15 +1654,8 @@ p {
 }
 
 @media (max-width: 900px) {
-  /* One swipeable row instead of a tall stack of chips. */
-  .topic-bar {
-    display: block;
-  }
-
-  .topic-bar-label {
-    display: none;
-  }
-
+  /* One swipeable row per filter instead of a tall stack of chips; the
+     label stays so two rows (Type, Stage) can be told apart. */
   .tag-pills {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1975,6 +2002,41 @@ p {
 .article-property-type-pill {
   color: var(--text-main);
   border-color: rgba(255, 107, 61, 0.35);
+}
+
+.article-stage-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--bg-muted);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.article-stage-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: fit-content;
+  max-width: 640px;
+  margin: -4px auto 8px;
+  padding: 10px 14px;
+  text-align: left;
+  background: rgba(243, 170, 80, 0.08);
+  border: 1px solid rgba(243, 170, 80, 0.25);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.article-stage-note svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-amber);
 }
 
 .article-title {

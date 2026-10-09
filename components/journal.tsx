@@ -10,6 +10,8 @@ import {
   Building2,
   BookOpen,
   Eye,
+  HardHat,
+  CircleCheck,
 } from 'lucide-react';
 import {
   articles,
@@ -19,6 +21,7 @@ import {
   series,
   viewsFor,
   formatViews,
+  stageFor,
   type Article,
   type SeriesKey,
 } from '@/lib/articles';
@@ -37,6 +40,7 @@ export function ArticleCard({
   const isPodcast = article.series === 'iherng-podcast';
   const isGuide = article.series === 'buyer-guides';
   const views = viewsFor(article);
+  const stage = stageFor(article);
 
   return (
     <article className="article-card group">
@@ -59,6 +63,16 @@ export function ArticleCard({
             <Play size={10} fill="currentColor" />
             <span>{article.duration}</span>
           </span>
+          {stage && (
+            <span className={`stage-badge ${stage.id}`} title={stage.note}>
+              {stage.id === 'show-unit' ? (
+                <HardHat size={11} aria-hidden="true" />
+              ) : (
+                <CircleCheck size={11} aria-hidden="true" />
+              )}
+              {stage.label}
+            </span>
+          )}
           {showSeries && (
             <span
               className={`series-badge ${

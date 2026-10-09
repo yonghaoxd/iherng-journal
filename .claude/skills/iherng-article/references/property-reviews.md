@@ -12,6 +12,14 @@ number in the video title. Copy the fields of an existing review such as
 `High-Rise` (the series page filters by it, and the build enforces it); reviews
 have no `category`.
 
+`stage` records what Sean filmed: `show-unit` when he toured a sales gallery or
+show unit while the project was still being built (a launch, "handover in two
+or three years"), `completed` when he saw the finished project (an owner's unit,
+vacant possession, a revisit after completion). Decide from the transcript, not
+the title. It is the stage at filming, not today. Show-unit reviews get a
+badge and a note on the page that the project was still being built, and the
+series page filters by it.
+
 - `sections`: two, each 1–2 short paragraphs (about 130–150 words in all), plus
   an optional third:
   1. **"What sets it apart"**: the features that distinguish this project, with

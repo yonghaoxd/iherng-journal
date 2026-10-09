@@ -14,10 +14,14 @@ import {
   BookOpen,
   ThumbsUp,
   ThumbsDown,
+  HardHat,
+  CircleCheck,
 } from 'lucide-react';
 import {
   articles,
   askSeanFor,
+  stageFor,
+  monthYearFor,
   seriesFor,
   imageFor,
   dateFor,
@@ -90,6 +94,7 @@ export default async function ArticlePage({
   const isReview = article.series === 'property-reviews';
   const isPodcast = article.series === 'iherng-podcast';
   const isGuide = article.series === 'buyer-guides';
+  const stage = stageFor(article);
 
   // Series articles for Next/Prev
   const seriesArticles = articles.filter((a) => a.series === article.series);
@@ -198,6 +203,12 @@ export default async function ArticlePage({
             typeof article.propertyType === 'string' && (
             <span className="article-property-type-pill">{article.propertyType}</span>
           )}
+          {stage && (
+            <span className={`article-stage-pill ${stage.id}`} title={stage.note}>
+              {stage.id === 'show-unit' ? <HardHat size={12} /> : <CircleCheck size={12} />}
+              {stage.label}
+            </span>
+          )}
           <span className="article-topic-pill">{article.tag}</span>
           {'location' in article && article.location && (
             <span className="article-location-pill">
@@ -207,6 +218,15 @@ export default async function ArticlePage({
         </div>
 
         <h1 className="article-title">{article.title}</h1>
+        {stage?.id === 'show-unit' && (
+          <p className="article-stage-note">
+            <HardHat size={14} aria-hidden="true" />
+            <span>
+              Filmed at the show unit in {monthYearFor(article)}, while the project was still
+              being built. Finishes, prices and surroundings may have changed since.
+            </span>
+          </p>
+        )}
 
       </header>
 

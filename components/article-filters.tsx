@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import {
   categories,
   categoryFor,
   keyPointsFor,
   propertyTypes,
+  stages,
+  stageFor,
   viewsFor,
   viewsAsOf,
   type Article,
@@ -16,15 +18,61 @@ import { Search, SlidersHorizontal, ChevronDown } from 'lucide-react';
 
 interface ArticleFilterGridProps {
   articles: Article[];
-  /** Property reviews filter by type; the other series by fixed topic category. */
+  /** Property reviews filter by type and stage; the other series by topic category. */
   filterMode?: 'category' | 'propertyType';
   /** Label for the series' own order (e.g. "Guide order"); when set, it is the default sort. */
   seriesOrderLabel?: string;
 }
 
+/** One row of filter options, each from a fixed, short list. */
+interface Facet {
+  key: string;
+  label: string;
+  ariaLabel: string;
+  options: { value: string; label: string }[];
+  valueOf: (article: Article) => string | undefined;
+}
+
 /** Cards shown at first, and added by each "Show more". */
 const PAGE_SIZE = 12;
 const ALL = 'all';
+
+function propertyTypeFor(article: Article) {
+  return 'propertyType' in article && typeof article.propertyType === 'string'
+    ? article.propertyType
+    : undefined;
+}
+
+const FACETS: Record<
+  NonNullable<ArticleFilterGridProps['filterMode']>,
+  Facet[]
+> = {
+  propertyType: [
+    {
+      key: 'type',
+      label: 'Type',
+      ariaLabel: 'Property type filters',
+      options: propertyTypes.map((type) => ({ value: type, label: type })),
+      valueOf: propertyTypeFor,
+    },
+    {
+      key: 'stage',
+      label: 'Stage',
+      ariaLabel: 'Project stage filters',
+      options: stages.map(({ id, label }) => ({ value: id, label })),
+      valueOf: (article) => stageFor(article)?.id,
+    },
+  ],
+  category: [
+    {
+      key: 'topic',
+      label: 'Topics',
+      ariaLabel: 'Topic filters',
+      options: categories.map(({ id, label }) => ({ value: id, label })),
+      valueOf: (article) => categoryFor(article)?.id,
+    },
+  ],
+};
 
 /** Ties, and videos without a view count yet, keep the series' own order. */
 function sortArticles(list: Article[], order: SortOrder) {
@@ -47,19 +95,18 @@ function sortArticles(list: Article[], order: SortOrder) {
   return indexed.map(({ article }) => article);
 }
 
-function propertyTypeFor(article: Article) {
-  return 'propertyType' in article && typeof article.propertyType === 'string'
-    ? article.propertyType
-    : undefined;
-}
-
-function filterValueFor(
-  article: Article,
-  mode: ArticleFilterGridProps['filterMode'],
-) {
-  return mode === 'propertyType'
-    ? propertyTypeFor(article)
-    : categoryFor(article)?.id;
+function matchesSearch(article: Article, query: string) {
+  if (!query) return true;
+  return [
+    article.title,
+    article.excerpt,
+    article.tag,
+    categoryFor(article)?.label,
+    propertyTypeFor(article),
+    stageFor(article)?.label,
+    article.location,
+    ...keyPointsFor(article),
+  ].some((text) => text?.toLowerCase().includes(query));
 }
 
 export function ArticleFilterGrid({
@@ -67,50 +114,58 @@ export function ArticleFilterGrid({
   filterMode = 'category',
   seriesOrderLabel,
 }: ArticleFilterGridProps) {
+  const facets = FACETS[filterMode];
   const defaultOrder: SortOrder = seriesOrderLabel ? 'series' : 'latest';
-  const [selected, setSelected] = useState<string>(ALL);
+  const [selected, setSelected] = useState<Record<string, string>>({});
   const [sortOrder, setSortOrder] = useState<SortOrder>(defaultOrder);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // A fixed, short list in a fixed order; options with no stories are hidden.
-  const options = useMemo(() => {
-    const fixed =
-      filterMode === 'propertyType'
-        ? propertyTypes.map((type) => ({ value: type, label: type }))
-        : categories.map(({ id, label }) => ({ value: id, label }));
-    return fixed
+  const chosen = (facet: Facet) => selected[facet.key] ?? ALL;
+  const matchesFacets = (article: Article, except?: Facet) =>
+    facets.every(
+      (facet) =>
+        facet === except ||
+        chosen(facet) === ALL ||
+        facet.valueOf(article) === chosen(facet),
+    );
+
+  // Each row counts the stories that match the other rows, so the numbers
+  // always say what a click will show. Options no story uses are hidden.
+  const rows = facets.map((facet) => {
+    const base = articles.filter((article) => matchesFacets(article, facet));
+    const options = facet.options
+      .filter((option) =>
+        articles.some((a) => facet.valueOf(a) === option.value),
+      )
       .map((option) => ({
         ...option,
-        count: articles.filter(
-          (a) => filterValueFor(a, filterMode) === option.value,
-        ).length,
-      }))
-      .filter((option) => option.count > 0);
-  }, [articles, filterMode]);
+        count: base.filter((a) => facet.valueOf(a) === option.value).length,
+      }));
+    return {
+      facet,
+      options: [{ value: ALL, label: 'All', count: base.length }, ...options],
+    };
+  });
 
-  const selectedLabel = options.find((o) => o.value === selected)?.label;
+  const selectedLabels = rows
+    .map(({ facet, options }) =>
+      chosen(facet) === ALL
+        ? undefined
+        : options.find((o) => o.value === chosen(facet))?.label,
+    )
+    .filter(Boolean)
+    .join(' · ');
 
-  const filtered = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    const matches = articles.filter((article) => {
-      if (selected !== ALL && filterValueFor(article, filterMode) !== selected)
-        return false;
-      if (!query) return true;
-      return [
-        article.title,
-        article.excerpt,
-        article.tag,
-        categoryFor(article)?.label,
-        propertyTypeFor(article),
-        article.location,
-        ...keyPointsFor(article),
-      ].some((text) => text?.toLowerCase().includes(query));
-    });
-    return sortArticles(matches, sortOrder);
-  }, [articles, filterMode, selected, searchQuery, sortOrder]);
+  const query = searchQuery.trim().toLowerCase();
+  const filtered = sortArticles(
+    articles.filter(
+      (article) => matchesFacets(article) && matchesSearch(article, query),
+    ),
+    sortOrder,
+  );
 
   // "Show more" starts over whenever the filter, search or order changes.
-  const viewKey = `${selected}|${searchQuery}|${sortOrder}`;
+  const viewKey = `${JSON.stringify(selected)}|${searchQuery}|${sortOrder}`;
   const [paging, setPaging] = useState({ key: viewKey, count: PAGE_SIZE });
   if (paging.key !== viewKey) {
     // Adjusting state while rendering, so returning to an earlier view doesn't
@@ -123,9 +178,9 @@ export function ArticleFilterGrid({
 
   const byViews = sortOrder === 'most-viewed' || sortOrder === 'least-viewed';
   const isFiltered =
-    selected !== ALL || searchQuery !== '' || sortOrder !== defaultOrder;
+    selectedLabels !== '' || searchQuery !== '' || sortOrder !== defaultOrder;
   const resetAll = () => {
-    setSelected(ALL);
+    setSelected({});
     setSearchQuery('');
     setSortOrder(defaultOrder);
   };
@@ -162,46 +217,48 @@ export function ArticleFilterGrid({
         />
       </div>
 
-      <div className="topic-bar">
-        <span className="topic-bar-label" aria-hidden="true">
-          {filterMode === 'propertyType' ? 'Type' : 'Topics'}
-        </span>
-        <div
-          className="tag-pills"
-          role="tablist"
-          aria-label={
-            filterMode === 'propertyType'
-              ? 'Property type filters'
-              : 'Topic filters'
-          }
-        >
-          {[
-            { value: ALL, label: 'All', count: articles.length },
-            ...options,
-          ].map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              role="tab"
-              aria-selected={selected === option.value}
-              onClick={() => setSelected(option.value)}
-              className={`tag-pill ${selected === option.value ? 'active' : ''}`}
+      <div className="topic-bars">
+        {rows.map(({ facet, options }) => (
+          <div className="topic-bar" key={facet.key}>
+            <span className="topic-bar-label" aria-hidden="true">
+              {facet.label}
+            </span>
+            <div
+              className="tag-pills"
+              role="tablist"
+              aria-label={facet.ariaLabel}
             >
-              {option.label}
-              <span className="tag-pill-count">{option.count}</span>
-            </button>
-          ))}
-        </div>
+              {options.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  role="tab"
+                  aria-selected={chosen(facet) === option.value}
+                  onClick={() =>
+                    setSelected((current) => ({
+                      ...current,
+                      [facet.key]: option.value,
+                    }))
+                  }
+                  className={`tag-pill ${chosen(facet) === option.value ? 'active' : ''}`}
+                >
+                  {option.label}
+                  <span className="tag-pill-count">{option.count}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="filter-status">
         <span>
           Showing <strong>{visible.length}</strong> of {filtered.length}{' '}
           {filtered.length === 1 ? 'story' : 'stories'}
-          {selectedLabel && (
+          {selectedLabels && (
             <span>
               {' '}
-              in <em>{selectedLabel}</em>
+              in <em>{selectedLabels}</em>
             </span>
           )}
           {searchQuery && <span> matching &ldquo;{searchQuery}&rdquo;</span>}
