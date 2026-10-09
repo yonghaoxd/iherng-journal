@@ -1717,14 +1717,6 @@ p {
   font-weight: 400;
 }
 
-.article-deck {
-  font-size: clamp(17px, 1.8vw, 21px);
-  line-height: 1.6;
-  color: var(--text-muted);
-  max-width: 720px;
-  margin: 0 auto 32px;
-}
-
 .article-meta-bar {
   display: flex;
   align-items: center;
@@ -1797,27 +1789,6 @@ p {
 
 .byline-sub .sep {
   color: var(--border-color);
-}
-
-.jump-video-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 600;
-  color: #FF0000;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
-}
-
-.jump-video-btn:hover {
-  background: rgba(255, 0, 0, 0.1);
-  border-color: #FF0000;
-  transform: translateY(-1px);
 }
 
 @media (max-width: 640px) {

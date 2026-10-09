@@ -123,16 +123,6 @@ export default async function ArticlePage({
           </div>
         </div>
       </div>
-
-      {/* Q&A articles show the byline just above the video, so no jump link there. */}
-      {!qa && (
-        <div className="header-actions">
-          <a href="#original-video" className="jump-video-btn">
-            <Play size={14} fill="currentColor" />
-            <span>Watch Video</span>
-          </a>
-        </div>
-      )}
     </div>
   );
 
@@ -218,9 +208,6 @@ export default async function ArticlePage({
 
         <h1 className="article-title">{article.title}</h1>
 
-        {!qa && <p className="article-deck">{article.excerpt}</p>}
-
-        {!qa && metaBar}
       </header>
 
       {/* Featured Cover / Video Thumbnail — property reviews only. Q&A articles
@@ -262,18 +249,7 @@ export default async function ArticlePage({
       <div className="reading-layout">
         {/* Article Body */}
         <article className="reading-body">
-          {!qa && editorialNote}
-
           {qa && <AskSeanSummary qa={qa} />}
-
-          {/* Q&A articles keep the top of the page for the question and answer;
-              the byline and editorial note follow the summary instead. */}
-          {qa && (
-            <div className="article-colophon">
-              {metaBar}
-              {editorialNote}
-            </div>
-          )}
 
           {/* Formatted Story Sections — property reviews */}
           {'sections' in article && (
@@ -347,6 +323,14 @@ export default async function ArticlePage({
               <span className="reflection-author">— iherng Journal editorial note</span>
             </section>
           )}
+
+          {/* The top of the page is kept for the content itself (the question and
+              answer, or the cover and chapters); the byline and editorial note sit
+              here, just above the episode. */}
+          <div className="article-colophon">
+            {metaBar}
+            {editorialNote}
+          </div>
 
           {/* Original YouTube Video Embed */}
           <section id="original-video" className="video-player-section">
