@@ -101,6 +101,71 @@ export default async function ArticlePage({
   // Other related articles (same series, excluding current)
   const related = seriesArticles.filter((a) => a.slug !== slug);
 
+  // Byline: date, reading time and video length.
+  const metaBar = (
+    <div className="article-meta-bar">
+      <div className="byline-group">
+        <div className="byline-avatar">i<span>.</span></div>
+        <div className="byline-details">
+          <strong>Editorial Summary from Sean Tan</strong>
+          <div className="byline-sub">
+            <span className="flex items-center gap-1">
+              <Calendar size={12} /> {dateFor(article)}
+            </span>
+            <span className="sep">·</span>
+            <span className="flex items-center gap-1">
+              <Clock size={12} /> {readingTime(article)} min read
+            </span>
+            <span className="sep">·</span>
+            <span className="flex items-center gap-1">
+              <Play size={12} /> {article.duration} video
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Q&A articles show the byline just above the video, so no jump link there. */}
+      {!qa && (
+        <div className="header-actions">
+          <a href="#original-video" className="jump-video-btn">
+            <Play size={14} fill="currentColor" />
+            <span>Watch Video</span>
+          </a>
+        </div>
+      )}
+    </div>
+  );
+
+  // Editorial transparency note
+  const editorialNote = (
+    <div className="editorial-transparency-note">
+      <Info size={16} className="note-icon" />
+      {qa ? (
+        <p>
+          <strong>Editorial Note:</strong> Summarised from Sean Tan&apos;s full episode
+          {qa.answeredBy ? (
+            <>
+              {' '}
+              with {qa.answeredBy.name}. The answer is theirs, not Sean&apos;s; the quote is in
+              their own words and the rest is our paraphrase. This is general information, not
+              legal advice for your situation.
+            </>
+          ) : (
+            <>. The quoted answer is in his own words; the rest is our paraphrase.</>
+          )}{' '}
+          Figures reflect the recording date, so check current rates and rules before acting on
+          them.
+        </p>
+      ) : (
+        <p>
+          <strong>Editorial Note:</strong> This summary is distilled from Sean Tan&apos;s public
+          video breakdown and verified episode documentation. All property specifications and
+          opinions reflect the recording date and should be verified for present-day listings.
+        </p>
+      )}
+    </div>
+  );
+
   return (
     <main id="main" className="container article-page">
       <JsonLd data={articleJsonLd(article)} />
@@ -153,36 +218,9 @@ export default async function ArticlePage({
 
         <h1 className="article-title">{article.title}</h1>
 
-        <p className="article-deck">{article.excerpt}</p>
+        {!qa && <p className="article-deck">{article.excerpt}</p>}
 
-        <div className="article-meta-bar">
-          <div className="byline-group">
-            <div className="byline-avatar">i<span>.</span></div>
-            <div className="byline-details">
-              <strong>Editorial Summary from Sean Tan</strong>
-              <div className="byline-sub">
-                <span className="flex items-center gap-1">
-                  <Calendar size={12} /> {dateFor(article)}
-                </span>
-                <span className="sep">·</span>
-                <span className="flex items-center gap-1">
-                  <Clock size={12} /> {readingTime(article)} min read
-                </span>
-                <span className="sep">·</span>
-                <span className="flex items-center gap-1">
-                  <Play size={12} /> {article.duration} video
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="header-actions">
-            <a href="#original-video" className="jump-video-btn">
-              <Play size={14} fill="currentColor" />
-              <span>Watch Video</span>
-            </a>
-          </div>
-        </div>
+        {!qa && metaBar}
       </header>
 
       {/* Featured Cover / Video Thumbnail — property reviews only. Q&A articles
@@ -224,38 +262,18 @@ export default async function ArticlePage({
       <div className="reading-layout">
         {/* Article Body */}
         <article className="reading-body">
-          {/* Editorial Transparency Note */}
-          <div className="editorial-transparency-note">
-            <Info size={16} className="note-icon" />
-            {qa ? (
-              <p>
-                <strong>Editorial Note:</strong> Summarised from Sean Tan&apos;s full episode
-                {qa.answeredBy ? (
-                  <>
-                    {' '}
-                    with {qa.answeredBy.name}. The answer is theirs, not Sean&apos;s; the quote is
-                    in their own words and the rest is our paraphrase. This is general
-                    information, not legal advice for your situation.
-                  </>
-                ) : (
-                  <>
-                    . The quoted answer is in his own words; the rest is our paraphrase.
-                  </>
-                )}{' '}
-                Figures reflect the recording date, so check current rates and rules before
-                acting on them.
-              </p>
-            ) : (
-              <p>
-                <strong>Editorial Note:</strong> This summary is distilled from Sean Tan&apos;s
-                public video breakdown and verified episode documentation. All property
-                specifications and opinions reflect the recording date and should be verified for
-                present-day listings.
-              </p>
-            )}
-          </div>
+          {!qa && editorialNote}
 
           {qa && <AskSeanSummary qa={qa} />}
+
+          {/* Q&A articles keep the top of the page for the question and answer;
+              the byline and editorial note follow the summary instead. */}
+          {qa && (
+            <div className="article-colophon">
+              {metaBar}
+              {editorialNote}
+            </div>
+          )}
 
           {/* Formatted Story Sections — property reviews */}
           {'sections' in article && (

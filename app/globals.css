@@ -1735,6 +1735,25 @@ p {
   margin: 0 auto;
 }
 
+/* Q&A articles: byline and editorial note sit after the summary, before the video. */
+.article-colophon {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 0 40px;
+}
+
+.article-colophon .article-meta-bar {
+  max-width: none;
+  /* The header's auto margins would shrink and centre it inside this flex column. */
+  margin: 0;
+  padding-top: 20px;
+}
+
+.article-colophon .editorial-transparency-note {
+  margin: 0;
+}
+
 .byline-group {
   display: flex;
   align-items: center;
@@ -3337,6 +3356,24 @@ p {
 
 .ask-label.accent {
   color: var(--accent-terracotta);
+}
+
+/* The two labels readers scan for are larger than the rest. */
+.ask-question > .ask-label,
+.ask-answer > .ask-label {
+  gap: 9px;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+}
+
+.ask-question > .ask-label {
+  color: var(--text-main);
+}
+
+.ask-question > .ask-label svg,
+.ask-answer > .ask-label svg {
+  width: 18px;
+  height: 18px;
 }
 
 .ask-label.amber {
