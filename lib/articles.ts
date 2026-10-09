@@ -50,6 +50,11 @@ import staffLoanBeforeBaby from '@/content/articles/staff-loan-condo-before-baby
 import dianII from '@/content/articles/dian-ii-residency-shah-alam.json';
 import oskOmbak from '@/content/articles/osk-ombak-kuantan.json';
 import residensiPitta from '@/content/articles/residensi-pitta-taman-miharja.json';
+import oskAreca from '@/content/articles/osk-areca-nilai.json';
+import sferaResidence from '@/content/articles/sfera-residence-wangsa-maju.json';
+import oneSeputeh from '@/content/articles/one-seputeh-kuala-lumpur.json';
+import sennaHeights from '@/content/articles/senna-heights-damansara-damai.json';
+import nestree from '@/content/articles/nestree-residence-pantai-sentral-park.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -63,9 +68,14 @@ export const articles = [
   residensiAva,
   dedaunRimba,
   centrumIris,
+  oskAreca,
   dianII,
   oskOmbak,
+  sferaResidence,
   residensiPitta,
+  oneSeputeh,
+  sennaHeights,
+  nestree,
   sunwayDhill,
   allevia,
   avisa,
