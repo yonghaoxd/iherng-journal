@@ -26,6 +26,9 @@ import secondPropertyVsEquities from '@/content/articles/second-property-vs-equi
 import guruUnitsExit from '@/content/articles/property-guru-units-exit-plan.json';
 import unsoldUnits from '@/content/articles/unsold-units-near-completion.json';
 import leaseholdResale from '@/content/articles/leasehold-condo-resale-risk.json';
+import sixPropertiesHoldOrSell from '@/content/articles/six-properties-hold-or-sell.json';
+import singaporePrUnit from '@/content/articles/singapore-pr-malaysia-property.json';
+import tenPaidCondos from '@/content/articles/selling-fully-paid-properties-retirement.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -36,8 +39,11 @@ export const articles = [
   secondPropertyVsEquities,
   newBaby,
   cancelledBooking,
+  sixPropertiesHoldOrSell,
   parentsPayingHalf,
+  singaporePrUnit,
   stalledProject,
+  tenPaidCondos,
   discountTrap,
   investingAt60,
   firstHome,
