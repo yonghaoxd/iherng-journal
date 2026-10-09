@@ -2843,6 +2843,62 @@ p {
 }
 
 /* ── Sean's Take 3 on 3 ──────────────────────────────────────── */
+/* What caught Sean's eye: one highlighted idea, set apart from the prose. */
+.standout-card {
+  position: relative;
+  margin: 48px 0 0;
+  padding: 28px 32px 30px 36px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(255, 107, 61, 0.1) 0%, transparent 55%),
+    var(--bg-card);
+  border: 1px solid rgba(255, 107, 61, 0.22);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.standout-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent-terracotta), var(--accent-amber));
+}
+
+.standout-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+}
+
+.standout-title {
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: var(--text-main);
+}
+
+.standout-body {
+  max-width: 62ch;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+@media (max-width: 640px) {
+  .standout-card {
+    padding: 22px 20px 24px 24px;
+  }
+}
+
 .sean-take-card {
   margin: 48px 0;
   border-radius: var(--radius-lg);

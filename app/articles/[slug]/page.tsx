@@ -16,11 +16,13 @@ import {
   ThumbsDown,
   HardHat,
   CircleCheck,
+  Sparkles,
 } from 'lucide-react';
 import {
   articles,
   askSeanFor,
   stageFor,
+  standoutFor,
   monthYearFor,
   seriesFor,
   imageFor,
@@ -95,6 +97,7 @@ export default async function ArticlePage({
   const isPodcast = article.series === 'iherng-podcast';
   const isGuide = article.series === 'buyer-guides';
   const stage = stageFor(article);
+  const standout = standoutFor(article);
 
   // Series articles for Next/Prev
   const seriesArticles = articles.filter((a) => a.series === article.series);
@@ -292,6 +295,18 @@ export default async function ArticlePage({
               </section>
             ))}
           </div>
+          )}
+
+          {/* The one idea Sean admired most — optional, property reviews only */}
+          {standout && (
+            <section id="standout" className="standout-card">
+              <span className="standout-eyebrow">
+                <Sparkles size={13} aria-hidden="true" />
+                What caught Sean&apos;s eye
+              </span>
+              <h2 className="standout-title">{standout.title}</h2>
+              <p className="standout-body">{standout.body}</p>
+            </section>
           )}
 
           {/* Sean's Take 3 on 3 — property reviews only */}

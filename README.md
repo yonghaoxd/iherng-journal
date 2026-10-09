@@ -26,6 +26,10 @@ npm run dev
 
 ## Article formats
 
+Property reviews can also carry an optional `standout`, the one idea Sean was
+most taken with, shown as "What caught Sean's eye" between the sections and the
+3 on 3.
+
 Property reviews are kept short: two sections, "What sets it apart" (what this
 project has that others don't, with Sean's figures) and "Where it is" (the
 location as Sean describes it), an optional "Rent and returns" when Sean

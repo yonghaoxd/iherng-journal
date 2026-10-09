@@ -36,6 +36,15 @@ series page filters by it.
      rent covers the instalment, subsale or capital-gain figures, investor tips,
      and whether he sees it as own-stay or investment. If he doesn't discuss
      rent, leave this section out rather than guess.
+- `standout` (optional): `{ "title", "body" }`, the one idea in the project
+  that visibly impressed Sean, shown on the page as "What caught Sean's eye".
+  Look for where he marvels ("wow", "my favourite", "first time I've seen",
+  "clever", "I really appreciate") at something specific to this project, such
+  as Meta Residences splitting its deck between SOHO and residents so each side
+  pays its own share of maintenance. Title: a short claim; body: 2-3 sentences
+  on what it is and why it matters, in his terms. It should be a design or
+  planning idea, not the location, and can overlap one of his pros. If nothing
+  in the episode clearly stands out to him, leave the field out.
 - `seanTake`: `pros` and `cons`, three each. Every review episode ends with
   "Sean's take three on three": three things he likes, then three he doesn't.
   Find that segment near the end of the transcript and follow it **in his

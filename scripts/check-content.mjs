@@ -54,6 +54,15 @@ for (const file of fs
         `${where}: stage must be ${STAGES.join(' or ')} (what Sean filmed), not "${article.stage}"`,
       );
     }
+    // The standout is optional, but when present it needs both parts.
+    if (
+      article.standout !== undefined &&
+      !(article.standout?.title?.trim() && article.standout?.body?.trim())
+    ) {
+      problems.push(
+        `${where}: standout needs a non-empty title and body, or leave it out`,
+      );
+    }
     if (!STATES.includes(article.state)) {
       problems.push(
         `${where}: state must be one of content/states.json, not "${article.state}"`,

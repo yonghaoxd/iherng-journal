@@ -201,6 +201,16 @@ export const stages = [
 export type Stage = (typeof stages)[number];
 
 /**
+ * A review's optional standout: the one idea in the project Sean admired most,
+ * as he describes it in the episode. Reviews without one simply omit it.
+ */
+export function standoutFor(
+  article: Article,
+): { title: string; body: string } | undefined {
+  return 'standout' in article ? article.standout : undefined;
+}
+
+/**
  * Malaysia's states and federal territories, in the order the State filter
  * lists them. A review's `state` must be one of these and end its `location`;
  * check-content.mjs enforces both.
