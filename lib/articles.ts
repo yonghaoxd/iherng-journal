@@ -47,6 +47,9 @@ import metaResidences from '@/content/articles/meta-residences-seri-kembangan.js
 import paidOffHome from '@/content/articles/paid-off-home-next-generation.json';
 import sohoBookingFee from '@/content/articles/soho-booking-fee-third-property.json';
 import staffLoanBeforeBaby from '@/content/articles/staff-loan-condo-before-baby.json';
+import dianII from '@/content/articles/dian-ii-residency-shah-alam.json';
+import oskOmbak from '@/content/articles/osk-ombak-kuantan.json';
+import residensiPitta from '@/content/articles/residensi-pitta-taman-miharja.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -58,6 +61,9 @@ export const articles = [
   residensiAva,
   dedaunRimba,
   centrumIris,
+  dianII,
+  oskOmbak,
+  residensiPitta,
   sunwayDhill,
   allevia,
   avisa,
