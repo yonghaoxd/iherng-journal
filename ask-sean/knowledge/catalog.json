@@ -1,5 +1,5 @@
 {
-  "version": "aecc874aa32c",
+  "version": "246ef79bc91a",
   "articles": [
     {
       "id": "apartment-vs-landed",
@@ -328,6 +328,44 @@
       ]
     },
     {
+      "id": "leasehold-condo-resale-risk",
+      "title": "Is a leasehold condo with 60-odd years left too risky to buy?",
+      "date": "2023-12-18",
+      "series": "buyer-guides",
+      "askingSeanEpisode": 234,
+      "tag": "Leasehold & tenure",
+      "excerpt": "A couple love a leasehold condo but worry it will be hard to sell with 60 to 70 years left on the lease. Sean says the lease is the smaller risk; buying together unmarried is the bigger one.",
+      "viewerQuestion": "Will a condo with 60 to 70 years left on its lease be hard to sell, even at the price they paid?",
+      "answer": "The lease isn't the real risk. If the rent covers the instalment, they can always rent the unit out and wait, so they can buy if they like it. What worries Sean is buying jointly without an agreement.",
+      "points": [
+        "Lease renewals can lift prices",
+        "Freehold isn't absolute either",
+        "The real exit risk is financing",
+        "Here the rent covers the loan"
+      ],
+      "aliases": [
+        "leasehold",
+        "freehold",
+        "condo",
+        "apartment",
+        "lease renewal",
+        "lease extension",
+        "bank loan",
+        "financing",
+        "rental yield",
+        "joint purchase",
+        "unmarried couple",
+        "spa"
+      ],
+      "questions": [
+        "Is a leasehold condo with 60 years left a bad buy?",
+        "Will it be hard to sell a condo with a short lease?",
+        "Can I get a bank loan for a property with 60 years lease left?",
+        "Should unmarried couples buy property together?",
+        "How does lease renewal affect property value?"
+      ]
+    },
+    {
       "id": "location-location-location",
       "title": "Is \"location, location, location\" still the rule?",
       "date": "2024-02-02",
@@ -513,6 +551,44 @@
       ]
     },
     {
+      "id": "property-guru-units-exit-plan",
+      "title": "Our family bought units through a property guru. How do we get out?",
+      "date": "2025-09-12",
+      "series": "buyer-guides",
+      "askingSeanEpisode": 296,
+      "tag": "Debt & exit strategy",
+      "excerpt": "A viewer's parents bought several units through a property guru at the 2018 peak and now pay thousands a month to hold them. Sean explains how the scheme worked and how to decide what to sell.",
+      "viewerQuestion": "How deep is the trouble, and what can the family do when selling most of the units means taking a loss?",
+      "answer": "Bad, but recoverable. Put every unit into one table to see which can be sold and which must be held, and ask her father to refinance the family house for a standby credit line instead of selling it.",
+      "points": [
+        "The cash back was never spare money",
+        "Compressed loans hid the real risk",
+        "A table shows which units to release",
+        "Without cover, debt passes to the family"
+      ],
+      "aliases": [
+        "subsale",
+        "secondary market",
+        "under construction",
+        "overhang",
+        "negative cashflow",
+        "top up",
+        "cashback",
+        "mark up",
+        "refinance",
+        "overdraft",
+        "flexi loan",
+        "mrta"
+      ],
+      "questions": [
+        "How do I decide which property units to sell and which to hold?",
+        "What is a compressed loan and why is it risky?",
+        "What happens to my housing loan if I die without MRTA?",
+        "Should I sell my fully paid house or refinance it for cash?",
+        "How do I rent out my unit and cover the monthly shortfall?"
+      ]
+    },
+    {
       "id": "property-research-before-buying",
       "title": "How do you know a project is not overpriced?",
       "date": "2024-07-10",
@@ -587,6 +663,44 @@
       ]
     },
     {
+      "id": "selling-fully-paid-properties-retirement",
+      "title": "I own 10 fully paid condos at 59. Should I sell before I retire?",
+      "date": "2026-07-10",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 315,
+      "tag": "Retirement & exit",
+      "excerpt": "A viewer about to retire owns ten debt-free condos in Penang and Singapore. Sean agrees with selling the Penang units, but warns that selling too many too fast can be taxed as a business.",
+      "viewerQuestion": "Should KB sell some or all of the properties before retiring, move the money into fixed deposits and other assets, and stop dealing with tenants?",
+      "answer": "Selling the Penang units makes sense, perhaps keeping one, but slowly, so the sales aren't taxed as a property business. The three Singapore units are worth keeping for income.",
+      "points": [
+        "Selling fast can be taxed as business",
+        "Singapore rent alone can fund retirement",
+        "Penang's LRT decides what to sell first",
+        "Refinancing is no longer the easy exit"
+      ],
+      "aliases": [
+        "condo",
+        "penang property",
+        "singapore property",
+        "rpgt",
+        "real property gains tax",
+        "fixed deposit",
+        "blue chip",
+        "refinance",
+        "lrt",
+        "penang lrt",
+        "property tax",
+        "retirement"
+      ],
+      "questions": [
+        "Should I sell my Penang condos before retiring?",
+        "How can I avoid being taxed as a business when selling multiple properties?",
+        "What is the RPGT rate for selling property in Malaysia?",
+        "Can rental income from Singapore properties fund retirement in Penang?",
+        "How does the Penang LRT affect property values and selling decisions?"
+      ]
+    },
+    {
       "id": "settle-housing-loan-early",
       "title": "Should You Settle Your Housing Loan Early?",
       "date": "2025-05-14",
@@ -617,6 +731,82 @@
         "How does rental income tax affect early loan settlement?",
         "Can EPF dividends beat housing loan interest?",
         "What buffer should I keep for rental properties?"
+      ]
+    },
+    {
+      "id": "singapore-pr-malaysia-property",
+      "title": "Now settled in Singapore, what should I do with my new KL unit?",
+      "date": "2026-07-28",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 317,
+      "tag": "Working abroad",
+      "excerpt": "A young engineer bought a Bukit Jalil unit, then got Singapore PR. Sean explains why he would rent out the whole unit, how to furnish it for the right tenant, and why there is no rush to come home.",
+      "viewerQuestion": "Should he rent out the whole unit, rent it room by room and keep one room for visits, or let family stay, and how much should he spend getting it ready for tenants?",
+      "answer": "Rent out the whole unit and run it like a business, furnished for the tenants most likely to live there. Keeping a room for monthly visits or lending it to family wastes it, and there is no hurry to move back.",
+      "points": [
+        "A spare room costs more than a hotel",
+        "The tenant decides the fit-out",
+        "Have more than one way to cover the loan",
+        "RM12,000 won't furnish a rental"
+      ],
+      "aliases": [
+        "condo",
+        "apartment",
+        "whole unit rental",
+        "room rental",
+        "furnishing",
+        "landlord",
+        "tenancy",
+        "airbnb",
+        "medium-term stay",
+        "rental yield",
+        "mortgage",
+        "singapore pr"
+      ],
+      "questions": [
+        "Should I rent out my whole unit or by room?",
+        "How much should I spend to furnish my rental unit?",
+        "What furniture do tenants look for?",
+        "Can I rent out my condo on Airbnb?",
+        "How does owning a Malaysian property affect Singapore PR?"
+      ]
+    },
+    {
+      "id": "six-properties-hold-or-sell",
+      "title": "We own six properties that pay for themselves. Hold or start selling?",
+      "date": "2026-09-14",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 320,
+      "tag": "Portfolio strategy",
+      "excerpt": "A couple in their 40s own a home and five rented units, all with positive cash flow. Sean explains how to decide whether to sell, hold or keep buying, starting with what the cash is for.",
+      "viewerQuestion": "Should they sell one property and keep the cash, and if so which one, or hold everything?",
+      "answer": "Decide what the money is for before selling anything. If they do sell, Sean would start with the small, low-yielding Shah Alam unit; otherwise they can hold, since every unit pays its way, and agree as a couple on how much is enough.",
+      "points": [
+        "Their buffer is already solid",
+        "Cash loses value faster than it seems",
+        "Leasehold renewal has precedents",
+        "The smallest unit uses a full loan slot"
+      ],
+      "aliases": [
+        "condo",
+        "high-rise",
+        "leasehold",
+        "freehold",
+        "rental income",
+        "positive cash flow",
+        "loan slot",
+        "refinance",
+        "epf",
+        "fixed deposit",
+        "money market fund",
+        "inflation"
+      ],
+      "questions": [
+        "How do I decide whether to sell or hold my rental properties?",
+        "What should I do with the cash from selling an investment property?",
+        "How much cash buffer should I keep for my property portfolio?",
+        "Will my leasehold property lose value over time?",
+        "Should I sell my lowest-yielding property first?"
       ]
     },
     {
@@ -658,6 +848,82 @@
       ]
     },
     {
+      "id": "tenant-not-paying-rent",
+      "title": "My tenant has stopped paying rent. What can I legally do?",
+      "date": "2026-05-25",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Landlord & tenancy",
+      "excerpt": "A tenant who stops paying but won't leave is every landlord's nightmare. Lawyer Tea explains the legal route Sean's viewers can take: a letter of demand, then a court distress order.",
+      "viewerQuestion": "When a tenant stops paying rent and won't leave, what is the legal way to get your money and your property back?",
+      "answer": "Act on the first missed month: send a letter of demand, and if the tenant hasn't paid within 14 days, apply to court for a distress order. The order lets you seize and auction the tenant's belongings and take the unit back, in two to three months at best.",
+      "points": [
+        "Start while the deposit still covers you",
+        "A distress order moves quickly",
+        "Doing it yourself can backfire",
+        "Paperwork decides what you recover"
+      ],
+      "aliases": [
+        "distress order",
+        "letter of demand",
+        "writ of possession",
+        "stamped tenancy agreement",
+        "eviction",
+        "court bailiff",
+        "tenant won't leave",
+        "rent arrears",
+        "seize belongings",
+        "auction",
+        "quiet enjoyment",
+        "ctos check"
+      ],
+      "questions": [
+        "What is the legal process to evict a tenant who hasn't paid rent?",
+        "How long does a distress order take to recover possession?",
+        "Can I cut off utilities or change locks if my tenant stops paying?",
+        "What documents do I need to prove a tenancy in court?",
+        "How much does it cost to get a letter of demand and distress order?"
+      ]
+    },
+    {
+      "id": "unsold-units-near-completion",
+      "title": "Unsold units near completion: warning sign or better deal?",
+      "date": "2026-06-08",
+      "series": "buyer-guides",
+      "askingSeanEpisode": 313,
+      "tag": "Developer stock",
+      "excerpt": "A first-time investor sees plenty of units still for sale in a project close to handover. Sean explains why developers end up with unsold stock, and when that works in a buyer's favour.",
+      "viewerQuestion": "Do the unsold units signal a problem, does the delay matter to a buyer like him, and are dual-key and tri-key units worth it?",
+      "answer": "Not in this case. Few Malaysians can borrow for a unit above RM1 million, so slow sales near completion are expected, and a developer that keeps building through a delay is a financially strong one. Judge the unit on location, rent and long-term value, and treat any discount as a bonus.",
+      "points": [
+        "Developers clear stock quietly",
+        "Price limits who can buy",
+        "Delay hurts families more than investors",
+        "Dual-key units stretch one loan slot"
+      ],
+      "aliases": [
+        "condo",
+        "apartment",
+        "dual key",
+        "tri key",
+        "bulk purchase",
+        "unsold units",
+        "vacant possession",
+        "late delivery damages",
+        "developer discount",
+        "subsale",
+        "rental yield",
+        "instalment"
+      ],
+      "questions": [
+        "Do unsold units near completion mean the project is in trouble?",
+        "Are dual-key or tri-key units worth buying?",
+        "Does a late delivery matter if I buy close to completion?",
+        "How do I compare expected rent with my instalment?",
+        "Should I buy a completed unsold unit instead of one under construction?"
+      ]
+    },
+    {
       "id": "when-to-buy-property-data-guide",
       "title": "Is it a good time to buy? What ten years of data says",
       "date": "2025-09-09",
@@ -687,6 +953,44 @@
         "How much do house prices actually rise in Malaysia each year?",
         "What rental yield should I look for before buying a property?",
         "Should I buy below the median transacted price in an area?"
+      ]
+    },
+    {
+      "id": "will-and-property-inheritance",
+      "title": "What happens to my properties when I die?",
+      "date": "2026-05-09",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Wills & succession",
+      "excerpt": "Property owners spend decades building a portfolio but rarely plan how it passes on. Two succession lawyers explain what happens with and without a will, and how to prepare one.",
+      "viewerQuestion": "What happens to your properties if you die, with or without a will, and how should a property owner prepare?",
+      "answer": "Without a will, the Distribution Act decides who inherits, and your family must go to court before anyone can act. A will lets you name an executor and decide who gets what, and the lawyers treat it as a plan for your family, not just a list of assets.",
+      "points": [
+        "Without a will, the law picks your heirs",
+        "Your family needs a court order first",
+        "Loans don't fall due at once",
+        "Executors must trace assets and debts first"
+      ],
+      "aliases": [
+        "will",
+        "wasiat",
+        "probate",
+        "letters of administration",
+        "executor",
+        "distribution act",
+        "intestate",
+        "faraid",
+        "syariah",
+        "mrta",
+        "mlta",
+        "lhdn"
+      ],
+      "questions": [
+        "What happens to my properties if I die without a will?",
+        "How do I prepare a will for my property in Malaysia?",
+        "Who inherits my house if I pass away without a will?",
+        "What does an executor do when distributing properties?",
+        "How are outstanding housing loans handled when the owner dies?"
       ]
     }
   ]
