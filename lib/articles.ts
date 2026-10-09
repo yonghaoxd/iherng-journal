@@ -31,6 +31,12 @@ import singaporePrUnit from '@/content/articles/singapore-pr-malaysia-property.j
 import tenPaidCondos from '@/content/articles/selling-fully-paid-properties-retirement.json';
 import tenantNotPaying from '@/content/articles/tenant-not-paying-rent.json';
 import willAndInheritance from '@/content/articles/will-and-property-inheritance.json';
+import loanInterestBasics from '@/content/articles/housing-loan-interest-flexi-explained.json';
+import loanEligibility from '@/content/articles/housing-loan-eligibility-dsr.json';
+import loanRejections from '@/content/articles/housing-loan-rejection-reasons.json';
+import loanMistakesByIncome from '@/content/articles/loan-application-mistakes-by-income.json';
+import lppsaLoan from '@/content/articles/lppsa-civil-servant-housing-loan.json';
+import singaporeIncomeLoan from '@/content/articles/singapore-income-malaysia-housing-loan.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -68,6 +74,12 @@ export const articles = [
   leaseholdResale,
   tenantNotPaying,
   willAndInheritance,
+  loanInterestBasics,
+  loanEligibility,
+  loanRejections,
+  loanMistakesByIncome,
+  lppsaLoan,
+  singaporeIncomeLoan,
 ];
 
 export type Article = (typeof articles)[number];
