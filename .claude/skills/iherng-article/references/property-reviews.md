@@ -8,7 +8,9 @@ skim reviews, and the embedded episode carries the detail.
 
 `content/articles/<slug>.json`, series `property-reviews`, `episode` = the review
 number in the video title. Copy the fields of an existing review such as
-`sunway-dhill-kota-damansara.json`.
+`sunway-dhill-kota-damansara.json`. `propertyType` must be `Landed` or
+`High-Rise` (the series page filters by it, and the build enforces it); reviews
+have no `category`.
 
 - `sections`: two, each 1–2 short paragraphs (about 130–150 words in all), plus
   an optional third:

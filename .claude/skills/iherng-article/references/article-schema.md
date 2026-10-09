@@ -12,7 +12,8 @@ the field order below.
 | `episode` | Podcast: the Asking Sean number. Guide: next guide sequence number |
 | `title` | The reader's question, ≤ 70 characters, ends with "?" |
 | `shortTitle` | ≤ 30 characters, for cards and breadcrumbs |
-| `tag` | Short topic label, e.g. `"Mortgage Strategy"`, `"Leasehold & tenure"` |
+| `tag` | Short topic label, e.g. `"Mortgage Strategy"`, `"Leasehold & tenure"`. Shown on the card only; it does not drive the filter, so it can be specific |
+| `category` | One id from `content/categories.json`, the fixed topic list the series page filters by (`loans-finance`, `buying-process`, `choosing-a-home`, `investing-risk`, `family-life`, `retirement-legacy`). Pick the best fit; never invent one. The build fails on anything else |
 | `date` | `YYYY-MM-DD` publication date in Malaysia time (from `fetch_episode.py`) |
 | `videoId` | The YouTube ID |
 | `videoTitle` | The video's title exactly as on YouTube |
@@ -46,6 +47,7 @@ its owner."
   "title": "Should You Settle Your Housing Loan Early?",
   "shortTitle": "Early Mortgage Repayment",
   "tag": "Mortgage Strategy",
+  "category": "loans-finance",
   "date": "2025-05-14",
   "videoId": "jA5cBaGWCPI",
   "videoTitle": "ASKING SEAN #283 | SETTLE THE LOAN EARLY TO SAVE ON INTEREST?",

@@ -2,22 +2,29 @@
 
 import { useState, useMemo } from 'react';
 import {
+  categories,
+  categoryFor,
   keyPointsFor,
+  propertyTypes,
   viewsFor,
   viewsAsOf,
   type Article,
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
 import { SortMenu, type SortOrder } from '@/components/sort-menu';
-import { Search, SlidersHorizontal } from 'lucide-react';
+import { Search, SlidersHorizontal, ChevronDown } from 'lucide-react';
 
 interface ArticleFilterGridProps {
   articles: Article[];
-  availableTags?: string[];
-  filterMode?: 'tag' | 'propertyType';
+  /** Property reviews filter by type; the other series by fixed topic category. */
+  filterMode?: 'category' | 'propertyType';
   /** Label for the series' own order (e.g. "Guide order"); when set, it is the default sort. */
   seriesOrderLabel?: string;
 }
+
+/** Cards shown at first, and added by each "Show more". */
+const PAGE_SIZE = 12;
+const ALL = 'all';
 
 /** Ties, and videos without a view count yet, keep the series' own order. */
 function sortArticles(list: Article[], order: SortOrder) {
@@ -46,51 +53,82 @@ function propertyTypeFor(article: Article) {
     : undefined;
 }
 
+function filterValueFor(
+  article: Article,
+  mode: ArticleFilterGridProps['filterMode'],
+) {
+  return mode === 'propertyType'
+    ? propertyTypeFor(article)
+    : categoryFor(article)?.id;
+}
+
 export function ArticleFilterGrid({
   articles,
-  availableTags,
-  filterMode = 'tag',
+  filterMode = 'category',
   seriesOrderLabel,
 }: ArticleFilterGridProps) {
   const defaultOrder: SortOrder = seriesOrderLabel ? 'series' : 'latest';
-  const [selectedTag, setSelectedTag] = useState<string>('All');
+  const [selected, setSelected] = useState<string>(ALL);
   const [sortOrder, setSortOrder] = useState<SortOrder>(defaultOrder);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const tags = useMemo(() => {
-    if (availableTags && availableTags.length > 0) {
-      return ['All', ...availableTags];
-    }
-    const set = new Set<string>();
-    articles.forEach((a) => {
-      const value = filterMode === 'propertyType' ? propertyTypeFor(a) : a.tag;
-      if (value) set.add(value);
-    });
-    return ['All', ...Array.from(set)];
-  }, [articles, availableTags, filterMode]);
+  // A fixed, short list in a fixed order; options with no stories are hidden.
+  const options = useMemo(() => {
+    const fixed =
+      filterMode === 'propertyType'
+        ? propertyTypes.map((type) => ({ value: type, label: type }))
+        : categories.map(({ id, label }) => ({ value: id, label }));
+    return fixed
+      .map((option) => ({
+        ...option,
+        count: articles.filter(
+          (a) => filterValueFor(a, filterMode) === option.value,
+        ).length,
+      }))
+      .filter((option) => option.count > 0);
+  }, [articles, filterMode]);
+
+  const selectedLabel = options.find((o) => o.value === selected)?.label;
 
   const filtered = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
     const matches = articles.filter((article) => {
-      const filterValue =
-        filterMode === 'propertyType' ? propertyTypeFor(article) : article.tag;
-      const matchesTag = selectedTag === 'All' || filterValue === selectedTag;
-      const query = searchQuery.trim().toLowerCase();
-      if (!query) return matchesTag;
-
-      const matchesQuery =
-        article.title.toLowerCase().includes(query) ||
-        article.excerpt.toLowerCase().includes(query) ||
-        article.tag.toLowerCase().includes(query) ||
-        (propertyTypeFor(article)?.toLowerCase().includes(query) ?? false) ||
-        (article.location && article.location.toLowerCase().includes(query)) ||
-        keyPointsFor(article).some((t) => t.toLowerCase().includes(query));
-
-      return matchesTag && matchesQuery;
+      if (selected !== ALL && filterValueFor(article, filterMode) !== selected)
+        return false;
+      if (!query) return true;
+      return [
+        article.title,
+        article.excerpt,
+        article.tag,
+        categoryFor(article)?.label,
+        propertyTypeFor(article),
+        article.location,
+        ...keyPointsFor(article),
+      ].some((text) => text?.toLowerCase().includes(query));
     });
     return sortArticles(matches, sortOrder);
-  }, [articles, filterMode, selectedTag, searchQuery, sortOrder]);
+  }, [articles, filterMode, selected, searchQuery, sortOrder]);
+
+  // "Show more" starts over whenever the filter, search or order changes.
+  const viewKey = `${selected}|${searchQuery}|${sortOrder}`;
+  const [paging, setPaging] = useState({ key: viewKey, count: PAGE_SIZE });
+  if (paging.key !== viewKey) {
+    // Adjusting state while rendering, so returning to an earlier view doesn't
+    // bring back how far it had been expanded.
+    setPaging({ key: viewKey, count: PAGE_SIZE });
+  }
+  const visibleCount = paging.key === viewKey ? paging.count : PAGE_SIZE;
+  const visible = filtered.slice(0, visibleCount);
+  const remaining = filtered.length - visible.length;
 
   const byViews = sortOrder === 'most-viewed' || sortOrder === 'least-viewed';
+  const isFiltered =
+    selected !== ALL || searchQuery !== '' || sortOrder !== defaultOrder;
+  const resetAll = () => {
+    setSelected(ALL);
+    setSearchQuery('');
+    setSortOrder(defaultOrder);
+  };
 
   return (
     <div className="filter-system">
@@ -137,16 +175,20 @@ export function ArticleFilterGrid({
               : 'Topic filters'
           }
         >
-          {tags.map((tag) => (
+          {[
+            { value: ALL, label: 'All', count: articles.length },
+            ...options,
+          ].map((option) => (
             <button
-              key={tag}
+              key={option.value}
               type="button"
               role="tab"
-              aria-selected={selectedTag === tag}
-              onClick={() => setSelectedTag(tag)}
-              className={`tag-pill ${selectedTag === tag ? 'active' : ''}`}
+              aria-selected={selected === option.value}
+              onClick={() => setSelected(option.value)}
+              className={`tag-pill ${selected === option.value ? 'active' : ''}`}
             >
-              {tag}
+              {option.label}
+              <span className="tag-pill-count">{option.count}</span>
             </button>
           ))}
         </div>
@@ -154,12 +196,12 @@ export function ArticleFilterGrid({
 
       <div className="filter-status">
         <span>
-          Showing <strong>{filtered.length}</strong> of {articles.length}{' '}
-          stories
-          {selectedTag !== 'All' && (
+          Showing <strong>{visible.length}</strong> of {filtered.length}{' '}
+          {filtered.length === 1 ? 'story' : 'stories'}
+          {selectedLabel && (
             <span>
               {' '}
-              in <em>{selectedTag}</em>
+              in <em>{selectedLabel}</em>
             </span>
           )}
           {searchQuery && <span> matching &ldquo;{searchQuery}&rdquo;</span>}
@@ -170,42 +212,41 @@ export function ArticleFilterGrid({
             </span>
           )}
         </span>
-        {(selectedTag !== 'All' ||
-          searchQuery ||
-          sortOrder !== defaultOrder) && (
-          <button
-            type="button"
-            onClick={() => {
-              setSelectedTag('All');
-              setSearchQuery('');
-              setSortOrder(defaultOrder);
-            }}
-            className="reset-filters"
-          >
+        {isFiltered && (
+          <button type="button" onClick={resetAll} className="reset-filters">
             Reset filters
           </button>
         )}
       </div>
 
       {filtered.length > 0 ? (
-        <div className="article-grid">
-          {filtered.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
-          ))}
-        </div>
+        <>
+          <div className="article-grid">
+            {visible.map((article) => (
+              <ArticleCard key={article.slug} article={article} />
+            ))}
+          </div>
+          {remaining > 0 && (
+            <div className="show-more-row">
+              <button
+                type="button"
+                className="show-more"
+                onClick={() =>
+                  setPaging({ key: viewKey, count: visibleCount + PAGE_SIZE })
+                }
+              >
+                Show more stories
+                <span className="show-more-count">{remaining} more</span>
+                <ChevronDown size={15} aria-hidden="true" />
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className="no-results">
           <SlidersHorizontal size={36} />
           <p>No stories found matching your criteria.</p>
-          <button
-            type="button"
-            onClick={() => {
-              setSelectedTag('All');
-              setSearchQuery('');
-              setSortOrder(defaultOrder);
-            }}
-            className="btn-outline"
-          >
+          <button type="button" onClick={resetAll} className="btn-outline">
             View all stories
           </button>
         </div>

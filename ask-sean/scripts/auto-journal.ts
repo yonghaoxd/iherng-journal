@@ -210,6 +210,8 @@ interface JournalArticle {
   title: string;
   shortTitle: string;
   tag: string;
+  /** One of the fixed ids in the Journal's content/categories.json. */
+  category: string;
   date: string;
   videoId: string;
   videoTitle: string;
@@ -231,7 +233,23 @@ interface JournalArticle {
   location: string;
 }
 
-type Draft = Pick<JournalArticle, "slug" | "title" | "shortTitle" | "tag" | "location" | "excerpt" | "qa">;
+type Draft = Pick<JournalArticle, "slug" | "title" | "shortTitle" | "tag" | "category" | "location" | "excerpt" | "qa">;
+
+interface Category {
+  id: string;
+  label: string;
+  description: string;
+}
+
+/** The Journal's fixed topic categories; its build rejects an article without one of them. */
+async function loadCategories(journalDir: string): Promise<Category[]> {
+  return JSON.parse(await readFile(path.join(journalDir, "content", "categories.json"), "utf8")) as Category[];
+}
+
+function categoryGuide(categories: Category[]): string {
+  const lines = categories.map((c) => `- ${c.id}: ${c.label}. ${c.description}`);
+  return `CATEGORIES (put the id in "category"):\n${lines.join("\n")}`;
+}
 
 const WRITER_PROMPT = `You write articles for the iherng Journal, an independent editorial companion to Sean Tan's (YouTube: iherng) Malaysian property channel. Each "Asking Sean" episode becomes one article in the Journal's Ask Sean format: the viewer's situation and question, Sean's answer, why, what to do, and when it doesn't apply.
 
@@ -243,6 +261,7 @@ Reply with JSON only, in this shape:
   "title": "The viewer's dilemma as a short question, max 70 characters",
   "shortTitle": "max 30 characters",
   "tag": "Topic label, e.g. \\"Family & life stage\\", \\"Affordability\\", \\"Delayed projects\\"",
+  "category": "Exactly one id from the CATEGORIES list, the best fit for the viewer's question",
   "location": "Who or where it is about, e.g. \\"Young families\\", \\"First-time buyers\\", or a named area",
   "excerpt": "1-2 sentences, max 220 characters: the situation, then what Sean explains",
   "qa": {
@@ -266,17 +285,20 @@ async function writerExamples(journalDir: string): Promise<string> {
     const article = JSON.parse(
       await readFile(path.join(journalDir, "content", "articles", `${slug}.json`), "utf8"),
     ) as JournalArticle;
-    const { title, shortTitle, tag, location, excerpt, qa } = article;
-    examples.push(JSON.stringify({ slug, title, shortTitle, tag, location, excerpt, qa }, null, 1));
+    const { title, shortTitle, tag, category, location, excerpt, qa } = article;
+    examples.push(JSON.stringify({ slug, title, shortTitle, tag, category, location, excerpt, qa }, null, 1));
   }
   return examples.map((example, index) => `EXAMPLE ARTICLE ${index + 1}\n${example}`).join("\n\n");
 }
 
-function problemsWith(draft: Draft, transcript: string): string[] {
+function problemsWith(draft: Draft, transcript: string, categories: Category[]): string[] {
   const problems: string[] = [];
   const text = (value: unknown) => typeof value === "string" && value.trim().length > 0;
   for (const key of ["slug", "title", "shortTitle", "tag", "location", "excerpt"] as const) {
     if (!text(draft[key])) problems.push(`"${key}" is missing`);
+  }
+  if (!categories.some((c) => c.id === draft.category)) {
+    problems.push(`"category" must be one of: ${categories.map((c) => c.id).join(", ")}`);
   }
   const qa = draft.qa;
   if (!qa) return [...problems, `"qa" is missing`];
@@ -311,7 +333,8 @@ async function writeArticle(
   info: VideoInfo,
   journalDir: string,
 ): Promise<{ draft: Draft; usage: Usage }> {
-  const system = `${WRITER_PROMPT}\n\n${await writerExamples(journalDir)}`;
+  const categories = await loadCategories(journalDir);
+  const system = `${WRITER_PROMPT}\n\n${categoryGuide(categories)}\n\n${await writerExamples(journalDir)}`;
   const source = [
     `EPISODE: Asking Sean #${episode}, uploaded ${info.uploadDate}`,
     `VIDEO TITLE: ${info.title}`,
@@ -337,7 +360,7 @@ async function writeArticle(
       feedback = "- the reply was not valid JSON";
       continue;
     }
-    const problems = problemsWith(draft, transcript);
+    const problems = problemsWith(draft, transcript, categories);
     if (problems.length === 0) return { draft, usage };
     feedback = problems.map((problem) => `- ${problem}`).join("\n");
     await log(`  draft ${attempt} rejected:\n${feedback}`);
@@ -364,6 +387,7 @@ function toArticle(draft: Draft, video: FeedVideo, episode: number, info: VideoI
     title: draft.title.trim(),
     shortTitle: draft.shortTitle.trim(),
     tag: draft.tag.trim(),
+    category: draft.category,
     date: info.uploadDate,
     videoId: video.id,
     videoTitle: info.title,

@@ -7,9 +7,10 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "prebuild": "node scripts/generate-seo-assets.mjs",
+    "prebuild": "node scripts/check-content.mjs && node scripts/generate-seo-assets.mjs",
     "build": "vinext build",
     "seo": "node scripts/generate-seo-assets.mjs",
+    "check": "node scripts/check-content.mjs",
     "views": "node scripts/fetch-view-counts.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",

@@ -52,6 +52,7 @@ import oskOmbak from '@/content/articles/osk-ombak-kuantan.json';
 import residensiPitta from '@/content/articles/residensi-pitta-taman-miharja.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
+import categoryList from '@/content/categories.json';
 
 export const articles = [
   // Property reviews, newest first; the homepage and series page keep this order.
@@ -141,6 +142,23 @@ export function dateFor(article: Article) {
     timeZone: 'UTC',
   });
 }
+
+/**
+ * The fixed topic categories that podcast and buyer guide articles filter by.
+ * Keeping the list short and fixed stops the filter growing with every article;
+ * the finer `tag` stays on the card. scripts/check-content.mjs enforces it.
+ */
+export const categories = categoryList;
+
+export type Category = (typeof categories)[number];
+
+export function categoryFor(article: Article): Category | undefined {
+  const id = 'category' in article ? article.category : undefined;
+  return categories.find((category) => category.id === id);
+}
+
+/** Property reviews filter by these two types; check-content.mjs enforces them. */
+export const propertyTypes = ['Landed', 'High-Rise'] as const;
 
 /**
  * YouTube views of the article's video, as of `viewsAsOf()`. Refreshed with

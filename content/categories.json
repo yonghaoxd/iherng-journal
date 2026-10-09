@@ -1,0 +1,32 @@
+[
+  {
+    "id": "loans-finance",
+    "label": "Loans & finance",
+    "description": "Housing loans, eligibility and rejections, interest, fees, titles, affordability and settling a loan."
+  },
+  {
+    "id": "buying-process",
+    "label": "Buying process",
+    "description": "How a purchase happens: purchase channels, bookings, developer stock, defect inspection, delayed or stalled projects."
+  },
+  {
+    "id": "choosing-a-home",
+    "label": "Choosing a home",
+    "description": "Deciding what and where to buy: research, location, price, tenure, landed vs high-rise, new vs old, first property, timing."
+  },
+  {
+    "id": "investing-risk",
+    "label": "Investing & risk",
+    "description": "Property as an investment: returns, portfolios, property vs other assets, renting out, debt and exit plans."
+  },
+  {
+    "id": "family-life",
+    "label": "Family & life stage",
+    "description": "Buying around family and life changes: children, parents helping to pay, marriage, working abroad."
+  },
+  {
+    "id": "retirement-legacy",
+    "label": "Retirement & legacy",
+    "description": "Later life: retirement income, selling down, wills, inheritance and passing property on."
+  }
+]

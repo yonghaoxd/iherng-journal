@@ -98,6 +98,20 @@ rent and gross and net yield.
 Both calculators share the form controls in `components/calc-field.tsx` and the
 `CalculatorTabs` strip that links them.
 
+## Topic filters
+
+Series pages filter by a fixed, short list so the filter doesn't grow with every
+article: property reviews by `propertyType` (Landed or High-Rise), podcast and
+buyer guide articles by `category`, one of the six ids in
+`content/categories.json` (Loans & finance, Buying process, Choosing a home,
+Investing & risk, Family & life stage, Retirement & legacy). Each article's
+finer `tag` still shows on its card and is searchable. `npm run check`
+(`scripts/check-content.mjs`, also the first `prebuild` step) fails the build on
+a missing or unknown value, so add a category only by editing that file on
+purpose. The automated journal job reads the same file and must pick one.
+
+Grids show 12 stories, then a "Show more stories" button adds 12 at a time.
+
 ## Sorting and view counts
 
 Each series page can be sorted latest first, oldest first, most viewed or least
@@ -145,7 +159,7 @@ Article pages use the episode's own YouTube thumbnail instead.
 ## Add an article
 
 1. Copy an existing JSON content file and give it a unique slug and verified video ID.
-2. Add its import to `lib/articles.ts` and include it in `articles`.
+2. Add its import to `lib/articles.ts` and include it in `articles`. Give podcast and buyer guide articles a `category` from `content/categories.json`, and reviews a `propertyType` of Landed or High-Rise.
 3. Write an original summary based on material actually reviewed, with accurate dates and source links. Podcast and buyer guide articles use the `qa` structure described under Article formats, written from the full transcript; never from the title or episode notes alone.
 4. Collection counts are derived from the registered articles. Update any homepage or footer summary copy that refers to a fixed count.
 5. Run `npx tsc --noEmit` and `npm run build`. The build regenerates the sitemap and feed; rerun `python scripts/make_og_image.py` if the counts on the social card changed.

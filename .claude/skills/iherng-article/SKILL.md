@@ -98,6 +98,7 @@ The `qa` object:
 
 | Field | What goes in it |
 | --- | --- |
+| `category` (top level, beside `tag`) | One id from `content/categories.json`; see `references/article-schema.md`. The topic filter uses only these six, so it stays short as articles are added |
 | `kind` | `"question"` when a viewer wrote in, `"problem"` for a topic Sean raises himself |
 | `asker` | Initials or first name only, e.g. `"Miss N, a viewer who wrote in by email"`; leave the field out for a problem |
 | `context` | 2–4 sentences of the viewer's facts as they stated them |
@@ -144,7 +145,10 @@ npm run build
 ```
 
 `verify_quotes.py` fails on a quote that isn't word for word in the transcript
-or is 15 words or longer. The build regenerates the sitemap and RSS feed.
+or is 15 words or longer. The build first runs `scripts/check-content.mjs`, which
+fails on a missing or unknown `category` (or a review `propertyType` other than
+Landed or High-Rise) and on an unregistered article, then regenerates the
+sitemap and RSS feed.
 
 Then update copy that states a fixed count, because the series counters are
 derived but some sentences are not:

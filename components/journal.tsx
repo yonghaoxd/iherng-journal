@@ -357,8 +357,7 @@ export function SeriesPage({ id }: { id: SeriesKey }) {
       >
         <ArticleFilterGrid
           articles={entries}
-          availableTags={isProperty ? ['Landed', 'High-Rise'] : undefined}
-          filterMode={isProperty ? 'propertyType' : 'tag'}
+          filterMode={isProperty ? 'propertyType' : 'category'}
           seriesOrderLabel={isGuide ? 'Guide order' : undefined}
         />
       </section>
