@@ -345,6 +345,7 @@ p {
   z-index: 99;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .mobile-nav-links {
