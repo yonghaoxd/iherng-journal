@@ -41,6 +41,9 @@ import timurbay from '@/content/articles/timurbay-seafront-residence-kuantan.jso
 import teja from '@/content/articles/teja-subang-jaya.json';
 import selayangMulia from '@/content/articles/selayang-mulia-selayang.json';
 import metaResidences from '@/content/articles/meta-residences-seri-kembangan.json';
+import paidOffHome from '@/content/articles/paid-off-home-next-generation.json';
+import sohoBookingFee from '@/content/articles/soho-booking-fee-third-property.json';
+import staffLoanBeforeBaby from '@/content/articles/staff-loan-condo-before-baby.json';
 import seriesData from '@/content/series.json';
 
 export const articles = [
@@ -64,6 +67,9 @@ export const articles = [
   singaporePrUnit,
   stalledProject,
   tenPaidCondos,
+  paidOffHome,
+  sohoBookingFee,
+  staffLoanBeforeBaby,
   discountTrap,
   investingAt60,
   firstHome,
