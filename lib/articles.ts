@@ -16,11 +16,9 @@ import oldVsNew from '@/content/articles/old-house-vs-new-property.json';
 import earlyRepayment from '@/content/articles/settle-housing-loan-early.json';
 import guaranteedReturns from '@/content/articles/guaranteed-rental-return-risks.json';
 import marketTiming from '@/content/articles/when-to-buy-property-data-guide.json';
-<<<<<<< HEAD
 import dorsettWaterfront from '@/content/articles/dorsett-waterfront-subang-subang-jaya.json';
 import residensiAva from '@/content/articles/residensi-ava-kiara-bay.json';
 import centrumIris from '@/content/articles/centrum-iris-brinchang.json';
-=======
 import newBaby from '@/content/articles/new-baby-investment-strategy.json';
 import cancelledBooking from '@/content/articles/cancelled-booking-fomo.json';
 import parentsPayingHalf from '@/content/articles/parents-paying-half-for-house.json';
@@ -49,7 +47,6 @@ import metaResidences from '@/content/articles/meta-residences-seri-kembangan.js
 import paidOffHome from '@/content/articles/paid-off-home-next-generation.json';
 import sohoBookingFee from '@/content/articles/soho-booking-fee-third-property.json';
 import staffLoanBeforeBaby from '@/content/articles/staff-loan-condo-before-baby.json';
->>>>>>> b2ee1c07a8f418de73441342f5bbc8e8b0ebf973
 import seriesData from '@/content/series.json';
 
 export const articles = [
