@@ -16,6 +16,7 @@ import {
 } from '@/lib/articles';
 import { ArticleCard } from '@/components/journal';
 import { SortMenu, type SortOrder } from '@/components/sort-menu';
+import { FilterMenu } from '@/components/filter-menu';
 import { Search, SlidersHorizontal, ChevronDown } from 'lucide-react';
 
 interface ArticleFilterGridProps {
@@ -140,6 +141,9 @@ export function ArticleFilterGrid({
 
   // Each row counts the stories that match the other rows, so the numbers
   // always say what a click will show. Options no story uses are hidden.
+  // One filter reads best as a row of tabs; several (Type, Stage, State) as
+  // compact dropdowns in the toolbar, so they don't stack into a form.
+  const asMenus = facets.length > 1;
   const rows = facets.map((facet) => {
     const base = articles.filter((article) => matchesFacets(article, facet));
     const options = facet.options
@@ -219,6 +223,23 @@ export function ArticleFilterGrid({
           )}
         </div>
 
+        {asMenus && (
+          <div className="filter-menus">
+            {rows.map(({ facet, options }) => (
+              <FilterMenu
+                key={facet.key}
+                name={facet.label}
+                allValue={ALL}
+                value={chosen(facet)}
+                options={options}
+                onChange={(value) =>
+                  setSelected((current) => ({ ...current, [facet.key]: value }))
+                }
+              />
+            ))}
+          </div>
+        )}
+
         <SortMenu
           value={sortOrder}
           onChange={setSortOrder}
@@ -226,43 +247,45 @@ export function ArticleFilterGrid({
         />
       </div>
 
-      <div className="topic-bars">
-        {rows.map(({ facet, options }) => (
-          <div className="topic-bar" key={facet.key}>
-            <span className="topic-bar-label" aria-hidden="true">
-              {facet.label}
-            </span>
-            <div
-              className="tag-pills"
-              role="tablist"
-              aria-label={facet.ariaLabel}
-            >
-              {options.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  role="tab"
-                  aria-selected={chosen(facet) === option.value}
-                  // Nothing to show with the other filters as they are.
-                  disabled={
-                    option.count === 0 && chosen(facet) !== option.value
-                  }
-                  onClick={() =>
-                    setSelected((current) => ({
-                      ...current,
-                      [facet.key]: option.value,
-                    }))
-                  }
-                  className={`tag-pill ${chosen(facet) === option.value ? 'active' : ''}`}
-                >
-                  {option.label}
-                  <span className="tag-pill-count">{option.count}</span>
-                </button>
-              ))}
+      {!asMenus && (
+        <div className="topic-bars">
+          {rows.map(({ facet, options }) => (
+            <div className="topic-bar" key={facet.key}>
+              <span className="topic-bar-label" aria-hidden="true">
+                {facet.label}
+              </span>
+              <div
+                className="tag-pills"
+                role="tablist"
+                aria-label={facet.ariaLabel}
+              >
+                {options.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    role="tab"
+                    aria-selected={chosen(facet) === option.value}
+                    // Nothing to show with the other filters as they are.
+                    disabled={
+                      option.count === 0 && chosen(facet) !== option.value
+                    }
+                    onClick={() =>
+                      setSelected((current) => ({
+                        ...current,
+                        [facet.key]: option.value,
+                      }))
+                    }
+                    className={`tag-pill ${chosen(facet) === option.value ? 'active' : ''}`}
+                  >
+                    {option.label}
+                    <span className="tag-pill-count">{option.count}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       <div className="filter-status">
         <span>

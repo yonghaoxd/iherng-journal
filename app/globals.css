@@ -1476,9 +1476,20 @@ p {
 .filter-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 20px;
+}
+
+/* Sort sits at the far right whether or not filter dropdowns precede it.
+   (Filter triggers live inside .filter-menus, so only sort matches.) */
+.filter-controls > .sort-trigger {
+  margin-left: auto;
+}
+
+.filter-menus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .search-box {
@@ -1658,6 +1669,17 @@ p {
   }
 }
 
+@media (max-width: 760px) {
+  .filter-controls {
+    flex-wrap: wrap;
+  }
+
+  .filter-menus {
+    order: 1;
+    flex-basis: 100%;
+  }
+}
+
 @media (max-width: 900px) {
   /* One swipeable row per filter instead of a tall stack of chips; the
      label stays so two rows (Type, Stage) can be told apart. */
@@ -1723,6 +1745,35 @@ p {
 .sort-trigger-value {
   font-weight: 600;
   white-space: nowrap;
+}
+
+/* Filter dropdowns: quiet until a value is chosen. */
+.filter-trigger {
+  padding: 0 12px 0 16px;
+}
+
+.filter-trigger-value {
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.filter-trigger:hover .filter-trigger-value {
+  color: var(--text-main);
+}
+
+.filter-trigger.is-active {
+  background: var(--accent-terracotta-soft);
+  border-color: rgba(255, 107, 61, 0.35);
+}
+
+.filter-trigger.is-active .filter-trigger-value {
+  color: var(--accent-terracotta);
+  font-weight: 600;
+}
+
+.filter-trigger.is-active .sort-trigger-chevron {
+  color: var(--accent-terracotta);
 }
 
 .sort-trigger-chevron {
@@ -1819,6 +1870,26 @@ p {
 
 .sort-menu-check {
   display: inline-flex;
+}
+
+.filter-menu {
+  min-width: max(var(--anchor-width), 200px);
+}
+
+.filter-menu-item {
+  grid-template-columns: 1fr auto 16px;
+}
+
+.filter-menu-count {
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-subtle);
+}
+
+.sort-menu-item[data-disabled] {
+  opacity: 0.35;
+  cursor: default;
 }
 
 @media (prefers-reduced-motion: reduce) {
