@@ -1,5 +1,5 @@
 {
-  "version": "e081a7981733",
+  "version": "882cfd7cb0b8",
   "articles": [
     {
       "id": "apartment-vs-landed",
@@ -704,6 +704,44 @@
       ]
     },
     {
+      "id": "paid-off-home-next-generation",
+      "title": "I'm in my 70s. What should my daughter do with our paid-off house?",
+      "date": "2026-06-30",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 314,
+      "tag": "Family & life stage",
+      "excerpt": "A mother in her 70s has mapped out what her daughter should do with their landed home after she passes. Sean explains why cash and careful plans may not serve the next generation.",
+      "viewerQuestion": "Is it sensible for the daughter, after her mother has passed away, to rent out the house for about RM3,000, buy a RM300,000 to RM350,000 condo near work, and do her own repairs to save money?",
+      "answer": "Sean wouldn't lock the daughter into a plan. She could simply keep living in the house, and should first work out what she wants; if she does invest, a loan works better than cash, and she should buy as soon as a unit's rent covers its instalment rather than wait.",
+      "points": [
+        "Cash loses value faster than it seems",
+        "Property bought in cash is a weak investment",
+        "Property pays when you borrow",
+        "Let the next generation choose"
+      ],
+      "aliases": [
+        "freehold",
+        "landed",
+        "terrace",
+        "rumah teres",
+        "condo",
+        "refinance",
+        "flexi loan",
+        "epf",
+        "asb",
+        "index funds",
+        "emergency fund",
+        "rental"
+      ],
+      "questions": [
+        "Should I rent out my paid-off house and buy a cheaper condo?",
+        "Is it better to invest in property with cash or a loan?",
+        "How much emergency fund should I keep before investing?",
+        "Should I refinance my paid-off house to invest?",
+        "How do I decide between keeping a house or investing for my children?"
+      ]
+    },
+    {
       "id": "parents-paying-half-for-house",
       "title": "My parents will pay half. Must I buy a home to live in?",
       "date": "2026-08-28",
@@ -1035,6 +1073,82 @@
         "How much cash buffer should I keep for my property portfolio?",
         "Will my leasehold property lose value over time?",
         "Should I sell my lowest-yielding property first?"
+      ]
+    },
+    {
+      "id": "soho-booking-fee-third-property",
+      "title": "I lost my booking fee on a SOHO. Should I give up on property?",
+      "date": "2026-05-19",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 312,
+      "tag": "Financing & titles",
+      "excerpt": "A young investor expected an 85% loan on a SOHO unit, got 70% and walked away from the booking. Sean explains the title mix-up and how he buys a third property and beyond.",
+      "viewerQuestion": "How should he book a subsale unit without risking the booking fee, how does Sean buy a third property and beyond, and is property even worth it when 30% upfront cash makes the returns worse than EPF?",
+      "answer": "Don't give up over a misunderstanding of the title: anything called SOHO is financed as a home, so a third one gets 70%. Beyond two properties, Sean buys through developer deals that need little cash, finances them on credit and keeps his own capital for stocks and other assets.",
+      "points": [
+        "'Home' in the name means a home loan",
+        "Subsale and auction need the most cash",
+        "Use credit for property, cash for the rest",
+        "Declared rent works for you"
+      ],
+      "aliases": [
+        "soho",
+        "sofo",
+        "sovo",
+        "office suite",
+        "commercial title",
+        "residential title",
+        "third property",
+        "subsale",
+        "auction",
+        "developer deal",
+        "booking fee",
+        "earnest deposit"
+      ],
+      "questions": [
+        "How is a SOHO unit financed in Malaysia?",
+        "What is the loan margin for a third residential property?",
+        "How much cash is needed upfront for a subsale property?",
+        "Why are auctions risky for first-time buyers?",
+        "How can I buy a third property with little cash?"
+      ]
+    },
+    {
+      "id": "staff-loan-condo-before-baby",
+      "title": "Should I buy a Cheras condo on a staff loan before starting a family?",
+      "date": "2026-04-15",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 310,
+      "tag": "Family & life stage",
+      "excerpt": "A 31-year-old who commutes three hours a day has booked a condo near an MRT station on a cheap staff loan. Sean's advice takes a turn: keep the cash and sort out the commute and family plans first.",
+      "viewerQuestion": "Is she doing the right thing for a first home bought to rent out now and live in later, should she look at subsale investments instead, and what else should she consider before starting a family?",
+      "answer": "Sean would hold off. The RM64,000 is worth more as a buffer while she starts a family, and the real problem, a three-hour daily commute, may be better solved by a job or a rental closer to home. If she does buy, it should be a pure investment that works on rent, which a subsale nearby may do better.",
+      "points": [
+        "Mixed intentions need the 85% rule",
+        "The cash may be worth more than the cheap rate",
+        "With cash, a subsale may beat a new launch",
+        "A buffer buys choices"
+      ],
+      "aliases": [
+        "condo",
+        "apartment",
+        "freehold",
+        "staff loan",
+        "subsale",
+        "new launch",
+        "mrt",
+        "taman connaught",
+        "cheras",
+        "semenyih",
+        "kajang",
+        "cash buffer"
+      ],
+      "questions": [
+        "Should I buy a condo to rent out first and live in later?",
+        "Is a staff loan worth using if it requires a large cash downpayment?",
+        "How do I compare a new launch condo with a subsale unit?",
+        "What should I consider before starting a family and buying a property?",
+        "Is a long commute a good reason to buy a property closer to work?"
       ]
     },
     {
