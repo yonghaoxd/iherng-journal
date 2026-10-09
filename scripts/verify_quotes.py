@@ -9,7 +9,8 @@ verbatim:
 Transcripts live in the gitignored .research/ directory (fetched with yt-dlp
 and cleaned by scripts/clean_youtube_vtt.py). Captions carry no punctuation or
 casing, so both sides are reduced to lowercase words before matching;
-apostrophes stay inside words ("don't"). Exits non-zero on any mismatch.
+apostrophes stay inside words ("don't"). A quote must also stay under 15
+words; the rest of each article is paraphrase. Exits non-zero on any problem.
 """
 
 import glob
@@ -19,6 +20,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSCRIPT_DIRS = ('.research/buyer-guides', '.research/missing', '.research/podcast')
+MAX_QUOTE_WORDS = 15  # quotes stay under this many words
 
 
 def words(text):
@@ -46,8 +48,10 @@ for file in sorted(glob.glob(str(ROOT / 'content/articles/*.json'))):
         failures += 1
         continue
     ok = ' '.join(words(quote)) in ' '.join(words(source))
-    failures += not ok
-    print(f'{"VERBATIM " if ok else "NOT FOUND"}  {article["slug"]:34} "{quote}"')
+    short = len(words(quote)) < MAX_QUOTE_WORDS
+    failures += not (ok and short)
+    status = 'NOT FOUND' if not ok else 'TOO LONG ' if not short else 'VERBATIM '
+    print(f'{status}  {article["slug"]:34} "{quote}"')
 
 print(f'\n{failures} problem(s)')
 raise SystemExit(1 if failures else 0)
