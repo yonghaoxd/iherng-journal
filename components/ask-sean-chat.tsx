@@ -150,22 +150,24 @@ function SourceList({ sources, answerId }: { sources: AskSource[]; answerId: str
   if (!sources.length) return null;
   return (
     <div className="askbot-sources">
-      <span className="ask-label">来源</span>
+      <span className="askbot-sources-title">出处</span>
+      <p className="askbot-sources-intro">回答用到的 {sources.length} 份原文，点开核对。</p>
       <ol>
         {sources.map((source) => (
           <li key={source.marker ?? source.id} id={`src-${answerId}-${source.marker}`}>
-            <span className="askbot-source-num">{source.marker?.slice(1)}</span>
-            <div>
-              <Link href={articlePath(source.articleUrl)} className="askbot-source-title">
-                {source.title}
-              </Link>
-              <div className="askbot-source-meta">
-                <span>{sourceLabel(source)}</span>
-                <a href={source.videoUrl} target="_blank" rel="noreferrer">
-                  看原视频 <ArrowUpRight size={12} />
-                </a>
-              </div>
+            <div className="askbot-source-head">
+              <span className="askbot-source-num">{source.marker?.slice(1)}</span>
+              <span>{source.episode ? `Asking Sean #${source.episode}` : '文章'}</span>
+              <span className="askbot-source-date">{source.date}</span>
             </div>
+            <Link href={articlePath(source.articleUrl)} className="askbot-source-title">
+              {source.title}
+              {' '}
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </Link>
+            <a className="askbot-source-video" href={source.videoUrl} target="_blank" rel="noreferrer">
+              看原视频 <ArrowUpRight size={12} />
+            </a>
           </li>
         ))}
       </ol>
@@ -193,41 +195,47 @@ function RelatedReads({ related, title }: { related: AskSource[]; title: string 
 function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: boolean }) {
   return (
     <article className={`askbot-answer ${nested ? 'nested' : ''}`} aria-live="polite">
-      <p className="askbot-question">
-        {nested && <CornerDownRight size={15} />}
-        {answer.question}
-      </p>
-      {answer.private && !nested && (
-        <p className="askbot-private">
-          <Lock size={13} aria-hidden="true" /> 结合你的处境回答 · 只有你看得到，不公开、不保存
+      <div className="askbot-answer-main">
+        <p className="askbot-question">
+          {nested && <CornerDownRight size={15} />}
+          {answer.question}
         </p>
-      )}
-      {answer.askCount > 1 && (
-        <p className="askbot-count">
-          <Users size={13} /> {answer.askCount} 次类似提问
-        </p>
-      )}
-
-      {answer.status === 'answered' && answer.body ? (
-        <>
-          {answer.tldr && (
-            <div className="askbot-tldr">
-              <span className="ask-label accent">结论</span>
-              <p>{answer.tldr}</p>
-            </div>
-          )}
-          <AnswerBody body={answer.body} answerId={answer.id} />
-          <SourceList sources={answer.sources} answerId={answer.id} />
-          {!nested && <RelatedReads related={answer.related} title="延伸阅读" />}
-        </>
-      ) : (
-        <>
-          <p className="askbot-out-of-scope">{answer.message}</p>
-          <p className="askbot-hint">
-            想看具体楼盘的点评，可以去 <Link href="/property-reviews">Property Reviews</Link>。
+        {answer.private && !nested && (
+          <p className="askbot-private">
+            <Lock size={13} aria-hidden="true" /> 结合你的处境回答 · 只有你看得到，不公开、不保存
           </p>
-          <RelatedReads related={answer.related} title="可以先看看这些文章" />
-        </>
+        )}
+        {answer.askCount > 1 && (
+          <p className="askbot-count">
+            <Users size={13} /> {answer.askCount} 次类似提问
+          </p>
+        )}
+
+        {answer.status === 'answered' && answer.body ? (
+          <>
+            {answer.tldr && (
+              <div className="askbot-tldr">
+                <span className="ask-label accent">结论</span>
+                <p>{answer.tldr}</p>
+              </div>
+            )}
+            <AnswerBody body={answer.body} answerId={answer.id} />
+            {!nested && <RelatedReads related={answer.related} title="延伸阅读" />}
+          </>
+        ) : (
+          <>
+            <p className="askbot-out-of-scope">{answer.message}</p>
+            <p className="askbot-hint">
+              想看具体楼盘的点评，可以去 <Link href="/property-reviews">Property Reviews</Link>。
+            </p>
+            <RelatedReads related={answer.related} title="可以先看看这些文章" />
+          </>
+        )}
+      </div>
+      {answer.status === 'answered' && answer.sources.length > 0 && (
+        <aside className="askbot-answer-aside" aria-label="出处">
+          <SourceList sources={answer.sources} answerId={answer.id} />
+        </aside>
       )}
     </article>
   );

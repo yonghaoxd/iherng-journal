@@ -4059,15 +4059,18 @@ p {
   font-family: var(--font-serif), 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
 }
 
+/* The answer spreads wider, with its sources in a right-hand column; the form
+   and the feed keep a comfortable reading width. */
 .askbot {
   display: grid;
   gap: 28px;
-  max-width: 820px;
+  max-width: 1120px;
 }
 
 .askbot-ask {
   display: grid;
   gap: 14px;
+  max-width: 820px;
 }
 
 .askbot-form {
@@ -4433,11 +4436,38 @@ p {
 
 .askbot-answer {
   display: grid;
-  gap: 16px;
+  gap: 16px 40px;
   padding: 26px 28px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
+}
+
+.askbot-answer-main {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  align-content: start;
+}
+
+.askbot-answer-aside {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (min-width: 960px) {
+  .askbot-answer {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+
+  .askbot-answer-aside {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    padding: 0 0 0 28px;
+    border-top: 0;
+    border-left: 1px solid var(--border-subtle);
+  }
 }
 
 .askbot-answer.nested {
@@ -4565,7 +4595,6 @@ p {
   color: #160B06;
 }
 
-.askbot-sources,
 .askbot-related {
   display: grid;
   gap: 10px;
@@ -4573,18 +4602,65 @@ p {
   border-top: 1px solid var(--border-subtle);
 }
 
+.askbot-sources {
+  display: grid;
+  gap: 4px;
+}
+
+.askbot-sources-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.askbot-sources-intro {
+  font-size: 12.5px;
+  color: var(--text-subtle);
+}
+
 .askbot-sources ol {
   display: grid;
-  gap: 10px;
-  margin: 0;
+  margin: 10px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .askbot-sources li {
-  display: flex;
-  gap: 12px;
+  display: grid;
+  gap: 6px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-subtle);
   scroll-margin-top: 110px;
+}
+
+.askbot-sources li:target {
+  background: var(--accent-terracotta-soft);
+}
+
+.askbot-source-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--text-subtle);
+}
+
+.askbot-source-date {
+  margin-left: auto;
+}
+
+.askbot-source-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: fit-content;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.askbot-source-video:hover {
+  color: var(--accent-terracotta);
 }
 
 .askbot-source-num {
@@ -4604,30 +4680,18 @@ p {
 .askbot-source-title {
   font-family: var(--font-serif);
   font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
   color: var(--text-main);
 }
 
-.askbot-source-title:hover {
-  color: var(--accent-terracotta);
-}
-
-.askbot-source-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  margin-top: 2px;
-  font-size: 12.5px;
+.askbot-source-title svg {
+  display: inline;
+  vertical-align: -1px;
   color: var(--text-subtle);
 }
 
-.askbot-source-meta a {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  color: var(--text-muted);
-}
-
-.askbot-source-meta a:hover {
+.askbot-source-title:hover {
   color: var(--accent-terracotta);
 }
 
@@ -4683,6 +4747,7 @@ p {
 }
 
 .askbot-feed {
+  max-width: 820px;
   display: grid;
   gap: 14px;
   padding-top: 8px;
