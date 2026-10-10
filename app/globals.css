@@ -4525,6 +4525,11 @@ p {
   color: var(--text-main);
 }
 
+.askbot-persona {
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
 .askbot-body {
   display: grid;
   gap: 12px;

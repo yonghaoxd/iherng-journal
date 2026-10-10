@@ -221,6 +221,7 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
               </div>
             )}
             <AnswerBody body={answer.body} answerId={answer.id} />
+            <p className="askbot-persona">AI 用 Sean 的口吻、根据他的节目整理，不是 Sean 本人回复。</p>
             {!nested && <RelatedReads related={answer.related} title="延伸阅读" />}
           </>
         ) : (
