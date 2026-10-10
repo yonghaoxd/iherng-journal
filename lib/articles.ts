@@ -71,6 +71,20 @@ import tenMillionGoal from '@/content/articles/ten-million-property-goal-at-25.j
 import holdVsFlip from '@/content/articles/hold-property-long-term-vs-flip.json';
 import studentFirstProperty from '@/content/articles/student-preparing-first-property.json';
 import ownPlaceOrWait from '@/content/articles/own-place-or-wait-to-afford.json';
+import oldApartmentInvestment from '@/content/articles/old-apartment-first-investment.json';
+import thirdPropertyChannel from '@/content/articles/third-property-buying-channel.json';
+import inheritedHouse from '@/content/articles/inherited-house-sell-or-keep.json';
+import highEarnerNoFlipping from '@/content/articles/high-earner-first-property-no-flipping.json';
+import fifthPropertyBeforeWedding from '@/content/articles/fifth-property-before-wedding.json';
+import houseForTuition from '@/content/articles/house-for-tuition-centre.json';
+import doctorBetweenJobs from '@/content/articles/doctor-between-jobs-first-property.json';
+import jointHomeWithEx from '@/content/articles/joint-home-with-ex-sell-or-rent.json';
+import buyNowRetireLater from '@/content/articles/buy-now-to-retire-in-later.json';
+import studentAccommodation from '@/content/articles/student-accommodation-investment-risk.json';
+import carsOrProperty from '@/content/articles/cars-or-property-kuching.json';
+import retiringSixProperties from '@/content/articles/retiring-with-six-properties.json';
+import sellingFamilyHome from '@/content/articles/selling-family-home-to-clear-debt.json';
+import secondPropertySubsale from '@/content/articles/second-property-subsale-cheras.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -114,10 +128,24 @@ export const articles = [
   cheapHighYield,
   staffLoanBeforeBaby,
   discountTrap,
+  oldApartmentInvestment,
   tenMillionGoal,
+  thirdPropertyChannel,
+  inheritedHouse,
+  highEarnerNoFlipping,
   holdVsFlip,
   studentFirstProperty,
+  fifthPropertyBeforeWedding,
+  houseForTuition,
   ownPlaceOrWait,
+  doctorBetweenJobs,
+  jointHomeWithEx,
+  buyNowRetireLater,
+  studentAccommodation,
+  carsOrProperty,
+  retiringSixProperties,
+  sellingFamilyHome,
+  secondPropertySubsale,
   investingAt60,
   firstHome,
   apartment,
