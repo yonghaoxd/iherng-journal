@@ -3,7 +3,7 @@ import { seriesMetadata } from '@/lib/seo';
 
 export const metadata = seriesMetadata(
   'buyer-guides',
-  'Fifty practical playbooks on property research, financing, renovation, investment risk and homeownership decisions in Malaysia.'
+  'Seventy practical playbooks on property research, financing, renovation, investment risk and homeownership decisions in Malaysia.'
 );
 
 export default function Page() {

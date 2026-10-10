@@ -1,0 +1,50 @@
+{
+  "slug": "how-to-calculate-rental-roi",
+  "series": "buyer-guides",
+  "episode": 52,
+  "title": "How do I calculate the return on a rental property?",
+  "shortTitle": "Calculating rental ROI",
+  "tag": "Return on investment",
+  "category": "investing-risk",
+  "date": "2019-01-15",
+  "videoId": "ITfl6BGyjbE",
+  "videoTitle": "How to calculate Return On Investment?",
+  "duration": "6:16",
+  "excerpt": "A 4% or 5% return on property can look poor next to 10% from shares. Sean shows how rental ROI is worked out, and why leverage changes the comparison.",
+  "qa": {
+    "kind": "problem",
+    "context": "Developers and agents quote property returns of 4%, 5% or 6%, while friends boast of 10% a year from shares. A viewer asked how return on investment is calculated and how to compare the two.",
+    "question": "How is return on investment calculated for a rental property, and what counts as a good return?",
+    "quote": "your profit versus your initial amount",
+    "answer": "ROI is yearly return divided by the amount invested. For property, divide a year's rent by the price. A return above fixed deposit rates is already decent, and one above your loan interest rate is very good, because the bank funds most of the purchase.",
+    "reasons": [
+      {
+        "title": "The basic sum",
+        "body": "A RM500,000 property rented at RM2,000 a month earns RM24,000 a year, or 4.8% of the price."
+      },
+      {
+        "title": "Leverage changes the picture",
+        "body": "RM50,000 in shares at 10% returns RM5,000 a year. The same RM50,000 as a down payment can control a RM400,000 property renting at RM1,500, or RM18,000 a year. The 4.5% is on the whole price, but you put in only about 10%."
+      },
+      {
+        "title": "Few assets come with a loan",
+        "body": "Banks will lend ordinary buyers around 90% to buy property, but will not lend them money to buy shares."
+      }
+    ],
+    "actions": [
+      "Work out yearly rent divided by price for any unit you consider.",
+      "Compare the result with fixed deposit rates and your loan interest rate.",
+      "Remember the return is earned on the full price, not just your down payment.",
+      "Keep some savings in cash, shares and insurance rather than everything in property."
+    ],
+    "caveat": "Sean's benchmarks of a 3% fixed deposit and a 4.5% loan rate date from 2019. Higher returns come with higher risk, and he stresses doing your homework rather than assuming property always wins."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for this January 2019 video, made in answer to a viewer's question. The quoted line is verbatim; everything else is paraphrased. The 4.8% is worked from his own figures.",
+  "sources": [
+    {
+      "label": "Original video and English captions · 15 January 2019",
+      "url": "https://www.youtube.com/watch?v=ITfl6BGyjbE"
+    }
+  ],
+  "location": "Malaysia Nationwide"
+}

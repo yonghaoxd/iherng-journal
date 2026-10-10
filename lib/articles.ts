@@ -167,6 +167,26 @@ import breezeHill from '@/content/articles/breeze-hill-genting-highlands.json';
 import coreResidence from '@/content/articles/core-residence-trx.json';
 import beldon from '@/content/articles/beldon-eco-horizon-batu-kawan.json';
 import theHarmony from '@/content/articles/the-harmony-old-klang-road.json';
+import bankValueVsMarketValue from '@/content/articles/bank-value-vs-market-value.json';
+import rentalRoi from '@/content/articles/how-to-calculate-rental-roi.json';
+import pricePerSqFt from '@/content/articles/price-per-square-foot-explained.json';
+import stepsBeforeFirstProperty from '@/content/articles/steps-before-your-first-property.json';
+import moreRoomsOrHigherFloor from '@/content/articles/three-bedroom-low-or-two-bedroom-high.json';
+import tradersVsInvestors from '@/content/articles/property-traders-vs-investors.json';
+import developerSalesTricks from '@/content/articles/how-developers-make-you-buy.json';
+import visitingSalesGallery from '@/content/articles/visiting-a-sales-gallery.json';
+import complainingNewHouse from '@/content/articles/complaining-about-your-new-house.json';
+import lettingOutUnit from '@/content/articles/letting-out-your-unit.json';
+import investorDealCriteria from '@/content/articles/what-investors-look-for-in-a-deal.json';
+import propertyVsOtherInvestments from '@/content/articles/why-property-over-other-investments.json';
+import airbnbIncomeRisk from '@/content/articles/relying-on-airbnb-income.json';
+import whatIsApdl from '@/content/articles/what-is-apdl.json';
+import servicedVsCondo from '@/content/articles/serviced-apartment-vs-condominium.json';
+import propertyLabels from '@/content/articles/property-labels-explained.json';
+import discountedProperties from '@/content/articles/where-discounted-properties-come-from.json';
+import landedLabels from '@/content/articles/landed-home-labels-and-guarded-areas.json';
+import transactedPriceData from '@/content/articles/using-transacted-price-data.json';
+import badDealLessons from '@/content/articles/lessons-from-a-bad-deal.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -344,6 +364,26 @@ export const articles = [
   rentHomeBuyToInvest,
   judgingArchitecture,
   strataCommunity,
+  bankValueVsMarketValue,
+  rentalRoi,
+  pricePerSqFt,
+  stepsBeforeFirstProperty,
+  moreRoomsOrHigherFloor,
+  tradersVsInvestors,
+  developerSalesTricks,
+  visitingSalesGallery,
+  complainingNewHouse,
+  lettingOutUnit,
+  investorDealCriteria,
+  propertyVsOtherInvestments,
+  airbnbIncomeRisk,
+  whatIsApdl,
+  servicedVsCondo,
+  propertyLabels,
+  discountedProperties,
+  landedLabels,
+  transactedPriceData,
+  badDealLessons,
 ];
 
 export type Article = (typeof articles)[number];
