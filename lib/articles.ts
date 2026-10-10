@@ -85,6 +85,12 @@ import carsOrProperty from '@/content/articles/cars-or-property-kuching.json';
 import retiringSixProperties from '@/content/articles/retiring-with-six-properties.json';
 import sellingFamilyHome from '@/content/articles/selling-family-home-to-clear-debt.json';
 import secondPropertySubsale from '@/content/articles/second-property-subsale-cheras.json';
+import mAria from '@/content/articles/m-aria-sentul.json';
+import waltzResidence from '@/content/articles/waltz-residence-taman-yarl.json';
+import skylineKl from '@/content/articles/skyline-kuala-lumpur-pudu.json';
+import summerSuites from '@/content/articles/summer-suites-johor-bahru.json';
+import mAurora from '@/content/articles/m-aurora-old-klang-road.json';
+import vueMonterez from '@/content/articles/the-vue-monterez-shah-alam.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -108,6 +114,12 @@ export const articles = [
   sennaHeights,
   nestree,
   sunwayDhill,
+  mAria,
+  waltzResidence,
+  skylineKl,
+  summerSuites,
+  mAurora,
+  vueMonterez,
   allevia,
   avisa,
   metaResidences,
