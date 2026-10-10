@@ -40,6 +40,16 @@ import loanRejections from '@/content/articles/housing-loan-rejection-reasons.js
 import loanMistakesByIncome from '@/content/articles/loan-application-mistakes-by-income.json';
 import lppsaLoan from '@/content/articles/lppsa-civil-servant-housing-loan.json';
 import singaporeIncomeLoan from '@/content/articles/singapore-income-malaysia-housing-loan.json';
+import refinancingReasons from '@/content/articles/refinancing-housing-loan-reasons.json';
+import noMoneyDownDeals from '@/content/articles/no-money-down-property-deals.json';
+import auctionProperty from '@/content/articles/buying-auction-property.json';
+import masterVsStrataTitle from '@/content/articles/master-title-vs-strata-title.json';
+import propertyTaxes from '@/content/articles/property-taxes-malaysia.json';
+import weekdayWeekendTest from '@/content/articles/weekday-weekend-test-own-stay.json';
+import affordableHousing from '@/content/articles/affordable-housing-rumawip.json';
+import furnishingRentalUnit from '@/content/articles/furnishing-rental-unit-worth-it.json';
+import parentsBuyingForChildren from '@/content/articles/parents-buying-property-for-children.json';
+import buyingWithPartner from '@/content/articles/buying-property-with-partner.json';
 import timurbay from '@/content/articles/timurbay-seafront-residence-kuantan.json';
 import teja from '@/content/articles/teja-subang-jaya.json';
 import selayangMulia from '@/content/articles/selayang-mulia-selayang.json';
@@ -132,6 +142,16 @@ export const articles = [
   loanMistakesByIncome,
   lppsaLoan,
   singaporeIncomeLoan,
+  refinancingReasons,
+  noMoneyDownDeals,
+  auctionProperty,
+  masterVsStrataTitle,
+  propertyTaxes,
+  weekdayWeekendTest,
+  affordableHousing,
+  furnishingRentalUnit,
+  parentsBuyingForChildren,
+  buyingWithPartner,
 ];
 
 export type Article = (typeof articles)[number];
