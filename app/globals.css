@@ -4727,6 +4727,29 @@ p {
   color: var(--text-body);
 }
 
+/* After an answer: the full form hides, and a bar for the next question stays
+   pinned to the bottom of the screen under the answer. */
+.askbot-ask[hidden] {
+  display: none;
+}
+
+.askbot-thread-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.askbot-dock {
+  position: sticky;
+  bottom: 16px;
+  z-index: 5;
+  max-width: 820px;
+}
+
+.askbot-dock .askbot-form {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
 .askbot-share {
   justify-self: start;
   display: inline-flex;

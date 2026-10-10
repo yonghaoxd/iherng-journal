@@ -9,6 +9,7 @@ import {
   Loader2,
   Lock,
   MessageCircleQuestion,
+  RotateCcw,
   Send,
   Users,
 } from 'lucide-react';
@@ -337,12 +338,15 @@ function QuestionForm({
   placeholder,
   compact = false,
   situation,
+  dock = false,
 }: {
   onSubmit: (question: string) => Promise<boolean>;
   busy: boolean;
   placeholder: string;
   compact?: boolean;
   situation?: SituationControl;
+  /** The bar under an answer: the situation switch reuses what was entered above, without its fields. */
+  dock?: boolean;
 }) {
   const [text, setText] = useState('');
   // Set when someone presses 提问 with only their situation filled in.
@@ -364,13 +368,13 @@ function QuestionForm({
   };
   return (
     <form
-      className={`askbot-form ${compact ? 'compact' : ''} ${withSituation ? 'with-situation' : ''}`}
+      className={`askbot-form ${compact ? 'compact' : ''} ${withSituation && !dock ? 'with-situation' : ''}`}
       onSubmit={(event) => {
         event.preventDefault();
         void submit();
       }}
     >
-      {withSituation && (
+      {withSituation && !dock && (
         <span className="askbot-step-label">
           <b>1</b>你的问题
         </span>
@@ -400,7 +404,7 @@ function QuestionForm({
           先在上面写下你的问题，再按提问。
         </p>
       )}
-      {situation?.enabled && <SituationFields value={situation.value} onChange={situation.onChange} />}
+      {situation?.enabled && !dock && <SituationFields value={situation.value} onChange={situation.onChange} />}
       <div className="askbot-form-row">
         {situation && (
           <label className={`askbot-situation-toggle ${situation.enabled ? 'on' : ''}`}>
@@ -417,7 +421,7 @@ function QuestionForm({
         </span>
         <button type="submit" className="askbot-submit" disabled={busy || (!text.trim() && !hasSituation)}>
           {busy ? <Loader2 size={15} className="askbot-spin" /> : <Send size={15} />}
-          {compact ? '追问' : '提问'}
+          {compact && !dock ? '追问' : '提问'}
         </button>
       </div>
     </form>
@@ -515,19 +519,30 @@ export function AskSeanChat() {
 
   const canFollowUp = answer?.status === 'answered' && !answer.parentId && !answer.followUps?.length;
 
+  /** Back to the full form at the top, keeping whatever situation was entered. */
+  const startOver = () => {
+    setAnswer(null);
+    setError('');
+    window.history.replaceState(null, '', '/ask');
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  };
+
+  const situationControl: SituationControl = {
+    enabled: situationOn,
+    value: situation,
+    onToggle: setSituationOn,
+    onChange: setSituation,
+  };
+
   return (
     <div className="askbot">
-      <section className="askbot-ask">
+      {/* Once an answer is showing, the question moves to the bar under it. */}
+      <section className="askbot-ask" hidden={Boolean(answer)}>
         <QuestionForm
           onSubmit={(question) => ask(question)}
           busy={busy}
           placeholder="你在买房上卡在哪里？例如：第一间房该买自住还是投资？"
-          situation={{
-            enabled: situationOn,
-            value: situation,
-            onToggle: setSituationOn,
-            onChange: setSituation,
-          }}
+          situation={situationControl}
         />
         <div className="askbot-examples">
           {EXAMPLES.map((example) => (
@@ -553,19 +568,26 @@ export function AskSeanChat() {
           <div className="askbot-thread">
             <AnswerView answer={answer} />
             {answer.followUps?.map((followUp) => <AnswerView key={followUp.id} answer={followUp} nested />)}
-            {canFollowUp && (
+            <div className="askbot-thread-actions">
+              {!answer.private && (
+                <button type="button" className="askbot-share" onClick={() => void copyLink()}>
+                  <Link2 size={14} /> {copied ? '已复制链接' : '复制这个回答的链接'}
+                </button>
+              )}
+              <button type="button" className="askbot-share" onClick={startOver}>
+                <RotateCcw size={14} /> 问新问题
+              </button>
+            </div>
+            <div className="askbot-dock">
               <QuestionForm
                 compact
+                dock
                 busy={busy}
-                placeholder="还有不清楚的地方？可以追问一次"
-                onSubmit={(question) => ask(question, answer)}
+                placeholder={canFollowUp ? '接着问，或者换一个问题' : '换一个问题'}
+                onSubmit={(question) => (canFollowUp ? ask(question, answer) : ask(question))}
+                situation={canFollowUp ? undefined : situationControl}
               />
-            )}
-            {!answer.private && (
-              <button type="button" className="askbot-share" onClick={() => void copyLink()}>
-                <Link2 size={14} /> {copied ? '已复制链接' : '复制这个回答的链接'}
-              </button>
-            )}
+            </div>
           </div>
         )}
       </div>
