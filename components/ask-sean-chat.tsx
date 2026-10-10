@@ -251,10 +251,12 @@ function SituationFields({ value, onChange }: Pick<SituationControl, 'value' | '
         这里的内容只用来生成这次回答：回答只有你看得到，不会公开，我们也不保存。请不要写姓名、电话或地址。
       </p>
       <label className="askbot-situation-field">
-        <span>你的现况</span>
+        <span className="askbot-step-label">
+          <b>2</b>你的现况<em>（选填）</em>
+        </span>
         <textarea
           ref={boxRef}
-          rows={4}
+          rows={Math.min(10, Math.max(4, current.split('\n').length + 1))}
           maxLength={MAX_SITUATION_CHARS}
           placeholder="例如：32 岁，已婚，一个孩子；税后月入 RM8,000，存款 RM60,000；车贷每月 RM900；名下还没有房，想买自住。"
           value={current}
@@ -292,25 +294,49 @@ function QuestionForm({
   situation?: SituationControl;
 }) {
   const [text, setText] = useState('');
+  // Set when someone presses 提问 with only their situation filled in.
+  const [needQuestion, setNeedQuestion] = useState(false);
+  const questionRef = useRef<HTMLTextAreaElement>(null);
+  const withSituation = Boolean(situation?.enabled);
+  const hasSituation = withSituation && Boolean(situation?.value.current?.trim());
   const submit = async () => {
-    if (busy || !text.trim()) return;
+    if (busy) return;
+    if (!text.trim()) {
+      if (hasSituation) {
+        setNeedQuestion(true);
+        questionRef.current?.focus();
+        questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
     if (await onSubmit(text.trim())) setText('');
   };
   return (
     <form
-      className={`askbot-form ${compact ? 'compact' : ''}`}
+      className={`askbot-form ${compact ? 'compact' : ''} ${withSituation ? 'with-situation' : ''}`}
       onSubmit={(event) => {
         event.preventDefault();
         void submit();
       }}
     >
+      {withSituation && (
+        <span className="askbot-step-label">
+          <b>1</b>你的问题
+        </span>
+      )}
       <textarea
+        ref={questionRef}
+        className={`askbot-question ${needQuestion ? 'needs-question' : ''}`}
         value={text}
         maxLength={MAX_QUESTION_CHARS}
         rows={compact ? 2 : 3}
         placeholder={placeholder}
         aria-label={placeholder}
-        onChange={(event) => setText(event.target.value)}
+        aria-invalid={needQuestion || undefined}
+        onChange={(event) => {
+          setText(event.target.value);
+          if (event.target.value.trim()) setNeedQuestion(false);
+        }}
         onKeyDown={(event) => {
           if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
             event.preventDefault();
@@ -318,6 +344,11 @@ function QuestionForm({
           }
         }}
       />
+      {needQuestion && withSituation && (
+        <p className="askbot-need-question" role="alert">
+          先在上面写下你的问题，再按提问。
+        </p>
+      )}
       {situation?.enabled && <SituationFields value={situation.value} onChange={situation.onChange} />}
       <div className="askbot-form-row">
         {situation && (
@@ -333,7 +364,7 @@ function QuestionForm({
         <span className="askbot-counter">
           {text.length}/{MAX_QUESTION_CHARS} · Ctrl + Enter 发送
         </span>
-        <button type="submit" className="askbot-submit" disabled={busy || !text.trim()}>
+        <button type="submit" className="askbot-submit" disabled={busy || (!text.trim() && !hasSituation)}>
           {busy ? <Loader2 size={15} className="askbot-spin" /> : <Send size={15} />}
           {compact ? '追问' : '提问'}
         </button>

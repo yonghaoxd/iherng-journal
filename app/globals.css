@@ -4121,6 +4121,64 @@ p {
   color: var(--text-subtle);
 }
 
+/* With the situation box open, the question and the situation are numbered
+   steps, and the question gets a visible box so it isn't skipped. */
+.askbot-step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.askbot-step-label b {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.askbot-step-label em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--text-subtle);
+}
+
+.askbot-situation-field .askbot-step-label {
+  margin-bottom: 0;
+}
+
+.askbot-form.with-situation .askbot-question {
+  padding: 10px 12px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.askbot-form.with-situation .askbot-question:focus {
+  border-color: var(--accent-terracotta);
+}
+
+.askbot-form .askbot-question.needs-question {
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 3px var(--accent-terracotta-soft);
+}
+
+.askbot-need-question {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+}
+
 /* "结合我的处境": a switch in the form row, opening optional fields. */
 .askbot-situation-toggle {
   display: inline-flex;
