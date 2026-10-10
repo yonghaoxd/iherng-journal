@@ -127,6 +127,26 @@ import pauseInvesting from '@/content/articles/pause-investing-health-uncertain.
 import liftHomeForParent from '@/content/articles/rent-home-with-lift-for-parent.json';
 import coupleFirstHome from '@/content/articles/young-couple-first-home-budget.json';
 import threeTodProjects from '@/content/articles/three-tod-projects-equal-cash-flow.json';
+import spaChecklist from '@/content/articles/what-to-check-in-your-spa.json';
+import fireInsuranceLanded from '@/content/articles/fire-insurance-for-landed-homes.json';
+import lateDeliveryDamages from '@/content/articles/late-delivery-damages-and-booking-fees.json';
+import loanQualifyingTricks from '@/content/articles/loan-qualifying-tricks.json';
+import cashBackOrCashFlow from '@/content/articles/cash-back-or-positive-cash-flow.json';
+import outskirtsOrCityCondo from '@/content/articles/outskirts-landed-or-city-condo.json';
+import transitOriented from '@/content/articles/transit-oriented-development-explained.json';
+import brandedOrSmallDeveloper from '@/content/articles/branded-or-small-developer.json';
+import mixedDevelopments from '@/content/articles/buying-into-mixed-developments.json';
+import houzkeyRentToOwn from '@/content/articles/houzkey-rent-to-own-review.json';
+import propertyBeforeProposing from '@/content/articles/property-before-proposing.json';
+import renovationMistakes from '@/content/articles/renovation-mistakes-to-avoid.json';
+import fundingFirstPurchase from '@/content/articles/finding-money-for-a-down-payment.json';
+import strataOrIndividualTitle from '@/content/articles/strata-or-individual-title-landed.json';
+import ukVsMalaysia from '@/content/articles/investing-in-uk-vs-malaysia.json';
+import youngBuyerMistakes from '@/content/articles/young-buyer-mistakes-new-launches.json';
+import fourInvestorTypes from '@/content/articles/four-types-of-property-investors.json';
+import rentHomeBuyToInvest from '@/content/articles/rent-your-home-buy-to-invest.json';
+import judgingArchitecture from '@/content/articles/judging-a-buildings-architecture.json';
+import strataCommunity from '@/content/articles/living-in-a-strata-community.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -264,6 +284,26 @@ export const articles = [
   furnishingRentalUnit,
   parentsBuyingForChildren,
   buyingWithPartner,
+  spaChecklist,
+  fireInsuranceLanded,
+  lateDeliveryDamages,
+  loanQualifyingTricks,
+  cashBackOrCashFlow,
+  outskirtsOrCityCondo,
+  transitOriented,
+  brandedOrSmallDeveloper,
+  mixedDevelopments,
+  houzkeyRentToOwn,
+  propertyBeforeProposing,
+  renovationMistakes,
+  fundingFirstPurchase,
+  strataOrIndividualTitle,
+  ukVsMalaysia,
+  youngBuyerMistakes,
+  fourInvestorTypes,
+  rentHomeBuyToInvest,
+  judgingArchitecture,
+  strataCommunity,
 ];
 
 export type Article = (typeof articles)[number];
