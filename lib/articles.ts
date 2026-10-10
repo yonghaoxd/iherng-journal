@@ -147,6 +147,26 @@ import fourInvestorTypes from '@/content/articles/four-types-of-property-investo
 import rentHomeBuyToInvest from '@/content/articles/rent-your-home-buy-to-invest.json';
 import judgingArchitecture from '@/content/articles/judging-a-buildings-architecture.json';
 import strataCommunity from '@/content/articles/living-in-a-strata-community.json';
+import alaiaTitiwangsa from '@/content/articles/alaia-titiwangsa-kuala-lumpur.json';
+import thePano from '@/content/articles/the-pano-jalan-ipoh.json';
+import eighthChapterII from '@/content/articles/the-eighth-chapter-ii-elmina-green.json';
+import araBloc from '@/content/articles/ara-bloc-ara-damansara.json';
+import stellarDamansara from '@/content/articles/stellar-damansara-damansara-jaya.json';
+import mayaAra from '@/content/articles/maya-ara-ara-damansara.json';
+import sunwayAlishan from '@/content/articles/sunway-alishan-cheras.json';
+import tuanStraits from '@/content/articles/tuan-straits-desa-petaling.json';
+import hillviewSenibong from '@/content/articles/hillview-senibong-cove-johor-bahru.json';
+import ikonResidences from '@/content/articles/ikon-residences-seremban-2.json';
+import macalisterz from '@/content/articles/22-macalisterz-george-town.json';
+import ppamAmansuri from '@/content/articles/ppam-residensi-amansuri-bandar-sri-permaisuri.json';
+import shangResidence from '@/content/articles/the-shang-residence-kuchai-lama.json';
+import divozResidences from '@/content/articles/divoz-residences-old-klang-road.json';
+import amanaraResidence from '@/content/articles/amanara-residence-kayu-ara.json';
+import myraCove from '@/content/articles/myra-cove-cyberjaya.json';
+import breezeHill from '@/content/articles/breeze-hill-genting-highlands.json';
+import coreResidence from '@/content/articles/core-residence-trx.json';
+import beldon from '@/content/articles/beldon-eco-horizon-batu-kawan.json';
+import theHarmony from '@/content/articles/the-harmony-old-klang-road.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -182,6 +202,26 @@ export const articles = [
   jendelaResidences,
   enlaceSuites,
   khayaResidence,
+  alaiaTitiwangsa,
+  thePano,
+  eighthChapterII,
+  araBloc,
+  stellarDamansara,
+  mayaAra,
+  sunwayAlishan,
+  tuanStraits,
+  hillviewSenibong,
+  ikonResidences,
+  macalisterz,
+  ppamAmansuri,
+  shangResidence,
+  divozResidences,
+  amanaraResidence,
+  myraCove,
+  breezeHill,
+  coreResidence,
+  beldon,
+  theHarmony,
   allevia,
   avisa,
   metaResidences,
@@ -384,14 +424,16 @@ export const stages = [
 
 export type Stage = (typeof stages)[number];
 
+type Standout = { title: string; body: string };
+
 /**
  * A review's optional standout: the one idea in the project Sean admired most,
  * as he describes it in the episode. Reviews without one simply omit it.
  */
 export function standoutFor(
   article: Article,
-): { title: string; body: string } | undefined {
-  return 'standout' in article ? article.standout : undefined;
+): Standout | undefined {
+  return 'standout' in article ? (article.standout as Standout) : undefined;
 }
 
 /**
