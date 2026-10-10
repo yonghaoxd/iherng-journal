@@ -107,6 +107,26 @@ import cashBuyingCondos from '@/content/articles/cash-buying-condos-to-retire.js
 import disasterProtection from '@/content/articles/disasters-and-property-protection.json';
 import newlywedsWhereToLive from '@/content/articles/newlyweds-where-to-live.json';
 import familyApartment from '@/content/articles/moving-into-family-apartment.json';
+import ownHomeAt44 from '@/content/articles/own-home-at-44-buy-or-rent.json';
+import hotelSchemeUnit from '@/content/articles/hotel-scheme-unit-gone-wrong.json';
+import newHomeDebtsAkpk from '@/content/articles/new-home-debts-rent-or-akpk.json';
+import condoManyUnsold from '@/content/articles/condo-with-many-unsold-units.json';
+import returningHomeToRetire from '@/content/articles/returning-home-to-retire-portfolio.json';
+import oneAirbnbOperator from '@/content/articles/building-allows-one-airbnb-operator.json';
+import refinanceOrSellDebts from '@/content/articles/refinance-or-sell-to-clear-debts.json';
+import beyondThirdProperty from '@/content/articles/buying-beyond-the-third-property.json';
+import exitStrategyCondos from '@/content/articles/exit-strategy-for-ageing-condos.json';
+import retireAt40 from '@/content/articles/retire-at-40-on-rental-income.json';
+import creditAfterBankruptcy from '@/content/articles/rebuilding-credit-after-bankruptcy.json';
+import propertyVsFixedDeposit from '@/content/articles/property-versus-fixed-deposit.json';
+import firstPropertyAt49 from '@/content/articles/first-property-at-49-inheritance.json';
+import paidOffLeasehold from '@/content/articles/paid-off-leasehold-sell-or-rent.json';
+import johorOrKlangValley from '@/content/articles/johor-rts-or-klang-valley-first-buy.json';
+import fathersGift from '@/content/articles/fathers-gift-for-first-property.json';
+import pauseInvesting from '@/content/articles/pause-investing-health-uncertain.json';
+import liftHomeForParent from '@/content/articles/rent-home-with-lift-for-parent.json';
+import coupleFirstHome from '@/content/articles/young-couple-first-home-budget.json';
+import threeTodProjects from '@/content/articles/three-tod-projects-equal-cash-flow.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -191,6 +211,26 @@ export const articles = [
   disasterProtection,
   newlywedsWhereToLive,
   familyApartment,
+  ownHomeAt44,
+  hotelSchemeUnit,
+  newHomeDebtsAkpk,
+  condoManyUnsold,
+  returningHomeToRetire,
+  oneAirbnbOperator,
+  refinanceOrSellDebts,
+  beyondThirdProperty,
+  exitStrategyCondos,
+  retireAt40,
+  creditAfterBankruptcy,
+  propertyVsFixedDeposit,
+  firstPropertyAt49,
+  paidOffLeasehold,
+  johorOrKlangValley,
+  fathersGift,
+  pauseInvesting,
+  liftHomeForParent,
+  coupleFirstHome,
+  threeTodProjects,
   firstHome,
   apartment,
   location,
