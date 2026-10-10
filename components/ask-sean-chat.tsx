@@ -2,14 +2,25 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, CornerDownRight, Link2, Loader2, MessageCircleQuestion, Send, Users } from 'lucide-react';
+import {
+  ArrowUpRight,
+  CornerDownRight,
+  Link2,
+  Loader2,
+  Lock,
+  MessageCircleQuestion,
+  Send,
+  Users,
+} from 'lucide-react';
 import {
   askSean,
   fetchFeed,
   fetchQuestion,
   MAX_QUESTION_CHARS,
+  MAX_SITUATION_CHARS,
   type AskAnswer,
   type AskFeedItem,
+  type AskSituation,
   type AskSource,
 } from '@/lib/ask-api';
 
@@ -143,6 +154,11 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
         {nested && <CornerDownRight size={15} />}
         {answer.question}
       </p>
+      {answer.private && !nested && (
+        <p className="askbot-private">
+          <Lock size={13} aria-hidden="true" /> 结合你的处境回答 · 只有你看得到，不公开、不保存
+        </p>
+      )}
       {answer.askCount > 1 && (
         <p className="askbot-count">
           <Users size={13} /> {answer.askCount} 次类似提问
@@ -174,16 +190,81 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
   );
 }
 
+const SITUATION_FIELDS = [
+  {
+    key: 'goal',
+    label: '你想达成什么',
+    placeholder: '例如：买第一间自住房、投资出租、给家人换大一点的房子',
+    rows: 1,
+  },
+  {
+    key: 'current',
+    label: '现在的情况',
+    placeholder: '例如：月入、存款、年龄、家庭成员、已有几间房、预算、想买的地区',
+    rows: 2,
+  },
+  {
+    key: 'tried',
+    label: '已经看过或考虑过什么',
+    placeholder: '例如：看过哪些项目、银行批了多少贷款、家人的意见',
+    rows: 1,
+  },
+] as const;
+
+/** Only the fields with something in them, or nothing when all are empty. */
+function filledSituation(situation: AskSituation): AskSituation | undefined {
+  const filled = Object.fromEntries(
+    Object.entries(situation).filter(([, value]) => value?.trim()),
+  ) as AskSituation;
+  return Object.keys(filled).length ? filled : undefined;
+}
+
+interface SituationControl {
+  enabled: boolean;
+  value: AskSituation;
+  onToggle: (enabled: boolean) => void;
+  onChange: (value: AskSituation) => void;
+}
+
+/** "结合我的处境": optional details that shape one private answer. */
+function SituationFields({ value, onChange }: Pick<SituationControl, 'value' | 'onChange'>) {
+  return (
+    <div className="askbot-situation">
+      <p className="askbot-situation-intro">
+        说清楚处境，回答会结合你的目标和现状，也会指出还缺什么资料。三项都可以空着，只写你愿意分享的。
+      </p>
+      <p className="askbot-situation-privacy">
+        <Lock size={13} aria-hidden="true" />
+        这里的内容只用来生成这次回答：回答只有你看得到，不会公开，我们也不保存。请不要写姓名、电话或地址。
+      </p>
+      {SITUATION_FIELDS.map((field) => (
+        <label key={field.key} className="askbot-situation-field">
+          <span>{field.label}</span>
+          <textarea
+            rows={field.rows}
+            maxLength={MAX_SITUATION_CHARS}
+            placeholder={field.placeholder}
+            value={value[field.key] ?? ''}
+            onChange={(event) => onChange({ ...value, [field.key]: event.target.value })}
+          />
+        </label>
+      ))}
+    </div>
+  );
+}
+
 function QuestionForm({
   onSubmit,
   busy,
   placeholder,
   compact = false,
+  situation,
 }: {
   onSubmit: (question: string) => Promise<boolean>;
   busy: boolean;
   placeholder: string;
   compact?: boolean;
+  situation?: SituationControl;
 }) {
   const [text, setText] = useState('');
   const submit = async () => {
@@ -212,7 +293,18 @@ function QuestionForm({
           }
         }}
       />
+      {situation?.enabled && <SituationFields value={situation.value} onChange={situation.onChange} />}
       <div className="askbot-form-row">
+        {situation && (
+          <label className={`askbot-situation-toggle ${situation.enabled ? 'on' : ''}`}>
+            <input
+              type="checkbox"
+              checked={situation.enabled}
+              onChange={(event) => situation.onToggle(event.target.checked)}
+            />
+            结合我的处境
+          </label>
+        )}
         <span className="askbot-counter">
           {text.length}/{MAX_QUESTION_CHARS} · Ctrl + Enter 发送
         </span>
@@ -240,9 +332,15 @@ export function AskSeanChat() {
       .catch(() => setFeed([]));
   }, []);
 
+  const [situationOn, setSituationOn] = useState(false);
+  const [situation, setSituation] = useState<AskSituation>({});
+  // The situation a private answer was given with, re-sent for its follow-up.
+  const privateSituation = useRef<AskSituation | undefined>(undefined);
+
   const show = useCallback((next: AskAnswer) => {
     setAnswer(next);
-    window.history.replaceState(null, '', `/ask?q=${next.parentId ?? next.id}`);
+    // A private answer is not stored, so it has no link to share.
+    window.history.replaceState(null, '', next.private ? '/ask' : `/ask?q=${next.parentId ?? next.id}`);
     requestAnimationFrame(() => answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }, []);
 
@@ -269,17 +367,30 @@ export function AskSeanChat() {
 
   useEffect(() => loadFeed(sort), [sort, loadFeed]);
 
-  const ask = async (question: string, parentId?: string): Promise<boolean> => {
+  /** A new question, or a follow-up to `parent`. */
+  const ask = async (question: string, parent?: AskAnswer): Promise<boolean> => {
     setBusy(true);
     setError('');
     try {
-      const result = await askSean(question, parentId);
-      if (parentId && answer) {
+      let result: AskAnswer;
+      if (parent?.private) {
+        result = await askSean(question, {
+          situation: privateSituation.current,
+          previous: { question: parent.question, tldr: parent.tldr ?? '' },
+        });
+      } else if (parent) {
+        result = await askSean(question, { parentId: parent.id });
+      } else {
+        const own = situationOn ? filledSituation(situation) : undefined;
+        result = await askSean(question, own ? { situation: own } : {});
+        privateSituation.current = own;
+      }
+      if (parent && answer) {
         setAnswer({ ...answer, followUps: [...(answer.followUps ?? []), result] });
       } else {
         show({ ...result, followUps: [] });
       }
-      loadFeed(sort);
+      if (!result.private) loadFeed(sort);
       return true;
     } catch (problem) {
       setError((problem as Error).message);
@@ -300,7 +411,17 @@ export function AskSeanChat() {
   return (
     <div className="askbot">
       <section className="askbot-ask">
-        <QuestionForm onSubmit={(question) => ask(question)} busy={busy} placeholder="你在买房上卡在哪里？例如：第一间房该买自住还是投资？" />
+        <QuestionForm
+          onSubmit={(question) => ask(question)}
+          busy={busy}
+          placeholder="你在买房上卡在哪里？例如：第一间房该买自住还是投资？"
+          situation={{
+            enabled: situationOn,
+            value: situation,
+            onToggle: setSituationOn,
+            onChange: setSituation,
+          }}
+        />
         <div className="askbot-examples">
           {EXAMPLES.map((example) => (
             <button key={example} type="button" disabled={busy} onClick={() => void ask(example)}>
@@ -309,7 +430,7 @@ export function AskSeanChat() {
           ))}
         </div>
         <p className="askbot-disclaimer">
-          问答会公开显示，但不记名，请不要写电话、地址等个人资料。回答由 AI 根据 iherng Journal 的文章整理，不是 Sean
+          一般问答会公开显示，但不记名，请不要写电话、地址等个人资料；勾选「结合我的处境」的回答只有你看得到。回答由 AI 根据 iherng Journal 的文章整理，不是 Sean
           本人回复，也不构成理财建议；数字以节目录制时为准。
         </p>
       </section>
@@ -330,12 +451,14 @@ export function AskSeanChat() {
                 compact
                 busy={busy}
                 placeholder="还有不清楚的地方？可以追问一次"
-                onSubmit={(question) => ask(question, answer.id)}
+                onSubmit={(question) => ask(question, answer)}
               />
             )}
-            <button type="button" className="askbot-share" onClick={() => void copyLink()}>
-              <Link2 size={14} /> {copied ? '已复制链接' : '复制这个回答的链接'}
-            </button>
+            {!answer.private && (
+              <button type="button" className="askbot-share" onClick={() => void copyLink()}>
+                <Link2 size={14} /> {copied ? '已复制链接' : '复制这个回答的链接'}
+              </button>
+            )}
           </div>
         )}
       </div>

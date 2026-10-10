@@ -26,7 +26,16 @@ export interface AskAnswer {
   createdAt: string;
   lastAskedAt: string;
   reused?: boolean;
+  /** Shaped by the asker's situation: shown only to them, never stored or listed. */
+  private?: boolean;
   followUps?: AskAnswer[];
+}
+
+/** The optional "结合我的处境" fields; any of them may be left out. */
+export interface AskSituation {
+  goal?: string;
+  current?: string;
+  tried?: string;
 }
 
 export interface AskFeedItem {
@@ -38,6 +47,7 @@ export interface AskFeedItem {
 }
 
 export const MAX_QUESTION_CHARS = 300;
+export const MAX_SITUATION_CHARS = 400;
 
 /** Local development talks to `npm run worker:dev` in the asking_iherng project. */
 function apiBase(): string {
@@ -65,8 +75,15 @@ async function request<T>(path: string, body?: unknown): Promise<T> {
   return data;
 }
 
-export const askSean = (question: string, parentId?: string) =>
-  request<AskAnswer>('/api/ask', { question, parentId });
+export const askSean = (
+  question: string,
+  options: {
+    parentId?: string;
+    situation?: AskSituation;
+    /** For a follow-up to a private answer, which the server did not keep. */
+    previous?: { question: string; tldr: string };
+  } = {},
+) => request<AskAnswer>('/api/ask', { question, ...options });
 
 export const fetchFeed = (sort: 'recent' | 'popular') =>
   request<AskFeedItem[]>(`/api/questions?sort=${sort}&limit=20`);

@@ -4,13 +4,15 @@
  *
  *   POST /api/ask             { question, parentId? } → answer (reused when a near-identical
  *                             question was already answered on this knowledge base)
+ *                             { question, situation, previous? } → a private answer shaped by
+ *                             the asker's situation; only its cost is stored (private_usage)
  *   GET  /api/questions       ?sort=recent|popular&limit=20 → public feed of answered questions
  *   GET  /api/questions/:id   one question with its sources and follow-ups
  *   GET  /api/health
  */
 import bundleJson from "../knowledge/bundle.json";
 import { ANSWER_STYLE } from "../lib/answer";
-import { ask, checkQuestion } from "../lib/ask";
+import { ask, checkQuestion, checkSituation, MAX_QUESTION_CHARS } from "../lib/ask";
 import type { FollowUp } from "../lib/router";
 import { normalizeQuestion, REUSE_THRESHOLD, similarity } from "../lib/similar";
 import type { Article, Knowledge, KnowledgeBundle } from "../lib/types";
@@ -167,14 +169,37 @@ async function findReusable(env: Env, norm: string): Promise<QuestionRow | null>
 // ---------------------------------------------------------------------------
 // Routes
 
+/** A private answer's follow-up carries its own context, since nothing was stored to look up. */
+function privateFollowUp(raw: unknown): FollowUp | undefined | { reason: string } {
+  if (raw === undefined || raw === null) return undefined;
+  const value = raw as { question?: unknown; tldr?: unknown };
+  if (typeof value.question !== "string" || typeof value.tldr !== "string") return { reason: "追问的格式不对。" };
+  const question = value.question.trim().slice(0, MAX_QUESTION_CHARS);
+  const tldr = value.tldr.trim().slice(0, MAX_QUESTION_CHARS);
+  return question ? { question, tldr } : undefined;
+}
+
 async function handleAsk(request: Request, env: Env): Promise<Response> {
-  const payload = (await request.json().catch(() => null)) as { question?: unknown; parentId?: unknown } | null;
+  const payload = (await request.json().catch(() => null)) as {
+    question?: unknown;
+    parentId?: unknown;
+    situation?: unknown;
+    previous?: unknown;
+  } | null;
   const checked = checkQuestion(typeof payload?.question === "string" ? payload.question : "");
   if ("reason" in checked) return fail(request, env, 400, checked.reason);
+  const situationCheck = checkSituation(payload?.situation);
+  if ("reason" in situationCheck) return fail(request, env, 400, situationCheck.reason);
+  // With a situation the answer is private: never reused, never stored, never in the feed.
+  const situation = situationCheck.situation;
 
   let followUp: FollowUp | undefined;
-  const parentId = typeof payload?.parentId === "string" ? payload.parentId : null;
-  if (parentId) {
+  const parentId = !situation && typeof payload?.parentId === "string" ? payload.parentId : null;
+  if (situation) {
+    const previous = privateFollowUp(payload?.previous);
+    if (previous && "reason" in previous) return fail(request, env, 400, previous.reason);
+    followUp = previous;
+  } else if (parentId) {
     const parent = await env.DB.prepare("SELECT * FROM questions WHERE id = ? AND hidden = 0")
       .bind(parentId)
       .first<QuestionRow>();
@@ -185,7 +210,7 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
 
   const norm = normalizeQuestion(checked.question);
   // Follow-ups depend on their parent, so they are never reused across conversations.
-  if (!followUp) {
+  if (!followUp && !situation) {
     const reusable = await findReusable(env, norm);
     if (reusable) {
       await env.DB.prepare(
@@ -216,8 +241,12 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
     }
   }
 
-  const spent = await env.DB.prepare("SELECT COALESCE(SUM(cost_usd), 0) AS spent FROM questions WHERE created_at >= ?")
-    .bind(dayStartUtc(day))
+  const since = dayStartUtc(day);
+  const spent = await env.DB.prepare(
+    `SELECT (SELECT COALESCE(SUM(cost_usd), 0) FROM questions WHERE created_at >= ?)
+          + (SELECT COALESCE(SUM(cost_usd), 0) FROM private_usage WHERE created_at >= ?) AS spent`,
+  )
+    .bind(since, since)
     .first<number>("spent");
   if ((spent ?? 0) >= Number(env.DAILY_BUDGET_USD)) {
     return fail(request, env, 503, "今天的回答额度已经用完，请明天再来。");
@@ -225,12 +254,64 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
 
   let result: Awaited<ReturnType<typeof ask>>;
   try {
-    result = await ask(checked.question, knowledge, followUp);
+    result = await ask(checked.question, knowledge, followUp, situation);
   } catch (error) {
-    console.error("ask failed", error);
+    // Logged without the situation, which may hold personal details.
+    console.error("ask failed", error instanceof Error ? error.message : "unknown error");
     return fail(request, env, 502, "回答时出了点问题，请稍后再试。");
   }
   if (result.status === "rejected") return fail(request, env, 400, result.reason);
+
+  const rateLimitWrite = ipHash
+    ? [
+        env.DB.prepare(
+          `INSERT INTO rate_limits (ip_hash, day, count) VALUES (?, ?, 1)
+           ON CONFLICT (ip_hash, day) DO UPDATE SET count = count + 1`,
+        ).bind(ipHash, day),
+      ]
+    : [];
+
+  if (situation) {
+    // Only the cost is kept; the question, situation and answer go back to the asker alone.
+    await env.DB.batch([
+      env.DB.prepare(
+        `INSERT INTO private_usage (tokens_in, tokens_cached, tokens_out, cost_usd) VALUES (?, ?, ?, ?)`,
+      ).bind(
+        result.usage.cacheHit + result.usage.cacheMiss,
+        result.usage.cacheHit,
+        result.usage.output,
+        result.usage.costUsd,
+      ),
+      ...rateLimitWrite,
+    ]);
+    const now = new Date().toISOString();
+    return json(
+      request,
+      env,
+      present(
+        {
+          id: crypto.randomUUID(),
+          question: checked.question,
+          question_norm: norm,
+          parent_id: null,
+          status: result.status,
+          tldr: result.status === "answered" ? result.tldr : null,
+          body: result.status === "answered" ? result.body : null,
+          message: result.status === "out_of_scope" ? result.message : null,
+          citations: JSON.stringify(
+            result.status === "answered"
+              ? result.citations.map(({ marker, article }) => ({ marker, id: article.id }))
+              : [],
+          ),
+          related: JSON.stringify(result.related.map((article) => article.id)),
+          ask_count: 1,
+          created_at: now,
+          last_asked_at: now,
+        },
+        { reused: false, private: true },
+      ),
+    );
+  }
 
   const row: QuestionRow = {
     id: crypto.randomUUID(),
@@ -276,14 +357,7 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
       row.created_at,
       row.last_asked_at,
     ),
-    ...(ipHash
-      ? [
-          env.DB.prepare(
-            `INSERT INTO rate_limits (ip_hash, day, count) VALUES (?, ?, 1)
-             ON CONFLICT (ip_hash, day) DO UPDATE SET count = count + 1`,
-          ).bind(ipHash, day),
-        ]
-      : []),
+    ...rateLimitWrite,
   ]);
 
   return json(request, env, present(row, { reused: false }));

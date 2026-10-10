@@ -4116,8 +4116,128 @@ p {
 }
 
 .askbot-counter {
+  margin-left: auto;
   font-size: 12px;
   color: var(--text-subtle);
+}
+
+/* "结合我的处境": a switch in the form row, opening optional fields. */
+.askbot-situation-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.askbot-situation-toggle:hover {
+  color: var(--text-main);
+  border-color: var(--border-dark);
+}
+
+.askbot-situation-toggle input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent-terracotta);
+  cursor: pointer;
+}
+
+.askbot-situation-toggle.on {
+  color: var(--accent-terracotta);
+  background: var(--accent-terracotta-soft);
+  border-color: rgba(255, 107, 61, 0.35);
+}
+
+.askbot-situation {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.askbot-situation-intro {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.askbot-situation-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.askbot-situation-privacy svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--accent-terracotta);
+}
+
+.askbot-situation-field {
+  display: grid;
+  gap: 6px;
+}
+
+.askbot-situation-field span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.askbot-form .askbot-situation-field textarea {
+  min-height: 0;
+  padding: 10px 12px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.askbot-form .askbot-situation-field textarea:focus {
+  border-color: var(--accent-terracotta);
+}
+
+.askbot-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 4px 11px;
+  background: var(--accent-terracotta-soft);
+  border: 1px solid rgba(255, 107, 61, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 560px) {
+  .askbot-form-row {
+    flex-wrap: wrap;
+  }
+
+  .askbot-counter {
+    display: none;
+  }
+
+  .askbot-submit {
+    margin-left: auto;
+  }
 }
 
 .askbot-submit {
