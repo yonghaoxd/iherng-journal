@@ -4506,6 +4506,36 @@ p {
   font-weight: 700;
 }
 
+/* 【你的情况】, 【为什么】, 【怎么做】: small section labels inside an answer. */
+.askbot-section {
+  margin: 6px 0 -4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-terracotta);
+}
+
+.askbot-section:first-child {
+  margin-top: 0;
+}
+
+.askbot-reasons {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.askbot-reasons li::marker {
+  color: var(--accent-terracotta);
+}
+
+.askbot-reasons strong {
+  color: var(--text-main);
+  font-weight: 650;
+}
+
 .askbot-note {
   padding: 10px 14px;
   border-radius: var(--radius-md);

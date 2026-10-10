@@ -20,7 +20,7 @@ interface EvalCase {
 const MARKER = /\[A\d+\]/;
 const CJK = /[㐀-鿿]/g;
 // Chinese characters plus English words, roughly the reading length of mixed text.
-const MAX_BODY_LENGTH = 450;
+const MAX_BODY_LENGTH = 850;
 const MAX_TLDR_LENGTH = 60;
 
 function words(text: string): string[] {

@@ -67,11 +67,27 @@ function withCitations(text: string, answerId: string): ReactNode[] {
   });
 }
 
-/** The answer body: paragraphs, numbered steps and a closing "注意：" line. */
+/** A "- 短标题：解释" reason, with its short title set in bold. */
+function reasonLine(text: string, answerId: string): ReactNode {
+  const titled = text.match(/^([^：:[]{2,24})[：:]\s*(.+)$/);
+  if (!titled) return withCitations(text, answerId);
+  return (
+    <>
+      <strong>{titled[1]}：</strong>
+      {withCitations(titled[2], answerId)}
+    </>
+  );
+}
+
+/**
+ * The answer body: 【section】 headings, paragraphs, "- " reasons, numbered steps and
+ * a closing "注意：" line. Older answers have no headings or reasons and still render.
+ */
 function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
   const blocks: ReactNode[] = [];
   let steps: string[] = [];
-  const flushSteps = () => {
+  let reasons: string[] = [];
+  const flushLists = () => {
     if (steps.length) {
       blocks.push(
         <ol key={`steps-${blocks.length}`} className="askbot-steps">
@@ -82,6 +98,16 @@ function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
       );
       steps = [];
     }
+    if (reasons.length) {
+      blocks.push(
+        <ul key={`reasons-${blocks.length}`} className="askbot-reasons">
+          {reasons.map((reason, index) => (
+            <li key={index}>{reasonLine(reason, answerId)}</li>
+          ))}
+        </ul>,
+      );
+      reasons = [];
+    }
   };
 
   for (const line of body.split(/\r?\n/)) {
@@ -90,8 +116,25 @@ function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
       steps.push(step[1]);
       continue;
     }
-    flushSteps();
+    const reason = line.match(/^\s*[-•·]\s*(.+)$/);
+    if (reason) {
+      reasons.push(reason[1]);
+      continue;
+    }
+    flushLists();
     if (!line.trim()) continue;
+    const heading = line.match(/^\s*【(.+?)】\s*(.*)$/);
+    if (heading) {
+      blocks.push(
+        <h4 key={`h-${blocks.length}`} className="askbot-section">
+          {heading[1]}
+        </h4>,
+      );
+      if (heading[2].trim()) {
+        blocks.push(<p key={`p-${blocks.length}`}>{withCitations(heading[2], answerId)}</p>);
+      }
+      continue;
+    }
     const isNote = /^\s*注意[:：]/.test(line);
     blocks.push(
       <p key={`p-${blocks.length}`} className={isNote ? 'askbot-note' : undefined}>
@@ -99,7 +142,7 @@ function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
       </p>,
     );
   }
-  flushSteps();
+  flushLists();
   return <div className="askbot-body">{blocks}</div>;
 }
 
