@@ -91,6 +91,12 @@ import skylineKl from '@/content/articles/skyline-kuala-lumpur-pudu.json';
 import summerSuites from '@/content/articles/summer-suites-johor-bahru.json';
 import mAurora from '@/content/articles/m-aurora-old-klang-road.json';
 import vueMonterez from '@/content/articles/the-vue-monterez-shah-alam.json';
+import residensi38 from '@/content/articles/residensi-38-bangsar.json';
+import embayu from '@/content/articles/embayu-damansara-west.json';
+import maxwellResidences from '@/content/articles/maxwell-residences-taiping.json';
+import jendelaResidences from '@/content/articles/jendela-residences-bukit-kiara.json';
+import enlaceSuites from '@/content/articles/enlace-suites-pantai-sentral-park.json';
+import khayaResidence from '@/content/articles/khaya-residence-bangsar.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -120,6 +126,12 @@ export const articles = [
   summerSuites,
   mAurora,
   vueMonterez,
+  residensi38,
+  embayu,
+  maxwellResidences,
+  jendelaResidences,
+  enlaceSuites,
+  khayaResidence,
   allevia,
   avisa,
   metaResidences,
