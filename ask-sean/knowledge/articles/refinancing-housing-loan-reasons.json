@@ -1,0 +1,57 @@
+{
+  "id": "refinancing-housing-loan-reasons",
+  "series": "buyer-guides",
+  "title": "When does refinancing my housing loan make sense?",
+  "excerpt": "Refinancing can lower your rate, release equity, win back a 90% loan or clear expensive debt. Rena Choong explains each use, and the valuation and income tests that decide whether yours works.",
+  "date": "2023-08-24",
+  "tag": "Refinancing",
+  "question": {
+    "asker": "",
+    "context": "Once owners have a loan or two running, many start asking about refinancing: moving their housing loan to a new bank, or topping it up with the same one. In this episode of his mortgage series, Sean asks Rena Choong what refinancing can do, and when it can't.",
+    "text": "What can refinancing a housing loan achieve, and how do you know whether yours qualifies?"
+  },
+  "answer": {
+    "by": {
+      "name": "Rena Choong",
+      "role": "head of mortgage at FAR Capital"
+    },
+    "quote": "It's really no brainer for you to do so.",
+    "summary": "Refinance only with a clear purpose: a lower rate, cash from equity you have built, a 90% loan quota back, or clearing high-interest debt. Whether it works depends on the bank's valuation and your income today. If you pay around 4.5% and a bank covers the switching costs, Rena calls it a no-brainer."
+  },
+  "reasons": [
+    {
+      "title": "Refinancing lends 80%, not 90%",
+      "body": "Most banks refinance up to 80% to 85% of the bank's valuation; only two offer 90%. A RM500,000 unit with RM450,000 still owed after ten years and valued at RM550,000 allows at most RM440,000, so there is nothing to cash out. Equity usually builds only after five to eight years, sooner on landed homes and units bought without a mark-up."
+    },
+    {
+      "title": "Cashing out has its own income test",
+      "body": "Banks don't count rent toward a refinance, and they test the cash-out portion as if it were repaid over ten years, though it actually runs over the full tenure. If your income has fallen since you bought, cashing out will be hard."
+    },
+    {
+      "title": "A small rate cut adds up",
+      "body": "Owners who borrowed years ago may still pay around 4.5% when new loans start at about 3.85% to 4.1%, and over 35 years even 0.1% matters. Switching banks normally costs legal fees, valuation and 0.5% stamp duty on the loan, about RM10,000 on RM500,000, but in 2023 one bank was covering all three for loans up to RM3.5 million."
+    },
+    {
+      "title": "Consolidate bad debt, never restructure",
+      "body": "Debt consolidation moves personal loans (12% to 15% for most borrowers), credit card balances (18%) and hire purchase into a housing-backed loan at about 4.5% to 5%, even when your DSR is over the limit, provided the valuation covers it. Restructuring or rescheduling a loan instead leaves a mark in CCRIS that stops banks lending to you."
+    }
+  ],
+  "actions": [
+    "Decide first why you are refinancing: a lower rate, cash out, a 90% quota back, or clearing debt.",
+    "Ask for the property's current valuation and your redemption sum; 80% of the valuation minus what you owe is roughly the most you can take out.",
+    "Compare banks on rate, valuation and switching costs, including any that pay the legal fees, valuation and stamp duty for you.",
+    "If you and a spouse, sibling, parent or child keep buying, consider refinancing one property into the higher earner's name so the other regains a 90% loan.",
+    "Avoid cashing out for a car or other spending; use it for assets or to clear expensive debt."
+  ],
+  "caveat": "A refinance is a new loan, not free money, and you must qualify for it again. If an overspending habit caused the debt, consolidation only resets it. Refinancing into an insurance company's fixed-rate term loan keeps it out of CCRIS, so banks still offer 90% on your next purchase, but the rate is above the market and you must buy MLTA and other policies.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for an August 2023 episode of his mortgage series with Rena Choong, FAR Capital's head of mortgage. The quoted answer is Rena's own words; everything else is paraphrased. Rates, margins and bank offers are as stated in 2023 and differ between banks. Sean is a customer of FAR Capital, not its owner.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "6X75DuYkrqY",
+    "title": "REASONS TO REFINANCE YOUR PROPERTY",
+    "duration": "56:03",
+    "url": "https://www.youtube.com/watch?v=6X75DuYkrqY"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/refinancing-housing-loan-reasons"
+}

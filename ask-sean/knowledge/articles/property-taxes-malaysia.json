@@ -1,0 +1,53 @@
+{
+  "id": "property-taxes-malaysia",
+  "series": "buyer-guides",
+  "title": "Which taxes do I pay when I own and sell property?",
+  "excerpt": "Beyond the price, owners pay stamp duty, assessment, quit rent and RPGT, and income tax decides whether you can borrow at all. Sean goes through the five.",
+  "date": "2019-12-30",
+  "tag": "Property tax",
+  "question": {
+    "asker": "",
+    "context": "Investors often work out their profit as the selling price minus the buying price. Sean says that leaves out five taxes that change what a property really costs and earns, and that young investors should understand them before buying.",
+    "text": "Which taxes should a property buyer in Malaysia budget for?"
+  },
+  "answer": {
+    "quote": "You need proof that you have money to buy.",
+    "summary": "Five: stamp duty when you buy, assessment and quit rent every year you own it, RPGT when you sell at a gain, and income tax. For a young buyer, income tax matters first, because a declared income is the proof a bank lends on."
+  },
+  "reasons": [
+    {
+      "title": "Declared income is what banks lend on",
+      "body": "Under-declaring income saves tax but blocks loans; Sean has seen hawkers forced to borrow other people's names and payslips. Someone declaring RM36,000 a year won't get a loan for a RM500,000 house, and paying a large sum in cash instead can draw questions from the Inland Revenue Board."
+    },
+    {
+      "title": "Stamp duty comes twice, in cash",
+      "body": "Buyers pay stamp duty on the transfer and again on the loan agreement, in cash, which surprises many first-time buyers. The transfer scale rises in bands from 1%; Sean uses about 2.5% of the price as a quick estimate."
+    },
+    {
+      "title": "Two taxes recur every year",
+      "body": "Assessment tax (cukai pintu) goes to the local council for street lights, drains and rubbish collection, charged as a percentage of the rent the council sets, which varies by council and property type. Quit rent (cukai tanah) goes to the state, and strata owners pay it too."
+    },
+    {
+      "title": "Selling has its own rules",
+      "body": "RPGT is charged on your gain when you sell, at rates the government changes to cool or warm the market, and foreigners pay more. Legal fees, agent fees and improvements can be deducted. Sell many properties quickly and the Inland Revenue Board may treat it as a business and tax the gain as income, which Sean puts at up to 24%."
+    }
+  ],
+  "actions": [
+    "Declare your full income and pay tax on it, so you can prove to a bank what you earn.",
+    "Budget for stamp duty on both the transfer and the loan agreement as cash, on top of the down payment.",
+    "Include assessment and quit rent in your yearly holding costs.",
+    "Keep receipts for legal fees, agent fees and improvements to reduce RPGT when you sell; you can file it yourself rather than rely on the lawyer's figure.",
+    "If you trade several properties, space out your sales; Sean says some investors sell no more than one a year."
+  ],
+  "caveat": "The rates Sean mentions date from late 2019 and RPGT and stamp duty rules have changed since, so check the current ones. An owner who keeps one home for the long term may never face RPGT or the business-income rules.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this December 2019 episode. The quoted answer is verbatim; everything else is paraphrased. The captions are unclear in places, so only clearly stated points are included, and tax rates have changed since 2019.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "eMpZWMzWgfU",
+    "title": "5 TAXES TO PAY IN PROPERTY INVESTMENT",
+    "duration": "13:05",
+    "url": "https://www.youtube.com/watch?v=eMpZWMzWgfU"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/property-taxes-malaysia"
+}

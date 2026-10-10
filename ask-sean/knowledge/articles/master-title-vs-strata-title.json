@@ -1,0 +1,52 @@
+{
+  "id": "master-title-vs-strata-title",
+  "series": "buyer-guides",
+  "title": "My unit has no strata title yet. Does it matter?",
+  "excerpt": "A high-rise unit still under the master title can be harder to sell and finance. Sean explains what a strata title proves, and what to ask about parcels and share units.",
+  "date": "2018-07-08",
+  "tag": "Land titles",
+  "question": {
+    "asker": "From a viewer hunting for his first property",
+    "context": "He found a high-rise unit whose strata title had yet to be issued, so it was still under the master title. Each plot of land has one title; when a developer builds, say, 300 units on it, each unit should later get its own strata title.",
+    "text": "What does it mean when a unit is still under the master title, and can it still be sold?"
+  },
+  "answer": {
+    "quote": "Yes, but you need the consent of the land owner.",
+    "summary": "It means you can't yet prove ownership of your own unit. You can still sell it, but only with the consent of the land owner, usually the developer, which adds a hurdle for buyers and banks. A strata title removes it."
+  },
+  "reasons": [
+    {
+      "title": "The title is the unit's birth certificate",
+      "body": "A strata title proves which unit in which block is yours. Without it, banks find it harder to establish the owner, which complicates financing and sales. Sean expects units with strata titles to fetch slightly higher prices because the paperwork is easier."
+    },
+    {
+      "title": "A missing title may be delay or bad news",
+      "body": "It may simply be in progress, since issuing titles takes time and newer strata rules push developers to issue them soon after handover. But it can also mean the developer won't follow through or has gone bankrupt."
+    },
+    {
+      "title": "Ownership gives you a vote",
+      "body": "Strata owners take part in the joint management body or management corporation, which sets maintenance fees and may not make a profit. Votes are weighted by share units, increasingly used instead of floor area."
+    },
+    {
+      "title": "Parcels decide what you pay for",
+      "body": "A strata unit has a main parcel, the unit itself, and accessory parcels such as a car park or air-conditioner ledge. Common property like the pool serves everyone, while mixed developments may have limited common property for offices or residents only. All of this shapes maintenance fees."
+    }
+  ],
+  "actions": [
+    "Before buying a completed high-rise unit, ask whether its strata title has been issued.",
+    "If not, ask why and how long the developer expects it to take, and how it gives consent for a sale.",
+    "Ask what your accessory parcels include, such as car parks and air-conditioner ledges.",
+    "Ask how share units are calculated, since they set your voting weight and maintenance share."
+  ],
+  "caveat": "This applies to high-rise and other stratified developments; a landed house on its own individual title is a different case. A unit still waiting for its strata title soon after completion is normal; the concern is when it never arrives.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this July 2018 episode. The quoted answer is verbatim; everything else is paraphrased. The captions are unclear in places, so only clearly stated points are included. Strata rules have changed since 2018, so check the current position with your lawyer.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "1STmIXKP7y0",
+    "title": "Property Ownership, Master and Strata Title",
+    "duration": "7:54",
+    "url": "https://www.youtube.com/watch?v=1STmIXKP7y0"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/master-title-vs-strata-title"
+}

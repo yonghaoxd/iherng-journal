@@ -1,10 +1,28 @@
 {
   "articles": {
+    "affordable-housing-rumawip": {
+      "hash": "46fac98b3644"
+    },
     "apartment-vs-landed": {
       "hash": "5a98e1c79904"
     },
+    "buy-now-to-retire-in-later": {
+      "hash": "f319c60f5900"
+    },
+    "buying-auction-property": {
+      "hash": "4f342d8da4e0"
+    },
+    "buying-property-with-partner": {
+      "hash": "688a26ce10d3"
+    },
     "cancelled-booking-fomo": {
       "hash": "7653cdf29564"
+    },
+    "cars-or-property-kuching": {
+      "hash": "53d933384799"
+    },
+    "cheap-unit-high-yield-no-growth": {
+      "hash": "31102bcd3505"
     },
     "choosing-own-stay-home": {
       "hash": "b1d6b4b5d0a3"
@@ -15,14 +33,32 @@
     "discount-price-still-losing-money": {
       "hash": "e333ccd948a1"
     },
+    "doctor-between-jobs-first-property": {
+      "hash": "7626d1eddace"
+    },
+    "fifth-property-before-wedding": {
+      "hash": "47a22f77b6e3"
+    },
     "first-property-must-be-a-home": {
       "hash": "f746c04f3684"
+    },
+    "furnishing-rental-unit-worth-it": {
+      "hash": "da2d51ecfa2a"
     },
     "guaranteed-rental-return-risks": {
       "hash": "6a59f33c12e4"
     },
     "hidden-costs-property-malaysia": {
       "hash": "f5594f63b49a"
+    },
+    "high-earner-first-property-no-flipping": {
+      "hash": "930b6681fd8b"
+    },
+    "hold-property-long-term-vs-flip": {
+      "hash": "63f93bba2d5a"
+    },
+    "house-for-tuition-centre": {
+      "hash": "f789d68e307e"
     },
     "housing-loan-eligibility-dsr": {
       "hash": "cf33f719cfea"
@@ -33,8 +69,14 @@
     "housing-loan-rejection-reasons": {
       "hash": "3424b3d1a5e2"
     },
+    "inherited-house-sell-or-keep": {
+      "hash": "0acd25b963d5"
+    },
     "investing-in-property-at-60": {
       "hash": "3f15bf196b73"
+    },
+    "joint-home-with-ex-sell-or-rent": {
+      "hash": "e6a84352601b"
     },
     "leasehold-condo-resale-risk": {
       "hash": "3d8ccbe70300"
@@ -48,17 +90,32 @@
     "lppsa-civil-servant-housing-loan": {
       "hash": "5e253eed58eb"
     },
+    "master-title-vs-strata-title": {
+      "hash": "90b27dd9ad9e"
+    },
     "new-baby-investment-strategy": {
       "hash": "9c889dcf9acf"
     },
     "new-launch-vs-subsale": {
       "hash": "ad3b49b301fd"
     },
+    "no-money-down-property-deals": {
+      "hash": "17883a8e629c"
+    },
+    "old-apartment-first-investment": {
+      "hash": "57d67a139596"
+    },
     "old-house-vs-new-property": {
       "hash": "73eb6f469f93"
     },
+    "own-place-or-wait-to-afford": {
+      "hash": "067d8e769fec"
+    },
     "paid-off-home-next-generation": {
       "hash": "f1a93bd8b76e"
+    },
+    "parents-buying-property-for-children": {
+      "hash": "e596aee97568"
     },
     "parents-paying-half-for-house": {
       "hash": "02debfa74628"
@@ -69,8 +126,26 @@
     "property-research-before-buying": {
       "hash": "983254f89baa"
     },
+    "property-taxes-malaysia": {
+      "hash": "1322a955ee5c"
+    },
+    "refinancing-housing-loan-reasons": {
+      "hash": "68f995b9187d"
+    },
+    "rent-to-rent-scheme-portfolio": {
+      "hash": "7549980a9c29"
+    },
+    "retiring-with-six-properties": {
+      "hash": "3bae155f86d6"
+    },
+    "second-property-subsale-cheras": {
+      "hash": "a83d2948c589"
+    },
     "second-property-vs-equities": {
       "hash": "e2ca83914228"
+    },
+    "selling-family-home-to-clear-debt": {
+      "hash": "171b3e2695ab"
     },
     "selling-fully-paid-properties-retirement": {
       "hash": "5022092f546e"
@@ -96,11 +171,26 @@
     "stalled-project-projek-sakit": {
       "hash": "ae48f9fb119e"
     },
+    "student-accommodation-investment-risk": {
+      "hash": "d1bce088a71d"
+    },
+    "student-preparing-first-property": {
+      "hash": "a90a67338bf7"
+    },
+    "ten-million-property-goal-at-25": {
+      "hash": "7bc8cc77c02e"
+    },
     "tenant-not-paying-rent": {
       "hash": "1e205af2c4ee"
     },
+    "third-property-buying-channel": {
+      "hash": "b7a466390c51"
+    },
     "unsold-units-near-completion": {
       "hash": "2d77b4490b5b"
+    },
+    "weekday-weekend-test-own-stay": {
+      "hash": "b1d55955a4be"
     },
     "when-to-buy-property-data-guide": {
       "hash": "12854f454f07"
