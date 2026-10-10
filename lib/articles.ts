@@ -55,6 +55,12 @@ import sferaResidence from '@/content/articles/sfera-residence-wangsa-maju.json'
 import oneSeputeh from '@/content/articles/one-seputeh-kuala-lumpur.json';
 import sennaHeights from '@/content/articles/senna-heights-damansara-damai.json';
 import nestree from '@/content/articles/nestree-residence-pantai-sentral-park.json';
+import rentToRent from '@/content/articles/rent-to-rent-scheme-portfolio.json';
+import cheapHighYield from '@/content/articles/cheap-unit-high-yield-no-growth.json';
+import tenMillionGoal from '@/content/articles/ten-million-property-goal-at-25.json';
+import holdVsFlip from '@/content/articles/hold-property-long-term-vs-flip.json';
+import studentFirstProperty from '@/content/articles/student-preparing-first-property.json';
+import ownPlaceOrWait from '@/content/articles/own-place-or-wait-to-afford.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -88,14 +94,20 @@ export const articles = [
   newBaby,
   cancelledBooking,
   sixPropertiesHoldOrSell,
+  rentToRent,
   parentsPayingHalf,
   singaporePrUnit,
   stalledProject,
   tenPaidCondos,
   paidOffHome,
   sohoBookingFee,
+  cheapHighYield,
   staffLoanBeforeBaby,
   discountTrap,
+  tenMillionGoal,
+  holdVsFlip,
+  studentFirstProperty,
+  ownPlaceOrWait,
   investingAt60,
   firstHome,
   apartment,
