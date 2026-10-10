@@ -6,11 +6,26 @@
     "apartment-vs-landed": {
       "hash": "5a98e1c79904"
     },
+    "branded-or-small-developer": {
+      "hash": "68674679ee1a"
+    },
+    "building-allows-one-airbnb-operator": {
+      "hash": "28343d62a348"
+    },
+    "bulk-purchase-second-property": {
+      "hash": "be30bdba9d90"
+    },
     "buy-now-to-retire-in-later": {
       "hash": "f319c60f5900"
     },
     "buying-auction-property": {
       "hash": "4f342d8da4e0"
+    },
+    "buying-beyond-the-third-property": {
+      "hash": "b322d43e279a"
+    },
+    "buying-into-mixed-developments": {
+      "hash": "bb6aa775202a"
     },
     "buying-property-with-partner": {
       "hash": "688a26ce10d3"
@@ -21,14 +36,26 @@
     "cars-or-property-kuching": {
       "hash": "53d933384799"
     },
+    "cash-back-or-positive-cash-flow": {
+      "hash": "03be8c8512fc"
+    },
+    "cash-buying-condos-to-retire": {
+      "hash": "13c32b8bfabb"
+    },
     "cheap-unit-high-yield-no-growth": {
       "hash": "31102bcd3505"
     },
     "choosing-own-stay-home": {
       "hash": "b1d6b4b5d0a3"
     },
+    "condo-with-many-unsold-units": {
+      "hash": "004c1384cd74"
+    },
     "defect-inspection-checklist": {
       "hash": "c3f166f08af5"
+    },
+    "disasters-and-property-protection": {
+      "hash": "59250f25cb8e"
     },
     "discount-price-still-losing-money": {
       "hash": "e333ccd948a1"
@@ -36,11 +63,38 @@
     "doctor-between-jobs-first-property": {
       "hash": "7626d1eddace"
     },
+    "empty-landed-house-hold-or-sell": {
+      "hash": "c023979670a4"
+    },
+    "exit-strategy-for-ageing-condos": {
+      "hash": "229750deeb37"
+    },
+    "failed-airbnb-studio-investment": {
+      "hash": "5e6d00eb7df9"
+    },
+    "fathers-gift-for-first-property": {
+      "hash": "2b41c639ec44"
+    },
     "fifth-property-before-wedding": {
       "hash": "47a22f77b6e3"
     },
+    "finding-money-for-a-down-payment": {
+      "hash": "91ac6296c447"
+    },
+    "fire-insurance-for-landed-homes": {
+      "hash": "633a23fe7f40"
+    },
+    "first-investment-unit-questions": {
+      "hash": "b7a75156ce54"
+    },
+    "first-property-at-49-inheritance": {
+      "hash": "e68957b3ac0b"
+    },
     "first-property-must-be-a-home": {
       "hash": "f746c04f3684"
+    },
+    "four-types-of-property-investors": {
+      "hash": "c0cc54d05314"
     },
     "furnishing-rental-unit-worth-it": {
       "hash": "da2d51ecfa2a"
@@ -57,6 +111,9 @@
     "hold-property-long-term-vs-flip": {
       "hash": "63f93bba2d5a"
     },
+    "hotel-scheme-unit-gone-wrong": {
+      "hash": "e31c278bbc3b"
+    },
     "house-for-tuition-centre": {
       "hash": "f789d68e307e"
     },
@@ -69,20 +126,41 @@
     "housing-loan-rejection-reasons": {
       "hash": "3424b3d1a5e2"
     },
+    "houzkey-rent-to-own-review": {
+      "hash": "6261df2e03c1"
+    },
     "inherited-house-sell-or-keep": {
       "hash": "0acd25b963d5"
     },
     "investing-in-property-at-60": {
       "hash": "3f15bf196b73"
     },
+    "investing-in-uk-vs-malaysia": {
+      "hash": "057b5ba9b9d6"
+    },
+    "johor-rts-or-klang-valley-first-buy": {
+      "hash": "754e2d1b3b0e"
+    },
     "joint-home-with-ex-sell-or-rent": {
       "hash": "e6a84352601b"
+    },
+    "judging-a-buildings-architecture": {
+      "hash": "e3852200369a"
+    },
+    "late-delivery-damages-and-booking-fees": {
+      "hash": "537a30fb13cb"
     },
     "leasehold-condo-resale-risk": {
       "hash": "3d8ccbe70300"
     },
+    "living-in-a-strata-community": {
+      "hash": "e6e24d247cd5"
+    },
     "loan-application-mistakes-by-income": {
       "hash": "9a01e1a48651"
+    },
+    "loan-qualifying-tricks": {
+      "hash": "526e2ecaf5e7"
     },
     "location-location-location": {
       "hash": "9813e9e46b37"
@@ -93,11 +171,20 @@
     "master-title-vs-strata-title": {
       "hash": "90b27dd9ad9e"
     },
+    "moving-into-family-apartment": {
+      "hash": "5e07c3084568"
+    },
     "new-baby-investment-strategy": {
       "hash": "9c889dcf9acf"
     },
+    "new-home-debts-rent-or-akpk": {
+      "hash": "46abbf989e89"
+    },
     "new-launch-vs-subsale": {
       "hash": "ad3b49b301fd"
+    },
+    "newlyweds-where-to-live": {
+      "hash": "b88b2e777ed3"
     },
     "no-money-down-property-deals": {
       "hash": "17883a8e629c"
@@ -108,17 +195,32 @@
     "old-house-vs-new-property": {
       "hash": "73eb6f469f93"
     },
+    "outskirts-landed-or-city-condo": {
+      "hash": "9cb4a8085b67"
+    },
+    "own-home-at-44-buy-or-rent": {
+      "hash": "a405db93fb82"
+    },
     "own-place-or-wait-to-afford": {
       "hash": "067d8e769fec"
     },
     "paid-off-home-next-generation": {
       "hash": "f1a93bd8b76e"
     },
+    "paid-off-leasehold-sell-or-rent": {
+      "hash": "97a1c6eb4c43"
+    },
     "parents-buying-property-for-children": {
       "hash": "e596aee97568"
     },
     "parents-paying-half-for-house": {
       "hash": "02debfa74628"
+    },
+    "pause-investing-health-uncertain": {
+      "hash": "440e21904ef2"
+    },
+    "property-before-proposing": {
+      "hash": "8cfb3c18c951"
     },
     "property-guru-units-exit-plan": {
       "hash": "cca83121e3f6"
@@ -129,14 +231,38 @@
     "property-taxes-malaysia": {
       "hash": "1322a955ee5c"
     },
+    "property-versus-fixed-deposit": {
+      "hash": "c69217370f69"
+    },
+    "rebuilding-credit-after-bankruptcy": {
+      "hash": "f845acef33df"
+    },
+    "refinance-or-sell-to-clear-debts": {
+      "hash": "e808b0b24250"
+    },
     "refinancing-housing-loan-reasons": {
       "hash": "68f995b9187d"
+    },
+    "renovation-mistakes-to-avoid": {
+      "hash": "14e8ced3deec"
+    },
+    "rent-home-with-lift-for-parent": {
+      "hash": "c5b3e67be009"
     },
     "rent-to-rent-scheme-portfolio": {
       "hash": "7549980a9c29"
     },
+    "rent-your-home-buy-to-invest": {
+      "hash": "9c4ba30177eb"
+    },
+    "retire-at-40-on-rental-income": {
+      "hash": "4b5869e8b66b"
+    },
     "retiring-with-six-properties": {
       "hash": "3bae155f86d6"
+    },
+    "returning-home-to-retire-portfolio": {
+      "hash": "8fd5793aeb6e"
     },
     "second-property-subsale-cheras": {
       "hash": "a83d2948c589"
@@ -171,6 +297,9 @@
     "stalled-project-projek-sakit": {
       "hash": "ae48f9fb119e"
     },
+    "strata-or-individual-title-landed": {
+      "hash": "92b7b1f1a9d6"
+    },
     "student-accommodation-investment-risk": {
       "hash": "d1bce088a71d"
     },
@@ -180,11 +309,23 @@
     "ten-million-property-goal-at-25": {
       "hash": "7bc8cc77c02e"
     },
+    "ten-properties-ten-years": {
+      "hash": "1a5e32c83d11"
+    },
     "tenant-not-paying-rent": {
       "hash": "1e205af2c4ee"
     },
+    "tenant-paying-rent-in-advance": {
+      "hash": "038913b1fed5"
+    },
     "third-property-buying-channel": {
       "hash": "b7a466390c51"
+    },
+    "three-tod-projects-equal-cash-flow": {
+      "hash": "4a740e8f93c5"
+    },
+    "transit-oriented-development-explained": {
+      "hash": "20877498e6f6"
     },
     "unsold-units-near-completion": {
       "hash": "2d77b4490b5b"
@@ -192,11 +333,20 @@
     "weekday-weekend-test-own-stay": {
       "hash": "b1d55955a4be"
     },
+    "what-to-check-in-your-spa": {
+      "hash": "59772530bcb5"
+    },
     "when-to-buy-property-data-guide": {
       "hash": "12854f454f07"
     },
     "will-and-property-inheritance": {
       "hash": "53d2d55f482a"
+    },
+    "young-buyer-mistakes-new-launches": {
+      "hash": "ce802456dd33"
+    },
+    "young-couple-first-home-budget": {
+      "hash": "098bccc1c06a"
     }
   }
 }

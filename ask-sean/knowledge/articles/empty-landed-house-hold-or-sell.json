@@ -1,0 +1,53 @@
+{
+  "id": "empty-landed-house-hold-or-sell",
+  "series": "iherng-podcast",
+  "title": "My big house is suddenly empty. Hold, rent it out or sell?",
+  "excerpt": "A 40-year-old bought a corner terrace house for his family, and now lives in it alone. Rent covers less than the instalment, so he wonders whether to sell. Sean says hold and rent it out.",
+  "date": "2025-06-26",
+  "tag": "Hold or sell",
+  "question": {
+    "asker": "From Happy Dragon, a viewer who wrote in by email",
+    "context": "He is 40, takes home RM13,500 a month and bought a corner terrace house near Elmina, Shah Alam, in 2020 for about RM750,000, with an instalment of about RM2,800 at 4.2%. He spent about RM170,000 in cash renovating and furnishing it so his grandfather and a caretaker could live with him; his grandfather has since died and he now lives there alone. Nearby rents to university students and lecturers are about RM2,000. Selling would recover the price but not the renovation. He has about RM150,000 in ASB, RM20,000 in fixed deposits and a car loan of RM1,100 a month.",
+    "text": "Should he keep the house empty until a property upturn, rent it out at a monthly shortfall, or sell?"
+  },
+  "answer": {
+    "quote": "So I think you should hold.",
+    "summary": "Hold it and rent it out. The rent covers most of the interest, so the gap he pays each month is mostly principal, and the house has already risen in value since he bought it."
+  },
+  "reasons": [
+    {
+      "title": "The shortfall is mostly principal",
+      "body": "About 80 to 85% of an instalment is interest, so roughly RM2,380 of his RM2,800. A RM2,000 rent covers most of that, leaving about RM800 a month that mainly pays down the loan, which on a RM13,500 income Sean calls a kind of forced saving rather than a loss."
+    },
+    {
+      "title": "Landed homes rarely rent for the full instalment",
+      "body": "Rent covering the whole instalment usually happens only with high-rise, where yields are higher. Landed owners give up some yield for more room for capital growth."
+    },
+    {
+      "title": "The renovation is not a property loss",
+      "body": "Sean reckons he bought at a discount of about 10%, so selling at the same price already returns his deposit. The house is now worth about RM850,000, roughly 13% above the price he paid; the RM170,000 he spent on furnishing for his family does not make the property itself a losing one."
+    },
+    {
+      "title": "A corner lot is its own market",
+      "body": "The gap between a corner lot and an intermediate unit is very large, with different demand and supply, which is another reason to keep it."
+    }
+  ],
+  "actions": [
+    "Rent the house out at RM2,000 or more rather than leaving it empty.",
+    "Consider furnishing it fully to rent room by room, or to attract better tenants for the whole house.",
+    "Judge the monthly gap against how much of the instalment is interest, not against the full instalment.",
+    "Before buying an investment, work out the expected rent and furnishing cost first.",
+    "Review idle savings: money earning about 3.2% may not keep up with inflation."
+  ],
+  "caveat": "This holds because his income is high and he has no other big commitments; someone stretched by an RM800 monthly gap would weigh it differently. Sean is openly bullish on prices, and says he cannot judge this exact street without its past transactions.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #288. The quoted answer is verbatim; everything else is paraphrased. Figures are as stated in June 2025. Sean also spends part of the episode encouraging the viewer to stop comparing himself with others, which is left out here.",
+  "askingSeanEpisode": 288,
+  "video": {
+    "id": "cfw6lVvVskE",
+    "title": "ASKING SEAN #288 | HOLD ON UNTIL PROPERTY BULLRUN",
+    "duration": "18:08",
+    "url": "https://www.youtube.com/watch?v=cfw6lVvVskE"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/empty-landed-house-hold-or-sell"
+}

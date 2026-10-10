@@ -1,0 +1,53 @@
+{
+  "id": "late-delivery-damages-and-booking-fees",
+  "series": "buyer-guides",
+  "title": "My developer delivered late. What can I claim, and from when?",
+  "excerpt": "A court case ruled that late-delivery damages run from the booking date, not the SPA date. Sean explains how LAD works, how buyers can claim, and what ending booking fees could mean for buyers and developers.",
+  "date": "2021-01-29",
+  "tag": "Late delivery (LAD)",
+  "question": {
+    "asker": "",
+    "context": "A buyer disputed how a developer calculated late-delivery damages, took it to the tribunal and then to court, and won: the delay was counted from the date of booking rather than the date the SPA was signed. Reports also said booking fees would be prohibited altogether.",
+    "text": "What are liquidated damages for late delivery, how can a buyer claim them, and what changes if booking fees go?"
+  },
+  "answer": {
+    "quote": "you must definitely read through that document",
+    "summary": "If a developer hands over late, the standard SPA for new homes entitles you to liquidated ascertained damages calculated daily, and the homebuyer tribunal is open to any buyer without a lawyer. Sean sympathises with the buyer, but warns that banning booking fees could raise the cash needed to buy and squeeze out smaller developers."
+  },
+  "reasons": [
+    {
+      "title": "Delivery periods are set in the SPA",
+      "body": "Individual-title houses typically have 24 months to complete, and strata properties usually 36 months or longer as approved. A delay costs the buyer rent and loan interest at the same time, which is what the damages compensate."
+    },
+    {
+      "title": "The tribunal needs evidence, not taste",
+      "body": "Any buyer can file a claim, but complaints about quality must be backed by a registered contractor or professional, not personal preference. New-home SPAs are standardised; subsale agreements differ, so read yours."
+    },
+    {
+      "title": "Booking fees let buyers in with little cash",
+      "body": "Without bookings, every buyer would need a 3% deposit and the rest of 10% within about 21 days, as in a subsale. Banks may also lend only on the price net of discounts, adding to the cash needed."
+    },
+    {
+      "title": "Investors prefer well-sold projects",
+      "body": "Developers gauge interest through bookings before launching. A project that sells out has its construction funded by buyers' loans and leaves no unsold stock competing with owners for tenants and buyers."
+    }
+  ],
+  "actions": [
+    "Read your SPA's delivery date and damages clause before signing.",
+    "Keep your booking receipt and dates, which may count towards a delay.",
+    "If the developer refuses a fair claim, file with the homebuyer tribunal.",
+    "Get a registered professional's report for any quality complaint.",
+    "Favour projects that have sold well when buying to invest."
+  ],
+  "caveat": "This reflects the ruling and reports as Sean understood them in January 2021; rules on booking fees and how damages are counted should be checked with a lawyer today.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this January 2021 video, recorded after a court decision on how late delivery is counted. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "rOZdL2vOuxA",
+    "title": "LATE DELIVERY BASED ON BOOKING COLLECTION DATE?!",
+    "duration": "14:24",
+    "url": "https://www.youtube.com/watch?v=rOZdL2vOuxA"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/late-delivery-damages-and-booking-fees"
+}

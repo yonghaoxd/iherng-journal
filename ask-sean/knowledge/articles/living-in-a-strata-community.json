@@ -1,0 +1,57 @@
+{
+  "id": "living-in-a-strata-community",
+  "series": "buyer-guides",
+  "title": "Why do strata buildings run down, and what can owners do about it?",
+  "excerpt": "Most of us will end up living in strata property, yet few owners understand how a building is run. Sean talks to David Foo, whose firm serves about 500 neighbourhoods, about fees, committees and upkeep.",
+  "date": "2021-10-12",
+  "tag": "Strata management",
+  "question": {
+    "asker": "",
+    "context": "More and more Malaysians live in strata property, or in landed areas run by residents' associations, where a joint management body or management corporation collects fees and maintains common areas. Committees are volunteers with little training, and many buildings decline as fees fall short. Sean's guest, David Foo, co-founded a company providing management apps and accounting to about 500 neighbourhoods.",
+    "text": "What makes some strata buildings well kept while others run down, and what can owners and committees do?"
+  },
+  "answer": {
+    "by": {
+      "name": "David Foo",
+      "role": "co-founder of Jaga Solution, a company that provides management software to residential communities"
+    },
+    "quote": "it's like a marriage you need to manage",
+    "summary": "A strata building is run like a company: owners are shareholders, the committee is the board and the building manager is the chief executive. Buildings decline when collection lags behind rising costs and committees try to save rather than maintain. Pay on time, attend AGMs, and expect the committee to set targets and use numbers."
+  },
+  "reasons": [
+    {
+      "title": "Collection can never exceed 100%",
+      "body": "Guards, cleaners and managers cost more every year, but fees collected can't exceed what is billed. When committees settle for 85%, they end up cutting guards and cleaners until the building visibly declines."
+    },
+    {
+      "title": "Low fees at launch store up trouble",
+      "body": "Developers set low maintenance fees to sell units while adding costly features such as fountains. After handover, committees must raise fees or remove features, and owners resist both."
+    },
+    {
+      "title": "Maintain, don't hoard",
+      "body": "A management body is not meant to make a profit; money collected should be spent keeping the building in shape, with preventive maintenance rather than fixing things only once they break."
+    },
+    {
+      "title": "People make the difference",
+      "body": "Price level matters less than residents who treat the place as home. One well-run building in Bangsar keeps spare tiles in the same colour to replace any that crack."
+    }
+  ],
+  "actions": [
+    "Pay maintenance fees in full and on time.",
+    "Attend AGMs, or at least read the accounts and proposals.",
+    "If you serve on a committee, set targets for the building manager and supervise rather than do the work yourself.",
+    "Compare your building's costs and staffing with similar buildings before cutting services.",
+    "Budget for upkeep on an individual-title house too, since nobody else will fix the roof."
+  ],
+  "caveat": "David notes that buyers in managed buildings still need to understand basics, such as who should fix a leak from the unit above, which nobody is taught.",
+  "basis": "captions",
+  "sourceNote": "Summarised from the full English captions of this October 2021 episode of Sean's My First Property podcast. The views and quoted line are those of the guest, David Foo, whose company sells management software to residential communities; Sean says a cousin of his works there. Everything except the quote is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "9W9yDPJLQ-I",
+    "title": "LIVING TOGETHER IN A STRATAFIED COMMUNITY | DAVID FOO, CO-FOUNDER OF JAGASOLUTION",
+    "duration": "1:06:01",
+    "url": "https://www.youtube.com/watch?v=9W9yDPJLQ-I"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/living-in-a-strata-community"
+}

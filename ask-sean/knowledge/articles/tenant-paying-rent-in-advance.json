@@ -1,0 +1,53 @@
+{
+  "id": "tenant-paying-rent-in-advance",
+  "series": "iherng-podcast",
+  "title": "My tenant wants to pay six months upfront. Will it hurt my next loan?",
+  "excerpt": "A 26-year-old in Kota Kinabalu bought a subsale condo below market value and rented it out the day renovation finished. Sean explains what he did right, and why rent paid six months at a time can cost him his next loan.",
+  "date": "2025-04-29",
+  "tag": "Rental income records",
+  "question": {
+    "asker": "From Mr J, a viewer who wrote in by email",
+    "context": "Mr J is 26, self-employed in Kota Kinabalu and earns about RM10,000 a month net. His mother spotted a listing in the condo where he lives: RM520,000, partly furnished, with a market value of about RM580,000. The owner wanted a quick sale, so he negotiated it to RM500,000, and the bank valued it at RM650,000. He handled the paperwork himself, did minor renovations and rented it out for about RM200 a month more than his instalment. The tenant now offers to pay RM12,600 every six months for two years.",
+    "text": "Will rent paid every six months, rather than monthly, affect his income assessment when he applies for a second property?"
+  },
+  "answer": {
+    "quote": "Luck is when opportunity meets preparation.",
+    "summary": "Yes, it will. Banks look at rental income month by month in your bank statements, so lump sums or uneven amounts may not be counted, and that can cost him the next property. Ask the tenant to pay the same amount every month instead."
+  },
+  "reasons": [
+    {
+      "title": "Banks want steady monthly credits",
+      "body": "When you apply for a loan, the banker reads your statements month by month. Rent that arrives every six months, or varies because repairs were deducted from it, looks inconsistent and may not be recognised as income."
+    },
+    {
+      "title": "Keep repairs separate from rent",
+      "body": "Letting a tenant fix things and deduct the cost is common, but it breaks the pattern. Sean has repairs fixed and paid separately, while the full rent is still paid to him each month."
+    },
+    {
+      "title": "Subsale lets you negotiate",
+      "body": "With a subsale or bulk purchase you can counter the asking price; a developer's retail price is fixed. Knowing his own building let Mr J judge a below-market listing and act quickly."
+    },
+    {
+      "title": "Stay ready for the deal",
+      "body": "Sean checks his own CCRIS and loan eligibility regularly, because good-value listings go to whoever can commit first. A subsale needs about 18% of the price in cash, so savings must be in place before the chance appears."
+    }
+  ],
+  "actions": [
+    "Decline lump-sum rent if you plan to apply for another loan soon.",
+    "Offer the tenant an auto-debit, or 12 post-dated cheques to bank in each month.",
+    "Pay for repairs separately rather than deducting them from the rent.",
+    "Keep your loan eligibility and CCRIS checked, so you can move when a below-market listing appears.",
+    "Ask for a better price or rate at every step, from the seller to the lawyer and the bank."
+  ],
+  "caveat": "If you don't need the rent counted for a loan in the next year or two, advance payment matters less; the issue is only how a bank reads your statements.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #281. The quoted line is verbatim; everything else is paraphrased. Figures are as stated in April 2025. The episode is sponsored by The Makeover Guys, a renovation company Sean says furnishes and manages most of his investment units; it does not bear on this answer.",
+  "askingSeanEpisode": 281,
+  "video": {
+    "id": "hwopV01uKmA",
+    "title": "ASKING SEAN #281 | BUYING SUBSALE BELOW MARKET VALUE, THEN RENT OUT DURING RENOVATION",
+    "duration": "23:48",
+    "url": "https://www.youtube.com/watch?v=hwopV01uKmA"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/tenant-paying-rent-in-advance"
+}

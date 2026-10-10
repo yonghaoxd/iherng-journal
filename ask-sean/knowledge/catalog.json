@@ -1,5 +1,5 @@
 {
-  "version": "ccd049817a83",
+  "version": "ad6b30be0f72",
   "articles": [
     {
       "id": "affordable-housing-rumawip",
@@ -57,6 +57,63 @@
       ]
     },
     {
+      "id": "branded-or-small-developer",
+      "title": "Should I buy from a big branded developer or a smaller newcomer?",
+      "date": "2017-09-12",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Choosing a developer",
+      "excerpt": "Big listed developers sell a lifestyle; smaller ones compete on facilities, price and discounts. Sean compares two brochures and lists the questions to ask at any sales gallery.",
+      "viewerQuestion": "Does the developer's brand matter, and how should a buyer compare projects from big and small developers?",
+      "answer": "For an investment, the brand matters less than the numbers: tenure, price per sq ft against the neighbours, the net price after rebates, and the rent it can earn. Big developers sell a lifestyle and command a premium; smaller ones often offer more space and discounts for the money. For your own home, buy what feels right within your budget.",
+      "points": [
+        "Big names sell a lifestyle",
+        "Brochures leave things out",
+        "Built-up may include extras",
+        "Construction time changes the deal"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "building-allows-one-airbnb-operator",
+      "title": "My building now allows only one Airbnb operator. What can I do?",
+      "date": "2025-01-15",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 271,
+      "tag": "Short-term rental",
+      "excerpt": "A first-time buyer got the keys to a city-centre unit meant for Airbnb, then the building demanded a RM100,000 deposit from operators and let only one operate. Sean explains why, and how to get the unit earning.",
+      "viewerQuestion": "Is it fair for management to allow only one operator, and what should he do now?",
+      "answer": "A large deposit for operators is reasonable and keeps a building manageable, and he cannot challenge the arrangement until a joint management body is formed. Meanwhile his unit earns nothing, so sign with the approved operator or furnish it and rent it out long-term.",
+      "points": [
+        "Short-stay should be plan D",
+        "Short-stay can be banned",
+        "Why a big deposit helps",
+        "Airbnb buildings need a quick exit"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "bulk-purchase-second-property",
+      "title": "Could a bulk purchase get me my second property sooner?",
+      "date": "2025-06-10",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 286,
+      "tag": "Bulk purchase",
+      "excerpt": "A 27-year-old spent his savings on a compact terrace house in Subang Jaya and wants an investment unit next. Sean explains why developers have unsold units, and why entry price decides who wins on rent.",
+      "viewerQuestion": "Will a non-gated terrace house keep rising in value, how can he buy a second property with little cash, and if a bulk-purchase group buys many units in one project, won't they all compete for the same tenants?",
+      "answer": "The house is a good buy, though open, non-gated terraces will rise more slowly as security matters more to buyers. With his cash used up, his next unit has to be bought on credit: a discounted unit whose rent covers the instalment, completing in a few years while he saves for the furnishing.",
+      "points": [
+        "Open terraces have a price ceiling",
+        "Unsold units come from ambitious pricing",
+        "A lower entry price wins the rental race",
+        "Cash back belongs to the property"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "buy-now-to-retire-in-later",
       "title": "Should I buy now the condo I'll downsize to in 20 years?",
       "date": "2025-09-04",
@@ -90,6 +147,44 @@
         "Some deals can't be financed",
         "You buy it as it is",
         "Prices fall each round without bids"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "buying-beyond-the-third-property",
+      "title": "I own two properties. How would you buy four more?",
+      "date": "2024-12-16",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 269,
+      "tag": "Beyond the 70% limit",
+      "excerpt": "A 36-year-old with RM700,000 in shares and funds and two properties wants four more. Sean lists the ways investors get around the 70% loan limit, and asks why four.",
+      "viewerQuestion": "If he wanted to buy four more investment properties, how would Sean go about it?",
+      "answer": "Buy only units bought with little cash whose rent covers the instalment, and get around the 70% loan limit on a third residential loan in one of several ways. But replace 'four more' with a target value or rental income, keep building the share portfolio that is already working, and buy one when a good deal appears.",
+      "points": [
+        "Leverage is the point of property",
+        "The third loan is capped at 70%",
+        "There are ways around the cap",
+        "Unit counts lead to bad buys"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "buying-into-mixed-developments",
+      "title": "What should I check before buying in a mixed development or township?",
+      "date": "2018-02-02",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Townships and mixed use",
+      "excerpt": "Living above the office and the mall sounds convenient, but whether it works depends on who controls the shops. Sean explains, from his time on a township team, what makes a mixed development and township succeed.",
+      "viewerQuestion": "What decides whether a mixed development or township is a good place to buy?",
+      "answer": "Ask who owns the shops. A mall owned and managed by one party can control its tenant mix and marketing; one sold off unit by unit to hundreds of owners often can't, and declines. In townships, back a developer with a long-term master plan, and judge value rather than brand.",
+      "points": [
+        "The retail mix makes or breaks it",
+        "Strata malls are hard to manage",
+        "Townships grow in stages",
+        "Brands cost more for a reason"
       ],
       "aliases": [],
       "questions": []
@@ -169,6 +264,44 @@
       "questions": []
     },
     {
+      "id": "cash-back-or-positive-cash-flow",
+      "title": "Cash back on a new launch, or a lower loan with positive cash flow?",
+      "date": "2020-04-11",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Rebates and cash back",
+      "excerpt": "Developers now offer free legal fees, furniture and even cash back, but the extras inflate the loan. Sean explains how rebates work and when cash in hand beats a unit whose rent covers its instalment.",
+      "viewerQuestion": "Is it better to take a new launch with big rebates and cash back, or pay a down payment to borrow less and have rent cover the instalment?",
+      "answer": "Rebates are built into a higher price and loan, so a new launch rarely has positive cash flow: rent follows the market, not your instalment. If you have cash, paying down to borrow less is safer. Cash back only helps if you use it to cover the monthly gap, not to spend.",
+      "points": [
+        "Free extras raise the loan",
+        "Rent doesn't care what you paid",
+        "Cash back can bridge the gap",
+        "Sudden cash changes habits"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "cash-buying-condos-to-retire",
+      "title": "Should I buy three condos mostly in cash and stop working at 35?",
+      "date": "2025-04-15",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 280,
+      "tag": "Cash or credit",
+      "excerpt": "A Malaysian working in Singapore plans to come home, put RM200,000 down on each of three RM300,000 condos and live off the rent. Sean shows why fixed deposits beat that plan, and what to do instead.",
+      "viewerQuestion": "Is it a good plan to buy three RM300,000 condos in Kuala Lumpur with RM200,000 down on each, borrowing only RM100,000 apiece, and live on the roughly RM500 a month each would leave?",
+      "answer": "No. Putting RM600,000 in cash into three condos for about RM1,500 a month is a poor return; the same cash in fixed deposits at about 3% earns that without tenants. Buy with loans while he still has a salary to qualify, keep his capital invested, and don't stop working altogether.",
+      "points": [
+        "The cash would take decades to pay back",
+        "RM300,000 condos are the wrong stock",
+        "Loans need an income",
+        "Interest is a cost against rent"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "cheap-unit-high-yield-no-growth",
       "title": "Is a cheap unit with good rent worth buying?",
       "date": "2026-05-03",
@@ -223,6 +356,25 @@
       ]
     },
     {
+      "id": "condo-with-many-unsold-units",
+      "title": "A third of my condo is unsold. Will the developer cut prices on me?",
+      "date": "2025-02-04",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 273,
+      "tag": "Unsold stock",
+      "excerpt": "A buyer's RM620,000 condo is about to be handed over with 270 of 770 units unsold, and rent nearby falls short of the instalment. Sean explains how developers clear stock, and why he would furnish, rent and hold.",
+      "viewerQuestion": "Will the developer cut prices to clear unsold units, what does selling cost, and should CG rent below the instalment or sell at a loss?",
+      "answer": "Don't sell at a loss. Fully furnish it at handover, rent it out to cover most of the instalment, and hold until the market recovers enough to sell without a loss. Developers rarely cut prices openly, but they do sell leftover units privately through bulk purchasers, which is the competition CG faces.",
+      "points": [
+        "Price rises are not profit",
+        "Leftovers are sold quietly",
+        "Selling below the loan costs cash",
+        "A furnished unit stands out"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "defect-inspection-checklist",
       "title": "What should you check when you get your keys?",
       "date": "2020-01-08",
@@ -259,6 +411,25 @@
         "How long is the defect liability period?",
         "Can I claim for leaks after moving in?"
       ]
+    },
+    {
+      "id": "disasters-and-property-protection",
+      "title": "After an earthquake and a gas fire, how protected is your property?",
+      "date": "2025-04-08",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 279,
+      "tag": "Insurance and buffers",
+      "excerpt": "After the Myanmar earthquake, the Putra Heights gas pipeline fire and a market sell-off, viewers asked whether property is still safe. Sean goes through the protections every owner should have in place.",
+      "viewerQuestion": "What should a property owner have in place before disaster strikes, and do events like these change what to buy?",
+      "answer": "Disasters cannot be predicted, but their damage to your finances can be limited. Keep an emergency fund, insure your life, your loans and the building, keep a cash buffer for each property, and check what is around a home before you buy it.",
+      "points": [
+        "Heirs inherit the debt too",
+        "Check what your fire policy covers",
+        "A buffer gives you time",
+        "Know what is next to the house"
+      ],
+      "aliases": [],
+      "questions": []
     },
     {
       "id": "discount-price-still-losing-money",
@@ -315,6 +486,82 @@
       "questions": []
     },
     {
+      "id": "empty-landed-house-hold-or-sell",
+      "title": "My big house is suddenly empty. Hold, rent it out or sell?",
+      "date": "2025-06-26",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 288,
+      "tag": "Hold or sell",
+      "excerpt": "A 40-year-old bought a corner terrace house for his family, and now lives in it alone. Rent covers less than the instalment, so he wonders whether to sell. Sean says hold and rent it out.",
+      "viewerQuestion": "Should he keep the house empty until a property upturn, rent it out at a monthly shortfall, or sell?",
+      "answer": "Hold it and rent it out. The rent covers most of the interest, so the gap he pays each month is mostly principal, and the house has already risen in value since he bought it.",
+      "points": [
+        "The shortfall is mostly principal",
+        "Landed homes rarely rent for the full instalment",
+        "The renovation is not a property loss",
+        "A corner lot is its own market"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "exit-strategy-for-ageing-condos",
+      "title": "Who will buy my condo in 30 years? What's the exit strategy?",
+      "date": "2024-12-06",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 268,
+      "tag": "Exit strategy",
+      "excerpt": "A returning Malaysian asks how condo investors ever cash out when buildings age, lifts break and few owners pay maintenance. Sean explains how condos make money, why he plans to hold for good, and what to avoid.",
+      "viewerQuestion": "How are investors with many ageing condos supposed to exit, and who will buy them?",
+      "answer": "Sean buys condos expecting to hold them for good: if rent covers the instalment, the tenant pays off the loan and the unit is his in 30 years, so any price growth is a bonus. Ageing is manageable when owners live in or rent long-term and pay maintenance; buildings full of short-stay investors are the ones to exit early or avoid.",
+      "points": [
+        "Condos pay three ways",
+        "Rent sets the resale price",
+        "Everything but the structure can be replaced",
+        "Short-stay buildings need a fast exit"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "failed-airbnb-studio-investment",
+      "title": "My Airbnb studios are bleeding cash. Did I fail as an investor?",
+      "date": "2025-06-17",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 287,
+      "tag": "Short-term rental",
+      "excerpt": "A 34-year-old bought two city-centre studios in 2017 for Airbnb, then COVID hit and both lose money every month. Sean explains what went wrong, why it was not a total failure, and why he would sell.",
+      "viewerQuestion": "Is this a failed investment, should he sell one unit, and how does he still reach his goal of five income-generating properties?",
+      "answer": "Not a failed investment: he bought near the top of the cycle, was hit by COVID, and still held on with about a 10% gain. But Sean would sell both units, because thousands of new studios nearby will compete for tenants and he is paying about RM3,000 a month for nothing but a target number of units.",
+      "points": [
+        "A good project has several ways to rent",
+        "Airbnb can be taken away",
+        "Rent sets the price",
+        "Aim for cash flow, not a unit count"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "fathers-gift-for-first-property",
+      "title": "My father will give me RM300,000 for a property. What should I buy?",
+      "date": "2024-09-21",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 261,
+      "tag": "Family help",
+      "excerpt": "A 25-year-old earning RM3,500 has been offered up to RM300,000 by her father towards a property, and finds agents pushy. Sean suggests asking him to hold it until her income and knowledge catch up.",
+      "viewerQuestion": "Should she buy a new launch or a completed subsale with the money, and how does she make the most of it?",
+      "answer": "Not yet. On RM3,500 a month she would be stretched by any loan, so ask her father to hold the money while she researches and raises her income to about RM5,000. Then use it on a subsale or bulk-purchase unit whose rent covers the instalment, and live in the fiancé's apartment.",
+      "points": [
+        "New launches price in the future",
+        "Subsale needs the cash she has",
+        "Keep the gift for investment",
+        "Twenty viewings make you immune"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "fifth-property-before-wedding",
       "title": "Should I spend most of my cash on a fifth property before I marry?",
       "date": "2025-11-10",
@@ -329,6 +576,82 @@
         "Paying more cash isn't smarter",
         "Doubting your income means you're not ready",
         "Low valuations are normal in new projects"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "finding-money-for-a-down-payment",
+      "title": "Where do I find the money for my first property?",
+      "date": "2019-06-02",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Down payment",
+      "excerpt": "Many buyers find a good deal and are just short of the 10% down payment. Sean goes through the four Fs of funding, and why raising income beats blaming property prices.",
+      "viewerQuestion": "Where can a first-time buyer find the money for a property, and what should come first?",
+      "answer": "First save six months of expenses. Then the money comes from the four Fs: family, friends, financial institutions and fools. Borrow from family or friends only if you repay on time, keep your credit clean for the bank, and steer clear of being anyone's 'fool'. Above all, work out the income you need and how to reach it.",
+      "points": [
+        "Six months of savings comes first",
+        "Partners split the bad times too",
+        "Beware anyone who wants your name",
+        "Work back from the price"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "fire-insurance-for-landed-homes",
+      "title": "Do I need my own fire insurance for a landed house?",
+      "date": "2021-06-11",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Home insurance",
+      "excerpt": "Many owners assume MRTA or MLTA is the only insurance they need. Sean explains what fire insurance covers for an individual-title house, how to set the sum insured, and that the bank's bundled policy is optional.",
+      "viewerQuestion": "What does home or fire insurance cover, who needs to buy it, and how much cover is enough?",
+      "answer": "If you own an individual-title house, you need your own cover; in a strata building, the joint management body insures the building. Insure the cost of rebuilding, not the market price, and compare policies, since you don't have to take the one bundled with your loan.",
+      "points": [
+        "It covers more than fire",
+        "Strata owners are covered differently",
+        "Insure the rebuilding cost",
+        "The loan keeps running"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "first-investment-unit-questions",
+      "title": "Subsale or new, freehold or leasehold: what matters for unit one?",
+      "date": "2025-06-04",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 285,
+      "tag": "First investment",
+      "excerpt": "A 28-year-old saving more than half their pay asks four questions before a first investment unit. Sean explains why new launches are priced up, why tenure and feng shui come second, and why location tier matters most.",
+      "viewerQuestion": "Why do most first-time buyers buy new rather than subsale or bulk purchase, does leasehold matter, does feng shui matter, and what price range should a first investment be?",
+      "answer": "First-time buyers buy new because they have no cash, and developers price that convenience in, so new units are often worth less than their price at handover. For an investment, tenure and feng shui matter less than paying below the area's median price, and with about RM700,000 Sean would buy in a tier one location.",
+      "points": [
+        "New launches price in the free extras",
+        "A subsale shows you what you are buying",
+        "Tenure and feng shui come after price",
+        "Tier one locations have no rent ceiling"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "first-property-at-49-inheritance",
+      "title": "No property at 49. Should I spend my inheritance on a walk-up flat?",
+      "date": "2024-11-06",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 264,
+      "tag": "Late first purchase",
+      "excerpt": "A single 49-year-old teacher in Penang earning RM3,800 inherited RM170,000 and plans to buy a cheap walk-up flat in cash to rent out. Sean suggests an affordable home bought partly on a loan, to live in and let rooms.",
+      "viewerQuestion": "Is it sound to buy a cheap walk-up flat in cash with the inheritance to rent out, then buy a second flat to live in?",
+      "answer": "Rather than paying cash for a walk-up to rent out, buy an affordable state-scheme home of about RM280,000 to RM350,000 with as large a loan as CL qualifies for, live in it and rent out the other two bedrooms. Keep most of the cash in reserve, and work on earning more.",
+      "points": [
+        "Age shortens the loan",
+        "Owning solves two worries",
+        "Walk-ups make poor rentals later",
+        "Keep cash, borrow cheaply"
       ],
       "aliases": [],
       "questions": []
@@ -364,6 +687,25 @@
         "How long should I wait before buying my next investment property?",
         "Should a young couple rent their home and invest first?"
       ]
+    },
+    {
+      "id": "four-types-of-property-investors",
+      "title": "What kind of property investor am I, and which strategy suits me?",
+      "date": "2018-12-20",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Investor profiles",
+      "excerpt": "Property makes money through rent or capital growth, and investors lean one way or the other. Sean describes four types, from cash-flow buyers to people who analyse forever and never buy.",
+      "viewerQuestion": "What types of property investors are there, and which approach should a new buyer take?",
+      "answer": "Sean sees four types: cash-flow investors, high-leverage buyers of new launches, cash-rich owners storing wealth, and those who only analyse. None is right or wrong, but doing nothing is the worst. A conservative buyer can mix the first two: a condo whose rent nearly covers the loan, and a landed home for growth.",
+      "points": [
+        "Cash-flow investors build steadily",
+        "High-leverage buyers bet on recovery",
+        "Wealth-storers don't need rent",
+        "Analysis without action costs years"
+      ],
+      "aliases": [],
+      "questions": []
     },
     {
       "id": "furnishing-rental-unit-worth-it",
@@ -496,6 +838,25 @@
         "Cash loses to inflation",
         "Older units still rent",
         "Tenants and the bank do the work"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "hotel-scheme-unit-gone-wrong",
+      "title": "Our hotel-scheme unit has paid nothing and won't sell. What now?",
+      "date": "2025-02-24",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 275,
+      "tag": "Guaranteed returns",
+      "excerpt": "Two siblings bought a serviced apartment leased back to a hotel operator with a guaranteed return. It completed four years late and has paid nothing since. Sean lists the red flags and their few ways out.",
+      "viewerQuestion": "What can they do with a unit that pays nothing and cannot be sold?",
+      "answer": "There is no good way out. They can sell at a deeper loss and pay the bank the difference now, or keep paying the loan and wait on a rescue by a bigger developer that may never come. The real lessons are for buyers who have not yet signed for a scheme like this.",
+      "points": [
+        "Guaranteed returns are priced in",
+        "If it's so good, why share it?",
+        "You may not control your own unit",
+        "Selling below the loan costs cash"
       ],
       "aliases": [],
       "questions": []
@@ -634,6 +995,25 @@
       ]
     },
     {
+      "id": "houzkey-rent-to-own-review",
+      "title": "Is a rent-to-own scheme like HouzKEY worth it?",
+      "date": "2024-10-29",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Rent-to-own financing",
+      "excerpt": "When lockdown halved how banks assessed his income, Sean bought his Bukit Jalil home through Maybank Islamic's HouzKEY rent-to-own scheme. Collecting the keys four years later, he weighs what worked and what to watch.",
+      "viewerQuestion": "How does a rent-to-own scheme like HouzKEY work, and is it a good way to buy?",
+      "answer": "For Sean it was the right choice: it let him secure the unit before prices rose, at rent well below the market and below a normal instalment. Because conversion is at the original SPA price, it pays off if values rise; if they don't, you can keep renting and walk away after five years.",
+      "points": [
+        "It opens the door when income looks weak",
+        "Conversion is at the original price",
+        "Rent eases you in",
+        "There are extra steps"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "inherited-house-sell-or-keep",
       "title": "My mother gave me her old house. Should I sell it?",
       "date": "2026-01-08",
@@ -689,6 +1069,44 @@
       ]
     },
     {
+      "id": "investing-in-uk-vs-malaysia",
+      "title": "How is buying property in the UK different from Malaysia?",
+      "date": "2023-08-29",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Overseas property",
+      "excerpt": "Many Malaysians and Singaporeans buy in UK cities for their children's education and to diversify. After a study trip to Manchester, Sean compares supply, certainty, building design, planning and loans.",
+      "viewerQuestion": "What are the main differences between investing in UK property and Malaysian property?",
+      "answer": "The UK has a housing shortage, so tenants compete for units, and announcements and data are reliable. Malaysia has an oversupply, policies can change overnight, and buyers must verify everything themselves. UK loans are also approved closer to completion and weigh the property's rent, not just the buyer's income.",
+      "points": [
+        "Shortage against oversupply",
+        "Plans happen there",
+        "Design follows pedestrians, not cars",
+        "Zoning and loans work differently"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "johor-rts-or-klang-valley-first-buy",
+      "title": "First investment: a co-living unit near Johor's RTS, or a KL condo?",
+      "date": "2024-09-27",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 262,
+      "tag": "Choosing a market",
+      "excerpt": "A 35-year-old in Johor Bahru with a RM1.1 million budget weighs a seven-room co-living unit near the RTS against a Mont Kiara condo. Sean warns about Johor's hype, and explains why he would buy a completed unit first.",
+      "viewerQuestion": "Which should he buy, and how should a unit in a prime area be priced to rent well without undercutting himself?",
+      "answer": "Be wary of Johor's current hype and of any unit that only works partitioned into rooms. Sean would buy a completed unit with proven rents first, compare its yield and upfront cash with the Mont Kiara unit, and buy an under-construction one only once the first is rented.",
+      "points": [
+        "Johor buyers are paying a premium",
+        "One rental strategy is a risk",
+        "Completed units build a portfolio faster",
+        "Furnishing wins top rents"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "joint-home-with-ex-sell-or-rent",
       "title": "My ex and I own a house together. Should we sell or rent it out?",
       "date": "2025-09-19",
@@ -703,6 +1121,44 @@
         "He made the choices",
         "Discounts were money from the future",
         "Unfurnished units rent cheaply"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "judging-a-buildings-architecture",
+      "title": "Beyond the facade: how do I judge a building's design before buying?",
+      "date": "2019-11-20",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Architecture and layout",
+      "excerpt": "Buyers judge a building by its facade and its pool, but Sean, trained as an architect, looks at access, density, corridors and what is next door. He explains what each says about a project.",
+      "viewerQuestion": "Which aspects of a building's design should affect a buying decision?",
+      "answer": "Look beyond the facade and facilities, which are mostly marketing. Compare how you actually reach the building, the density, the lift-to-unit ratio, the corridor width and layout, and what sits on the plot next door. Unit layouts in a price range are similar because they follow the same efficiency formula.",
+      "points": [
+        "Being next to a big road isn't access",
+        "Rules shape what gets built",
+        "Corridors reveal the budget",
+        "Facilities cost money to carry"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "late-delivery-damages-and-booking-fees",
+      "title": "My developer delivered late. What can I claim, and from when?",
+      "date": "2021-01-29",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Late delivery (LAD)",
+      "excerpt": "A court case ruled that late-delivery damages run from the booking date, not the SPA date. Sean explains how LAD works, how buyers can claim, and what ending booking fees could mean for buyers and developers.",
+      "viewerQuestion": "What are liquidated damages for late delivery, how can a buyer claim them, and what changes if booking fees go?",
+      "answer": "If a developer hands over late, the standard SPA for new homes entitles you to liquidated ascertained damages calculated daily, and the homebuyer tribunal is open to any buyer without a lawyer. Sean sympathises with the buyer, but warns that banning booking fees could raise the cash needed to buy and squeeze out smaller developers.",
+      "points": [
+        "Delivery periods are set in the SPA",
+        "The tribunal needs evidence, not taste",
+        "Booking fees let buyers in with little cash",
+        "Investors prefer well-sold projects"
       ],
       "aliases": [],
       "questions": []
@@ -746,6 +1202,25 @@
       ]
     },
     {
+      "id": "living-in-a-strata-community",
+      "title": "Why do strata buildings run down, and what can owners do about it?",
+      "date": "2021-10-12",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Strata management",
+      "excerpt": "Most of us will end up living in strata property, yet few owners understand how a building is run. Sean talks to David Foo, whose firm serves about 500 neighbourhoods, about fees, committees and upkeep.",
+      "viewerQuestion": "What makes some strata buildings well kept while others run down, and what can owners and committees do?",
+      "answer": "A strata building is run like a company: owners are shareholders, the committee is the board and the building manager is the chief executive. Buildings decline when collection lags behind rising costs and committees try to save rather than maintain. Pay on time, attend AGMs, and expect the committee to set targets and use numbers.",
+      "points": [
+        "Collection can never exceed 100%",
+        "Low fees at launch store up trouble",
+        "Maintain, don't hoard",
+        "People make the difference"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "loan-application-mistakes-by-income",
       "title": "Salaried, on commission or self-employed: what trips up a loan?",
       "date": "2022-10-19",
@@ -782,6 +1257,25 @@
         "How does bonus income affect loan eligibility?",
         "What mistakes can cause a housing loan rejection?"
       ]
+    },
+    {
+      "id": "loan-qualifying-tricks",
+      "title": "Should I use tricks to qualify for a bigger housing loan?",
+      "date": "2020-04-14",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Loan eligibility",
+      "excerpt": "Young buyers write to Sean bleeding thousands a month on units they qualified for with fake payslips or recycled rent. He explains the tricks, why a rejection is a warning, and how the loss can follow you after selling.",
+      "viewerQuestion": "Is it worth using these tricks to get a housing loan approved?",
+      "answer": "No. A rejection means your income cannot carry the commitment for 30 to 35 years. Everyone in the sale earns their cut once you sign, but if the rent doesn't cover the loan, you alone carry the shortfall, and selling may still leave you owing the bank.",
+      "points": [
+        "The bank's rule exists for a reason",
+        "Everyone else is paid at signing",
+        "Selling may not clear the loan",
+        "Holidays on instalments add up"
+      ],
+      "aliases": [],
+      "questions": []
     },
     {
       "id": "location-location-location",
@@ -877,6 +1371,25 @@
       "questions": []
     },
     {
+      "id": "moving-into-family-apartment",
+      "title": "Between jobs at 27, should I move into my parents' empty apartment?",
+      "date": "2025-03-12",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 277,
+      "tag": "Career change and housing",
+      "excerpt": "A 27-year-old quit his job to retrain for tech and wants to live alone in his parents' empty Puchong apartment. Sean supports the move, with rent and a deadline, and explains why having no loan gave him this freedom.",
+      "viewerQuestion": "Is it wise to move into the Puchong apartment, furnish it on a budget while he looks for a remote job, and rent it out later once he is settled?",
+      "answer": "Yes, move in, but agree it with his parents as a tenancy: treat his RM1,500 as rent, pay the maintenance and bills himself, furnish it on a budget, and set a deadline of one year plus one to land a job in tech. Sean would not have quit his job to retrain, though.",
+      "points": [
+        "Living alone teaches the real costs",
+        "Retrain while still employed",
+        "No commitments is a freedom",
+        "Do the renovation yourself"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "new-baby-investment-strategy",
       "title": "A baby is coming. Move in, or rent out our first home?",
       "date": "2026-09-30",
@@ -911,6 +1424,25 @@
         "How do I make my rental unit stand out from so many new units nearby?",
         "Should I buy another property soon after having a baby?"
       ]
+    },
+    {
+      "id": "new-home-debts-rent-or-akpk",
+      "title": "My Rumawip home has left me drowning in debt. Rent it or go to AKPK?",
+      "date": "2025-02-11",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 274,
+      "tag": "Debt trouble",
+      "excerpt": "A buyer's Rumawip unit has been handed over just as credit card and personal loan debts outrun his income, and he has no money to furnish it. Sean sets out three steps to stay out of bankruptcy.",
+      "viewerQuestion": "Should he rent the unit out, or put all his debts through AKPK, the debt management agency, to avoid bankruptcy?",
+      "answer": "Rent the unit out and stay where he lived before. Use what credit he has left, or a friendly loan from his parents, to furnish it just enough to let. Go to AKPK only if he cannot keep up, and cut spending and add income straight away, because the cause is overspending, not the property.",
+      "points": [
+        "Owning a home has three costs",
+        "Rent can carry the unit",
+        "Debt for income is different",
+        "AKPK is not bankruptcy"
+      ],
+      "aliases": [],
+      "questions": []
     },
     {
       "id": "new-launch-vs-subsale",
@@ -949,6 +1481,25 @@
         "Which is better for rental income, a new launch or a subsale?",
         "How long does a new launch take to complete compared to a subsale?"
       ]
+    },
+    {
+      "id": "newlyweds-where-to-live",
+      "title": "Our homes aren't free until 2027. Where do we live after the wedding?",
+      "date": "2025-03-20",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 278,
+      "tag": "Living with in-laws",
+      "excerpt": "A couple marrying in 2026 each own a unit, but one is tenanted and the other is still being built. Sean weighs ending the tenancy, renting, buying a third home or moving in with family, and picks family.",
+      "viewerQuestion": "Should they end the tenancy and move into her condo, rent a place, live with the in-laws for a year or two, or buy the new condo?",
+      "answer": "Don't buy a third home for themselves now. Taking back her condo is acceptable, but Sean's choice is to live with her parents until his unit is ready in 2027, paying towards bills, and to keep the cash for the wedding, a baby and renovation.",
+      "points": [
+        "The years around 30 burn cash",
+        "Move in with her parents, not yours",
+        "Family under one roof shares the load",
+        "Keep the tenanted unit earning"
+      ],
+      "aliases": [],
+      "questions": []
     },
     {
       "id": "no-money-down-property-deals",
@@ -1027,6 +1578,44 @@
       ]
     },
     {
+      "id": "outskirts-landed-or-city-condo",
+      "title": "RM700,000: a terrace house in the outskirts or a condo in the city?",
+      "date": "2019-10-16",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Landed vs high-rise",
+      "excerpt": "The same RM700,000 buys a 1,000 sq ft condo in PJ or a double-storey terrace in Seremban or Nilai. Sean weighs commuting time, rental returns, growth, security and family life.",
+      "viewerQuestion": "Which is the better buy: a high-rise in the city or a landed house in the outskirts?",
+      "answer": "For Sean at that stage, the city condo, because time and convenience mattered more than space and it rents far better. A landed house in the outskirts suits families who value space and gardens and whose work hours are flexible enough to avoid the daily commute.",
+      "points": [
+        "Commuting costs hours",
+        "City condos rent far better",
+        "Doubling landed prices are history",
+        "Each suits a different family"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "own-home-at-44-buy-or-rent",
+      "title": "My kids are grown. At 44, should I finally buy a home of my own?",
+      "date": "2025-03-08",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 276,
+      "tag": "Buy or rent",
+      "excerpt": "A 44-year-old whose parents bought property in his name has found an apartment he loves, but worries about savings and a short loan tenure. Sean sets out when to buy and when to rent, using the 85% rule.",
+      "viewerQuestion": "Is buying a home at this stage sound, or would renting make more sense?",
+      "answer": "Buy if the rent for that apartment covers at least 85% of his instalment and his loan eligibility passes; rent if the rent is well below the instalment. Either way there is no rush: his children are independent and his biggest responsibilities are done.",
+      "points": [
+        "The 85% rule protects the exit",
+        "Rent in your name counts for loans",
+        "Renting is cheaper when rent is far below the instalment",
+        "Owning buys certainty"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "own-place-or-wait-to-afford",
       "title": "Should I buy my own place, or wait until I can afford it?",
       "date": "2025-10-23",
@@ -1084,6 +1673,25 @@
       ]
     },
     {
+      "id": "paid-off-leasehold-sell-or-rent",
+      "title": "Should I sell my paid-off leasehold flat and rent near work instead?",
+      "date": "2024-10-10",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 263,
+      "tag": "Rent near work",
+      "excerpt": "A 41-year-old paid off a PJ leasehold apartment now worth less than she paid, and has RM600,000 in cash. Sean says keep it and rent it out, rent near work, and buy only with an investor's eye.",
+      "viewerQuestion": "Should she sell the leasehold flat or rent it out, and rent near work or buy another property, new or subsale?",
+      "answer": "Keep the flat and rent it out rather than sell before an expected upturn. Rent a place near work rather than tie a long loan to a job that may change; if she buys, buy a subsale near work as an investment, with a yield of 6% or more.",
+      "points": [
+        "Leasehold matters less for high-rise",
+        "Paying off early has trade-offs",
+        "Refinancing releases less now",
+        "Rent where you work, buy where tenants would"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "parents-buying-property-for-children",
       "title": "Should parents buy property for their children?",
       "date": "2019-11-05",
@@ -1138,6 +1746,44 @@
         "How do I handle parents who want to help buy a house?",
         "Can I afford a house on a single income?"
       ]
+    },
+    {
+      "id": "pause-investing-health-uncertain",
+      "title": "My sight may fail. Keep buying property, or slow down and live?",
+      "date": "2024-08-27",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 260,
+      "tag": "Pacing a portfolio",
+      "excerpt": "A 31-year-old with two properties has a genetic condition that may affect his sight. His parents urge him to slow down. Sean agrees: pause until the second unit is rented, build reserves, and spend time with family.",
+      "viewerQuestion": "Should he keep buying properties for financial security, or take his parents' advice to slow down and enjoy the present?",
+      "answer": "Slow down, but don't stop. He can't qualify for another loan until the Batu Kawan unit is rented anyway, so spend the time building reserves and furnishing money, plan for the worst case with his sight, and make time with his family. Buy a third only once he has more than he needs.",
+      "points": [
+        "Each unit needs a six-month reserve",
+        "Plan for the worst case",
+        "A third loan is harder",
+        "Time with family is scarce too"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "property-before-proposing",
+      "title": "Do I need to own a property before I propose?",
+      "date": "2019-11-12",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Marriage and home",
+      "excerpt": "Many young men feel they must buy a home before proposing, and stretch for a landed house to do it. Sean questions the norm, and warns against making a dream home the first property.",
+      "viewerQuestion": "Is it necessary to own a property before proposing, and what kind of first home makes sense for a couple?",
+      "answer": "No. It is fine to rent while saving, and if you do buy, buy within your budget rather than a dream home. An RM800,000 landed house needs about RM4,000 a month for 30 years, which can absorb one partner's entire salary and put the relationship under strain.",
+      "points": [
+        "The norm creates a heavy burden",
+        "A dream home can take a whole salary",
+        "Smaller first homes are fine",
+        "Don't buy jointly before marriage"
+      ],
+      "aliases": [],
+      "questions": []
     },
     {
       "id": "property-guru-units-exit-plan",
@@ -1233,6 +1879,63 @@
       "questions": []
     },
     {
+      "id": "property-versus-fixed-deposit",
+      "title": "If my rental loses RM400 a month, isn't a fixed deposit better?",
+      "date": "2024-11-11",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 265,
+      "tag": "Returns on leverage",
+      "excerpt": "A viewer works out that a zero-down condo yielding 5% still costs RM400 a month after maintenance, and asks why not use fixed deposits or EPF instead. Sean explains why leverage changes the sum.",
+      "viewerQuestion": "Why is property still a good investment against fixed deposits or EPF, is the shortfall just forced saving, and who can manage repairs and tenants for an investor with several units?",
+      "answer": "Compared without a loan, fixed deposits and EPF would win. But property is bought with the bank's money: with nothing or little down, the tenant pays RM24,000 a year into your loan while you cover a few thousand, and that rent also counts as income for the next loan. Just don't buy a unit whose known rent can't cover the instalment.",
+      "points": [
+        "Measure return on your own cash",
+        "Look at what the tenant pays",
+        "Rents are easy to check before buying",
+        "Prices are moving where you look"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "rebuilding-credit-after-bankruptcy",
+      "title": "Out of bankruptcy at 41. Should I take a loan to rebuild my credit?",
+      "date": "2024-11-16",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 266,
+      "tag": "Rebuilding credit",
+      "excerpt": "Made bankrupt by a business loan taken in his name 20 years ago, a 41-year-old has just been discharged. A bank suggests a 20% personal loan to build his credit score. Sean says wait, and fix the monthly gap first.",
+      "viewerQuestion": "How can he rebuild his credit score, should he take a 20,000 ringgit personal loan at 20% to do it, or a 30,000 ringgit loan to clear his wife's cards, and how does he start over?",
+      "answer": "Don't take the personal loan. Wait the 12 months, apply for a credit card when he can and use it responsibly, and meanwhile close the monthly gap by earning more and spending less. Borrowing at 20% to clear 18% card debt only moves the debt from one name to another.",
+      "points": [
+        "20% is a terrible rate",
+        "Credit is rebuilt by waiting",
+        "Every expense is negotiable",
+        "Never lend your name"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "refinance-or-sell-to-clear-debts",
+      "title": "Should I refinance or sell my rental unit to clear RM70,000 of debts?",
+      "date": "2024-12-28",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 270,
+      "tag": "Refinancing",
+      "excerpt": "A 35-year-old's first unit rents for well above its instalment, but the owner also owes RM70,000 on credit cards and personal loans. Sean compares refinancing, selling and other loan routes, and why bad debt is the real problem.",
+      "viewerQuestion": "Should James refinance the unit to clear the debts, or sell it to clear them and free a 90% loan slot for another purchase?",
+      "answer": "Refinancing is better than selling a unit that pays its way every month, but under the newer cash-out rules a conventional refinance may release only about RM30,000, and the existing debts may also hold back approval. So check every route, and settle the high-interest debt quickly even if that means selling.",
+      "points": [
+        "The debts cost four times the mortgage",
+        "Refinancing now releases less",
+        "Selling gives up a good asset",
+        "This is good debt against bad"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "refinancing-housing-loan-reasons",
       "title": "When does refinancing my housing loan make sense?",
       "date": "2023-08-24",
@@ -1247,6 +1950,44 @@
         "Cashing out has its own income test",
         "A small rate cut adds up",
         "Consolidate bad debt, never restructure"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "renovation-mistakes-to-avoid",
+      "title": "What renovation mistakes should I avoid when I get my keys?",
+      "date": "2022-12-15",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Renovation",
+      "excerpt": "Sean watches a Singapore couple's list of renovation regrets and adds what he has learnt fitting out units. Cracks, lights, switches, power points, aircon piping and tile lines are the usual culprits.",
+      "viewerQuestion": "Which renovation details do new owners most often get wrong, and how can they be avoided?",
+      "answer": "Plan the details that are expensive to undo: where lights hang over furniture, where switches and power points go, how aircon piping runs, and how tiles line up. Most regrets come from fixing these before the furniture and daily routine are known.",
+      "points": [
+        "Different materials crack where they meet",
+        "Measure furniture before fixing lights",
+        "Switches and sockets by where you use them",
+        "Ready aircon points save trouble"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "rent-home-with-lift-for-parent",
+      "title": "My father needs a lift. Should I rent a home, or buy one now?",
+      "date": "2024-08-06",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 258,
+      "tag": "Family needs first",
+      "excerpt": "A 27-year-old engineer earning RM5,000 lives with his parents in a Penang walk-up, and his father now needs a wheelchair. Sean says rent a place with a lift now, and that his goal of three properties can wait.",
+      "viewerQuestion": "Should he rent a place with a lift, or buy one and give up his goal of owning three properties?",
+      "answer": "Rent a place with a lift now, since his father cannot wait for a purchase to complete, and rent out the walk-up to offset it. Put property investment aside until he has an emergency fund, insurance and more income; the three properties are meant to come about one a decade, not now.",
+      "points": [
+        "Buying can't solve it quickly",
+        "Three properties over 20 years",
+        "Investing needs three things first",
+        "RM5,000 is not a low income"
       ],
       "aliases": [],
       "questions": []
@@ -1271,6 +2012,44 @@
       "questions": []
     },
     {
+      "id": "rent-your-home-buy-to-invest",
+      "title": "Should I rent or buy? Why not rent my home and buy to invest?",
+      "date": "2018-10-15",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Buy and rent",
+      "excerpt": "Young people argue over whether to rent or buy. Sean says do both: rent where you want to live for flexibility, and buy elsewhere as an investment that earns rent.",
+      "viewerQuestion": "Is it better to rent or to buy a home?",
+      "answer": "Do both. Rent the home you live in for flexibility and value, and buy property as an investment that earns rent. Your home need not be the property you own; there is no rush to buy a home, but there is a rush to start investing.",
+      "points": [
+        "Renting keeps you flexible",
+        "Tenants have the upper hand",
+        "Buying protects against inflation",
+        "Investors often rent their own homes"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "retire-at-40-on-rental-income",
+      "title": "I sold my business at 40. Live on rent, or buy more properties?",
+      "date": "2024-11-28",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 267,
+      "tag": "Early retirement",
+      "excerpt": "A 40-year-old sold his nursing homes to escape the stress and parked the proceeds in his flexi loans. His eight properties leave RM11,700 a month after instalments. Sean says live on it, and don't buy more.",
+      "viewerQuestion": "Should he live on the rental surplus, or withdraw from his flexi loans to buy more properties before he loses his business income for loan applications?",
+      "answer": "Live on the surplus and don't buy more. Eight properties already pay him more than his family spends, the loans are being paid down by tenants, and the priority now is his health and time with his son.",
+      "points": [
+        "The portfolio already works three ways",
+        "Parking cash in a flexi loan was right",
+        "He can sell one when he needs cash",
+        "Investing early bought the choice"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "retiring-with-six-properties",
       "title": "We'll retire with six properties. What should we sell, and when?",
       "date": "2025-08-05",
@@ -1285,6 +2064,25 @@
         "Know what the money is for",
         "Timing the sale can add value",
         "Their daughters' homes are a good lesson"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "returning-home-to-retire-portfolio",
+      "title": "Moving home to retire: keep, sell or refinance our two houses here?",
+      "date": "2025-02-01",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 272,
+      "tag": "Restructuring a portfolio",
+      "excerpt": "A family returning after 20 years abroad owns a landed house in Desa ParkCity and a stagnant leasehold townhouse in PJ. Sean says keep the first, sell the second, and choose a home by the life they want back.",
+      "viewerQuestion": "Should they sell or refinance the townhouse to buy a condo for rent and appreciation, or a landed home to retire in, and does a landed house in Desa ParkCity still have room to grow?",
+      "answer": "Keep the Desa ParkCity house: its rent already covers the loan, it costs nothing to hold, and gated landed homes there remain in demand. Sell the flat-priced leasehold townhouse while it can still fetch its value, then decide whether that money builds more investments or buys the home they want to retire in.",
+      "points": [
+        "Don't sell what costs nothing to hold",
+        "Gated landed homes hold value better",
+        "Refinancing releases less than it used to",
+        "Choose the home by the life you want"
       ],
       "aliases": [],
       "questions": []
@@ -1665,6 +2463,25 @@
       ]
     },
     {
+      "id": "strata-or-individual-title-landed",
+      "title": "Strata landed or individual title: which kind of landed home to buy?",
+      "date": "2024-11-21",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Landed strata",
+      "excerpt": "At a talk in Batu Kawan, Sean explains the difference between gated landed strata homes and traditional individual-title houses, from security and maintenance to who will buy at RM1.8 million.",
+      "viewerQuestion": "What is the difference between landed strata and individual-title homes, and which holds its value better?",
+      "answer": "Landed strata costs more up front and comes with rules and maintenance fees, but gives security, planned infrastructure and a say over the neighbourhood. Sean expects most future landed homes to be strata, and individual-title prices to hit a ceiling because buyers at that level expect security.",
+      "points": [
+        "You pay for planning",
+        "Rules limit renovation",
+        "Individual titles hide their upkeep",
+        "Who buys at RM1.8 million?"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "student-accommodation-investment-risk",
       "title": "Is a student-rental unit near Sunway a good investment?",
       "date": "2025-08-26",
@@ -1722,6 +2539,25 @@
       "questions": []
     },
     {
+      "id": "ten-properties-ten-years",
+      "title": "I want 10 properties in 10 years on RM5,500 a month. Too aggressive?",
+      "date": "2025-05-22",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 284,
+      "tag": "Portfolio pace",
+      "excerpt": "A 29-year-old with RM50,000 saved wants positive cash flow and ten properties within 15 years. Sean explains cash back against cash flow, how rent drives a high-rise's value, and why to go slowly.",
+      "viewerQuestion": "Should YK take high cash back with negative cash flow, how is capital growth judged, is buying three units in quick succession overcommitting, and should spare cash go into a flexi loan?",
+      "answer": "Take positive cash flow over cash back where possible, buy one unit at a time and get each one rented before the next, and build up salary first. Ten properties in ten years on RM5,500 a month is a target nobody else has set.",
+      "points": [
+        "Cash back is borrowed money",
+        "Rent sets a high-rise's value",
+        "Studios suit only expensive land",
+        "Active income drives the portfolio"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "tenant-not-paying-rent",
       "title": "My tenant has stopped paying rent. What can I legally do?",
       "date": "2026-05-25",
@@ -1760,6 +2596,25 @@
       ]
     },
     {
+      "id": "tenant-paying-rent-in-advance",
+      "title": "My tenant wants to pay six months upfront. Will it hurt my next loan?",
+      "date": "2025-04-29",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 281,
+      "tag": "Rental income records",
+      "excerpt": "A 26-year-old in Kota Kinabalu bought a subsale condo below market value and rented it out the day renovation finished. Sean explains what he did right, and why rent paid six months at a time can cost him his next loan.",
+      "viewerQuestion": "Will rent paid every six months, rather than monthly, affect his income assessment when he applies for a second property?",
+      "answer": "Yes, it will. Banks look at rental income month by month in your bank statements, so lump sums or uneven amounts may not be counted, and that can cost him the next property. Ask the tenant to pay the same amount every month instead.",
+      "points": [
+        "Banks want steady monthly credits",
+        "Keep repairs separate from rent",
+        "Subsale lets you negotiate",
+        "Stay ready for the deal"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
       "id": "third-property-buying-channel",
       "title": "Should my third property be subsale, auction, new or bulk purchase?",
       "date": "2026-01-19",
@@ -1774,6 +2629,44 @@
         "A bigger discount beats a standard one",
         "Auctions carry hidden problems",
         "Her business may out-earn her job"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "three-tod-projects-equal-cash-flow",
+      "title": "Three transit-linked condos, same cash flow. How do I choose?",
+      "date": "2024-06-30",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 256,
+      "tag": "Comparing projects",
+      "excerpt": "A 40-year-old civil servant in Johor Bahru has shortlisted three new transit-linked serviced apartments in the Klang Valley for cash flow. Sean explains what to compare after cash flow, and why she must visit in person.",
+      "viewerQuestion": "If all three give similar cash flow, what should decide it, how much does walkable convenience matter, why are some Mont Kiara subsales so cheap, and how should she judge bulk-purchase units near KLCC with cash back?",
+      "answer": "After cash flow, compare each project's price with the median of past transactions around it, and the cash each needs up front. Walkable shops and transit genuinely justify higher rent. And living in Johor is no reason to buy new: visit the sites, and consider subsales and bulk-purchase deals too.",
+      "points": [
+        "Below-median prices leave room to grow",
+        "Upfront cash differs by deal",
+        "Older units are cheap for a reason",
+        "Prime location is not enough"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "transit-oriented-development-explained",
+      "title": "Is a condo linked to a train station a better buy?",
+      "date": "2018-05-18",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "TOD",
+      "excerpt": "Every new project near an MRT or LRT station now calls itself a TOD. Sean explains what transit-oriented development means, who it suits, and the trade-off between convenience and security.",
+      "viewerQuestion": "What is a transit-oriented development, and is a home in one a better buy?",
+      "answer": "A TOD is built around public transport, so residents can live, work and shop without relying on a car. That makes it strong for rental to young workers, but the same accessibility brings crowds, noise and weaker security, so it suits investors and singles better than families who want privacy.",
+      "points": [
+        "Young tenants want the link",
+        "Easy access cuts both ways",
+        "Someone pays for the walkways",
+        "Compartmentalisation matters"
       ],
       "aliases": [],
       "questions": []
@@ -1831,6 +2724,25 @@
         "Weekdays are most of your life",
         "Don't buy for a once-a-month view",
         "Bigger isn't always better"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "what-to-check-in-your-spa",
+      "title": "What should I actually check in my sale and purchase agreement?",
+      "date": "2019-05-05",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Sale and purchase agreement",
+      "excerpt": "Most buyers initial every page of their SPA without reading it. Sean goes through his own landed strata agreement and points out the clauses that protect a buyer of a new property.",
+      "viewerQuestion": "Which parts of a sale and purchase agreement should a buyer actually read and understand?",
+      "answer": "Read the whole agreement, and know the clauses that give you leverage: the stated price, the payment schedule, the schedule of finishes, the conditions for vacant possession, area adjustments and the defect liability period.",
+      "points": [
+        "Taxes follow the stated price and date",
+        "The payment schedule is fixed for homes",
+        "Finishes are described, not branded",
+        "Keys need a certificate, and facilities too"
       ],
       "aliases": [],
       "questions": []
@@ -1904,6 +2816,44 @@
         "What does an executor do when distributing properties?",
         "How are outstanding housing loans handled when the owner dies?"
       ]
+    },
+    {
+      "id": "young-buyer-mistakes-new-launches",
+      "title": "What mistakes do young buyers make in a slow market?",
+      "date": "2019-09-16",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Common mistakes",
+      "excerpt": "In 2019, with sales slow and developers offering ever more rebates, Sean's inbox filled with young buyers in trouble. He lists four: abandoned projects, signing before the loan, buying with a partner, and overgearing.",
+      "viewerQuestion": "What are the most common mistakes young buyers make, and how can they be avoided?",
+      "answer": "Four keep recurring: buying from developers who may abandon the project, signing the SPA before the loan is approved, buying with a boyfriend or girlfriend, and spending the cash back from heavily discounted deals. Be patient, check your loan eligibility first, and buy only what you can afford.",
+      "points": [
+        "Abandoned projects still cost you",
+        "Never sign the SPA before the loan",
+        "Don't buy with a partner",
+        "Cash back tempts overspending"
+      ],
+      "aliases": [],
+      "questions": []
+    },
+    {
+      "id": "young-couple-first-home-budget",
+      "title": "We're 26 and earn RM20,000 together. Is an RM800,000 home too much?",
+      "date": "2024-07-26",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 257,
+      "tag": "Own-stay budget",
+      "excerpt": "A debt-free couple of 26 with RM300,000 in savings want a new launch of RM700,000 to RM900,000 to start a family in. Sean says they can afford it, with two conditions, and how to judge a building before it exists.",
+      "viewerQuestion": "Is that price too high for their income, can he borrow in his name alone, should they buy new now or subsale later, and how can they judge a building's common areas before it is built?",
+      "answer": "They can afford it, and his RM10,000 income alone roughly qualifies at three times the instalment. Two conditions: don't pay much above the area's median price, and check that rent for similar units nearby covers about 85% of the instalment, so the home can be rented out when the family outgrows it.",
+      "points": [
+        "The 85% rule protects the upgrade",
+        "Don't overpay for romance",
+        "Banks judge today's income",
+        "Learn to read a floor plate"
+      ],
+      "aliases": [],
+      "questions": []
     }
   ]
 }

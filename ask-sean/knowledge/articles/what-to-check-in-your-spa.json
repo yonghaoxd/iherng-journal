@@ -1,0 +1,53 @@
+{
+  "id": "what-to-check-in-your-spa",
+  "series": "buyer-guides",
+  "title": "What should I actually check in my sale and purchase agreement?",
+  "excerpt": "Most buyers initial every page of their SPA without reading it. Sean goes through his own landed strata agreement and points out the clauses that protect a buyer of a new property.",
+  "date": "2019-05-05",
+  "tag": "Sale and purchase agreement",
+  "question": {
+    "asker": "",
+    "context": "Buyers of new properties sign and initial every page of the sale and purchase agreement, but few know what is in it. When there is a dispute, the agreement is what the developer and the housing tribunal go by, and developers know it inside out.",
+    "text": "Which parts of a sale and purchase agreement should a buyer actually read and understand?"
+  },
+  "answer": {
+    "quote": "go and read through the entire agreement",
+    "summary": "Read the whole agreement, and know the clauses that give you leverage: the stated price, the payment schedule, the schedule of finishes, the conditions for vacant possession, area adjustments and the defect liability period."
+  },
+  "reasons": [
+    {
+      "title": "Taxes follow the stated price and date",
+      "body": "Stamp duty, legal fees and real property gains tax are based on the price in the SPA, not on what you pay after cash back. The date sets your holding period; in 2019, selling after five years cut the gains tax on residential property to 5%."
+    },
+    {
+      "title": "The payment schedule is fixed for homes",
+      "body": "For residential titles, the law fixes how much a developer can claim at each construction stage, with the last 2.5% held for the defect period. Commercial titles have no such protection, so a developer can claim, say, 40% early and you pay interest on it for years."
+    },
+    {
+      "title": "Finishes are described, not branded",
+      "body": "The schedule of finishes lists materials room by room, such as tiles or laminated timber, usually without grade or brand. It is still the only description of what you are owed."
+    },
+    {
+      "title": "Keys need a certificate, and facilities too",
+      "body": "A developer can only hand over once a certificate of completion and compliance is issued. In strata projects, common facilities must be finished at the same time, or late-delivery damages run at 10% a year of the price."
+    }
+  ],
+  "actions": [
+    "Check the stamping date and the stated purchase price.",
+    "Confirm whether your title is residential or commercial, and read the payment schedule.",
+    "Compare your plot or unit area with the plan; differences above 2% adjust the price.",
+    "Note restrictions on changing your facade or colours in a strata development.",
+    "Report defects within the 24-month defect liability period; if the developer doesn't fix them in 30 working days, a registered contractor's cost can be deducted from the 2.5% retention."
+  ],
+  "caveat": "Subsale and commercial agreements can differ from the standard form for new homes, and the tax rates mentioned date from 2019; check current rules with your lawyer.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this 2019 video, in which he goes through his own SPA for a landed strata home. The quoted line is verbatim; everything else is paraphrased. Some figures in the captions were unclear and are left out.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "enJVVeBwqE8",
+    "title": "WHAT'S IN YOUR SPA ?!",
+    "duration": "12:16",
+    "url": "https://www.youtube.com/watch?v=enJVVeBwqE8"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/what-to-check-in-your-spa"
+}

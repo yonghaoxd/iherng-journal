@@ -1,0 +1,53 @@
+{
+  "id": "cash-back-or-positive-cash-flow",
+  "series": "buyer-guides",
+  "title": "Cash back on a new launch, or a lower loan with positive cash flow?",
+  "excerpt": "Developers now offer free legal fees, furniture and even cash back, but the extras inflate the loan. Sean explains how rebates work and when cash in hand beats a unit whose rent covers its instalment.",
+  "date": "2020-04-11",
+  "tag": "Rebates and cash back",
+  "question": {
+    "asker": "",
+    "context": "A conventional purchase needs about 18% of the price in cash, around RM90,000 for a RM500,000 unit. Developers have responded with rebates that grow ever more generous: waived legal fees and stamp duty, free kitchen cabinets or full furnishing, and cash back, where the bank values a unit above the price you actually pay.",
+    "text": "Is it better to take a new launch with big rebates and cash back, or pay a down payment to borrow less and have rent cover the instalment?"
+  },
+  "answer": {
+    "quote": "your rental is in accordance to market value",
+    "summary": "Rebates are built into a higher price and loan, so a new launch rarely has positive cash flow: rent follows the market, not your instalment. If you have cash, paying down to borrow less is safer. Cash back only helps if you use it to cover the monthly gap, not to spend."
+  },
+  "reasons": [
+    {
+      "title": "Free extras raise the loan",
+      "body": "A unit worth RM500,000 can carry an SPA price of RM600,000 to RM650,000 once rebates are included. Borrowing RM650,000 instead of RM450,000 makes a big difference to the instalment."
+    },
+    {
+      "title": "Rent doesn't care what you paid",
+      "body": "Owners often set the asking rent from their instalment, but tenants pay what similar units fetch. A unit financed at an inflated price will struggle to break even."
+    },
+    {
+      "title": "Cash back can bridge the gap",
+      "body": "If the instalment is RM3,000 and rent RM1,800, cash back can cover the RM1,200 difference for a few years while rents rise, leaving your own savings free to invest elsewhere."
+    },
+    {
+      "title": "Sudden cash changes habits",
+      "body": "Buyers who receive RM30,000 to RM50,000 in cash back often feel richer and spend it. Without discipline, the buffer is gone before the shortfall begins."
+    }
+  ],
+  "actions": [
+    "Compare the SPA price with the unit's likely market value after handover.",
+    "Check market rents for similar units, not your instalment, to estimate income.",
+    "If taking cash back, work out how many months of shortfall it will cover.",
+    "Keep cash back in a separate account reserved for the property.",
+    "Resist 'book today' offers until you have done the numbers."
+  ],
+  "caveat": "Sean put this to his audience as an open question in April 2020, when cash in hand mattered more. The best case is a unit with both cash back and positive cash flow.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this April 2020 'question of the week' video. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "CaMZs-wY8Ds",
+    "title": "CASH BACK ON HAND VS CASH FLOW POSITIVE ?? | QUESTION OF THE WEEK",
+    "duration": "8:17",
+    "url": "https://www.youtube.com/watch?v=CaMZs-wY8Ds"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/cash-back-or-positive-cash-flow"
+}

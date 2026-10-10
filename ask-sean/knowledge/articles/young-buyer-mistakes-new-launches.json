@@ -1,0 +1,53 @@
+{
+  "id": "young-buyer-mistakes-new-launches",
+  "series": "buyer-guides",
+  "title": "What mistakes do young buyers make in a slow market?",
+  "excerpt": "In 2019, with sales slow and developers offering ever more rebates, Sean's inbox filled with young buyers in trouble. He lists four: abandoned projects, signing before the loan, buying with a partner, and overgearing.",
+  "date": "2019-09-16",
+  "tag": "Common mistakes",
+  "question": {
+    "asker": "",
+    "context": "In 2019 property sales were weak, smaller developers were short of cash, and agents and speakers pushed generous promotions. Young buyers, anxious that prices would leave them behind, rushed in, and many wrote to Sean after things went wrong.",
+    "text": "What are the most common mistakes young buyers make, and how can they be avoided?"
+  },
+  "answer": {
+    "quote": "don't buy things that you cannot afford",
+    "summary": "Four keep recurring: buying from developers who may abandon the project, signing the SPA before the loan is approved, buying with a boyfriend or girlfriend, and spending the cash back from heavily discounted deals. Be patient, check your loan eligibility first, and buy only what you can afford."
+  },
+  "reasons": [
+    {
+      "title": "Abandoned projects still cost you",
+      "body": "If a developer goes under after the structure is built, the bank has already paid out, say, 20% of a RM500,000 price, and you keep paying interest on RM100,000 for an unfinished building. Residential projects under the Housing Development Act have more protection; commercial ones don't."
+    },
+    {
+      "title": "Never sign the SPA before the loan",
+      "body": "A booking fee is usually refundable, but once the SPA is signed you are bound. Developers offer an extra 1% to sign quickly; if the loan is then rejected, you can lose your deposit."
+    },
+    {
+      "title": "Don't buy with a partner",
+      "body": "Sean gets many emails about properties shared with an ex. Share a purchase with siblings, parents or business-minded investors, not a boyfriend or girlfriend."
+    },
+    {
+      "title": "Cash back tempts overspending",
+      "body": "Using cash back to cover the monthly shortfall is a valid strategy. The danger is the sudden sum in the bank going on a car or holidays, leaving nothing when the instalments bite."
+    }
+  ],
+  "actions": [
+    "Check the developer's company records, track record and any blacklist before booking.",
+    "Find out how much you can borrow before you visit sales galleries.",
+    "Sign the SPA only after your loan is approved.",
+    "Keep cash back in a separate account for the property.",
+    "Take time to research rather than rushing out of fear of missing out."
+  ],
+  "caveat": "Some of the rebates Sean describes were expected to tighten after 2019. Buyers who understand the numbers can still use discounted deals, provided they can carry the commitment.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this September 2019 video. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "EOobmvu5vy8",
+    "title": "WORST MISTAKES FOR YOUNG INVESTORS (2019)",
+    "duration": "10:18",
+    "url": "https://www.youtube.com/watch?v=EOobmvu5vy8"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/young-buyer-mistakes-new-launches"
+}

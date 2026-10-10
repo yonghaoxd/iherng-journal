@@ -1,0 +1,53 @@
+{
+  "id": "fire-insurance-for-landed-homes",
+  "series": "buyer-guides",
+  "title": "Do I need my own fire insurance for a landed house?",
+  "excerpt": "Many owners assume MRTA or MLTA is the only insurance they need. Sean explains what fire insurance covers for an individual-title house, how to set the sum insured, and that the bank's bundled policy is optional.",
+  "date": "2021-06-11",
+  "tag": "Home insurance",
+  "question": {
+    "asker": "",
+    "context": "Home buyers usually think of mortgage insurance, MRTA or MLTA, but a house also needs cover against fire and other damage. Banks typically bundle a fire policy with the loan, and many owners don't know what it covers or that they can choose another.",
+    "text": "What does home or fire insurance cover, who needs to buy it, and how much cover is enough?"
+  },
+  "answer": {
+    "quote": "there's one more thing which is called fire insurance",
+    "summary": "If you own an individual-title house, you need your own cover; in a strata building, the joint management body insures the building. Insure the cost of rebuilding, not the market price, and compare policies, since you don't have to take the one bundled with your loan."
+  },
+  "reasons": [
+    {
+      "title": "It covers more than fire",
+      "body": "Policies now cover the building, its contents and add-ons: flood, landslide, burglary damage, burst pipes and gas explosions, and for landlords, lost rent if a tenant leaves early and malicious damage."
+    },
+    {
+      "title": "Strata owners are covered differently",
+      "body": "For condos and other strata titles, insuring the building is the joint management body's responsibility, so this matters most for individual-title terrace houses."
+    },
+    {
+      "title": "Insure the rebuilding cost",
+      "body": "A house worth RM2 million may cost far less to rebuild, since the land is not destroyed. The sum insured should cover materials, contractors and consultants to rebuild it."
+    },
+    {
+      "title": "The loan keeps running",
+      "body": "If the house becomes uninhabitable, the bank still expects instalments. Some policies add cover for instalments in that case, and for common landed problems such as roof leaks and termites."
+    }
+  ],
+  "actions": [
+    "Check whether your current policy, often bundled with your loan, covers flood and contents.",
+    "Work out the rebuilding cost of your house, not its market value.",
+    "Compare quotes from other insurers before renewing the bank's package.",
+    "Add landlord cover if the house is rented out.",
+    "Remind parents in older landed homes to check their cover."
+  ],
+  "caveat": "Switching away from a bank-bundled policy can mean paperwork for a saving of a few hundred ringgit a year. Earthquake cover was not discussed.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this 2021 video, which he made after being approached by someone at Tune Protect and which features Tune Protect's home insurance and promotions. The general points are kept and the product details and prices are left out. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "5HY43sm0PQc",
+    "title": "PROPERTY INSURANCE, HOME CARE, CHEAPEST FIRE INSURANCE",
+    "duration": "10:23",
+    "url": "https://www.youtube.com/watch?v=5HY43sm0PQc"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/fire-insurance-for-landed-homes"
+}

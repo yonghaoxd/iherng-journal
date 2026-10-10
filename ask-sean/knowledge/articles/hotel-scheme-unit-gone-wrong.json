@@ -1,0 +1,53 @@
+{
+  "id": "hotel-scheme-unit-gone-wrong",
+  "series": "iherng-podcast",
+  "title": "Our hotel-scheme unit has paid nothing and won't sell. What now?",
+  "excerpt": "Two siblings bought a serviced apartment leased back to a hotel operator with a guaranteed return. It completed four years late and has paid nothing since. Sean lists the red flags and their few ways out.",
+  "date": "2025-02-24",
+  "tag": "Guaranteed returns",
+  "question": {
+    "asker": "From Mr K, a viewer who wrote in by email",
+    "context": "Mr K and his sister jointly bought a serviced apartment as an investment, leased back to a hotel operator under a guaranteed rental return. It completed more than four years late; they sued for late delivery and won. The operator, which shared an office with the developer, never paid them; they won judgment against it, but it is a RM2 company. There is still no strata title and no AGM, and unknown companies bill them for utilities and maintenance. They could not find a buyer even at RM210,000 below their purchase price.",
+    "text": "What can they do with a unit that pays nothing and cannot be sold?"
+  },
+  "answer": {
+    "quote": "not all properties make money",
+    "summary": "There is no good way out. They can sell at a deeper loss and pay the bank the difference now, or keep paying the loan and wait on a rescue by a bigger developer that may never come. The real lessons are for buyers who have not yet signed for a scheme like this."
+  },
+  "reasons": [
+    {
+      "title": "Guaranteed returns are priced in",
+      "body": "A guaranteed 6% for five years is usually added to the price up front, so a unit worth RM500,000 is sold at about RM650,000 with a large discount. It only works if the operator and developer stay solvent and honest."
+    },
+    {
+      "title": "If it's so good, why share it?",
+      "body": "A developer with a profitable hotel would run it or partner with another developer. Selling rooms to hundreds of buyers is a way to raise cash from people who want an investment with no effort."
+    },
+    {
+      "title": "You may not control your own unit",
+      "body": "In a hotel-run building the key cards are held centrally, so owners often cannot rent their unit out themselves."
+    },
+    {
+      "title": "Selling below the loan costs cash",
+      "body": "If the loan is about RM800,000 and the unit sells for less, the owners must pay the bank the difference in cash. The alternative is to keep paying for years while the unit earns nothing."
+    }
+  ],
+  "actions": [
+    "Before buying, check that current rents nearby already cover the instalment you will pay at completion.",
+    "Avoid guaranteed-rental-return and hotel-leaseback schemes.",
+    "Avoid buying jointly with a relative unless each of you can carry the loss alone.",
+    "If stuck, work out whether you can afford to sell below the loan before cutting your losses.",
+    "Take complaints about a missing joint management body or strata title to the Commissioner of Buildings, and keep legal advice on disputed bills."
+  ],
+  "caveat": "Sean notes the worst case is the developer winding up altogether; while it is still operating, a takeover by a bigger developer remains a slim chance. For other buyers, distressed sellers in such buildings can be an opportunity if the price falls below replacement cost.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #275. The quoted line is verbatim; everything else is paraphrased. Figures are as stated in February 2025. The developer and project are not named here. The episode is sponsored by The Makeover Guys, a renovation company.",
+  "askingSeanEpisode": 275,
+  "video": {
+    "id": "0jRa3NSrrUg",
+    "title": "ASKING SEAN #275 | THIS GOTTA BE THE WORST PROPERTY DEAL SO FAR",
+    "duration": "27:22",
+    "url": "https://www.youtube.com/watch?v=0jRa3NSrrUg"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/hotel-scheme-unit-gone-wrong"
+}

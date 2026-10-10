@@ -1,0 +1,53 @@
+{
+  "id": "renovation-mistakes-to-avoid",
+  "series": "buyer-guides",
+  "title": "What renovation mistakes should I avoid when I get my keys?",
+  "excerpt": "Sean watches a Singapore couple's list of renovation regrets and adds what he has learnt fitting out units. Cracks, lights, switches, power points, aircon piping and tile lines are the usual culprits.",
+  "date": "2022-12-15",
+  "tag": "Renovation",
+  "question": {
+    "asker": "",
+    "context": "With many viewers getting their keys around New Year, Sean reviews a video in which a Singapore couple list their renovation regrets, and adds his own experience from architecture and from furnishing investment units in Malaysia.",
+    "text": "Which renovation details do new owners most often get wrong, and how can they be avoided?"
+  },
+  "answer": {
+    "quote": "two-way switch is very very useful",
+    "summary": "Plan the details that are expensive to undo: where lights hang over furniture, where switches and power points go, how aircon piping runs, and how tiles line up. Most regrets come from fixing these before the furniture and daily routine are known."
+  },
+  "reasons": [
+    {
+      "title": "Different materials crack where they meet",
+      "body": "Joints between timber, brick, concrete, steel and glass crack as buildings move slightly. Wire mesh under the plaster helps; otherwise expect hairline cracks to return after repainting. A crack in a beam is a different and serious matter."
+    },
+    {
+      "title": "Measure furniture before fixing lights",
+      "body": "A pendant fixed over the planned dining spot ends up off-centre once a sideboard arrives. Allow about 90 cm of walking clearance, and measure large pieces before buying."
+    },
+    {
+      "title": "Switches and sockets by where you use them",
+      "body": "Two-way switches, or a bedside lamp, save getting up to switch off the light. A master bedroom needs three or four power points in the right places, plus one near a mirror for a hair dryer."
+    },
+    {
+      "title": "Ready aircon points save trouble",
+      "body": "Adding aircon later means boxing up piping and running new wiring, often across bathrooms or ceilings. Units handed over with aircon points and trunking save money and mess."
+    }
+  ],
+  "actions": [
+    "Decide your furniture layout before fixing lighting points.",
+    "Add two-way switches or bedside lighting in bedrooms.",
+    "Place power points where you will use devices, rather than adding more.",
+    "Agree the aircon piping route with the installer before work starts.",
+    "Ask the tiler to start from the floor trap and align grout lines between walls and floors."
+  ],
+  "caveat": "The regrets come from a Singapore flat, so some details differ in Malaysian units. If budget allows, an interior designer can coordinate separate contractors so finishes match.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this December 2022 video, in which he reacts to a Singapore couple's renovation video; the regrets listed are theirs, and the advice is Sean's commentary. The quoted line is verbatim; everything else is paraphrased. Sean works with The Makeover Guys, a renovation company he mentions.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "pYB8aiREEfs",
+    "title": "10 RENOVATION MISTAKES not DONE BY ME",
+    "duration": "23:49",
+    "url": "https://www.youtube.com/watch?v=pYB8aiREEfs"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/renovation-mistakes-to-avoid"
+}
