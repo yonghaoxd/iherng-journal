@@ -190,25 +190,18 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
   );
 }
 
-const SITUATION_FIELDS = [
-  {
-    key: 'goal',
-    label: '你想达成什么',
-    placeholder: '例如：买第一间自住房、投资出租、给家人换大一点的房子',
-    rows: 1,
-  },
-  {
-    key: 'current',
-    label: '现在的情况',
-    placeholder: '例如：月入、存款、年龄、家庭成员、已有几间房、预算、想买的地区',
-    rows: 2,
-  },
-  {
-    key: 'tried',
-    label: '已经看过或考虑过什么',
-    placeholder: '例如：看过哪些项目、银行批了多少贷款、家人的意见',
-    rows: 1,
-  },
+/**
+ * What viewers who write in to Asking Sean usually tell him, and what his answers
+ * turn on. Tapping one starts a line for it in the situation box.
+ */
+const SITUATION_PROMPTS = [
+  '年龄',
+  '税后月入',
+  '存款',
+  '每月贷款和开销',
+  '已有房产',
+  '家庭状况',
+  '自住还是投资',
 ] as const;
 
 /** Only the fields with something in them, or nothing when all are empty. */
@@ -228,27 +221,59 @@ interface SituationControl {
 
 /** "结合我的处境": optional details that shape one private answer. */
 function SituationFields({ value, onChange }: Pick<SituationControl, 'value' | 'onChange'>) {
+  const boxRef = useRef<HTMLTextAreaElement>(null);
+  const current = value.current ?? '';
+  const addPrompt = (prompt: string) => {
+    const line = `${prompt}：`;
+    let next = current;
+    if (!current.includes(line)) {
+      const separator = current && !current.endsWith('\n') ? '\n' : '';
+      next = `${current}${separator}${line}`.slice(0, MAX_SITUATION_CHARS);
+      onChange({ current: next });
+    }
+    requestAnimationFrame(() => {
+      const box = boxRef.current;
+      if (!box) return;
+      box.focus();
+      const end = next.indexOf(line) + line.length;
+      const lineEnd = next.indexOf('\n', end);
+      const cursor = lineEnd === -1 ? next.length : lineEnd;
+      box.setSelectionRange(cursor, cursor);
+    });
+  };
   return (
     <div className="askbot-situation">
       <p className="askbot-situation-intro">
-        说清楚处境，回答会结合你的目标和现状，也会指出还缺什么资料。三项都可以空着，只写你愿意分享的。
+        说说你的情况，回答会套用到你身上，也会指出还缺什么资料。只写你愿意分享的。
       </p>
       <p className="askbot-situation-privacy">
         <Lock size={13} aria-hidden="true" />
         这里的内容只用来生成这次回答：回答只有你看得到，不会公开，我们也不保存。请不要写姓名、电话或地址。
       </p>
-      {SITUATION_FIELDS.map((field) => (
-        <label key={field.key} className="askbot-situation-field">
-          <span>{field.label}</span>
-          <textarea
-            rows={field.rows}
-            maxLength={MAX_SITUATION_CHARS}
-            placeholder={field.placeholder}
-            value={value[field.key] ?? ''}
-            onChange={(event) => onChange({ ...value, [field.key]: event.target.value })}
-          />
-        </label>
-      ))}
+      <label className="askbot-situation-field">
+        <span>你的现况</span>
+        <textarea
+          ref={boxRef}
+          rows={4}
+          maxLength={MAX_SITUATION_CHARS}
+          placeholder="例如：32 岁，已婚，一个孩子；税后月入 RM8,000，存款 RM60,000；车贷每月 RM900；名下还没有房，想买自住。"
+          value={current}
+          onChange={(event) => onChange({ current: event.target.value })}
+        />
+      </label>
+      <div className="askbot-situation-prompts" aria-label="点一下加入这一项">
+        <span>点一下加入：</span>
+        {SITUATION_PROMPTS.map((prompt) => (
+          <button
+            key={prompt}
+            type="button"
+            className={current.includes(`${prompt}：`) ? 'used' : ''}
+            onClick={() => addPrompt(prompt)}
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

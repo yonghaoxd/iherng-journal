@@ -4212,6 +4212,42 @@ p {
   border-color: var(--accent-terracotta);
 }
 
+/* Tap-to-add prompts for the details Sean's answers usually turn on. */
+.askbot-situation-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: -4px;
+}
+
+.askbot-situation-prompts span {
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
+.askbot-situation-prompts button {
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.askbot-situation-prompts button:hover {
+  color: var(--accent-terracotta);
+  border-color: rgba(255, 107, 61, 0.35);
+}
+
+.askbot-situation-prompts button.used {
+  color: var(--accent-terracotta);
+  background: var(--accent-terracotta-soft);
+  border-color: rgba(255, 107, 61, 0.35);
+}
+
 .askbot-private {
   display: inline-flex;
   align-items: center;
