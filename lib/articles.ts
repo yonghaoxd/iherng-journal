@@ -97,6 +97,16 @@ import maxwellResidences from '@/content/articles/maxwell-residences-taiping.jso
 import jendelaResidences from '@/content/articles/jendela-residences-bukit-kiara.json';
 import enlaceSuites from '@/content/articles/enlace-suites-pantai-sentral-park.json';
 import khayaResidence from '@/content/articles/khaya-residence-bangsar.json';
+import emptyLandedHouse from '@/content/articles/empty-landed-house-hold-or-sell.json';
+import failedAirbnbStudios from '@/content/articles/failed-airbnb-studio-investment.json';
+import bulkPurchaseSecond from '@/content/articles/bulk-purchase-second-property.json';
+import firstInvestmentUnit from '@/content/articles/first-investment-unit-questions.json';
+import tenPropertiesTenYears from '@/content/articles/ten-properties-ten-years.json';
+import rentInAdvance from '@/content/articles/tenant-paying-rent-in-advance.json';
+import cashBuyingCondos from '@/content/articles/cash-buying-condos-to-retire.json';
+import disasterProtection from '@/content/articles/disasters-and-property-protection.json';
+import newlywedsWhereToLive from '@/content/articles/newlyweds-where-to-live.json';
+import familyApartment from '@/content/articles/moving-into-family-apartment.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -171,6 +181,16 @@ export const articles = [
   sellingFamilyHome,
   secondPropertySubsale,
   investingAt60,
+  emptyLandedHouse,
+  failedAirbnbStudios,
+  bulkPurchaseSecond,
+  firstInvestmentUnit,
+  tenPropertiesTenYears,
+  rentInAdvance,
+  cashBuyingCondos,
+  disasterProtection,
+  newlywedsWhereToLive,
+  familyApartment,
   firstHome,
   apartment,
   location,
