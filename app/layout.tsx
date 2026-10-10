@@ -4,7 +4,7 @@ import { ArrowUpRight, Building2, Mic, BookOpen, Heart } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
 import { AIherngName } from '@/components/aiherng-name';
-import { seriesCount } from '@/lib/articles';
+import { articles, seriesCount } from '@/lib/articles';
 import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
 import { DEFAULT_OG_IMAGE, SITE_URL, websiteJsonLd } from '@/lib/seo';
@@ -63,6 +63,14 @@ export const metadata: Metadata = {
   },
 };
 
+// The banner points to the newest write-up, whichever series it is in.
+const latest = [...articles].sort((a, b) => b.date.localeCompare(a.date))[0];
+const LATEST_LABEL: Record<string, string> = {
+  'property-reviews': 'NEW REVIEW',
+  'iherng-podcast': 'NEW ON ASKING SEAN',
+  'buyer-guides': 'NEW GUIDE',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -94,11 +102,11 @@ export default function RootLayout({
         <div className="top-edition-banner">
           <div className="container banner-inner">
             <span className="banner-left">
-              <strong>THE IHERNG JOURNAL</strong> · CURATED VIDEO ESSAYS &amp; NOTES
+              <strong>THE IHERNG JOURNAL</strong> · NOTES ON SEAN TAN&apos;S YOUTUBE CHANNEL
             </span>
-            <span className="banner-right">
-              FEATURING PROPERTY REVIEWS &amp; ASKING SEAN PODCAST
-            </span>
+            <Link className="banner-right" href={`/articles/${latest.slug}`}>
+              {LATEST_LABEL[latest.series]}: <strong>{latest.shortTitle}</strong> →
+            </Link>
           </div>
         </div>
 
@@ -142,8 +150,8 @@ export default function RootLayout({
                 <small className="wordmark-tag">JOURNAL</small>
               </Link>
               <p className="footer-tagline">
-                An independent editorial reading companion to Sean Tan&apos;s YouTube channel.
-                Translating in-depth video analyses into readable, actionable insights.
+                An independent site that writes up Sean Tan&apos;s YouTube videos, each with a
+                link back to the original episode.
               </p>
               <div className="footer-badges">
                 <span className="badge-pill">

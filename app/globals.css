@@ -171,6 +171,17 @@ p {
   letter-spacing: 1px;
 }
 
+.banner-right strong {
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.banner-right:hover,
+.banner-right:hover strong {
+  color: var(--accent-terracotta);
+}
+
 @media (max-width: 768px) {
   .banner-right {
     display: none;

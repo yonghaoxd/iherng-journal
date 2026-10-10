@@ -75,29 +75,29 @@ def main() -> None:
     tracked(
         draw,
         (88, 132),
-        "EDITORIAL COMPANION  ·  INDEPENDENT CURATION",
+        "NOTES ON SEAN TAN'S YOUTUBE CHANNEL",
         font(SANS_BOLD, 19),
         TEXT_SUBTLE,
         3.2,
     )
 
-    draw.text((84, 196), "A little perspective.", font=font(SANS_BOLD, 72), fill=TEXT_MAIN)
+    draw.text((84, 196), "Malaysian property,", font=font(SANS_BOLD, 72), fill=TEXT_MAIN)
     draw.text(
         (84, 288),
-        "A better place to call home.",
+        "as Sean Tan sees it.",
         font=font(SERIF_ITALIC, 74),
         fill=TERRACOTTA,
     )
 
     draw.text(
         (88, 404),
-        "Malaysian property walkthroughs, honest conversations and",
+        "Project reviews, viewers' questions and buyer guides,",
         font=font(SANS, 27),
         fill=TEXT_MUTED,
     )
     draw.text(
         (88, 442),
-        "practical buyer playbooks from Sean Tan (@iherng).",
+        "each written up from one of his videos.",
         font=font(SANS, 27),
         fill=TEXT_MUTED,
     )

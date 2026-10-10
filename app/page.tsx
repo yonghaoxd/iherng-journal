@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {
   ArrowRight,
-  Sparkles,
+  NotebookPen,
   Building2,
   Headphones,
   BookOpen,
@@ -12,10 +12,11 @@ import {
   PodcastSection,
   BuyerGuidesSection,
 } from '@/components/journal';
-import { seriesCount, type SeriesKey } from '@/lib/articles';
+import { articles, seriesCount, type SeriesKey } from '@/lib/articles';
 import { AIherngName } from '@/components/aiherng-name';
 
-const storyCount = (seriesKey: SeriesKey) => `${String(seriesCount(seriesKey)).padStart(2, '0')} STORIES`;
+const countLabel = (seriesKey: SeriesKey, noun: string) =>
+  `${String(seriesCount(seriesKey)).padStart(2, '0')} ${noun}`;
 
 export default function Home() {
   return (
@@ -39,16 +40,17 @@ export default function Home() {
 
           <div className="hero-copy">
             <div className="edition-badge">
-              <Sparkles size={13} className="text-accent" />
-              <span>EDITORIAL COMPANION · INDEPENDENT CURATION</span>
+              <NotebookPen size={13} className="text-accent" />
+              <span>Notes on Sean Tan&apos;s YouTube channel</span>
             </div>
             <h1 className="intro-title">
-              A little perspective.<br />
-              <span className="serif-accent">A better place to call home.</span>
+              Malaysian property,<br />
+              <span className="serif-accent">as Sean Tan sees it.</span>
             </h1>
             <p className="intro-lead">
-              Malaysian property walkthroughs, honest conversations, and practical buyer
-              playbooks from Sean Tan (@iherng), distilled into focused, source-linked articles.
+              Sean visits projects around Malaysia, answers viewers who write in about their
+              money and homes, and explains loans and costs. Each video is written up here as a
+              few minutes&apos; read, with his own figures and a link back to the episode.
             </p>
 
             <div className="hero-actions">
@@ -85,12 +87,12 @@ export default function Home() {
               <div className="icon-badge">
                 <Building2 size={16} />
               </div>
-              <span className="series-episodes">{storyCount('property-reviews')}</span>
+              <span className="series-episodes">{countLabel('property-reviews', 'REVIEWS')}</span>
             </div>
             <h3>Property Reviews</h3>
-            <p>Room-by-room architectural inspections &amp; neighbourhood trade-offs.</p>
+            <p>Sean walks through a project and says what he likes and what he would question.</p>
             <div className="quick-footer">
-              <span>View collection</span>
+              <span>See all reviews</span>
               <ArrowRight size={14} />
             </div>
           </Link>
@@ -100,12 +102,12 @@ export default function Home() {
               <div className="icon-badge">
                 <Headphones size={16} />
               </div>
-              <span className="series-episodes">{storyCount('iherng-podcast')}</span>
+              <span className="series-episodes">{countLabel('iherng-podcast', 'EPISODES')}</span>
             </div>
             <h3>iherng Podcast</h3>
-            <p>Asking Sean: Candid discussions on mortgages, family, and homeownership.</p>
+            <p>Viewers share their income, savings and dilemma. Sean tells them what he would do.</p>
             <div className="quick-footer">
-              <span>View collection</span>
+              <span>See all episodes</span>
               <ArrowRight size={14} />
             </div>
           </Link>
@@ -115,12 +117,12 @@ export default function Home() {
               <div className="icon-badge">
                 <BookOpen size={16} />
               </div>
-              <span className="series-episodes">{storyCount('buyer-guides')}</span>
+              <span className="series-episodes">{countLabel('buyer-guides', 'GUIDES')}</span>
             </div>
             <h3>Buyer Guides</h3>
-            <p>Practical playbooks for research, financing, risk checks, renovation and ownership decisions.</p>
+            <p>Sean&apos;s answers to what every buyer asks: loans, hidden costs, subsale or new launch.</p>
             <div className="quick-footer">
-              <span>View collection</span>
+              <span>See all guides</span>
               <ArrowRight size={14} />
             </div>
           </Link>
@@ -143,9 +145,10 @@ export default function Home() {
             <span className="eyebrow">MEET THE CREATOR</span>
             <h2>Sean Tan (@iherng)</h2>
             <p>
-              Sean Tan has become one of Malaysia&apos;s most respected real estate commentators,
-              known for touring properties without sales hype. He breaks down floor plans, construction
-              quality, and financial realities with unvarnished honesty.
+              Sean runs iherng, a YouTube channel about buying property in Malaysia. He tours new
+              launches and finished projects, points out what works and what doesn&apos;t, and on
+              Asking Sean works through viewers&apos; own numbers. The iherng Journal is an
+              independent site, not made by Sean: it writes up his videos and links back to each one.
             </p>
             <div className="creator-badges">
               <div className="stat-box">
@@ -157,8 +160,8 @@ export default function Home() {
                 <span>YouTube Subscribers</span>
               </div>
               <div className="stat-box">
-                <strong>100%</strong>
-                <span>Independent Editorial</span>
+                <strong>{articles.length}</strong>
+                <span>Videos written up here</span>
               </div>
             </div>
           </div>

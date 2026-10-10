@@ -153,6 +153,9 @@ export function ArticleCard({
   );
 }
 
+// The homepage previews the newest few of each series; the series pages list them all.
+const HOME_PREVIEW = 6;
+
 export function PropertySection() {
   const propertyArticles = articles.filter(
     (a) => a.series === 'property-reviews'
@@ -170,17 +173,17 @@ export function PropertySection() {
             Property Reviews <span className="count-pill">{String(propertyArticles.length).padStart(2, '0')}</span>
           </h2>
           <p className="section-subtitle">
-            Walkthroughs of Malaysian homes with Sean. Step inside the spaces and look beyond the sales brochure.
+            The newest projects Sean has walked through, from show units to finished buildings.
           </p>
         </div>
         <Link className="editorial-btn" href="/property-reviews">
-          <span>Explore all reviews</span>
+          <span>All {propertyArticles.length} reviews</span>
           <ArrowRight size={16} />
         </Link>
       </div>
 
       <div className="article-grid">
-        {propertyArticles.map((a) => (
+        {propertyArticles.slice(0, HOME_PREVIEW).map((a) => (
           <ArticleCard key={a.slug} article={a} />
         ))}
       </div>
@@ -189,9 +192,8 @@ export function PropertySection() {
 }
 
 export function PodcastSection() {
-  // The homepage previews the latest three; the series page lists them all.
-  const podcastArticles = articles
-    .filter((a) => a.series === 'iherng-podcast')
+  const allEpisodes = articles.filter((a) => a.series === 'iherng-podcast');
+  const podcastArticles = [...allEpisodes]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
 
@@ -203,14 +205,14 @@ export function PodcastSection() {
           <span>SERIES 02 / IN CONVERSATION</span>
         </div>
         <h2>
-          Good questions.<br />
-          <em>Better perspectives.</em>
+          Viewers ask.<br />
+          <em>Sean answers.</em>
         </h2>
         <p>
-          Deep dives from the Asking Sean podcast on lifestyle choices, property expectations, and navigating the Malaysian housing market.
+          People write in with their salary, savings and the property they have in mind. Sean tells them whether to buy, wait or sell, and why.
         </p>
         <Link href="/iherng-podcast" className="podcast-cta-btn">
-          <span>Browse all podcast reads</span>
+          <span>All {allEpisodes.length} episodes</span>
           <ArrowUpRight size={18} />
         </Link>
       </div>
@@ -265,6 +267,8 @@ export function PodcastSection() {
 
 export function BuyerGuidesSection() {
   const guideArticles = articles.filter((a) => a.series === 'buyer-guides');
+  // Guides are registered in guide order, so the newest are at the end.
+  const newestGuides = guideArticles.slice(-HOME_PREVIEW).reverse();
 
   return (
     <section className="article-section" id="buyer-guides-preview">
@@ -275,20 +279,20 @@ export function BuyerGuidesSection() {
             <span className="eyebrow">SERIES 03 / THE PLAYBOOK</span>
           </div>
           <h2 className="section-title">
-            Buyer Guides &amp; Playbooks <span className="count-pill">{String(guideArticles.length).padStart(2, '0')}</span>
+            Buyer Guides <span className="count-pill">{String(guideArticles.length).padStart(2, '0')}</span>
           </h2>
           <p className="section-subtitle">
-            Practical frameworks for research, financing, risk checks, renovation and ownership decisions.
+            Sean&apos;s answers to the questions most buyers run into, with the steps to take.
           </p>
         </div>
         <Link className="editorial-btn" href="/buyer-guides">
-          <span>Explore all guides</span>
+          <span>All {guideArticles.length} guides</span>
           <ArrowRight size={16} />
         </Link>
       </div>
 
       <div className="article-grid">
-        {guideArticles.map((a) => (
+        {newestGuides.map((a) => (
           <ArticleCard key={a.slug} article={a} />
         ))}
       </div>
