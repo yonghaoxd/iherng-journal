@@ -1,6 +1,6 @@
 import siteConfig from '@/site.config.json';
 
-/** Shapes returned by the Ask Sean Worker (asking_iherng/worker/index.ts). */
+/** Shapes returned by the Ask Sean Worker (ask-sean/worker/index.ts). */
 export interface AskSource {
   marker?: string;
   id: string;
@@ -49,7 +49,7 @@ export interface AskFeedItem {
 export const MAX_QUESTION_CHARS = 300;
 export const MAX_SITUATION_CHARS = 400;
 
-/** Local development talks to `npm run worker:dev` in the asking_iherng project. */
+/** Local development talks to `npm run worker:dev` in ask-sean/. */
 function apiBase(): string {
   if (typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) {
     return 'http://127.0.0.1:8787';
