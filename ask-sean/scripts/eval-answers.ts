@@ -70,8 +70,9 @@ function problems(testCase: EvalCase, result: AskResult): string[] {
   if (uncited) found.push(`${uncited} paragraph(s) without a citation`);
 
   // Answers go straight to the solution; the source card shows the episode and its date.
+  // A general 我在节目里讲过 is allowed, and so is a year that dates a figure (这是 2019 年的数字).
   const background = result.body.match(
-    /(19|20)\d{2}\s*年|节目|这一?集|那一?集|Asking Sean #|episode|一位.{0,15}(观众|买家|租房者|夫妇|读者)/i,
+    /案例|这一?集|那一?集|这一?期|那一?期|Asking Sean #|episode|一位.{0,15}(观众|买家|租房者|夫妇|读者)/i,
   );
   if (background) found.push(`mentions the episode or viewer ("${background[0]}")`);
   for (const { article } of result.citations) {
@@ -81,8 +82,10 @@ function problems(testCase: EvalCase, result: AskResult): string[] {
     }
   }
 
-  // Direct advice is wanted, but it must read as Sean's, not the bot's own.
-  if (!/Sean/.test(`${result.tldr}\n${result.body}`)) found.push("advice not attributed to Sean");
+  // Answers speak as Sean in the first person (ANSWER_STYLE sean-8), never about him.
+  const text = `${result.tldr}\n${result.body}`;
+  if (!/我/.test(result.body)) found.push("not in Sean's first-person voice");
+  if (/Sean/.test(text)) found.push("refers to Sean in the third person");
   if ((result.body.match(CJK) ?? []).length < 50) found.push("not written in Chinese");
   return found;
 }

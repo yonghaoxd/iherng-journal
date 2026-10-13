@@ -1,6 +1,51 @@
-# iherng Journal
+# iherng Journal + AIherng
 
-A responsive editorial reading companion to iherng's YouTube channel, with fifty-three property-review articles, sixty-six Asking Sean podcast articles, and seventy buyer guides.
+**Live:** [iherng-journal.pages.dev](https://iherng-journal.pages.dev) · **Chatbot:** [/ask](https://iherng-journal.pages.dev/ask)
+
+An editorial companion to Sean Tan's (@iherng) Malaysian property YouTube channel,
+with a grounded chatbot on top. **AIherng** answers a buyer's property question in
+Sean's voice, using only articles written from his episodes' captions. Each answer
+cites its sources and links to the original video, and costs about $0.0009.
+
+```mermaid
+flowchart LR
+  YT[Sean's YouTube episodes] -->|captions, yt-dlp| W[Article writing<br/>verbatim-quote check]
+  W --> J[Journal site<br/>static, Cloudflare Pages]
+  J -->|feed.xml + article HTML<br/>daily GitHub Action| KB[Knowledge base<br/>sync → enrich → build]
+  KB -->|eval:route --strict gate| API[Cloudflare Worker + D1]
+  U[Reader on /ask] --> API
+  API -->|1. reuse a near-identical answer, free| D1[(D1)]
+  API -->|2. route: model reads cached catalog, picks ≤2 articles or declines| DS[DeepSeek]
+  API -->|3. answer from those articles only| DS
+```
+
+### Eval results (2026-10-13, 116 articles in the knowledge base)
+
+| Eval | Result | Cost |
+| --- | --- | --- |
+| Router: right article, or a correct decline | **56/56**: 48/48 in scope (English, Chinese, Malay), 8/8 traps refused, 0 wrongly refused | $0.00027 per question |
+| Answers: automatic rule checks | **14/15** | about $0.0009 per new question, routing included |
+
+- **Router prompt cache:** 99% of its input tokens hit DeepSeek's cache, because the catalog it reads is byte-identical between calls.
+- **Traps:** stock tips, a car loan, the current OPR, a Python script, prompt injection, and named projects the Journal hasn't reviewed.
+- **Answer checks:** the answer must be in Chinese and in Sean's first person. Only his verbatim line may appear in quotes, every paragraph must cite its source, and the answer must not mention the episode's viewer.
+- **The one answer miss:** the answer compared the asker to the episode's viewer.
+
+Design notes, trade-offs (catalog routing rather than vectors or BM25, answer reuse, cost controls) and the eval history are in [`ask-sean/DESIGN.md`](ask-sean/DESIGN.md), with an English summary at the top. Commands are in [`ask-sean/README.md`](ask-sean/README.md).
+
+### Repository layout
+
+| Path | What it is |
+| --- | --- |
+| `app/`, `components/`, `lib/`, `content/` | The Journal: Next.js API on Vite (vinext), static export, 189 articles as JSON |
+| `ask-sean/` | AIherng: Cloudflare Worker, knowledge-base pipeline, evals, and the job that turns new episodes into articles |
+| `.github/workflows/update-knowledge.yml` | Daily: sync the knowledge base from the live site, run the router eval, and deploy the Worker only if it passes |
+| `.claude/skills/iherng-article/` | The article-writing workflow: fetch captions, write, verify quotes, register |
+| `scripts/` | Build-time checks (`check-content.mjs`, `verify_quotes.py`), SEO and social-card generators, and caption cleaning |
+
+## The Journal
+
+The site has fifty-three property-review articles, sixty-six Asking Sean podcast articles and seventy buyer guides.
 
 ## Run locally
 
@@ -182,7 +227,7 @@ Three further property reviews—Dedaun Rimba, Sunway D'Hill and Allevia—were 
 
 The site is labelled as an independent editorial prototype. Thumbnails are served from YouTube and videos are embedded through youtube-nocookie.com; both require external network access. Original videos may impose their own playback restrictions. Every embed has a direct YouTube fallback link.
 
-Research downloads are ignored in `.research/` and are excluded from deployment. The scripts in `scripts/` document the public-source retrieval and caption-cleaning process and are not used at runtime.
+Research downloads are ignored in `.research/` and are excluded from deployment. Captions are fetched with `.claude/skills/iherng-article/scripts/fetch_episode.py` and cleaned with `scripts/clean_youtube_vtt.py`; neither runs at build time or runtime.
 
 ## Publishing
 

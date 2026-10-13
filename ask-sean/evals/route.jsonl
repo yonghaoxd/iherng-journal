@@ -19,18 +19,18 @@
 {"q": "买房除了首付还要准备多少钱？", "expect": ["hidden-costs-property-malaysia"], "note": "Chinese"}
 {"q": "Is location the most important thing when buying property?", "expect": ["location-location-location"]}
 {"q": "Should I buy in Bangsar South?", "expect": ["location-location-location", "new-baby-investment-strategy"], "note": "both discuss Bangsar South"}
-{"q": "Capital appreciation or cash flow, which should I focus on?", "expect": ["location-location-location", "apartment-vs-landed"]}
+{"q":"Capital appreciation or cash flow, which should I focus on?","expect":["four-types-of-property-investors","location-location-location","apartment-vs-landed"]}
 {"q": "New launch or subsale, which is better?", "expect": ["new-launch-vs-subsale"]}
 {"q": "Is buying from the developer better than the secondary market?", "expect": ["new-launch-vs-subsale"]}
 {"q": "I'm a first-time buyer without much cash. New launch or subsale?", "expect": ["new-launch-vs-subsale", "parents-paying-half-for-house"]}
 {"q": "Should I buy a 30-year-old house and renovate, or buy a new one?", "expect": ["old-house-vs-new-property"]}
 {"q": "How should I budget for renovating an old house?", "expect": ["old-house-vs-new-property"]}
-{"q": "My girlfriend and I want to buy a house together but haven't decided where we'll live.", "expect": ["old-house-vs-new-property", "leasehold-condo-resale-risk"], "note": "#12 covers an unmarried couple buying jointly"}
+{"q":"My girlfriend and I want to buy a house together but haven't decided where we'll live.","expect":["buying-property-with-partner","old-house-vs-new-property","leasehold-condo-resale-risk"],"note":"#12 covers an unmarried couple buying jointly"}
 {"q": "How do I research an area before buying an investment property?", "expect": ["property-research-before-buying"]}
 {"q": "How do I know if a new project's price is reasonable?", "expect": ["property-research-before-buying", "when-to-buy-property-data-guide", "location-location-location", "discount-price-still-losing-money"]}
 {"q": "Should I pay off my housing loan early?", "expect": ["settle-housing-loan-early"]}
 {"q": "提前还清房贷好不好？", "expect": ["settle-housing-loan-early"], "note": "Chinese"}
-{"q": "How much cash buffer should a landlord keep for each property?", "expect": ["settle-housing-loan-early", "new-baby-investment-strategy", "stalled-project-projek-sakit", "hidden-costs-property-malaysia", "six-properties-hold-or-sell"], "note": "#320 gives Sean's six-month buffer rule"}
+{"q":"How much cash buffer should a landlord keep for each property?","expect":["disasters-and-property-protection","pause-investing-health-uncertain","settle-housing-loan-early","new-baby-investment-strategy","stalled-project-projek-sakit","hidden-costs-property-malaysia","six-properties-hold-or-sell"],"note":"#320 gives Sean's six-month buffer rule; the disasters guide and the health episode both say six months of instalments per property"}
 {"q": "And what if the property is rented out?", "expect": ["settle-housing-loan-early"], "followUp": {"question": "Should I pay off my housing loan early?", "tldr": "Sean would keep a cheap housing loan running and put spare cash where it earns more."}, "note": "follow-up"}
 {"q": "Is now a good time to buy property in Malaysia?", "expect": ["when-to-buy-property-data-guide"]}
 {"q": "Will property prices crash next year?", "expect": ["when-to-buy-property-data-guide"]}
@@ -41,7 +41,7 @@
 {"q": "Our baby is due when our condo is handed over. Move in or rent it out?", "expect": ["new-baby-investment-strategy"]}
 {"q": "My parents will pay half the price, but only if I buy a home to live in. What should I do?", "expect": ["parents-paying-half-for-house"]}
 {"q": "父母愿意出一半钱帮我买房，我该接受吗？", "expect": ["parents-paying-half-for-house"], "note": "Chinese"}
-{"q": "Should first-time buyers buy auction properties?", "expect": ["parents-paying-half-for-house"]}
+{"q":"Should first-time buyers buy auction properties?","expect":["buying-auction-property","parents-paying-half-for-house"]}
 {"q": "Construction on my project has stopped for months. Will it be abandoned?", "expect": ["stalled-project-projek-sakit"]}
 {"q": "Projek saya sakit, boleh dapat refund penuh?", "expect": ["stalled-project-projek-sakit"], "note": "Malay"}
 {"q": "Is Teja Subang Jaya worth buying?", "expect": [], "note": "property reviews are excluded"}

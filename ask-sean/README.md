@@ -1,7 +1,9 @@
-# Ask Sean (iherng)
+# AIherng (Ask Sean)
 
-An English Q&A bot that answers Malaysian property questions only from the iherng Journal's
-Buyer Guides and iherng Podcast articles. Design and decisions: [DESIGN.md](DESIGN.md).
+The chatbot behind the Journal's `/ask` page. It answers Malaysian property questions,
+asked in any language, in Sean's voice and in Simplified Chinese, only from the iherng
+Journal's Buyer Guides and iherng Podcast articles, and cites the articles it used.
+Design, decisions and eval history: [DESIGN.md](DESIGN.md) (Chinese, with an English summary).
 
 It lives in the Journal repository as `ask-sean/` (it was the separate `asking-iherng`
 repository until October 2026). Run every command below from this folder.
@@ -28,14 +30,14 @@ On Windows PowerShell, use `npm.cmd` instead of `npm` if script execution is dis
 | `npm run kb:enrich` | Generate aliases and example questions for new or changed articles (`-- --force` for all) | < $0.01 |
 | `npm run kb:build` | Build `knowledge/catalog.json`, the index the router reads | free |
 | `npm run kb` | All three in order | |
-| `npm run eval:route` | Check the router against `evals/route.jsonl` | ≈ $0.01 |
+| `npm run eval:route` | Check the router against `evals/route.jsonl` (`-- --strict` fails on any miss) | ≈ $0.015 |
 
 ## Answering
 
 | Command | What it does | Cost |
 |---|---|---|
-| `npm run ask -- "your question"` | Route and answer one question, with sources and token cost | ≈ $0.0004 |
-| `npm run eval:answers` | Answer `evals/answers.jsonl`, flag rule breaks, write a Markdown report to `evals/results/` | ≈ $0.01 |
+| `npm run ask -- "your question"` | Route and answer one question, with sources and token cost | ≈ $0.0009 |
+| `npm run eval:answers` | Answer `evals/answers.jsonl`, flag rule breaks, write a Markdown report to `evals/results/` | ≈ $0.013 |
 
 After enriching, read the files in `knowledge/enrich/`, fix anything wrong and set
 `"reviewed": true`. Re-run `npm run kb:build` after any edit.
