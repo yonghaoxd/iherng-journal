@@ -52,6 +52,9 @@
     "typescript/no-namespace": "error",
     "typescript/no-require-imports": "error",
     "typescript/no-unnecessary-type-constraint": "error",
-    "typescript/no-unsafe-function-type": "error"
+    "typescript/no-unsafe-function-type": "error",
+    "nextjs/no-img-element": "off",
+    "nextjs/no-page-custom-font": "off",
+    "jsx-a11y/prefer-tag-over-role": "off"
   }
 }

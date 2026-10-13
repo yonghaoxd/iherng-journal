@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowUpRight, Building2, Mic, BookOpen, Heart } from 'lucide-react';
+import { ArrowUpRight, Building2, Mic, BookOpen } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
 import { AIherngName } from '@/components/aiherng-name';

@@ -19,22 +19,12 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
   const handleCopy = async () => {
     const shareUrl = getShareUrl();
     try {
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(shareUrl);
-      } else {
-        const input = document.createElement('input');
-        input.value = shareUrl;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-      }
+      await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // Fallback
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      // No clipboard access (an insecure origin, or permission denied): let the reader copy it.
+      window.prompt('Copy this link:', shareUrl);
     }
   };
 
