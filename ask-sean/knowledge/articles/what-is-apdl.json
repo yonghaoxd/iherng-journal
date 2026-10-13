@@ -1,0 +1,49 @@
+{
+  "id": "what-is-apdl",
+  "series": "buyer-guides",
+  "title": "What is an APDL, and why can't I sign the SPA without it?",
+  "excerpt": "Agents often say a launch can't sign SPAs because it has no APDL yet. Sean explains the advertising permit and developer's licence, what an ad must show, and what pre-launch bookings really mean.",
+  "date": "2018-04-06",
+  "tag": "Developer licence",
+  "question": {
+    "asker": "",
+    "context": "When buyers book a unit at a pre-launch, they are often told they can't sign the sale and purchase agreement yet because the developer has no APDL. Most don't know what that is.",
+    "text": "What is an APDL, and what does it mean for a buyer?"
+  },
+  "answer": {
+    "quote": "this is to protect consumers like us",
+    "summary": "APDL stands for advertising permit and developer's licence, approved by the housing ministry. A developer can only apply after its building plans are approved, and can only sell once it has one, so until then you can't sign an SPA. Its details on every ad tell you a lot about a project."
+  },
+  "reasons": [
+    {
+      "title": "Ads must show the licence details",
+      "body": "Each ad lists the developer's licence and advertising permit numbers and validity, the building plan approval, the land tenure and any restriction in interest, the number of units, and the minimum and maximum prices."
+    },
+    {
+      "title": "It comes after plan approval",
+      "body": "After buying land, a developer submits drawings to the local council and then building plans to many authorities, such as fire and landscape. Only once those are approved can it apply for an APDL."
+    },
+    {
+      "title": "Pre-launches come before it",
+      "body": "Pre-booking or pre-launch campaigns offer rebates to collect interest early. You can't sign the SPA until the APDL is approved."
+    }
+  ],
+  "actions": [
+    "Read the APDL details printed on a project's ad before calling in.",
+    "Note the land tenure, restriction in interest and the price range.",
+    "Ask when the APDL is expected if you book at a pre-launch.",
+    "Prepare your down payment for when the SPA can actually be signed.",
+    "Be extra careful with commercial projects, which lack the same buyer protection."
+  ],
+  "caveat": "Sean says booking fees for residential projects are generally not at risk, but rules on pre-launch bookings may have changed since 2018; check with your lawyer.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this April 2018 video. The quoted line is verbatim; everything else is paraphrased. The number of authorities that review building plans is unclear in the captions and is left out.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "TqD25-dhByg",
+    "title": "What is APDL?",
+    "duration": "6:24",
+    "url": "https://www.youtube.com/watch?v=TqD25-dhByg"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/what-is-apdl"
+}

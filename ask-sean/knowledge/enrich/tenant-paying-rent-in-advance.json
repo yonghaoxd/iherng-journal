@@ -1,0 +1,26 @@
+{
+  "id": "tenant-paying-rent-in-advance",
+  "sourceHash": "038913b1fed5",
+  "reviewed": false,
+  "aliases": [
+    "subsale",
+    "subsale condo",
+    "condo",
+    "apartment",
+    "rental income",
+    "monthly rent",
+    "lump sum rent",
+    "advance rent",
+    "bank statement",
+    "ccris",
+    "loan eligibility",
+    "auto-debit"
+  ],
+  "questions": [
+    "Does paying rent every six months affect my loan application?",
+    "How do banks assess rental income for a mortgage?",
+    "Can I use rental income to qualify for a second property?",
+    "What should I do if my tenant wants to pay rent upfront?",
+    "How to keep rental income consistent for loan approval?"
+  ]
+}

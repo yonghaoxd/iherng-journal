@@ -1,0 +1,48 @@
+{
+  "id": "bank-value-vs-market-value",
+  "series": "buyer-guides",
+  "title": "Why is the bank's valuation different from the price I agreed?",
+  "excerpt": "Your loan depends on what the bank's valuer says the property is worth, not what you agreed to pay. Sean explains why the two differ, and why some new units stay unsold for years.",
+  "date": "2019-07-25",
+  "tag": "Valuation",
+  "question": {
+    "asker": "",
+    "context": "Before a bank lends, a professional valuer prepares a report on what the property is worth, and the bank decides how much to finance from it. Many buyers assume the bank's value equals the market price, but the two often differ.",
+    "text": "What is the difference between bank value and market value, and why does it matter to a buyer?"
+  },
+  "answer": {
+    "quote": "market value is the value determined by the market",
+    "summary": "Market value is what buyers are willing to pay; bank value is a valuer's calculation, mostly based on what similar properties nearby have actually sold for. Where there are no comparable transactions, such as the last units of a new township, the bank may value well below the asking price, and your loan shrinks with it."
+  },
+  "reasons": [
+    {
+      "title": "Valuers compare recent transactions",
+      "body": "Of the methods valuers use, comparison with similar properties is the most common for homes and shops. A price has to be backed by nearby sales at that level."
+    },
+    {
+      "title": "New launches can outrun valuations",
+      "body": "If a developer prices its final units at RM1 million where nothing nearby has sold for that, banks may value them at only RM700,000 to RM800,000. Those units can stay unsold until subsale transactions catch up."
+    },
+    {
+      "title": "Government valuations affect stamp duty",
+      "body": "If the authorities value a property you bought for RM1 million at RM1.2 million, stamp duty is charged on the higher figure."
+    }
+  ],
+  "actions": [
+    "Ask the bank for its valuation before you commit to a price.",
+    "Check recent transacted prices nearby, not just the asking price.",
+    "Be wary of new units priced well above anything sold in the area.",
+    "Budget for a shortfall if the valuation comes in below your price."
+  ],
+  "caveat": "Sean also describes deals that rely on a valuation above the agreed price; those are left out here, and buyers should take legal advice on any arrangement where the SPA price differs from what is paid.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this July 2019 video. The captions are of poor quality, so only points that are clear are included; figures on valuation fees and auction pricing, and his examples of zero-down and cash-back deals, are left out. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "5hLE117RMdk",
+    "title": "PROPERTY VALUATION | BANK VALUE VS MARKET VALUE",
+    "duration": "7:06",
+    "url": "https://www.youtube.com/watch?v=5hLE117RMdk"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/bank-value-vs-market-value"
+}

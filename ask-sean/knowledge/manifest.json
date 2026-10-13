@@ -6,6 +6,9 @@
     "apartment-vs-landed": {
       "hash": "5a98e1c79904"
     },
+    "bank-value-vs-market-value": {
+      "hash": "b4c9c779ae6f"
+    },
     "branded-or-small-developer": {
       "hash": "68674679ee1a"
     },
@@ -47,6 +50,9 @@
     },
     "choosing-own-stay-home": {
       "hash": "b1d6b4b5d0a3"
+    },
+    "complaining-about-your-new-house": {
+      "hash": "a9a9e24ea519"
     },
     "condo-with-many-unsold-units": {
       "hash": "004c1384cd74"
@@ -129,6 +135,12 @@
     "houzkey-rent-to-own-review": {
       "hash": "6261df2e03c1"
     },
+    "how-developers-make-you-buy": {
+      "hash": "a300ee6ee83f"
+    },
+    "how-to-calculate-rental-roi": {
+      "hash": "91a3a3979dc6"
+    },
     "inherited-house-sell-or-keep": {
       "hash": "0acd25b963d5"
     },
@@ -147,11 +159,20 @@
     "judging-a-buildings-architecture": {
       "hash": "e3852200369a"
     },
+    "landed-home-labels-and-guarded-areas": {
+      "hash": "d204555f6d15"
+    },
     "late-delivery-damages-and-booking-fees": {
       "hash": "537a30fb13cb"
     },
     "leasehold-condo-resale-risk": {
       "hash": "3d8ccbe70300"
+    },
+    "lessons-from-a-bad-deal": {
+      "hash": "af4606448144"
+    },
+    "letting-out-your-unit": {
+      "hash": "0b64f5056f8b"
     },
     "living-in-a-strata-community": {
       "hash": "e6e24d247cd5"
@@ -219,17 +240,26 @@
     "pause-investing-health-uncertain": {
       "hash": "440e21904ef2"
     },
+    "price-per-square-foot-explained": {
+      "hash": "e997e9c796af"
+    },
     "property-before-proposing": {
       "hash": "8cfb3c18c951"
     },
     "property-guru-units-exit-plan": {
       "hash": "cca83121e3f6"
     },
+    "property-labels-explained": {
+      "hash": "3fc40f1d9f1e"
+    },
     "property-research-before-buying": {
       "hash": "983254f89baa"
     },
     "property-taxes-malaysia": {
       "hash": "1322a955ee5c"
+    },
+    "property-traders-vs-investors": {
+      "hash": "91a600225815"
     },
     "property-versus-fixed-deposit": {
       "hash": "c69217370f69"
@@ -242,6 +272,9 @@
     },
     "refinancing-housing-loan-reasons": {
       "hash": "68f995b9187d"
+    },
+    "relying-on-airbnb-income": {
+      "hash": "3b99a363a659"
     },
     "renovation-mistakes-to-avoid": {
       "hash": "14e8ced3deec"
@@ -276,6 +309,9 @@
     "selling-fully-paid-properties-retirement": {
       "hash": "5022092f546e"
     },
+    "serviced-apartment-vs-condominium": {
+      "hash": "1a2156a21505"
+    },
     "settle-housing-loan-early": {
       "hash": "aacb6f8ff49f"
     },
@@ -296,6 +332,9 @@
     },
     "stalled-project-projek-sakit": {
       "hash": "ae48f9fb119e"
+    },
+    "steps-before-your-first-property": {
+      "hash": "37d2c39974f9"
     },
     "strata-or-individual-title-landed": {
       "hash": "92b7b1f1a9d6"
@@ -321,6 +360,9 @@
     "third-property-buying-channel": {
       "hash": "b7a466390c51"
     },
+    "three-bedroom-low-or-two-bedroom-high": {
+      "hash": "190ed801eca8"
+    },
     "three-tod-projects-equal-cash-flow": {
       "hash": "4a740e8f93c5"
     },
@@ -330,14 +372,32 @@
     "unsold-units-near-completion": {
       "hash": "2d77b4490b5b"
     },
+    "using-transacted-price-data": {
+      "hash": "98e396802072"
+    },
+    "visiting-a-sales-gallery": {
+      "hash": "36bebf57177f"
+    },
     "weekday-weekend-test-own-stay": {
       "hash": "b1d55955a4be"
+    },
+    "what-investors-look-for-in-a-deal": {
+      "hash": "5a7554ee21a9"
+    },
+    "what-is-apdl": {
+      "hash": "90df79002179"
     },
     "what-to-check-in-your-spa": {
       "hash": "59772530bcb5"
     },
     "when-to-buy-property-data-guide": {
       "hash": "12854f454f07"
+    },
+    "where-discounted-properties-come-from": {
+      "hash": "ae41211cdb7a"
+    },
+    "why-property-over-other-investments": {
+      "hash": "6c2a88832c91"
     },
     "will-and-property-inheritance": {
       "hash": "53d2d55f482a"

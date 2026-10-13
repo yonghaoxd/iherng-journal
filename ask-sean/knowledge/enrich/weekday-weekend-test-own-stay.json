@@ -1,0 +1,26 @@
+{
+  "id": "weekday-weekend-test-own-stay",
+  "sourceHash": "b1d55955a4be",
+  "reviewed": false,
+  "aliases": [
+    "affordability",
+    "instalment",
+    "monthly repayment",
+    "loan tenure",
+    "commute",
+    "school run",
+    "daycare",
+    "groceries",
+    "weekday routine",
+    "weekend routine",
+    "maintenance",
+    "subsale"
+  ],
+  "questions": [
+    "How do I know if I can afford a home before buying?",
+    "How do I check if a location suits my daily routine?",
+    "What should I consider about the commute and schools before buying?",
+    "Is a bigger house always better for a family?",
+    "How do I decide between a home to live in and an investment?"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "building-allows-one-airbnb-operator",
+  "sourceHash": "28343d62a348",
+  "reviewed": false,
+  "aliases": [
+    "airbnb",
+    "short-term rental",
+    "short stay",
+    "homestay",
+    "daily rental",
+    "strata",
+    "condo",
+    "management",
+    "jmb",
+    "joint management body",
+    "deposit",
+    "operator"
+  ],
+  "questions": [
+    "Can building management allow only one Airbnb operator?",
+    "Can a condo ban short-term rentals or Airbnb?",
+    "Why do buildings ask operators for a large deposit?",
+    "What can I do if my unit was meant for Airbnb but the operator pulled out?",
+    "Should I rely on Airbnb income to pay my mortgage?"
+  ]
+}

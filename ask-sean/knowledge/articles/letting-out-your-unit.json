@@ -1,0 +1,53 @@
+{
+  "id": "letting-out-your-unit",
+  "series": "buyer-guides",
+  "title": "I just got my keys. How do I let out the unit?",
+  "excerpt": "After the keys come four decisions: how long to let for, what rent to ask, how far to furnish, and who will manage tenants. Sean's checklist for new landlords.",
+  "date": "2018-01-04",
+  "tag": "Becoming a landlord",
+  "question": {
+    "asker": "",
+    "context": "New investors often struggle after handover: finding and filtering tenants, setting rent and managing turnovers, while the instalment keeps coming every month and the unit sits empty.",
+    "text": "What should a new owner decide before letting out a unit?"
+  },
+  "answer": {
+    "quote": "there's no such thing as passive income",
+    "summary": "Settle four things: the tenancy length, the rent the market will bear, how much to furnish, and who will market and manage the unit. Spend a little to stand out, because a new project hands over hundreds of units at once, all chasing the same tenants."
+  },
+  "reasons": [
+    {
+      "title": "Short or long stays",
+      "body": "Short stays usually earn more, but checking guests in and out and cleaning between them is like running a hotel. Long tenancies can be set as 2+1, two years at a fixed rent with an option for one more."
+    },
+    {
+      "title": "The market sets the rent",
+      "body": "Find out what similar units actually rent for from agents and the property portals before deciding what to ask."
+    },
+    {
+      "title": "Furnish to stand out",
+      "body": "Letting a bare unit cheaply or furnishing well both have a cost. The aim is the minimum spend that makes tenants consider your unit first."
+    },
+    {
+      "title": "Someone has to manage it",
+      "body": "Between tenants, someone must clean, inspect and check that utility bills are paid. Agents handle long lets; short-stay operators can run a unit for a share of the profit."
+    }
+  ],
+  "actions": [
+    "Decide on short stays or a long tenancy, and the length, such as 2+1.",
+    "Check the going rent for similar units before you list.",
+    "Furnish just enough to rank among the first units tenants consider.",
+    "Choose who lists and manages the unit: yourself, an agent or an operator.",
+    "Arrange cleaning and a utilities check for each change of tenant."
+  ],
+  "caveat": "Short-stay letting may be restricted by your building's rules or local regulations; check before choosing it.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this January 2018 vlog, his first sponsored video, made with a company that lets units to corporate clients and filmed in one of its units. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "TSQAdb-i9Oo",
+    "title": "4 Things to Know to Let Out Your Unit | Vlog 006",
+    "duration": "7:32",
+    "url": "https://www.youtube.com/watch?v=TSQAdb-i9Oo"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/letting-out-your-unit"
+}

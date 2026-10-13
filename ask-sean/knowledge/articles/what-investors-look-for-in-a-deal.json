@@ -1,0 +1,52 @@
+{
+  "id": "what-investors-look-for-in-a-deal",
+  "series": "buyer-guides",
+  "title": "What do seasoned property investors look for in a deal?",
+  "excerpt": "A big developer discount is not the same as buying below market value. Sean lists the four things experienced investors look for: a real discount, positive cash flow, data, and agents' news.",
+  "date": "2018-09-06",
+  "tag": "Spotting a good deal",
+  "question": {
+    "asker": "",
+    "context": "Developers advertise discounts of 30% or 40%, and many first-time investors take those as bargains. Experienced investors judge a deal differently.",
+    "text": "What criteria do experienced investors use to judge a property deal?"
+  },
+  "answer": {
+    "quote": "always check for what's the current market value",
+    "summary": "They look for four things: a price below what neighbouring units actually transact at, rent that covers the instalment, decisions backed by data rather than emotion, and good relationships with agents who hear of deals first."
+  },
+  "reasons": [
+    {
+      "title": "Below market means below transactions",
+      "body": "A developer's 30% rebate on a marked-up price isn't below market. Buying at 700 psf where neighbours transact at about 800 psf is, perhaps through a bulk purchase or a quick sale."
+    },
+    {
+      "title": "Cash flow keeps you borrowing",
+      "body": "Loans are usually 90% for your first two properties and 70% from the third. If the first two are fully covered by rent, banks look on you more favourably."
+    },
+    {
+      "title": "Data, not attachment",
+      "body": "Sean says an investment he was emotionally attached to still holds him back. Check current values, rents, instalments and announced news, not speculation."
+    },
+    {
+      "title": "Agents hear first",
+      "body": "Agents who work an area for years know which unit is selling well below value, and they call the investors they trust."
+    }
+  ],
+  "actions": [
+    "Compare the price with recent transactions in the same building.",
+    "Check that rent covers the instalment before you buy.",
+    "List current value, rent, instalment and confirmed news for every deal.",
+    "Get to know the agents active in the areas you want to buy in."
+  ],
+  "caveat": "Sean says these relationships and this knowledge take years to build; new investors shouldn't expect to find such deals at once.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this September 2018 video, in which he also promotes an email list for deals from his industry contacts, including bulk purchases. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "11_zaP3P3Lo",
+    "title": "4 THINGS REAL PROPERTY INVESTOR LOOK FOR",
+    "duration": "7:18",
+    "url": "https://www.youtube.com/watch?v=11_zaP3P3Lo"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/what-investors-look-for-in-a-deal"
+}

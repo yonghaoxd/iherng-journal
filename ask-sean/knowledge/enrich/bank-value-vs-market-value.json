@@ -1,0 +1,26 @@
+{
+  "id": "bank-value-vs-market-value",
+  "sourceHash": "b4c9c779ae6f",
+  "reviewed": false,
+  "aliases": [
+    "bank valuation",
+    "market value",
+    "valuer report",
+    "subsale",
+    "comparable transactions",
+    "transacted prices",
+    "stamp duty",
+    "spa price",
+    "new launch",
+    "township",
+    "loan margin",
+    "valuation shortfall"
+  ],
+  "questions": [
+    "Why is the bank's valuation lower than the price I agreed to pay?",
+    "How does the bank decide how much to lend based on the property's value?",
+    "Why do some new units stay unsold for years?",
+    "Is stamp duty based on the purchase price or the government's valuation?",
+    "What should I do if the bank's valuation is below my offer price?"
+  ]
+}

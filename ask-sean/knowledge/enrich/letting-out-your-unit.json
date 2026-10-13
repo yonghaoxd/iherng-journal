@@ -1,0 +1,26 @@
+{
+  "id": "letting-out-your-unit",
+  "sourceHash": "0b64f5056f8b",
+  "reviewed": false,
+  "aliases": [
+    "condo",
+    "apartment",
+    "short stay",
+    "airbnb",
+    "long term rental",
+    "tenancy agreement",
+    "2+1",
+    "furnished unit",
+    "unfurnished",
+    "rental agent",
+    "tenant management",
+    "rental yield"
+  ],
+  "questions": [
+    "How do I rent out my newly completed unit?",
+    "Should I do short-term stays or a long-term tenancy?",
+    "How do I decide what rent to ask for my unit?",
+    "How much should I furnish a rental unit?",
+    "Who should manage my rental unit, me or an agent?"
+  ]
+}

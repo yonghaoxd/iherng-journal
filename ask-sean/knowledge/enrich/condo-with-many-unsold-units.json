@@ -1,0 +1,26 @@
+{
+  "id": "condo-with-many-unsold-units",
+  "sourceHash": "004c1384cd74",
+  "reviewed": false,
+  "aliases": [
+    "condo",
+    "apartment",
+    "service residence",
+    "unsold units",
+    "overhang",
+    "developer discounts",
+    "bulk purchase",
+    "subsale",
+    "rental yield",
+    "furnished unit",
+    "monthly instalment",
+    "break-even rent"
+  ],
+  "questions": [
+    "Will the developer cut prices to clear unsold units?",
+    "Should I sell my condo at a loss or rent it out below the instalment?",
+    "How do developers sell leftover units without lowering prices publicly?",
+    "What are the costs of selling a condo below the outstanding loan?",
+    "Should I furnish my condo to rent it out faster?"
+  ]
+}

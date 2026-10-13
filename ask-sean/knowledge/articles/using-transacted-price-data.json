@@ -1,0 +1,53 @@
+{
+  "id": "using-transacted-price-data",
+  "series": "buyer-guides",
+  "title": "How do I use transaction data to check a project's price?",
+  "excerpt": "Asking prices are set by owners who want to sell high. Sean's three-part research ends with transacted prices: the median nearby, the outliers, and how often units actually change hands.",
+  "date": "2024-05-26",
+  "tag": "Market data",
+  "question": {
+    "asker": "",
+    "context": "Viewers email Sean asking whether particular projects are good. Instead of answering each one, he explains his research process, which ends with checking what nearby properties have actually sold for.",
+    "text": "How should I research a project's price before booking?"
+  },
+  "answer": {
+    "quote": "make that informed decision and take calculated risk",
+    "summary": "Research in three parts: the project and its sales gallery, the site and its surroundings, and then transacted prices nearby. Establish the median price and psf around the project, understand any outlier, and treat a location with few recent transactions as a warning."
+  },
+  "reasons": [
+    {
+      "title": "Galleries are sales funnels",
+      "body": "Everything in a gallery is curated: a scale model can show a sewage plant as greenery. Learn the current packages there, which change with sales, but hold off booking until you've seen about 20 properties and the site."
+    },
+    {
+      "title": "The site shows who lives there",
+      "body": "Clinics and paediatricians, nurseries and tuition centres suggest families; pubs and snooker halls a different crowd. Ask where you or your tenants would eat, shop and catch a train."
+    },
+    {
+      "title": "Medians beat asking prices",
+      "body": "Owners list high and buyers bid low, so check recorded transactions. Like comparing kailan prices at a supermarket, find the median, then ask why a project sits well above or below it."
+    },
+    {
+      "title": "Transaction pace shows demand",
+      "body": "Many sales at rising prices in six months mean an area is heating up. If the last transaction was three years ago, prices are too high or demand is weak."
+    }
+  ],
+  "actions": [
+    "Gather the project's details from its website, forums or reviews.",
+    "Visit the sales gallery to learn the current packages, but don't book yet.",
+    "Visit the site and its surroundings, and look at nearby competitors.",
+    "Check the median transacted price and psf for nearby projects.",
+    "Count how many units sold recently, and investigate any outliers."
+  ],
+  "caveat": "New launches sell at future prices to cover the years until handover, so they will usually sit above existing transactions. The paid report cost RM69 in 2024; free data shows medians without addresses.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this May 2024 video, which was sponsored by PropertyGuru to introduce its Brickz transaction report. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "hCQwgIdEW-4",
+    "title": "GET ACCURATE MARKET DATA USING BRICKZ REPORT",
+    "duration": "12:39",
+    "url": "https://www.youtube.com/watch?v=hCQwgIdEW-4"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/using-transacted-price-data"
+}

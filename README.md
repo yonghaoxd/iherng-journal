@@ -19,16 +19,17 @@ flowchart LR
   API -->|3. answer from those articles only| DS
 ```
 
-### Eval results (2026-10-13, 116 articles in the knowledge base)
+### Eval results (2026-10-13, all 136 Q&A articles in the knowledge base)
 
 | Eval | Result | Cost |
 | --- | --- | --- |
-| Router: right article, or a correct decline | **56/56**: 48/48 in scope (English, Chinese, Malay), 8/8 traps refused, 0 wrongly refused | $0.00027 per question |
-| Answers: automatic rule checks | **15/15** | $0.0012 per answered question, routing included |
+| Router: right article, or a correct decline | **56/56**: 48/48 in scope (English, Chinese, Malay), 8/8 traps refused, 0 wrongly refused | about $0.0004 per question |
+| Answers: automatic rule checks | **14/15** | about $0.0011 per answered question, routing included |
 
 - **Router prompt cache:** 99% of its input tokens hit DeepSeek's cache, because the catalog it reads is byte-identical between calls.
 - **Traps:** stock tips, a car loan, the current OPR, a Python script, prompt injection, and named projects the Journal hasn't reviewed.
 - **Answer checks:** the answer must be in Chinese and in Sean's first person. Only his verbatim line may appear in quotes, every paragraph must cite its source, and the answer must not mention the episode's viewer.
+- **The one answer miss:** the last step of one answer lacked its citation marker. This check varies between runs; the previous run, on 116 articles, passed 15/15.
 - **Pricing basis:** costs are at DeepSeek's peak prices; off-peak is half.
 
 Design notes, trade-offs (catalog routing rather than vectors or BM25, answer reuse, cost controls) and the eval history are in [`ask-sean/DESIGN.md`](ask-sean/DESIGN.md), with an English summary at the top. Commands are in [`ask-sean/README.md`](ask-sean/README.md).

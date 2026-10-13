@@ -1,0 +1,52 @@
+{
+  "id": "price-per-square-foot-explained",
+  "series": "buyer-guides",
+  "title": "How should I use price per square foot when comparing projects?",
+  "excerpt": "Price per square foot lets you compare projects and areas, but it shifts with floor level, unit size and property type. Sean explains how to read it, and a marketing trick to watch for.",
+  "date": "2019-08-27",
+  "tag": "Price per square foot",
+  "question": {
+    "asker": "",
+    "context": "Sales galleries, ads and reports all quote price per square foot, or psf, and buyers hear areas described as 700 or 800 psf. Many still don't know how to use the figure to judge a price.",
+    "text": "What does price per square foot tell me, and how should I use it?"
+  },
+  "answer": {
+    "quote": "bigger units are more difficult to sell",
+    "summary": "Psf is the price divided by the size, and it gives you an index to compare a project with its area and its neighbours. But compare like with like: psf is higher on upper floors and for smaller units, and lower for landed homes, so a low headline psf may not mean a cheap unit."
+  },
+  "reasons": [
+    {
+      "title": "It shows where a project sits",
+      "body": "If condos in an area average about 700 to 800 psf, a freehold project at 730 psf stands out as good value against it."
+    },
+    {
+      "title": "Small units carry a higher psf",
+      "body": "On a 600 sq ft unit, an extra RM100 psf adds RM60,000; on a 2,000 sq ft unit it adds RM200,000. Developers price big units at a lower psf because they are harder to sell."
+    },
+    {
+      "title": "Floor and type matter",
+      "body": "Higher floors cost more per square foot than lower ones, and landed homes usually have a lower psf than high-rises because their areas are so much larger."
+    },
+    {
+      "title": "Beware the lowest-psf headline",
+      "body": "A launch may advertise its lowest psf, which applies only to the biggest unit such as a penthouse, alongside sizes that start from 600 sq ft. Multiply the psf by the size you actually want."
+    }
+  ],
+  "actions": [
+    "Note the psf of every project you view, and compare at least 20.",
+    "Compare like with like: similar floor, size and property type.",
+    "Ask which unit a low advertised psf actually applies to.",
+    "Investigate any project priced well below its neighbours' psf to find out why."
+  ],
+  "caveat": "Psf figures quoted are from 2019, and psf is only an index; location, tenure, condition and layout still decide whether a unit is worth its price.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this August 2019 video. Some area figures in the captions are unclear and are left out. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "gjzexNGRTik",
+    "title": "WHAT IS PRICE PER SQUARE FEET?",
+    "duration": "6:45",
+    "url": "https://www.youtube.com/watch?v=gjzexNGRTik"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/price-per-square-foot-explained"
+}

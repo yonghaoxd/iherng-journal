@@ -1,0 +1,26 @@
+{
+  "id": "empty-landed-house-hold-or-sell",
+  "sourceHash": "c023979670a4",
+  "reviewed": false,
+  "aliases": [
+    "corner terrace",
+    "corner lot",
+    "intermediate unit",
+    "landed",
+    "high-rise",
+    "rental yield",
+    "capital growth",
+    "instalment",
+    "interest",
+    "principal",
+    "renovation",
+    "furnishing"
+  ],
+  "questions": [
+    "Should I hold, rent out, or sell my landed house that is now empty?",
+    "Why does rent not cover my full mortgage instalment for a landed house?",
+    "Is the monthly shortfall when renting out a loss or forced saving?",
+    "Does renovation cost count as a property loss when selling?",
+    "Is a corner lot worth keeping compared to an intermediate unit?"
+  ]
+}

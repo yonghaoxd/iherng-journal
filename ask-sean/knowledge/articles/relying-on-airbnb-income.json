@@ -1,0 +1,48 @@
+{
+  "id": "relying-on-airbnb-income",
+  "series": "buyer-guides",
+  "title": "Is it safe to count on Airbnb income to pay my instalment?",
+  "excerpt": "A week of short-stay bookings can earn what a month of normal rent does, so many units are now sold as Airbnb-ready. Sean warns that residents and regulators can end the model.",
+  "date": "2018-08-06",
+  "tag": "Short-term rental",
+  "question": {
+    "asker": "",
+    "context": "Short-term rental has made city high-rises attractive to investors, and developers now pitch units as Airbnb-ready, sometimes split into several rooms behind one entrance. Residents, meanwhile, complain about strangers in their lifts and pools.",
+    "text": "Should I buy a property relying on short-term rental income to cover the instalment?"
+  },
+  "answer": {
+    "quote": "this kind of consideration should really be regulated by the government",
+    "summary": "No. Short stays can earn well, but residents' committees are banning them and governments are moving to regulate them. If your sums only work with Airbnb income, one rule change can wreck your financial model."
+  },
+  "reasons": [
+    {
+      "title": "The returns are tempting",
+      "body": "In a city-centre unit, a week of nightly bookings can bring in what a month's rent would, so a few booked nights a month can cover the instalment."
+    },
+    {
+      "title": "Residents push back",
+      "body": "Owners who paid for a home find strangers next door every night and crowds at the pool at weekends. Joint management bodies are voting to ban short stays on security grounds."
+    },
+    {
+      "title": "Regulation is coming",
+      "body": "Japan already requires short-stay hosts to register. Sean expects Malaysia to require registration too, and thinks it should."
+    }
+  ],
+  "actions": [
+    "Check whether your building's management allows short stays before buying.",
+    "Make sure a normal long-term rent can cover the instalment.",
+    "Treat Airbnb-ready marketing as a sales pitch, not a guarantee.",
+    "For a home you'll live in, avoid buildings dominated by short-stay units."
+  ],
+  "caveat": "If you understand the risks and have a fallback, short stays can still work; Sean only warns against depending on them.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this August 2018 video. The captions are of poor quality, so only points that are clear are included; a property of his own that he mentions is left out. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "cqAwg1vJ5EI",
+    "title": "AirBnb Banned?!",
+    "duration": "7:25",
+    "url": "https://www.youtube.com/watch?v=cqAwg1vJ5EI"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/relying-on-airbnb-income"
+}

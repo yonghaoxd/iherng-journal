@@ -1,0 +1,53 @@
+{
+  "id": "landed-home-labels-and-guarded-areas",
+  "series": "buyer-guides",
+  "title": "Zero-lot bungalow, link semi-D, guarded estate: what am I buying?",
+  "excerpt": "Developers' names for landed homes can blur what you're getting. Sean explains zero-lot bungalows and link semi-Ds, what you can and can't do on individual title, and how strata estates are run.",
+  "date": "2018-05-24",
+  "tag": "Landed home types",
+  "question": {
+    "asker": "",
+    "context": "After a first video on landed home types, viewers asked Sean what terms like zero-lot bungalow and link semi-D actually mean, and how individual-title and strata landed homes differ in daily life.",
+    "text": "What do common landed home labels mean, and how do individual-title and strata estates differ in practice?"
+  },
+  "answer": {
+    "quote": "these are just languages of developers",
+    "summary": "A zero-lot bungalow is a semi-D with the pair pulled apart, and a link semi-D is a terrace house shaped to look like a semi-D. On individual title you own the land but can't close public roads, and renovations need council approval; on strata, a management body runs the estate and can enforce maintenance fees."
+  },
+  "reasons": [
+    {
+      "title": "Names can oversell",
+      "body": "A zero-lot bungalow has one side built on the boundary with no windows or doors, so only three sides open. A link semi-D is a link house with staggered fronts and small gaps that make it look semi-detached."
+    },
+    {
+      "title": "Individual title has public roads",
+      "body": "The council maintains roads, lamps and drains, so residents can't simply gate them. They can register a residents' association, apply for a guarding licence, and collect fees, though some neighbours never pay."
+    },
+    {
+      "title": "Renovations still need approval",
+      "body": "Building by-laws limit how far you extend to the front and back for fire safety. The council can fine owners, or order an unapproved extension torn down."
+    },
+    {
+      "title": "Strata estates are run by owners",
+      "body": "A joint management body with the developer hands over to an owners' management committee. Under the Strata Management Act, owners who don't pay maintenance fees can face legal action."
+    }
+  ],
+  "actions": [
+    "Ask exactly how many sides of a 'bungalow' have openings.",
+    "Check whether an estate's guarding is by a residents' association or a strata body.",
+    "Get council approval before extending an individual-title home.",
+    "For strata, confirm the development is registered as strata and use a licensed managing agent.",
+    "Join the management committee or attend its meetings."
+  ],
+  "caveat": "Sean says foreigners can't buy individual-title landed homes, but rules for foreign buyers vary by state and price threshold; check the current ones.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's English captions for this May 2018 follow-up to his first landed typology video. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "3ANL72XihtY",
+    "title": "Landed House Typology Part 2",
+    "duration": "12:12",
+    "url": "https://www.youtube.com/watch?v=3ANL72XihtY"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/landed-home-labels-and-guarded-areas"
+}

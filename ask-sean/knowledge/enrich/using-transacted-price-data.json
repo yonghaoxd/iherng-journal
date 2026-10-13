@@ -1,0 +1,26 @@
+{
+  "id": "using-transacted-price-data",
+  "sourceHash": "98e396802072",
+  "reviewed": false,
+  "aliases": [
+    "subsale",
+    "secondary market",
+    "transacted price",
+    "median price",
+    "psf",
+    "price per square foot",
+    "asking price",
+    "sales gallery",
+    "showroom",
+    "site visit",
+    "outlier",
+    "transaction volume"
+  ],
+  "questions": [
+    "How do I check a project's actual selling price before buying?",
+    "Why is the asking price so different from the transacted price?",
+    "How do I know if a project's price is reasonable?",
+    "What does it mean if there are very few recent transactions in an area?",
+    "How do I research a project before booking a unit?"
+  ]
+}

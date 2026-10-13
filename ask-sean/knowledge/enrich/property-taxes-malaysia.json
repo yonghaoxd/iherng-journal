@@ -1,0 +1,26 @@
+{
+  "id": "property-taxes-malaysia",
+  "sourceHash": "1322a955ee5c",
+  "reviewed": false,
+  "aliases": [
+    "cukai pintu",
+    "cukai tanah",
+    "quit rent",
+    "assessment tax",
+    "stamp duty",
+    "rpgt",
+    "real property gains tax",
+    "income tax",
+    "taxes",
+    "property tax",
+    "annual tax",
+    "selling tax"
+  ],
+  "questions": [
+    "What taxes do I need to pay when buying a property in Malaysia?",
+    "How much stamp duty will I pay on my property purchase?",
+    "What is the difference between assessment tax and quit rent?",
+    "When do I have to pay RPGT and how is it calculated?",
+    "Can I deduct legal fees and agent fees from my RPGT?"
+  ]
+}

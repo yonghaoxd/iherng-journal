@@ -1,5 +1,5 @@
 {
-  "version": "ad6b30be0f72",
+  "version": "89e8d933156f",
   "articles": [
     {
       "id": "affordable-housing-rumawip",
@@ -17,8 +17,27 @@
         "Open-market buyers pay for it",
         "Compare it with open-market homes"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "rumawip",
+        "affordable housing",
+        "subsidised housing",
+        "residensi wilayah persekutuan",
+        "rumah mampu milik",
+        "low cost housing",
+        "bumiputera lot",
+        "affordable home",
+        "subsidised unit",
+        "income limit",
+        "rental restriction",
+        "resale restriction"
+      ],
+      "questions": [
+        "Is a Rumawip unit worth buying?",
+        "What income do I need to qualify for Rumawip?",
+        "Can I rent out my affordable housing unit?",
+        "How do affordable housing schemes affect other buyers?",
+        "Should I buy an affordable unit or an open-market unit?"
+      ]
     },
     {
       "id": "apartment-vs-landed",
@@ -57,6 +76,43 @@
       ]
     },
     {
+      "id": "bank-value-vs-market-value",
+      "title": "Why is the bank's valuation different from the price I agreed?",
+      "date": "2019-07-25",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Valuation",
+      "excerpt": "Your loan depends on what the bank's valuer says the property is worth, not what you agreed to pay. Sean explains why the two differ, and why some new units stay unsold for years.",
+      "viewerQuestion": "What is the difference between bank value and market value, and why does it matter to a buyer?",
+      "answer": "Market value is what buyers are willing to pay; bank value is a valuer's calculation, mostly based on what similar properties nearby have actually sold for. Where there are no comparable transactions, such as the last units of a new township, the bank may value well below the asking price, and your loan shrinks with it.",
+      "points": [
+        "Valuers compare recent transactions",
+        "New launches can outrun valuations",
+        "Government valuations affect stamp duty"
+      ],
+      "aliases": [
+        "bank valuation",
+        "market value",
+        "valuer report",
+        "subsale",
+        "comparable transactions",
+        "transacted prices",
+        "stamp duty",
+        "spa price",
+        "new launch",
+        "township",
+        "loan margin",
+        "valuation shortfall"
+      ],
+      "questions": [
+        "Why is the bank's valuation lower than the price I agreed to pay?",
+        "How does the bank decide how much to lend based on the property's value?",
+        "Why do some new units stay unsold for years?",
+        "Is stamp duty based on the purchase price or the government's valuation?",
+        "What should I do if the bank's valuation is below my offer price?"
+      ]
+    },
+    {
       "id": "branded-or-small-developer",
       "title": "Should I buy from a big branded developer or a smaller newcomer?",
       "date": "2017-09-12",
@@ -72,8 +128,27 @@
         "Built-up may include extras",
         "Construction time changes the deal"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "developer brand",
+        "big developer",
+        "small developer",
+        "new launch",
+        "freehold",
+        "leasehold",
+        "car park",
+        "built-up area",
+        "price per sq ft",
+        "rebates",
+        "construction period",
+        "net price"
+      ],
+      "questions": [
+        "Does the developer's brand matter when buying a new launch?",
+        "How do I compare projects from big and small developers?",
+        "What should I ask at a sales gallery?",
+        "Is leasehold or freehold better for investment?",
+        "How do I calculate the net price after rebates?"
+      ]
     },
     {
       "id": "building-allows-one-airbnb-operator",
@@ -91,8 +166,27 @@
         "Why a big deposit helps",
         "Airbnb buildings need a quick exit"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "airbnb",
+        "short-term rental",
+        "short stay",
+        "homestay",
+        "daily rental",
+        "strata",
+        "condo",
+        "management",
+        "jmb",
+        "joint management body",
+        "deposit",
+        "operator"
+      ],
+      "questions": [
+        "Can building management allow only one Airbnb operator?",
+        "Can a condo ban short-term rentals or Airbnb?",
+        "Why do buildings ask operators for a large deposit?",
+        "What can I do if my unit was meant for Airbnb but the operator pulled out?",
+        "Should I rely on Airbnb income to pay my mortgage?"
+      ]
     },
     {
       "id": "bulk-purchase-second-property",
@@ -110,8 +204,27 @@
         "A lower entry price wins the rental race",
         "Cash back belongs to the property"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "terrace",
+        "rumah teres",
+        "non-gated",
+        "open terrace",
+        "unsold units",
+        "developer discount",
+        "bulk purchase",
+        "investment club",
+        "cash back",
+        "rental yield",
+        "furnishing"
+      ],
+      "questions": [
+        "How can I buy a second property with little cash?",
+        "Will a non-gated terrace house keep rising in value?",
+        "If a bulk-purchase group buys many units, won't they compete for the same tenants?",
+        "What should I do with cash back from a property purchase?",
+        "How much does it cost to furnish a three-bedroom unit for rent?"
+      ]
     },
     {
       "id": "buy-now-to-retire-in-later",
@@ -129,8 +242,27 @@
         "At 70%, many units beat this one",
         "The apartment is ready to sell"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "semi-d",
+        "joint name",
+        "joint loan",
+        "90% loan",
+        "70% loan",
+        "rpgt",
+        "downpayment",
+        "refinance",
+        "rental yield",
+        "subsale"
+      ],
+      "questions": [
+        "Should I buy a condo now to rent out and move into when I retire?",
+        "How many 90% housing loans can a Malaysian couple get?",
+        "Does buying a property in joint names affect our loan margin?",
+        "Is it better to sell my old apartment or keep it and buy another?",
+        "When should I buy my retirement home?"
+      ]
     },
     {
       "id": "buying-auction-property",
@@ -148,8 +280,27 @@
         "You buy it as it is",
         "Prices fall each round without bids"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "lelong",
+        "bank lelong",
+        "auction sale",
+        "foreclosure",
+        "bank auction",
+        "reserve price",
+        "bidding",
+        "as is where is",
+        "caveat",
+        "maintenance fees",
+        "occupant",
+        "subsale"
+      ],
+      "questions": [
+        "How does buying a property at auction work in Malaysia?",
+        "What should I check before bidding on an auction property?",
+        "Can I get a bank loan for an auction property?",
+        "What happens if I win the bid but can't get financing?",
+        "Are auction properties a good deal for first-time buyers?"
+      ]
     },
     {
       "id": "buying-beyond-the-third-property",
@@ -167,8 +318,27 @@
         "There are ways around the cap",
         "Unit counts lead to bad buys"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "third loan",
+        "70% loan",
+        "90% loan",
+        "commercial title",
+        "commercial suite",
+        "bulk purchase",
+        "refinance",
+        "cash out",
+        "equity",
+        "rental income",
+        "yield",
+        "instalment"
+      ],
+      "questions": [
+        "How can I get around the 70% loan limit for a third property?",
+        "What should I aim for instead of a number of properties?",
+        "How do I buy investment properties with little cash?",
+        "Should I keep growing my share portfolio or buy more property?",
+        "What are the ways to finance a commercial property?"
+      ]
     },
     {
       "id": "buying-into-mixed-developments",
@@ -186,8 +356,27 @@
         "Townships grow in stages",
         "Brands cost more for a reason"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "mixed development",
+        "mixed use development",
+        "township",
+        "strata mall",
+        "strata title mall",
+        "shopping mall",
+        "retail units",
+        "shop lots",
+        "anchor tenant",
+        "master plan",
+        "self sustaining",
+        "landed phase"
+      ],
+      "questions": [
+        "What should I check before buying in a mixed development?",
+        "How do I know if a township is well planned?",
+        "Does it matter if the mall units are sold individually?",
+        "Why are branded township developers more expensive?",
+        "What makes living above a mall convenient?"
+      ]
     },
     {
       "id": "buying-property-with-partner",
@@ -205,8 +394,27 @@
         "Joining names often means overreaching",
         "One name, one guarantor"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "joint name",
+        "joint loan",
+        "couple buy house",
+        "buy with partner",
+        "guarantor",
+        "ccris",
+        "90% loan",
+        "first home loan",
+        "break up",
+        "unmarried couple",
+        "rumah teres",
+        "landed house"
+      ],
+      "questions": [
+        "Should an unmarried couple buy a property together in joint names?",
+        "What happens to a joint home loan if a couple breaks up?",
+        "Is it better to buy a house in one name with a guarantor?",
+        "How many properties can I buy with 90% financing?",
+        "What should we agree on before buying a house together?"
+      ]
     },
     {
       "id": "cancelled-booking-fomo",
@@ -260,8 +468,27 @@
         "Cars lose value; homes gain it",
         "Count cash flow, not units"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "terrace",
+        "rumah teres",
+        "double-storey",
+        "corner house",
+        "flexi loan",
+        "full flexi",
+        "fixed deposit",
+        "epf",
+        "rental yield",
+        "cash flow",
+        "airbnb"
+      ],
+      "questions": [
+        "Should I keep my rented-out house or sell it?",
+        "Is it better to buy a landed house or an apartment for my family?",
+        "How much down payment should I put for a house?",
+        "Should I buy a car or invest in property?",
+        "How can I improve my cash flow from rental properties?"
+      ]
     },
     {
       "id": "cash-back-or-positive-cash-flow",
@@ -279,8 +506,27 @@
         "Cash back can bridge the gap",
         "Sudden cash changes habits"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "cash back",
+        "rebate",
+        "new launch",
+        "under construction",
+        "free legal fees",
+        "free furnishing",
+        "stamp duty waiver",
+        "spa price",
+        "subsale",
+        "rental yield",
+        "monthly instalment",
+        "down payment"
+      ],
+      "questions": [
+        "Is it better to take a new launch with cash back or pay a bigger down payment?",
+        "How do developer rebates affect my loan amount and instalment?",
+        "Can a new launch unit with cash back achieve positive cash flow?",
+        "How do I calculate whether cash back covers my monthly shortfall?",
+        "Should I use cash back to pay the instalment or spend it?"
+      ]
     },
     {
       "id": "cash-buying-condos-to-retire",
@@ -298,8 +544,27 @@
         "Loans need an income",
         "Interest is a cost against rent"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "flat",
+        "fixed deposit",
+        "fd",
+        "rental income",
+        "passive income",
+        "loan",
+        "mortgage",
+        "downpayment",
+        "retire",
+        "financial freedom"
+      ],
+      "questions": [
+        "Is it better to put my money in fixed deposits or buy condos for rental income?",
+        "Can I retire early by buying multiple properties with cash?",
+        "How many condos do I need to live off rental income?",
+        "Should I buy property with a loan or pay in cash?",
+        "Can I get a loan to buy property if I'm not working?"
+      ]
     },
     {
       "id": "cheap-unit-high-yield-no-growth",
@@ -317,8 +582,27 @@
         "It spends a 90% loan slot",
         "Better deals are out there"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "subsale",
+        "old building",
+        "foreign worker rental",
+        "rental yield",
+        "cash flow",
+        "capital appreciation",
+        "loan slot",
+        "epf",
+        "valuation",
+        "double-digit return"
+      ],
+      "questions": [
+        "Is a cheap unit with good rental yield worth buying?",
+        "What rental yield should I aim for to cover my mortgage?",
+        "How does using a 90% loan slot affect future property purchases?",
+        "Should I pay cash for an investment property or keep it in EPF?",
+        "How many properties should I compare before buying an investment unit?"
+      ]
     },
     {
       "id": "choosing-own-stay-home",
@@ -356,6 +640,43 @@
       ]
     },
     {
+      "id": "complaining-about-your-new-house",
+      "title": "Can I complain if my new home isn't ready when I get the keys?",
+      "date": "2018-11-13",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Buyer protection",
+      "excerpt": "A friend collected his keys to find the facilities unfinished. Sean explains the protection homebuyers have under the Housing Development Act, and the tribunal where they can claim without a lawyer.",
+      "viewerQuestion": "What can a buyer do when a new home or its facilities are not delivered as promised?",
+      "answer": "Buyers of residential property are protected by the Housing Development Act, and a developer should hand over only when an architect certifies the facilities are ready. For serious failures you can file a claim at a tribunal without a lawyer, but claim what your SPA promises, not grievances like a cheaper later phase.",
+      "points": [
+        "Homes have legal protection",
+        "Facilities should come with the keys",
+        "Claims don't need a lawyer"
+      ],
+      "aliases": [
+        "vacant possession",
+        "defect claim",
+        "housing development act",
+        "tribunal",
+        "spa",
+        "architect certification",
+        "car park",
+        "access road",
+        "facilities",
+        "keys",
+        "developer",
+        "defects"
+      ],
+      "questions": [
+        "What can I do if my new home's facilities are not ready when I get the keys?",
+        "How does the Housing Development Act protect homebuyers?",
+        "Can I file a claim at the tribunal without a lawyer for defects?",
+        "What should I do if the developer ignores my defect report?",
+        "Can I claim compensation if the later phase of my development is cheaper?"
+      ]
+    },
+    {
       "id": "condo-with-many-unsold-units",
       "title": "A third of my condo is unsold. Will the developer cut prices on me?",
       "date": "2025-02-04",
@@ -371,8 +692,27 @@
         "Selling below the loan costs cash",
         "A furnished unit stands out"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "service residence",
+        "unsold units",
+        "overhang",
+        "developer discounts",
+        "bulk purchase",
+        "subsale",
+        "rental yield",
+        "furnished unit",
+        "monthly instalment",
+        "break-even rent"
+      ],
+      "questions": [
+        "Will the developer cut prices to clear unsold units?",
+        "Should I sell my condo at a loss or rent it out below the instalment?",
+        "How do developers sell leftover units without lowering prices publicly?",
+        "What are the costs of selling a condo below the outstanding loan?",
+        "Should I furnish my condo to rent it out faster?"
+      ]
     },
     {
       "id": "defect-inspection-checklist",
@@ -428,8 +768,27 @@
         "A buffer gives you time",
         "Know what is next to the house"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "mlta",
+        "mrta",
+        "fire insurance",
+        "emergency fund",
+        "cash buffer",
+        "flood coverage",
+        "contents insurance",
+        "life insurance",
+        "high-rise",
+        "landed",
+        "setback zones",
+        "pipelines"
+      ],
+      "questions": [
+        "What should I have in place before a disaster hits my property?",
+        "Does fire insurance cover floods and contents?",
+        "How much emergency fund do I need before buying property?",
+        "What should I check around a house before buying?",
+        "Are high-rises safer than landed houses during earthquakes?"
+      ]
     },
     {
       "id": "discount-price-still-losing-money",
@@ -482,8 +841,27 @@
         "Completed units let you roll faster",
         "His cash is well placed"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "klang valley",
+        "kl",
+        "selangor",
+        "cheras",
+        "mont kiara",
+        "bangsar south",
+        "jb",
+        "johor bahru",
+        "rts link",
+        "penang",
+        "kuching",
+        "completed unit"
+      ],
+      "questions": [
+        "Should I buy my first property while I'm between jobs?",
+        "Can I get a housing loan without a payslip or steady income?",
+        "How do I choose a property in an area I don't know well?",
+        "Does view or floor level matter when buying for rental income?",
+        "Should I buy a new launch or a completed unit for cash flow?"
+      ]
     },
     {
       "id": "empty-landed-house-hold-or-sell",
@@ -501,8 +879,27 @@
         "The renovation is not a property loss",
         "A corner lot is its own market"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "corner terrace",
+        "corner lot",
+        "intermediate unit",
+        "landed",
+        "high-rise",
+        "rental yield",
+        "capital growth",
+        "instalment",
+        "interest",
+        "principal",
+        "renovation",
+        "furnishing"
+      ],
+      "questions": [
+        "Should I hold, rent out, or sell my landed house that is now empty?",
+        "Why does rent not cover my full mortgage instalment for a landed house?",
+        "Is the monthly shortfall when renting out a loss or forced saving?",
+        "Does renovation cost count as a property loss when selling?",
+        "Is a corner lot worth keeping compared to an intermediate unit?"
+      ]
     },
     {
       "id": "exit-strategy-for-ageing-condos",
@@ -520,8 +917,27 @@
         "Everything but the structure can be replaced",
         "Short-stay buildings need a fast exit"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "serviced residence",
+        "high-rise",
+        "strata",
+        "maintenance fee",
+        "management body",
+        "jmb",
+        "agm",
+        "short-stay",
+        "airbnb",
+        "rental yield"
+      ],
+      "questions": [
+        "How do condo investors exit after 30 or 40 years?",
+        "Who will buy an old condo with failing lifts and facilities?",
+        "Can a condo still be sold when the building gets old?",
+        "How do I know if a condo will be well maintained long term?",
+        "Should I avoid condos used for short-stay rentals?"
+      ]
     },
     {
       "id": "failed-airbnb-studio-investment",
@@ -539,8 +955,27 @@
         "Rent sets the price",
         "Aim for cash flow, not a unit count"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "airbnb",
+        "short stay",
+        "short-term rental",
+        "studio",
+        "serviced residence",
+        "soho",
+        "commercial title",
+        "leasehold",
+        "long-term rent",
+        "rental yield",
+        "cash flow",
+        "auction"
+      ],
+      "questions": [
+        "Should I sell my Airbnb unit if it keeps losing money?",
+        "How do I know if a property can cover its instalment with rent alone?",
+        "Is Airbnb still a good investment in Malaysia?",
+        "How many properties should I aim for as an investor?",
+        "What should I check before buying a unit for short-stay rental?"
+      ]
     },
     {
       "id": "fathers-gift-for-first-property",
@@ -558,8 +993,27 @@
         "Keep the gift for investment",
         "Twenty viewings make you immune"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "subsale unit",
+        "completed unit",
+        "new launch",
+        "bulk purchase",
+        "bulk unit",
+        "rental cover",
+        "loan eligibility",
+        "income requirement",
+        "renovation cost",
+        "viewing properties",
+        "auction"
+      ],
+      "questions": [
+        "Should I buy a new launch or a completed subsale?",
+        "How much income do I need to buy a property?",
+        "Can I use my father's money to buy an investment property?",
+        "How many properties should I view before buying?",
+        "What should I do if I can't afford a property yet?"
+      ]
     },
     {
       "id": "fifth-property-before-wedding",
@@ -577,8 +1031,37 @@
         "Doubting your income means you're not ready",
         "Low valuations are normal in new projects"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "dual-key",
+        "dual key unit",
+        "condo",
+        "serviced residence",
+        "subsale",
+        "new project",
+        "low-cost flat",
+        "apartment",
+        "landed home",
+        "terrace",
+        "rumah teres",
+        "fixed deposit",
+        "epf",
+        "mlta",
+        "mrta",
+        "cash buffer",
+        "rental yield",
+        "positive cash flow",
+        "refinancing",
+        "commission income",
+        "downpayment",
+        "loan instalment"
+      ],
+      "questions": [
+        "How much cash should I keep before buying another property?",
+        "Is it wise to buy a property right before getting married?",
+        "Should I pay a big downpayment or take a bigger loan for rental income?",
+        "What rental yield do I need to cover my loan instalment and costs?",
+        "Why is my new unit valued lower than the price I paid?"
+      ]
     },
     {
       "id": "finding-money-for-a-down-payment",
@@ -596,8 +1079,27 @@
         "Beware anyone who wants your name",
         "Work back from the price"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "down payment",
+        "10% deposit",
+        "booking fee",
+        "four fs",
+        "family loan",
+        "friends loan",
+        "bank loan",
+        "credit card debt",
+        "instalment plans",
+        "joint name purchase",
+        "loan eligibility",
+        "income requirement"
+      ],
+      "questions": [
+        "How do I save for a 10% down payment on my first property?",
+        "Can I borrow from family or friends for my house down payment?",
+        "How much income do I need to buy a RM500,000 property?",
+        "Will credit card debt stop me from getting a housing loan?",
+        "Is it safe to buy a property with a friend or lend my name to someone?"
+      ]
     },
     {
       "id": "fire-insurance-for-landed-homes",
@@ -615,8 +1117,27 @@
         "Insure the rebuilding cost",
         "The loan keeps running"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "fire insurance",
+        "house insurance",
+        "home insurance",
+        "property insurance",
+        "flood coverage",
+        "contents insurance",
+        "landlord insurance",
+        "rebuilding cost",
+        "sum insured",
+        "individual title",
+        "terrace house",
+        "rumah teres"
+      ],
+      "questions": [
+        "Do I need my own fire insurance for a landed house?",
+        "What does fire insurance cover for a house?",
+        "How much fire insurance coverage do I need for my house?",
+        "Is the bank's fire insurance policy mandatory?",
+        "Can I choose my own fire insurance instead of the bank's?"
+      ]
     },
     {
       "id": "first-investment-unit-questions",
@@ -634,8 +1155,27 @@
         "Tenure and feng shui come after price",
         "Tier one locations have no rent ceiling"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "subsale unit",
+        "new launch",
+        "new project",
+        "freehold",
+        "leasehold",
+        "tenure",
+        "feng shui",
+        "tier one location",
+        "median price",
+        "bulk purchase",
+        "overhang stock"
+      ],
+      "questions": [
+        "Should a first investment be a new launch or a subsale unit?",
+        "Does freehold or leasehold matter when buying for investment?",
+        "Does feng shui affect whether a property is a good investment?",
+        "What price range should a first investment property be?",
+        "How much cash do I need to buy a subsale unit?"
+      ]
     },
     {
       "id": "first-property-at-49-inheritance",
@@ -653,8 +1193,27 @@
         "Walk-ups make poor rentals later",
         "Keep cash, borrow cheaply"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "walk-up flat",
+        "affordable housing",
+        "state-scheme home",
+        "rent out rooms",
+        "stamp duty waiver",
+        "first-home incentives",
+        "reverse mortgage",
+        "loan eligibility",
+        "fixed deposits",
+        "epf account 2",
+        "penang housing",
+        "rental income"
+      ],
+      "questions": [
+        "Should I buy a walk-up flat to rent out?",
+        "How does age affect my home loan eligibility?",
+        "Is it better to buy a house with cash or a loan?",
+        "Can I rent out spare bedrooms to help pay my mortgage?",
+        "What are the hidden costs of owning an older walk-up flat?"
+      ]
     },
     {
       "id": "first-property-must-be-a-home",
@@ -704,8 +1263,27 @@
         "Wealth-storers don't need rent",
         "Analysis without action costs years"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "serviced apartment",
+        "high-rise",
+        "landed",
+        "terrace",
+        "rumah teres",
+        "new launch",
+        "subsale",
+        "rental yield",
+        "capital appreciation",
+        "cash flow",
+        "leverage"
+      ],
+      "questions": [
+        "What are the different types of property investors in Malaysia?",
+        "Should I buy a condo for rental income or a landed house for capital growth?",
+        "How do I know if a property's rent can cover the monthly instalment?",
+        "Is it better to buy a new launch or a subsale property for investment?",
+        "How many properties should I view before deciding to buy?"
+      ]
     },
     {
       "id": "furnishing-rental-unit-worth-it",
@@ -723,8 +1301,27 @@
         "Rent can lift the property's value",
         "First impressions win tenants"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "fully furnished",
+        "semi-furnished",
+        "bare unit",
+        "furnishing package",
+        "interior design",
+        "rental return",
+        "rental yield",
+        "property value",
+        "tenant",
+        "landlord",
+        "investment unit",
+        "renovation"
+      ],
+      "questions": [
+        "Is it worth furnishing a rental unit before renting it out?",
+        "How much does it cost to furnish a unit for rent?",
+        "How does furnishing affect rental yield?",
+        "Should I furnish my rental unit or leave it bare?",
+        "How long does it take to break even on furnishing costs?"
+      ]
     },
     {
       "id": "guaranteed-rental-return-risks",
@@ -820,8 +1417,27 @@
         "The contractor wins most flips",
         "Melaka's high-rise market is weak"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "high-rise",
+        "rental unit",
+        "rental property",
+        "subsale",
+        "kl property",
+        "kuala lumpur property",
+        "flip",
+        "renovate and flip",
+        "subsale investment",
+        "rental yield",
+        "fixed deposit"
+      ],
+      "questions": [
+        "Is it better to buy a rental unit or flip a renovated house?",
+        "How much should I spend on a rental property if I earn a high salary?",
+        "Can rental income cover the monthly instalment?",
+        "Should I invest in property in Melaka or Kuala Lumpur?",
+        "What costs should I prepare before collecting the keys to a rental unit?"
+      ]
     },
     {
       "id": "hold-property-long-term-vs-flip",
@@ -839,8 +1455,27 @@
         "Older units still rent",
         "Tenants and the bank do the work"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "rental yield",
+        "monthly instalment",
+        "zero down payment",
+        "flipping",
+        "capital gain",
+        "inflation hedge",
+        "epf",
+        "landlord",
+        "tenanted unit",
+        "refinance"
+      ],
+      "questions": [
+        "Why hold a property for 30 to 35 years instead of selling after a few years?",
+        "Does property really protect your money from inflation better than cash?",
+        "Can older apartments still be rented out at a good yield?",
+        "How does rent covering the instalment make the bank and tenant pay for your property?",
+        "What should I check before buying a unit for rental income?"
+      ]
     },
     {
       "id": "hotel-scheme-unit-gone-wrong",
@@ -858,8 +1493,27 @@
         "You may not control your own unit",
         "Selling below the loan costs cash"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "serviced apartment",
+        "hotel leaseback",
+        "guaranteed rental return",
+        "guaranteed return",
+        "leaseback",
+        "strata title",
+        "joint management body",
+        "late delivery",
+        "defect claim",
+        "underwater loan",
+        "negative equity",
+        "distressed sale"
+      ],
+      "questions": [
+        "What can I do if my guaranteed rental return unit has never paid?",
+        "How do I sell a serviced apartment that is leased back to a hotel?",
+        "What happens if I sell below my outstanding loan?",
+        "Should I buy a property with a guaranteed rental return scheme?",
+        "What can I do if there is no strata title or joint management body?"
+      ]
     },
     {
       "id": "house-for-tuition-centre",
@@ -877,8 +1531,27 @@
         "Landed rent rarely covers the loan",
         "Rooms for transferred staff can pay"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "terrace house",
+        "double-storey house",
+        "intermediate unit",
+        "residential title",
+        "tuition centre",
+        "tuition class",
+        "home business",
+        "shop office",
+        "landed rent",
+        "room rental",
+        "lp psa loan",
+        "transferred staff"
+      ],
+      "questions": [
+        "Can I run a tuition centre in a residential house?",
+        "Do I need a licence to operate a tuition class from my home?",
+        "Will the rent from a double-storey house cover the monthly instalment?",
+        "Is it better to rent or buy a house in a small town?",
+        "Can I use an LPPSA loan to buy a house for rental income?"
+      ]
     },
     {
       "id": "housing-loan-eligibility-dsr",
@@ -1010,8 +1683,101 @@
         "Rent eases you in",
         "There are extra steps"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "houzkey",
+        "rent-to-own",
+        "rto",
+        "maybank islamic",
+        "sewa beli",
+        "skema sewa beli",
+        "convert to financing",
+        "spa price",
+        "rent schedule",
+        "new launch",
+        "subsale",
+        "tenancy"
+      ],
+      "questions": [
+        "How does a rent-to-own scheme like HouzKEY work?",
+        "Is rent-to-own a good way to buy a house if I can't get a loan?",
+        "What are the pros and cons of rent-to-own schemes?",
+        "Can I convert my rent-to-own to a normal housing loan later?",
+        "What should I check before signing up for a rent-to-own plan?"
+      ]
+    },
+    {
+      "id": "how-developers-make-you-buy",
+      "title": "What tricks do developers use to make me buy?",
+      "date": "2019-07-21",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Developer marketing",
+      "excerpt": "With supply outstripping demand, developers pull every lever. Sean walks through the four Ps of their marketing, from lavish sales galleries to rebates and schemes, and reminds buyers who pays for them.",
+      "viewerQuestion": "How do developers persuade buyers, and how should I respond?",
+      "answer": "Recognise the four Ps, place, product, price and packaging, as emotional triggers, and remember that every freebie is built into the price. Be patient, shop around, and buy only what you could afford even without a tenant.",
+      "points": [
+        "Place: galleries built to hold you",
+        "Product: always something new",
+        "Price and packaging: you pay for it all"
+      ],
+      "aliases": [
+        "show village",
+        "sales gallery",
+        "show unit",
+        "rebate",
+        "loyalty rebate",
+        "referral rebate",
+        "free legal fees",
+        "furnishing package",
+        "guaranteed return",
+        "dual key",
+        "semi-d",
+        "mixed development"
+      ],
+      "questions": [
+        "What tactics do developers use to make buyers purchase?",
+        "Are developer rebates and freebies really free?",
+        "How can I compare the net price of a property after discounts?",
+        "Should I rush to buy during a developer promotion?",
+        "How do I avoid being swayed by a show gallery?"
+      ]
+    },
+    {
+      "id": "how-to-calculate-rental-roi",
+      "title": "How do I calculate the return on a rental property?",
+      "date": "2019-01-15",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Return on investment",
+      "excerpt": "A 4% or 5% return on property can look poor next to 10% from shares. Sean shows how rental ROI is worked out, and why leverage changes the comparison.",
+      "viewerQuestion": "How is return on investment calculated for a rental property, and what counts as a good return?",
+      "answer": "ROI is yearly return divided by the amount invested. For property, divide a year's rent by the price. A return above fixed deposit rates is already decent, and one above your loan interest rate is very good, because the bank funds most of the purchase.",
+      "points": [
+        "The basic sum",
+        "Leverage changes the picture",
+        "Few assets come with a loan"
+      ],
+      "aliases": [
+        "rental yield",
+        "rental roi",
+        "roi calculation",
+        "leverage",
+        "gearing",
+        "down payment",
+        "fixed deposit",
+        "fd rate",
+        "loan interest rate",
+        "mortgage rate",
+        "rental income",
+        "capital appreciation"
+      ],
+      "questions": [
+        "How do I calculate the return on a rental property?",
+        "What counts as a good rental yield in Malaysia?",
+        "How does leverage affect property returns compared to shares?",
+        "Should I compare rental yield to fixed deposit rates?",
+        "Why can banks lend for property but not for shares?"
+      ]
     },
     {
       "id": "inherited-house-sell-or-keep",
@@ -1029,8 +1795,27 @@
         "Sell when you don't need the money",
         "Without a goal, nothing moves"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "semi-d",
+        "semi-detached",
+        "landed house",
+        "old house",
+        "inherited house",
+        "gifted house",
+        "rental yield",
+        "bank valuation",
+        "market value",
+        "capital appreciation",
+        "education fund",
+        "retirement plan"
+      ],
+      "questions": [
+        "Should I sell an inherited house that barely rents?",
+        "How do I find out what my old house is really worth?",
+        "Is low rental income a reason to sell a landed property?",
+        "Should I keep a house for sentimental value or sell it?",
+        "When is the best time to sell a house I don't need to sell?"
+      ]
     },
     {
       "id": "investing-in-property-at-60",
@@ -1084,8 +1869,27 @@
         "Design follows pedestrians, not cars",
         "Zoning and loans work differently"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "uk property",
+        "manchester",
+        "uk housing shortage",
+        "oversupply",
+        "foreign buyer threshold",
+        "uk loan",
+        "rental yield",
+        "pedestrian design",
+        "zoning",
+        "co-working",
+        "parking",
+        "regeneration"
+      ],
+      "questions": [
+        "How is buying property in the UK different from Malaysia?",
+        "Why do UK properties have better rental returns than Malaysian ones?",
+        "How does the UK loan process differ from Malaysia's?",
+        "What should I check before buying a UK property?",
+        "Are UK property announcements and data more reliable than Malaysia's?"
+      ]
     },
     {
       "id": "johor-rts-or-klang-valley-first-buy",
@@ -1103,8 +1907,27 @@
         "Completed units build a portfolio faster",
         "Furnishing wins top rents"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "rts link",
+        "johor bahru",
+        "co-living",
+        "partitioned rooms",
+        "seven rooms",
+        "mont kiara",
+        "resale condo",
+        "completed unit",
+        "subsale",
+        "psf",
+        "price per sq ft",
+        "rental yield"
+      ],
+      "questions": [
+        "Should I buy a co-living unit near the RTS Link or a condo in KL for my first property?",
+        "Is it better to buy a completed unit or an under-construction unit for a first investment?",
+        "How do I check if a new launch near the RTS is overpriced?",
+        "What happens to my rental income if Johor bans partitioning units into rooms?",
+        "How should I furnish a condo to get above-average rent?"
+      ]
     },
     {
       "id": "joint-home-with-ex-sell-or-rent",
@@ -1122,8 +1945,27 @@
         "Discounts were money from the future",
         "Unfurnished units rent cheaply"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "joint ownership breakup",
+        "ex partner property",
+        "sell or rent out",
+        "unfurnished rental",
+        "furnishing costs",
+        "rpgt",
+        "shortfall",
+        "legal fees",
+        "joint name",
+        "subsale",
+        "spa price",
+        "loan balance"
+      ],
+      "questions": [
+        "Should I sell or rent out a house I own with my ex?",
+        "What are the costs of selling a house after a breakup?",
+        "Is it better to rent out an unfurnished unit or sell it?",
+        "How much does it cost to furnish a rental property?",
+        "Should I buy a house in joint names with my partner?"
+      ]
     },
     {
       "id": "judging-a-buildings-architecture",
@@ -1141,8 +1983,65 @@
         "Corridors reveal the budget",
         "Facilities cost money to carry"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "serviced apartment",
+        "mixed development",
+        "density",
+        "lift to unit ratio",
+        "corridor width",
+        "single loaded corridor",
+        "double loaded corridor",
+        "unit layout",
+        "facilities",
+        "access",
+        "next door plot"
+      ],
+      "questions": [
+        "How do I judge a building's design before buying?",
+        "What should I look at besides the facade and facilities?",
+        "How does the lift-to-unit ratio affect daily living?",
+        "Why do corridors matter when choosing a condo?",
+        "What should I check about the plot next to a project?"
+      ]
+    },
+    {
+      "id": "landed-home-labels-and-guarded-areas",
+      "title": "Zero-lot bungalow, link semi-D, guarded estate: what am I buying?",
+      "date": "2018-05-24",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Landed home types",
+      "excerpt": "Developers' names for landed homes can blur what you're getting. Sean explains zero-lot bungalows and link semi-Ds, what you can and can't do on individual title, and how strata estates are run.",
+      "viewerQuestion": "What do common landed home labels mean, and how do individual-title and strata estates differ in practice?",
+      "answer": "A zero-lot bungalow is a semi-D with the pair pulled apart, and a link semi-D is a terrace house shaped to look like a semi-D. On individual title you own the land but can't close public roads, and renovations need council approval; on strata, a management body runs the estate and can enforce maintenance fees.",
+      "points": [
+        "Names can oversell",
+        "Individual title has public roads",
+        "Renovations still need approval",
+        "Strata estates are run by owners"
+      ],
+      "aliases": [
+        "zero lot bungalow",
+        "link semi-d",
+        "semi-d",
+        "terrace house",
+        "individual title",
+        "strata title",
+        "strata landed",
+        "guarded estate",
+        "residents association",
+        "management committee",
+        "joint management body",
+        "maintenance fees"
+      ],
+      "questions": [
+        "What is a zero-lot bungalow?",
+        "What is a link semi-D?",
+        "What's the difference between individual title and strata title for landed homes?",
+        "Can I close off the road in my individual-title housing area?",
+        "Do I need approval to renovate my individual-title house?"
+      ]
     },
     {
       "id": "late-delivery-damages-and-booking-fees",
@@ -1160,8 +2059,27 @@
         "Booking fees let buyers in with little cash",
         "Investors prefer well-sold projects"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "lad",
+        "liquidated ascertained damages",
+        "late delivery claim",
+        "delivery date",
+        "booking date",
+        "spa",
+        "sale and purchase agreement",
+        "homebuyer tribunal",
+        "booking fee",
+        "deposit",
+        "strata",
+        "terrace"
+      ],
+      "questions": [
+        "How is LAD calculated for late delivery of a new home?",
+        "Can I claim late-delivery damages from the booking date instead of the SPA date?",
+        "How do I file a late-delivery claim at the homebuyer tribunal?",
+        "What happens to buyers if booking fees are banned?",
+        "Do I need a lawyer to claim liquidated damages from a developer?"
+      ]
     },
     {
       "id": "leasehold-condo-resale-risk",
@@ -1202,6 +2120,82 @@
       ]
     },
     {
+      "id": "lessons-from-a-bad-deal",
+      "title": "What can I learn from Sean's worst property deal?",
+      "date": "2017-10-27",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Investment mistakes",
+      "excerpt": "Sean bought a semi-D in Johor Bahru when everyone seemed to be making money there, and was still paying for it a year after handover. He sums up the four mistakes he made.",
+      "viewerQuestion": "What went wrong in Sean's worst deal, and how can a buyer avoid the same mistakes?",
+      "answer": "Sean names four mistakes: buying on emotion when the numbers didn't work, overcommitting until instalments took about 94% to 95% of his income, assuming the developer's name didn't matter, and letting the bad deal weigh on him instead of looking for solutions.",
+      "points": [
+        "Emotion over figures",
+        "Overcommitting",
+        "The developer matters",
+        "Dwelling on it doesn't help"
+      ],
+      "aliases": [
+        "semi-d",
+        "semi-detached",
+        "johor bahru",
+        "jb",
+        "developer",
+        "after-sales service",
+        "instalment",
+        "monthly payment",
+        "overcommitment",
+        "hot market",
+        "vacant possession",
+        "emotion buying"
+      ],
+      "questions": [
+        "What mistakes did Sean make in his worst property deal?",
+        "How can I avoid overcommitting on a property purchase?",
+        "Why is it important to check the developer's track record?",
+        "What should I do if my property investment goes wrong?",
+        "How do I calculate the downside before buying in a hot market?"
+      ]
+    },
+    {
+      "id": "letting-out-your-unit",
+      "title": "I just got my keys. How do I let out the unit?",
+      "date": "2018-01-04",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Becoming a landlord",
+      "excerpt": "After the keys come four decisions: how long to let for, what rent to ask, how far to furnish, and who will manage tenants. Sean's checklist for new landlords.",
+      "viewerQuestion": "What should a new owner decide before letting out a unit?",
+      "answer": "Settle four things: the tenancy length, the rent the market will bear, how much to furnish, and who will market and manage the unit. Spend a little to stand out, because a new project hands over hundreds of units at once, all chasing the same tenants.",
+      "points": [
+        "Short or long stays",
+        "The market sets the rent",
+        "Furnish to stand out",
+        "Someone has to manage it"
+      ],
+      "aliases": [
+        "condo",
+        "apartment",
+        "short stay",
+        "airbnb",
+        "long term rental",
+        "tenancy agreement",
+        "2+1",
+        "furnished unit",
+        "unfurnished",
+        "rental agent",
+        "tenant management",
+        "rental yield"
+      ],
+      "questions": [
+        "How do I rent out my newly completed unit?",
+        "Should I do short-term stays or a long-term tenancy?",
+        "How do I decide what rent to ask for my unit?",
+        "How much should I furnish a rental unit?",
+        "Who should manage my rental unit, me or an agent?"
+      ]
+    },
+    {
       "id": "living-in-a-strata-community",
       "title": "Why do strata buildings run down, and what can owners do about it?",
       "date": "2021-10-12",
@@ -1217,8 +2211,27 @@
         "Maintain, don't hoard",
         "People make the difference"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "service residence",
+        "flat",
+        "joint management body",
+        "management corporation",
+        "jmb",
+        "mc",
+        "maintenance fee",
+        "sinking fund",
+        "agm",
+        "resident association"
+      ],
+      "questions": [
+        "Why do some condos become run down while others stay well maintained?",
+        "What can owners do to prevent their strata building from declining?",
+        "How should a management committee handle maintenance fees and costs?",
+        "What is the role of the committee and building manager in a condo?",
+        "Why is it important to pay maintenance fees on time and attend AGMs?"
+      ]
     },
     {
       "id": "loan-application-mistakes-by-income",
@@ -1274,8 +2287,27 @@
         "Selling may not clear the loan",
         "Holidays on instalments add up"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "fake payslip",
+        "loan restructurer",
+        "inflated salary",
+        "manufactured rental",
+        "fake rent",
+        "debt restructuring",
+        "loan rejection",
+        "dsr",
+        "debt service ratio",
+        "underwater loan",
+        "negative equity",
+        "instalment holiday"
+      ],
+      "questions": [
+        "Can I get a housing loan with a fake payslip?",
+        "What happens if I use tricks to qualify for a bigger loan?",
+        "Is a loan rejection a sign I cannot afford the property?",
+        "Can I still owe the bank after selling my property?",
+        "How much can I borrow based on my net income?"
+      ]
     },
     {
       "id": "location-location-location",
@@ -1367,8 +2399,27 @@
         "Ownership gives you a vote",
         "Parcels decide what you pay for"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "strata title",
+        "master title",
+        "high-rise",
+        "condo",
+        "apartment",
+        "parcel",
+        "accessory parcel",
+        "share units",
+        "joint management body",
+        "management corporation",
+        "maintenance fee",
+        "common property"
+      ],
+      "questions": [
+        "What does it mean if a condo unit is still under master title?",
+        "Can I sell my apartment if the strata title hasn't been issued?",
+        "Why does a strata title matter for getting a bank loan?",
+        "What are accessory parcels and how do they affect maintenance fees?",
+        "How are share units calculated and why do they matter?"
+      ]
     },
     {
       "id": "moving-into-family-apartment",
@@ -1386,8 +2437,27 @@
         "No commitments is a freedom",
         "Do the renovation yourself"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "serviced apartment",
+        "flat",
+        "unit",
+        "renting out",
+        "tenancy",
+        "landlord",
+        "tenant",
+        "maintenance fee",
+        "furnishing",
+        "renovation",
+        "emergency fund"
+      ],
+      "questions": [
+        "Should I move out of my parents' house while I'm between jobs?",
+        "Is it wise to live in my parents' empty apartment and pay them rent?",
+        "How do I furnish an empty apartment on a budget?",
+        "Should I quit my job to retrain for a new career?",
+        "Why is it better to change careers when I have no property loan?"
+      ]
     },
     {
       "id": "new-baby-investment-strategy",
@@ -1441,8 +2511,27 @@
         "Debt for income is different",
         "AKPK is not bankruptcy"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "rumawip",
+        "rumah wilayan persekutuan",
+        "affordable housing",
+        "federal territory housing",
+        "akpk",
+        "debt management",
+        "credit card debt",
+        "personal loan",
+        "ccris",
+        "bankruptcy",
+        "rent out",
+        "furnishing costs"
+      ],
+      "questions": [
+        "Should I rent out my affordable home or go to AKPK?",
+        "What are the hidden costs of owning a new launch home?",
+        "Can rent cover my housing loan instalment?",
+        "What happens if I miss my loan payments?",
+        "How do I avoid bankruptcy from credit card and personal loan debt?"
+      ]
     },
     {
       "id": "new-launch-vs-subsale",
@@ -1498,8 +2587,27 @@
         "Family under one roof shares the load",
         "Keep the tenanted unit earning"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "under construction",
+        "tenanted unit",
+        "tenancy agreement",
+        "rent out",
+        "in-laws",
+        "parents",
+        "renovation",
+        "confinement",
+        "childcare",
+        "handover"
+      ],
+      "questions": [
+        "Should we buy a third property before our under-construction home is ready?",
+        "Is it better to live with my parents or my wife's parents after marriage?",
+        "What costs should we expect for a wedding, baby, and renovation in the next few years?",
+        "Should we end a tenancy early to move into our own condo?",
+        "How much should we budget for renovation when we get our new home?"
+      ]
     },
     {
       "id": "no-money-down-property-deals",
@@ -1517,8 +2625,27 @@
         "It all depends on a 90% loan",
         "Infinite returns didn't save the old deals"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "zero down payment",
+        "no downpayment",
+        "booking fee",
+        "earnest deposit",
+        "developer rebate",
+        "cash back",
+        "subsale",
+        "90% loan",
+        "margin of finance",
+        "spa",
+        "rpgt",
+        "bulk purchase"
+      ],
+      "questions": [
+        "Do I really need cash for a no money down property deal?",
+        "How do developer discounts and cash backs work?",
+        "What upfront costs do I still pay in a zero down deal?",
+        "Can I get a 90% loan for a no downpayment purchase?",
+        "Why do I need a strong loan profile for a no money down deal?"
+      ]
     },
     {
       "id": "old-apartment-first-investment",
@@ -1536,8 +2663,27 @@
         "Subsale takes real cash",
         "The location is strong"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "subsale unit",
+        "old apartment",
+        "older apartment",
+        "1990s apartment",
+        "leasehold",
+        "freehold",
+        "condo",
+        "rumah flat",
+        "apartment lama",
+        "bukit jalil",
+        "1,200 sq ft"
+      ],
+      "questions": [
+        "Is an older apartment a good first investment property?",
+        "Can rental income cover the monthly loan instalment?",
+        "How much cash do I need to buy a subsale unit?",
+        "Should I buy an old apartment or a newer unit?",
+        "How do I compare buying channels for a first property?"
+      ]
     },
     {
       "id": "old-house-vs-new-property",
@@ -1593,8 +2739,27 @@
         "Doubling landed prices are history",
         "Each suits a different family"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "high-rise",
+        "service residence",
+        "terrace house",
+        "double-storey terrace",
+        "landed house",
+        "rumah teres",
+        "gated township",
+        "commute",
+        "rental yield",
+        "maintenance fees"
+      ],
+      "questions": [
+        "Is it better to buy a condo in the city or a landed house in the outskirts?",
+        "How does commuting time affect the choice between city condo and suburban landed?",
+        "Which property type gives better rental returns in Malaysia?",
+        "Do landed houses in the outskirts still double in value?",
+        "What should I consider when choosing between a high-rise and a landed home for my family?"
+      ]
     },
     {
       "id": "own-home-at-44-buy-or-rent",
@@ -1612,8 +2777,28 @@
         "Renting is cheaper when rent is far below the instalment",
         "Owning buys certainty"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "flat",
+        "service residence",
+        "high-rise",
+        "subsale",
+        "secondary market",
+        "tenancy agreement",
+        "stamped agreement",
+        "rental income",
+        "loan eligibility",
+        "age limit",
+        "will",
+        "trust"
+      ],
+      "questions": [
+        "Is it better to buy or rent a home at 44?",
+        "How does the 85% rule help decide between buying and renting?",
+        "Can rental income from properties in my name improve my loan eligibility?",
+        "What documents do banks need to recognise rental income?",
+        "Why might renting be cheaper than buying if rent is much lower than the instalment?"
+      ]
     },
     {
       "id": "own-place-or-wait-to-afford",
@@ -1631,8 +2816,27 @@
         "The RM1,500 is cheap rent",
         "Single means flexible"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "own stay",
+        "investment unit",
+        "renting",
+        "rental",
+        "emergency fund",
+        "savings",
+        "loan eligibility",
+        "monthly instalment",
+        "maintenance fees",
+        "affordability"
+      ],
+      "questions": [
+        "How much savings do I need before buying a house?",
+        "Can I afford a RM3,000 monthly mortgage on an RM11,000 salary?",
+        "Should I buy a property for own stay or for investment first?",
+        "Is it better to keep renting cheaply or buy my own place?",
+        "How do I know if I can afford a property or just the loan?"
+      ]
     },
     {
       "id": "paid-off-home-next-generation",
@@ -1688,8 +2892,27 @@
         "Refinancing releases less now",
         "Rent where you work, buy where tenants would"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "leasehold",
+        "high-rise",
+        "apartment",
+        "condo",
+        "flat",
+        "subsale",
+        "refinance",
+        "flexi loan",
+        "rental yield",
+        "rent out",
+        "lease renewal",
+        "cash-out refinancing"
+      ],
+      "questions": [
+        "Should I sell my paid-off leasehold apartment or rent it out?",
+        "Is it better to rent near work or buy another property?",
+        "How do I calculate rental yield when deciding to buy?",
+        "Does leasehold matter for high-rise apartments in Malaysia?",
+        "Should I refinance my paid-off property to free up cash?"
+      ]
     },
     {
       "id": "parents-buying-property-for-children",
@@ -1707,8 +2930,27 @@
         "Parents' savings aren't yours to risk",
         "Know what a home costs to carry"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "down payment",
+        "instalment",
+        "epf withdrawal",
+        "parents help",
+        "children home",
+        "terrace",
+        "semi-d",
+        "condo",
+        "loan repayment",
+        "retirement savings",
+        "entitlement",
+        "financial responsibility"
+      ],
+      "questions": [
+        "Should parents help their children buy a home?",
+        "Is it okay to ask parents for EPF money to buy property?",
+        "How much monthly instalment does a RM1 million condo cost?",
+        "What income do I need to afford a RM1 million home?",
+        "Should children pay the instalments if parents pay the down payment?"
+      ]
     },
     {
       "id": "parents-paying-half-for-house",
@@ -1763,8 +3005,65 @@
         "A third loan is harder",
         "Time with family is scarce too"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "apartment",
+        "service residence",
+        "rumah sewa",
+        "tenant",
+        "tenancy agreement",
+        "spa",
+        "loan",
+        "mortgage",
+        "epf",
+        "fixed deposit",
+        "disability"
+      ],
+      "questions": [
+        "Should I keep buying properties or slow down and enjoy life?",
+        "How much reserve should I keep for each rental property?",
+        "Can I get a third property loan if my second property is not rented yet?",
+        "What should I do if I might lose my sight and own properties?",
+        "Where should I put spare cash instead of buying another property?"
+      ]
+    },
+    {
+      "id": "price-per-square-foot-explained",
+      "title": "How should I use price per square foot when comparing projects?",
+      "date": "2019-08-27",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Price per square foot",
+      "excerpt": "Price per square foot lets you compare projects and areas, but it shifts with floor level, unit size and property type. Sean explains how to read it, and a marketing trick to watch for.",
+      "viewerQuestion": "What does price per square foot tell me, and how should I use it?",
+      "answer": "Psf is the price divided by the size, and it gives you an index to compare a project with its area and its neighbours. But compare like with like: psf is higher on upper floors and for smaller units, and lower for landed homes, so a low headline psf may not mean a cheap unit.",
+      "points": [
+        "It shows where a project sits",
+        "Small units carry a higher psf",
+        "Floor and type matter",
+        "Beware the lowest-psf headline"
+      ],
+      "aliases": [
+        "psf",
+        "price per sq ft",
+        "per square foot",
+        "harga per kaki persegi",
+        "condo",
+        "apartment",
+        "high-rise",
+        "highrise",
+        "landed",
+        "terrace",
+        "rumah teres",
+        "penthouse"
+      ],
+      "questions": [
+        "What does price per square foot mean in property?",
+        "How do I use psf to compare different projects?",
+        "Why is the psf higher for smaller units?",
+        "Why do landed homes have a lower psf than condos?",
+        "How do I check if an advertised low psf is really a bargain?"
+      ]
     },
     {
       "id": "property-before-proposing",
@@ -1782,8 +3081,27 @@
         "Smaller first homes are fine",
         "Don't buy jointly before marriage"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "propose",
+        "proposal",
+        "engagement",
+        "engaged",
+        "wedding",
+        "first home",
+        "starter home",
+        "renting",
+        "rent",
+        "landed house",
+        "terrace house",
+        "studio apartment"
+      ],
+      "questions": [
+        "Do I need to own a property before proposing?",
+        "Is it okay to rent while saving for a home after marriage?",
+        "What kind of first home makes sense for a couple?",
+        "Should we buy a house together before getting married?",
+        "How much of our salary should go to a home instalment?"
+      ]
     },
     {
       "id": "property-guru-units-exit-plan",
@@ -1821,6 +3139,44 @@
         "What happens to my housing loan if I die without MRTA?",
         "Should I sell my fully paid house or refinance it for cash?",
         "How do I rent out my unit and cover the monthly shortfall?"
+      ]
+    },
+    {
+      "id": "property-labels-explained",
+      "title": "Bumi lot, HDA, leasehold: what do property labels mean for me?",
+      "date": "2021-06-01",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Title and tenure",
+      "excerpt": "Commercial or residential title, HDA or not, freehold or leasehold, Bumi or non-Bumi, individual or strata: Sean's first lecture explains the labels that decide your protection and your exit.",
+      "viewerQuestion": "What do the main property categories and labels mean, and why should a buyer care?",
+      "answer": "Every unit carries labels from its land title: residential or commercial, covered by the Housing Development Act or not, freehold or leasehold, Bumi or open, individual or strata. They decide how protected your payments are, what the building must provide, and how easily you can sell.",
+      "points": [
+        "HDA protects your payments",
+        "Leasehold adds time to a sale",
+        "Bumi lots are cheaper, but stay Bumi",
+        "Commercial title has other rules"
+      ],
+      "aliases": [
+        "hda",
+        "housing development act",
+        "freehold",
+        "leasehold",
+        "bumi lot",
+        "bumiputera lot",
+        "strata title",
+        "individual title",
+        "commercial title",
+        "residential title",
+        "serviced apartment",
+        "soho"
+      ],
+      "questions": [
+        "What does it mean if a property is under the Housing Development Act?",
+        "How does leasehold tenure affect selling a property?",
+        "What are the restrictions of buying a Bumi lot?",
+        "What is the difference between individual and strata title?",
+        "Why do serviced apartments have different rules from condos?"
       ]
     },
     {
@@ -1875,8 +3231,64 @@
         "Two taxes recur every year",
         "Selling has its own rules"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "cukai pintu",
+        "cukai tanah",
+        "quit rent",
+        "assessment tax",
+        "stamp duty",
+        "rpgt",
+        "real property gains tax",
+        "income tax",
+        "taxes",
+        "property tax",
+        "annual tax",
+        "selling tax"
+      ],
+      "questions": [
+        "What taxes do I need to pay when buying a property in Malaysia?",
+        "How much stamp duty will I pay on my property purchase?",
+        "What is the difference between assessment tax and quit rent?",
+        "When do I have to pay RPGT and how is it calculated?",
+        "Can I deduct legal fees and agent fees from my RPGT?"
+      ]
+    },
+    {
+      "id": "property-traders-vs-investors",
+      "title": "Is my property an asset or a liability? Traders vs investors",
+      "date": "2017-08-28",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Investing basics",
+      "excerpt": "Property makes money through monthly rent or a gain on sale. Sean explains why a property that drains your account is a liability, and how tax shapes the trader's game.",
+      "viewerQuestion": "What makes a property an asset rather than a liability, and how do traders and investors differ?",
+      "answer": "Following Rich Dad Poor Dad, Sean counts a property as an asset only if it puts money into your account each month; one that takes money out is a liability, which is why a dream home makes a poor first property. Investors buy and keep for rent; traders buy and sell for capital gains, and must play by the tax rules.",
+      "points": [
+        "Small surpluses add up",
+        "Declared rent helps you borrow",
+        "Traders live by the RPGT rules"
+      ],
+      "aliases": [
+        "condo",
+        "apartment",
+        "rental income",
+        "monthly rent",
+        "cash flow",
+        "capital gain",
+        "flipping",
+        "subsale",
+        "rpgt",
+        "real property gains tax",
+        "dream home",
+        "first property"
+      ],
+      "questions": [
+        "What makes a property an asset instead of a liability?",
+        "How do property investors differ from traders?",
+        "Is a home you live in an asset or a liability?",
+        "How does rental income help me get another loan?",
+        "What is RPGT and how does it affect selling my property?"
+      ]
     },
     {
       "id": "property-versus-fixed-deposit",
@@ -1894,8 +3306,27 @@
         "Rents are easy to check before buying",
         "Prices are moving where you look"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "service residence",
+        "high-rise",
+        "subsale",
+        "zero down",
+        "full loan",
+        "rental yield",
+        "flexi loan",
+        "epf",
+        "fixed deposit",
+        "property manager",
+        "klang valley condo"
+      ],
+      "questions": [
+        "Is property still worth it if the rent doesn't cover the monthly instalment?",
+        "How do I compare property returns against fixed deposit or EPF?",
+        "Why buy property with a full loan instead of paying cash?",
+        "How do I check if the rent can cover the loan instalment before buying?",
+        "What should I do with spare cash when my loan rate is higher than FD rates?"
+      ]
     },
     {
       "id": "rebuilding-credit-after-bankruptcy",
@@ -1913,8 +3344,27 @@
         "Every expense is negotiable",
         "Never lend your name"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "bankruptcy",
+        "bankrupt",
+        "discharged bankrupt",
+        "credit score",
+        "credit rating",
+        "personal loan",
+        "credit card debt",
+        "debt consolidation",
+        "akpk",
+        "mlta",
+        "mrta",
+        "guarantor"
+      ],
+      "questions": [
+        "How do I rebuild my credit score after bankruptcy discharge?",
+        "Should I take a personal loan to improve my credit score?",
+        "How to manage credit card debt when living paycheck to paycheck?",
+        "What is AKPK and how can it help with credit card debt?",
+        "Should I be a guarantor or take a loan for a family member?"
+      ]
     },
     {
       "id": "refinance-or-sell-to-clear-debts",
@@ -1932,8 +3382,27 @@
         "Selling gives up a good asset",
         "This is good debt against bad"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "refinance",
+        "cash-out refinance",
+        "sell rental unit",
+        "clear debts",
+        "credit card debt",
+        "personal loan",
+        "bad debt",
+        "good debt",
+        "debt service ratio",
+        "90% loan",
+        "rental income",
+        "mortgage"
+      ],
+      "questions": [
+        "Should I refinance my rental property to pay off credit card and personal loan debts?",
+        "How much cash can I get from refinancing my property under the new cash-out rules?",
+        "Is it better to sell my rental unit to clear debts or refinance it?",
+        "Why is it hard to refinance with high credit card and personal loan debts?",
+        "How can I clear high-interest debts like credit cards and personal loans?"
+      ]
     },
     {
       "id": "refinancing-housing-loan-reasons",
@@ -1951,8 +3420,64 @@
         "A small rate cut adds up",
         "Consolidate bad debt, never restructure"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "refinance",
+        "housing loan",
+        "mortgage",
+        "cash out",
+        "equity loan",
+        "debt consolidation",
+        "lower interest rate",
+        "90% loan",
+        "valuation",
+        "income test",
+        "ccris",
+        "dsr"
+      ],
+      "questions": [
+        "When does refinancing a housing loan make sense?",
+        "How much can I cash out from my property?",
+        "Can I refinance to get a 90% loan again?",
+        "What are the costs of refinancing a mortgage?",
+        "Can I consolidate credit card debt into my housing loan?"
+      ]
+    },
+    {
+      "id": "relying-on-airbnb-income",
+      "title": "Is it safe to count on Airbnb income to pay my instalment?",
+      "date": "2018-08-06",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Short-term rental",
+      "excerpt": "A week of short-stay bookings can earn what a month of normal rent does, so many units are now sold as Airbnb-ready. Sean warns that residents and regulators can end the model.",
+      "viewerQuestion": "Should I buy a property relying on short-term rental income to cover the instalment?",
+      "answer": "No. Short stays can earn well, but residents' committees are banning them and governments are moving to regulate them. If your sums only work with Airbnb income, one rule change can wreck your financial model.",
+      "points": [
+        "The returns are tempting",
+        "Residents push back",
+        "Regulation is coming"
+      ],
+      "aliases": [
+        "airbnb",
+        "short stay",
+        "short-term rental",
+        "str",
+        "homestay",
+        "nightly rental",
+        "airbnb-ready",
+        "jmb",
+        "management ban",
+        "registration",
+        "instalment",
+        "long-term rent"
+      ],
+      "questions": [
+        "Can I rely on Airbnb income to pay my monthly instalment?",
+        "Are short-stay rentals allowed in my condo?",
+        "Why are residents banning Airbnb in their buildings?",
+        "Will Malaysia regulate short-term rental hosts?",
+        "Should I buy a unit marketed as Airbnb-ready?"
+      ]
     },
     {
       "id": "renovation-mistakes-to-avoid",
@@ -1970,8 +3495,27 @@
         "Switches and sockets by where you use them",
         "Ready aircon points save trouble"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "renovation",
+        "defects",
+        "cracks",
+        "lighting",
+        "switches",
+        "power points",
+        "aircon piping",
+        "tiles",
+        "furniture layout",
+        "two-way switch",
+        "grout lines",
+        "trunking"
+      ],
+      "questions": [
+        "What are common renovation mistakes to avoid when getting new house keys?",
+        "How to plan lighting points to match furniture layout?",
+        "Where should I place power points and switches in bedrooms?",
+        "Why is it important to have aircon piping ready before renovation?",
+        "How to prevent cracks at joints between different materials?"
+      ]
     },
     {
       "id": "rent-home-with-lift-for-parent",
@@ -1989,8 +3533,27 @@
         "Investing needs three things first",
         "RM5,000 is not a low income"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "walk-up",
+        "flat",
+        "public housing",
+        "subsale",
+        "new launch",
+        "lift",
+        "wheelchair",
+        "rent out",
+        "emergency fund",
+        "insurance",
+        "loan eligibility",
+        "renovation"
+      ],
+      "questions": [
+        "Should I rent or buy a home with a lift for my elderly parent?",
+        "How long does it take to buy a subsale or new launch?",
+        "What should I do before investing in property?",
+        "How can I increase my income to afford property?",
+        "When does it make sense to buy a home out of need?"
+      ]
     },
     {
       "id": "rent-to-rent-scheme-portfolio",
@@ -2008,8 +3571,27 @@
         "One unit already takes half his income",
         "The guarantee is priced in"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "rent-to-rent",
+        "guaranteed rental return",
+        "guaranteed rent",
+        "rental guarantee",
+        "rent-to-rent scheme",
+        "rent-to-rent contract",
+        "rental guarantee scheme",
+        "guaranteed rental",
+        "rent guarantee",
+        "rent-to-rent agreement",
+        "guaranteed rent scheme",
+        "rental return guarantee"
+      ],
+      "questions": [
+        "Can a rent-to-rent guarantee help me build a property portfolio quickly?",
+        "Is a rent-to-rent scheme a safe investment?",
+        "What should I check in a rent-to-rent contract before signing?",
+        "How much income do I need to afford a property with a rent-to-rent guarantee?",
+        "What are the risks of guaranteed rental return schemes?"
+      ]
     },
     {
       "id": "rent-your-home-buy-to-invest",
@@ -2027,8 +3609,27 @@
         "Buying protects against inflation",
         "Investors often rent their own homes"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "rentvesting",
+        "rent and invest",
+        "rent where you live",
+        "buy to rent out",
+        "investment property",
+        "rental yield",
+        "oversupply",
+        "tenant market",
+        "flexibility",
+        "inflation hedge",
+        "hidden costs",
+        "landlord"
+      ],
+      "questions": [
+        "Should I rent or buy a home?",
+        "Is renting a waste of money?",
+        "How can I invest in property while renting?",
+        "What are the hidden costs of owning a rental property?",
+        "Why do some investors rent their own home?"
+      ]
     },
     {
       "id": "retire-at-40-on-rental-income",
@@ -2046,8 +3647,27 @@
         "He can sell one when he needs cash",
         "Investing early bought the choice"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "terrace",
+        "rumah teres",
+        "rental income",
+        "passive income",
+        "flexi loan",
+        "semi-flexi loan",
+        "refinance",
+        "loan account",
+        "equity",
+        "capital appreciation",
+        "landlord"
+      ],
+      "questions": [
+        "Should I live on my rental income or buy more properties?",
+        "Is it better to park cash in a flexi loan or buy another property?",
+        "How many properties do I need before I can stop working?",
+        "Can I retire on rental income from my properties?",
+        "Should I set up a company to hold my properties?"
+      ]
     },
     {
       "id": "retiring-with-six-properties",
@@ -2065,8 +3685,27 @@
         "Timing the sale can add value",
         "Their daughters' homes are a good lesson"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "shop lot",
+        "shoplot",
+        "kedai",
+        "cluster home",
+        "cluster house",
+        "rumah kluster",
+        "apartment",
+        "condo",
+        "mrt",
+        "epf",
+        "kwsp",
+        "downsize"
+      ],
+      "questions": [
+        "Should I sell my shop lot and landed home to downsize for retirement?",
+        "How can I plan my property sales for retirement?",
+        "Is it better to sell properties gradually or all at once before retiring?",
+        "What should I consider when buying a retirement apartment near MRT?",
+        "How does retiring early affect my property investment strategy?"
+      ]
     },
     {
       "id": "returning-home-to-retire-portfolio",
@@ -2084,8 +3723,27 @@
         "Refinancing releases less than it used to",
         "Choose the home by the life you want"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "terrace",
+        "rumah teres",
+        "leasehold",
+        "freehold",
+        "gated community",
+        "strata",
+        "refinance",
+        "cash-out refinance",
+        "rental income",
+        "non-resident tax",
+        "klang valley"
+      ],
+      "questions": [
+        "Should I keep or sell my leasehold townhouse that hasn't appreciated?",
+        "Is refinancing worth it to free up cash for a new property?",
+        "Do gated landed homes hold their value better than open ones?",
+        "How does the 30% non-resident tax affect rental income?",
+        "Should I rent first before buying a retirement home in Malaysia?"
+      ]
     },
     {
       "id": "second-property-subsale-cheras",
@@ -2103,8 +3761,27 @@
         "Completed unsold units combine both",
         "Fewer families means smaller city units"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "subsale unit",
+        "completed unit",
+        "second property",
+        "dual-key",
+        "furnished unit",
+        "leasehold",
+        "freehold",
+        "stamp duty",
+        "earnest deposit",
+        "spa",
+        "defect repair"
+      ],
+      "questions": [
+        "Is it too aggressive to buy a second property within a year of the first?",
+        "What are the steps and costs after making an offer on a subsale unit?",
+        "How much cash do I need upfront for a subsale purchase?",
+        "Should I buy a subsale or a completed unsold unit from a developer?",
+        "Will falling birth rates cause property oversupply in Malaysia?"
+      ]
     },
     {
       "id": "second-property-vs-equities",
@@ -2160,8 +3837,27 @@
         "One committed agent beats five",
         "Protect the family first"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "corner semi-d",
+        "semi-detached",
+        "semi-d",
+        "rumah semi-d",
+        "terrace house",
+        "landed house",
+        "subsale",
+        "resale",
+        "bank valuation",
+        "market value",
+        "rpgt",
+        "real property gains tax"
+      ],
+      "questions": [
+        "How do I get the best price when selling my house?",
+        "How long does it take to sell a house at an above-market asking price?",
+        "Should I use one agent or multiple agents to sell my house?",
+        "How does bank valuation affect how much a buyer can borrow?",
+        "Do I need to pay tax when selling a home I have owned for many years?"
+      ]
     },
     {
       "id": "selling-fully-paid-properties-retirement",
@@ -2199,6 +3895,43 @@
         "What is the RPGT rate for selling property in Malaysia?",
         "Can rental income from Singapore properties fund retirement in Penang?",
         "How does the Penang LRT affect property values and selling decisions?"
+      ]
+    },
+    {
+      "id": "serviced-apartment-vs-condominium",
+      "title": "What's the difference between a serviced apartment and a condo?",
+      "date": "2017-07-26",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Property types",
+      "excerpt": "They look alike, but serviced apartments sit on commercial land and condos on residential land. Sean explains how that changes car parks, density and utility bills.",
+      "viewerQuestion": "How do serviced apartments and condominiums differ, and does it matter to a buyer?",
+      "answer": "The difference starts with the land: serviced apartments are built on commercial land and condos on residential land. That means serviced apartments may have fewer car parks per unit, far higher density, and commercial utility rates.",
+      "points": [
+        "Fewer car parks",
+        "Higher density",
+        "Commercial utility rates"
+      ],
+      "aliases": [
+        "serviced residence",
+        "sovo",
+        "soho",
+        "commercial title",
+        "residential title",
+        "commercial land",
+        "residential land",
+        "car park allocation",
+        "density",
+        "utility rates",
+        "commercial electricity",
+        "residential electricity"
+      ],
+      "questions": [
+        "What is the difference between a serviced apartment and a condominium?",
+        "How does the land title affect car park allocation in high-rise properties?",
+        "Why do serviced apartments have higher density than condos?",
+        "Are utility bills higher for serviced apartments compared to condos?",
+        "How can I check if a property is on commercial or residential land?"
       ]
     },
     {
@@ -2463,6 +4196,43 @@
       ]
     },
     {
+      "id": "steps-before-your-first-property",
+      "title": "What should I do before buying my first property?",
+      "date": "2017-07-26",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "First property",
+      "excerpt": "Sean's four steps before a first purchase: know why you are buying, find out how much the bank will lend, view property after property, and only then arrange the financing.",
+      "viewerQuestion": "What should a first-time buyer do before committing to a property?",
+      "answer": "Follow four steps in order: decide why you are buying, find out how much the bank will lend you, view many properties within that budget, and only then arrange the financing for the one you choose.",
+      "points": [
+        "Your purpose shapes the purchase",
+        "Your loan sets your search",
+        "Viewing teaches you the market"
+      ],
+      "aliases": [
+        "first-time buyer",
+        "loan eligibility",
+        "bank loan",
+        "viewing properties",
+        "down payment",
+        "financing",
+        "property portals",
+        "budget",
+        "home loan",
+        "mortgage",
+        "subsale",
+        "new launch"
+      ],
+      "questions": [
+        "What should I do before buying my first property?",
+        "How do I know how much the bank will lend me for a house?",
+        "Why is it important to view many properties before buying?",
+        "Should I arrange financing before or after choosing a property?",
+        "How do I decide why I am buying a property?"
+      ]
+    },
+    {
       "id": "strata-or-individual-title-landed",
       "title": "Strata landed or individual title: which kind of landed home to buy?",
       "date": "2024-11-21",
@@ -2478,8 +4248,27 @@
         "Individual titles hide their upkeep",
         "Who buys at RM1.8 million?"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "strata landed",
+        "gated guarded",
+        "guardhouse",
+        "individual title",
+        "freehold landed",
+        "terrace house",
+        "rumah teres",
+        "landed strata",
+        "management fee",
+        "maintenance fee",
+        "facade renovation",
+        "gated community"
+      ],
+      "questions": [
+        "What is the difference between landed strata and individual-title houses?",
+        "Do strata landed homes hold their value better than individual-title houses?",
+        "Can I renovate the facade of a strata landed house?",
+        "Are maintenance fees worth it for a gated landed home?",
+        "What should I check before buying a strata landed property?"
+      ]
     },
     {
       "id": "student-accommodation-investment-risk",
@@ -2497,8 +4286,27 @@
         "Students wear buildings out",
         "Furnishing is expected, and costs more"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "student rental",
+        "room rental",
+        "co-living",
+        "university accommodation",
+        "student housing",
+        "rental yield",
+        "exit strategy",
+        "furnishing package",
+        "property management",
+        "joint management body",
+        "maintenance fees",
+        "brt"
+      ],
+      "questions": [
+        "Are student rental properties near universities a good investment?",
+        "What are the risks of investing in a unit designed for student rentals?",
+        "Does furnishing matter for student rental units?",
+        "Should I hire a property management company for my rental unit?",
+        "When should I exit a student rental investment?"
+      ]
     },
     {
       "id": "student-preparing-first-property",
@@ -2516,8 +4324,27 @@
         "RM10,000 is not enough",
         "Expecting fast money is the classic mistake"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "subsale",
+        "down payment",
+        "emergency fund",
+        "medical card",
+        "sole proprietorship",
+        "sdn bhd",
+        "media agency",
+        "freelance videography",
+        "investor community",
+        "fake guru",
+        "property investment"
+      ],
+      "questions": [
+        "How much savings do I need before buying my first property?",
+        "Should I buy property while my business is still growing?",
+        "What should I prepare financially before getting a housing loan?",
+        "Is RM10,000 enough for a down payment on a house?",
+        "How can I tell if a property guru is genuine?"
+      ]
     },
     {
       "id": "ten-million-property-goal-at-25",
@@ -2535,8 +4362,27 @@
         "Diversify into uncorrelated assets",
         "Judge success by cash flow, not asset value"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "condo",
+        "high-rise",
+        "subsale",
+        "shop lot",
+        "commercial property",
+        "foreign spouse quota",
+        "loan margin",
+        "down payment",
+        "cash flow",
+        "dollar-cost averaging",
+        "uncorrelated assets",
+        "second property"
+      ],
+      "questions": [
+        "How many properties should I own before diversifying?",
+        "What is the down payment for a third property in Malaysia?",
+        "Should I buy commercial property for rental income?",
+        "How can a foreign spouse help me buy property in Malaysia?",
+        "Is property the best way to build wealth?"
+      ]
     },
     {
       "id": "ten-properties-ten-years",
@@ -2554,8 +4400,27 @@
         "Studios suit only expensive land",
         "Active income drives the portfolio"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "positive cash flow",
+        "cash back",
+        "flexi loan",
+        "high-rise",
+        "studio",
+        "subsale",
+        "auction",
+        "bulk purchase",
+        "rental yield",
+        "capital growth",
+        "tier one location",
+        "mont kiara"
+      ],
+      "questions": [
+        "Is cash back or positive cash flow better for a first property?",
+        "How does rent affect a high-rise unit's resale value?",
+        "Should I buy several properties in quick succession?",
+        "Where should I park spare cash, flexi loan or elsewhere?",
+        "How many properties can I realistically buy on a RM5,500 salary?"
+      ]
     },
     {
       "id": "tenant-not-paying-rent",
@@ -2611,8 +4476,27 @@
         "Subsale lets you negotiate",
         "Stay ready for the deal"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "subsale condo",
+        "condo",
+        "apartment",
+        "rental income",
+        "monthly rent",
+        "lump sum rent",
+        "advance rent",
+        "bank statement",
+        "ccris",
+        "loan eligibility",
+        "auto-debit"
+      ],
+      "questions": [
+        "Does paying rent every six months affect my loan application?",
+        "How do banks assess rental income for a mortgage?",
+        "Can I use rental income to qualify for a second property?",
+        "What should I do if my tenant wants to pay rent upfront?",
+        "How to keep rental income consistent for loan approval?"
+      ]
     },
     {
       "id": "third-property-buying-channel",
@@ -2630,8 +4514,64 @@
         "Auctions carry hidden problems",
         "Her business may out-earn her job"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "subsale",
+        "auction",
+        "new launch",
+        "bulk purchase",
+        "high-rise",
+        "strata title",
+        "ccris",
+        "90% loan",
+        "down payment",
+        "cash flow",
+        "furnishing",
+        "emergency fund"
+      ],
+      "questions": [
+        "Should I use cash or loan for my third property?",
+        "What are the risks of buying auction high-rise properties?",
+        "How does bulk purchase differ from normal developer discounts?",
+        "Should I keep my savings or use them for a down payment?",
+        "Which property channel is best for positive cash flow?"
+      ]
+    },
+    {
+      "id": "three-bedroom-low-or-two-bedroom-high",
+      "title": "Should I pick a low-floor three-bedroom or a high-floor two-bedroom?",
+      "date": "2019-09-29",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Unit selection",
+      "excerpt": "In the same block and at the same price, a low-floor three-bedroom or a high-floor two-bedroom? Sean's answer depends on whether you will rent it out or live in it.",
+      "viewerQuestion": "In the same block, is a low-floor three-bedroom or a high-floor two-bedroom the better buy?",
+      "answer": "For a rental, take the low-floor three-bedroom: rents are set mainly by the number of rooms, not the height. For own stay it is personal, depending on how much you value the view, but check how low the low floor really is.",
+      "points": [
+        "Rent follows the room count",
+        "Few tenants pay for height",
+        "How low is low"
+      ],
+      "aliases": [
+        "condo",
+        "three bedroom",
+        "two bedroom",
+        "low floor",
+        "high floor",
+        "rental unit",
+        "own stay",
+        "room count",
+        "view",
+        "convert layout",
+        "road noise",
+        "rental yield"
+      ],
+      "questions": [
+        "Is a low-floor three-bedroom or a high-floor two-bedroom better for rental?",
+        "Does floor height affect rental price in Malaysia?",
+        "Should I choose more bedrooms or a better view when buying a condo?",
+        "Can a two-bedroom unit be converted into a three-bedroom for higher rent?",
+        "How low is too low for a condo floor near a highway?"
+      ]
     },
     {
       "id": "three-tod-projects-equal-cash-flow",
@@ -2649,8 +4589,27 @@
         "Older units are cheap for a reason",
         "Prime location is not enough"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "serviced apartment",
+        "serviced residence",
+        "transit-oriented development",
+        "tod",
+        "subsale",
+        "subsale unit",
+        "bulk purchase",
+        "bulk deal",
+        "cash back",
+        "median price",
+        "psf",
+        "walkability"
+      ],
+      "questions": [
+        "How do I choose between two properties with similar rental cash flow?",
+        "How much does being within walking distance to LRT or MRT matter for rental demand?",
+        "Why are some older condos in Mont Kiara so cheap?",
+        "Are bulk purchase units with cash back a good deal?",
+        "Should I buy a new launch or a subsale for investment?"
+      ]
     },
     {
       "id": "transit-oriented-development-explained",
@@ -2668,8 +4627,27 @@
         "Someone pays for the walkways",
         "Compartmentalisation matters"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "tod",
+        "transit-oriented development",
+        "mrt",
+        "lrt",
+        "train station",
+        "mixed development",
+        "serviced apartment",
+        "rail link",
+        "public transport",
+        "maintenance fees",
+        "security",
+        "rental"
+      ],
+      "questions": [
+        "What is a transit-oriented development?",
+        "Is a home near an MRT or LRT station a good buy?",
+        "Do TODs have higher rental demand?",
+        "What are the downsides of living in a TOD?",
+        "How can I check if a project is truly connected to a station?"
+      ]
     },
     {
       "id": "unsold-units-near-completion",
@@ -2710,6 +4688,81 @@
       ]
     },
     {
+      "id": "using-transacted-price-data",
+      "title": "How do I use transaction data to check a project's price?",
+      "date": "2024-05-26",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Market data",
+      "excerpt": "Asking prices are set by owners who want to sell high. Sean's three-part research ends with transacted prices: the median nearby, the outliers, and how often units actually change hands.",
+      "viewerQuestion": "How should I research a project's price before booking?",
+      "answer": "Research in three parts: the project and its sales gallery, the site and its surroundings, and then transacted prices nearby. Establish the median price and psf around the project, understand any outlier, and treat a location with few recent transactions as a warning.",
+      "points": [
+        "Galleries are sales funnels",
+        "The site shows who lives there",
+        "Medians beat asking prices",
+        "Transaction pace shows demand"
+      ],
+      "aliases": [
+        "subsale",
+        "secondary market",
+        "transacted price",
+        "median price",
+        "psf",
+        "price per square foot",
+        "asking price",
+        "sales gallery",
+        "showroom",
+        "site visit",
+        "outlier",
+        "transaction volume"
+      ],
+      "questions": [
+        "How do I check a project's actual selling price before buying?",
+        "Why is the asking price so different from the transacted price?",
+        "How do I know if a project's price is reasonable?",
+        "What does it mean if there are very few recent transactions in an area?",
+        "How do I research a project before booking a unit?"
+      ]
+    },
+    {
+      "id": "visiting-a-sales-gallery",
+      "title": "What should I ask and check when I visit a sales gallery?",
+      "date": "2017-11-27",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Show units",
+      "excerpt": "Show units are built to stir your emotions. Sean lists the questions to ask a sales team, what to check in a show unit, and why floor premiums make top floors hard to sell.",
+      "viewerQuestion": "How should a buyer approach a sales gallery and show unit?",
+      "answer": "Go to listen and to ask, and keep a realistic mind: the actual unit won't look like the show unit. Check what is really included, take package offers away to think about, and keep visiting other projects so you aren't swept along by one pitch.",
+      "points": [
+        "Questions reveal the value",
+        "Show units aren't always the spec",
+        "Floor premiums add up"
+      ],
+      "aliases": [
+        "show unit",
+        "showroom",
+        "sales office",
+        "sales gallery",
+        "display unit",
+        "floor premium",
+        "high floor",
+        "fittings",
+        "flooring",
+        "package offer",
+        "developer sales",
+        "new launch"
+      ],
+      "questions": [
+        "What should I ask the sales team at a property sales gallery?",
+        "Is the show unit the same as the actual unit I will get?",
+        "What should I check inside a show unit before buying?",
+        "Why are the highest floors so expensive and hard to sell?",
+        "Should I decide on a package offer on the spot?"
+      ]
+    },
+    {
       "id": "weekday-weekend-test-own-stay",
       "title": "How do I know a location suits me before buying a home?",
       "date": "2020-07-01",
@@ -2725,8 +4778,102 @@
         "Don't buy for a once-a-month view",
         "Bigger isn't always better"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "affordability",
+        "instalment",
+        "monthly repayment",
+        "loan tenure",
+        "commute",
+        "school run",
+        "daycare",
+        "groceries",
+        "weekday routine",
+        "weekend routine",
+        "maintenance",
+        "subsale"
+      ],
+      "questions": [
+        "How do I know if I can afford a home before buying?",
+        "How do I check if a location suits my daily routine?",
+        "What should I consider about the commute and schools before buying?",
+        "Is a bigger house always better for a family?",
+        "How do I decide between a home to live in and an investment?"
+      ]
+    },
+    {
+      "id": "what-investors-look-for-in-a-deal",
+      "title": "What do seasoned property investors look for in a deal?",
+      "date": "2018-09-06",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Spotting a good deal",
+      "excerpt": "A big developer discount is not the same as buying below market value. Sean lists the four things experienced investors look for: a real discount, positive cash flow, data, and agents' news.",
+      "viewerQuestion": "What criteria do experienced investors use to judge a property deal?",
+      "answer": "They look for four things: a price below what neighbouring units actually transact at, rent that covers the instalment, decisions backed by data rather than emotion, and good relationships with agents who hear of deals first.",
+      "points": [
+        "Below market means below transactions",
+        "Cash flow keeps you borrowing",
+        "Data, not attachment",
+        "Agents hear first"
+      ],
+      "aliases": [
+        "below market value",
+        "subsale",
+        "psf",
+        "rental yield",
+        "positive cash flow",
+        "developer discount",
+        "rebate",
+        "bulk purchase",
+        "bank loan",
+        "margin of finance",
+        "recent transactions",
+        "property agent"
+      ],
+      "questions": [
+        "How do experienced investors determine if a property is below market value?",
+        "What should I check to ensure a property generates positive cash flow?",
+        "How can I use data to make better property investment decisions?",
+        "Why is it important to build relationships with real estate agents?",
+        "What are the key criteria seasoned investors use to evaluate a property deal?"
+      ]
+    },
+    {
+      "id": "what-is-apdl",
+      "title": "What is an APDL, and why can't I sign the SPA without it?",
+      "date": "2018-04-06",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Developer licence",
+      "excerpt": "Agents often say a launch can't sign SPAs because it has no APDL yet. Sean explains the advertising permit and developer's licence, what an ad must show, and what pre-launch bookings really mean.",
+      "viewerQuestion": "What is an APDL, and what does it mean for a buyer?",
+      "answer": "APDL stands for advertising permit and developer's licence, approved by the housing ministry. A developer can only apply after its building plans are approved, and can only sell once it has one, so until then you can't sign an SPA. Its details on every ad tell you a lot about a project.",
+      "points": [
+        "Ads must show the licence details",
+        "It comes after plan approval",
+        "Pre-launches come before it"
+      ],
+      "aliases": [
+        "apdl",
+        "advertising permit",
+        "developer's licence",
+        "pre-launch",
+        "pre-booking",
+        "sale and purchase agreement",
+        "spa",
+        "housing ministry",
+        "building plan approval",
+        "land tenure",
+        "restriction in interest",
+        "commercial project"
+      ],
+      "questions": [
+        "What is an APDL and why is it needed before signing the SPA?",
+        "What details must be shown in a property advertisement according to the APDL?",
+        "Can I sign the sale and purchase agreement during a pre-launch booking?",
+        "What should I check on a property ad before contacting the developer?",
+        "Are booking fees for residential projects protected if the developer has no APDL?"
+      ]
     },
     {
       "id": "what-to-check-in-your-spa",
@@ -2744,8 +4891,27 @@
         "Finishes are described, not branded",
         "Keys need a certificate, and facilities too"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "spa",
+        "sale and purchase agreement",
+        "standard spa",
+        "new launch",
+        "under construction",
+        "defect liability period",
+        "dlp",
+        "vacant possession",
+        "vp",
+        "payment schedule",
+        "schedule of finishes",
+        "certificate of completion and compliance"
+      ],
+      "questions": [
+        "What should I check in my sale and purchase agreement before signing?",
+        "How does the payment schedule work for a new property?",
+        "What is the defect liability period and how do I claim for defects?",
+        "What happens if the built-up area is different from what was promised?",
+        "What is the difference between residential and commercial title in an SPA?"
+      ]
     },
     {
       "id": "when-to-buy-property-data-guide",
@@ -2777,6 +4943,81 @@
         "How much do house prices actually rise in Malaysia each year?",
         "What rental yield should I look for before buying a property?",
         "Should I buy below the median transacted price in an area?"
+      ]
+    },
+    {
+      "id": "where-discounted-properties-come-from",
+      "title": "Where do discounted properties come from, and which are real deals?",
+      "date": "2019-06-17",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Discounts",
+      "excerpt": "A slow-selling project passes from the developer's own promotions to agents, then to group-buying clubs, and sometimes to auction. Sean traces the path, and what each discount really means.",
+      "viewerQuestion": "Where can buyers find discounted property, and how genuine are the discounts?",
+      "answer": "Discounts follow a project's struggle to sell: developer promotions, then agents, then group-buying clubs, and finally auctions. Many early discounts are applied after a price rise, while auctions often offer the most genuine value but need the most knowledge. First-time buyers are safest buying direct from a developer.",
+      "points": [
+        "Developer discounts may follow a price rise",
+        "Agents step in when sales stall",
+        "Group buys fill a building with investors",
+        "Auctions show the real value"
+      ],
+      "aliases": [
+        "subsale",
+        "new launch",
+        "developer unit",
+        "bumi lot",
+        "rebate",
+        "cashback",
+        "lelong",
+        "auction property",
+        "group buy",
+        "bulk purchase",
+        "agent commission",
+        "below market value"
+      ],
+      "questions": [
+        "Where do discounted properties in Malaysia actually come from?",
+        "Are developer discounts on new launches genuine or just a price increase?",
+        "How do group-buying clubs offer cash back on property?",
+        "Are auction properties cheaper than market value?",
+        "Should first-time buyers buy from a developer or through an agent?"
+      ]
+    },
+    {
+      "id": "why-property-over-other-investments",
+      "title": "Why invest in property instead of shares, gold or other options?",
+      "date": "2017-10-13",
+      "series": "buyer-guides",
+      "askingSeanEpisode": null,
+      "tag": "Asset choice",
+      "excerpt": "Shares, bonds, gold and savings plans all compete for your money. Sean gives three reasons he favours property, leverage, slow and visible trends, and rent along the way, while still urging diversification.",
+      "viewerQuestion": "Why choose property over other investments?",
+      "answer": "Sean gives three reasons: banks lend you most of the price, property trends move slowly enough to see and act on, and the property pays rent while you hold it. But he still says not to put all your eggs in one basket.",
+      "points": [
+        "Leverage from the bank",
+        "Trends move slowly",
+        "Rent while you wait"
+      ],
+      "aliases": [
+        "condo",
+        "terrace",
+        "rumah teres",
+        "housing loan",
+        "rental income",
+        "capital appreciation",
+        "leverage",
+        "diversification",
+        "gold",
+        "shares",
+        "bonds",
+        "cryptocurrency"
+      ],
+      "questions": [
+        "Why invest in property instead of shares?",
+        "How does leverage work in property investment?",
+        "Why are property trends easier to follow than stock market trends?",
+        "How does rental income contribute to property investment returns?",
+        "How should I diversify my investment portfolio with property?"
       ]
     },
     {
@@ -2833,8 +5074,27 @@
         "Don't buy with a partner",
         "Cash back tempts overspending"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "abandoned project",
+        "sick project",
+        "spa",
+        "sale and purchase agreement",
+        "booking fee",
+        "loan eligibility",
+        "cash back",
+        "rebate",
+        "overgearing",
+        "joint purchase",
+        "commercial property",
+        "housing development act"
+      ],
+      "questions": [
+        "What should I check before buying a property from a developer?",
+        "Can I sign the SPA before my loan is approved?",
+        "What happens if the developer abandons the project?",
+        "Is it safe to buy a house with my boyfriend or girlfriend?",
+        "How should I use the cash back from a property rebate?"
+      ]
     },
     {
       "id": "young-couple-first-home-budget",
@@ -2852,8 +5112,27 @@
         "Banks judge today's income",
         "Learn to read a floor plate"
       ],
-      "aliases": [],
-      "questions": []
+      "aliases": [
+        "new launch",
+        "subsale",
+        "condo",
+        "apartment",
+        "service residence",
+        "median price",
+        "price per sq ft",
+        "psf",
+        "rental yield",
+        "floor plate",
+        "common areas",
+        "housekey"
+      ],
+      "questions": [
+        "Can I afford a RM800k house on a RM20k combined income?",
+        "Should I buy a new launch or a subsale property?",
+        "How do I check if a new launch is overpriced?",
+        "Can I get a housing loan on my income alone?",
+        "How to evaluate a new launch before it's built?"
+      ]
     }
   ]
 }

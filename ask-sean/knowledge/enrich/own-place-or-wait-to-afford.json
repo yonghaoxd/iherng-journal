@@ -1,0 +1,26 @@
+{
+  "id": "own-place-or-wait-to-afford",
+  "sourceHash": "067d8e769fec",
+  "reviewed": false,
+  "aliases": [
+    "condo",
+    "apartment",
+    "own stay",
+    "investment unit",
+    "renting",
+    "rental",
+    "emergency fund",
+    "savings",
+    "loan eligibility",
+    "monthly instalment",
+    "maintenance fees",
+    "affordability"
+  ],
+  "questions": [
+    "How much savings do I need before buying a house?",
+    "Can I afford a RM3,000 monthly mortgage on an RM11,000 salary?",
+    "Should I buy a property for own stay or for investment first?",
+    "Is it better to keep renting cheaply or buy my own place?",
+    "How do I know if I can afford a property or just the loan?"
+  ]
+}

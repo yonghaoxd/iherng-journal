@@ -1,0 +1,26 @@
+{
+  "id": "three-bedroom-low-or-two-bedroom-high",
+  "sourceHash": "190ed801eca8",
+  "reviewed": false,
+  "aliases": [
+    "condo",
+    "three bedroom",
+    "two bedroom",
+    "low floor",
+    "high floor",
+    "rental unit",
+    "own stay",
+    "room count",
+    "view",
+    "convert layout",
+    "road noise",
+    "rental yield"
+  ],
+  "questions": [
+    "Is a low-floor three-bedroom or a high-floor two-bedroom better for rental?",
+    "Does floor height affect rental price in Malaysia?",
+    "Should I choose more bedrooms or a better view when buying a condo?",
+    "Can a two-bedroom unit be converted into a three-bedroom for higher rent?",
+    "How low is too low for a condo floor near a highway?"
+  ]
+}

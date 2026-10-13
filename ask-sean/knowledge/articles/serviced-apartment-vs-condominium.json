@@ -1,0 +1,48 @@
+{
+  "id": "serviced-apartment-vs-condominium",
+  "series": "buyer-guides",
+  "title": "What's the difference between a serviced apartment and a condo?",
+  "excerpt": "They look alike, but serviced apartments sit on commercial land and condos on residential land. Sean explains how that changes car parks, density and utility bills.",
+  "date": "2017-07-26",
+  "tag": "Property types",
+  "question": {
+    "asker": "",
+    "context": "As city land gets more expensive, younger buyers turn to high-rises, and many can't tell a serviced apartment from a condominium.",
+    "text": "How do serviced apartments and condominiums differ, and does it matter to a buyer?"
+  },
+  "answer": {
+    "quote": "service apartments are constructed on a commercial piece of land",
+    "summary": "The difference starts with the land: serviced apartments are built on commercial land and condos on residential land. That means serviced apartments may have fewer car parks per unit, far higher density, and commercial utility rates."
+  },
+  "reasons": [
+    {
+      "title": "Fewer car parks",
+      "body": "A serviced apartment needs about 1.5 car parks per unit, a condo two. Fewer bays mean more profit, which is why developers swung to serviced apartments."
+    },
+    {
+      "title": "Higher density",
+      "body": "Condos come with a minimum land size of about three acres and required facilities. Serviced apartments have no such rule, so one acre can hold a few hundred units."
+    },
+    {
+      "title": "Commercial utility rates",
+      "body": "Serviced apartments are billed at commercial rates, though once residents show the building is used as homes, they can appeal to switch to residential rates."
+    }
+  ],
+  "actions": [
+    "Check whether a project is on commercial or residential title.",
+    "Ask how many car parks come with each unit.",
+    "Compare the number of units with the land size.",
+    "Ask whether residents have switched to residential utility rates."
+  ],
+  "caveat": "These are the planning rules as Sean described them; requirements vary by local authority and may have changed.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for this short video. The quoted line is verbatim; everything else is paraphrased.",
+  "askingSeanEpisode": null,
+  "video": {
+    "id": "KF41hIj4s8E",
+    "title": "SERVICE APARTMENT VS CONDOMINIUM",
+    "duration": "3:08",
+    "url": "https://www.youtube.com/watch?v=KF41hIj4s8E"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/serviced-apartment-vs-condominium"
+}
