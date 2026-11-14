@@ -1,7 +1,7 @@
 # Keeps the chatbot (ask-sean/) in step with the iherng Journal.
 #
 # Daily, and whenever scripts/auto-journal.ts publishes an article, this reads the
-# live Journal's feed. If any Buyer Guides or iherng Podcast article is new or
+# Journal's content files (content/articles). If any Buyer Guides or iherng Podcast article is new or
 # changed, it generates aliases for it, rebuilds the catalog, re-runs the routing
 # eval (all cases must pass) and redeploys the Worker. The updated knowledge files
 # are committed back, and an issue lists the new aliases for a later look.
@@ -49,7 +49,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Read the live Journal
+      - name: Read the Journal content files
         run: npm run kb:sync
 
       - name: Check for new or changed articles

@@ -17,8 +17,9 @@ Wrangler also finds the site's build output in `../.wrangler/` and refuses to ch
 npm install
 ```
 
-Fill in `DEEPSEEK_API_KEY` in `.env` (see `.env.example`). Articles are read from the live
-site at `JOURNAL_SITE_URL` (default https://iherng-journal.pages.dev).
+Fill in `DEEPSEEK_API_KEY` in `.env` (see `.env.example`). Articles are read from the
+Journal's content files in `../content/articles`; the Buyer Guides and iherng Podcast
+series are no longer published as pages, so these files are the source of truth.
 
 On Windows PowerShell, use `npm.cmd` instead of `npm` if script execution is disabled.
 
@@ -26,7 +27,7 @@ On Windows PowerShell, use `npm.cmd` instead of `npm` if script execution is dis
 
 | Command | What it does | Cost |
 |---|---|---|
-| `npm run kb:sync` | Read every Buyer Guides and iherng Podcast article listed in the live site's `feed.xml` into `knowledge/articles` | free |
+| `npm run kb:sync` | Read every Buyer Guides and iherng Podcast article in `../content/articles` into `knowledge/articles` | free |
 | `npm run kb:enrich` | Generate aliases and example questions for new or changed articles (`-- --force` for all) | < $0.01 |
 | `npm run kb:build` | Build `knowledge/catalog.json`, the index the router reads | free |
 | `npm run kb` | All three in order | |
@@ -72,7 +73,7 @@ npx wrangler d1 execute ask-sean --remote --command "UPDATE questions SET hidden
 
 ```
 new Asking Sean video ──(your PC, daily 9:00)──▶ Journal article, published
-Journal feed changes  ──(GitHub Actions, daily 10:00 + after each article)──▶ chatbot updated
+content/articles changes ──(GitHub Actions, daily 10:00 + after each article)──▶ chatbot updated
 ```
 
 **`scripts/auto-journal.ts`** runs from Windows Task Scheduler ("Ask Sean - auto journal",

@@ -28,9 +28,6 @@
     "typescript": "^7.0.2",
     "wrangler": "^4.147.0"
   },
-  "dependencies": {
-    "node-html-parser": "^9.0.4"
-  },
   "allowScripts": {
     "esbuild@0.28.2": true,
     "esbuild@0.28.1": true,
