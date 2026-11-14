@@ -9,7 +9,7 @@ export const ANSWER_MAX_TOKENS = 1500;
  * Bump when the answer prompt changes how answers read. The API only reuses stored
  * answers written in the current style, so old-style answers are not served again.
  */
-export const ANSWER_STYLE = "sean-10";
+export const ANSWER_STYLE = "sean-11";
 
 /**
  * Rules Sean repeats across many episodes, written from the Journal's articles. They
@@ -106,6 +106,29 @@ export interface AnswerResult {
 
 const MARKER = /\[(A\d+)\]/g;
 
+export type AnswerLanguage = "zh" | "en" | "ms";
+
+// Common Malay words; two or more in a question with no Chinese means Malay.
+const MALAY_WORDS =
+  /\b(saya|kami|kita|boleh|nak|tak|tidak|macam|mana|beli|rumah|apa|adakah|patut|kalau|projek|bila|berapa|dah|sudah|belum|dengan|untuk|atau|ini|itu|harga|sewa|pinjaman)\b/gi;
+
+/**
+ * The language the answer must be written in. Decided here rather than left to the
+ * model: the system prompt's many Chinese examples pulled English questions into
+ * Chinese answers about half the time (eval, 2026-11-14).
+ */
+export function languageOf(question: string): AnswerLanguage {
+  if (/[\u3400-\u9fff]/.test(question)) return "zh";
+  return (question.match(MALAY_WORDS)?.length ?? 0) >= 2 ? "ms" : "en";
+}
+
+/** Appended after the question, so the cached system prompt stays the same for every answer. */
+const LANGUAGE_RULE: Record<AnswerLanguage, string> = {
+  zh: "Write the whole answer, TL;DR included, in Simplified Chinese.",
+  en: 'Write the whole answer, TL;DR included, in English, with no Chinese characters anywhere. Use English for the voice too ("My view is simple", "If I were you", "I always say"), the 【What to do】 heading and a "Note:" line.',
+  ms: 'Write the whole answer, TL;DR included, in Malay, with no Chinese characters and no English openers. Use Malay for the voice too ("Pandangan saya mudah", "Kalau saya jadi awak", "Saya selalu cakap"), the 【Apa perlu dibuat】 heading and a "Nota:" line. Sean\'s verbatim line stays in English.',
+};
+
 /**
  * Added to the user message, not SYSTEM, so public answers keep sharing one cached
  * prefix and read exactly as before.
@@ -124,10 +147,11 @@ export async function answer(
     ? `Previous question: ${followUp.question}\nPrevious answer summary: ${followUp.tldr}\nFollow-up question: ${question}`
     : `Question: ${question}`;
   const personal = situation ? `<asker>\n${renderSituation(situation)}\n</asker>\n\n${PERSONAL}\n\n` : "";
+  const language = LANGUAGE_RULE[languageOf(question)];
 
   const { content, usage, truncated } = await chat({
     system: SYSTEM,
-    user: `${context}\n\n${personal}${ask}`,
+    user: `${context}\n\n${personal}${ask}\n\n${language}`,
     maxTokens: ANSWER_MAX_TOKENS,
     temperature: 0.3,
   });
