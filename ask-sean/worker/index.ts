@@ -90,7 +90,12 @@ function sourceOf(article: Article, marker?: string) {
     episode: article.askingSeanEpisode,
     articleUrl: article.articleUrl,
     videoUrl: article.video.url,
+    videoId: article.video.id,
     videoTitle: article.video.title,
+    duration: article.video.duration,
+    // The answerer's verbatim line, shown on the source card so readers can see what the answer rests on.
+    quote: article.answer.quote,
+    answeredBy: article.answer.by?.name ?? null,
   };
 }
 
@@ -173,7 +178,7 @@ async function findReusable(env: Env, norm: string): Promise<QuestionRow | null>
 function privateFollowUp(raw: unknown): FollowUp | undefined | { reason: string } {
   if (raw === undefined || raw === null) return undefined;
   const value = raw as { question?: unknown; tldr?: unknown };
-  if (typeof value.question !== "string" || typeof value.tldr !== "string") return { reason: "追问的格式不对。" };
+  if (typeof value.question !== "string" || typeof value.tldr !== "string") return { reason: "The follow-up could not be read." };
   const question = value.question.trim().slice(0, MAX_QUESTION_CHARS);
   const tldr = value.tldr.trim().slice(0, MAX_QUESTION_CHARS);
   return question ? { question, tldr } : undefined;
@@ -203,8 +208,8 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
     const parent = await env.DB.prepare("SELECT * FROM questions WHERE id = ? AND hidden = 0")
       .bind(parentId)
       .first<QuestionRow>();
-    if (!parent || parent.status !== "answered") return fail(request, env, 400, "找不到要追问的回答。");
-    if (parent.parent_id) return fail(request, env, 400, "每个回答只能追问一次，请直接提一个新问题。");
+    if (!parent || parent.status !== "answered") return fail(request, env, 400, "The answer you are following up on could not be found.");
+    if (parent.parent_id) return fail(request, env, 400, "Each answer takes one follow-up. Please ask a new question instead.");
     followUp = { question: parent.question, tldr: parent.tldr ?? "" };
   }
 
@@ -236,7 +241,7 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
         request,
         env,
         429,
-        `今天的 ${limit} 次提问已经用完，马来西亚时间午夜 12 点后重置。看别人问过的问题不受限制。`,
+        `You have used today's ${limit} questions. They reset at midnight Malaysia time.`,
       );
     }
   }
@@ -249,7 +254,7 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
     .bind(since, since)
     .first<number>("spent");
   if ((spent ?? 0) >= Number(env.DAILY_BUDGET_USD)) {
-    return fail(request, env, 503, "今天的回答额度已经用完，请明天再来。");
+    return fail(request, env, 503, "AIherng has reached today's answer limit. Please come back tomorrow.");
   }
 
   let result: Awaited<ReturnType<typeof ask>>;
@@ -258,7 +263,7 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
   } catch (error) {
     // Logged without the situation, which may hold personal details.
     console.error("ask failed", error instanceof Error ? error.message : "unknown error");
-    return fail(request, env, 502, "回答时出了点问题，请稍后再试。");
+    return fail(request, env, 502, "Something went wrong while answering. Please try again shortly.");
   }
   if (result.status === "rejected") return fail(request, env, 400, result.reason);
 
@@ -388,7 +393,7 @@ async function handleFeed(request: Request, env: Env, url: URL): Promise<Respons
 
 async function handleQuestion(request: Request, env: Env, id: string): Promise<Response> {
   const row = await env.DB.prepare("SELECT * FROM questions WHERE id = ? AND hidden = 0").bind(id).first<QuestionRow>();
-  if (!row) return fail(request, env, 404, "找不到这个问题。");
+  if (!row) return fail(request, env, 404, "That question could not be found.");
   const { results } = await env.DB.prepare(
     "SELECT * FROM questions WHERE parent_id = ? AND hidden = 0 ORDER BY created_at",
   )
@@ -415,7 +420,7 @@ export default {
       return fail(request, env, 404, "Not found");
     } catch (error) {
       console.error("request failed", error);
-      return fail(request, env, 500, "服务器出了点问题，请稍后再试。");
+      return fail(request, env, 500, "Something went wrong on the server. Please try again shortly.");
     }
   },
 } satisfies ExportedHandler<Env>;

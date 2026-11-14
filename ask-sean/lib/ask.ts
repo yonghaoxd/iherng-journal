@@ -7,8 +7,12 @@ export const MAX_QUESTION_CHARS = 300;
 /** Per field of the optional situation (goal, current situation, already tried). */
 export const MAX_SITUATION_CHARS = 400;
 
-export const OUT_OF_SCOPE_MESSAGE =
-  "Sean 在 iherng Journal 的文章里还没讲过这个问题，所以这里没有可靠的资料可以回答。";
+/** Shown when no episode covers the question, in the question's language like the answers. */
+export function outOfScopeMessage(question: string): string {
+  return /[\u3400-\u9fff]/.test(question)
+    ? "Sean 在节目里还没讲过这个问题，所以这里没有可靠的资料可以回答。"
+    : "Sean hasn't covered this in his episodes yet, so there is nothing reliable to answer it from.";
+}
 
 export type AskResult =
   | { status: "rejected"; reason: string }
@@ -27,9 +31,9 @@ export type AskResult =
 export function checkQuestion(raw: string): { question: string } | { reason: string } {
   const question = raw.replace(/\s+/g, " ").trim();
   // Four characters still allows short Chinese questions such as 「买房好吗」.
-  if (question.length < 4) return { reason: "请输入完整的问题。" };
+  if (question.length < 4) return { reason: "Please write out your full question." };
   if (question.length > MAX_QUESTION_CHARS) {
-    return { reason: `问题请控制在 ${MAX_QUESTION_CHARS} 个字以内。` };
+    return { reason: `Please keep your question under ${MAX_QUESTION_CHARS} characters.` };
   }
   return { question };
 }
@@ -40,14 +44,14 @@ export function checkQuestion(raw: string): { question: string } | { reason: str
  */
 export function checkSituation(raw: unknown): { situation?: Situation } | { reason: string } {
   if (raw === undefined || raw === null) return {};
-  if (typeof raw !== "object") return { reason: "处境的格式不对。" };
+  if (typeof raw !== "object") return { reason: "Your situation could not be read." };
   const situation: Situation = {};
   for (const key of ["goal", "current", "tried"] as const) {
     const value = (raw as Record<string, unknown>)[key];
     if (value === undefined || value === null) continue;
-    if (typeof value !== "string") return { reason: "处境的格式不对。" };
+    if (typeof value !== "string") return { reason: "Your situation could not be read." };
     const text = value.replace(/\s+/g, " ").trim();
-    if (text.length > MAX_SITUATION_CHARS) return { reason: `每一项处境请控制在 ${MAX_SITUATION_CHARS} 个字以内。` };
+    if (text.length > MAX_SITUATION_CHARS) return { reason: `Please keep your situation under ${MAX_SITUATION_CHARS} characters.` };
     if (text) situation[key] = text;
   }
   return Object.keys(situation).length ? { situation } : {};
@@ -73,7 +77,7 @@ export async function ask(
   const related = lookup(routed.related);
 
   if (sources.length === 0) {
-    return { status: "out_of_scope", message: OUT_OF_SCOPE_MESSAGE, related, usage: routed.usage };
+    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: routed.usage };
   }
 
   const result = await answer(checked.question, sources, followUp, situation);

@@ -56,9 +56,9 @@ The rest of this document is in Chinese.
 
 | 项目 | 决定 |
 |---|---|
-| 资料来源 | **线上网站** https://iherng-journal.pages.dev：先读 `feed.xml` 拿到文章列表，再解析每篇文章页面。不读本地文件，也不去 YouTube |
+| 资料来源 | **仓库里的内容文件** `content/articles/*.json`（2026-11 起）。Buyer Guides 和 iherng Podcast 不再发布成网页，只作为 AIherng 的知识库；之前是读线上网站的 `feed.xml` 和文章页面 |
 | 资料范围 | feed 里所有 Buyer Guides 和 iherng Podcast 文章，网站加了新文章，每天的同步就会收进来。不包括 Property Reviews |
-| 语言 | 不管用什么语言提问，**回答一律用简体中文**；保留马来西亚常用的英文房产词（condo、landed、subsale、SPA、EPF…）和 RM 金额 |
+| 语言 | **用什么语言问就用什么语言答**（2026-11 起，`sean-10`）：中文问题答简体中文，英文答英文，马来文答马来文；保留马来西亚常用的英文房产词（condo、landed、subsale、SPA、EPF…）和 RM 金额。网站界面改成英文 |
 | 回答方式 | **以 Sean 的口吻、第一人称**回答（「我的看法很直接」「换作是我」），像他在 iherng Podcast 上跟观众讲话：先下判断，用提问者自己的数字算账，再给 3–5 个可以照着做的步骤。只能说文章和经验法则里他讲过的话，不能替他编口头禅。嘉宾（律师、房贷专员）的建议要写明是谁说的。页面注明回答由 AI 以 Sean 的口吻写成 |
 | 对话形式 | 一问一答，可以追问 1 次 |
 | 结合个人处境 | 可选：提问者填写目标、现况、已经试过的做法，回答会套用到他身上。**这类回答不公开、不复用、不存储**，只记录花费（`private_usage` 表） |
@@ -87,7 +87,7 @@ The rest of this document is in Chinese.
 
 ```
 离线（GitHub Actions 每天 10:00 MYT，或新文章发布后）
-  https://iherng-journal.pages.dev/feed.xml + 每篇文章页面
+  content/articles/*.json（Buyer Guides + iherng Podcast）
       │  sync：只取 Buyer Guides 和 iherng Podcast，按 class 名拆分，计算每篇的哈希
       ▼
   knowledge/articles/<slug>.json      ← 标准化后的文章
@@ -124,7 +124,7 @@ The rest of this document is in Chinese.
 
 | 脚本 | 输入 | 输出 | 说明 |
 |---|---|---|---|
-| `scripts/sync.ts` | 线上网站的 `feed.xml` 和文章页面（`JOURNAL_SITE_URL`） | `knowledge/articles/*.json`、`knowledge/manifest.json`（记录每篇的哈希） | 标题、日期、视频信息从页面的 JSON-LD 读取；正文按 `.ask-*` class 名拆分；嘉宾从 `data-answerer-*` 读取；从视频标题解析出 Asking Sean 的期号 |
+| `scripts/sync.ts` | 仓库的 `content/articles/*.json`（只取 Buyer Guides 和 iherng Podcast） | `knowledge/articles/*.json`、`knowledge/manifest.json`（记录每篇的哈希） | 直接读内容文件的 `qa` 字段；缺字段就报错；从视频标题解析出 Asking Sean 的期号。改写后在 136 篇上输出与旧版逐字相同 |
 | `scripts/enrich.ts` | 新增或改过的文章 | `knowledge/enrich/*.json` | 每篇生成 `aliases`（同义词）和 `questions`（5 个这篇能回答的问题），一次约 $0.002。**模型生成的同义词有噪音，必须人工审核**（见第 11 节） |
 | `scripts/build.ts` | articles + enrich | `knowledge/catalog.json`（含 `version`）、`knowledge/bundle.json` | 目录排序固定，内容里不放时间戳，保证每次一模一样，才能命中缓存 |
 | `scripts/eval-route.ts` | `evals/route.jsonl`（56 题） | 路由准确率、拒答准确率、成本 | 每次约 $0.015；`--strict` 有一题不过就失败 |
@@ -161,7 +161,7 @@ catalog 里每篇文章的条目：
   5. 嘉宾的建议写明是谁的（「我请教过律师 Tea，他的建议是…」），不说成 Sean 自己的看法。
   6. 引号只能用于标了 "(verbatim)" 的原话，保留英文原文。
   7. 格式：TL;DR（不超过 50 字）→ 两三段分析，每段末尾标 `[A1]` → 【怎么做】3–5 个编号步骤 → 可选一行「注意：」。全文约 400–650 字。
-- 改了回答的写法就要更新 `ANSWER_STYLE`（目前是 `sean-9`）。旧答案按「资料版本 + 回答风格」复用，所以旧风格的答案不会再被拿出来。
+- 改了回答的写法就要更新 `ANSWER_STYLE`（目前是 `sean-10`）。旧答案按「资料版本 + 回答风格」复用，所以旧风格的答案不会再被拿出来。
 - **由页面渲染、不让模型生成的部分**：「AI 以 Sean 的口吻写成」的说明、免责声明、来源卡片（标题、日期、文章链接、YouTube 链接）、「看原视频」按钮。这样能省输出 token，内容也不会出错。
 - 没部署前可以先 `npx wrangler versions upload` 上传一个不接流量的版本，再用 `--live --api=<preview url>` 测它。
 

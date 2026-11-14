@@ -20,6 +20,7 @@ interface EvalCase {
 const MARKER = /\[A\d+\]/;
 const CJK = /[㐀-鿿]/g;
 // Chinese characters plus English words, roughly the reading length of mixed text.
+// A 400-word English answer and a 650-character Chinese one both fit.
 const MAX_BODY_LENGTH = 850;
 const MAX_TLDR_LENGTH = 60;
 
@@ -82,11 +83,16 @@ function problems(testCase: EvalCase, result: AskResult): string[] {
     }
   }
 
-  // Answers speak as Sean in the first person (ANSWER_STYLE sean-8), never about him.
+  // Answers speak as Sean in the first person (ANSWER_STYLE sean-8), never about him,
+  // and since sean-10 in the language of the question.
   const text = `${result.tldr}\n${result.body}`;
-  if (!/我/.test(result.body)) found.push("not in Sean's first-person voice");
+  const chineseQuestion = /[㐀-鿿]/.test(testCase.q);
+  const firstPerson = chineseQuestion ? /我/ : /\b(I|I'm|I'd|I'll|my|me|saya)\b/i;
+  if (!firstPerson.test(result.body)) found.push("not in Sean's first-person voice");
   if (/Sean/.test(text)) found.push("refers to Sean in the third person");
-  if ((result.body.match(CJK) ?? []).length < 50) found.push("not written in Chinese");
+  const chineseChars = (result.body.match(CJK) ?? []).length;
+  if (chineseQuestion && chineseChars < 50) found.push("Chinese question, answer not in Chinese");
+  if (!chineseQuestion && chineseChars > 0) found.push("non-Chinese question, answer contains Chinese");
   return found;
 }
 
