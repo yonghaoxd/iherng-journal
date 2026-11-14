@@ -178,10 +178,7 @@ export default function RootLayout({
                   <Link href="/property-reviews">Property Reviews</Link>
                 </li>
                 <li>
-                  <Link href="/calculator">Property Cost Calculator</Link>
-                </li>
-                <li>
-                  <Link href="/rental-calculator">Rental Cash Flow Calculator</Link>
+                  <Link href="/calculator">Calculators</Link>
                 </li>
                 <li>
                   {/* A generated static file, not a route: next/link would

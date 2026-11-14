@@ -1,7 +1,4 @@
-import Link from 'next/link';
-import { Calculator, ArrowRight } from 'lucide-react';
-import { PropertyCalculator } from '@/components/property-calculator';
-import { CalculatorTabs } from '@/components/calculator-tabs';
+import { Calculators } from '@/components/calculators';
 import { JsonLd } from '@/components/json-ld';
 import {
   DEFAULT_OG_IMAGE,
@@ -11,9 +8,9 @@ import {
   breadcrumbJsonLd,
 } from '@/lib/seo';
 
-const TITLE = 'Property Cost Calculator';
+const TITLE = 'Property Cost and Rental Calculator';
 const DESCRIPTION =
-  'Estimate the cash you need upfront and the monthly instalment on a Malaysian property purchase, including MOT stamp duty, legal fees and loan agreement costs.';
+  'Work out the cash you need upfront and the monthly instalment on a Malaysian property, including MOT stamp duty and legal fees, or check whether the rent covers the loan.';
 
 export const metadata = {
   title: TITLE,
@@ -38,7 +35,7 @@ export const metadata = {
 
 export default function CalculatorPage() {
   return (
-    <main id="main" className="container calculator-page">
+    <main id="main" className="calculator-page calcx-page">
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -62,59 +59,7 @@ export default function CalculatorPage() {
           { name: TITLE, path: '/calculator' },
         ])}
       />
-
-      <div className="breadcrumb">
-        <Link href="/">Home</Link>
-        <span className="slash">/</span>
-        <span className="active">Calculator</span>
-      </div>
-
-      <section className="series-hero-banner">
-        <div className="hero-badge">
-          <Calculator size={13} />
-          <span>TOOLS · RUN THE NUMBERS</span>
-        </div>
-        <h1 className="series-heading">
-          What it really costs
-          <span className="orange-dot">.</span>
-        </h1>
-        <div className="series-intro-row">
-          <p className="series-intro-text">
-            The sticker price is never the whole bill. Work out the cash you need on
-            day one and the instalment you will live with for decades — before you
-            fall in love with a show unit.
-          </p>
-        </div>
-      </section>
-
-      <CalculatorTabs active="/calculator" />
-
-      <PropertyCalculator />
-
-      <section className="calc-related">
-        <div className="related-header">
-          <div>
-            <span className="eyebrow">READ NEXT</span>
-            <h2 className="related-title">The costs behind the numbers</h2>
-          </div>
-        </div>
-        <div className="calc-related-links">
-          <Link href="/articles/hidden-costs-property-malaysia" className="calc-related-card">
-            <h3>The hidden costs of buying property</h3>
-            <p>What the brochure leaves out, from stamp duty to sinking funds.</p>
-            <span className="calc-related-cta">
-              Read the guide <ArrowRight size={14} />
-            </span>
-          </Link>
-          <Link href="/articles/settle-housing-loan-early" className="calc-related-card">
-            <h3>Should you settle your housing loan early?</h3>
-            <p>Where early repayment pays off, and where the money works harder elsewhere.</p>
-            <span className="calc-related-cta">
-              Read the guide <ArrowRight size={14} />
-            </span>
-          </Link>
-        </div>
-      </section>
+      <Calculators />
     </main>
   );
 }

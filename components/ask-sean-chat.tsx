@@ -27,6 +27,7 @@ import {
   type AskSituation,
   type AskSource,
 } from '@/lib/ask-api';
+import { clearAskHandoff, useAskHandoff } from '@/lib/ask-handoff';
 
 const EXAMPLES = [
   'Own stay or investment for my first property?',
@@ -471,7 +472,10 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
   const [feed, setFeed] = useState<AskFeedItem[] | null>(null);
   const answerRef = useRef<HTMLDivElement>(null);
   // An old article link redirects here as ?ask=<its question>: fill it in, never send it.
-  const prefill = useAskParam().slice(0, MAX_QUESTION_CHARS);
+  // ...or the calculators hand over a question and the reader's numbers (lib/ask-handoff.ts).
+  const handoff = useAskHandoff();
+  const askParam = useAskParam();
+  const prefill = (handoff?.question || askParam).slice(0, MAX_QUESTION_CHARS);
 
   const loadFeed = useCallback((order: 'recent' | 'popular') => {
     fetchFeed(order)
@@ -479,8 +483,12 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
       .catch(() => setFeed([]));
   }, []);
 
-  const [situationOn, setSituationOn] = useState(false);
-  const [situation, setSituation] = useState<AskSituation>({});
+  // The reader's own choices win; until they make one, numbers from the calculators fill the box.
+  const [situationOnChoice, setSituationOn] = useState<boolean | null>(null);
+  const [situationEdit, setSituation] = useState<AskSituation | null>(null);
+  const handedSituation = handoff?.situation.slice(0, MAX_SITUATION_CHARS) ?? '';
+  const situationOn = situationOnChoice ?? Boolean(handedSituation);
+  const situation: AskSituation = situationEdit ?? (handedSituation ? { current: handedSituation } : {});
   // The situation a private answer was given with, re-sent for its follow-up.
   const privateSituation = useRef<AskSituation | undefined>(undefined);
 
@@ -541,6 +549,12 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
         show({ ...result, followUps: [] });
       }
       if (!result.private && showFeed) loadFeed(sort);
+      // Asked: the calculators' numbers are not filled in again. Keep what is in the box now.
+      if (handoff) {
+        setSituationOn(situationOn);
+        setSituation(situation);
+        clearAskHandoff();
+      }
       return true;
     } catch (problem) {
       setError((problem as Error).message);

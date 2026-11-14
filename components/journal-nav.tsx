@@ -50,7 +50,7 @@ export function JournalNav() {
       badge: countFor('property-reviews'),
       icon: Building2,
     },
-    { href: '/calculator', title: 'Calculators', icon: Calculator, also: ['/rental-calculator'] },
+    { href: '/calculator', title: 'Calculators', icon: Calculator },
   ];
 
   return (
