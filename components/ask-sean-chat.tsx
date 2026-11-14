@@ -1,17 +1,20 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import Link from 'next/link';
 import {
+  ArrowUp,
   ArrowUpRight,
   CornerDownRight,
   Link2,
   Loader2,
   Lock,
   MessageCircleQuestion,
+  Play,
+  Plus,
   RotateCcw,
-  Send,
   Users,
+  X,
 } from 'lucide-react';
 import {
   askSean,
@@ -26,33 +29,39 @@ import {
 } from '@/lib/ask-api';
 
 const EXAMPLES = [
-  '第一间房该买自住还是投资？',
-  'Landed 和 condo 哪个比较保值？',
-  '提前还清房贷好不好？',
-  '买 new launch 还是 subsale？',
+  'Own stay or investment for my first property?',
+  'Landed or condo: which holds its value better?',
+  'Should I settle my housing loan early?',
+  'New launch or subsale?',
 ];
-
-/** Article links come back as absolute URLs; keep them on this site so they work in every environment. */
-function articlePath(url: string): string {
-  try {
-    return new URL(url).pathname;
-  } catch {
-    return url;
-  }
-}
 
 function timeAgo(iso: string): string {
   const minutes = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
-  if (minutes < 1) return '刚刚';
-  if (minutes < 60) return `${minutes} 分钟前`;
+  if (minutes < 1) return 'just now';
+  if (minutes < 60) return `${minutes} min ago`;
   const hours = Math.round(minutes / 60);
-  if (hours < 24) return `${hours} 小时前`;
-  return `${Math.round(hours / 24)} 天前`;
+  if (hours < 24) return `${hours} h ago`;
+  const days = Math.round(hours / 24);
+  return `${days} day${days === 1 ? '' : 's'} ago`;
 }
 
-function sourceLabel(source: AskSource): string {
-  const episode = source.episode ? `Asking Sean #${source.episode} · ` : '';
-  return `${episode}${source.date.slice(0, 4)}`;
+function formatDate(date: string): string {
+  return new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+/** The video's id, from the API or, for older responses, from its watch URL. */
+function videoIdOf(source: AskSource): string | null {
+  if (source.videoId) return source.videoId;
+  try {
+    return new URL(source.videoUrl).searchParams.get('v');
+  } catch {
+    return null;
+  }
 }
 
 /** Turn "[A1]" markers into links to the matching source card. */
@@ -61,20 +70,20 @@ function withCitations(text: string, answerId: string): ReactNode[] {
     const marker = part.match(/^\[(A\d+)\]$/)?.[1];
     if (!marker) return part;
     return (
-      <a key={index} className="askbot-cite" href={`#src-${answerId}-${marker}`} aria-label={`来源 ${marker.slice(1)}`}>
+      <a key={index} className="askbot-cite" href={`#src-${answerId}-${marker}`} aria-label={`Source ${marker.slice(1)}`}>
         {marker.slice(1)}
       </a>
     );
   });
 }
 
-/** A "- 短标题：解释" reason, with its short title set in bold. */
+/** A "- Short title: explanation" reason, with its short title set in bold. */
 function reasonLine(text: string, answerId: string): ReactNode {
   const titled = text.match(/^([^：:[]{2,24})[：:]\s*(.+)$/);
   if (!titled) return withCitations(text, answerId);
   return (
     <>
-      <strong>{titled[1]}：</strong>
+      <strong>{titled[1]}: </strong>
       {withCitations(titled[2], answerId)}
     </>
   );
@@ -82,7 +91,8 @@ function reasonLine(text: string, answerId: string): ReactNode {
 
 /**
  * The answer body: 【section】 headings, paragraphs, "- " reasons, numbered steps and
- * a closing "注意：" line. Older answers have no headings or reasons and still render.
+ * a closing "注意：" / "Note:" line, in whichever language the answer is written.
+ * Older answers have no headings or reasons and still render.
  */
 function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
   const blocks: ReactNode[] = [];
@@ -136,7 +146,7 @@ function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
       }
       continue;
     }
-    const isNote = /^\s*注意[:：]/.test(line);
+    const isNote = /^\s*(注意|Note|Nota)\s*[:：]/i.test(line);
     blocks.push(
       <p key={`p-${blocks.length}`} className={isNote ? 'askbot-note' : undefined}>
         {withCitations(line, answerId)}
@@ -147,46 +157,57 @@ function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
   return <div className="askbot-body">{blocks}</div>;
 }
 
+/** One card per cited episode: what it is, the line the answer rests on, and a way to watch it. */
 function SourceList({ sources, answerId }: { sources: AskSource[]; answerId: string }) {
   if (!sources.length) return null;
   return (
     <div className="askbot-sources">
-      <span className="askbot-sources-title">出处</span>
-      <p className="askbot-sources-intro">回答用到的 {sources.length} 份原文，点开核对。</p>
+      <span className="askbot-sources-title">{sources.length > 1 ? 'Sources' : 'Source'}</span>
       <ol>
-        {sources.map((source) => (
-          <li key={source.marker ?? source.id} id={`src-${answerId}-${source.marker}`}>
-            <div className="askbot-source-head">
-              <span className="askbot-source-num">{source.marker?.slice(1)}</span>
-              <span>{source.episode ? `Asking Sean #${source.episode}` : '文章'}</span>
-              <span className="askbot-source-date">{source.date}</span>
-            </div>
-            <Link href={articlePath(source.articleUrl)} className="askbot-source-title">
-              {source.title}
-              {' '}
-              <ArrowUpRight size={13} aria-hidden="true" />
-            </Link>
-            <a className="askbot-source-video" href={source.videoUrl} target="_blank" rel="noreferrer">
-              看原视频 <ArrowUpRight size={12} />
-            </a>
-          </li>
-        ))}
+        {sources.map((source) => {
+          const videoId = videoIdOf(source);
+          return (
+            <li key={source.marker ?? source.id} id={`src-${answerId}-${source.marker}`} className="askbot-source-card">
+              <a className="askbot-source-thumb" href={source.videoUrl} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
+                {videoId && <img src={`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`} alt="" width={320} height={180} loading="lazy" />}
+                {source.duration && <span className="askbot-source-duration">{source.duration}</span>}
+                <span className="askbot-source-num">{source.marker?.slice(1)}</span>
+              </a>
+              <div className="askbot-source-info">
+                <span className="askbot-source-title">{source.videoTitle}</span>
+                <span className="askbot-source-date">iherng · {formatDate(source.date)}</span>
+                {source.quote && (
+                  <blockquote className="askbot-source-quote">
+                    <p>&ldquo;{source.quote}&rdquo;</p>
+                    <footer>{source.answeredBy ? `${source.answeredBy}, verbatim` : "Sean's words, verbatim"}</footer>
+                  </blockquote>
+                )}
+                <a className="askbot-source-watch" href={source.videoUrl} target="_blank" rel="noreferrer">
+                  <Play size={13} fill="currentColor" aria-hidden="true" /> Watch on YouTube
+                </a>
+              </div>
+            </li>
+          );
+        })}
       </ol>
     </div>
   );
 }
 
-function RelatedReads({ related, title }: { related: AskSource[]; title: string }) {
+function RelatedVideos({ related, title }: { related: AskSource[]; title: string }) {
   if (!related.length) return null;
   return (
     <div className="askbot-related">
       <span className="ask-label">{title}</span>
       <div className="askbot-related-list">
         {related.map((source) => (
-          <Link key={source.id} href={articlePath(source.articleUrl)} className="askbot-related-card">
-            <span>{source.title}</span>
-            <small>{sourceLabel(source)}</small>
-          </Link>
+          <a key={source.id} href={source.videoUrl} target="_blank" rel="noreferrer" className="askbot-related-card">
+            <span>{source.videoTitle}</span>
+            <small>
+              {source.date.slice(0, 4)}
+              {source.duration ? ` · ${source.duration}` : ''} <ArrowUpRight size={11} aria-hidden="true" />
+            </small>
+          </a>
         ))}
       </div>
     </div>
@@ -203,12 +224,12 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
         </p>
         {answer.private && !nested && (
           <p className="askbot-private">
-            <Lock size={13} aria-hidden="true" /> 结合你的处境回答 · 只有你看得到，不公开、不保存
+            <Lock size={13} aria-hidden="true" /> Answered for your situation · only you can see this, it is not saved
           </p>
         )}
         {answer.askCount > 1 && (
           <p className="askbot-count">
-            <Users size={13} /> {answer.askCount} 次类似提问
+            <Users size={13} /> Asked {answer.askCount} times
           </p>
         )}
 
@@ -216,26 +237,26 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
           <>
             {answer.tldr && (
               <div className="askbot-tldr">
-                <span className="ask-label accent">结论</span>
+                <span className="ask-label accent">TL;DR</span>
                 <p>{answer.tldr}</p>
               </div>
             )}
             <AnswerBody body={answer.body} answerId={answer.id} />
-            <p className="askbot-persona">AI 用 Sean 的口吻、根据他的节目整理，不是 Sean 本人回复。</p>
-            {!nested && <RelatedReads related={answer.related} title="延伸阅读" />}
+            <p className="askbot-persona">Written by AI in Sean&apos;s voice from his episodes, not by Sean himself.</p>
+            {!nested && <RelatedVideos related={answer.related} title="Related episodes" />}
           </>
         ) : (
           <>
             <p className="askbot-out-of-scope">{answer.message}</p>
             <p className="askbot-hint">
-              想看具体楼盘的点评，可以去 <Link href="/property-reviews">Property Reviews</Link>。
+              Asking about a specific project? See <Link href="/property-reviews">Property Reviews</Link>.
             </p>
-            <RelatedReads related={answer.related} title="可以先看看这些文章" />
+            <RelatedVideos related={answer.related} title="These episodes may help" />
           </>
         )}
       </div>
       {answer.status === 'answered' && answer.sources.length > 0 && (
-        <aside className="askbot-answer-aside" aria-label="出处">
+        <aside className="askbot-answer-aside" aria-label="Sources">
           <SourceList sources={answer.sources} answerId={answer.id} />
         </aside>
       )}
@@ -248,13 +269,13 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
  * turn on. Tapping one starts a line for it in the situation box.
  */
 const SITUATION_PROMPTS = [
-  '年龄',
-  '税后月入',
-  '存款',
-  '每月贷款和开销',
-  '已有房产',
-  '家庭状况',
-  '自住还是投资',
+  'Age',
+  'Monthly take-home pay',
+  'Savings',
+  'Monthly loans and expenses',
+  'Properties you own',
+  'Family',
+  'Own stay or investment',
 ] as const;
 
 /** Only the fields with something in them, or nothing when all are empty. */
@@ -272,12 +293,12 @@ interface SituationControl {
   onChange: (value: AskSituation) => void;
 }
 
-/** "结合我的处境": optional details that shape one private answer. */
+/** "My situation": optional details that shape one private answer. */
 function SituationFields({ value, onChange }: Pick<SituationControl, 'value' | 'onChange'>) {
   const boxRef = useRef<HTMLTextAreaElement>(null);
   const current = value.current ?? '';
   const addPrompt = (prompt: string) => {
-    const line = `${prompt}：`;
+    const line = `${prompt}: `;
     let next = current;
     if (!current.includes(line)) {
       const separator = current && !current.endsWith('\n') ? '\n' : '';
@@ -296,33 +317,26 @@ function SituationFields({ value, onChange }: Pick<SituationControl, 'value' | '
   };
   return (
     <div className="askbot-situation">
-      <p className="askbot-situation-intro">
-        说说你的情况，回答会套用到你身上，也会指出还缺什么资料。只写你愿意分享的。
-      </p>
-      <p className="askbot-situation-privacy">
-        <Lock size={13} aria-hidden="true" />
-        这里的内容只用来生成这次回答：回答只有你看得到，不会公开，我们也不保存。请不要写姓名、电话或地址。
-      </p>
       <label className="askbot-situation-field">
-        <span className="askbot-step-label">
-          <b>2</b>你的现况<em>（选填）</em>
+        <span className="askbot-situation-label">
+          <Lock size={12} aria-hidden="true" /> Your situation · private, never saved or shown
         </span>
         <textarea
           ref={boxRef}
-          rows={Math.min(10, Math.max(4, current.split('\n').length + 1))}
+          rows={Math.min(8, Math.max(3, current.split('\n').length + 1))}
           maxLength={MAX_SITUATION_CHARS}
-          placeholder="例如：32 岁，已婚，一个孩子；税后月入 RM8,000，存款 RM60,000；车贷每月 RM900；名下还没有房，想买自住。"
+          placeholder="Age, income, savings, loans, and what you want to buy. No names or phone numbers."
           value={current}
           onChange={(event) => onChange({ current: event.target.value })}
         />
       </label>
-      <div className="askbot-situation-prompts" aria-label="点一下加入这一项">
-        <span>点一下加入：</span>
+      <div className="askbot-situation-prompts" aria-label="Tap to add">
+        <span>Add:</span>
         {SITUATION_PROMPTS.map((prompt) => (
           <button
             key={prompt}
             type="button"
-            className={current.includes(`${prompt}：`) ? 'used' : ''}
+            className={current.includes(`${prompt}: `) ? 'used' : ''}
             onClick={() => addPrompt(prompt)}
           >
             {prompt}
@@ -340,6 +354,7 @@ function QuestionForm({
   compact = false,
   situation,
   dock = false,
+  initialText = '',
 }: {
   onSubmit: (question: string) => Promise<boolean>;
   busy: boolean;
@@ -348,13 +363,16 @@ function QuestionForm({
   situation?: SituationControl;
   /** The bar under an answer: the situation switch reuses what was entered above, without its fields. */
   dock?: boolean;
+  /** Pre-filled question, e.g. from an old article link; never sent until the reader presses Ask. */
+  initialText?: string;
 }) {
-  const [text, setText] = useState('');
-  // Set when someone presses 提问 with only their situation filled in.
+  const [text, setText] = useState(initialText);
+  // Set when someone presses Ask with only their situation filled in.
   const [needQuestion, setNeedQuestion] = useState(false);
   const questionRef = useRef<HTMLTextAreaElement>(null);
   const withSituation = Boolean(situation?.enabled);
   const hasSituation = withSituation && Boolean(situation?.value.current?.trim());
+
   const submit = async () => {
     if (busy) return;
     if (!text.trim()) {
@@ -369,23 +387,18 @@ function QuestionForm({
   };
   return (
     <form
-      className={`askbot-form ${compact ? 'compact' : ''} ${withSituation && !dock ? 'with-situation' : ''}`}
+      className={`askbot-form askbot-composer ${compact ? 'compact' : ''}`}
       onSubmit={(event) => {
         event.preventDefault();
         void submit();
       }}
     >
-      {withSituation && !dock && (
-        <span className="askbot-step-label">
-          <b>1</b>你的问题
-        </span>
-      )}
       <textarea
         ref={questionRef}
-        className={`askbot-question ${needQuestion ? 'needs-question' : ''}`}
+        className={`askbot-question-input ${needQuestion ? 'needs-question' : ''}`}
         value={text}
         maxLength={MAX_QUESTION_CHARS}
-        rows={compact ? 2 : 3}
+        rows={compact ? 1 : 2}
         placeholder={placeholder}
         aria-label={placeholder}
         aria-invalid={needQuestion || undefined}
@@ -394,7 +407,7 @@ function QuestionForm({
           if (event.target.value.trim()) setNeedQuestion(false);
         }}
         onKeyDown={(event) => {
-          if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+          if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
             event.preventDefault();
             void submit();
           }
@@ -402,34 +415,54 @@ function QuestionForm({
       />
       {needQuestion && withSituation && (
         <p className="askbot-need-question" role="alert">
-          先在上面写下你的问题，再按提问。
+          Write your question first, then press Ask.
         </p>
       )}
       {situation?.enabled && !dock && <SituationFields value={situation.value} onChange={situation.onChange} />}
       <div className="askbot-form-row">
-        {situation && (
-          <label className={`askbot-situation-toggle ${situation.enabled ? 'on' : ''}`}>
-            <input
-              type="checkbox"
-              checked={situation.enabled}
-              onChange={(event) => situation.onToggle(event.target.checked)}
-            />
-            结合我的处境
-          </label>
+        {situation ? (
+          <button
+            type="button"
+            className={`askbot-situation-toggle ${situation.enabled ? 'on' : ''}`}
+            aria-pressed={situation.enabled}
+            title={
+              situation.enabled
+                ? 'Remove your situation'
+                : 'Add your age, income and savings for an answer that fits you'
+            }
+            onClick={() => situation.onToggle(!situation.enabled)}
+          >
+            {situation.enabled ? <X size={15} aria-hidden="true" /> : <Plus size={15} aria-hidden="true" />}
+            My situation
+          </button>
+        ) : (
+          <span />
         )}
-        <span className="askbot-counter">
-          {text.length}/{MAX_QUESTION_CHARS} · Ctrl + Enter 发送
-        </span>
-        <button type="submit" className="askbot-submit" disabled={busy || (!text.trim() && !hasSituation)}>
-          {busy ? <Loader2 size={15} className="askbot-spin" /> : <Send size={15} />}
-          {compact && !dock ? '追问' : '提问'}
+        <button
+          type="submit"
+          className="askbot-submit"
+          aria-label={compact && !dock ? 'Ask follow-up' : 'Ask'}
+          disabled={busy || (!text.trim() && !hasSituation)}
+        >
+          {busy ? <Loader2 size={18} className="askbot-spin" /> : <ArrowUp size={18} strokeWidth={2.4} />}
         </button>
       </div>
     </form>
   );
 }
 
-export function AskSeanChat() {
+const noSubscription = () => () => {};
+
+/** The `?ask=` question from the URL; empty while rendering on the server. */
+function useAskParam(): string {
+  return useSyncExternalStore(
+    noSubscription,
+    () => new URLSearchParams(window.location.search).get('ask') ?? '',
+    () => '',
+  );
+}
+
+export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
   const [answer, setAnswer] = useState<AskAnswer | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -437,6 +470,8 @@ export function AskSeanChat() {
   const [sort, setSort] = useState<'recent' | 'popular'>('recent');
   const [feed, setFeed] = useState<AskFeedItem[] | null>(null);
   const answerRef = useRef<HTMLDivElement>(null);
+  // An old article link redirects here as ?ask=<its question>: fill it in, never send it.
+  const prefill = useAskParam().slice(0, MAX_QUESTION_CHARS);
 
   const loadFeed = useCallback((order: 'recent' | 'popular') => {
     fetchFeed(order)
@@ -452,7 +487,8 @@ export function AskSeanChat() {
   const show = useCallback((next: AskAnswer) => {
     setAnswer(next);
     // A private answer is not stored, so it has no link to share.
-    window.history.replaceState(null, '', next.private ? '/ask' : `/ask?q=${next.parentId ?? next.id}`);
+    const page = window.location.pathname;
+    window.history.replaceState(null, '', next.private ? page : `${page}?q=${next.parentId ?? next.id}`);
     requestAnimationFrame(() => answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }, []);
 
@@ -468,7 +504,7 @@ export function AskSeanChat() {
     [show],
   );
 
-  // A shared link (/ask?q=<id>) opens that answer; state is only set once the fetch settles.
+  // A shared link (?q=<id>) opens that answer; state is only set once the fetch settles.
   useEffect(() => {
     const id = new URLSearchParams(window.location.search).get('q');
     if (!id) return;
@@ -477,7 +513,9 @@ export function AskSeanChat() {
       .catch((problem: Error) => setError(problem.message));
   }, [show]);
 
-  useEffect(() => loadFeed(sort), [sort, loadFeed]);
+  useEffect(() => {
+    if (showFeed) loadFeed(sort);
+  }, [sort, loadFeed, showFeed]);
 
   /** A new question, or a follow-up to `parent`. */
   const ask = async (question: string, parent?: AskAnswer): Promise<boolean> => {
@@ -502,7 +540,7 @@ export function AskSeanChat() {
       } else {
         show({ ...result, followUps: [] });
       }
-      if (!result.private) loadFeed(sort);
+      if (!result.private && showFeed) loadFeed(sort);
       return true;
     } catch (problem) {
       setError((problem as Error).message);
@@ -524,7 +562,7 @@ export function AskSeanChat() {
   const startOver = () => {
     setAnswer(null);
     setError('');
-    window.history.replaceState(null, '', '/ask');
+    window.history.replaceState(null, '', window.location.pathname);
     requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   };
 
@@ -540,12 +578,14 @@ export function AskSeanChat() {
       {/* Once an answer is showing, the question moves to the bar under it. */}
       <section className="askbot-ask" hidden={Boolean(answer)}>
         <QuestionForm
+          key={prefill}
           onSubmit={(question) => ask(question)}
           busy={busy}
-          placeholder="你在买房上卡在哪里？例如：第一间房该买自住还是投资？"
+          placeholder="Ask any property question"
           situation={situationControl}
+          initialText={prefill}
         />
-        <div className="askbot-examples">
+        <div className="askbot-examples" aria-label="Try asking">
           {EXAMPLES.map((example) => (
             <button key={example} type="button" disabled={busy} onClick={() => void ask(example)}>
               {example}
@@ -553,15 +593,15 @@ export function AskSeanChat() {
           ))}
         </div>
         <p className="askbot-disclaimer">
-          一般问答会公开显示，但不记名，请不要写电话、地址等个人资料；勾选「结合我的处境」的回答只有你看得到。回答由 AI 根据 iherng Journal 的文章整理，不是 Sean
-          本人回复，也不构成理财建议；数字以节目录制时为准。
+          Answers are written by AI in Sean&apos;s voice, not by Sean himself. For reference only, not
+          financial advice.
         </p>
       </section>
 
       <div ref={answerRef} className="askbot-answer-slot">
         {busy && !answer && (
           <p className="askbot-loading">
-            <Loader2 size={16} className="askbot-spin" /> 正在翻 Sean 的节目…
+            <Loader2 size={16} className="askbot-spin" /> Going through Sean&apos;s episodes…
           </p>
         )}
         {error && <p className="askbot-error">{error}</p>}
@@ -572,11 +612,11 @@ export function AskSeanChat() {
             <div className="askbot-thread-actions">
               {!answer.private && (
                 <button type="button" className="askbot-share" onClick={() => void copyLink()}>
-                  <Link2 size={14} /> {copied ? '已复制链接' : '复制这个回答的链接'}
+                  <Link2 size={14} /> {copied ? 'Link copied' : 'Copy link to this answer'}
                 </button>
               )}
               <button type="button" className="askbot-share" onClick={startOver}>
-                <RotateCcw size={14} /> 问新问题
+                <RotateCcw size={14} /> Ask a new question
               </button>
             </div>
             <div className="askbot-dock">
@@ -584,7 +624,7 @@ export function AskSeanChat() {
                 compact
                 dock
                 busy={busy}
-                placeholder={canFollowUp ? '接着问，或者换一个问题' : '换一个问题'}
+                placeholder={canFollowUp ? 'Ask a follow-up, or a new question' : 'Ask a new question'}
                 onSubmit={(question) => (canFollowUp ? ask(question, answer) : ask(question))}
                 situation={canFollowUp ? undefined : situationControl}
               />
@@ -593,43 +633,45 @@ export function AskSeanChat() {
         )}
       </div>
 
-      <section className="askbot-feed" aria-labelledby="askbot-feed-title">
-        <div className="askbot-feed-head">
-          <h2 id="askbot-feed-title">
-            <MessageCircleQuestion size={18} /> 别人在问什么
-          </h2>
-          <div className="askbot-tabs" role="tablist">
-            {(['recent', 'popular'] as const).map((order) => (
-              <button
-                key={order}
-                type="button"
-                role="tab"
-                aria-selected={sort === order}
-                className={sort === order ? 'active' : ''}
-                onClick={() => setSort(order)}
-              >
-                {order === 'recent' ? '最近问' : '最常问'}
-              </button>
-            ))}
+      {showFeed && (
+        <section className="askbot-feed" aria-labelledby="askbot-feed-title">
+          <div className="askbot-feed-head">
+            <h2 id="askbot-feed-title">
+              <MessageCircleQuestion size={18} /> What others are asking
+            </h2>
+            <div className="askbot-tabs" role="tablist">
+              {(['recent', 'popular'] as const).map((order) => (
+                <button
+                  key={order}
+                  type="button"
+                  role="tab"
+                  aria-selected={sort === order}
+                  className={sort === order ? 'active' : ''}
+                  onClick={() => setSort(order)}
+                >
+                  {order === 'recent' ? 'Recent' : 'Most asked'}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-        {feed === null && <p className="askbot-hint">载入中…</p>}
-        {feed?.length === 0 && <p className="askbot-hint">还没有人提问，来问第一个问题吧。</p>}
-        <ul className="askbot-feed-list">
-          {feed?.map((item) => (
-            <li key={item.id}>
-              <button type="button" onClick={() => void open(item.id)}>
-                <span className="askbot-feed-meta">
-                  {timeAgo(item.lastAskedAt)}
-                  {item.askCount > 1 && ` · ${item.askCount} 次类似提问`}
-                </span>
-                <span className="askbot-feed-question">{item.question}</span>
-                {item.tldr && <span className="askbot-feed-tldr">{item.tldr}</span>}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </section>
+          {feed === null && <p className="askbot-hint">Loading…</p>}
+          {feed?.length === 0 && <p className="askbot-hint">No questions yet. Ask the first one.</p>}
+          <ul className="askbot-feed-list">
+            {feed?.map((item) => (
+              <li key={item.id}>
+                <button type="button" onClick={() => void open(item.id)}>
+                  <span className="askbot-feed-meta">
+                    {timeAgo(item.lastAskedAt)}
+                    {item.askCount > 1 && ` · asked ${item.askCount} times`}
+                  </span>
+                  <span className="askbot-feed-question">{item.question}</span>
+                  {item.tldr && <span className="askbot-feed-tldr">{item.tldr}</span>}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

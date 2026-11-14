@@ -19,7 +19,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import {
-  articles,
+  pageArticles,
   askSeanFor,
   stageFor,
   standoutFor,
@@ -42,7 +42,7 @@ import {
 } from '@/lib/seo';
 
 export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
+  return pageArticles.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({
@@ -51,7 +51,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const a = articles.find((item) => item.slug === slug);
+  const a = pageArticles.find((item) => item.slug === slug);
   if (!a) return { title: 'Story not found | iherng Journal' };
 
   // The root layout already applies the "%s | iherng Journal" template.
@@ -88,7 +88,7 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = articles.find((a) => a.slug === slug);
+  const article = pageArticles.find((a) => a.slug === slug);
   if (!article) notFound();
 
   const info = seriesFor(article);
@@ -100,7 +100,7 @@ export default async function ArticlePage({
   const standout = standoutFor(article);
 
   // Series articles for Next/Prev
-  const seriesArticles = articles.filter((a) => a.series === article.series);
+  const seriesArticles = pageArticles.filter((a) => a.series === article.series);
   const currentIndex = seriesArticles.findIndex((a) => a.slug === slug);
   const prevArticle = currentIndex > 0 ? seriesArticles[currentIndex - 1] : null;
   const nextArticle =

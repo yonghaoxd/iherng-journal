@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowUpRight, Building2, Mic, BookOpen } from 'lucide-react';
+import { ArrowUpRight, Building2, MessageCircleQuestion } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
 import { AIherngName } from '@/components/aiherng-name';
-import { articles, seriesCount } from '@/lib/articles';
+import { pageArticles, seriesCount } from '@/lib/articles';
 import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
 import { DEFAULT_OG_IMAGE, SITE_URL, websiteJsonLd } from '@/lib/seo';
@@ -12,16 +12,18 @@ import { DEFAULT_OG_IMAGE, SITE_URL, websiteJsonLd } from '@/lib/seo';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'iherng Journal — Property Reviews & Podcast Editorial',
+    default: 'AIherng — Malaysian property questions, answered from Sean Tan\'s episodes',
     template: '%s | iherng Journal',
   },
   description:
-    'An editorial companion to Sean Tan\'s (@iherng) YouTube channel. Concise, source-linked summaries of Malaysian property reviews and Asking Sean podcast episodes.',
+    'Ask any Malaysian property question and get a straight answer worked out the way Sean Tan (@iherng) does it, with the episode it comes from. Plus source-linked reviews of Malaysian property projects.',
   keywords: [
     'iherng',
     'Sean Tan',
     'Malaysia property review',
     'Asking Sean podcast',
+    'AIherng',
+    'Malaysia property Q&A',
     'Manor Born Ipoh',
     'Cempaka Seri',
     'Tropicana Alam',
@@ -33,9 +35,9 @@ export const metadata: Metadata = {
     types: { 'application/rss+xml': '/feed.xml' },
   },
   openGraph: {
-    title: 'iherng Journal — Property Reviews & Podcast Editorial',
+    title: 'AIherng — Malaysian property questions, answered',
     description:
-      'Malaysian property walkthroughs and honest conversations distilled into high-value editorial reads.',
+      'Ask any property question and get a straight answer, with the Sean Tan episode it comes from.',
     siteName: 'iherng Journal',
     locale: 'en_US',
     type: 'website',
@@ -51,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iherng Journal — Property Reviews & Podcast Editorial',
+    title: 'AIherng — Malaysian property questions, answered',
     description:
-      'Malaysian property walkthroughs and honest conversations distilled into high-value editorial reads.',
+      'Ask any property question and get a straight answer, with the Sean Tan episode it comes from.',
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {
@@ -63,13 +65,8 @@ export const metadata: Metadata = {
   },
 };
 
-// The banner points to the newest write-up, whichever series it is in.
-const latest = [...articles].sort((a, b) => b.date.localeCompare(a.date))[0];
-const LATEST_LABEL: Record<string, string> = {
-  'property-reviews': 'NEW REVIEW',
-  'iherng-podcast': 'NEW ON ASKING SEAN',
-  'buyer-guides': 'NEW GUIDE',
-};
+// The banner points to the newest published review.
+const latest = [...pageArticles].sort((a, b) => b.date.localeCompare(a.date))[0];
 
 export default function RootLayout({
   children,
@@ -105,7 +102,7 @@ export default function RootLayout({
               <strong>THE IHERNG JOURNAL</strong> · NOTES ON SEAN TAN&apos;S YOUTUBE CHANNEL
             </span>
             <Link className="banner-right" href={`/articles/${latest.slug}`}>
-              {LATEST_LABEL[latest.series]}: <strong>{latest.shortTitle}</strong> →
+              NEW REVIEW: <strong>{latest.shortTitle}</strong> →
             </Link>
           </div>
         </div>
@@ -150,47 +147,41 @@ export default function RootLayout({
                 <small className="wordmark-tag">JOURNAL</small>
               </Link>
               <p className="footer-tagline">
-                An independent site that writes up Sean Tan&apos;s YouTube videos, each with a
-                link back to the original episode.
+                Sean Tan (@iherng) runs a YouTube channel about buying property in Malaysia: he
+                tours projects, breaks down loans and costs, and works through viewers&apos; own
+                numbers. iherng Journal is an independent fan project, not made by Sean, and every
+                AIherng answer links back to the original episode.
               </p>
               <div className="footer-badges">
                 <span className="badge-pill">
+                  <MessageCircleQuestion size={12} />{' '}
+                  {seriesCount('iherng-podcast') + seriesCount('buyer-guides')} episodes behind AIherng
+                </span>
+                <span className="badge-pill">
                   <Building2 size={12} /> {seriesCount('property-reviews')} Property Reviews
-                </span>
-                <span className="badge-pill">
-                  <Mic size={12} /> {seriesCount('iherng-podcast')} Podcast Summaries
-                </span>
-                <span className="badge-pill">
-                  <BookOpen size={12} /> {seriesCount('buyer-guides')} Buyer Guides
                 </span>
               </div>
             </div>
 
             <div className="footer-col-links">
-              <h4>Series Navigation</h4>
+              <h4>Explore</h4>
               <ul>
                 <li>
-                  <Link href="/">Home Overview</Link>
+                  <Link href="/">
+                    Ask <AIherngName />
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/property-reviews">Series 01: Property Reviews</Link>
+                  <Link href="/ask">What others are asking</Link>
                 </li>
                 <li>
-                  <Link href="/iherng-podcast">Series 02: iherng Podcast</Link>
-                </li>
-                <li>
-                  <Link href="/buyer-guides">Series 03: Buyer Guides</Link>
+                  <Link href="/property-reviews">Property Reviews</Link>
                 </li>
                 <li>
                   <Link href="/calculator">Property Cost Calculator</Link>
                 </li>
                 <li>
                   <Link href="/rental-calculator">Rental Cash Flow Calculator</Link>
-                </li>
-                <li>
-                  <Link href="/ask">
-                    <AIherngName /> (AI Q&amp;A)
-                  </Link>
                 </li>
                 <li>
                   {/* A generated static file, not a route: next/link would

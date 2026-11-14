@@ -4892,3 +4892,414 @@ p {
     font-size: 11px;
   }
 }
+/* ==========================================================================
+   AIherng-first home page (2026-11 redesign) and the chat's composer.
+   The home page leads with the question box; Property Reviews and the
+   calculators follow. Later rules here override the original askbot form.
+   ========================================================================== */
+
+.home-hero {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.home-hero-inner {
+  width: min(880px, calc(100% - 32px));
+  margin-inline: auto;
+  padding: clamp(56px, 9vw, 112px) 0 clamp(48px, 7vw, 88px);
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.home-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.home-lead {
+  margin: 0;
+  max-width: 620px;
+  font-size: 18px;
+  color: var(--text-body);
+}
+
+/* The chat inside the hero spans the column and reads left to right again. */
+.home-hero .askbot {
+  width: 100%;
+  max-width: none;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.home-hero .askbot-ask {
+  max-width: none;
+  justify-items: stretch;
+}
+
+.home-hero .askbot-examples {
+  justify-content: center;
+}
+
+.home-hero .askbot-disclaimer {
+  text-align: center;
+}
+
+.home-section {
+  display: grid;
+  gap: 24px;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.home-section:last-child {
+  border-bottom: 0;
+}
+
+.home-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.home-eyebrow {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.home-section-title {
+  margin: 6px 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 40px;
+  letter-spacing: -0.01em;
+}
+
+.home-section-intro {
+  margin: 0;
+  max-width: 560px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.home-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+}
+
+.home-review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.home-review-card,
+.home-calc-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-dark-card);
+  color: var(--text-main);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.home-review-card:hover,
+.home-calc-card:hover {
+  border-color: #4A5048;
+  background: #1B1F1C;
+}
+
+.home-review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 200px;
+  padding: 22px;
+}
+
+.home-review-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+}
+
+.home-review-meta span:last-child {
+  color: var(--text-subtle);
+}
+
+.home-review-name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.home-review-line {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.home-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.home-calc-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+}
+
+.home-calc-card strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.home-calc-card small {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.home-calc-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent-terracotta-soft);
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 640px) {
+  .home-calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* The composer: one rounded box with the question on top and, inside it, the
+   "My situation" pill on the left and a round send button on the right. */
+.askbot-form.askbot-composer {
+  display: grid;
+  gap: 4px;
+  padding: 14px 14px 12px;
+  border-color: var(--border-dark);
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+}
+
+.askbot-composer .askbot-question-input {
+  min-height: 0;
+  padding: 6px 8px;
+  resize: none;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.askbot-composer .askbot-question-input.needs-question {
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 2px var(--accent-terracotta);
+}
+
+.askbot-composer.compact {
+  border-radius: 18px;
+  padding: 10px 10px 10px 14px;
+}
+
+.askbot-composer.compact .askbot-question-input {
+  font-size: 16px;
+}
+
+.askbot-composer .askbot-form-row {
+  margin-top: 4px;
+}
+
+.askbot-composer .askbot-situation-toggle {
+  min-height: 40px;
+  gap: 6px;
+  padding: 0 14px 0 11px;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.askbot-composer .askbot-situation-toggle.on {
+  color: var(--accent-terracotta);
+  background: var(--accent-terracotta-soft);
+}
+
+.askbot-composer .askbot-submit {
+  flex: 0 0 auto;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin-left: auto;
+}
+
+.askbot-composer .askbot-situation {
+  gap: 8px;
+  margin: 4px 0 6px;
+  padding: 12px 14px;
+  border-top: 0;
+  border-radius: 14px;
+  background: var(--bg-muted);
+}
+
+.askbot-situation-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.askbot-composer .askbot-situation-field textarea {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font-size: 15px;
+  resize: none;
+}
+
+.askbot-composer .askbot-situation-prompts {
+  margin-top: 0;
+}
+
+.askbot-examples button {
+  min-height: 44px;
+  padding: 8px 16px;
+  background: var(--bg-dark-card);
+  font-size: 15px;
+  color: var(--text-body);
+}
+
+/* Source cards: the episode an answer rests on, its verbatim line, and a link to watch. */
+.askbot-sources li.askbot-source-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.askbot-source-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--bg-muted);
+}
+
+.askbot-source-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.askbot-source-thumb .askbot-source-num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--bg-dark);
+}
+
+.askbot-source-duration {
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--bg-dark);
+  font-size: 12px;
+  color: var(--text-body);
+}
+
+.askbot-source-info {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.askbot-source-info .askbot-source-title {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.askbot-source-info .askbot-source-date {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-subtle);
+}
+
+.askbot-source-quote {
+  margin: 4px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent-amber);
+}
+
+.askbot-source-quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.askbot-source-quote footer {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
+.askbot-source-watch {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  margin-top: 4px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  background: var(--accent-terracotta);
+  color: #160B06;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.askbot-source-watch:hover {
+  background: var(--accent-terracotta-dark);
+}
+
+.askbot-related-card small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

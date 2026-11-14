@@ -389,6 +389,17 @@ export const articles = [
 export type Article = (typeof articles)[number];
 
 /**
+ * The series published as pages. Buyer Guides and iherng Podcast stay in `articles`
+ * as AIherng's knowledge base (ask-sean/scripts/sync.ts reads them), but readers reach
+ * them through AIherng, and their old URLs redirect there (scripts/generate-seo-assets.mjs).
+ */
+export const PAGE_SERIES = ['property-reviews'] as const;
+
+export const pageArticles = articles.filter((article) =>
+  (PAGE_SERIES as readonly string[]).includes(article.series),
+);
+
+/**
  * Series definitions live in JSON so the build-time SEO generator in
  * `scripts/generate-seo-assets.mjs` can read them without a TypeScript step.
  */

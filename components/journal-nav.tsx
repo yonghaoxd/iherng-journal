@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { articles } from '@/lib/articles';
+import { pageArticles } from '@/lib/articles';
 import { AIherngName } from '@/components/aiherng-name';
-import { Home, Building2, Mic, BookOpen, Calculator, MessageCircleQuestion, Menu, X } from 'lucide-react';
+import { Building2, Calculator, MessageCircleQuestion, Menu, X } from 'lucide-react';
 
 export function JournalNav() {
   const path = usePathname();
-  const current = articles.find((a) => path === `/articles/${a.slug}`)?.series;
+  const current = pageArticles.find((a) => path === `/articles/${a.slug}`)?.series;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [drawerTop, setDrawerTop] = useState(0);
 
@@ -39,30 +39,18 @@ export function JournalNav() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
   const countFor = (series: string) =>
-    String(articles.filter((article) => article.series === series).length).padStart(2, '0');
+    String(pageArticles.filter((article) => article.series === series).length).padStart(2, '0');
 
+  // AIherng is the home page; /ask is the same chat with the public question feed.
   const links = [
-    { href: '/', title: 'Home', icon: Home },
+    { href: '/', title: 'AIherng', label: <AIherngName />, icon: MessageCircleQuestion, also: ['/ask'] },
     {
       href: '/property-reviews',
       title: 'Property Reviews',
       badge: countFor('property-reviews'),
       icon: Building2,
     },
-    {
-      href: '/iherng-podcast',
-      title: 'iherng Podcast',
-      badge: countFor('iherng-podcast'),
-      icon: Mic,
-    },
-    {
-      href: '/buyer-guides',
-      title: 'Buyer Guides',
-      badge: countFor('buyer-guides'),
-      icon: BookOpen,
-    },
-    { href: '/calculator', title: 'Calculator', icon: Calculator },
-    { href: '/ask', title: 'AIherng', label: <AIherngName />, icon: MessageCircleQuestion },
+    { href: '/calculator', title: 'Calculators', icon: Calculator, also: ['/rental-calculator'] },
   ];
 
   return (
@@ -70,7 +58,9 @@ export function JournalNav() {
       <nav className="desktop-nav" aria-label="Main navigation">
         {links.map((link) => {
           const active =
-            path === link.href || (Boolean(current) && link.href === `/${current}`);
+            path === link.href ||
+            Boolean('also' in link && link.also?.includes(path)) ||
+            (Boolean(current) && link.href === `/${current}`);
           const Icon = link.icon;
           return (
             <Link
@@ -81,7 +71,7 @@ export function JournalNav() {
             >
               <Icon size={14} className="nav-icon" />
               <span>{'label' in link ? link.label : link.title}</span>
-              {link.badge && <span className="nav-badge">{link.badge}</span>}
+              {'badge' in link && link.badge && <span className="nav-badge">{link.badge}</span>}
             </Link>
           );
         })}
@@ -105,7 +95,9 @@ export function JournalNav() {
           <div className="mobile-nav-links">
             {links.map((link) => {
               const active =
-                path === link.href || (Boolean(current) && link.href === `/${current}`);
+                path === link.href ||
+                Boolean('also' in link && link.also?.includes(path)) ||
+                (Boolean(current) && link.href === `/${current}`);
               const Icon = link.icon;
               return (
                 <Link
@@ -119,7 +111,7 @@ export function JournalNav() {
                     <Icon size={18} />
                     <span>{'label' in link ? link.label : link.title}</span>
                   </div>
-                  {link.badge && <span className="nav-badge">{link.badge}</span>}
+                  {'badge' in link && link.badge && <span className="nav-badge">{link.badge}</span>}
                 </Link>
               );
             })}

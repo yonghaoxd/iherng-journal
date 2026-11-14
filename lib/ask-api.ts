@@ -10,6 +10,13 @@ export interface AskSource {
   articleUrl: string;
   videoUrl: string;
   videoTitle: string;
+  /** Added in 2026-11; older Worker builds leave these out. */
+  videoId?: string;
+  duration?: string;
+  /** The answerer's verbatim line from the episode. */
+  quote?: string;
+  /** A guest's name when the episode's answer is theirs rather than Sean's. */
+  answeredBy?: string | null;
 }
 
 export interface AskAnswer {
@@ -31,7 +38,7 @@ export interface AskAnswer {
   followUps?: AskAnswer[];
 }
 
-/** The optional "结合我的处境" fields; any of them may be left out. */
+/** The optional "My situation" fields; any of them may be left out. */
 export interface AskSituation {
   goal?: string;
   current?: string;
@@ -68,10 +75,10 @@ async function request<T>(path: string, body?: unknown): Promise<T> {
         : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
     );
   } catch {
-    throw new Error('连不上问答服务，请检查网络后再试。');
+    throw new Error('Could not reach AIherng. Check your connection and try again.');
   }
   const data = (await response.json().catch(() => ({}))) as T & { error?: string };
-  if (!response.ok) throw new Error(data.error ?? '出了点问题，请稍后再试。');
+  if (!response.ok) throw new Error(data.error ?? 'Something went wrong. Please try again shortly.');
   return data;
 }
 
