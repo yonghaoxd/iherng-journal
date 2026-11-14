@@ -60,7 +60,12 @@ const FEED_MAX = 50;
 function corsHeaders(request: Request, env: Env): Record<string, string> {
   const origin = request.headers.get("Origin") ?? "";
   const allowed = env.ALLOWED_ORIGINS.split(",").map((value) => value.trim());
-  if (!allowed.includes(origin)) return {};
+  // "https://*.example.pages.dev" admits that project's preview deployments, which only
+  // its owner can create; anything else must match exactly.
+  const matches = (rule: string) =>
+    rule === origin ||
+    (rule.startsWith("https://*.") && origin.startsWith("https://") && origin.endsWith(rule.slice("https://*".length)));
+  if (!allowed.some(matches)) return {};
   return {
     "Access-Control-Allow-Origin": origin,
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
