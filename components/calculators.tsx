@@ -153,11 +153,11 @@ export function Calculators() {
   const ofRent = (value: number) => `${Math.round((value / Math.max(rent, 1)) * 100)}% of the rent`;
 
   const question = isBuy
-    ? `I'm looking at a ${rm(price)} property: ${rm(purchase.upfront.total)} upfront and ${rm(instalment)} a month. Can I afford it?`
-    : `Rent ${rm(rent)} against a ${rm(instalment)} instalment: I'd ${positive ? 'make' : 'top up'} ${rm(Math.abs(rental.netCashFlow))} a month. Is it worth buying to rent out?`;
+    ? `I'm looking at a ${rm(price)} property with ${downPercent}% down: ${rm(purchase.upfront.total)} upfront and ${rm(instalment)} a month. Can I afford it?`
+    : `A ${rm(price)} unit with ${downPercent}% down, rent ${rm(rent)} against a ${rm(instalment)} instalment: I'd ${positive ? 'make' : 'top up'} ${rm(Math.abs(rental.netCashFlow))} a month. Is it worth buying to rent out?`;
   const situation = isBuy
     ? `Looking at a ${rm(price)} property. Down payment ${downPercent}% (${rm(purchase.downPayment)}), loan ${rm(purchase.loanAmount)} at ${rate}% over ${tenure} years. Cash needed upfront about ${rm(purchase.upfront.total)}, instalment about ${rm(instalment, 2)} a month.`
-    : `Considering a ${rm(price)} unit to rent out. Loan margin ${100 - downPercent}% at ${rate}% over ${tenure} years, instalment about ${rm(instalment, 2)} a month. Expected rent ${rm(rent)}, maintenance ${rm(maintenance)} a month, so cash flow about ${rm(rental.netCashFlow, 2)} a month.`;
+    : `Considering a ${rm(price)} unit to rent out. Down payment ${downPercent}% (${rm(purchase.downPayment)}), loan ${rm(purchase.loanAmount)} (${100 - downPercent}% margin) at ${rate}% over ${tenure} years, instalment about ${rm(instalment, 2)} a month. Cash needed upfront about ${rm(purchase.upfront.total)}, including stamp duty and legal fees. Expected rent ${rm(rent)}, maintenance ${rm(maintenance)} a month, so cash flow about ${rm(rental.netCashFlow, 2)} a month.`;
 
   const askAIherng = () => {
     writeAskHandoff({ question, situation });

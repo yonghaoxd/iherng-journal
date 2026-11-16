@@ -35,6 +35,8 @@ export interface AskAnswer {
   reused?: boolean;
   /** Shaped by the asker's situation: shown only to them, never stored or listed. */
   private?: boolean;
+  /** Client-side only: the situation this private answer was asked with, shown above it. */
+  askedWith?: AskSituation;
   followUps?: AskAnswer[];
 }
 

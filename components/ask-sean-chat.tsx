@@ -215,6 +215,29 @@ function RelatedVideos({ related, title }: { related: AskSource[]; title: string
   );
 }
 
+const SITUATION_LABELS: [keyof AskSituation, string][] = [
+  ['current', 'Your situation'],
+  ['goal', 'Your goal'],
+  ['tried', 'Already tried'],
+];
+
+/** What the answer was given, so figures in it never look invented. */
+function AskedWith({ situation }: { situation: AskSituation }) {
+  const lines = SITUATION_LABELS.filter(([key]) => situation[key]?.trim());
+  if (!lines.length) return null;
+  return (
+    <div className="askbot-asked-with">
+      <span className="ask-label">Answered using what you told AIherng</span>
+      {lines.map(([key, label]) => (
+        <p key={key}>
+          {lines.length > 1 && <strong>{label}: </strong>}
+          {situation[key]}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: boolean }) {
   return (
     <article className={`askbot-answer ${nested ? 'nested' : ''}`} aria-live="polite">
@@ -228,6 +251,7 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
             <Lock size={13} aria-hidden="true" /> Answered for your situation · only you can see this, it is not saved
           </p>
         )}
+        {answer.private && !nested && answer.askedWith && <AskedWith situation={answer.askedWith} />}
         {answer.askCount > 1 && (
           <p className="askbot-count">
             <Users size={13} /> Asked {answer.askCount} times
@@ -546,7 +570,7 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
       if (parent && answer) {
         setAnswer({ ...answer, followUps: [...(answer.followUps ?? []), result] });
       } else {
-        show({ ...result, followUps: [] });
+        show({ ...result, askedWith: result.private ? privateSituation.current : undefined, followUps: [] });
       }
       if (!result.private && showFeed) loadFeed(sort);
       // Asked: the calculators' numbers are not filled in again. Keep what is in the box now.

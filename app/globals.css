@@ -4318,6 +4318,28 @@ p {
   border-color: rgba(255, 107, 61, 0.35);
 }
 
+.askbot-asked-with {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.askbot-asked-with p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.askbot-asked-with strong {
+  font-weight: 600;
+  color: var(--text-body);
+}
+
 .askbot-private {
   display: inline-flex;
   align-items: center;

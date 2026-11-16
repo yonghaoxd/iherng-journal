@@ -8,12 +8,13 @@ import { ask, type AskResult } from "../lib/ask";
 import { addUsage, NO_USAGE } from "../lib/deepseek";
 import { loadEnv } from "../lib/env";
 import { loadKnowledge } from "../lib/knowledge";
-import type { FollowUp } from "../lib/router";
+import type { FollowUp, Situation } from "../lib/router";
 
 interface EvalCase {
   q: string;
   expect: "answered" | "out_of_scope";
   followUp?: FollowUp;
+  situation?: Situation;
   note?: string;
 }
 
@@ -99,6 +100,7 @@ function problems(testCase: EvalCase, result: AskResult): string[] {
 function report(testCase: EvalCase, result: AskResult, issues: string[]): string {
   const lines = [`## ${issues.length ? "⚠" : "✓"} ${testCase.q}`];
   if (testCase.followUp) lines.push(`_Follow-up to: ${testCase.followUp.question}_`);
+  if (testCase.situation) lines.push(`_Situation: ${Object.values(testCase.situation).filter(Boolean).join(" / ")}_`);
   if (testCase.note) lines.push(`_Note: ${testCase.note}_`);
   if (issues.length) lines.push(`**Issues:** ${issues.join("; ")}`);
 
@@ -131,7 +133,7 @@ async function main() {
   let flagged = 0;
   const sections: string[] = [];
   for (const testCase of cases) {
-    const result = await ask(testCase.q, knowledge, testCase.followUp);
+    const result = await ask(testCase.q, knowledge, testCase.followUp, testCase.situation);
     if (result.status !== "rejected") usage = addUsage(usage, result.usage);
     const issues = problems(testCase, result);
     if (issues.length) flagged++;
