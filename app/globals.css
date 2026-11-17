@@ -5936,6 +5936,88 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
+/* Repayment breakdown: three years first, the rest on request. */
+.calcx-schedule {
+  gap: 18px;
+}
+
+.calcx-table-wrap {
+  overflow-x: auto;
+}
+
+.calcx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.calcx-table th,
+.calcx-table td {
+  padding: 13px 0 13px 16px;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid #1E221F;
+}
+
+.calcx-table th:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.calcx-table thead th {
+  padding-top: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  border-bottom-color: var(--border-subtle);
+}
+
+.calcx-table tbody th {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.calcx-table td {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.calcx-table td:nth-child(3) {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.calcx-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #FF8A63;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.calcx-more:hover {
+  color: #FFB08F;
+}
+
+.calcx-more svg {
+  transition: transform 0.2s ease;
+}
+
+.calcx-more svg.up {
+  transform: rotate(180deg);
+}
+
 .calcx-disclaimer {
   margin: 0;
   max-width: 760px;
@@ -5951,6 +6033,9 @@ p {
   .calcx-result-rent,
   .calcx-flow,
   .calcx-card { padding: 24px 20px; }
+  .calcx-table { font-size: 13px; }
+  .calcx-table th, .calcx-table td { padding-left: 8px; }
+  .calcx-table thead th { font-size: 11px; letter-spacing: 0.06em; }
   .calcx-seg { width: 100%; }
   .calcx-seg button { flex: 1; }
   .home-review-name { font-size: 24px; }

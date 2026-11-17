@@ -1,13 +1,11 @@
 'use client';
 
 import { useMemo, useState, useSyncExternalStore } from 'react';
-import { computePurchase, formatMYR, RATES_REVIEWED } from '@/lib/calculator';
+import { ChevronDown } from 'lucide-react';
+import { computePurchase, formatMYR, RATES_REVIEWED, repaymentSchedule } from '@/lib/calculator';
 import { computeRental } from '@/lib/rental';
 
 type Mode = 'buy' | 'rent';
-
-/** Conveyancing searches, registration and other disbursements, as a fixed estimate. */
-const DISBURSEMENTS = 1_500;
 
 const noSubscription = () => () => {};
 
@@ -105,6 +103,8 @@ export function Calculators() {
   const [tenure, setTenure] = useState(35);
   const [absorbLegal, setAbsorbLegal] = useState(false);
   const [absorbMot, setAbsorbMot] = useState(false);
+  const [loanDutyWaived, setLoanDutyWaived] = useState(false);
+  const [fullSchedule, setFullSchedule] = useState(false);
   const [rent, setRent] = useState(2_000);
   const [maintenance, setMaintenance] = useState(250);
 
@@ -117,9 +117,13 @@ export function Calculators() {
         tenureYears: tenure,
         developerAbsorbsLegalFees: absorbLegal,
         developerAbsorbsStampDuty: absorbMot,
-        disbursements: DISBURSEMENTS,
+        loanStampDutyWaived: loanDutyWaived,
       }),
-    [price, downPercent, rate, tenure, absorbLegal, absorbMot],
+    [price, downPercent, rate, tenure, absorbLegal, absorbMot, loanDutyWaived],
+  );
+  const schedule = useMemo(
+    () => repaymentSchedule(purchase.loanAmount, rate, tenure),
+    [purchase.loanAmount, rate, tenure],
   );
   const rental = useMemo(
     () =>
@@ -156,8 +160,7 @@ export function Calculators() {
       label: 'Loan agreement legal fee',
       value: absorbLegal ? 'Paid by developer' : rm(purchase.upfront.loanAgreementLegalFee),
     },
-    { label: 'Loan agreement stamp duty', value: rm(purchase.upfront.loanStampDuty) },
-    { label: 'Searches and registration', value: rm(purchase.upfront.disbursements) },
+    { label: 'Loan agreement stamp duty', value: loanDutyWaived ? 'Waived' : rm(purchase.upfront.loanStampDuty) },
   ];
   const rentRows: { label: string; value: string; tone?: string }[] = [
     { label: 'Rent collected', value: `+${rm(rent, 2)}`, tone: 'positive' },
@@ -329,6 +332,9 @@ export function Calculators() {
               <button type="button" aria-pressed={absorbMot} className={absorbMot ? 'on' : ''} onClick={() => setAbsorbMot(!absorbMot)}>
                 Developer pays MOT stamp duty
               </button>
+              <button type="button" aria-pressed={loanDutyWaived} className={loanDutyWaived ? 'on' : ''} onClick={() => setLoanDutyWaived(!loanDutyWaived)}>
+                Loan stamp duty waived
+              </button>
             </div>
           )}
         </section>
@@ -339,7 +345,7 @@ export function Calculators() {
             {(isBuy ? buyRows : rentRows).map((row) => (
               <li key={row.label}>
                 <span>{row.label}</span>
-                <strong className={row.tone ?? (row.value.startsWith('Paid') ? 'waived' : undefined)}>{row.value}</strong>
+                <strong className={row.tone ?? (/^(Paid|Waived)/.test(row.value) ? 'waived' : undefined)}>{row.value}</strong>
               </li>
             ))}
           </ul>
@@ -359,6 +365,45 @@ export function Calculators() {
           </div>
         </section>
       </div>
+
+      {isBuy && schedule.length > 0 && (
+        <section className="calcx-card calcx-schedule" aria-labelledby="calcx-schedule-title">
+          <div className="calcx-flow-head">
+            <h2 id="calcx-schedule-title">Repayment breakdown</h2>
+            <span>
+              {rm(purchase.loanAmount)} at {rate}% over {tenure} years
+            </span>
+          </div>
+          <div className="calcx-table-wrap">
+            <table className="calcx-table">
+              <thead>
+                <tr>
+                  <th scope="col">Year</th>
+                  <th scope="col">Principal</th>
+                  <th scope="col">Interest</th>
+                  <th scope="col">Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(fullSchedule ? schedule : schedule.slice(0, 3)).map((row) => (
+                  <tr key={row.year}>
+                    <th scope="row">{row.year}</th>
+                    <td>{rm(row.principal)}</td>
+                    <td>{rm(row.interest)}</td>
+                    <td>{rm(row.balance)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {schedule.length > 3 && (
+            <button type="button" className="calcx-more" aria-expanded={fullSchedule} onClick={() => setFullSchedule(!fullSchedule)}>
+              {fullSchedule ? 'Show the first 3 years' : `See all ${schedule.length} years`}
+              <ChevronDown size={16} aria-hidden="true" className={fullSchedule ? 'up' : ''} />
+            </button>
+          )}
+        </section>
+      )}
 
       <p className="calcx-disclaimer">
         An estimate, not a quotation. Stamp duty and legal fee scales were last checked on{' '}

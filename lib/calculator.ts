@@ -95,8 +95,10 @@ export interface PurchaseInput {
   /** Developer packages often absorb these on new launches. */
   developerAbsorbsLegalFees: boolean;
   developerAbsorbsStampDuty: boolean;
-  /** Search fees, registration and other conveyancing disbursements. */
-  disbursements: number;
+  /** Some banks and first-home schemes waive the loan agreement stamp duty. */
+  loanStampDutyWaived?: boolean;
+  /** Search fees, registration and other conveyancing disbursements; none by default. */
+  disbursements?: number;
 }
 
 export interface PurchaseResult {
@@ -131,11 +133,12 @@ export function computePurchase(input: PurchaseInput): PurchaseResult {
   const spaLegalFee = input.developerAbsorbsLegalFees ? 0 : fullSpaLegal;
   const loanAgreementLegalFee = input.developerAbsorbsLegalFees ? 0 : fullLoanLegal;
   const mot = input.developerAbsorbsStampDuty ? 0 : fullMot;
-  const disbursements = Math.max(0, input.disbursements);
+  const disbursements = Math.max(0, input.disbursements ?? 0);
 
-  // Loan agreement stamp duty is charged by the bank and is not part of a
-  // developer's legal-fee package, so it is never waived here.
-  const loanDuty = loanStampDuty(loanAmount);
+  // Loan agreement stamp duty is not part of a developer's legal-fee package; it
+  // is only waived when the reader says their bank or a first-home scheme does.
+  const fullLoanDuty = loanStampDuty(loanAmount);
+  const loanDuty = input.loanStampDutyWaived ? 0 : fullLoanDuty;
 
   const upfrontTotal =
     downPayment + mot + spaLegalFee + loanAgreementLegalFee + loanDuty + disbursements;
@@ -155,12 +158,42 @@ export function computePurchase(input: PurchaseInput): PurchaseResult {
       disbursements,
       total: upfrontTotal,
     },
-    waived: fullMot - mot + (fullSpaLegal - spaLegalFee) + (fullLoanLegal - loanAgreementLegalFee),
+    waived:
+      fullMot - mot + (fullSpaLegal - spaLegalFee) + (fullLoanLegal - loanAgreementLegalFee) + (fullLoanDuty - loanDuty),
     monthly,
     totalRepaid,
     totalInterest: Math.max(0, totalRepaid - loanAmount),
     incomeGuideline: monthly * 3,
   };
+}
+
+export interface RepaymentYear {
+  /** 1 for the first twelve instalments. */
+  year: number;
+  principal: number;
+  interest: number;
+  /** What is still owed at the end of the year. */
+  balance: number;
+}
+
+/** The loan year by year: how much of each year's instalments clears the loan, and how much is interest. */
+export function repaymentSchedule(principal: number, annualRatePercent: number, years: number): RepaymentYear[] {
+  const months = Math.round(years * 12);
+  const payment = monthlyInstalment(principal, annualRatePercent, years);
+  const monthlyRate = annualRatePercent / 100 / 12;
+  const rows: RepaymentYear[] = [];
+  let balance = principal;
+  for (let month = 1; month <= months && payment > 0; month += 1) {
+    const interest = balance * monthlyRate;
+    const repaid = Math.min(balance, payment - interest);
+    balance -= repaid;
+    const year = Math.ceil(month / 12);
+    const row = rows[year - 1] ?? (rows[year - 1] = { year, principal: 0, interest: 0, balance: 0 });
+    row.principal += repaid;
+    row.interest += interest;
+    row.balance = Math.max(0, balance);
+  }
+  return rows;
 }
 
 export function formatMYR(value: number, decimals = 0) {
