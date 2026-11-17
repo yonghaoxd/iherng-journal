@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { pageArticles } from '@/lib/articles';
 import { AIherngName } from '@/components/aiherng-name';
-import { Building2, Calculator, MessageCircleQuestion, Menu, X } from 'lucide-react';
+import { Building2, Calculator, ListChecks, MessageCircleQuestion, Menu, X } from 'lucide-react';
 
 export function JournalNav() {
   const path = usePathname();
@@ -44,6 +44,7 @@ export function JournalNav() {
   // AIherng is the home page; /ask is the same chat with the public question feed.
   const links = [
     { href: '/', title: 'AIherng', label: <AIherngName />, icon: MessageCircleQuestion, also: ['/ask'] },
+    { href: '/four-steps', title: '4 Steps', icon: ListChecks },
     {
       href: '/property-reviews',
       title: 'Property Reviews',

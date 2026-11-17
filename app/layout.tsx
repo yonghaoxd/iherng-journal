@@ -175,6 +175,9 @@ export default function RootLayout({
                   <Link href="/ask">What others are asking</Link>
                 </li>
                 <li>
+                  <Link href="/four-steps">Sean&apos;s 4 Steps</Link>
+                </li>
+                <li>
                   <Link href="/property-reviews">Property Reviews</Link>
                 </li>
                 <li>

@@ -90,7 +90,7 @@ function buildSitemap() {
   }
 
   // Standalone tool pages that are not part of a series.
-  for (const slug of ['calculator', 'ask']) {
+  for (const slug of ['four-steps', 'calculator', 'ask']) {
     urls.push({
       loc: `${site.url}/${slug}`,
       lastmod: isoDate(latestDate(articles)),
