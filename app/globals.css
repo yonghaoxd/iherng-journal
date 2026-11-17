@@ -5763,66 +5763,6 @@ p {
   color: var(--text-muted);
 }
 
-/* Ask AIherng with these numbers */
-.calcx-ask {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px 24px;
-  padding: 20px 24px;
-  border-radius: 18px;
-  background: rgba(255, 107, 61, 0.07);
-  border: 1px solid rgba(255, 107, 61, 0.22);
-}
-
-.calcx-ask > div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1 1 420px;
-  min-width: 0;
-}
-
-.calcx-ask p {
-  margin: 0;
-  font-size: 15px;
-  color: var(--text-main);
-}
-
-.calcx-ask small {
-  font-size: 13px;
-  color: var(--text-subtle);
-}
-
-.calcx-ask button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 22px;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--accent-terracotta);
-  color: var(--bg-canvas);
-  font: inherit;
-  font-size: 15px;
-  font-weight: 700;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background 0.15s ease;
-}
-
-.calcx-ask button:hover {
-  background: #FF8456;
-}
-
-.calcx-ask em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 500;
-}
-
 .calcx-columns {
   display: flex;
   flex-wrap: wrap;
@@ -5847,8 +5787,8 @@ p {
 
 .calcx-field-head {
   display: flex;
-  flex-wrap: wrap;
   align-items: baseline;
+  white-space: nowrap;
   justify-content: space-between;
   gap: 8px;
   font-size: 13px;
@@ -5857,6 +5797,9 @@ p {
 }
 
 .calcx-field-head span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 400;
   color: var(--text-subtle);
 }

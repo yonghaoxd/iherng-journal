@@ -1,11 +1,8 @@
 'use client';
 
 import { useMemo, useState, useSyncExternalStore } from 'react';
-import { useRouter } from 'next/navigation';
-import { ArrowRight } from 'lucide-react';
 import { computePurchase, formatMYR, RATES_REVIEWED } from '@/lib/calculator';
 import { computeRental } from '@/lib/rental';
-import { writeAskHandoff } from '@/lib/ask-handoff';
 
 type Mode = 'buy' | 'rent';
 
@@ -97,7 +94,6 @@ function NumberField({
  * rate and tenure are shared, so switching views keeps what the reader typed.
  */
 export function Calculators() {
-  const router = useRouter();
   const modeParam = useModeParam();
   const [chosenMode, setChosenMode] = useState<Mode | null>(null);
   const mode = chosenMode ?? modeParam;
@@ -151,18 +147,6 @@ export function Calculators() {
   const scale = Math.max(rent, costs, 1);
   const share = (value: number) => `${(Math.max(0, value) / scale) * 100}%`;
   const ofRent = (value: number) => `${Math.round((value / Math.max(rent, 1)) * 100)}% of the rent`;
-
-  const question = isBuy
-    ? `I'm looking at a ${rm(price)} property with ${downPercent}% down: ${rm(purchase.upfront.total)} upfront and ${rm(instalment)} a month. Can I afford it?`
-    : `A ${rm(price)} unit with ${downPercent}% down, rent ${rm(rent)} against a ${rm(instalment)} instalment: I'd ${positive ? 'make' : 'top up'} ${rm(Math.abs(rental.netCashFlow))} a month. Is it worth buying to rent out?`;
-  const situation = isBuy
-    ? `Looking at a ${rm(price)} property. Down payment ${downPercent}% (${rm(purchase.downPayment)}), loan ${rm(purchase.loanAmount)} at ${rate}% over ${tenure} years. Cash needed upfront about ${rm(purchase.upfront.total)}, instalment about ${rm(instalment, 2)} a month.`
-    : `Considering a ${rm(price)} unit to rent out. Down payment ${downPercent}% (${rm(purchase.downPayment)}), loan ${rm(purchase.loanAmount)} (${100 - downPercent}% margin) at ${rate}% over ${tenure} years, instalment about ${rm(instalment, 2)} a month. Cash needed upfront about ${rm(purchase.upfront.total)}, including stamp duty and legal fees. Expected rent ${rm(rent)}, maintenance ${rm(maintenance)} a month, so cash flow about ${rm(rental.netCashFlow, 2)} a month.`;
-
-  const askAIherng = () => {
-    writeAskHandoff({ question, situation });
-    router.push('/');
-  };
 
   const buyRows: { label: string; value: string; tone?: string }[] = [
     { label: 'Down payment', value: rm(purchase.upfront.downPayment) },
@@ -300,19 +284,6 @@ export function Calculators() {
         </>
       )}
 
-      <section className="calcx-ask" aria-label="Ask AIherng about these numbers">
-        <div>
-          <p>&ldquo;{question}&rdquo;</p>
-          <small>Your numbers go into My situation, so the answer stays private.</small>
-        </div>
-        <button type="button" onClick={askAIherng}>
-          <span>
-            Ask <em>AI</em>herng
-          </span>
-          <ArrowRight size={16} aria-hidden="true" />
-        </button>
-      </section>
-
       <div className="calcx-columns">
         <section className="calcx-card" aria-labelledby="calcx-inputs-title">
           <h2 id="calcx-inputs-title">Your numbers</h2>
@@ -332,7 +303,7 @@ export function Calculators() {
             ) : (
               <NumberField
                 label="Loan margin"
-                hint={`Borrowing ${rm(purchase.loanAmount)}`}
+                hint={`${rm(purchase.loanAmount)} loan`}
                 value={100 - downPercent}
                 onChange={(next) => setDownPercent(100 - next)}
                 min={0}
