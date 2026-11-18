@@ -1,0 +1,56 @@
+{
+  "slug": "booking-fee-refund",
+  "series": "iherng-podcast",
+  "episode": 237,
+  "title": "Loan approved but I backed out. Can I get my booking fee back?",
+  "shortTitle": "Booking fee refunds",
+  "tag": "Booking fees",
+  "category": "buying-process",
+  "date": "2024-01-16",
+  "videoId": "8XNWOt6vlBg",
+  "videoTitle": "ASKING SEAN #237 | BOOKING FEES BURNT",
+  "duration": "16:02",
+  "excerpt": "A buyer paid a RM1,000 booking fee after being told to 'just try the loan'. It was approved, he couldn't afford it, and the developer kept the fee. Sean explains when fees are refunded.",
+  "qa": {
+    "kind": "question",
+    "asker": "Kumar, a viewer who wrote in by email",
+    "context": "Kumar paid a RM1,000 booking fee on a new launch condo in Damansara Perdana, dealing with the developer directly after bad experiences with agents. He doubted he could afford it, but the developer's representative encouraged him to apply for a loan first. The loan was approved, he decided the instalment was too high and declined it, and the developer refused to refund the fee. The bank wouldn't issue a rejection letter.",
+    "question": "Is it fair that the booking fee isn't refunded, and how can he get it back?",
+    "quote": "Refund is only allowed when your loan application is rejected.",
+    "answer": "The developer isn't obliged to refund it: booking fees are refunded only when the loan is rejected, not when you change your mind. His best option is a polite letter asking for part of it back, and next time to work out his loan eligibility before visiting any sales gallery.",
+    "reasons": [
+      {
+        "title": "The fee reserves the unit",
+        "body": "It pays for the paperwork and loan coordination and holds the unit for you. If anyone could book and later walk away with a full refund, people could tie up whole blocks for months at no cost."
+      },
+      {
+        "title": "'Try the loan first' is a sales hook",
+        "body": "Being told you can apply and get a refund if it doesn't work out is a common line. It is only true if the bank turns you down, which is why knowing your eligibility in advance protects you."
+      },
+      {
+        "title": "Rejections hurt your record",
+        "body": "A rejected application is visible to other banks and can harm your next application for about four to six months. Experienced investors ask a bank officer for an informal assessment before submitting anything."
+      },
+      {
+        "title": "Losing RM1,000 beats a 35-year mistake",
+        "body": "Many buyers go ahead with a purchase they can't afford rather than lose the booking fee. Sean is glad Kumar chose to lose the fee instead."
+      }
+    ],
+    "actions": [
+      "Write a polite letter to the developer explaining you are a first-time buyer and asking for part of the fee back.",
+      "Before visiting any sales gallery, find out how much loan you qualify for, and only look at projects within it.",
+      "Ask a bank officer for an informal assessment of your profile before submitting a formal application.",
+      "Read the booking form's refund terms before paying, and don't rely on what you are told verbally.",
+      "Where possible, buy from the developer's own sales staff, who are more likely to still be around at handover."
+    ],
+    "caveat": "Some developers have dropped booking fees altogether and let you proceed once your loan qualifies, so practices differ. Sean says strictly speaking booking fees aren't permitted, but they remain common in the market."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #237. The quoted answer is verbatim; everything else is paraphrased. Figures and practices are as Sean described them in January 2024.",
+  "sources": [
+    {
+      "label": "Original video and English captions · 16 January 2024",
+      "url": "https://www.youtube.com/watch?v=8XNWOt6vlBg"
+    }
+  ],
+  "location": "First-time buyer, Petaling Jaya"
+}

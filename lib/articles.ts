@@ -187,6 +187,20 @@ import discountedProperties from '@/content/articles/where-discounted-properties
 import landedLabels from '@/content/articles/landed-home-labels-and-guarded-areas.json';
 import transactedPriceData from '@/content/articles/using-transacted-price-data.json';
 import badDealLessons from '@/content/articles/lessons-from-a-bad-deal.json';
+import parentsGiftCondo from '@/content/articles/parents-gift-unaffordable-condo.json';
+import coupleCashOrLoan from '@/content/articles/couple-cash-or-housing-loan.json';
+import supportingParentsSpace from '@/content/articles/supporting-parents-own-space.json';
+import firstPropertyAt22 from '@/content/articles/first-property-at-22.json';
+import rentCoversGoodDeal from '@/content/articles/rent-covers-instalment-good-deal.json';
+import settleOrBuyMore from '@/content/articles/settle-loans-or-buy-more.json';
+import sellAtLossOrRent from '@/content/articles/sell-at-loss-or-rent-out.json';
+import rentWhileWaiting from '@/content/articles/rent-while-waiting-for-keys.json';
+import sevenPropertiesGoal from '@/content/articles/seven-properties-whats-the-goal.json';
+import bookingFeeRefund from '@/content/articles/booking-fee-refund.json';
+import fullCashOrLoan from '@/content/articles/full-cash-or-housing-loan.json';
+import firstHomeAuction from '@/content/articles/first-home-at-auction.json';
+import oversupplyFirstBuyers from '@/content/articles/oversupply-and-first-time-buyers.json';
+import fixMoneyLosingUnit from '@/content/articles/fix-money-losing-rental-property.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -248,6 +262,8 @@ export const articles = [
   manor,
   cempaka,
   // iherng Podcast, newest episode first; series pages keep this order.
+  coupleCashOrLoan,
+  parentsGiftCondo,
   secondPropertyVsEquities,
   newBaby,
   cancelledBooking,
@@ -311,9 +327,19 @@ export const articles = [
   liftHomeForParent,
   coupleFirstHome,
   threeTodProjects,
+  supportingParentsSpace,
   firstHome,
+  firstPropertyAt22,
+  rentCoversGoodDeal,
+  settleOrBuyMore,
+  sellAtLossOrRent,
+  rentWhileWaiting,
   apartment,
+  sevenPropertiesGoal,
   location,
+  bookingFeeRefund,
+  fullCashOrLoan,
+  firstHomeAuction,
   defects,
   channels,
   hiddenCosts,
@@ -384,6 +410,8 @@ export const articles = [
   landedLabels,
   transactedPriceData,
   badDealLessons,
+  oversupplyFirstBuyers,
+  fixMoneyLosingUnit,
 ];
 
 export type Article = (typeof articles)[number];

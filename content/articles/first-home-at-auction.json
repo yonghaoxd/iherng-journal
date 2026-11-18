@@ -1,0 +1,56 @@
+{
+  "slug": "first-home-at-auction",
+  "series": "iherng-podcast",
+  "episode": 224,
+  "title": "I bought my first home at auction. What were the risks I took?",
+  "shortTitle": "First home at auction",
+  "tag": "Auction risks",
+  "category": "buying-process",
+  "date": "2023-09-18",
+  "videoId": "jXJbwUSEMdo",
+  "videoTitle": "ASKING SEAN #224 | NEWBIES DON'T GO FOR AUCTION",
+  "duration": "20:12",
+  "excerpt": "A 26-year-old won an auction unit near Sunway for RM266,000, but nearly lost her deposit when the title delay held up her loan. Sean explains why first-time buyers should avoid auctions.",
+  "qa": {
+    "kind": "question",
+    "asker": "Era, a viewer who wrote in by email",
+    "context": "At 26 Era found a 718 sq ft condo near Sunway Pyramid, completed in 2021, listed well below other units. It was an auction unit due in ten days; she researched it and won it as the only bidder at RM266,000, against the RM423,000 the previous owner paid. Because the title hadn't been transferred, her loan couldn't be released in time, and her parents paid the 90% balance to avoid losing her deposit. Her instalment is about RM1,069 a month.",
+    "question": "What does Sean make of buying a first property at auction?",
+    "quote": "Try to stay away unless you are loaded with cash.",
+    "answer": "She was lucky, not well prepared. Auctions can be cheaper, but the balance must be paid within a short deadline whether or not your loan is ready, so first-time buyers without enough cash for the whole price should avoid them.",
+    "reasons": [
+      {
+        "title": "The deposit is at risk for 30 days",
+        "body": "Bidders put down about 10% as a bank draft to register. If you can't pay the remaining 90% within about 30 days of winning, the deposit, here about RM26,600, is forfeited, even when the delay is the title transfer rather than your loan eligibility."
+      },
+      {
+        "title": "No title, no loan",
+        "body": "When the developer hasn't yet transferred the title to the first owner, banks won't lend because there is nothing to charge. Private caveats and units you can't see inside are other common surprises."
+      },
+      {
+        "title": "Bidding pushes prices towards market",
+        "body": "Each bidder raises the price by an increment, often RM1,000 to RM10,000 depending on the auction house. With a dozen bidders, popular units often close at or above market price."
+      },
+      {
+        "title": "Below market is often overstated",
+        "body": "The RM423,000 was the original buyer's developer price, which may have included discounts. The real market price is what neighbours will actually sell for, perhaps about RM290,000, so the saving was nearer 10% than 35%."
+      }
+    ],
+    "actions": [
+      "Start learning early, before you have savings: work out your intent and view around 20 properties over time.",
+      "Ask whether a cheap listing is an auction, a distressed sale or a fire sale before getting excited.",
+      "Only bid at auction if you have cash for the full price, so a loan delay can't cost you the deposit.",
+      "Check the title status, any caveats and outstanding maintenance before bidding.",
+      "Remember the loan is based on the price you pay, not the valuation, though the difference becomes equity for a later refinance."
+    ],
+    "caveat": "Experienced investors with cash and years in the market can use auctions well. Sean's warning is for newcomers, and he credits her parents' support for turning a near miss into a good first purchase."
+  },
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #224. The quoted line is verbatim; everything else is paraphrased. Figures are as Sean and the viewer stated them in September 2023; auction rules vary between auction houses.",
+  "sources": [
+    {
+      "label": "Original video and English captions · 18 September 2023",
+      "url": "https://www.youtube.com/watch?v=jXJbwUSEMdo"
+    }
+  ],
+  "location": "First-time buyer, Petaling Jaya"
+}
