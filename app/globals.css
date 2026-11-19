@@ -5044,10 +5044,57 @@ p {
   border-bottom: 0;
 }
 
+/* Three across; the arrows sit level with the middle of the thumbnails:
+   (row width - 2 gaps) / 3 x 9/16 / 2, less half a button. */
+.home-review-slider {
+  position: relative;
+  container-type: inline-size;
+}
+
 .home-review-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
+}
+
+.home-review-arrow {
+  position: absolute;
+  z-index: 2;
+  top: calc((100cqw - 56px) * 3 / 32 - 24px);
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid #3B413A;
+  background: #141715;
+  color: var(--text-main);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.home-review-arrow.prev { left: -24px; }
+.home-review-arrow.next { right: -24px; }
+
+.home-review-arrow:hover {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  color: #0E100F;
+}
+
+.home-review-arrow:focus-visible {
+  outline: 2px solid var(--accent-terracotta);
+  outline-offset: 2px;
+}
+
+@container (max-width: 760px) {
+  .home-review-grid { grid-template-columns: 1fr; }
+  .home-review-arrow { top: calc(100cqw * 9 / 32 - 24px); }
+  .home-review-arrow.prev { left: 8px; }
+  .home-review-arrow.next { right: 8px; }
 }
 
 /* Magazine cards: the episode's thumbnail, then place, name and one line. */

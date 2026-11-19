@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Calculator, Play, TrendingUp } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Calculator, TrendingUp } from 'lucide-react';
 import { AskSeanChat } from '@/components/ask-sean-chat';
 import { AIherngName } from '@/components/aiherng-name';
+import { ReviewCarousel, type ReviewCard } from '@/components/review-carousel';
 import { imageFor, pageArticles, seriesCount, stateFor } from '@/lib/articles';
 
 /** "Teja: low-density living on Subang Jaya's busiest stretch." → name and line. */
@@ -24,7 +25,20 @@ export default function Home() {
   const latestReviews = [...pageArticles]
     .filter((article) => article.series === 'property-reviews')
     .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+    .slice(0, 9)
+    .map((review): ReviewCard => {
+      const { name, line } = splitTitle(review.title);
+      const kind = 'propertyType' in review && typeof review.propertyType === 'string' ? review.propertyType : '';
+      return {
+        slug: review.slug,
+        image: imageFor(review),
+        duration: review.duration,
+        meta: [review.location ?? stateFor(review), kind].filter(Boolean).join(' · '),
+        name,
+        line,
+        month: monthOf(review.date),
+      };
+    });
 
   return (
     <main id="main" className="home-page home-ask">
@@ -58,31 +72,7 @@ export default function Home() {
             See all {seriesCount('property-reviews')} reviews <ArrowRight size={15} />
           </Link>
         </div>
-        <div className="home-review-grid">
-          {latestReviews.map((review) => {
-            const { name, line } = splitTitle(review.title);
-            const kind = 'propertyType' in review && typeof review.propertyType === 'string' ? review.propertyType : '';
-            return (
-              <Link key={review.slug} href={`/articles/${review.slug}`} className="home-review-card">
-                <span className="home-review-thumb">
-                  <img src={imageFor(review)} alt="" width={1280} height={720} loading="lazy" />
-                  <span className="home-review-play" aria-hidden="true">
-                    <Play size={14} fill="currentColor" />
-                  </span>
-                  <span className="home-review-duration">{review.duration}</span>
-                </span>
-                <span className="home-review-body">
-                  <span className="home-review-meta">
-                    {[review.location ?? stateFor(review), kind].filter(Boolean).join(' · ')}
-                  </span>
-                  <span className="home-review-name">{name}</span>
-                  {line && <span className="home-review-line">{line}</span>}
-                  <span className="home-review-date">{monthOf(review.date)}</span>
-                </span>
-              </Link>
-            );
-          })}
-        </div>
+        <ReviewCarousel reviews={latestReviews} />
       </section>
 
       <section className="container home-section home-calcs" aria-labelledby="home-calc-title">
