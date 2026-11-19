@@ -213,6 +213,26 @@ import fivePropertiesOn7k from '@/content/articles/five-properties-on-rm7000-sal
 import overpaidSunwayUnit from '@/content/articles/overpaid-sunway-student-unit.json';
 import sohoFromOverseas from '@/content/articles/soho-first-investment-from-overseas.json';
 import brothersRenovation from '@/content/articles/brothers-cant-afford-renovation.json';
+import stopBuyingFixFilter from '@/content/articles/losing-money-stop-buying.json';
+import largeCondoNotLanded from '@/content/articles/large-condo-instead-of-landed.json';
+import hongKongToKl from '@/content/articles/hong-kong-couple-moving-to-kl.json';
+import studentRentalAt23 from '@/content/articles/student-rental-first-investment.json';
+import giftedWealthLoan from '@/content/articles/gifted-wealth-cash-or-loan.json';
+import emptySemiD from '@/content/articles/empty-semi-d-keep-sell-or-refinance.json';
+import oneMillionToInvest from '@/content/articles/rm1-million-to-invest-in-property.json';
+import apartmentForMother from '@/content/articles/apartment-for-ageing-parent.json';
+import bangiOrCyberjaya from '@/content/articles/bangi-house-or-cyberjaya-condo.json';
+import investOrDreamHome from '@/content/articles/invest-first-or-save-for-dream-home.json';
+import futureOfProperty from '@/content/articles/future-of-malaysian-property.json';
+import shortLeaseholdAt60 from '@/content/articles/sell-leasehold-house-at-60.json';
+import retireEarlyOnRent from '@/content/articles/early-retirement-in-malaysia-on-rent.json';
+import semiRetirementHome from '@/content/articles/landed-home-for-semi-retirement.json';
+import borrowAboveSpa from '@/content/articles/borrow-above-spa-price-subsale.json';
+import rentInCyberjaya from '@/content/articles/rent-in-cyberjaya-invest-elsewhere.json';
+import graduateAbroad from '@/content/articles/young-graduate-abroad-kl-sentral-unit.json';
+import secondPropertyWhen from '@/content/articles/when-to-buy-second-property.json';
+import shopLotHoldOrSell from '@/content/articles/paid-off-shop-lot-hold-or-sell.json';
+import investingAt45 from '@/content/articles/investing-at-45-penang-or-klang-valley.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -341,6 +361,7 @@ export const articles = [
   threeTodProjects,
   supportingParentsSpace,
   firstHome,
+  stopBuyingFixFilter,
   firstPropertyAt22,
   rentCoversGoodDeal,
   settleOrBuyMore,
@@ -348,6 +369,7 @@ export const articles = [
   sellAtLossOrRent,
   singaporeMontKiara,
   inheritedAt23,
+  largeCondoNotLanded,
   rentWhileWaiting,
   inheritedShopLot,
   apartment,
@@ -359,11 +381,29 @@ export const articles = [
   rentalAt55,
   negativeCashFlowUnit,
   fullCashOrLoan,
+  hongKongToKl,
+  studentRentalAt23,
   fivePropertiesOn7k,
+  giftedWealthLoan,
   overpaidSunwayUnit,
   sohoFromOverseas,
   brothersRenovation,
   firstHomeAuction,
+  emptySemiD,
+  oneMillionToInvest,
+  apartmentForMother,
+  bangiOrCyberjaya,
+  investOrDreamHome,
+  futureOfProperty,
+  shortLeaseholdAt60,
+  retireEarlyOnRent,
+  semiRetirementHome,
+  borrowAboveSpa,
+  rentInCyberjaya,
+  graduateAbroad,
+  secondPropertyWhen,
+  shopLotHoldOrSell,
+  investingAt45,
   defects,
   channels,
   hiddenCosts,
