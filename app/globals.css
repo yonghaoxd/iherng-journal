@@ -4531,18 +4531,165 @@ p {
   background: var(--bg-dark-card);
 }
 
-.askbot-question {
+/* The question: a quiet quote card, folded to three lines when long. */
+.askbot-question-card {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  column-gap: 14px;
+  padding: 18px 22px 14px 16px;
+  border-radius: 16px;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+}
+
+.askbot-answer.nested .askbot-question-card {
+  background: var(--bg-card);
+}
+
+.askbot-question-mark {
   display: flex;
-  align-items: flex-start;
+  justify-content: flex-end;
+  font-family: var(--font-serif);
+  font-size: 50px;
+  line-height: 0.9;
+  color: var(--accent-terracotta);
+  opacity: 0.55;
+}
+
+.askbot-question-mark svg {
+  margin-top: 4px;
+  opacity: 1;
+  color: var(--text-subtle);
+}
+
+.askbot-question-inner {
+  display: grid;
   gap: 8px;
-  font-size: 21px;
-  line-height: 1.45;
+  min-width: 0;
+}
+
+.askbot-question-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+}
+
+.askbot-question-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.askbot-question-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
+.askbot-question {
+  margin: 0;
+  font-family: var(--font-serif), 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  color: #E6E4DC;
+  overflow-wrap: anywhere;
+}
+
+.askbot-question.folded {
+  max-height: 4.8em;
+  overflow: hidden;
+}
+
+.askbot-question.faded {
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+}
+
+.askbot-question-toggle {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #FF8A63;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.askbot-question-toggle:hover {
+  color: #FFB08F;
+}
+
+.askbot-question-toggle:focus-visible {
+  outline: 2px solid #FF8A63;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.askbot-question-toggle svg {
+  transition: transform 0.2s;
+}
+
+.askbot-question-toggle svg.flipped {
+  transform: rotate(180deg);
+}
+
+/* Where the answer starts; a new answer scrolls here, under the sticky header. */
+.askbot-answer-start {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  scroll-margin-top: 96px;
+}
+
+.askbot-ai-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--accent-terracotta-soft);
+  border: 1px solid rgba(255, 107, 61, 0.3);
+  color: var(--accent-terracotta);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+}
+
+.askbot-answer-start-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.askbot-answer-start-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
   color: var(--text-main);
 }
 
-.askbot-question svg {
-  flex-shrink: 0;
-  margin-top: 6px;
+.askbot-answer-start-title em {
+  color: var(--accent-terracotta);
+}
+
+.askbot-answer-start-meta {
+  font-size: 12px;
   color: var(--text-subtle);
 }
 
@@ -4554,20 +4701,23 @@ p {
   color: var(--text-subtle);
 }
 
+/* The one-line answer, set like a headline. */
 .askbot-tldr {
-  display: grid;
-  gap: 6px;
-  padding: 14px 16px;
-  border-left: 3px solid var(--accent-terracotta);
-  background: var(--accent-terracotta-soft);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 20px 24px 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 107, 61, 0.14) 0%, rgba(255, 107, 61, 0.05) 100%);
+  border: 1px solid rgba(255, 107, 61, 0.28);
 }
 
 .askbot-tldr p {
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.6;
+  margin: 0;
+  font-family: var(--font-serif), 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
   color: var(--text-main);
+  text-wrap: balance;
 }
 
 .askbot-persona {
@@ -4800,11 +4950,19 @@ p {
   gap: 8px;
 }
 
+/* The follow-up box floats, fading what scrolls behind it instead of cutting it off. */
 .askbot-dock {
   position: sticky;
-  bottom: 16px;
+  bottom: 0;
   z-index: 5;
+  padding: 36px 0 16px;
+  background: linear-gradient(180deg, rgba(14, 16, 15, 0) 0%, var(--bg-canvas) 50%);
+  pointer-events: none;
+}
+
+.askbot-dock .askbot-form {
   max-width: 820px;
+  pointer-events: auto;
 }
 
 .askbot-dock .askbot-form {
@@ -4936,7 +5094,21 @@ p {
   }
 
   .askbot-question {
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .askbot-question-card {
+    grid-template-columns: 18px minmax(0, 1fr);
+    column-gap: 10px;
+    padding: 14px 16px 10px 12px;
+  }
+
+  .askbot-question-mark {
+    font-size: 40px;
+  }
+
+  .askbot-tldr {
+    padding: 16px 18px 18px;
   }
 
   .askbot-counter {

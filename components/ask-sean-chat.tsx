@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   ArrowUp,
   ArrowUpRight,
+  ChevronDown,
   CornerDownRight,
   Link2,
   Loader2,
@@ -238,28 +239,93 @@ function AskedWith({ situation }: { situation: AskSituation }) {
   );
 }
 
+/**
+ * The question as a quiet quote card. A long one folds to three lines, so the answer
+ * below it is never pushed out of sight.
+ */
+function QuestionCard({ answer, nested }: { answer: AskAnswer; nested: boolean }) {
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [overflows, setOverflows] = useState(false);
+
+  useEffect(() => {
+    const text = textRef.current;
+    if (!text || expanded) return;
+    const measure = () => setOverflows(text.scrollHeight > text.clientHeight + 1);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(text);
+    return () => observer.disconnect();
+  }, [answer.question, expanded]);
+
+  const folded = overflows && !expanded;
+  return (
+    <section className="askbot-question-card" aria-label={nested ? 'Your follow-up' : 'Your question'}>
+      <span className="askbot-question-mark" aria-hidden="true">
+        {nested ? <CornerDownRight size={18} /> : '\u201C'}
+      </span>
+      <div className="askbot-question-inner">
+        <div className="askbot-question-head">
+          <span className="askbot-question-label">{nested ? 'You followed up' : 'You asked'}</span>
+          {answer.private && !nested ? (
+            <span className="askbot-question-pill" title="Answered for your situation. Only you can see this; it is not saved.">
+              <Lock size={11} aria-hidden="true" /> Private · not saved
+            </span>
+          ) : answer.askCount > 1 ? (
+            <span className="askbot-question-pill">
+              <Users size={11} aria-hidden="true" /> Asked {answer.askCount} times
+            </span>
+          ) : null}
+        </div>
+        <p ref={textRef} className={`askbot-question ${expanded ? '' : 'folded'} ${folded ? 'faded' : ''}`}>
+          {answer.question}
+        </p>
+        {(overflows || expanded) && (
+          <button
+            type="button"
+            className="askbot-question-toggle"
+            aria-expanded={expanded}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? 'Show less' : 'Read the full question'}
+            <ChevronDown size={13} aria-hidden="true" className={expanded ? 'flipped' : ''} />
+          </button>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/** Marks where the answer starts; a new answer scrolls here. */
+function AnswerStart({ sources }: { sources: number }) {
+  return (
+    <div className="askbot-answer-start">
+      <span className="askbot-ai-badge" aria-hidden="true">
+        AI
+      </span>
+      <span className="askbot-answer-start-text">
+        <span className="askbot-answer-start-title">
+          <em>AI</em>herng&apos;s answer
+        </span>
+        <span className="askbot-answer-start-meta">
+          Written by AI in Sean&apos;s voice
+          {sources > 0 && `, from ${sources} ${sources > 1 ? 'episodes' : 'episode'}`}
+        </span>
+      </span>
+    </div>
+  );
+}
+
 function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: boolean }) {
   return (
     <article className={`askbot-answer ${nested ? 'nested' : ''}`} aria-live="polite" aria-busy={answer.streaming}>
       <div className="askbot-answer-main">
-        <p className="askbot-question">
-          {nested && <CornerDownRight size={15} />}
-          {answer.question}
-        </p>
-        {answer.private && !nested && (
-          <p className="askbot-private">
-            <Lock size={13} aria-hidden="true" /> Answered for your situation · only you can see this, it is not saved
-          </p>
-        )}
+        <QuestionCard key={answer.question} answer={answer} nested={nested} />
         {answer.private && !nested && answer.askedWith && <AskedWith situation={answer.askedWith} />}
-        {answer.askCount > 1 && (
-          <p className="askbot-count">
-            <Users size={13} /> Asked {answer.askCount} times
-          </p>
-        )}
 
         {answer.status === 'answered' && (answer.body || answer.streaming) ? (
           <>
+            <AnswerStart sources={answer.sources.length} />
             {answer.tldr && (
               <div className="askbot-tldr">
                 <p>{answer.tldr}</p>
@@ -271,7 +337,7 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
                 <Loader2 size={16} className="askbot-spin" /> AIherng is writing…
               </p>
             ) : (
-              <p className="askbot-persona">Written by AI in Sean&apos;s voice from his episodes, not by Sean himself.</p>
+              <p className="askbot-persona">Not written by Sean himself. For reference only, not financial advice.</p>
             )}
             {!nested && !answer.streaming && <RelatedVideos related={answer.related} title="Related episodes" />}
           </>
@@ -526,9 +592,16 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
   // The situation a private answer was given with, re-sent for its follow-up.
   const privateSituation = useRef<AskSituation | undefined>(undefined);
 
-  const scrollToAnswer = useCallback(() => {
-    requestAnimationFrame(() => answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-  }, []);
+  // Scrolls once the answer is on the page: to where it starts, or to the slot when
+  // there is no answer heading (a question outside what AIherng covers).
+  const [scrollRequest, setScrollRequest] = useState(0);
+  const scrollToAnswer = useCallback(() => setScrollRequest((count) => count + 1), []);
+  useEffect(() => {
+    if (!scrollRequest) return;
+    const slot = answerRef.current;
+    const target = slot?.querySelector('.askbot-answer-start') ?? slot;
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [scrollRequest]);
 
   const show = useCallback(
     (next: AskAnswer, scroll = true) => {
