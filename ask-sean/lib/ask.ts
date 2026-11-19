@@ -25,7 +25,7 @@ export interface Timings {
 
 /** Optional callbacks for streaming an answer to the reader as it is written. */
 export interface AskHooks {
-  /** The articles the answer will draw on, in [A1], [A2] order, before any text is written. */
+  /** The articles the answer will draw on, in [A1], [A2], [A3] order, before any text is written. */
   onRouted?: (sources: Article[], related: Article[]) => void;
   onDelta?: (text: string) => void;
 }
@@ -75,7 +75,7 @@ export function checkSituation(raw: unknown): { situation?: Situation } | { reas
 }
 
 /**
- * Route, then answer from at most two articles. Out-of-scope questions stop after
+ * Route, then answer from at most three articles. Out-of-scope questions stop after
  * the router call. Caching repeat questions and rate limits live in the API layer.
  */
 export async function ask(

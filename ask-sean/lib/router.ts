@@ -1,7 +1,7 @@
 import { chat, type Usage } from "./deepseek";
 import type { Catalog, CatalogEntry } from "./types";
 
-export const MAX_ANSWER_ARTICLES = 2;
+export const MAX_ANSWER_ARTICLES = 3;
 export const MAX_RELATED_ARTICLES = 3;
 
 export interface RouteResult {
@@ -43,7 +43,7 @@ const RULES = `You are the router for "Ask Sean", an independent Q&A site that a
 Your job: decide which articles contain the information needed to answer the user's question. You do not answer the question.
 
 Rules:
-1. "answer": up to 2 article ids whose content actually answers the question, best first. Use 1 when one is enough.
+1. "answer": up to 3 article ids whose content actually answers the question, best first. When other articles cover the same question from another angle (a different situation, figure or rule of thumb), include them too, so readers get 2 or 3 episodes; use 1 only when no other article adds anything.
 2. Sharing a keyword is not enough. Personal situations (income, family, age) are in scope when an article gives a way to decide.
 3. Return "answer": [] when no article answers the question, including: a specific project, development, area or price that no article discusses; current rates, prices or news; stocks, crypto, cars or other non-property topics. A request for a forecast ("will prices crash?", "is now a good time?") is in scope when an article explains how Sean approaches market timing.
 4. "related": up to 3 other article ids a reader may find useful next, especially when "answer" is empty. May be [].
