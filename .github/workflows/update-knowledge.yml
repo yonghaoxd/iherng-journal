@@ -1,6 +1,8 @@
 # Keeps the chatbot (ask-sean/) in step with the iherng Journal.
 #
-# Daily, and whenever scripts/auto-journal.ts publishes an article, this reads the
+# Run by hand (Actions > Update knowledge base > Run workflow); the daily schedule was
+# turned off in November 2026. Knowledge updates are now usually built locally, with the
+# aliases in knowledge/enrich written by hand, so no API key is needed. When run, this reads the
 # Journal's content files (content/articles). If any Buyer Guides or iherng Podcast article is new or
 # changed, it generates aliases for it, rebuilds the catalog, re-runs the routing
 # eval (all cases must pass) and redeploys the Worker. The updated knowledge files
@@ -11,8 +13,6 @@
 name: Update knowledge base
 
 on:
-  schedule:
-    - cron: "0 2 * * *" # 10:00 Malaysia time, after the 9:00 auto-journal run
   workflow_dispatch:
     inputs:
       force:
