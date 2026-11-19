@@ -3,14 +3,23 @@
     "affordable-housing-rumawip": {
       "hash": "46fac98b3644"
     },
+    "apartment-for-ageing-parent": {
+      "hash": "1fccba9a07cc"
+    },
     "apartment-vs-landed": {
       "hash": "5a98e1c79904"
+    },
+    "bangi-house-or-cyberjaya-condo": {
+      "hash": "e281df6711cb"
     },
     "bank-value-vs-market-value": {
       "hash": "b4c9c779ae6f"
     },
     "booking-fee-refund": {
       "hash": "c2bb80d5c865"
+    },
+    "borrow-above-spa-price-subsale": {
+      "hash": "123a429647d6"
     },
     "branded-or-small-developer": {
       "hash": "68674679ee1a"
@@ -84,8 +93,14 @@
     "doctor-between-jobs-first-property": {
       "hash": "7626d1eddace"
     },
+    "early-retirement-in-malaysia-on-rent": {
+      "hash": "7168bc8f5fcc"
+    },
     "empty-landed-house-hold-or-sell": {
       "hash": "c023979670a4"
+    },
+    "empty-semi-d-keep-sell-or-refinance": {
+      "hash": "aa878aa45bca"
     },
     "exit-strategy-for-ageing-condos": {
       "hash": "229750deeb37"
@@ -135,6 +150,12 @@
     "furnishing-rental-unit-worth-it": {
       "hash": "da2d51ecfa2a"
     },
+    "future-of-malaysian-property": {
+      "hash": "a8c60e25c0a8"
+    },
+    "gifted-wealth-cash-or-loan": {
+      "hash": "29dafbacc022"
+    },
     "guaranteed-rental-return-risks": {
       "hash": "6a59f33c12e4"
     },
@@ -146,6 +167,9 @@
     },
     "hold-property-long-term-vs-flip": {
       "hash": "63f93bba2d5a"
+    },
+    "hong-kong-couple-moving-to-kl": {
+      "hash": "008c97f22ed1"
     },
     "hotel-scheme-unit-gone-wrong": {
       "hash": "e31c278bbc3b"
@@ -180,6 +204,12 @@
     "inherited-three-properties-at-23": {
       "hash": "b0f010bfffed"
     },
+    "invest-first-or-save-for-dream-home": {
+      "hash": "b624650e727e"
+    },
+    "investing-at-45-penang-or-klang-valley": {
+      "hash": "dff0f6092d83"
+    },
     "investing-in-property-at-60": {
       "hash": "3f15bf196b73"
     },
@@ -195,8 +225,14 @@
     "judging-a-buildings-architecture": {
       "hash": "e3852200369a"
     },
+    "landed-home-for-semi-retirement": {
+      "hash": "2160d4f451b3"
+    },
     "landed-home-labels-and-guarded-areas": {
       "hash": "d204555f6d15"
+    },
+    "large-condo-instead-of-landed": {
+      "hash": "d5a2efde5abb"
     },
     "late-delivery-damages-and-booking-fees": {
       "hash": "537a30fb13cb"
@@ -221,6 +257,9 @@
     },
     "location-location-location": {
       "hash": "9813e9e46b37"
+    },
+    "losing-money-stop-buying": {
+      "hash": "781760e0eb3e"
     },
     "lppsa-civil-servant-housing-loan": {
       "hash": "5e253eed58eb"
@@ -278,6 +317,9 @@
     },
     "paid-off-leasehold-sell-or-rent": {
       "hash": "97a1c6eb4c43"
+    },
+    "paid-off-shop-lot-hold-or-sell": {
+      "hash": "84d570d204d5"
     },
     "parents-buying-property-for-children": {
       "hash": "e596aee97568"
@@ -339,6 +381,9 @@
     "rent-home-with-lift-for-parent": {
       "hash": "c5b3e67be009"
     },
+    "rent-in-cyberjaya-invest-elsewhere": {
+      "hash": "7347ce8bb410"
+    },
     "rent-to-rent-scheme-portfolio": {
       "hash": "7549980a9c29"
     },
@@ -357,6 +402,9 @@
     "returning-home-to-retire-portfolio": {
       "hash": "8fd5793aeb6e"
     },
+    "rm1-million-to-invest-in-property": {
+      "hash": "dca87bcf6669"
+    },
     "second-property-subsale-cheras": {
       "hash": "a83d2948c589"
     },
@@ -365,6 +413,9 @@
     },
     "sell-at-loss-or-rent-out": {
       "hash": "09657d57c156"
+    },
+    "sell-leasehold-house-at-60": {
+      "hash": "398ff4354c56"
     },
     "selling-family-home-to-clear-debt": {
       "hash": "171b3e2695ab"
@@ -420,6 +471,9 @@
     "student-preparing-first-property": {
       "hash": "a90a67338bf7"
     },
+    "student-rental-first-investment": {
+      "hash": "c55d1502b16a"
+    },
     "supporting-parents-own-space": {
       "hash": "143c5a22dce5"
     },
@@ -471,6 +525,9 @@
     "when-to-buy-property-data-guide": {
       "hash": "12854f454f07"
     },
+    "when-to-buy-second-property": {
+      "hash": "9bbdac8537e3"
+    },
     "where-discounted-properties-come-from": {
       "hash": "ae41211cdb7a"
     },
@@ -485,6 +542,9 @@
     },
     "young-couple-first-home-budget": {
       "hash": "098bccc1c06a"
+    },
+    "young-graduate-abroad-kl-sentral-unit": {
+      "hash": "667cddbde313"
     }
   }
 }

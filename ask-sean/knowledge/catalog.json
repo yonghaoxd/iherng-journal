@@ -1,5 +1,5 @@
 {
-  "version": "dc7a31902137",
+  "version": "2110bdf28bc0",
   "articles": [
     {
       "id": "affordable-housing-rumawip",
@@ -40,6 +40,42 @@
       ]
     },
     {
+      "id": "apartment-for-ageing-parent",
+      "title": "I need an apartment to care for my mother. Why is the developer's price higher than subsale?",
+      "date": "2023-09-01",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 221,
+      "tag": "Ageing parents & unsold units",
+      "excerpt": "A 58-year-old in Johor Bahru wants an apartment to live in with his mother, and finds the developer's unsold units dearer than subsales. Sean explains the gap and how to choose between new and subsale.",
+      "viewerQuestion": "Why do the developer's new units cost more than subsale units, does it signal a problem, and should he buy new or subsale?",
+      "answer": "The gap doesn't mean the building has problems: developers rarely sell leftover units below what earlier buyers paid. Since he knows exactly which unit he wants, choose on cash and condition: new units come with developer packages and less money upfront, while a subsale is usually cheaper, can be negotiated and may already be furnished.",
+      "points": [
+        "Developers protect earlier buyers",
+        "Units in one building aren't equal",
+        "New or subsale changes the cash you need",
+        "An apartment suits an elderly parent"
+      ],
+      "aliases": [
+        "ageing parents",
+        "elderly mother",
+        "unsold units",
+        "developer stock",
+        "subsale vs new",
+        "johor bahru",
+        "dual key",
+        "single level home",
+        "bumi lot consent",
+        "care for parent"
+      ],
+      "questions": [
+        "Why are developer units more expensive than subsale units?",
+        "Should I buy new or subsale for my own use?",
+        "Is an apartment better than landed for elderly parents?",
+        "Do unsold units mean a building has problems?",
+        "What packages come with unsold developer units?"
+      ]
+    },
+    {
       "id": "apartment-vs-landed",
       "title": "Landed or condo: which holds its value better?",
       "date": "2024-02-20",
@@ -73,6 +109,42 @@
         "Why do older landed homes without security have a price ceiling?",
         "Are large landed homes hard to sell in Malaysia?",
         "Should I buy a condo for rental yield or a landed home for capital growth?"
+      ]
+    },
+    {
+      "id": "bangi-house-or-cyberjaya-condo",
+      "title": "Should we move from our Bangi house to a new Cyberjaya condo to cut the commute?",
+      "date": "2023-08-27",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 220,
+      "tag": "Relocating for convenience",
+      "excerpt": "Two civil servants want to swap their Bangi terrace for a RM575,000 Cyberjaya condo to shorten the school run. Sean says high-rise prices there have fallen, so compare 20 projects, or simply rent.",
+      "viewerQuestion": "Should they rent out or sell the Bangi house, is RM3,200 a month a burden, and what are Cyberjaya's prospects if they sell in 20 years?",
+      "answer": "First check the numbers they left out: their joint income and how much is still owed on the Bangi house. Cyberjaya high-rises have generally lost value, so before committing RM3,200 a month for 29 years, compare about 20 projects nearby, consider Putrajaya, or simply rent in Cyberjaya, which is cheap for the space you get.",
+      "points": [
+        "Selling may free less than you think",
+        "Cyberjaya high-rises have struggled",
+        "Rent what loses value",
+        "Sales galleries are built to close"
+      ],
+      "aliases": [
+        "cyberjaya condo",
+        "bangi",
+        "putrajaya",
+        "shorter commute",
+        "sell house to upgrade",
+        "rpgt",
+        "cyberjaya auction",
+        "rent or buy",
+        "sales gallery tactics",
+        "civil servant"
+      ],
+      "questions": [
+        "Should I sell my house and buy a condo closer to work?",
+        "Is Cyberjaya a good place to buy a condo?",
+        "How much will I get after selling my house with a loan?",
+        "Is it better to rent or buy in Cyberjaya?",
+        "How much income do I need for a RM3,000 instalment?"
       ]
     },
     {
@@ -146,6 +218,42 @@
         "Should I apply for a loan before booking a unit?",
         "Does a rejected loan application affect my next one?",
         "What should I check before paying a booking fee?"
+      ]
+    },
+    {
+      "id": "borrow-above-spa-price-subsale",
+      "title": "Can I borrow on the valuation, not the price, to cover my subsale costs?",
+      "date": "2023-06-23",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 214,
+      "tag": "SPA price & valuation",
+      "excerpt": "A first-time buyer wants a Maluri subsale for RM245,000 but a loan on its RM280,000 valuation, to avoid using savings. Sean explains why banks lend on the SPA price, and what to do instead.",
+      "viewerQuestion": "Is it possible to borrow on the higher valuation so the purchase is effectively 100% financed, and how does the process work?",
+      "answer": "Not simply: banks lend up to 90% of the price written in the SPA, not the valuation, and every fee and tax follows that SPA figure too. If the down payment and costs would wipe out your savings, either save a little longer, look at EPF withdrawals or genuine full-financing schemes, or accept that the property may be beyond your budget for now.",
+      "points": [
+        "The SPA price sets the loan",
+        "Valuations come from the bank",
+        "A subsale needs about 18% in cash",
+        "Owning costs more than the instalment"
+      ],
+      "aliases": [
+        "spa price",
+        "bank valuation",
+        "100% loan",
+        "full financing",
+        "cash back subsale",
+        "down payment",
+        "maluri",
+        "upfront cost 18%",
+        "epf withdrawal",
+        "can't afford down payment"
+      ],
+      "questions": [
+        "Can I get a loan based on the valuation instead of the SPA price?",
+        "How much cash do I need to buy a subsale property?",
+        "Is 100% financing possible in Malaysia?",
+        "Can I use EPF for the down payment?",
+        "How is the bank valuation decided?"
       ]
     },
     {
@@ -1044,6 +1152,42 @@
       ]
     },
     {
+      "id": "early-retirement-in-malaysia-on-rent",
+      "title": "We want to retire early in Malaysia on rental income. Cash or leverage?",
+      "date": "2023-07-27",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 216,
+      "tag": "Foreign buyers & early retirement",
+      "excerpt": "A British family in Singapore with RM3 million plans to retire early in Kuala Lumpur on rental income. Sean explains the foreign-buyer minimums and why he'd rent first and use some leverage.",
+      "viewerQuestion": "Are fees the same for foreign buyers, should they buy three properties in cash or more with loans, and which areas suit them?",
+      "answer": "Don't tie all the cash up in three unleveraged properties. Rent for six to twelve months first, settle on the school and the area, buy your own home, then add investment units one at a time, putting down 20% to 30% so each one's rent covers its instalment. Focus on quality, not the number of properties.",
+      "points": [
+        "Foreign buyers face minimum prices",
+        "Property protects wealth, tenants build it",
+        "Expat areas cost expat prices",
+        "Malaysia rewards homework, not certainty"
+      ],
+      "aliases": [
+        "early retirement",
+        "rental income",
+        "foreigner buying property",
+        "foreign buyer minimum price",
+        "expat area",
+        "british buyer",
+        "cash or leverage",
+        "live off rent",
+        "mont kiara",
+        "retire in malaysia"
+      ],
+      "questions": [
+        "Can I retire early in Malaysia on rental income?",
+        "What is the minimum property price for foreigners in KL and Selangor?",
+        "Should I buy property in cash or with a loan?",
+        "Which areas suit expat families?",
+        "Is stamp duty higher for foreign buyers in Malaysia?"
+      ]
+    },
+    {
       "id": "empty-landed-house-hold-or-sell",
       "title": "My big house is suddenly empty. Hold, rent it out or sell?",
       "date": "2025-06-26",
@@ -1079,6 +1223,42 @@
         "Is the monthly shortfall when renting out a loss or forced saving?",
         "Does renovation cost count as a property loss when selling?",
         "Is a corner lot worth keeping compared to an intermediate unit?"
+      ]
+    },
+    {
+      "id": "empty-semi-d-keep-sell-or-refinance",
+      "title": "My paid-off semi-D has been empty for ten years. Should I keep it, sell it or refinance?",
+      "date": "2023-09-16",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 223,
+      "tag": "Idle property",
+      "excerpt": "A debt-free 56-year-old has a paid-off semi-D worth about RM1.7 million sitting empty. Sean lays out three paths, rent and refinance, sell, or stay debt-free, and says the choice depends on what he wants.",
+      "viewerQuestion": "Should he keep the semi-D and hope it appreciates, or sell it and buy condos for rental income?",
+      "answer": "Either works; it depends on whether he wants to stay debt-free, or grow richer for himself or his family. Sean's own choice would be to fix it up, rent it out, refinance only as far as the rent covers the new instalment, and use the cash to buy more. If he thinks the area has peaked, selling and reinvesting is sensible too.",
+      "points": [
+        "Refinancing turns idle value into cash",
+        "Short loans need more cash down",
+        "Sell if the area has peaked",
+        "Debt-free is already a strong position"
+      ],
+      "aliases": [
+        "empty house",
+        "vacant landed",
+        "semi-d",
+        "refinance paid off house",
+        "debt free",
+        "sell or hold",
+        "idle property",
+        "shah alam",
+        "retire at 56",
+        "business owner"
+      ],
+      "questions": [
+        "Should I sell a house that has been empty for years?",
+        "Can I refinance a fully paid house to invest?",
+        "How long a loan can I get at 56?",
+        "When has an area's property price peaked?",
+        "Should I stay debt free or keep investing?"
       ]
     },
     {
@@ -1684,6 +1864,78 @@
       ]
     },
     {
+      "id": "future-of-malaysian-property",
+      "title": "With populations shrinking, does property still have a future in Malaysia?",
+      "date": "2023-08-09",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 218,
+      "tag": "Market outlook",
+      "excerpt": "A viewer asks whether falling birth rates and crashes in China and Hong Kong mean property is a bad bet. Sean explains why he still backs Malaysian property, and where demand will move.",
+      "viewerQuestion": "Should people still be encouraged to own property, and will falling populations eventually crash prices?",
+      "answer": "In Malaysia, yes. The country still has a large young workforce, the government leans on construction and new highways to grow the economy, and buyers here need far less upfront than elsewhere. Smaller families will change what people want, towards smaller homes in convenient city locations, but prime areas will stay out of reach to buy and become places people rent.",
+      "points": [
+        "Other markets work differently",
+        "Demand follows jobs",
+        "Prime areas become rent-only",
+        "Malaysia still offers openings"
+      ],
+      "aliases": [
+        "property crash",
+        "declining population",
+        "aging population",
+        "property outlook",
+        "china property crisis",
+        "hong kong property",
+        "oversupply",
+        "future demand",
+        "prime area",
+        "is property still worth it"
+      ],
+      "questions": [
+        "Is property still a good investment in Malaysia?",
+        "Will falling birth rates crash property prices?",
+        "Is there an oversupply of property in Malaysia?",
+        "Will property prices in Kuala Lumpur keep rising?",
+        "Should I rent or buy in prime areas?"
+      ]
+    },
+    {
+      "id": "gifted-wealth-cash-or-loan",
+      "title": "My father gave me cash and two houses. Should I buy my next property in cash or with a loan?",
+      "date": "2023-10-28",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 228,
+      "tag": "Inherited wealth & leverage",
+      "excerpt": "A 23-year-old earning RM3,500 has been given cash, shares and two houses, and wants a RM200,000 to RM300,000 apartment. The parents say pay cash; Sean says use the two 90% loans and keep the cash.",
+      "viewerQuestion": "Is it better to buy with a loan or in cash, and can M take housing loans for two properties at once on this salary?",
+      "answer": "Use loans for the first two purchases, while the 90% margin is available, and leave the cash in fixed deposits; the tenant's rent pays the interest. Buy one at a time: after about six months of rent records the bank counts the rent as income for the next loan. Cash comes in later, for a third property at 70% and for furnishing.",
+      "points": [
+        "Cheap loans favour leverage",
+        "Rent becomes income",
+        "Cash has its turn later",
+        "Income is the real limit"
+      ],
+      "aliases": [
+        "inheritance",
+        "parents gift money",
+        "cash or loan",
+        "young heir",
+        "leverage",
+        "90% loan slot",
+        "fixed deposit",
+        "rental income counts as income",
+        "refinance gifted house",
+        "family wealth"
+      ],
+      "questions": [
+        "Should I buy property with cash or take a loan?",
+        "Can I take two housing loans at once on a low salary?",
+        "How does rental income help me get another loan?",
+        "What should I do with money my parents gave me?",
+        "When do I need cash instead of a loan?"
+      ]
+    },
+    {
       "id": "guaranteed-rental-return-risks",
       "title": "Is a guaranteed rental return worth buying into?",
       "date": "2024-08-20",
@@ -1835,6 +2087,42 @@
         "Can older apartments still be rented out at a good yield?",
         "How does rent covering the instalment make the bank and tenant pay for your property?",
         "What should I check before buying a unit for rental income?"
+      ]
+    },
+    {
+      "id": "hong-kong-couple-moving-to-kl",
+      "title": "We're moving from Hong Kong to Kuala Lumpur. Should we buy now or rent first?",
+      "date": "2023-11-23",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 231,
+      "tag": "Foreign buyers & MM2H",
+      "excerpt": "A Hong Kong couple with an MM2H visa and cash from selling their flat are being shown KL's priciest condos. Sean says rent for two years, think like a local, and buy for yield, not prestige.",
+      "viewerQuestion": "Should they buy now or rent first, which areas and units suit them, and is splitting a unit a good idea?",
+      "answer": "Rent first, for about two years, keep the cash in fixed deposits or other stable investments, and explore the city like a local before buying. Prices that look cheap against Hong Kong are often the most expensive in Kuala Lumpur, and for investment buy whichever unit's rent covers its instalment, whether that is one unit or two.",
+      "points": [
+        "Foreign buyers get shown the top tier",
+        "Prices here rise slowly",
+        "Buy what Hong Kong can't offer",
+        "Splitting units has risks"
+      ],
+      "aliases": [
+        "mm2h",
+        "foreigner buying property",
+        "hong kong buyer",
+        "expat area",
+        "moving to malaysia",
+        "foreign ownership minimum",
+        "rent before buying",
+        "dual key",
+        "partition ban",
+        "retire in malaysia"
+      ],
+      "questions": [
+        "Should foreigners rent before buying in Kuala Lumpur?",
+        "What is the minimum price for foreigners buying property in Malaysia?",
+        "Which areas in KL give the best value for expats?",
+        "Is splitting a unit into two a good idea?",
+        "Should I buy one expensive unit or two cheaper ones?"
       ]
     },
     {
@@ -2250,6 +2538,78 @@
       ]
     },
     {
+      "id": "invest-first-or-save-for-dream-home",
+      "title": "Should I buy an investment condo now, or save 12 years for my dream landed home?",
+      "date": "2023-08-15",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 219,
+      "tag": "Dream home vs investment",
+      "excerpt": "A 33-year-old father earning RM10,000 wonders whether to buy an investment condo or save until his late 40s for a corner terrace. Sean says prices will outrun his savings, so buy a unit the rent can carry.",
+      "viewerQuestion": "Should he buy an investment property now despite his budget, or keep saving for his dream landed home?",
+      "answer": "Buy an investment unit first, but a smaller one than RM700,000: an instalment of about RM2,000 to RM2,500, on a unit where current rents already cover it. Let it build equity for 10 to 12 years, then sell it for the down payment on the terrace house, instead of chasing prices with savings alone.",
+      "points": [
+        "Savings rarely catch property prices",
+        "A RM4,000 instalment is too much stress",
+        "Build in a safety factor",
+        "Crypto isn't a plan"
+      ],
+      "aliases": [
+        "dream home",
+        "landed terrace",
+        "save or invest",
+        "elmina",
+        "kwasa land",
+        "investment condo",
+        "rental covers instalment",
+        "young father",
+        "crypto savings",
+        "inflation"
+      ],
+      "questions": [
+        "Should I buy an investment property or save for my dream home?",
+        "Can my savings keep up with rising house prices?",
+        "How big an instalment can I safely take with kids?",
+        "Should I sell my investment later to buy a landed home?",
+        "How much should I budget for furnishing a rental unit?"
+      ]
+    },
+    {
+      "id": "investing-at-45-penang-or-klang-valley",
+      "title": "I'm 45 and my home is paid off. Should I start investing in property, in Penang or the Klang Valley?",
+      "date": "2023-04-07",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 209,
+      "tag": "Investing later in life",
+      "excerpt": "A 45-year-old Penang mother with a paid-off home asks whether to start investing, and where. Sean says it depends on her ambition and appetite for risk, and that units with several ways to let are safest.",
+      "viewerQuestion": "Should she buy investment property at her age rather than other investments, and is the Klang Valley or Penang the better choice?",
+      "answer": "Only if she wants to grow more for her family and can stomach the risk; if she is already comfortable, she doesn't need to. At 45 her loans will be shorter, so rent rarely covers the instalment and she should expect to put more cash down. The Klang Valley offers more, but only if she is willing to travel and manage it, and she should favour units that can be let in several ways.",
+      "points": [
+        "Shorter loans change the maths",
+        "Her paid-off home is a safety net",
+        "Rents follow jobs",
+        "Several ways to let protect you"
+      ],
+      "aliases": [
+        "investing at 45",
+        "penang",
+        "batu kawan",
+        "klang valley",
+        "short loan tenure",
+        "studio unit",
+        "short stay",
+        "airbnb",
+        "multiple rental options",
+        "fully furnished"
+      ],
+      "questions": [
+        "Is 45 too old to start investing in property?",
+        "Is Penang or the Klang Valley better for rental investment?",
+        "Are small studio units near KLCC a good investment?",
+        "How do I manage a rental property in another state?",
+        "Should I fully furnish my rental unit?"
+      ]
+    },
+    {
       "id": "investing-in-property-at-60",
       "title": "I'm over 60. Should I still invest in property?",
       "date": "2025-07-08",
@@ -2438,6 +2798,42 @@
       ]
     },
     {
+      "id": "landed-home-for-semi-retirement",
+      "title": "We're in our 50s. Should we sell our house and buy a new landed home for semi-retirement?",
+      "date": "2023-07-14",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 215,
+      "tag": "Dream home in your 50s",
+      "excerpt": "A couple in their early 50s want a double-storey home outside KL for semi-retirement and their parents, but fear new projects after one was abandoned. Sean backs the plan and says time your readiness, not the market.",
+      "viewerQuestion": "Is this a sensible semi-retirement plan, are new projects safe, and should they buy new now or subsale later, given a friend says it's a bad time to buy?",
+      "answer": "Yes, if they can afford it: their 40s and 50s are when most people can finally choose a home for themselves rather than for work or school. Since they know the area, a subsale lets them see the exact house and negotiate; for new projects, today's laws make abandonment rarer. Don't wait for the right market, buy below the area's median price when you are ready.",
+      "points": [
+        "A dream home fits this stage of life",
+        "Age shortens the loan",
+        "Abandoned projects are rarer, but costly",
+        "Timing the market is a guess"
+      ],
+      "aliases": [
+        "semi retirement",
+        "double storey",
+        "landed home at 50",
+        "abandoned project",
+        "hda",
+        "subsale vs new",
+        "semenyih",
+        "salak tinggi",
+        "dream home",
+        "landed strata"
+      ],
+      "questions": [
+        "Should I buy a landed home in my 50s?",
+        "Are new housing projects safe from being abandoned?",
+        "Should I buy new or subsale for my retirement home?",
+        "Is now a good time to buy property?",
+        "Can I renovate the facade of a landed strata home?"
+      ]
+    },
+    {
       "id": "landed-home-labels-and-guarded-areas",
       "title": "Zero-lot bungalow, link semi-D, guarded estate: what am I buying?",
       "date": "2018-05-24",
@@ -2473,6 +2869,42 @@
         "What's the difference between individual title and strata title for landed homes?",
         "Can I close off the road in my individual-title housing area?",
         "Do I need approval to renovate my individual-title house?"
+      ]
+    },
+    {
+      "id": "large-condo-instead-of-landed",
+      "title": "We swapped landed living for a 2,200 sq ft condo. Is a big apartment a better family home?",
+      "date": "2024-03-21",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 245,
+      "tag": "Landed vs large condo",
+      "excerpt": "A mother who left multi-storey landed homes for a five-room condo near Sungai Long is delighted. Sean compares large apartments with terrace houses, and explains how to read price per sq ft.",
+      "viewerQuestion": "How does a large apartment compare with a landed house as a family home?",
+      "answer": "For many families a large apartment lives better than a terrace house: one level, no stairs, cooler rooms and facilities for the children, at a price close to a comparable terrace in the city. Landed homes still win on parking right at the door, freedom to renovate and, so far, capital growth.",
+      "points": [
+        "Compare price per square foot like for like",
+        "One level suits young children and ageing knees",
+        "Orientation decides how hot it gets",
+        "Renovation and growth differ"
+      ],
+      "aliases": [
+        "landed vs condo",
+        "big condo",
+        "large apartment",
+        "no stairs",
+        "family home",
+        "price per square foot",
+        "north south facing",
+        "west sun",
+        "sungai long",
+        "ageing parents"
+      ],
+      "questions": [
+        "Is a big condo better than a landed house for a family?",
+        "Why do bigger units have a lower price per square foot?",
+        "Which direction should my unit face to stay cool?",
+        "Are stairs a problem in landed homes as we age?",
+        "Do landed homes appreciate more than condos?"
       ]
     },
     {
@@ -2775,6 +3207,42 @@
         "How do I know if I'm paying a good price for a property?",
         "Can I use a 0% credit card instalment plan to fund a property purchase?",
         "Which gives better returns: rental yield or capital appreciation?"
+      ]
+    },
+    {
+      "id": "losing-money-stop-buying",
+      "title": "My first property lost value and I hate living there. Should I buy another?",
+      "date": "2024-06-13",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 253,
+      "tag": "Learning from losses",
+      "excerpt": "A buyer whose Setapak condo fell in value, with a short-stay unit also bought, is shortlisting a third project. Sean says stop buying, rent out the condo and fix how you choose properties first.",
+      "viewerQuestion": "Which new project should he buy, should he stay with family or move out, and should he rent out or sell the Setapak unit?",
+      "answer": "Stop buying for now. Rent out the Setapak unit so the tenant pays much of the instalment, stay with family or rent elsewhere, and decide whether to sell once the project opposite is finished and priced. Before any third purchase, fix the way he picks properties: check median prices and real rents first, and settle on one clear intent.",
+      "points": [
+        "Property doesn't always make money",
+        "Check the numbers before, not after",
+        "Wanting everything means no clear intent",
+        "Short-stay buildings need an exit plan"
+      ],
+      "aliases": [
+        "property losing value",
+        "bought wrong property",
+        "setapak condo",
+        "construction noise",
+        "victim mindset",
+        "stop buying",
+        "median price check",
+        "partition rental",
+        "short stay project",
+        "third property 70%"
+      ],
+      "questions": [
+        "My property dropped in value. Should I buy another one?",
+        "How do I avoid buying the wrong property again?",
+        "Should I rent out a condo I don't want to live in?",
+        "Are Airbnb-oriented projects risky?",
+        "How do I check if a property price is fair before buying?"
       ]
     },
     {
@@ -3488,6 +3956,42 @@
         "How do I calculate rental yield when deciding to buy?",
         "Does leasehold matter for high-rise apartments in Malaysia?",
         "Should I refinance my paid-off property to free up cash?"
+      ]
+    },
+    {
+      "id": "paid-off-shop-lot-hold-or-sell",
+      "title": "My shop lot has tripled in value but is hard to rent. Should I sell?",
+      "date": "2023-04-25",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 210,
+      "tag": "Commercial property",
+      "excerpt": "A 41-year-old's paid-off Butterworth shop lot, bought for RM240,000, has an RM800,000 offer but half of it sits empty. Sean says hold for now, check the real value and rent, and pay someone to manage it.",
+      "viewerQuestion": "Should she sell the shop lot or keep it, and if she sells, what should she buy in the Klang Valley?",
+      "answer": "Hold it for now. It costs almost nothing to keep, protects her money against inflation and can be refinanced in an emergency. Check its real value and the going rent, pay a contractor or property manager instead of relying on her father, and only sell when a clearly better deal comes along.",
+      "points": [
+        "Get the facts first",
+        "Cash in the bank loses ground",
+        "Refinancing keeps the asset",
+        "Sell for something better"
+      ],
+      "aliases": [
+        "shop lot",
+        "shophouse",
+        "butterworth",
+        "commercial property",
+        "hold or sell",
+        "penang shop lot",
+        "tenant rent increase",
+        "property manager",
+        "refinance commercial",
+        "commercial loan margin"
+      ],
+      "questions": [
+        "Should I sell my paid-off shop lot?",
+        "How do I know if an offer for my property is fair?",
+        "Should I refinance or sell to raise cash?",
+        "What loan margin do banks give for commercial property?",
+        "How do I manage a property far from where I live?"
       ]
     },
     {
@@ -4240,6 +4744,42 @@
       ]
     },
     {
+      "id": "rent-in-cyberjaya-invest-elsewhere",
+      "title": "Should we buy a condo in Cyberjaya, where we rent, or an investment unit first?",
+      "date": "2023-06-13",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 213,
+      "tag": "Rent vs buy",
+      "excerpt": "A married couple of 26 renting a three-bedroom Cyberjaya condo for RM1,300 plan to buy one there. Sean says keep renting cheaply, and buy an investment unit where rental demand is strong.",
+      "viewerQuestion": "Should they stick to that plan, or buy an investment property first and keep renting?",
+      "answer": "Buy an investment unit first, but not a Cyberjaya condo. Keep renting their home there, which is cheap for the space, and buy where rental demand is strong, checking recent transacted prices and nearby rents. A landed home can wait; it isn't easier with a baby anyway.",
+      "points": [
+        "Cyberjaya's high-rises lag",
+        "Keep your loan slots for investments",
+        "Two numbers decide rent or buy",
+        "A baby changes priorities"
+      ],
+      "aliases": [
+        "rent vs buy",
+        "cyberjaya",
+        "young couple",
+        "first investment",
+        "rent where you stay",
+        "credit score",
+        "credit card",
+        "baby coming",
+        "epf account 2",
+        "landed not baby friendly"
+      ],
+      "questions": [
+        "Should we buy the condo we're renting or an investment first?",
+        "Is Cyberjaya a good place to invest?",
+        "How do I know whether to rent or buy in an area?",
+        "How do I build a credit score for a housing loan?",
+        "Is a condo or landed house better with a baby?"
+      ]
+    },
+    {
       "id": "rent-to-rent-scheme-portfolio",
       "title": "Can a rent-to-rent deal help me build a portfolio fast?",
       "date": "2026-09-01",
@@ -4466,6 +5006,42 @@
       ]
     },
     {
+      "id": "rm1-million-to-invest-in-property",
+      "title": "I have RM1 million to invest in property. How would Sean structure it?",
+      "date": "2023-09-08",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 222,
+      "tag": "Building a portfolio",
+      "excerpt": "A 30-year-old returning to Sabah with RM1 million to RM1.5 million asks how many properties to buy and where to find them. Sean says skip the count, learn the buying channels and never buy above median.",
+      "viewerQuestion": "How many properties should he aim for, where and how should he source them, and how should he rent and manage them?",
+      "answer": "Don't aim for a number of properties: three good ones beat six weak ones. Before buying anything, visit about 20 properties across types, areas and both sides of Malaysia, learn the four ways to buy, and never pay above the median price. Keep the money in shares meanwhile; property prices won't run away in a year.",
+      "points": [
+        "Counting properties leads to bad buys",
+        "Where you buy changes the price you pay",
+        "Local markets behave differently",
+        "His income sets the pace"
+      ],
+      "aliases": [
+        "rm1 million",
+        "property portfolio",
+        "how many properties",
+        "sabah property",
+        "kota kinabalu",
+        "buying channels",
+        "bulk purchase",
+        "auction risk",
+        "median price",
+        "returning from overseas"
+      ],
+      "questions": [
+        "How would you invest RM1 million in property?",
+        "How many properties should I aim to own?",
+        "Should I buy in Sabah or West Malaysia?",
+        "Is buying at auction a good idea?",
+        "Where can I find below-market property deals?"
+      ]
+    },
+    {
       "id": "second-property-subsale-cheras",
       "title": "Is buying a second property within a year too aggressive?",
       "date": "2025-07-16",
@@ -4575,6 +5151,42 @@
         "How does the buyer's bank valuation affect my sale?",
         "Should I furnish my unit before selling?",
         "When is it better to cut losses on a property?"
+      ]
+    },
+    {
+      "id": "sell-leasehold-house-at-60",
+      "title": "Should my mother sell her leasehold house before the lease gets too short?",
+      "date": "2023-08-01",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 217,
+      "tag": "Leasehold & retirement",
+      "excerpt": "A mother in her 60s with three paid-off properties wants to sell a rented leasehold house before banks stop lending on it. Sean would keep it, and refinance instead if she needs cash.",
+      "viewerQuestion": "Should she sell the house and put the money into EPF, or keep it?",
+      "answer": "Keep it. The house is paid off and its rent sustains itself, and the leasehold issue will matter more to her heirs than to her. If she wants more cash for peace of mind, refinance the apartment or shop lot only as far as their rent can repay, rather than selling an asset that pays its way.",
+      "points": [
+        "A self-sustaining property has no reason to go",
+        "Leases can be extended",
+        "Refinancing beats selling for cash",
+        "Renting where you live is good value"
+      ],
+      "aliases": [
+        "leasehold",
+        "lease remaining",
+        "lease extension",
+        "renew lease",
+        "short lease",
+        "sell or keep",
+        "refinance shop lot",
+        "retiree",
+        "ampang",
+        "epf savings"
+      ],
+      "questions": [
+        "Should I sell a leasehold house before the lease gets short?",
+        "Can I extend my property's lease in Selangor?",
+        "Do banks lend on properties with less than 60 years lease?",
+        "Should I refinance instead of selling for cash?",
+        "Should retirees keep rental properties?"
       ]
     },
     {
@@ -5247,6 +5859,42 @@
       ]
     },
     {
+      "id": "student-rental-first-investment",
+      "title": "Is a partitioned student rental near a university a good first investment?",
+      "date": "2023-11-13",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 230,
+      "tag": "Student accommodation",
+      "excerpt": "A 23-year-old freelancer wants a RM590,000 subsale let room by room to students, then a home. Sean likes the 7% yield, warns about partitions and exit, and says buy a second investment before a home.",
+      "viewerQuestion": "Is the student unit a good investment, and is buying a second property for own use in the same year too fast?",
+      "answer": "Yes: about RM42,000 a year in rent on RM590,000 is a 7.1% yield, well above fixed deposits and the loan rate. But budget about 18% of the price upfront, understand the partition and exit risks, and use the second 90% loan on another investment rather than a home while young and mobile.",
+      "points": [
+        "The yield is unusually high",
+        "Partitions bring legal and insurance risk",
+        "Student units sell only to investors",
+        "A home can wait"
+      ],
+      "aliases": [
+        "student accommodation",
+        "near university",
+        "room rental",
+        "partition",
+        "rental yield 7%",
+        "dbkl partition ban",
+        "young investor",
+        "freelancer income",
+        "declare income tax",
+        "85% rule"
+      ],
+      "questions": [
+        "Is a student rental near a university a good investment?",
+        "How do I calculate rental yield?",
+        "Are partitioned rooms legal in Kuala Lumpur?",
+        "Should I buy a home or a second investment first?",
+        "How much cash do I need upfront for a subsale?"
+      ]
+    },
+    {
       "id": "supporting-parents-own-space",
       "title": "I support my parents and want my own space. Should I buy at auction?",
       "date": "2024-06-26",
@@ -5882,6 +6530,42 @@
       ]
     },
     {
+      "id": "when-to-buy-second-property",
+      "title": "I just bought my first property. When can I buy the second?",
+      "date": "2023-05-17",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 211,
+      "tag": "Second property & DSR",
+      "excerpt": "A first-time buyer who prepared well wants a second property this year and worries banks or the tax office will object. Sean explains how rent counts as income, and why subsales speed things up.",
+      "viewerQuestion": "Will banks see a second purchase this year as too aggressive, will the tax office come asking, and how can he improve his chances?",
+      "answer": "Banks and the tax office don't mind how many properties you buy; they care whether you can repay and where your money comes from. If the first property is rented out, its rent can count as income for the next loan after about six months of records, so a rented subsale can lead to a second purchase quickly. If it's your home, the instalment simply reduces what you can borrow.",
+      "points": [
+        "Rent can add to your borrowing power",
+        "Tax is on profit, not rent",
+        "Subsales move faster than new launches",
+        "The rules can tighten"
+      ],
+      "aliases": [
+        "second property",
+        "dsr",
+        "debt service ratio",
+        "rental income as income",
+        "tenancy agreement",
+        "bank statement",
+        "income tax rental",
+        "subsale faster",
+        "90% loan slot",
+        "cooling measures"
+      ],
+      "questions": [
+        "When can I buy my second property?",
+        "Does rental income count when applying for a loan?",
+        "Will the tax office question my property purchases?",
+        "Is subsale faster than buying new?",
+        "How many properties should a person own?"
+      ]
+    },
+    {
       "id": "where-discounted-properties-come-from",
       "title": "Where do discounted properties come from, and which are real deals?",
       "date": "2019-06-17",
@@ -6068,6 +6752,42 @@
         "How do I check if a new launch is overpriced?",
         "Can I get a housing loan on my income alone?",
         "How to evaluate a new launch before it's built?"
+      ]
+    },
+    {
+      "id": "young-graduate-abroad-kl-sentral-unit",
+      "title": "I'm 25 and working in the UK. Should I buy a RM750,000 unit in KL Sentral?",
+      "date": "2023-05-22",
+      "series": "iherng-podcast",
+      "askingSeanEpisode": 212,
+      "tag": "Investing from abroad",
+      "excerpt": "A 25-year-old graduate in the UK has modelled a KL Sentral unit at over RM1,000 per sq ft. Sean suggests five years building his career first, and explains valuations, exit plans and how deals are crafted.",
+      "viewerQuestion": "Is the valuation margin a good sign, is this a good investment, and how can he make it cash-flow positive?",
+      "answer": "There's no rush. At 25, Sean would spend the next five years raising his skills and income, then buy with more capital, more options and a clearer idea of where he will live. If he buys now, a higher valuation doesn't mean he has already made money, and cheaper areas may suit an overseas owner better.",
+      "points": [
+        "A valuation isn't a sale price",
+        "Owning from abroad adds risk",
+        "Cheaper areas are easier to carry",
+        "Good deals are made, not walked into"
+      ],
+      "aliases": [
+        "kl sentral",
+        "working in uk",
+        "young graduate",
+        "valuation vs price",
+        "forex risk",
+        "new launch premium",
+        "invest in yourself",
+        "exit plan",
+        "furnished unit",
+        "overseas investor"
+      ],
+      "questions": [
+        "Should I buy property in Malaysia while working overseas?",
+        "Does a high bank valuation mean I got a good deal?",
+        "Should I invest in myself before property?",
+        "Do new condos make money by completion?",
+        "How do I make my rental unit stand out?"
       ]
     }
   ]

@@ -1,0 +1,53 @@
+{
+  "id": "student-rental-first-investment",
+  "series": "iherng-podcast",
+  "title": "Is a partitioned student rental near a university a good first investment?",
+  "excerpt": "A 23-year-old freelancer wants a RM590,000 subsale let room by room to students, then a home. Sean likes the 7% yield, warns about partitions and exit, and says buy a second investment before a home.",
+  "date": "2023-11-13",
+  "tag": "Student accommodation",
+  "question": {
+    "asker": "From A, a viewer who wrote in by email",
+    "context": "A is 23, earns about RM20,000 a month freelancing and has RM200,000 saved. A plans to buy a RM590,000 subsale unit within walking distance of a university, already partitioned and let to students, expecting about RM3,500 a month in rent against a RM2,450 instalment plus about RM1,000 for maintenance, Wi-Fi and utilities. A also wants a RM500,000 to RM800,000 home in Ara Damansara or Kota Damansara within the same year.",
+    "text": "Is the student unit a good investment, and is buying a second property for own use in the same year too fast?"
+  },
+  "answer": {
+    "quote": "I think you are on the right track, bro.",
+    "summary": "Yes: about RM42,000 a year in rent on RM590,000 is a 7.1% yield, well above fixed deposits and the loan rate. But budget about 18% of the price upfront, understand the partition and exit risks, and use the second 90% loan on another investment rather than a home while young and mobile."
+  },
+  "reasons": [
+    {
+      "title": "The yield is unusually high",
+      "body": "With loan rates around 3.85% to 4%, a yield of about 4% covers the interest and 5% is already good. Over 7% is usually only found near universities, in busy expatriate areas or in holiday spots, each with their own risks."
+    },
+    {
+      "title": "Partitions bring legal and insurance risk",
+      "body": "Kuala Lumpur City Hall has moved to ban partitioned living rooms, and partitions built without approval can void the fire insurance. Rent that depends on them may not last."
+    },
+    {
+      "title": "Student units sell only to investors",
+      "body": "Families rarely want to live among student tenants, so the buyer later is another investor who prices by rent. If rents rise, the value rises with them, but if a nearby campus moves, demand can go too."
+    },
+    {
+      "title": "A home can wait",
+      "body": "At 23 and working freelance, renting in a cheaper suburb such as Cyberjaya keeps costs low and options open. With this income, a second investment can be financed without waiting for the first unit's rent records."
+    }
+  ],
+  "actions": [
+    "Budget about 18% of the price for down payment, stamp duty and fees, about RM106,000 here, before any renovation.",
+    "Check whether the existing partitions were approved, and what rent the unit would earn without them.",
+    "Check that the university nearby is a main campus that is unlikely to move, not a branch run from shop lots.",
+    "Declare your full income for tax: it costs a little more but helps the bank approve larger loans.",
+    "Keep six months of expenses and insurance in place, and learn other assets with small regular amounts."
+  ],
+  "caveat": "If you want to live in a property later, the 85% rule applies instead: rent should cover at least 85% of the instalment so you can rent it out when you move. Sean assumed the income is steady; freelance income that varies changes the picture.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #230. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in November 2023, when loan rates were about 3.85% to 4%.",
+  "askingSeanEpisode": 230,
+  "video": {
+    "id": "voy5mjm9rZ4",
+    "title": "ASKING SEAN #230 | RISK OF INVESTING IN STUDENT ACCOMMODATION",
+    "duration": "22:47",
+    "url": "https://www.youtube.com/watch?v=voy5mjm9rZ4"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/student-rental-first-investment"
+}

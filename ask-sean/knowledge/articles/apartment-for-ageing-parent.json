@@ -1,0 +1,53 @@
+{
+  "id": "apartment-for-ageing-parent",
+  "series": "iherng-podcast",
+  "title": "I need an apartment to care for my mother. Why is the developer's price higher than subsale?",
+  "excerpt": "A 58-year-old in Johor Bahru wants an apartment to live in with his mother, and finds the developer's unsold units dearer than subsales. Sean explains the gap and how to choose between new and subsale.",
+  "date": "2023-09-01",
+  "tag": "Ageing parents & unsold units",
+  "question": {
+    "asker": "From Mr M, a viewer who wrote in by email",
+    "context": "Mr M, 58, lives in Johor Bahru. After his father died, he and his siblings take turns caring for their mother, who has limited mobility; his three-bedroom townhouse is full with his wife and two teenage children. He plans to buy an 810 sq ft apartment to live in with his mother and later retire to, in a project that still has unsold units from the developer. Subsale units are listed at about RM280,000 to RM350,000, and the new developer units cost noticeably more.",
+    "text": "Why do the developer's new units cost more than subsale units, does it signal a problem, and should he buy new or subsale?"
+  },
+  "answer": {
+    "quote": "It's just not common for developers to sell lower than market.",
+    "summary": "The gap doesn't mean the building has problems: developers rarely sell leftover units below what earlier buyers paid. Since he knows exactly which unit he wants, choose on cash and condition: new units come with developer packages and less money upfront, while a subsale is usually cheaper, can be negotiated and may already be furnished."
+  },
+  "reasons": [
+    {
+      "title": "Developers protect earlier buyers",
+      "body": "Cutting the price of unsold units would anger existing owners and damage the developer's name for future projects. Original buyers also got 10% to 15% discounts at launch, so their net prices sit close to today's subsale asking prices."
+    },
+    {
+      "title": "Units in one building aren't equal",
+      "body": "Floor, view, orientation, block and furnishing all change the price, and later blocks may be priced differently from earlier ones. Compare like with like before deciding a unit is cheap or dear."
+    },
+    {
+      "title": "New or subsale changes the cash you need",
+      "body": "A subsale needs about 18% upfront for the down payment, valuation and legal fees. Buying new can mean little cash upfront with packages such as free SPA legal fees and MOT, but a higher price."
+    },
+    {
+      "title": "An apartment suits an elderly parent",
+      "body": "One level means no stairs for weak knees, unlike most landed homes without a ground-floor bedroom. Dual-key layouts, with a studio beside the main unit, can also let a parent live close but separately."
+    }
+  ],
+  "actions": [
+    "List recent subsale prices for units like the one you want, by floor and view, before comparing with the developer.",
+    "Ask the developer what package comes with an unsold unit, such as free legal fees, MOT and defect warranty.",
+    "Make an offer below the asking price on subsale units; owners who expected bigger gains may accept.",
+    "Check rents in the building, since they show demand and how easily the unit could be let later.",
+    "Plan for clinics, hospitals and your mother's daily needs as much as for the home itself."
+  ],
+  "caveat": "If a developer ever dumps units well below market, that is a warning about the developer, not a bargain. Sean didn't address the bumiputera-lot consent fee the agent offered to arrange, so check that separately with a lawyer.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #221. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in September 2023.",
+  "askingSeanEpisode": 221,
+  "video": {
+    "id": "rPTcvymotyw",
+    "title": "ASKING SEAN #221 | AGING PARENTS MOVING IN WITH THE FAMILY",
+    "duration": "15:45",
+    "url": "https://www.youtube.com/watch?v=rPTcvymotyw"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/apartment-for-ageing-parent"
+}
