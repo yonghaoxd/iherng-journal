@@ -175,7 +175,10 @@ export async function answer(
     : lines[tldrIndex].replace(/^\s*\**TL;?DR:?\**:?\s*/i, "");
   const tldr = tldrSource.replace(MARKER, "").replace(/\s+([.!?])$/, "$1").trim();
 
-  const cited = [...new Set([...body.matchAll(MARKER)].map((match) => match[1]))];
+  // In [A1], [A2], [A3] order, so the source cards are numbered 1, 2, 3 whatever order they are cited in.
+  const cited = [...new Set([...body.matchAll(MARKER)].map((match) => match[1]))].sort(
+    (a, b) => Number(a.slice(1)) - Number(b.slice(1)),
+  );
   const citations = cited.map((marker) => ({ marker, article: markers.get(marker)! }));
   return { tldr, body, citations, usage, truncated, missingTldr };
 }
