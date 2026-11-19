@@ -1,0 +1,24 @@
+{
+  "id": "inherited-neglected-shop-lot",
+  "sourceHash": "50f687e5e1ad",
+  "reviewed": false,
+  "aliases": [
+    "shop lot",
+    "shophouse",
+    "inherited shoplot",
+    "quit rent arrears",
+    "cukai tanah",
+    "cukai pintu",
+    "bukit beruntung",
+    "commercial property",
+    "sell or renovate",
+    "dilapidated property"
+  ],
+  "questions": [
+    "Should we sell or renovate an inherited shop lot?",
+    "What do we do about unpaid quit rent and assessment?",
+    "How much renovation does a shop lot need before renting?",
+    "Is it worth renovating to rent for RM1,000 a month?",
+    "Can we refinance an inherited property?"
+  ]
+}

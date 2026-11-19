@@ -1,0 +1,24 @@
+{
+  "id": "fix-money-losing-rental-property",
+  "sourceHash": "9dff459e2025",
+  "reviewed": false,
+  "aliases": [
+    "negative cash flow",
+    "rent lower than instalment",
+    "fully furnished",
+    "furnish to rent",
+    "hold or sell",
+    "rental shortfall",
+    "sell below loan",
+    "partly furnished",
+    "topping up instalment",
+    "rental styling"
+  ],
+  "questions": [
+    "My rental doesn't cover the instalment. What should I do?",
+    "Should I sell a property that loses money every month?",
+    "Will furnishing my unit increase the rent?",
+    "What happens if I sell below my outstanding loan?",
+    "How can I make my rental property break even?"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "seven-properties-whats-the-goal",
+  "series": "iherng-podcast",
+  "title": "We own seven properties. Should I clear loans or keep investing?",
+  "excerpt": "A 38-year-old who owns seven properties with her brother asks whether to settle loans, sell, buy a home or keep buying. Sean says the answer starts with a clear end goal.",
+  "date": "2024-02-09",
+  "tag": "Portfolio strategy",
+  "question": {
+    "asker": "From Miss Z, a viewer who wrote in by email",
+    "context": "Miss Z is 38, single and works in KL. With her brother she owns seven properties: a 2011 serviced apartment whose price hasn't moved, a family apartment their parents paid off, an under-construction KL condo, two small units outside the Klang Valley with little loan left and high yields, and two shop lots bought in cash. She rents her own home and plans a RM500,000 walk-up flat next.",
+    "text": "Should she use cash to settle two small loans to free her 90% loan quota, refinance, buy a lifetime home, sell some units or keep buying high-yield properties, and how should rental yield be calculated?"
+  },
+  "answer": {
+    "quote": "Money is only worthwhile when it's flowing.",
+    "summary": "Decide the end goal first, then shape the portfolio around it. Settling small loans doesn't help much: put the cash straight into the next purchase instead, sell the units that aren't growing, and keep renting until she finds a home she really wants."
+  },
+  "reasons": [
+    {
+      "title": "Settling the wrong loan frees nothing",
+      "body": "Each Malaysian gets two 90% loans for residential property, so clearing the commercial unit's loan doesn't restore a residential slot. Using the same cash as the down payment on the next purchase achieves more."
+    },
+    {
+      "title": "Paid-up property is lazy money",
+      "body": "Property investment works by paying about 10% and borrowing the rest, then refinancing as value rises and the loan falls. Aiming to be debt-free and avoiding refinancing works against that."
+    },
+    {
+      "title": "A flat unit is worth selling",
+      "body": "The 2011 serviced apartment is worth about what was paid 13 years ago and yields about 6%. Selling it releases the forced savings inside and frees a residential loan slot for something better."
+    },
+    {
+      "title": "Measure yield on cost, then on value",
+      "body": "Calculate rental yield on the purchase price plus investment renovation. Then compare the rent with today's market value: when that falls to about 4% to 5%, it may be time to sell and move on."
+    }
+  ],
+  "actions": [
+    "Set a concrete goal, such as a portfolio value or a monthly rental income by a certain age; about RM10,000 a month in rent is already a comfortable life.",
+    "Sell properties that haven't appreciated to free loan slots and cash.",
+    "Use spare cash as down payments on new purchases rather than to clear small loans.",
+    "Keep renting while you look, and consider asking your landlord whether they would sell the home you like.",
+    "Prefer fewer, larger units in prime areas over many small ones if managing tenants takes too much time."
+  ],
+  "caveat": "Investment is personal, and Sean's own goal of a portfolio worth RM20 million is just his. Joint ownership with a sibling can change when circumstances change, so agree with your brother how decisions and sales will be made.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #240. The quoted answer is verbatim; everything else is paraphrased. Figures are as Sean stated them in February 2024. Sean recommends the bulk-purchase route for below-market properties and credits the yield-on-current-value idea to the CEO of FAR Capital, whose club he belongs to.",
+  "askingSeanEpisode": 240,
+  "video": {
+    "id": "X8yv62q3qxY",
+    "title": "ASKING SEAN #240 | WHAT'S YOUR INVESTMENT GOAL?",
+    "duration": "21:30",
+    "url": "https://www.youtube.com/watch?v=X8yv62q3qxY"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/seven-properties-whats-the-goal"
+}

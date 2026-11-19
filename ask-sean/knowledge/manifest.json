@@ -9,8 +9,14 @@
     "bank-value-vs-market-value": {
       "hash": "b4c9c779ae6f"
     },
+    "booking-fee-refund": {
+      "hash": "c2bb80d5c865"
+    },
     "branded-or-small-developer": {
       "hash": "68674679ee1a"
+    },
+    "brothers-cant-afford-renovation": {
+      "hash": "d5b6412e240e"
     },
     "building-allows-one-airbnb-operator": {
       "hash": "28343d62a348"
@@ -33,6 +39,9 @@
     "buying-property-with-partner": {
       "hash": "688a26ce10d3"
     },
+    "buying-rental-property-at-55": {
+      "hash": "d841c916d4d2"
+    },
     "cancelled-booking-fomo": {
       "hash": "7653cdf29564"
     },
@@ -45,6 +54,9 @@
     "cash-buying-condos-to-retire": {
       "hash": "13c32b8bfabb"
     },
+    "cashback-to-clear-personal-loan": {
+      "hash": "facf6b8755db"
+    },
     "cheap-unit-high-yield-no-growth": {
       "hash": "31102bcd3505"
     },
@@ -56,6 +68,9 @@
     },
     "condo-with-many-unsold-units": {
       "hash": "004c1384cd74"
+    },
+    "couple-cash-or-housing-loan": {
+      "hash": "977261f74fb8"
     },
     "defect-inspection-checklist": {
       "hash": "c3f166f08af5"
@@ -90,8 +105,14 @@
     "fire-insurance-for-landed-homes": {
       "hash": "633a23fe7f40"
     },
+    "first-home-at-auction": {
+      "hash": "42f303e8eb4d"
+    },
     "first-investment-unit-questions": {
       "hash": "b7a75156ce54"
+    },
+    "first-property-at-22": {
+      "hash": "404eaa4636fd"
     },
     "first-property-at-49-inheritance": {
       "hash": "e68957b3ac0b"
@@ -99,8 +120,17 @@
     "first-property-must-be-a-home": {
       "hash": "f746c04f3684"
     },
+    "five-properties-on-rm7000-salary": {
+      "hash": "b1be864d8e36"
+    },
+    "fix-money-losing-rental-property": {
+      "hash": "9dff459e2025"
+    },
     "four-types-of-property-investors": {
       "hash": "c0cc54d05314"
+    },
+    "full-cash-or-housing-loan": {
+      "hash": "27251e485507"
     },
     "furnishing-rental-unit-worth-it": {
       "hash": "da2d51ecfa2a"
@@ -143,6 +173,12 @@
     },
     "inherited-house-sell-or-keep": {
       "hash": "0acd25b963d5"
+    },
+    "inherited-neglected-shop-lot": {
+      "hash": "50f687e5e1ad"
+    },
+    "inherited-three-properties-at-23": {
+      "hash": "b0f010bfffed"
     },
     "investing-in-property-at-60": {
       "hash": "3f15bf196b73"
@@ -189,11 +225,17 @@
     "lppsa-civil-servant-housing-loan": {
       "hash": "5e253eed58eb"
     },
+    "marriage-kids-and-property-portfolio": {
+      "hash": "1006aa34c997"
+    },
     "master-title-vs-strata-title": {
       "hash": "90b27dd9ad9e"
     },
     "moving-into-family-apartment": {
       "hash": "5e07c3084568"
+    },
+    "negative-cash-flow-new-unit": {
+      "hash": "c336780f79a1"
     },
     "new-baby-investment-strategy": {
       "hash": "9c889dcf9acf"
@@ -219,6 +261,12 @@
     "outskirts-landed-or-city-condo": {
       "hash": "9cb4a8085b67"
     },
+    "overpaid-sunway-student-unit": {
+      "hash": "bb9e9a8cdec4"
+    },
+    "oversupply-and-first-time-buyers": {
+      "hash": "eed507d314db"
+    },
     "own-home-at-44-buy-or-rent": {
       "hash": "a405db93fb82"
     },
@@ -233,6 +281,9 @@
     },
     "parents-buying-property-for-children": {
       "hash": "e596aee97568"
+    },
+    "parents-gift-unaffordable-condo": {
+      "hash": "fbd0fbb7c1cb"
     },
     "parents-paying-half-for-house": {
       "hash": "02debfa74628"
@@ -273,17 +324,26 @@
     "refinancing-housing-loan-reasons": {
       "hash": "68f995b9187d"
     },
+    "reits-or-property-young-doctor": {
+      "hash": "e28f69c29db2"
+    },
     "relying-on-airbnb-income": {
       "hash": "3b99a363a659"
     },
     "renovation-mistakes-to-avoid": {
       "hash": "14e8ced3deec"
     },
+    "rent-covers-instalment-good-deal": {
+      "hash": "67e15b1739c7"
+    },
     "rent-home-with-lift-for-parent": {
       "hash": "c5b3e67be009"
     },
     "rent-to-rent-scheme-portfolio": {
       "hash": "7549980a9c29"
+    },
+    "rent-while-waiting-for-keys": {
+      "hash": "cfcacc837f7b"
     },
     "rent-your-home-buy-to-invest": {
       "hash": "9c4ba30177eb"
@@ -303,6 +363,9 @@
     "second-property-vs-equities": {
       "hash": "e2ca83914228"
     },
+    "sell-at-loss-or-rent-out": {
+      "hash": "09657d57c156"
+    },
     "selling-family-home-to-clear-debt": {
       "hash": "171b3e2695ab"
     },
@@ -315,6 +378,15 @@
     "settle-housing-loan-early": {
       "hash": "aacb6f8ff49f"
     },
+    "settle-loans-or-buy-more": {
+      "hash": "9707f703aac2"
+    },
+    "seven-properties-whats-the-goal": {
+      "hash": "6b35b1f8ad80"
+    },
+    "singapore-couple-investing-mont-kiara": {
+      "hash": "f98315d59ce0"
+    },
     "singapore-income-malaysia-housing-loan": {
       "hash": "562ef9ec2d35"
     },
@@ -326,6 +398,9 @@
     },
     "soho-booking-fee-third-property": {
       "hash": "72201383164b"
+    },
+    "soho-first-investment-from-overseas": {
+      "hash": "0cab33281a11"
     },
     "staff-loan-condo-before-baby": {
       "hash": "c773388baf8b"
@@ -344,6 +419,9 @@
     },
     "student-preparing-first-property": {
       "hash": "a90a67338bf7"
+    },
+    "supporting-parents-own-space": {
+      "hash": "143c5a22dce5"
     },
     "ten-million-property-goal-at-25": {
       "hash": "7bc8cc77c02e"

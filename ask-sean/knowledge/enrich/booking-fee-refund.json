@@ -1,0 +1,24 @@
+{
+  "id": "booking-fee-refund",
+  "sourceHash": "c2bb80d5c865",
+  "reviewed": false,
+  "aliases": [
+    "booking fee",
+    "duit tempahan",
+    "refund booking",
+    "cancel booking",
+    "loan rejection letter",
+    "walk away from purchase",
+    "sales gallery",
+    "developer refund",
+    "backed out of purchase",
+    "loan eligibility check"
+  ],
+  "questions": [
+    "Can I get my booking fee back if I change my mind?",
+    "When must a developer refund the booking fee?",
+    "Should I apply for a loan before booking a unit?",
+    "Does a rejected loan application affect my next one?",
+    "What should I check before paying a booking fee?"
+  ]
+}
