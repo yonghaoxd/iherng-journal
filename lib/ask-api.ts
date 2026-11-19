@@ -58,7 +58,7 @@ export interface AskFeedItem {
 }
 
 /** Keep in step with ask-sean/lib/ask.ts, which enforces them. */
-export const MAX_QUESTION_CHARS = 1000;
+export const MAX_QUESTION_CHARS = 2000;
 export const MAX_SITUATION_CHARS = 1500;
 
 /** Local development talks to `npm run worker:dev` in ask-sean/. */

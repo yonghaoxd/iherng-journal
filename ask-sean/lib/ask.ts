@@ -5,7 +5,7 @@ import type { Article, Knowledge } from "./types";
 
 // Long enough for a question with its background; raised from 300 (2026-11), which cut
 // longer questions off mid-sentence. The site's lib/ask-api.ts mirrors both limits.
-export const MAX_QUESTION_CHARS = 1000;
+export const MAX_QUESTION_CHARS = 2000;
 /** Per field of the optional situation (goal, current situation, already tried). */
 export const MAX_SITUATION_CHARS = 1500;
 
