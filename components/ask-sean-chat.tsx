@@ -159,7 +159,7 @@ function AnswerBody({ body, answerId }: { body: string; answerId: string }) {
   return <div className="askbot-body">{blocks}</div>;
 }
 
-/** One card per cited episode: what it is, the line the answer rests on, and a way to watch it. */
+/** One card per cited episode: what it is and a way to watch it. */
 function SourceList({ sources, answerId }: { sources: AskSource[]; answerId: string }) {
   if (!sources.length) return null;
   return (
@@ -178,12 +178,6 @@ function SourceList({ sources, answerId }: { sources: AskSource[]; answerId: str
               <div className="askbot-source-info">
                 <span className="askbot-source-title">{source.videoTitle}</span>
                 <span className="askbot-source-date">iherng · {formatDate(source.date)}</span>
-                {source.quote && (
-                  <blockquote className="askbot-source-quote">
-                    <p>&ldquo;{source.quote}&rdquo;</p>
-                    <footer>{source.answeredBy ? `${source.answeredBy}, verbatim` : "Sean's words, verbatim"}</footer>
-                  </blockquote>
-                )}
                 <a className="askbot-source-watch" href={source.videoUrl} target="_blank" rel="noreferrer">
                   <Play size={13} fill="currentColor" aria-hidden="true" /> Watch on YouTube
                 </a>

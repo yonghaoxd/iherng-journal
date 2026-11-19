@@ -5636,26 +5636,6 @@ p {
   color: var(--text-subtle);
 }
 
-.askbot-source-quote {
-  margin: 4px 0 0;
-  padding-left: 12px;
-  border-left: 2px solid var(--accent-amber);
-}
-
-.askbot-source-quote p {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--text-main);
-}
-
-.askbot-source-quote footer {
-  margin-top: 2px;
-  font-size: 12px;
-  color: var(--text-subtle);
-}
-
 .askbot-source-watch {
   justify-self: start;
   display: inline-flex;
