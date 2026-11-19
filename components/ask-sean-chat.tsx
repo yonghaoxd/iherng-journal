@@ -262,7 +262,6 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
           <>
             {answer.tldr && (
               <div className="askbot-tldr">
-                <span className="ask-label accent">TL;DR</span>
                 <p>{answer.tldr}</p>
               </div>
             )}
