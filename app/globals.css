@@ -4440,6 +4440,14 @@ p {
   background: var(--bg-card);
 }
 
+/* Under an answer that is still streaming in: quieter than the full loading panel. */
+.askbot-loading.askbot-writing {
+  margin-top: 4px;
+  padding: 6px 0;
+  background: none;
+  font-size: 13px;
+}
+
 .askbot-error {
   color: #FFB4A0;
   background: var(--accent-terracotta-soft);

@@ -1,4 +1,4 @@
-import { chat, type Usage } from "./deepseek";
+import { chat, chatStream, type ChatRequest, type Usage } from "./deepseek";
 import { renderSituation, type FollowUp, type Situation } from "./router";
 import type { Article } from "./types";
 
@@ -143,6 +143,8 @@ export async function answer(
   articles: Article[],
   followUp?: FollowUp,
   situation?: Situation,
+  /** Receives the raw reply as it is written, TL;DR line and [A1] markers included. */
+  onDelta?: (text: string) => void,
 ): Promise<AnswerResult> {
   const markers = new Map(articles.map((article, index) => [`A${index + 1}`, article]));
   const context = [...markers].map(([marker, article]) => renderArticle(article, marker)).join("\n\n");
@@ -152,12 +154,13 @@ export async function answer(
   const personal = situation ? `<asker>\n${renderSituation(situation)}\n</asker>\n\n${PERSONAL}\n\n` : "";
   const language = LANGUAGE_RULE[languageOf(question)];
 
-  const { content, usage, truncated } = await chat({
+  const request: ChatRequest = {
     system: SYSTEM,
     user: `${context}\n\n${personal}${ask}\n\n${language} ${CITATION_REMINDER}`,
     maxTokens: ANSWER_MAX_TOKENS,
     temperature: 0.3,
-  });
+  };
+  const { content, usage, truncated } = onDelta ? await chatStream(request, onDelta) : await chat(request);
 
   const lines = content.split(/\r?\n/);
   const tldrIndex = lines.findIndex((line) => /^\s*\**TL;?DR:?\**:?\s*/i.test(line));

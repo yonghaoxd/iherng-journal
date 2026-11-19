@@ -17,11 +17,12 @@ import {
   X,
 } from 'lucide-react';
 import {
-  askSean,
+  askSeanStream,
   fetchFeed,
   fetchQuestion,
   MAX_QUESTION_CHARS,
   MAX_SITUATION_CHARS,
+  splitDraft,
   type AskAnswer,
   type AskFeedItem,
   type AskSituation,
@@ -239,7 +240,7 @@ function AskedWith({ situation }: { situation: AskSituation }) {
 
 function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: boolean }) {
   return (
-    <article className={`askbot-answer ${nested ? 'nested' : ''}`} aria-live="polite">
+    <article className={`askbot-answer ${nested ? 'nested' : ''}`} aria-live="polite" aria-busy={answer.streaming}>
       <div className="askbot-answer-main">
         <p className="askbot-question">
           {nested && <CornerDownRight size={15} />}
@@ -257,7 +258,7 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
           </p>
         )}
 
-        {answer.status === 'answered' && answer.body ? (
+        {answer.status === 'answered' && (answer.body || answer.streaming) ? (
           <>
             {answer.tldr && (
               <div className="askbot-tldr">
@@ -265,9 +266,15 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
                 <p>{answer.tldr}</p>
               </div>
             )}
-            <AnswerBody body={answer.body} answerId={answer.id} />
-            <p className="askbot-persona">Written by AI in Sean&apos;s voice from his episodes, not by Sean himself.</p>
-            {!nested && <RelatedVideos related={answer.related} title="Related episodes" />}
+            {answer.body && <AnswerBody body={answer.body} answerId={answer.id} />}
+            {answer.streaming ? (
+              <p className="askbot-loading askbot-writing">
+                <Loader2 size={16} className="askbot-spin" /> AIherng is writing…
+              </p>
+            ) : (
+              <p className="askbot-persona">Written by AI in Sean&apos;s voice from his episodes, not by Sean himself.</p>
+            )}
+            {!nested && !answer.streaming && <RelatedVideos related={answer.related} title="Related episodes" />}
           </>
         ) : (
           <>
@@ -508,13 +515,20 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
   // The situation a private answer was given with, re-sent for its follow-up.
   const privateSituation = useRef<AskSituation | undefined>(undefined);
 
-  const show = useCallback((next: AskAnswer) => {
-    setAnswer(next);
-    // A private answer is not stored, so it has no link to share.
-    const page = window.location.pathname;
-    window.history.replaceState(null, '', next.private ? page : `${page}?q=${next.parentId ?? next.id}`);
+  const scrollToAnswer = useCallback(() => {
     requestAnimationFrame(() => answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }, []);
+
+  const show = useCallback(
+    (next: AskAnswer, scroll = true) => {
+      setAnswer(next);
+      // A private answer is not stored, so it has no link to share.
+      const page = window.location.pathname;
+      window.history.replaceState(null, '', next.private ? page : `${page}?q=${next.parentId ?? next.id}`);
+      if (scroll) scrollToAnswer();
+    },
+    [scrollToAnswer],
+  );
 
   const open = useCallback(
     async (id: string) => {
@@ -533,7 +547,7 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
     const id = new URLSearchParams(window.location.search).get('q');
     if (!id) return;
     fetchQuestion(id)
-      .then(show)
+      .then((found) => show(found))
       .catch((problem: Error) => setError(problem.message));
   }, [show]);
 
@@ -541,32 +555,78 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
     if (showFeed) loadFeed(sort);
   }, [sort, loadFeed, showFeed]);
 
-  /** A new question, or a follow-up to `parent`. */
+  /**
+   * A new question, or a follow-up to `parent`. The answer streams in: a draft shows the
+   * sources as soon as they are chosen and the text as it is written, then the finished
+   * answer from the server replaces it.
+   */
   const ask = async (question: string, parent?: AskAnswer): Promise<boolean> => {
     setBusy(true);
     setError('');
-    try {
-      let result: AskAnswer;
-      if (parent?.private) {
-        result = await askSean(question, {
-          situation: privateSituation.current,
-          previous: { question: parent.question, tldr: parent.tldr ?? '' },
-        });
-      } else if (parent) {
-        result = await askSean(question, { parentId: parent.id });
+    const before = answer;
+    const own = parent ? undefined : situationOn ? filledSituation(situation) : undefined;
+    const isPrivate = parent ? Boolean(parent.private) : Boolean(own);
+    const now = new Date().toISOString();
+    let draft: AskAnswer | null = null;
+    const render = (patch: Partial<AskAnswer>) => {
+      const first = !draft;
+      draft = {
+        ...(draft ?? {
+          id: 'draft',
+          question,
+          parentId: parent?.id ?? null,
+          status: 'answered',
+          tldr: '',
+          body: '',
+          message: null,
+          sources: [],
+          related: [],
+          askCount: 1,
+          createdAt: now,
+          lastAskedAt: now,
+          private: isPrivate,
+          askedWith: own,
+          streaming: true,
+          followUps: [],
+        }),
+        ...patch,
+      };
+      const next = draft;
+      if (parent) {
+        setAnswer({ ...parent, followUps: [...(parent.followUps ?? []), next] });
       } else {
-        const own = situationOn ? filledSituation(situation) : undefined;
-        result = await askSean(question, own ? { situation: own } : {});
-        privateSituation.current = own;
+        setAnswer(next);
+        if (first) scrollToAnswer();
       }
-      if (parent && answer) {
-        setAnswer({ ...answer, followUps: [...(answer.followUps ?? []), result] });
+    };
+
+    try {
+      const options = parent?.private
+        ? {
+            situation: privateSituation.current,
+            previous: { question: parent.question, tldr: parent.tldr ?? '' },
+          }
+        : parent
+          ? { parentId: parent.id }
+          : own
+            ? { situation: own }
+            : {};
+      const result = await askSeanStream(question, options, {
+        onSources: (sources, related) => render({ sources, related }),
+        onText: (text) => render(splitDraft(text)),
+      });
+      if (parent) {
+        setAnswer({ ...parent, followUps: [...(parent.followUps ?? []), result] });
       } else {
-        show({ ...result, askedWith: result.private ? privateSituation.current : undefined, followUps: [] });
+        privateSituation.current = own;
+        // The draft already scrolled into view; a reused answer arrives without one.
+        show({ ...result, askedWith: result.private ? own : undefined, followUps: [] }, !draft);
       }
       if (!result.private && showFeed) loadFeed(sort);
       return true;
     } catch (problem) {
+      // Take back a half-written draft rather than leave it looking finished.
+      if (draft) setAnswer(before);
       setError((problem as Error).message);
       return false;
     } finally {
@@ -634,7 +694,7 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
             <AnswerView answer={answer} />
             {answer.followUps?.map((followUp) => <AnswerView key={followUp.id} answer={followUp} nested />)}
             <div className="askbot-thread-actions">
-              {!answer.private && (
+              {!answer.private && !answer.streaming && (
                 <button type="button" className="askbot-share" onClick={() => void copyLink()}>
                   <Link2 size={14} /> {copied ? 'Link copied' : 'Copy link to this answer'}
                 </button>

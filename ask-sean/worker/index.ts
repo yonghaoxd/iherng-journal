@@ -2,17 +2,20 @@
  * Ask Sean API, deployed as a Cloudflare Worker and called from the iherng
  * Journal's /ask page.
  *
- *   POST /api/ask             { question, parentId? } → answer (reused when a near-identical
+ *   POST /api/ask             { question, parentId?, stream? } → answer (reused when a near-identical
  *                             question was already answered on this knowledge base)
  *                             { question, situation, previous? } → a private answer shaped by
  *                             the asker's situation; only its cost is stored (private_usage)
+ *                             With stream: true, a new answer comes back as server-sent events:
+ *                             "sources" (after routing), "delta" (text as it is written), then
+ *                             "done" with the same object the JSON reply would hold, or "error".
  *   GET  /api/questions       ?sort=recent|popular&limit=20 → public feed of answered questions
  *   GET  /api/questions/:id   one question with its sources and follow-ups
  *   GET  /api/health
  */
 import bundleJson from "../knowledge/bundle.json";
 import { ANSWER_STYLE } from "../lib/answer";
-import { ask, checkQuestion, checkSituation, MAX_QUESTION_CHARS } from "../lib/ask";
+import { ask, checkQuestion, checkSituation, MAX_QUESTION_CHARS, type AskHooks } from "../lib/ask";
 import type { FollowUp } from "../lib/router";
 import { normalizeQuestion, REUSE_THRESHOLD, similarity } from "../lib/similar";
 import type { Article, Knowledge, KnowledgeBundle } from "../lib/types";
@@ -189,12 +192,13 @@ function privateFollowUp(raw: unknown): FollowUp | undefined | { reason: string 
   return question ? { question, tldr } : undefined;
 }
 
-async function handleAsk(request: Request, env: Env): Promise<Response> {
+async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
   const payload = (await request.json().catch(() => null)) as {
     question?: unknown;
     parentId?: unknown;
     situation?: unknown;
     previous?: unknown;
+    stream?: unknown;
   } | null;
   const checked = checkQuestion(typeof payload?.question === "string" ? payload.question : "");
   if ("reason" in checked) return fail(request, env, 400, checked.reason);
@@ -262,43 +266,43 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
     return fail(request, env, 503, "AIherng has reached today's answer limit. Please come back tomorrow.");
   }
 
-  let result: Awaited<ReturnType<typeof ask>>;
-  try {
-    result = await ask(checked.question, knowledge, followUp, situation);
-  } catch (error) {
-    // Logged without the situation, which may hold personal details.
-    console.error("ask failed", error instanceof Error ? error.message : "unknown error");
-    return fail(request, env, 502, "Something went wrong while answering. Please try again shortly.");
-  }
-  if (result.status === "rejected") return fail(request, env, 400, result.reason);
+  /** Answer, store the answer (or only its cost when private), and return what the reader sees. */
+  const answerAndStore = async (hooks: AskHooks = {}) => {
+    let result: Awaited<ReturnType<typeof ask>>;
+    try {
+      result = await ask(checked.question, knowledge, followUp, situation, hooks);
+    } catch (error) {
+      // Logged without the situation, which may hold personal details.
+      console.error("ask failed", error instanceof Error ? error.message : "unknown error");
+      throw new AnswerError(502, "Something went wrong while answering. Please try again shortly.");
+    }
+    if (result.status === "rejected") throw new AnswerError(400, result.reason);
+    console.log("ask timings", { status: result.status, private: Boolean(situation), ...result.timings });
 
-  const rateLimitWrite = ipHash
-    ? [
+    const rateLimitWrite = ipHash
+      ? [
+          env.DB.prepare(
+            `INSERT INTO rate_limits (ip_hash, day, count) VALUES (?, ?, 1)
+             ON CONFLICT (ip_hash, day) DO UPDATE SET count = count + 1`,
+          ).bind(ipHash, day),
+        ]
+      : [];
+
+    if (situation) {
+      // Only the cost is kept; the question, situation and answer go back to the asker alone.
+      await env.DB.batch([
         env.DB.prepare(
-          `INSERT INTO rate_limits (ip_hash, day, count) VALUES (?, ?, 1)
-           ON CONFLICT (ip_hash, day) DO UPDATE SET count = count + 1`,
-        ).bind(ipHash, day),
-      ]
-    : [];
-
-  if (situation) {
-    // Only the cost is kept; the question, situation and answer go back to the asker alone.
-    await env.DB.batch([
-      env.DB.prepare(
-        `INSERT INTO private_usage (tokens_in, tokens_cached, tokens_out, cost_usd) VALUES (?, ?, ?, ?)`,
-      ).bind(
-        result.usage.cacheHit + result.usage.cacheMiss,
-        result.usage.cacheHit,
-        result.usage.output,
-        result.usage.costUsd,
-      ),
-      ...rateLimitWrite,
-    ]);
-    const now = new Date().toISOString();
-    return json(
-      request,
-      env,
-      present(
+          `INSERT INTO private_usage (tokens_in, tokens_cached, tokens_out, cost_usd) VALUES (?, ?, ?, ?)`,
+        ).bind(
+          result.usage.cacheHit + result.usage.cacheMiss,
+          result.usage.cacheHit,
+          result.usage.output,
+          result.usage.costUsd,
+        ),
+        ...rateLimitWrite,
+      ]);
+      const now = new Date().toISOString();
+      return present(
         {
           id: crypto.randomUUID(),
           question: checked.question,
@@ -319,28 +323,27 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
           last_asked_at: now,
         },
         { reused: false, private: true },
-      ),
-    );
-  }
+      );
+    }
 
-  const row: QuestionRow = {
-    id: crypto.randomUUID(),
-    question: checked.question,
-    question_norm: norm,
-    parent_id: parentId,
-    status: result.status,
-    tldr: result.status === "answered" ? result.tldr : null,
-    body: result.status === "answered" ? result.body : null,
-    message: result.status === "out_of_scope" ? result.message : null,
-    citations: JSON.stringify(
-      result.status === "answered"
-        ? result.citations.map(({ marker, article }) => ({ marker, id: article.id }))
-        : [],
-    ),
-    related: JSON.stringify(result.related.map((article) => article.id)),
-    ask_count: 1,
-    created_at: new Date().toISOString(),
-    last_asked_at: new Date().toISOString(),
+    const row: QuestionRow = {
+      id: crypto.randomUUID(),
+      question: checked.question,
+      question_norm: norm,
+      parent_id: parentId,
+      status: result.status,
+      tldr: result.status === "answered" ? result.tldr : null,
+      body: result.status === "answered" ? result.body : null,
+      message: result.status === "out_of_scope" ? result.message : null,
+      citations: JSON.stringify(
+        result.status === "answered"
+          ? result.citations.map(({ marker, article }) => ({ marker, id: article.id }))
+          : [],
+      ),
+      related: JSON.stringify(result.related.map((article) => article.id)),
+      ask_count: 1,
+      created_at: new Date().toISOString(),
+      last_asked_at: new Date().toISOString(),
   };
 
   await env.DB.batch([
@@ -370,7 +373,75 @@ async function handleAsk(request: Request, env: Env): Promise<Response> {
     ...rateLimitWrite,
   ]);
 
-  return json(request, env, present(row, { reused: false }));
+  return present(row, { reused: false });
+  };
+
+  if (payload?.stream !== true) {
+    try {
+      return json(request, env, await answerAndStore());
+    } catch (error) {
+      if (error instanceof AnswerError) return fail(request, env, error.status, error.message);
+      throw error;
+    }
+  }
+
+  // Streamed: the reader sees the sources after routing and the text as it is written.
+  const { readable, writable } = new TransformStream<Uint8Array, Uint8Array>();
+  const writer = writable.getWriter();
+  const encoder = new TextEncoder();
+  let open = true;
+  const send = async (event: string, data: unknown) => {
+    if (!open) return;
+    try {
+      await writer.write(encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`));
+    } catch {
+      // The reader left. Carry on so the answer and its cost are still stored.
+      open = false;
+    }
+  };
+  let pending = Promise.resolve();
+  const queue = (event: string, data: unknown) => {
+    pending = pending.then(() => send(event, data));
+  };
+  ctx.waitUntil(
+    (async () => {
+      try {
+        const final = await answerAndStore({
+          onRouted: (sources, related) =>
+            queue("sources", {
+              sources: sources.map((article, index) => sourceOf(article, `A${index + 1}`)),
+              related: related.map((article) => sourceOf(article)),
+            }),
+          onDelta: (text) => queue("delta", { text }),
+        });
+        queue("done", final);
+      } catch (error) {
+        if (!(error instanceof AnswerError)) console.error("stream failed", error instanceof Error ? error.message : "unknown error");
+        queue("error", {
+          error: error instanceof AnswerError ? error.message : "Something went wrong on the server. Please try again shortly.",
+        });
+      }
+      await pending;
+      if (open) await writer.close().catch(() => undefined);
+    })(),
+  );
+  return new Response(readable, {
+    headers: {
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Cache-Control": "no-store",
+      ...corsHeaders(request, env),
+    },
+  });
+}
+
+/** A failure with the status and message the reader should see. */
+class AnswerError extends Error {
+  constructor(
+    readonly status: number,
+    message: string,
+  ) {
+    super(message);
+  }
 }
 
 async function handleFeed(request: Request, env: Env, url: URL): Promise<Response> {
@@ -408,7 +479,7 @@ async function handleQuestion(request: Request, env: Env, id: string): Promise<R
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders(request, env) });
     }
@@ -416,7 +487,7 @@ export default {
     const questionMatch = url.pathname.match(/^\/api\/questions\/([\w-]+)$/);
 
     try {
-      if (request.method === "POST" && url.pathname === "/api/ask") return await handleAsk(request, env);
+      if (request.method === "POST" && url.pathname === "/api/ask") return await handleAsk(request, env, ctx);
       if (request.method === "GET" && url.pathname === "/api/questions") return await handleFeed(request, env, url);
       if (request.method === "GET" && questionMatch) return await handleQuestion(request, env, questionMatch[1]);
       if (request.method === "GET" && url.pathname === "/api/health") {

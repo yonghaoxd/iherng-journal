@@ -37,6 +37,8 @@ export interface AskAnswer {
   private?: boolean;
   /** Client-side only: the situation this private answer was asked with, shown above it. */
   askedWith?: AskSituation;
+  /** Client-side only: the answer is still being written. */
+  streaming?: boolean;
   followUps?: AskAnswer[];
 }
 
@@ -93,6 +95,94 @@ export const askSean = (
     previous?: { question: string; tldr: string };
   } = {},
 ) => request<AskAnswer>('/api/ask', { question, ...options });
+
+export interface AskStreamHandlers {
+  /** The episodes the answer draws on, as soon as they are chosen. */
+  onSources?: (sources: AskSource[], related: AskSource[]) => void;
+  /** All the text written so far, TL;DR line and [A1] markers included. */
+  onText?: (text: string) => void;
+}
+
+const FAILED = 'Something went wrong. Please try again shortly.';
+
+/**
+ * Like askSean, but a new answer streams in: the sources first, then the text as it
+ * is written. Reused answers and errors arrive as plain JSON, as before.
+ */
+export async function askSeanStream(
+  question: string,
+  options: Parameters<typeof askSean>[1],
+  handlers: AskStreamHandlers,
+): Promise<AskAnswer> {
+  let response: Response;
+  try {
+    response = await fetch(apiBase() + '/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question, ...options, stream: true }),
+    });
+  } catch {
+    throw new Error('Could not reach AIherng. Check your connection and try again.');
+  }
+  if (!response.body || !response.headers.get('Content-Type')?.includes('text/event-stream')) {
+    const data = (await response.json().catch(() => ({}))) as AskAnswer & { error?: string };
+    if (!response.ok) throw new Error(data.error ?? FAILED);
+    return data;
+  }
+
+  const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+  let buffer = '';
+  let text = '';
+  for (;;) {
+    let chunk: ReadableStreamReadResult<string>;
+    try {
+      chunk = await reader.read();
+    } catch {
+      throw new Error('The connection dropped while AIherng was answering. Please try again.');
+    }
+    if (chunk.value) buffer += chunk.value;
+    // Server-sent events, separated by a blank line: "event: <name>\ndata: <json>".
+    let end: number;
+    while ((end = buffer.indexOf('\n\n')) !== -1) {
+      const block = buffer.slice(0, end);
+      buffer = buffer.slice(end + 2);
+      const event = block.match(/^event: (.+)$/m)?.[1];
+      const data = block.match(/^data: (.+)$/m)?.[1];
+      if (!event || !data) continue;
+      const payload = JSON.parse(data);
+      if (event === 'sources') handlers.onSources?.(payload.sources, payload.related);
+      else if (event === 'delta') {
+        text += payload.text;
+        handlers.onText?.(text);
+      } else if (event === 'done') return payload as AskAnswer;
+      else if (event === 'error') throw new Error(payload.error ?? FAILED);
+    }
+    if (chunk.done) break;
+  }
+  throw new Error('The connection dropped while AIherng was answering. Please try again.');
+}
+
+/**
+ * Split text that is still being written into its TL;DR and body, the way the server
+ * does once it is complete. A first line that may yet turn out to be the TL;DR is held back.
+ */
+export function splitDraft(text: string): { tldr: string; body: string } {
+  const TLDR = /^\s*\**TL;?DR:?\**:?\s*/i;
+  const newline = text.indexOf('\n');
+  const first = newline === -1 ? text : text.slice(0, newline);
+  const strip = (value: string) => value.replace(/\[A\d+\]/g, '').replace(/\[A?\d*$/, '').trim();
+  // Also hold back a marker cut off mid-way ("[A") and a step number with no text yet ("2.").
+  const body = (value: string) =>
+    value
+      .replace(/\[A?\d*$/, '')
+      .replace(/(^|\n)\s*\d+[.、)]?\s*$/, '')
+      .trim();
+  if (TLDR.test(first)) {
+    return { tldr: strip(first.replace(TLDR, '')), body: newline === -1 ? '' : body(text.slice(newline + 1)) };
+  }
+  if (newline === -1 && /^\s*\**(T(L(;?(D(R)?)?)?)?)?$/i.test(first)) return { tldr: '', body: '' };
+  return { tldr: '', body: body(text) };
+}
 
 export const fetchFeed = (sort: 'recent' | 'popular') =>
   request<AskFeedItem[]>(`/api/questions?sort=${sort}&limit=20`);

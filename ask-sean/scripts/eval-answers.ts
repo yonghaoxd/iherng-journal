@@ -4,7 +4,7 @@
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { sourceLabel } from "../lib/answer";
-import { ask, type AskResult } from "../lib/ask";
+import { ask, type AskResult, type Timings } from "../lib/ask";
 import { addUsage, NO_USAGE } from "../lib/deepseek";
 import { loadEnv } from "../lib/env";
 import { loadKnowledge } from "../lib/knowledge";
@@ -97,6 +97,27 @@ function problems(testCase: EvalCase, result: AskResult): string[] {
   return found;
 }
 
+/** Seconds with one decimal, e.g. "2.4s". */
+const seconds = (ms: number) => `${(ms / 1000).toFixed(1)}s`;
+
+/** Time until the reader sees the first words: the sources' routing plus the answer's first streamed text. */
+const firstTextOf = (timings: Timings) => timings.routeMs + (timings.firstTextMs ?? timings.answerMs);
+
+function timingLine(timings: Timings): string {
+  return timings.answerMs
+    ? `routing ${seconds(timings.routeMs)} · first text ${seconds(firstTextOf(timings))} · full answer ${seconds(timings.totalMs)}`
+    : `routing ${seconds(timings.routeMs)} (no answer call)`;
+}
+
+/** Average and 90th percentile (nearest rank) of a list of milliseconds. */
+function spread(values: number[]): string {
+  if (!values.length) return "n/a";
+  const sorted = [...values].sort((a, b) => a - b);
+  const average = values.reduce((sum, value) => sum + value, 0) / values.length;
+  const p90 = sorted[Math.min(sorted.length - 1, Math.ceil(sorted.length * 0.9) - 1)];
+  return `avg ${seconds(average)} · P90 ${seconds(p90)}`;
+}
+
 function report(testCase: EvalCase, result: AskResult, issues: string[]): string {
   const lines = [`## ${issues.length ? "⚠" : "✓"} ${testCase.q}`];
   if (testCase.followUp) lines.push(`_Follow-up to: ${testCase.followUp.question}_`);
@@ -116,7 +137,7 @@ function report(testCase: EvalCase, result: AskResult, issues: string[]): string
   }
   if (result.status !== "rejected") {
     if (result.related.length) lines.push(`**Related:** ${result.related.map((article) => article.id).join(", ")}`);
-    lines.push(`_Cost ≈ $${result.usage.costUsd.toFixed(6)}, ${result.usage.output} output tokens_`);
+    lines.push(`_Cost ≈ $${result.usage.costUsd.toFixed(6)}, ${result.usage.output} output tokens · ${timingLine(result.timings)}_`);
   }
   return lines.join("\n");
 }
@@ -132,20 +153,36 @@ async function main() {
   let usage = NO_USAGE;
   let flagged = 0;
   const sections: string[] = [];
+  const answered: Timings[] = [];
+  const routeOnly: number[] = [];
   for (const testCase of cases) {
-    const result = await ask(testCase.q, knowledge, testCase.followUp, testCase.situation);
+    // Streamed like the site, so the time to first text is what a reader waits for.
+    const result = await ask(testCase.q, knowledge, testCase.followUp, testCase.situation, { onDelta: () => {} });
     if (result.status !== "rejected") usage = addUsage(usage, result.usage);
+    if (result.status === "answered") answered.push(result.timings);
+    if (result.status === "out_of_scope") routeOnly.push(result.timings.routeMs);
     const issues = problems(testCase, result);
     if (issues.length) flagged++;
     sections.push(report(testCase, result, issues));
-    console.log(`${issues.length ? "FLAG" : "OK  "}  ${testCase.q}${issues.length ? `\n      ${issues.join("; ")}` : ""}`);
+    const timing = result.status === "rejected" ? "" : `  [${timingLine(result.timings)}]`;
+    console.log(`${issues.length ? "FLAG" : "OK  "}  ${testCase.q}${timing}${issues.length ? `\n      ${issues.join("; ")}` : ""}`);
   }
+
+  const latency = [
+    `Latency, ${answered.length} answered (streamed):`,
+    `- Routing: ${spread(answered.map((timings) => timings.routeMs))}`,
+    `- First text on screen: ${spread(answered.map(firstTextOf))}`,
+    `- Full answer: ${spread(answered.map((timings) => timings.totalMs))}`,
+    `- Out of scope (routing only, ${routeOnly.length}): ${spread(routeOnly)}`,
+  ];
 
   const summary = [
     `# Answer eval · catalog ${knowledge.catalog.version}`,
     "",
     `${cases.length - flagged}/${cases.length} passed the automatic checks.`,
     `Total cost ≈ $${usage.costUsd.toFixed(5)} · ${usage.output} output tokens · ${usage.cacheHit} of ${usage.cacheHit + usage.cacheMiss} input tokens cached.`,
+    "",
+    ...latency,
     "",
     "Automatic checks cannot judge whether an answer is faithful to the article. Read each one.",
   ].join("\n");
@@ -154,6 +191,7 @@ async function main() {
   const file = `evals/results/answers-${new Date().toISOString().replace(/[:.]/g, "-")}.md`;
   await writeFile(file, [summary, ...sections].join("\n\n---\n\n") + "\n");
   console.log(`\n${cases.length - flagged}/${cases.length} passed automatic checks · cost ≈ $${usage.costUsd.toFixed(5)}`);
+  console.log(latency.join("\n"));
   console.log(`Report: ${file}`);
 }
 

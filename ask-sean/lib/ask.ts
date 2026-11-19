@@ -14,11 +14,28 @@ export function outOfScopeMessage(question: string): string {
     : "Sean hasn't covered this in his episodes yet, so there is nothing reliable to answer it from.";
 }
 
+/** Milliseconds spent in each stage, for the evals and the Worker's logs. */
+export interface Timings {
+  routeMs: number;
+  /** From the start of the answer call to its first streamed text; only when streaming. */
+  firstTextMs?: number;
+  answerMs: number;
+  totalMs: number;
+}
+
+/** Optional callbacks for streaming an answer to the reader as it is written. */
+export interface AskHooks {
+  /** The articles the answer will draw on, in [A1], [A2] order, before any text is written. */
+  onRouted?: (sources: Article[], related: Article[]) => void;
+  onDelta?: (text: string) => void;
+}
+
 export type AskResult =
   | { status: "rejected"; reason: string }
-  | { status: "out_of_scope"; message: string; related: Article[]; usage: Usage }
+  | { status: "out_of_scope"; message: string; related: Article[]; usage: Usage; timings: Timings }
   | {
       status: "answered";
+      timings: Timings;
       tldr: string;
       body: string;
       citations: Citation[];
@@ -66,23 +83,43 @@ export async function ask(
   knowledge: Knowledge,
   followUp?: FollowUp,
   situation?: Situation,
+  hooks: AskHooks = {},
 ): Promise<AskResult> {
   const checked = checkQuestion(raw);
   if ("reason" in checked) return { status: "rejected", reason: checked.reason };
 
+  const startedAt = Date.now();
   const routed = await route(checked.question, knowledge.catalog, followUp, situation);
+  const routeMs = Date.now() - startedAt;
   const lookup = (ids: string[]) =>
     ids.map((id) => knowledge.articles.get(id)).filter((article): article is Article => Boolean(article));
   const sources = lookup(routed.answer);
   const related = lookup(routed.related);
 
   if (sources.length === 0) {
-    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: routed.usage };
+    const timings = { routeMs, answerMs: 0, totalMs: routeMs };
+    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: routed.usage, timings };
   }
 
-  const result = await answer(checked.question, sources, followUp, situation);
+  hooks.onRouted?.(sources, related);
+  const answerStart = Date.now();
+  let firstTextMs: number | undefined;
+  const onDelta = hooks.onDelta;
+  const result = await answer(
+    checked.question,
+    sources,
+    followUp,
+    situation,
+    onDelta &&
+      ((text) => {
+        firstTextMs ??= Date.now() - answerStart;
+        onDelta(text);
+      }),
+  );
+  const answerMs = Date.now() - answerStart;
   return {
     status: "answered",
+    timings: { routeMs, firstTextMs, answerMs, totalMs: routeMs + answerMs },
     tldr: result.tldr,
     body: result.body,
     citations: result.citations,
