@@ -4106,6 +4106,23 @@ p {
   line-height: 1.6;
 }
 
+.askbot-form textarea {
+  /* Grow with the text, up to a point, instead of hiding long questions. */
+  field-sizing: content;
+  max-height: 40vh;
+}
+
+.askbot-chars {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
+.askbot-chars.full {
+  color: var(--accent-terracotta);
+}
+
 .askbot-form textarea::placeholder {
   color: var(--text-subtle);
 }
@@ -4894,6 +4911,10 @@ p {
 }
 
 .askbot-feed-question {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 16px;
   font-weight: 600;
   color: var(--text-main);
@@ -5296,6 +5317,11 @@ p {
   resize: none;
   font-size: 18px;
   line-height: 1.5;
+}
+
+/* Two lines when empty, as before the box grew with its text. */
+.askbot-composer:not(.compact) .askbot-question-input {
+  min-height: calc(3em + 12px);
 }
 
 .askbot-composer .askbot-question-input.needs-question {

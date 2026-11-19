@@ -309,6 +309,16 @@ const SITUATION_PROMPTS = [
   'Own stay or investment',
 ] as const;
 
+/** A quiet count that appears only near the limit, so long text is never cut off unseen. */
+function CharsLeft({ length, max }: { length: number; max: number }) {
+  if (length < max * 0.8) return null;
+  return (
+    <span className={`askbot-chars ${length >= max ? 'full' : ''}`} aria-live="polite">
+      {length.toLocaleString('en-MY')} / {max.toLocaleString('en-MY')}
+    </span>
+  );
+}
+
 /** Only the fields with something in them, or nothing when all are empty. */
 function filledSituation(situation: AskSituation): AskSituation | undefined {
   const filled = Object.fromEntries(
@@ -360,6 +370,7 @@ function SituationFields({ value, onChange }: Pick<SituationControl, 'value' | '
           value={current}
           onChange={(event) => onChange({ current: event.target.value })}
         />
+        <CharsLeft length={current.length} max={MAX_SITUATION_CHARS} />
       </label>
       <div className="askbot-situation-prompts" aria-label="Tap to add">
         <span>Add:</span>
@@ -444,6 +455,7 @@ function QuestionForm({
           }
         }}
       />
+      <CharsLeft length={text.length} max={MAX_QUESTION_CHARS} />
       {needQuestion && withSituation && (
         <p className="askbot-need-question" role="alert">
           Write your question first, then press Ask.
