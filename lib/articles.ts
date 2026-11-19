@@ -201,6 +201,18 @@ import fullCashOrLoan from '@/content/articles/full-cash-or-housing-loan.json';
 import firstHomeAuction from '@/content/articles/first-home-at-auction.json';
 import oversupplyFirstBuyers from '@/content/articles/oversupply-and-first-time-buyers.json';
 import fixMoneyLosingUnit from '@/content/articles/fix-money-losing-rental-property.json';
+import cashbackClearLoan from '@/content/articles/cashback-to-clear-personal-loan.json';
+import singaporeMontKiara from '@/content/articles/singapore-couple-investing-mont-kiara.json';
+import inheritedAt23 from '@/content/articles/inherited-three-properties-at-23.json';
+import inheritedShopLot from '@/content/articles/inherited-neglected-shop-lot.json';
+import marriageKidsPortfolio from '@/content/articles/marriage-kids-and-property-portfolio.json';
+import reitsOrProperty from '@/content/articles/reits-or-property-young-doctor.json';
+import rentalAt55 from '@/content/articles/buying-rental-property-at-55.json';
+import negativeCashFlowUnit from '@/content/articles/negative-cash-flow-new-unit.json';
+import fivePropertiesOn7k from '@/content/articles/five-properties-on-rm7000-salary.json';
+import overpaidSunwayUnit from '@/content/articles/overpaid-sunway-student-unit.json';
+import sohoFromOverseas from '@/content/articles/soho-first-investment-from-overseas.json';
+import brothersRenovation from '@/content/articles/brothers-cant-afford-renovation.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -332,13 +344,25 @@ export const articles = [
   firstPropertyAt22,
   rentCoversGoodDeal,
   settleOrBuyMore,
+  cashbackClearLoan,
   sellAtLossOrRent,
+  singaporeMontKiara,
+  inheritedAt23,
   rentWhileWaiting,
+  inheritedShopLot,
   apartment,
   sevenPropertiesGoal,
   location,
+  marriageKidsPortfolio,
   bookingFeeRefund,
+  reitsOrProperty,
+  rentalAt55,
+  negativeCashFlowUnit,
   fullCashOrLoan,
+  fivePropertiesOn7k,
+  overpaidSunwayUnit,
+  sohoFromOverseas,
+  brothersRenovation,
   firstHomeAuction,
   defects,
   channels,
