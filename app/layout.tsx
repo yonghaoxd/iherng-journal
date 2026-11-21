@@ -7,6 +7,7 @@ import { AIherngName } from '@/components/aiherng-name';
 import { pageArticles, seriesCount } from '@/lib/articles';
 import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { DEFAULT_OG_IMAGE, SITE_URL, websiteJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -65,6 +66,12 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Runs before the page paints, so a light-theme reader never sees a dark flash: their
+ * saved choice ('theme' in localStorage, set by ThemeToggle), else the system setting.
+ */
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.dataset.theme=t;if(t==='light'){document.querySelector('meta[name="theme-color"]').setAttribute('content','#F6F3EC')}}catch(e){}})()`;
+
 // The banner points to the newest published review.
 const latest = [...pageArticles].sort((a, b) => b.date.localeCompare(a.date))[0];
 
@@ -74,9 +81,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    // The theme script sets data-theme before React loads, so the server markup differs.
+    <html lang="en" className="scroll-smooth" data-theme="dark" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#0E100F" />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -118,19 +127,22 @@ export default function RootLayout({
 
             <JournalNav />
 
-            <div className="header-actions">
-              <a
-                className="channel-link"
-                href="https://www.youtube.com/@iherng"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="#FF0000">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span>YouTube Channel</span>
-                <ArrowUpRight size={14} className="opacity-70" />
-              </a>
+            <div className="header-end">
+              <ThemeToggle />
+              <div className="header-actions">
+                <a
+                  className="channel-link"
+                  href="https://www.youtube.com/@iherng"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="#FF0000">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  <span>YouTube Channel</span>
+                  <ArrowUpRight size={14} className="opacity-70" />
+                </a>
+              </div>
             </div>
           </div>
         </header>

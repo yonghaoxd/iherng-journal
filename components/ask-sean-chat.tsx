@@ -291,20 +291,14 @@ function QuestionCard({ answer, nested }: { answer: AskAnswer; nested: boolean }
 }
 
 /** Marks where the answer starts; a new answer scrolls here. */
-function AnswerStart({ sources }: { sources: number }) {
+function AnswerStart() {
   return (
     <div className="askbot-answer-start">
       <span className="askbot-ai-badge" aria-hidden="true">
         AI
       </span>
-      <span className="askbot-answer-start-text">
-        <span className="askbot-answer-start-title">
-          <em>AI</em>herng&apos;s answer
-        </span>
-        <span className="askbot-answer-start-meta">
-          Written by AI in Sean&apos;s voice
-          {sources > 0 && `, from ${sources} ${sources > 1 ? 'episodes' : 'episode'}`}
-        </span>
+      <span className="askbot-answer-start-title">
+        <em>AI</em>herng&apos;s answer
       </span>
     </div>
   );
@@ -319,7 +313,7 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
 
         {answer.status === 'answered' && (answer.body || answer.streaming) ? (
           <>
-            <AnswerStart sources={answer.sources.length} />
+            <AnswerStart />
             {answer.tldr && (
               <div className="askbot-tldr">
                 <p>{answer.tldr}</p>
@@ -331,7 +325,7 @@ function AnswerView({ answer, nested = false }: { answer: AskAnswer; nested?: bo
                 <Loader2 size={16} className="askbot-spin" /> AIherng is writing…
               </p>
             ) : (
-              <p className="askbot-persona">Not written by Sean himself. For reference only, not financial advice.</p>
+              <p className="askbot-persona">Written by AI in Sean&apos;s voice, not by Sean himself. For reference only.</p>
             )}
             {!nested && !answer.streaming && <RelatedVideos related={answer.related} title="Related episodes" />}
           </>
