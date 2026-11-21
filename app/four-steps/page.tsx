@@ -10,7 +10,7 @@ import {
 
 const TITLE = "Sean's 4 Basic Steps Before Buying a Property";
 const DESCRIPTION =
-  "Work through Sean Tan's four steps before buying a Malaysian property: know why you are buying, estimate your loan eligibility, track 20 viewings, then compare your shortlist on cash, rent and recent sales.";
+  "Work through Sean Tan's four steps before buying a Malaysian property: know why you are buying, estimate your loan eligibility, track 20 viewings, then pick the one and check it against the median price, the rent and the worst case.";
 
 export const metadata = {
   title: TITLE,

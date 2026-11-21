@@ -15,14 +15,30 @@ export interface Viewing {
   price: number;
   rent: number;
   star: boolean;
-  /** A recent transacted price nearby, filled in on the shortlist. */
+  /** The median transacted price for similar units nearby, filled in at Step 4. */
   median: number | null;
+  /** Monthly maintenance and sinking fund, filled in at Step 4. */
+  maint: number;
+  /** Plan B and C at Step 4: rent if let out by room, and short-term stay rent (0 = unknown or not allowed). */
+  room: number;
+  stay: number;
+  /** The reader's own reasoning at Step 4. */
+  why: string;
+  wrong: string;
 }
 
 export interface Readiness {
   fund: boolean;
   insurance: boolean;
   career: boolean;
+  partner: boolean;
+}
+
+/** Step 4's check that the decision is the reader's own, not a sales pitch. */
+export interface PitchChecks {
+  ownNumbers: boolean;
+  grossOrNett: boolean;
+  notGrr: boolean;
 }
 
 export interface FourStepsState {
@@ -33,7 +49,13 @@ export interface FourStepsState {
   housingLoans: number;
   savings: number;
   readiness: Readiness;
+  pitch: PitchChecks;
   viewings: Viewing[];
+  /** The starred viewing picked at Step 4. */
+  pick: number | null;
+  /** Step 4's worst case: months without a tenant (or income), and how far rent falls. */
+  emptyMonths: number;
+  rentDrop: number;
 }
 
 export const DEFAULT_STATE: FourStepsState = {
@@ -43,8 +65,12 @@ export const DEFAULT_STATE: FourStepsState = {
   age: 28,
   housingLoans: 0,
   savings: 80_000,
-  readiness: { fund: false, insurance: false, career: false },
+  readiness: { fund: false, insurance: false, career: false, partner: false },
+  pitch: { ownNumbers: false, grossOrNett: false, notGrr: false },
   viewings: [],
+  pick: null,
+  emptyMonths: 6,
+  rentDrop: 10,
 };
 
 const KEY = 'iherng-four-steps-v1';
@@ -60,6 +86,8 @@ function sanitize(raw: unknown): FourStepsState {
   if (!raw || typeof raw !== 'object') return DEFAULT_STATE;
   const data = raw as Record<string, unknown>;
   const readiness = (data.readiness ?? {}) as Record<string, unknown>;
+  const pitch = (data.pitch ?? {}) as Record<string, unknown>;
+  const text = (value: unknown) => (typeof value === 'string' ? value.slice(0, 1000) : '');
   const viewings = Array.isArray(data.viewings) ? data.viewings : [];
   return {
     intent: data.intent === 'invest' ? 'invest' : 'own',
@@ -72,7 +100,16 @@ function sanitize(raw: unknown): FourStepsState {
       fund: readiness.fund === true,
       insurance: readiness.insurance === true,
       career: readiness.career === true,
+      partner: readiness.partner === true,
     },
+    pitch: {
+      ownNumbers: pitch.ownNumbers === true,
+      grossOrNett: pitch.grossOrNett === true,
+      notGrr: pitch.notGrr === true,
+    },
+    pick: typeof data.pick === 'number' ? data.pick : null,
+    emptyMonths: Math.min(24, Math.round(num(data.emptyMonths, DEFAULT_STATE.emptyMonths))),
+    rentDrop: Math.min(50, Math.round(num(data.rentDrop, DEFAULT_STATE.rentDrop))),
     viewings: viewings
       .filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === 'object')
       .map((item, index) => ({
@@ -83,6 +120,11 @@ function sanitize(raw: unknown): FourStepsState {
         rent: num(item.rent, 0),
         star: item.star === true,
         median: typeof item.median === 'number' && item.median > 0 ? item.median : null,
+        maint: num(item.maint, 0),
+        room: num(item.room, 0),
+        stay: num(item.stay, 0),
+        why: text(item.why),
+        wrong: text(item.wrong),
       }))
       .slice(0, 200),
   };

@@ -21,6 +21,18 @@ export const TENURE = 35;
 /** Sean's furnishing budget for a rental unit that stands out in the top 20% of the market. */
 export const FURNISHING = 50_000;
 
+/**
+ * Step 4's one-line best case. Sean: even in the weakest years, prices grew about
+ * 3-4% a year on average, so 3% is the cautious end.
+ */
+export const PRICE_GROWTH = 3;
+
+/** A price within 2% of the median nearby counts as in line with it. */
+export const MEDIAN_TOLERANCE = 0.02;
+
+/** Own stay: rent for similar units should cover about 85% of the instalment. */
+export const OWN_STAY_RENT_SHARE = 0.85;
+
 /** Banks allow a larger share of net income as repayments as income rises (2022 figures). */
 export function dsrLimit(grossIncome: number): number {
   if (grossIncome < 3_000) return 0.6;
@@ -88,6 +100,6 @@ export function costsFor(price: number, margin: number): { upfront: number; inst
  */
 export function rentTest(intent: Intent, rent: number, instalment: number) {
   const ratio = instalment > 0 ? rent / instalment : 0;
-  const needed = intent === 'invest' ? 1 : 0.85;
+  const needed = intent === 'invest' ? 1 : OWN_STAY_RENT_SHARE;
   return { ratio, pass: ratio >= needed };
 }

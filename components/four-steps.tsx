@@ -7,6 +7,9 @@ import { formatMYR } from '@/lib/calculator';
 import {
   CHANNELS,
   FURNISHING,
+  MEDIAN_TOLERANCE,
+  OWN_STAY_RENT_SHARE,
+  PRICE_GROWTH,
   VIEWING_GOAL,
   costsFor,
   loanEligibility,
@@ -14,9 +17,17 @@ import {
   type Channel,
   type Intent,
 } from '@/lib/four-steps';
-import { clearFourSteps, useFourSteps, type Readiness, type Viewing } from '@/lib/four-steps-store';
+import {
+  clearFourSteps,
+  useFourSteps,
+  type FourStepsState,
+  type PitchChecks,
+  type Readiness,
+  type Viewing,
+} from '@/lib/four-steps-store';
 
-const rm = (value: number) => formatMYR(Math.round(value)).replace(/^RM\s?/, 'RM ');
+const rm = (value: number) =>
+  (value < 0 ? '−' : '') + formatMYR(Math.abs(Math.round(value))).replace(/^RM\s?/, 'RM ');
 const rmk = (value: number) => rm(Math.round(value / 1000) * 1000);
 
 const INTENTS: { id: Intent; title: string; desc: string }[] = [
@@ -28,7 +39,144 @@ const READINESS: { id: keyof Readiness; label: string }[] = [
   { id: 'fund', label: 'About six months of expenses saved as an emergency fund' },
   { id: 'insurance', label: 'Medical insurance in place' },
   { id: 'career', label: 'A stable job or clear career path' },
+  { id: 'partner', label: 'My partner or family knows and agrees with this purchase' },
 ];
+
+/** Sean on FOMO: hot markets and sales pitches make buyers skip their own numbers. */
+const PITCH: { id: keyof PitchChecks; label: string }[] = [
+  { id: 'ownNumbers', label: "The rent and price I am relying on are my own numbers, not an agent's" },
+  { id: 'grossOrNett', label: 'Any return I was quoted: I know if it is gross or nett, and how it was worked out' },
+  { id: 'notGrr', label: 'It is not a guaranteed-rental-return (GRR) scheme' },
+];
+
+type CheckState = 'ok' | 'warn' | 'unknown';
+type LevelState = 'ok' | 'warn' | 'info';
+
+/**
+ * Step 4 for the one property picked: Sean's two checks (price against the median
+ * nearby, rent against the instalment), his rental plans, the worst-case ladder and
+ * whether the reader's own cash can carry it.
+ */
+function decide(
+  pick: Viewing & { upfront: number; instalment: number },
+  state: FourStepsState,
+  isInvest: boolean,
+) {
+  const cost = pick.instalment + pick.maint;
+  // Investment: rent must cover the instalment and maintenance. Own stay: Sean's 85% rule.
+  const rentNeeded = isInvest ? cost : pick.instalment * OWN_STAY_RENT_SHARE;
+
+  const diff = pick.median ? (pick.price - pick.median) / pick.median : null;
+  const priceState: CheckState = diff === null ? 'unknown' : diff <= MEDIAN_TOLERANCE ? 'ok' : 'warn';
+  const rentOk = pick.rent > 0 && pick.rent >= rentNeeded;
+  const checks: { title: string; state: CheckState; headline: string; compare: string; why: string }[] = [
+    {
+      title: 'Price vs median nearby',
+      state: priceState,
+      headline:
+        diff === null
+          ? 'Add the median price'
+          : Math.abs(diff) <= MEDIAN_TOLERANCE
+            ? 'In line with the median'
+            : diff > 0
+              ? `${Math.round(diff * 100)}% above the median`
+              : `${Math.round(-diff * 100)}% below the median`,
+      compare: pick.median
+        ? `${rm(pick.price)} against a median of ${rm(pick.median)} for similar units nearby`
+        : 'Enter the median transacted price for similar units nearby, above.',
+      why: 'The median, not the average, so a few luxury units do not skew it.',
+    },
+    {
+      title: isInvest ? 'Rent vs instalment' : 'Rent vs 85% of the instalment',
+      state: rentOk ? 'ok' : 'warn',
+      headline: rentOk ? 'Rent covers it' : `Short by ${rm(rentNeeded - pick.rent)} a month`,
+      compare: isInvest
+        ? `Rent ${rm(pick.rent)} against ${rm(pick.instalment)} instalment${pick.maint ? ` + ${rm(pick.maint)} maintenance` : ''}`
+        : `Rent ${rm(pick.rent)} against 85% of the ${rm(pick.instalment)} instalment (${rm(rentNeeded)})`,
+      why: isInvest
+        ? 'Plan A: the whole unit to a long-term tenant, at what similar units rent for now.'
+        : 'So you could rent it out if life changes, without bleeding every month.',
+    },
+  ];
+  const passed = checks.filter((check) => check.state === 'ok').length;
+
+  const longTerm = [pick.rent, pick.room].filter((rent) => rent > 0 && rent >= rentNeeded).length;
+  const onlyStay = longTerm === 0 && pick.stay > 0 && pick.stay >= rentNeeded;
+  const planVerdict = onlyStay
+    ? 'Only short-term stay covers it: too risky on its own.'
+    : longTerm === 0
+      ? `No plan covers the ${rm(rentNeeded)} a month yet.`
+      : `${longTerm} of 2 long-term plans cover the ${rm(rentNeeded)} a month.`;
+
+  const left = state.savings - pick.upfront - (isInvest ? FURNISHING : 0);
+  const carryNeed = state.emptyMonths * cost;
+  const carries = left >= carryNeed;
+  const isNew = pick.channel === 'New launch';
+
+  const ladder: { title: string; cover: string; status: string; state: LevelState }[] = [];
+  ladder.push({
+    title: isInvest ? `No tenant for ${state.emptyMonths} months` : `No income for ${state.emptyMonths} months`,
+    cover: `You pay ${rm(carryNeed)} from the cash left after the keys${isInvest ? ' and furnishing' : ''} (${rm(Math.max(0, left))}).`,
+    status: carries ? 'Covered' : `Short ${rm(carryNeed - Math.max(0, left))}`,
+    state: carries ? 'ok' : 'warn',
+  });
+  if (isInvest) {
+    const lower = pick.rent * (1 - state.rentDrop / 100);
+    const holds = lower >= cost;
+    ladder.push({
+      title: `Rent falls ${state.rentDrop}% to ${rm(lower)}`,
+      cover: holds ? 'Still covers the instalment and maintenance.' : `You top up ${rm(cost - lower)} every month.`,
+      status: holds ? 'Covered' : `${rm(lower - cost)}/mo`,
+      state: holds ? 'ok' : 'warn',
+    });
+    ladder.push({
+      title: 'Tenant stops paying',
+      cover: 'A stamped tenancy agreement, then a reminder, a Letter of Demand and a court order (about 3 months).',
+      status: 'Know the steps',
+      state: 'info',
+    });
+  } else {
+    ladder.push({
+      title: 'Life changes and you rent it out',
+      cover: rentOk
+        ? 'Rent for similar units covers at least 85% of the instalment.'
+        : `You would top up ${rm(pick.instalment - pick.rent)} every month.`,
+      status: rentOk ? 'Covered' : `${rm(pick.rent - pick.instalment)}/mo`,
+      state: rentOk ? 'ok' : 'warn',
+    });
+  }
+  if (isNew) {
+    ladder.push({
+      title: 'Project abandoned',
+      cover:
+        "You keep paying interest on what was released. Check the developer is not on the government's list of developers who failed to deliver, and look at their past projects.",
+      status: 'Check the developer',
+      state: 'info',
+    });
+  }
+  ladder.push({
+    title: 'You must sell in the first 3 years',
+    cover: isNew
+      ? 'A new project is usually valued below its SPA price for the first 2 to 3 years, so selling early means a loss. Can you afford to sell, or will you hold?'
+      : 'After stamp duty and legal fees, selling early usually means a loss. Can you afford to sell, or will you hold?',
+    status: 'Plan to hold',
+    state: 'info',
+  });
+
+  return {
+    checks,
+    passed,
+    unknownPrice: priceState === 'unknown',
+    rentNeeded,
+    planVerdict,
+    planTone: onlyStay || longTerm === 0 ? 'warn' : 'good',
+    ladder,
+    left,
+    carryNeed,
+    carries,
+    value5: pick.price * Math.pow(1 + PRICE_GROWTH / 100, 5),
+  };
+}
 
 function MoneyInput({
   id,
@@ -81,6 +229,7 @@ const EMPTY_DRAFT: Draft = { name: '', price: '', rent: '', channel: 'Subsale' }
 export function FourSteps() {
   const [state, update] = useFourSteps();
   const [draft, setDraft] = useState<Draft>(EMPTY_DRAFT);
+  const [plansOpen, setPlansOpen] = useState(false);
 
   const isInvest = state.intent === 'invest';
   const elig = loanEligibility({
@@ -120,81 +269,24 @@ export function FourSteps() {
           rent: Number(draft.rent) || 0,
           star: false,
           median: null,
+          maint: 0,
+          room: 0,
+          stay: 0,
+          why: '',
+          wrong: '',
         },
       ],
     }));
     setDraft({ ...EMPTY_DRAFT, channel: draft.channel });
   };
 
-  // Step 4: the shortlist, each against Sean's checks.
-  const shortlist = viewings
-    .filter((viewing) => viewing.star)
-    .map((viewing) => {
-      const furnish = isInvest ? FURNISHING : 0;
-      const leftAfter = state.savings - viewing.upfront - furnish;
-      const buffer = 6 * viewing.instalment;
-      const tests: { ok: boolean | null; label: string; detail: string }[] = [
-        {
-          ok: viewing.within,
-          label: viewing.within ? 'Within your range' : 'Over your range',
-          detail: `up to ${rmk(budget)}`,
-        },
-        {
-          ok: viewing.pass,
-          label: isInvest
-            ? viewing.pass
-              ? 'Rent covers the instalment'
-              : 'Rent falls short'
-            : viewing.pass
-              ? 'Passes the 85% rule'
-              : 'Fails the 85% rule',
-          detail: `${Math.round(viewing.ratio * 100)}% of the instalment`,
-        },
-      ];
-      if (viewing.median) {
-        const diff = (viewing.price - viewing.median) / viewing.median;
-        tests.push({
-          ok: diff <= 0.02,
-          label:
-            diff < -0.02
-              ? `${Math.round(-diff * 100)}% below recent sales`
-              : diff <= 0.02
-                ? 'In line with recent sales'
-                : `${Math.round(diff * 100)}% above recent sales`,
-          detail: `nearby units sold for about ${rm(viewing.median)}`,
-        });
-      } else {
-        tests.push({
-          ok: null,
-          label: 'Compare with recent sales',
-          detail: 'add a transacted price above, not the asking price',
-        });
-      }
-      tests.push({
-        ok: viewing.upfront <= state.savings,
-        label: viewing.upfront <= state.savings ? 'You can pay to get the keys' : 'Short of cash for the keys',
-        detail: `${rm(viewing.upfront)} of your ${rm(state.savings)}`,
-      });
-      const carries = leftAfter >= buffer;
-      tests.push({
-        ok: carries,
-        label: isInvest
-          ? carries
-            ? 'Can carry six empty months'
-            : "Can't carry six empty months"
-          : carries
-            ? 'Six months of instalments in hand'
-            : 'Less than six months in hand',
-        detail: `${rm(Math.max(0, leftAfter))} left${furnish ? ' after furnishing' : ''}, ${rm(buffer)} needed`,
-      });
-      return { ...viewing, tests, score: tests.filter((test) => test.ok === true).length };
-    });
-  const bestId =
-    shortlist.length > 1
-      ? [...shortlist].sort((a, b) => b.score - a.score || a.price - b.price)[0].id
-      : null;
+  // Step 4: the one property picked from the starred viewings, against Sean's checks.
+  const starred = viewings.filter((viewing) => viewing.star);
+  const pick = starred.find((viewing) => viewing.id === state.pick) ?? starred[0] ?? null;
+  const decision = pick ? decide(pick, state, isInvest) : null;
 
   const readyCount = READINESS.filter((item) => state.readiness[item.id]).length;
+  const pitchCount = PITCH.filter((item) => state.pitch[item.id]).length;
   const left = Math.max(0, VIEWING_GOAL - viewedCount);
 
   const intentTitle = INTENTS.find((item) => item.id === state.intent)?.title ?? '';
@@ -205,7 +297,11 @@ export function FourSteps() {
     {
       n: 4,
       title: 'Decide',
-      status: `${shortlist.length} shortlisted · ${readyCount}/3 risk checks`,
+      status: decision
+        ? `${pick?.name} · ${decision.passed} of 2 checks`
+        : starred.length
+          ? 'Pick the one'
+          : 'Star a property in Step 3',
       done: false,
     },
   ];
@@ -542,119 +638,356 @@ export function FourSteps() {
       {/* STEP 4 */}
       <section id="step-4" className="fs-card" aria-labelledby="fs-s4">
         <div className="fs-step-head">
-          <div>
+          <div className="fs-step-intro">
             <span className="fs-eyebrow">Step 4</span>
-            <h2 id="fs-s4">Make informed decisions and take calculated risks.</h2>
+            <h2 id="fs-s4">Make that informed decision and take that calculated risk.</h2>
+            <p>
+              Pick the one, run Sean&apos;s two checks, and make sure you can live through the worst case. Then decide by
+              your own standard.
+            </p>
           </div>
         </div>
 
-        <p className={`fs-gate ${left > 0 ? '' : 'ready'}`}>
-          {left > 0
-            ? `You have viewed ${viewedCount} of ${VIEWING_GOAL}. Sean would keep looking before committing: ${left} more to go. Your shortlist below updates as you add viewings.`
-            : `You have viewed ${VIEWING_GOAL} properties. Compare your shortlist on the checks below, then arrange the financing for your pick.`}
-        </p>
-
-        <div className="fs-savings">
-          <label className="fs-field" htmlFor="fs-savings">
-            <span className="fs-label">Savings you can use</span>
-            <MoneyInput
-              id="fs-savings"
-              value={state.savings}
-              onChange={(value) => update({ savings: value === '' ? 0 : value })}
-              step={1000}
-            />
-          </label>
-          <p>
-            Sean&apos;s cash test: after paying the down payment, legal fees and stamp duty, you should still hold six
-            months of instalments{isInvest ? ', plus about RM50,000 to furnish it for rent' : ''}. Keep your emergency
-            fund out of this number.
+        {left > 0 && (
+          <p className="fs-gate">
+            You have viewed {viewedCount} of {VIEWING_GOAL}. Sean would keep looking before committing: {left} more to
+            go.
           </p>
-        </div>
+        )}
 
-        {shortlist.length > 0 ? (
-          <div className="fs-shortlist">
-            {shortlist.map((viewing) => (
-              <article key={viewing.id} className={`fs-pick ${viewing.id === bestId ? 'best' : ''}`}>
-                <div className="fs-pick-head">
-                  {viewing.id === bestId && <span className="fs-badge">Passes the most checks</span>}
-                  <h3>{viewing.name}</h3>
-                  <span>{viewing.channel}</span>
+        {pick && decision ? (
+          <>
+            {/* 1. The one */}
+            <div className="fs-block">
+              <div className="fs-block-head">
+                <h3>1. Pick the one</h3>
+                <span>
+                  From the properties you starred in Step 3 · buying for <strong>{isInvest ? 'investment' : 'own stay'}</strong>
+                </span>
+              </div>
+              <div className="fs-picks" role="radiogroup" aria-label="The property you are deciding on">
+                {starred.map((viewing) => (
+                  <button
+                    key={viewing.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={viewing.id === pick.id}
+                    className={viewing.id === pick.id ? 'on' : ''}
+                    onClick={() => update({ pick: viewing.id })}
+                  >
+                    <strong>{viewing.name}</strong>
+                    <span>
+                      {viewing.channel} · {rm(viewing.price)}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <div className="fs-pick-facts">
+                <div className="fs-fact">
+                  <span>Instalment</span>
+                  <strong>{rm(pick.instalment)}/mo</strong>
                 </div>
-                <dl className="fs-pick-stats">
-                  <div>
-                    <dt>Price</dt>
-                    <dd>{rm(viewing.price)}</dd>
-                  </div>
-                  <div>
-                    <dt>Instalment</dt>
-                    <dd>{rm(viewing.instalment)}/mo</dd>
-                  </div>
-                  <div className="wide">
-                    <dt>Cash to get the keys</dt>
-                    <dd>{rm(viewing.upfront)}</dd>
-                  </div>
-                </dl>
-                <label className="fs-field" htmlFor={`fs-median-${viewing.id}`}>
-                  <span className="fs-hint">Recent transacted price nearby</span>
+                <div className="fs-fact">
+                  <span>Cash to get the keys</span>
+                  <strong>{rm(pick.upfront)}</strong>
+                </div>
+                <label className="fs-field" htmlFor="fs-median">
+                  <span className="fs-hint">Median price nearby</span>
                   <MoneyInput
-                    id={`fs-median-${viewing.id}`}
-                    value={viewing.median ?? ''}
-                    onChange={(value) => setViewing(viewing.id, { median: value === '' || value === 0 ? null : value })}
+                    id="fs-median"
+                    value={pick.median ?? ''}
+                    onChange={(value) => setViewing(pick.id, { median: value === '' || value === 0 ? null : value })}
                     step={1000}
-                    placeholder="From Brickz or sold listings"
+                    placeholder="From transacted prices"
                     small
                   />
                 </label>
-                <ul className="fs-tests">
-                  {viewing.tests.map((test) => (
-                    <li key={test.label}>
-                      <span
-                        className={`fs-test-dot ${test.ok === null ? 'unknown' : test.ok ? 'ok' : 'warn'}`}
-                        aria-hidden="true"
-                      >
-                        {test.ok === null ? '?' : test.ok ? '✓' : '!'}
+                <label className="fs-field" htmlFor="fs-maint">
+                  <span className="fs-hint">Maintenance and sinking fund</span>
+                  <MoneyInput
+                    id="fs-maint"
+                    value={pick.maint || ''}
+                    onChange={(value) => setViewing(pick.id, { maint: value === '' ? 0 : value })}
+                    step={10}
+                    placeholder="0"
+                    suffix="/mo"
+                    small
+                  />
+                </label>
+              </div>
+            </div>
+
+            {/* 2. Sean's two checks */}
+            <div className="fs-block">
+              <div className="fs-block-head">
+                <h3>2. Sean&apos;s two checks</h3>
+                <span className={decision.passed === 2 ? 'good' : decision.unknownPrice ? '' : 'warn'}>
+                  {decision.passed === 2
+                    ? 'Passes both checks'
+                    : decision.unknownPrice
+                      ? 'Add the median price to finish the checks'
+                      : decision.passed === 1
+                        ? 'Passes 1 of 2: look again before you decide'
+                        : 'Fails both checks'}
+                </span>
+              </div>
+              <div className="fs-two">
+                {decision.checks.map((check) => (
+                  <article key={check.title} className={`fs-two-card ${check.state}`}>
+                    <div className="fs-two-top">
+                      <span>{check.title}</span>
+                      <span className="fs-two-mark" aria-hidden="true">
+                        {check.state === 'ok' ? '✓' : check.state === 'warn' ? '!' : '?'}
                       </span>
-                      <span>
-                        <strong>{test.label}</strong> <span>{test.detail}</span>
+                    </div>
+                    <strong className="fs-two-big">{check.headline}</strong>
+                    <span>{check.compare}</span>
+                    <span className="fs-two-why">{check.why}</span>
+                  </article>
+                ))}
+              </div>
+
+              <div className="fs-plans">
+                <div className="fs-plans-head">
+                  <span>
+                    <strong>Plan B and C:</strong> other ways the rent could cover it, in case Plan A falls through.
+                  </span>
+                  <button type="button" aria-expanded={plansOpen} onClick={() => setPlansOpen(!plansOpen)}>
+                    {plansOpen ? 'Hide' : 'Add Plan B and C'}
+                  </button>
+                </div>
+                {plansOpen && (
+                  <>
+                    {(
+                      [
+                        { key: 'room', label: 'Plan B', what: 'Rent out by room', note: 'all rooms together' },
+                        { key: 'stay', label: 'Plan C', what: 'Short-term stay', note: 'last resort: it can be banned' },
+                      ] as const
+                    ).map((plan) => {
+                      const rent = pick[plan.key];
+                      const covers = rent > 0 && rent >= decision.rentNeeded;
+                      return (
+                        <div key={plan.key} className="fs-plan-row">
+                          <span className="fs-plan-label">{plan.label}</span>
+                          <span>
+                            {plan.what} <span className="fs-plan-note">({plan.note})</span>
+                          </span>
+                          <MoneyInput
+                            id={`fs-plan-${plan.key}`}
+                            value={rent || ''}
+                            onChange={(value) => setViewing(pick.id, { [plan.key]: value === '' ? 0 : value })}
+                            step={50}
+                            placeholder="0"
+                            suffix="/mo"
+                            small
+                          />
+                          <span className={`fs-plan-mark ${rent > 0 ? (covers ? 'good' : 'warn') : ''}`}>
+                            {rent > 0 ? (covers ? 'Covers it' : 'Falls short') : '–'}
+                          </span>
+                        </div>
+                      );
+                    })}
+                    <span className={`fs-plans-verdict ${decision.planTone}`}>{decision.planVerdict}</span>
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* 3. The worst case */}
+            <div className="fs-block">
+              <div className="fs-block-head">
+                <h3>3. Prepare for the worst</h3>
+                <span>Hope for the best, but be prepared for the worst</span>
+              </div>
+              <ol className="fs-ladder">
+                {decision.ladder.map((level, index) => (
+                  <li key={level.title} className={level.state}>
+                    <span className="fs-ladder-n">L{index + 1}</span>
+                    <span className="fs-ladder-text">
+                      <strong>{level.title}</strong>
+                      <span>{level.cover}</span>
+                    </span>
+                    <span className="fs-ladder-status">
+                      {level.status}
+                      {level.state !== 'info' && (
+                        <span aria-hidden="true">{level.state === 'ok' ? ' ✓' : ' !'}</span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <div className="fs-worst-inputs">
+                <label className="fs-field" htmlFor="fs-savings">
+                  <span className="fs-hint">Savings you can use</span>
+                  <MoneyInput
+                    id="fs-savings"
+                    value={state.savings}
+                    onChange={(value) => update({ savings: value === '' ? 0 : value })}
+                    step={1000}
+                    small
+                  />
+                </label>
+                <label className="fs-field" htmlFor="fs-empty">
+                  <span className="fs-hint">{isInvest ? 'Months without a tenant' : 'Months without income'}</span>
+                  <span className="fs-input small">
+                    <input
+                      id="fs-empty"
+                      type="number"
+                      inputMode="numeric"
+                      min={0}
+                      max={24}
+                      value={state.emptyMonths}
+                      onChange={(event) =>
+                        update({ emptyMonths: Math.min(24, Math.max(0, Math.round(Number(event.target.value) || 0))) })
+                      }
+                    />
+                  </span>
+                </label>
+                {isInvest && (
+                  <label className="fs-field" htmlFor="fs-drop">
+                    <span className="fs-hint">Rent falls by (%)</span>
+                    <span className="fs-input small">
+                      <input
+                        id="fs-drop"
+                        type="number"
+                        inputMode="numeric"
+                        min={0}
+                        max={50}
+                        value={state.rentDrop}
+                        onChange={(event) =>
+                          update({ rentDrop: Math.min(50, Math.max(0, Math.round(Number(event.target.value) || 0))) })
+                        }
+                      />
+                    </span>
+                  </label>
+                )}
+              </div>
+              <p className="fs-best">
+                <strong>Best case, in one line:</strong> at {PRICE_GROWTH}% a year it would be worth about{' '}
+                {rm(decision.value5)} in 5 years. Sean says prices grew 3–4% a year on average even in the weakest
+                years.
+              </p>
+            </div>
+
+            {/* 4. Can you take the risk */}
+            <div className="fs-block">
+              <div className="fs-block-head">
+                <h3>4. Can you take the risk?</h3>
+                <span>
+                  {readyCount} of {READINESS.length} · Sean checks these before any purchase
+                </span>
+              </div>
+              <div className={`fs-carry ${decision.carries ? 'ok' : 'warn'}`}>
+                <strong>
+                  <span className="fs-carry-dot" aria-hidden="true">
+                    {decision.carries ? '✓' : '!'}
+                  </span>
+                  {decision.carries ? 'You can carry the worst case on your own' : "You can't carry the worst case yet"}
+                </strong>
+                <span>
+                  {rm(state.savings)} savings − {rm(pick.upfront)} to get the keys
+                  {isInvest ? ` − ${rm(FURNISHING)} to furnish it` : ''} = {rm(decision.left)} left.{' '}
+                  {state.emptyMonths} months {isInvest ? 'without a tenant' : 'without income'} need{' '}
+                  {rm(decision.carryNeed)}, from you, not your partner or family.
+                </span>
+              </div>
+              <div className="fs-checks">
+                {READINESS.map((item) => {
+                  const on = state.readiness[item.id];
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      aria-pressed={on}
+                      className={on ? 'on' : ''}
+                      onClick={() => update({ readiness: { ...state.readiness, [item.id]: !on } })}
+                    >
+                      <span className="fs-box" aria-hidden="true">
+                        {on && <Check size={14} strokeWidth={3} />}
                       </span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
+                      <span>{item.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="fs-block-head sub">
+                <h4>Your decision, or a sales pitch?</h4>
+                <span>
+                  {pitchCount} of {PITCH.length}
+                </span>
+              </div>
+              <div className="fs-checks">
+                {PITCH.map((item) => {
+                  const on = state.pitch[item.id];
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      aria-pressed={on}
+                      className={on ? 'on' : ''}
+                      onClick={() => update({ pitch: { ...state.pitch, [item.id]: !on } })}
+                    >
+                      <span className="fs-box" aria-hidden="true">
+                        {on && <Check size={14} strokeWidth={3} />}
+                      </span>
+                      <span>{item.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 5. Own standard */}
+            <div className="fs-block">
+              <div className="fs-block-head">
+                <h3>5. Decide by your own standard</h3>
+                <span>Saved only in this browser</span>
+              </div>
+              <ul className="fs-questions">
+                <li>At this price, what else could I get?</li>
+                <li>Why must it be this location?</li>
+                <li>If my career is uncertain, could I keep renting instead?</li>
+              </ul>
+              <div className="fs-why">
+                <label className="fs-field" htmlFor="fs-why">
+                  <span className="fs-label">Why this one</span>
+                  <textarea
+                    id="fs-why"
+                    className="fs-textarea"
+                    maxLength={1000}
+                    placeholder="e.g. In line with the median price, rent covers it two ways, 5 minutes to the MRT."
+                    value={pick.why}
+                    onChange={(event) => setViewing(pick.id, { why: event.target.value })}
+                  />
+                </label>
+                <label className="fs-field" htmlFor="fs-wrong">
+                  <span className="fs-label">What would prove me wrong</span>
+                  <textarea
+                    id="fs-wrong"
+                    className="fs-textarea"
+                    maxLength={1000}
+                    placeholder="e.g. Still empty after 3 months, or rents nearby falling below the instalment."
+                    value={pick.wrong}
+                    onChange={(event) => setViewing(pick.id, { wrong: event.target.value })}
+                  />
+                </label>
+              </div>
+              <p className="fs-best">
+                If you are right, it shows. If you are wrong, you take the loss and learn from it. Either way it was your
+                call, made on your homework.
+              </p>
+            </div>
+          </>
         ) : (
-          <p className="fs-empty">Star the properties you like in Step 3 to compare them here.</p>
+          <p className="fs-empty">
+            {viewings.length
+              ? 'Star the properties you like in Step 3, then pick the one here.'
+              : 'Add the properties you view in Step 3 and star the ones you like. Then pick the one here.'}
+          </p>
         )}
 
-        <div className="fs-risk">
-          <div className="fs-risk-head">
-            <h3>Can you take the risk?</h3>
-            <span>{readyCount} of 3 · Sean checks these before any purchase</span>
-          </div>
-          <div className="fs-checks">
-            {READINESS.map((item) => {
-              const on = state.readiness[item.id];
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  aria-pressed={on}
-                  className={on ? 'on' : ''}
-                  onClick={() => update({ readiness: { ...state.readiness, [item.id]: !on } })}
-                >
-                  <span className="fs-box" aria-hidden="true">
-                    {on && <Check size={14} strokeWidth={3} />}
-                  </span>
-                  <span>{item.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
         <div className="fs-next">
-          <h3>Once you have picked one</h3>
+          <h3>Decided? Arrange the financing</h3>
           <ol>
             <li>
               Run its exact upfront costs and instalment in the <Link href="/calculator">calculator</Link>.
@@ -667,8 +1000,9 @@ export function FourSteps() {
 
       <div className="fs-foot">
         <p>
-          From Sean&apos;s videos, mainly 4 Things To Do Before Owning A Property (2017) and How To Calculate Your Loan
-          Eligibility (2022). Banks set their own DSR limits and margins, so treat these as a first check, not an
+          From Sean&apos;s videos, mainly Sean&apos;s 4 Basics (2020), 4 Things To Do Before Owning A Property (2017),
+          How To Calculate Your Loan Eligibility (2022) and Asking Sean #035: Make Informed Decisions, and from his
+          Instagram posts on median prices, rental plans and the worst case. Banks set their own DSR limits and margins, so treat these as a first check, not an
           approval. Everything you enter stays in this browser.
         </p>
         <button type="button" className="fs-clear" onClick={clearFourSteps}>
