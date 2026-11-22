@@ -95,20 +95,19 @@ export async function ask(
    * When the router picked only left-out articles, its related picks stand in.
    */
   exclude: string[] = [],
+  /**
+   * Whether a short judge call makes Sean's first decision before the answer. Off for
+   * the public site: the first version (judge without the episodes) helped new
+   * questions a little but hurt ones with a matching episode (eval, 2026-11-23). The
+   * held-out eval switches it on to test the version that reads the matched episodes.
+   */
+  withJudge = false,
 ): Promise<AskResult> {
   const checked = checkQuestion(raw);
   if ("reason" in checked) return { status: "rejected", reason: checked.reason };
 
   const startedAt = Date.now();
-  // The judge needs only the question and the asker, so it runs alongside the router.
-  // Follow-ups skip it: the first answer already made the call.
-  const [routed, judgement] = await Promise.all([
-    route(checked.question, knowledge.catalog, followUp, situation),
-    followUp ? Promise.resolve(null) : judge(checked.question, situation),
-  ]);
-  const routeMs = Date.now() - startedAt;
-  const decided = judgement?.call ? { call: judgement.call, why: judgement.why } : undefined;
-  const firstUsage = judgement ? addUsage(routed.usage, judgement.usage) : routed.usage;
+  const routed = await route(checked.question, knowledge.catalog, followUp, situation);
   const lookup = (ids: string[]) =>
     ids.map((id) => knowledge.articles.get(id)).filter((article): article is Article => Boolean(article));
   const kept = (ids: string[]) => ids.filter((id) => !exclude.includes(id));
@@ -120,9 +119,17 @@ export async function ask(
   }
 
   if (sources.length === 0) {
+    const routeMs = Date.now() - startedAt;
     const timings = { routeMs, answerMs: 0, totalMs: routeMs };
-    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: firstUsage, timings };
+    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: routed.usage, timings };
   }
+
+  // The judge reads the matched episodes, so it runs after the router. Follow-ups skip
+  // it: the first answer already made the call.
+  const judgement = withJudge && !followUp ? await judge(checked.question, situation, sources) : null;
+  const routeMs = Date.now() - startedAt;
+  const decided = judgement?.call ? { call: judgement.call, why: judgement.why } : undefined;
+  const firstUsage = judgement ? addUsage(routed.usage, judgement.usage) : routed.usage;
 
   hooks.onRouted?.(sources, related);
   const answerStart = Date.now();
