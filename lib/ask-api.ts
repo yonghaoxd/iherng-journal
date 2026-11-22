@@ -204,10 +204,11 @@ export function splitDraft(text: string): { tldr: string; body: string } {
   return { tldr: '', body: body(text) };
 }
 
-export const FEED_PAGE = 20;
+/** The home page shows only the top few questions. */
+export const FEED_PAGE = 4;
 
-export const fetchFeed = (sort: 'recent' | 'popular', offset = 0) =>
-  request<AskFeedPage>(`/api/questions?v=2&sort=${sort}&limit=${FEED_PAGE}&offset=${offset}`);
+export const fetchFeed = (sort: 'recent' | 'popular') =>
+  request<AskFeedPage>(`/api/questions?v=2&sort=${sort}&limit=${FEED_PAGE}`);
 
 /** One helpful vote per visitor; the server keys it on a hashed IP. */
 export const voteQuestion = (id: string, on: boolean) =>

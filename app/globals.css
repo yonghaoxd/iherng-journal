@@ -5410,35 +5410,10 @@ p {
 .askfeed-question:focus-visible,
 .askfeed-expand:focus-visible,
 .askfeed-others button:focus-visible,
-.askfeed-vote:focus-visible,
-.askfeed-more:focus-visible {
+.askfeed-vote:focus-visible {
   outline: 2px solid var(--accent-terracotta);
   outline-offset: 2px;
   border-radius: 6px;
-}
-
-.askfeed-more-row {
-  padding: 18px 0;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.askfeed-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--accent-text);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.askfeed-more:disabled {
-  color: var(--text-subtle);
-  cursor: default;
 }
 
 .askfeed-sources {
