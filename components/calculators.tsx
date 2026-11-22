@@ -4,6 +4,7 @@ import { useMemo, useState, useSyncExternalStore } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { computePurchase, formatMYR, RATES_REVIEWED, repaymentSchedule } from '@/lib/calculator';
 import { computeRental } from '@/lib/rental';
+import { NumericInput } from '@/components/numeric-input';
 
 type Mode = 'buy' | 'rent';
 
@@ -56,18 +57,11 @@ function NumberField({
       </div>
       <div className={`calcx-input ${prefix ? 'has-prefix' : ''} ${suffix ? 'has-suffix' : ''}`}>
         {prefix && <span className="calcx-affix prefix">{prefix}</span>}
-        <input
+        <NumericInput
           id={id}
-          type="number"
-          inputMode="decimal"
+          decimal={step % 1 !== 0}
           value={Number.isFinite(value) ? value : ''}
-          min={min}
-          max={max}
-          step={step}
-          onChange={(event) => {
-            const next = Number.parseFloat(event.target.value);
-            onChange(Number.isNaN(next) ? min : clamp(next));
-          }}
+          onChange={(next) => onChange(next === '' ? min : clamp(next))}
         />
         {suffix && <span className="calcx-affix suffix">{suffix}</span>}
       </div>

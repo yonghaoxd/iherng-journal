@@ -4,6 +4,7 @@ import { useState, type SyntheticEvent } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, Check, Info, Plus, Star, X } from 'lucide-react';
 import { formatMYR } from '@/lib/calculator';
+import { NumericInput } from '@/components/numeric-input';
 import {
   CHANNELS,
   FURNISHING,
@@ -182,7 +183,6 @@ function MoneyInput({
   id,
   value,
   onChange,
-  step,
   placeholder,
   suffix,
   small = false,
@@ -190,7 +190,6 @@ function MoneyInput({
   id: string;
   value: number | '';
   onChange: (value: number | '') => void;
-  step: number;
   placeholder?: string;
   suffix?: string;
   small?: boolean;
@@ -198,19 +197,7 @@ function MoneyInput({
   return (
     <span className={`fs-input has-prefix ${suffix ? 'has-suffix' : ''} ${small ? 'small' : ''}`}>
       <span className="fs-affix prefix">RM</span>
-      <input
-        id={id}
-        type="number"
-        inputMode="numeric"
-        min={0}
-        step={step}
-        placeholder={placeholder}
-        value={value}
-        onChange={(event) => {
-          const raw = event.target.value;
-          onChange(raw === '' ? '' : Math.max(0, Number(raw) || 0));
-        }}
-      />
+      <NumericInput id={id} placeholder={placeholder} value={value} onChange={onChange} />
       {suffix && <span className="fs-affix suffix">{suffix}</span>}
     </span>
   );
@@ -383,25 +370,22 @@ export function FourSteps() {
         <div className="fs-fields">
           <label className="fs-field" htmlFor="fs-income">
             <span className="fs-label">Gross monthly income</span>
-            <MoneyInput id="fs-income" value={state.income} onChange={numberField('income')} step={100} />
+            <MoneyInput id="fs-income" value={state.income} onChange={numberField('income')} />
           </label>
           <label className="fs-field" htmlFor="fs-debts">
             <span className="fs-label">Existing monthly repayments</span>
-            <MoneyInput id="fs-debts" value={state.debts} onChange={numberField('debts')} step={50} />
+            <MoneyInput id="fs-debts" value={state.debts} onChange={numberField('debts')} />
             <span className="fs-hint">Car, PTPTN, personal loans, 5% of card balances</span>
           </label>
           <label className="fs-field" htmlFor="fs-age">
             <span className="fs-label">Your age</span>
             <span className="fs-input">
-              <input
+              <NumericInput
                 id="fs-age"
-                type="number"
-                inputMode="numeric"
-                min={18}
-                max={70}
-                step={1}
                 value={state.age}
-                onChange={(event) => update({ age: Math.max(0, Number(event.target.value) || 0) })}
+                onChange={(age) => update({ age: age === '' ? 0 : age })}
+                // Banks lend from 18; past 70 there is no tenure left.
+                onBlur={() => update((current) => ({ age: Math.min(70, Math.max(18, current.age)) }))}
               />
             </span>
             <span className="fs-hint">Loans usually end by about age 70</span>
@@ -591,7 +575,6 @@ export function FourSteps() {
                 id="fs-add-price"
                 value={draft.price}
                 onChange={(price) => setDraft({ ...draft, price })}
-                step={1000}
                 placeholder="350,000"
               />
             </label>
@@ -601,7 +584,6 @@ export function FourSteps() {
                 id="fs-add-rent"
                 value={draft.rent}
                 onChange={(rent) => setDraft({ ...draft, rent })}
-                step={50}
                 placeholder="1,400"
                 suffix="/mo"
               />
@@ -697,7 +679,6 @@ export function FourSteps() {
                     id="fs-median"
                     value={pick.median ?? ''}
                     onChange={(value) => setViewing(pick.id, { median: value === '' || value === 0 ? null : value })}
-                    step={1000}
                     placeholder="From transacted prices"
                     small
                   />
@@ -708,7 +689,6 @@ export function FourSteps() {
                     id="fs-maint"
                     value={pick.maint || ''}
                     onChange={(value) => setViewing(pick.id, { maint: value === '' ? 0 : value })}
-                    step={10}
                     placeholder="0"
                     suffix="/mo"
                     small
@@ -776,7 +756,6 @@ export function FourSteps() {
                             id={`fs-plan-${plan.key}`}
                             value={rent || ''}
                             onChange={(value) => setViewing(pick.id, { [plan.key]: value === '' ? 0 : value })}
-                            step={50}
                             placeholder="0"
                             suffix="/mo"
                             small
@@ -823,23 +802,16 @@ export function FourSteps() {
                     id="fs-savings"
                     value={state.savings}
                     onChange={(value) => update({ savings: value === '' ? 0 : value })}
-                    step={1000}
                     small
                   />
                 </label>
                 <label className="fs-field" htmlFor="fs-empty">
                   <span className="fs-hint">{isInvest ? 'Months without a tenant' : 'Months without income'}</span>
                   <span className="fs-input small">
-                    <input
+                    <NumericInput
                       id="fs-empty"
-                      type="number"
-                      inputMode="numeric"
-                      min={0}
-                      max={24}
                       value={state.emptyMonths}
-                      onChange={(event) =>
-                        update({ emptyMonths: Math.min(24, Math.max(0, Math.round(Number(event.target.value) || 0))) })
-                      }
+                      onChange={(months) => update({ emptyMonths: Math.min(24, months === '' ? 0 : months) })}
                     />
                   </span>
                 </label>
@@ -847,16 +819,10 @@ export function FourSteps() {
                   <label className="fs-field" htmlFor="fs-drop">
                     <span className="fs-hint">Rent falls by (%)</span>
                     <span className="fs-input small">
-                      <input
+                      <NumericInput
                         id="fs-drop"
-                        type="number"
-                        inputMode="numeric"
-                        min={0}
-                        max={50}
                         value={state.rentDrop}
-                        onChange={(event) =>
-                          update({ rentDrop: Math.min(50, Math.max(0, Math.round(Number(event.target.value) || 0))) })
-                        }
+                        onChange={(drop) => update({ rentDrop: Math.min(50, drop === '' ? 0 : drop) })}
                       />
                     </span>
                   </label>
