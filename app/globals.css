@@ -2935,96 +2935,42 @@ p {
   gap: 12px;
 }
 
-/* Site Footer */
+/* Site Footer: one line, after ask.lizheng.ai */
 .site-footer {
-  background: var(--bg-muted);
-  border-top: 1px solid var(--border-color);
-  padding: 64px 0 48px;
+  border-top: 1px solid var(--border-subtle);
+  padding: 22px 0 28px;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
-}
-
-.footer-col-main .wordmark-name {
-  font-size: 30px;
-}
-
-.footer-tagline {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-muted);
-  margin: 16px 0 20px;
-  max-width: 360px;
-}
-
-.footer-badges {
+.site-footer-row {
   display: flex;
-  gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
   flex-wrap: wrap;
 }
 
-.badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.footer-col-links h4, .footer-col-about h4 {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--text-main);
-  margin-bottom: 16px;
-}
-
-.footer-col-links ul {
-  list-style: none;
-  padding: 0;
+.site-footer-row p {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-col-links a {
-  font-size: 14px;
-  color: var(--text-muted);
-}
-
-.footer-col-links a:hover {
-  color: var(--accent-terracotta);
-}
-
-.footer-col-about p {
   font-size: 13px;
   line-height: 1.6;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.footer-copyright {
-  font-size: 12px;
   color: var(--text-subtle);
-  margin-top: 16px;
 }
 
-@media (max-width: 860px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+.site-footer-row nav {
+  display: flex;
+  gap: 22px;
+}
+
+.site-footer-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.site-footer-row a:hover {
+  color: var(--accent-text);
 }
 
 /* ── Sean's Take 3 on 3 ──────────────────────────────────────── */

@@ -2,24 +2,15 @@ import { ArrowUpRight } from 'lucide-react';
 import { AskSeanChat } from '@/components/ask-sean-chat';
 import { AskFeed } from '@/components/ask-feed';
 import { AIherngName } from '@/components/aiherng-name';
-import { articles, seriesCount } from '@/lib/articles';
+import { knowledgeArticles, seriesCount } from '@/lib/articles';
 
 /** "37:13" or "1:02:05" → seconds. */
 function seconds(duration: string | undefined): number {
   return (duration ?? '').split(':').reduce((total, part) => total * 60 + (Number(part) || 0), 0);
 }
 
-// What AIherng answers from: the Asking Sean episodes and buyer guides in its knowledge base.
-const knowledge = articles.filter((article) => article.series === 'iherng-podcast' || article.series === 'buyer-guides');
-const episodeCount = knowledge.length;
-const hours = Math.round(knowledge.reduce((total, article) => total + seconds(article.duration), 0) / 3600);
-const newest = knowledge.reduce((latest, article) => (article.date > latest ? article.date : latest), '');
-const newestLabel = new Date(`${newest}T12:00:00Z`).toLocaleDateString('en-GB', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-  timeZone: 'UTC',
-});
+const episodeCount = knowledgeArticles.length;
+const hours = Math.round(knowledgeArticles.reduce((total, article) => total + seconds(article.duration), 0) / 3600);
 
 /**
  * The home page is AIherng and nothing else, after ask.lizheng.ai: the question box,
@@ -85,10 +76,6 @@ export default function Home() {
                 Watch Sean&apos;s channel on YouTube <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             </div>
-            <p className="sources-note">
-              Answers are written by AI from Sean&apos;s public videos, not by Sean himself. Newest episode in the
-              knowledge base: {newestLabel}.
-            </p>
           </div>
         </section>
       </div>

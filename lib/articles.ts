@@ -684,3 +684,13 @@ export function readingTime(article: Article) {
   const text = [article.excerpt, ...bodyTextFor(article), article.sourceNote].join(' ');
   return Math.max(1, Math.ceil(text.split(/\s+/).length / 200));
 }
+
+/** What AIherng answers from: the Asking Sean episodes and buyer guides in its knowledge base. */
+export const knowledgeArticles = articles.filter(
+  (article) => article.series === 'iherng-podcast' || article.series === 'buyer-guides',
+);
+
+/** The newest episode in the knowledge base, as "21 November 2026". */
+export const knowledgeUpdated = new Date(
+  `${knowledgeArticles.reduce((latest, article) => (article.date > latest ? article.date : latest), '')}T12:00:00Z`,
+).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });

@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowUpRight, Building2, MessageCircleQuestion } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import './globals.css';
 import { JournalNav } from '@/components/journal-nav';
-import { AIherngName } from '@/components/aiherng-name';
-import { pageArticles, seriesCount } from '@/lib/articles';
+import { knowledgeUpdated, pageArticles } from '@/lib/articles';
 import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -151,78 +150,19 @@ export default function RootLayout({
 
         {/* Rich Editorial Footer */}
         <footer className="site-footer">
-          <div className="container footer-content">
-            <div className="footer-col-main">
-              <Link className="wordmark" href="/">
-                <span className="wordmark-name">iherng</span>
-                <span className="wordmark-dot">.</span>
-                <small className="wordmark-tag">JOURNAL</small>
-              </Link>
-              <p className="footer-tagline">
-                Sean Tan (@iherng) runs a YouTube channel about buying property in Malaysia: he
-                tours projects, breaks down loans and costs, and works through viewers&apos; own
-                numbers. iherng Journal is an independent fan project, not made by Sean, and every
-                AIherng answer links back to the original episode.
-              </p>
-              <div className="footer-badges">
-                <span className="badge-pill">
-                  <MessageCircleQuestion size={12} />{' '}
-                  {seriesCount('iherng-podcast') + seriesCount('buyer-guides')} episodes behind AIherng
-                </span>
-                <span className="badge-pill">
-                  <Building2 size={12} /> {seriesCount('property-reviews')} Property Reviews
-                </span>
-              </div>
-            </div>
-
-            <div className="footer-col-links">
-              <h4>Explore</h4>
-              <ul>
-                <li>
-                  <Link href="/">
-                    Ask <AIherngName />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#feed">What others are asking</Link>
-                </li>
-                <li>
-                  <Link href="/four-steps">Sean&apos;s 4 Steps</Link>
-                </li>
-                <li>
-                  <Link href="/property-reviews">Property Reviews</Link>
-                </li>
-                <li>
-                  <Link href="/calculator">Calculators</Link>
-                </li>
-                <li>
-                  {/* A generated static file, not a route: next/link would
-                      try to client-navigate to it. */}
-                  {/* oxlint-disable-next-line no-html-link-for-pages */}
-                  <a href="/feed.xml">RSS Feed</a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/@iherng"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Watch @iherng on YouTube ↗
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="footer-col-about">
-              <h4>Editorial Transparency</h4>
-              <p>
-                All video content, audio, and trademarks belong to Sean Tan / iherng.
-                Articles are published under fair commentary &amp; education principles.
-              </p>
-              <p className="footer-copyright">
-                Independent Editorial Prototype · 2026
-              </p>
-            </div>
+          <div className="container site-footer-row">
+            <p>
+              Answers are written by AI from Sean Tan&apos;s public videos, not by Sean himself. Updated{' '}
+              {knowledgeUpdated}.
+            </p>
+            <nav aria-label="Footer">
+              {/* A generated static file, not a route: next/link would try to client-navigate to it. */}
+              {/* oxlint-disable-next-line no-html-link-for-pages */}
+              <a href="/feed.xml">RSS</a>
+              <a href="https://www.youtube.com/@iherng" target="_blank" rel="noreferrer">
+                @iherng on YouTube <ArrowUpRight size={12} aria-hidden="true" />
+              </a>
+            </nav>
           </div>
         </footer>
       </body>
