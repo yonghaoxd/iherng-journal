@@ -1,6 +1,7 @@
 import { chat, chatStream, type ChatRequest, type Usage } from "./deepseek";
 import { renderSituation, type FollowUp, type Situation } from "./router";
 import { SEAN_FRAMEWORK } from "./framework";
+import type { Call } from "./judge";
 import type { Article } from "./types";
 
 // A full answer runs about 400–700 Chinese characters (~700–1,100 tokens); the cap is headroom.
@@ -10,7 +11,7 @@ export const ANSWER_MAX_TOKENS = 1500;
  * Bump when the answer prompt changes how answers read. The API only reuses stored
  * answers written in the current style, so old-style answers are not served again.
  */
-export const ANSWER_STYLE = "sean-13";
+export const ANSWER_STYLE = "sean-14";
 
 /**
  * Rules Sean repeats across many episodes, written from the Journal's articles. They
@@ -149,6 +150,8 @@ export async function answer(
   situation?: Situation,
   /** Receives the raw reply as it is written, TL;DR line and [A1] markers included. */
   onDelta?: (text: string) => void,
+  /** Sean's first decision for this person, made by lib/judge.ts before this answer. */
+  decided?: { call: Call; why: string },
 ): Promise<AnswerResult> {
   const markers = new Map(articles.map((article, index) => [`A${index + 1}`, article]));
   const context = [...markers].map(([marker, article]) => renderArticle(article, marker)).join("\n\n");
@@ -157,10 +160,13 @@ export async function answer(
     : `Question: ${question}`;
   const personal = situation ? `<asker>\n${renderSituation(situation)}\n</asker>\n\n${PERSONAL}\n\n` : "";
   const language = LANGUAGE_RULE[languageOf(question)];
+  const call = decided
+    ? `Sean's call for this person, decided before this answer: ${decided.call}.${decided.why ? ` Deciding reason: ${decided.why}` : ""} Your TL;DR and first paragraph must make this call in your own words, and the reasoning and steps must serve it; never contradict it. The articles show how Sean reasoned for other viewers: use their reasoning and figures where they fit this call.\n\n`
+    : "";
 
   const request: ChatRequest = {
     system: SYSTEM,
-    user: `${context}\n\n${personal}${ask}\n\n${language} ${CITATION_REMINDER}`,
+    user: `${context}\n\n${personal}${call}${ask}\n\n${language} ${CITATION_REMINDER}`,
     maxTokens: ANSWER_MAX_TOKENS,
     temperature: 0.3,
   };

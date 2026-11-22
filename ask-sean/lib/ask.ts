@@ -1,5 +1,6 @@
 import { answer, type Citation } from "./answer";
 import { addUsage, type Usage } from "./deepseek";
+import { judge, type Call } from "./judge";
 import { route, type FollowUp, type Situation } from "./router";
 import type { Article, Knowledge } from "./types";
 
@@ -45,6 +46,8 @@ export type AskResult =
       usage: Usage;
       truncated: boolean;
       missingTldr: boolean;
+      /** Sean's first decision for this person, made before the answer; null when skipped or failed. */
+      call: Call | null;
     };
 
 export function checkQuestion(raw: string): { question: string } | { reason: string } {
@@ -97,8 +100,15 @@ export async function ask(
   if ("reason" in checked) return { status: "rejected", reason: checked.reason };
 
   const startedAt = Date.now();
-  const routed = await route(checked.question, knowledge.catalog, followUp, situation);
+  // The judge needs only the question and the asker, so it runs alongside the router.
+  // Follow-ups skip it: the first answer already made the call.
+  const [routed, judgement] = await Promise.all([
+    route(checked.question, knowledge.catalog, followUp, situation),
+    followUp ? Promise.resolve(null) : judge(checked.question, situation),
+  ]);
   const routeMs = Date.now() - startedAt;
+  const decided = judgement?.call ? { call: judgement.call, why: judgement.why } : undefined;
+  const firstUsage = judgement ? addUsage(routed.usage, judgement.usage) : routed.usage;
   const lookup = (ids: string[]) =>
     ids.map((id) => knowledge.articles.get(id)).filter((article): article is Article => Boolean(article));
   const kept = (ids: string[]) => ids.filter((id) => !exclude.includes(id));
@@ -111,7 +121,7 @@ export async function ask(
 
   if (sources.length === 0) {
     const timings = { routeMs, answerMs: 0, totalMs: routeMs };
-    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: routed.usage, timings };
+    return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: firstUsage, timings };
   }
 
   hooks.onRouted?.(sources, related);
@@ -128,6 +138,7 @@ export async function ask(
         firstTextMs ??= Date.now() - answerStart;
         onDelta(text);
       }),
+    decided,
   );
   const answerMs = Date.now() - answerStart;
   return {
@@ -137,8 +148,9 @@ export async function ask(
     body: result.body,
     citations: result.citations,
     related,
-    usage: addUsage(routed.usage, result.usage),
+    usage: addUsage(firstUsage, result.usage),
     truncated: result.truncated,
     missingTldr: result.missingTldr,
+    call: decided?.call ?? null,
   };
 }

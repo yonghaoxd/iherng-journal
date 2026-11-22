@@ -387,7 +387,7 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
           reused: false,
           private: true,
           // The held-out eval measures cost per answer; only its calls (with exclude) get token counts.
-          ...(exclude.length ? { usage: result.usage } : {}),
+          ...(exclude.length ? { usage: result.usage, call: result.status === "answered" ? result.call : null } : {}),
         },
       );
     }
