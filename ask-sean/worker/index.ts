@@ -247,6 +247,8 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
     question?: unknown;
     parentId?: unknown;
     situation?: unknown;
+    /** Article ids to leave out; private answers only, for the held-out eval. */
+    exclude?: unknown;
     previous?: unknown;
     stream?: unknown;
   } | null;
@@ -256,6 +258,10 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
   if ("reason" in situationCheck) return fail(request, env, 400, situationCheck.reason);
   // With a situation the answer is private: never reused, never stored, never in the feed.
   const situation = situationCheck.situation;
+  const exclude =
+    situation && Array.isArray(payload?.exclude)
+      ? payload.exclude.filter((id): id is string => typeof id === "string").slice(0, 3)
+      : [];
 
   let followUp: FollowUp | undefined;
   const parentId = !situation && typeof payload?.parentId === "string" ? payload.parentId : null;
@@ -325,7 +331,7 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
   const answerAndStore = async (hooks: AskHooks = {}) => {
     let result: Awaited<ReturnType<typeof ask>>;
     try {
-      result = await ask(checked.question, knowledge, followUp, situation, hooks);
+      result = await ask(checked.question, knowledge, followUp, situation, hooks, exclude);
     } catch (error) {
       // Logged without the situation, which may hold personal details.
       console.error("ask failed", error instanceof Error ? error.message : "unknown error");

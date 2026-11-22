@@ -86,6 +86,12 @@ export async function ask(
   followUp?: FollowUp,
   situation?: Situation,
   hooks: AskHooks = {},
+  /**
+   * Articles to leave out, for the held-out eval: a viewer's question is answered without
+   * the episode it came from, to see whether the rest of Sean's material leads to his answer.
+   * When the router picked only left-out articles, its related picks stand in.
+   */
+  exclude: string[] = [],
 ): Promise<AskResult> {
   const checked = checkQuestion(raw);
   if ("reason" in checked) return { status: "rejected", reason: checked.reason };
@@ -95,8 +101,13 @@ export async function ask(
   const routeMs = Date.now() - startedAt;
   const lookup = (ids: string[]) =>
     ids.map((id) => knowledge.articles.get(id)).filter((article): article is Article => Boolean(article));
-  const sources = lookup(routed.answer);
-  const related = lookup(routed.related);
+  const kept = (ids: string[]) => ids.filter((id) => !exclude.includes(id));
+  let sources = lookup(kept(routed.answer));
+  let related = lookup(kept(routed.related));
+  if (exclude.length && sources.length === 0 && routed.answer.length > 0) {
+    sources = related.slice(0, 2);
+    related = related.slice(2);
+  }
 
   if (sources.length === 0) {
     const timings = { routeMs, answerMs: 0, totalMs: routeMs };
