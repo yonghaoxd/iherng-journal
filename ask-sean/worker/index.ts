@@ -547,36 +547,16 @@ async function handleFeed(request: Request, env: Env, url: URL, ctx: ExecutionCo
   const columns = `id, question, question_norm, tldr, ask_count, last_asked_at, created_at, votes,
     COALESCE(group_id, id) AS grp`;
 
-  if (!popular) {
-    const { results } = await env.DB.prepare(
-      `SELECT ${columns},
-         (SELECT COALESCE(SUM(m.ask_count), 0) FROM questions m
-          WHERE COALESCE(m.group_id, m.id) = COALESCE(q.group_id, q.id)
-            AND m.status = 'answered' AND m.hidden = 0 AND m.parent_id IS NULL) AS group_total
-       FROM questions q WHERE ${FEED_WHERE}
-       ORDER BY last_asked_at DESC LIMIT ? OFFSET ?`,
-    )
-      .bind(limit, offset)
-      .all<FeedRow & { group_total: number }>();
-    return json(request, env, {
-      total,
-      items: results.map((row) => ({
-        id: row.id,
-        question: row.question,
-        tldr: row.tldr,
-        askCount: row.ask_count,
-        lastAskedAt: row.last_asked_at,
-        votes: row.votes,
-        similarCount: Math.max(0, row.group_total - 1),
-      })),
-    });
-  }
-
-  // Most asked: one item per group, ranked by how often the group was asked in all.
+  // Both lists show one item per group. Recent: the group's newest question, by when the group was
+  // last asked. Most asked: the group's most asked question, by how often the group was asked in all.
   const { results: groups } = await env.DB.prepare(
-    `SELECT COALESCE(group_id, id) AS grp, SUM(ask_count) AS asked, MAX(last_asked_at) AS last
-     FROM questions WHERE ${FEED_WHERE}
-     GROUP BY grp ORDER BY asked DESC, last DESC LIMIT ? OFFSET ?`,
+    popular
+      ? `SELECT COALESCE(group_id, id) AS grp, SUM(ask_count) AS asked, MAX(last_asked_at) AS last
+         FROM questions WHERE ${FEED_WHERE}
+         GROUP BY grp ORDER BY asked DESC, last DESC LIMIT ? OFFSET ?`
+      : `SELECT COALESCE(group_id, id) AS grp, SUM(ask_count) AS asked, MAX(last_asked_at) AS last
+         FROM questions WHERE ${FEED_WHERE}
+         GROUP BY grp ORDER BY last DESC LIMIT ? OFFSET ?`,
   )
     .bind(limit, offset)
     .all<{ grp: string; asked: number; last: string }>();
@@ -601,10 +581,12 @@ async function handleFeed(request: Request, env: Env, url: URL, ctx: ExecutionCo
   const items = groups.flatMap((group) => {
     const inGroup = members.filter((row) => row.grp === group.grp);
     if (!inGroup.length) return [];
-    // The question shown is the one asked most, then the most helpful, then the latest.
-    const [lead] = [...inGroup].sort(
-      (a, b) => b.ask_count - a.ask_count || b.votes - a.votes || b.last_asked_at.localeCompare(a.last_asked_at),
+    const [lead] = [...inGroup].sort((a, b) =>
+      popular
+        ? b.ask_count - a.ask_count || b.votes - a.votes || b.last_asked_at.localeCompare(a.last_asked_at)
+        : b.last_asked_at.localeCompare(a.last_asked_at),
     );
+    // Other wordings in the group, newest first. The same wording asked again is listed once.
     const seen = new Set([lead.question_norm]);
     const others = [
       ...inGroup.filter((row) => row.id !== lead.id).map((row) => ({ id: row.id, question: row.question, askedAt: row.created_at })),
@@ -616,8 +598,7 @@ async function handleFeed(request: Request, env: Env, url: URL, ctx: ExecutionCo
         if (seen.has(norm)) return false;
         seen.add(norm);
         return true;
-      })
-      .slice(0, SIMILAR_SHOWN);
+      });
     return [
       {
         id: lead.id,
@@ -626,8 +607,8 @@ async function handleFeed(request: Request, env: Env, url: URL, ctx: ExecutionCo
         askCount: group.asked,
         lastAskedAt: group.last,
         votes: lead.votes,
-        similarCount: Math.max(0, group.asked - 1),
-        similar: others,
+        similarCount: others.length,
+        similar: others.slice(0, SIMILAR_SHOWN),
       },
     ];
   });

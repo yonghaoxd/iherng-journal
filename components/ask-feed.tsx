@@ -190,12 +190,7 @@ export function AskFeed() {
                   {item.question}
                 </button>
                 {item.tldr && <p className="askfeed-tldr">{item.tldr}</p>}
-                {sort === 'recent' && item.similarCount > 0 && (
-                  <span className="askfeed-similar-count">
-                    {item.similarCount} similar question{item.similarCount === 1 ? '' : 's'}
-                  </span>
-                )}
-                {sort === 'popular' && similar.length > 0 && (
+                {similar.length > 0 && (
                   <>
                     <button
                       type="button"
@@ -203,7 +198,7 @@ export function AskFeed() {
                       aria-expanded={isOpen}
                       onClick={() => toggleOpen(item.id)}
                     >
-                      {similar.length} other similar question{similar.length === 1 ? '' : 's'}
+                      {item.similarCount} similar question{item.similarCount === 1 ? '' : 's'}
                       <ChevronDown size={14} aria-hidden="true" className={isOpen ? 'flipped' : ''} />
                     </button>
                     {isOpen && (
