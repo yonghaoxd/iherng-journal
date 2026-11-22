@@ -249,7 +249,7 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
     situation?: unknown;
     /** Article ids to leave out; private answers only, for the held-out eval. */
     exclude?: unknown;
-    /** Turns on the judge step being tested; honoured only on eval calls (with exclude). */
+    /** false turns the judge step off, to compare; honoured only on eval calls (with exclude). */
     judge?: unknown;
     previous?: unknown;
     stream?: unknown;
@@ -333,7 +333,7 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
   const answerAndStore = async (hooks: AskHooks = {}) => {
     let result: Awaited<ReturnType<typeof ask>>;
     try {
-      result = await ask(checked.question, knowledge, followUp, situation, hooks, exclude, exclude.length > 0 && payload?.judge === true);
+      result = await ask(checked.question, knowledge, followUp, situation, hooks, exclude, !(exclude.length > 0 && payload?.judge === false));
     } catch (error) {
       // Logged without the situation, which may hold personal details.
       console.error("ask failed", error instanceof Error ? error.message : "unknown error");

@@ -11,7 +11,7 @@ export const ANSWER_MAX_TOKENS = 1500;
  * Bump when the answer prompt changes how answers read. The API only reuses stored
  * answers written in the current style, so old-style answers are not served again.
  */
-export const ANSWER_STYLE = "sean-13";
+export const ANSWER_STYLE = "sean-15";
 
 /**
  * Rules Sean repeats across many episodes, written from the Journal's articles. They

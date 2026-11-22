@@ -96,12 +96,12 @@ export async function ask(
    */
   exclude: string[] = [],
   /**
-   * Whether a short judge call makes Sean's first decision before the answer. Off for
-   * the public site: the first version (judge without the episodes) helped new
-   * questions a little but hurt ones with a matching episode (eval, 2026-11-23). The
-   * held-out eval switches it on to test the version that reads the matched episodes.
+   * Whether a short judge call makes Sean's first decision before the answer. On since
+   * 2026-11-23 (sean-15): with the matched episodes it lifted held-out answers from 2.96
+   * to 3.20 without hurting ones whose episode matched. The eval can switch it off to
+   * compare.
    */
-  withJudge = false,
+  withJudge = true,
 ): Promise<AskResult> {
   const checked = checkQuestion(raw);
   if ("reason" in checked) return { status: "rejected", reason: checked.reason };
@@ -124,14 +124,15 @@ export async function ask(
     return { status: "out_of_scope", message: outOfScopeMessage(checked.question), related, usage: routed.usage, timings };
   }
 
+  // Show the source cards while the judge works.
+  hooks.onRouted?.(sources, related);
+
   // The judge reads the matched episodes, so it runs after the router. Follow-ups skip
   // it: the first answer already made the call.
   const judgement = withJudge && !followUp ? await judge(checked.question, situation, sources) : null;
   const routeMs = Date.now() - startedAt;
   const decided = judgement?.call ? { call: judgement.call, why: judgement.why } : undefined;
   const firstUsage = judgement ? addUsage(routed.usage, judgement.usage) : routed.usage;
-
-  hooks.onRouted?.(sources, related);
   const answerStart = Date.now();
   let firstTextMs: number | undefined;
   const onDelta = hooks.onDelta;
