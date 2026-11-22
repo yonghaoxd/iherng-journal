@@ -18,6 +18,10 @@ DAILY_BUDGET_USD = "1"
 #   DEEPSEEK_API_KEY  required
 #   IP_SALT           optional; salts the hashed IPs used for rate limits
 
+# Workers AI, for grouping similar questions in the public feed (lib/groups.ts).
+[ai]
+binding = "AI"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "ask-sean"

@@ -10,7 +10,6 @@ import {
   Link2,
   Loader2,
   Lock,
-  MessageCircleQuestion,
   Play,
   Plus,
   RotateCcw,
@@ -19,13 +18,11 @@ import {
 } from 'lucide-react';
 import {
   askSeanStream,
-  fetchFeed,
   fetchQuestion,
   MAX_QUESTION_CHARS,
   MAX_SITUATION_CHARS,
   splitDraft,
   type AskAnswer,
-  type AskFeedItem,
   type AskSituation,
   type AskSource,
 } from '@/lib/ask-api';
@@ -36,16 +33,6 @@ const EXAMPLES = [
   'Should I settle my housing loan early?',
   'New launch or subsale?',
 ];
-
-function timeAgo(iso: string): string {
-  const minutes = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
-  if (minutes < 1) return 'just now';
-  if (minutes < 60) return `${minutes} min ago`;
-  const hours = Math.round(minutes / 60);
-  if (hours < 24) return `${hours} h ago`;
-  const days = Math.round(hours / 24);
-  return `${days} day${days === 1 ? '' : 's'} ago`;
-}
 
 function formatDate(date: string): string {
   return new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', {
@@ -178,6 +165,9 @@ function SourceList({ sources, answerId }: { sources: AskSource[]; answerId: str
               <div className="askbot-source-info">
                 <span className="askbot-source-title">{source.videoTitle}</span>
                 <span className="askbot-source-date">iherng · {formatDate(source.date)}</span>
+                {source.answeredBy && (
+                  <span className="askbot-source-guest">Answered by {source.answeredBy}, a guest on the show</span>
+                )}
                 <a className="askbot-source-watch" href={source.videoUrl} target="_blank" rel="noreferrer">
                   <Play size={13} fill="currentColor" aria-hidden="true" /> Watch on YouTube
                 </a>
@@ -558,22 +548,19 @@ function useAskParam(): string {
   );
 }
 
-export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
+/** Fired by the feed (components/ask-feed.tsx) to open a question here. */
+export const OPEN_QUESTION_EVENT = 'aiherng:open';
+/** Fired here when a new public answer is stored, so the feed can show it. */
+export const ASKED_EVENT = 'aiherng:asked';
+
+export function AskSeanChat() {
   const [answer, setAnswer] = useState<AskAnswer | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
-  const [sort, setSort] = useState<'recent' | 'popular'>('recent');
-  const [feed, setFeed] = useState<AskFeedItem[] | null>(null);
   const answerRef = useRef<HTMLDivElement>(null);
   // An old article link redirects here as ?ask=<its question>: fill it in, never send it.
   const prefill = useAskParam().slice(0, MAX_QUESTION_CHARS);
-
-  const loadFeed = useCallback((order: 'recent' | 'popular') => {
-    fetchFeed(order)
-      .then(setFeed)
-      .catch(() => setFeed([]));
-  }, []);
 
   const [situationOn, setSituationOn] = useState(false);
   const [situation, setSituation] = useState<AskSituation>({});
@@ -623,9 +610,15 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
       .catch((problem: Error) => setError(problem.message));
   }, [show]);
 
+  // The feed below the chat asks for a question to be opened here.
   useEffect(() => {
-    if (showFeed) loadFeed(sort);
-  }, [sort, loadFeed, showFeed]);
+    const onOpen = (event: Event) => {
+      const id = (event as CustomEvent<string>).detail;
+      if (typeof id === 'string') void open(id);
+    };
+    window.addEventListener(OPEN_QUESTION_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_QUESTION_EVENT, onOpen);
+  }, [open]);
 
   /**
    * A new question, or a follow-up to `parent`. The answer streams in: a draft shows the
@@ -694,7 +687,7 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
         // The draft already scrolled into view; a reused answer arrives without one.
         show({ ...result, askedWith: result.private ? own : undefined, followUps: [] }, !draft);
       }
-      if (!result.private && showFeed) loadFeed(sort);
+      if (!result.private) window.dispatchEvent(new Event(ASKED_EVENT));
       return true;
     } catch (problem) {
       // Take back a half-written draft rather than leave it looking finished.
@@ -789,45 +782,6 @@ export function AskSeanChat({ showFeed = true }: { showFeed?: boolean }) {
         )}
       </div>
 
-      {showFeed && (
-        <section className="askbot-feed" aria-labelledby="askbot-feed-title">
-          <div className="askbot-feed-head">
-            <h2 id="askbot-feed-title">
-              <MessageCircleQuestion size={18} /> What others are asking
-            </h2>
-            <div className="askbot-tabs" role="tablist">
-              {(['recent', 'popular'] as const).map((order) => (
-                <button
-                  key={order}
-                  type="button"
-                  role="tab"
-                  aria-selected={sort === order}
-                  className={sort === order ? 'active' : ''}
-                  onClick={() => setSort(order)}
-                >
-                  {order === 'recent' ? 'Recent' : 'Most asked'}
-                </button>
-              ))}
-            </div>
-          </div>
-          {feed === null && <p className="askbot-hint">Loading…</p>}
-          {feed?.length === 0 && <p className="askbot-hint">No questions yet. Ask the first one.</p>}
-          <ul className="askbot-feed-list">
-            {feed?.map((item) => (
-              <li key={item.id}>
-                <button type="button" onClick={() => void open(item.id)}>
-                  <span className="askbot-feed-meta">
-                    {timeAgo(item.lastAskedAt)}
-                    {item.askCount > 1 && ` · asked ${item.askCount} times`}
-                  </span>
-                  <span className="askbot-feed-question">{item.question}</span>
-                  {item.tldr && <span className="askbot-feed-tldr">{item.tldr}</span>}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
     </div>
   );
 }

@@ -1,48 +1,34 @@
-import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Calculator, TrendingUp } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { AskSeanChat } from '@/components/ask-sean-chat';
+import { AskFeed } from '@/components/ask-feed';
 import { AIherngName } from '@/components/aiherng-name';
-import { ReviewCarousel, type ReviewCard } from '@/components/review-carousel';
-import { imageFor, pageArticles, seriesCount, stateFor } from '@/lib/articles';
+import { articles, seriesCount } from '@/lib/articles';
 
-/** "Teja: low-density living on Subang Jaya's busiest stretch." → name and line. */
-function splitTitle(title: string): { name: string; line: string } {
-  const at = title.indexOf(': ');
-  if (at === -1) return { name: title, line: '' };
-  const line = title.slice(at + 2);
-  return { name: title.slice(0, at), line: line.charAt(0).toUpperCase() + line.slice(1) };
+/** "37:13" or "1:02:05" → seconds. */
+function seconds(duration: string | undefined): number {
+  return (duration ?? '').split(':').reduce((total, part) => total * 60 + (Number(part) || 0), 0);
 }
 
-function monthOf(date: string): string {
-  return new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', {
-    month: 'short',
-    year: 'numeric',
-    timeZone: 'UTC',
-  });
-}
+// What AIherng answers from: the Asking Sean episodes and buyer guides in its knowledge base.
+const knowledge = articles.filter((article) => article.series === 'iherng-podcast' || article.series === 'buyer-guides');
+const episodeCount = knowledge.length;
+const hours = Math.round(knowledge.reduce((total, article) => total + seconds(article.duration), 0) / 3600);
+const newest = knowledge.reduce((latest, article) => (article.date > latest ? article.date : latest), '');
+const newestLabel = new Date(`${newest}T12:00:00Z`).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 
+/**
+ * The home page is AIherng and nothing else, after ask.lizheng.ai: the question box,
+ * what others are asking, and where the answers come from. Reviews, the 4 Steps and
+ * the calculators are one click away in the header.
+ */
 export default function Home() {
-  const latestReviews = [...pageArticles]
-    .filter((article) => article.series === 'property-reviews')
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 9)
-    .map((review): ReviewCard => {
-      const { name, line } = splitTitle(review.title);
-      const kind = 'propertyType' in review && typeof review.propertyType === 'string' ? review.propertyType : '';
-      return {
-        slug: review.slug,
-        image: imageFor(review),
-        duration: review.duration,
-        meta: [review.location ?? stateFor(review), kind].filter(Boolean).join(' · '),
-        name,
-        line,
-        month: monthOf(review.date),
-      };
-    });
-
   return (
     <main id="main" className="home-page home-ask">
-      {/* AIherng is the page: the question box comes first. */}
       <section className="home-hero" aria-labelledby="home-title">
         <div className="home-hero-inner">
           <h1 id="home-title" className="home-title">
@@ -54,67 +40,58 @@ export default function Home() {
             Buying, loans, hidden costs, renting out. Ask in your own words and get a straight
             answer, with the video it comes from.
           </p>
-          <AskSeanChat showFeed={false} />
+          <AskSeanChat />
         </div>
       </section>
 
-      <section className="container home-section home-reviews" aria-labelledby="home-reviews-title">
-        <div className="home-section-head">
-          <div>
-            <h2 id="home-reviews-title" className="home-section-title">
-              Property Reviews
-            </h2>
-            <p className="home-section-intro">
-              Sean walks through a project and says what he likes and what he would question.
+      <div className="container home-ask-sections">
+        <AskFeed />
+
+        <section className="askfeed askfeed-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title" className="askfeed-side-title">
+            Where the answers come from
+          </h2>
+          <div className="sources-body">
+            <div className="sources-stats">
+              <div>
+                <strong>
+                  {episodeCount} <span>episodes</span>
+                </strong>
+                <span>Asking Sean and buyer guides, 2017 to now</span>
+              </div>
+              <div>
+                <strong>
+                  {hours} <span>hours</span>
+                </strong>
+                <span>of Sean on video, read from the full captions</span>
+              </div>
+            </div>
+            <div className="sources-text">
+              <p>
+                <AIherngName /> only quotes Sean: his Asking Sean episodes, his buyer guides and the parts of
+                interviews where he is the one speaking.
+              </p>
+              <p>
+                When a guest answers, such as a mortgage banker or a lawyer, the source says so. A guest&apos;s view
+                is never passed off as Sean&apos;s.
+              </p>
+              <p className="small">
+                Right now: {seriesCount('iherng-podcast')} Asking Sean episodes and {seriesCount('buyer-guides')}{' '}
+                buyer guides, written up from their full English captions. Every quote in them is checked word for
+                word against the captions.
+              </p>
+              <p className="small">Every answer names its episodes and links to the video on YouTube.</p>
+              <a href="https://www.youtube.com/@iherng" target="_blank" rel="noreferrer">
+                Watch Sean&apos;s channel on YouTube <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+            </div>
+            <p className="sources-note">
+              Answers are written by AI from Sean&apos;s public videos, not by Sean himself. Newest episode in the
+              knowledge base: {newestLabel}.
             </p>
           </div>
-          <Link href="/property-reviews" className="home-more">
-            See all {seriesCount('property-reviews')} reviews <ArrowRight size={15} />
-          </Link>
-        </div>
-        <ReviewCarousel reviews={latestReviews} />
-      </section>
-
-      <section className="container home-section home-calcs" aria-labelledby="home-calc-title">
-        <div>
-          <h2 id="home-calc-title" className="home-section-title small">
-            Run the numbers
-          </h2>
-          <p className="home-section-intro">Two quick calculators, built on the figures Sean uses.</p>
-        </div>
-        <div className="home-calc-grid">
-          <Link href="/calculator" className="home-calc-card">
-            <span className="home-calc-top">
-              <span className="home-calc-icon">
-                <Calculator size={22} aria-hidden="true" />
-              </span>
-              <span className="home-calc-arrow" aria-hidden="true">
-                <ArrowUpRight size={18} />
-              </span>
-            </span>
-            <span className="home-calc-text">
-              <small>Buying</small>
-              <strong>Property cost calculator</strong>
-              <span>Down payment, legal fees and stamp duty: the cash you really need before the keys.</span>
-            </span>
-          </Link>
-          <Link href="/calculator?mode=rent" className="home-calc-card">
-            <span className="home-calc-top">
-              <span className="home-calc-icon">
-                <TrendingUp size={22} aria-hidden="true" />
-              </span>
-              <span className="home-calc-arrow" aria-hidden="true">
-                <ArrowUpRight size={18} />
-              </span>
-            </span>
-            <span className="home-calc-text">
-              <small>Renting out</small>
-              <strong>Rental yield calculator</strong>
-              <span>Does the rent cover the instalment, and what does the unit really return?</span>
-            </span>
-          </Link>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }

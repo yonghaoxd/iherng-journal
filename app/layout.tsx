@@ -184,7 +184,7 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ask">What others are asking</Link>
+                  <Link href="/#feed">What others are asking</Link>
                 </li>
                 <li>
                   <Link href="/four-steps">Sean&apos;s 4 Steps</Link>

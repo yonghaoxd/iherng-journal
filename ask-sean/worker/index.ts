@@ -10,13 +10,18 @@
  *                             "sources" (after routing), "delta" (text as it is written), then
  *                             "done" with the same object the JSON reply would hold, or "error".
  *   GET  /api/questions       ?sort=recent|popular&limit=20 → public feed of answered questions
+ *                             With v=2 (and optional offset): { total, items } where popular is
+ *                             one item per group of similar questions, with votes and the other
+ *                             wordings ("similar"); recent items carry votes and similarCount.
  *   GET  /api/questions/:id   one question with its sources and follow-ups
+ *   POST /api/questions/:id/vote  { on } → { votes, voted }: one helpful vote per visitor
  *   GET  /api/health
  */
 import bundleJson from "../knowledge/bundle.json";
 import { ANSWER_STYLE } from "../lib/answer";
 import { ask, checkQuestion, checkSituation, MAX_QUESTION_CHARS, type AskHooks } from "../lib/ask";
 import type { FollowUp } from "../lib/router";
+import { closestGroup, embed, encodeVector, type EmbeddingAi } from "../lib/groups";
 import { normalizeQuestion, REUSE_THRESHOLD, similarity } from "../lib/similar";
 import type { Article, Knowledge, KnowledgeBundle } from "../lib/types";
 
@@ -26,6 +31,8 @@ interface Env {
   DAILY_NEW_ANSWERS_PER_IP: string;
   DAILY_BUDGET_USD: string;
   IP_SALT?: string;
+  /** Workers AI, for grouping similar questions in the feed. Optional: without it nothing is grouped. */
+  AI?: EmbeddingAi;
 }
 
 interface QuestionRow {
@@ -56,6 +63,12 @@ const KB_VERSION = `${bundle.catalog.version}:${ANSWER_STYLE}`;
 /** How many recent questions to compare a new one against when looking for a reusable answer. */
 const REUSE_CANDIDATES = 500;
 const FEED_MAX = 50;
+/** How many recent questions a new one is compared with when looking for its group. */
+const GROUP_CANDIDATES = 400;
+/** Older questions without an embedding get one a few at a time, whenever the feed is read. */
+const BACKFILL_BATCH = 8;
+/** At most this many other wordings are listed under a popular question. */
+const SIMILAR_SHOWN = 8;
 
 // ---------------------------------------------------------------------------
 // Responses
@@ -179,6 +192,43 @@ async function findReusable(env: Env, norm: string): Promise<QuestionRow | null>
   return env.DB.prepare("SELECT * FROM questions WHERE id = ?").bind(best.id).first<QuestionRow>();
 }
 
+/** The visible, answered, top-level questions: the only ones the feed shows. */
+const FEED_WHERE = "status = 'answered' AND hidden = 0 AND parent_id IS NULL";
+
+/** Give each question an embedding and join the group of the closest earlier question, if any. */
+async function groupQuestions(env: Env, questions: { id: string; question: string }[]): Promise<void> {
+  const vectors = await embed(env.AI, questions.map((item) => item.question));
+  if (!vectors) return;
+  for (const [index, item] of questions.entries()) {
+    const { results } = await env.DB.prepare(
+      `SELECT COALESCE(group_id, id) AS grp, embedding FROM questions
+       WHERE ${FEED_WHERE} AND embedding IS NOT NULL AND id != ?
+       ORDER BY last_asked_at DESC LIMIT ?`,
+    )
+      .bind(item.id, GROUP_CANDIDATES)
+      .all<{ grp: string; embedding: string }>();
+    const group = closestGroup(
+      vectors[index],
+      results.map((row) => ({ group: row.grp, embedding: row.embedding })),
+    );
+    await env.DB.prepare("UPDATE questions SET embedding = ?, group_id = ? WHERE id = ?")
+      .bind(encodeVector(vectors[index]), group, item.id)
+      .run();
+  }
+}
+
+/** Questions answered before grouping existed, oldest first, a few per feed read. */
+async function backfillGroups(env: Env): Promise<void> {
+  if (!env.AI) return;
+  const { results } = await env.DB.prepare(
+    `SELECT id, question FROM questions WHERE ${FEED_WHERE} AND embedding IS NULL
+     ORDER BY created_at LIMIT ?`,
+  )
+    .bind(BACKFILL_BATCH)
+    .all<{ id: string; question: string }>();
+  if (results.length) await groupQuestions(env, results);
+}
+
 // ---------------------------------------------------------------------------
 // Routes
 
@@ -227,12 +277,17 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
   if (!followUp && !situation) {
     const reusable = await findReusable(env, norm);
     if (reusable) {
-      await env.DB.prepare(
-        `UPDATE questions SET ask_count = ask_count + 1,
-         last_asked_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ?`,
-      )
-        .bind(reusable.id)
-        .run();
+      await env.DB.batch([
+        env.DB.prepare(
+          `UPDATE questions SET ask_count = ask_count + 1,
+           last_asked_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ?`,
+        ).bind(reusable.id),
+        // The asker's own wording, listed under the question as a similar question.
+        env.DB.prepare("INSERT INTO question_asks (question_id, question) VALUES (?, ?)").bind(
+          reusable.id,
+          checked.question,
+        ),
+      ]);
       return json(request, env, present({ ...reusable, ask_count: reusable.ask_count + 1 }, { reused: true }));
     }
   }
@@ -372,6 +427,10 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
     ),
     ...rateLimitWrite,
   ]);
+  // Grouping waits for an embedding, so it runs after the reader has their answer.
+  if (row.status === "answered" && !row.parent_id) {
+    ctx.waitUntil(groupQuestions(env, [{ id: row.id, question: row.question }]).catch(() => undefined));
+  }
 
   return present(row, { reused: false });
   };
@@ -444,27 +503,156 @@ class AnswerError extends Error {
   }
 }
 
-async function handleFeed(request: Request, env: Env, url: URL): Promise<Response> {
+interface FeedRow {
+  id: string;
+  question: string;
+  question_norm: string;
+  tldr: string | null;
+  ask_count: number;
+  last_asked_at: string;
+  created_at: string;
+  votes: number;
+  grp: string;
+}
+
+async function handleFeed(request: Request, env: Env, url: URL, ctx: ExecutionContext): Promise<Response> {
   const popular = url.searchParams.get("sort") === "popular";
   const limit = Math.min(FEED_MAX, Math.max(1, Number(url.searchParams.get("limit")) || 20));
-  const { results } = await env.DB.prepare(
-    `SELECT id, question, tldr, ask_count, last_asked_at FROM questions
-     WHERE status = 'answered' AND hidden = 0 AND parent_id IS NULL
-     ORDER BY ${popular ? "ask_count DESC, last_asked_at DESC" : "last_asked_at DESC"} LIMIT ?`,
+
+  if (url.searchParams.get("v") !== "2") {
+    // The original shape, for pages loaded before the v2 feed shipped.
+    const { results } = await env.DB.prepare(
+      `SELECT id, question, tldr, ask_count, last_asked_at FROM questions
+       WHERE ${FEED_WHERE}
+       ORDER BY ${popular ? "ask_count DESC, last_asked_at DESC" : "last_asked_at DESC"} LIMIT ?`,
+    )
+      .bind(limit)
+      .all<Pick<QuestionRow, "id" | "question" | "tldr" | "ask_count" | "last_asked_at">>();
+    return json(
+      request,
+      env,
+      results.map((row) => ({
+        id: row.id,
+        question: row.question,
+        tldr: row.tldr,
+        askCount: row.ask_count,
+        lastAskedAt: row.last_asked_at,
+      })),
+    );
+  }
+
+  ctx.waitUntil(backfillGroups(env).catch(() => undefined));
+  const offset = Math.min(10_000, Math.max(0, Number(url.searchParams.get("offset")) || 0));
+  const total = (await env.DB.prepare(`SELECT COUNT(*) AS n FROM questions WHERE ${FEED_WHERE}`).first<number>("n")) ?? 0;
+  const columns = `id, question, question_norm, tldr, ask_count, last_asked_at, created_at, votes,
+    COALESCE(group_id, id) AS grp`;
+
+  if (!popular) {
+    const { results } = await env.DB.prepare(
+      `SELECT ${columns},
+         (SELECT COALESCE(SUM(m.ask_count), 0) FROM questions m
+          WHERE COALESCE(m.group_id, m.id) = COALESCE(q.group_id, q.id)
+            AND m.status = 'answered' AND m.hidden = 0 AND m.parent_id IS NULL) AS group_total
+       FROM questions q WHERE ${FEED_WHERE}
+       ORDER BY last_asked_at DESC LIMIT ? OFFSET ?`,
+    )
+      .bind(limit, offset)
+      .all<FeedRow & { group_total: number }>();
+    return json(request, env, {
+      total,
+      items: results.map((row) => ({
+        id: row.id,
+        question: row.question,
+        tldr: row.tldr,
+        askCount: row.ask_count,
+        lastAskedAt: row.last_asked_at,
+        votes: row.votes,
+        similarCount: Math.max(0, row.group_total - 1),
+      })),
+    });
+  }
+
+  // Most asked: one item per group, ranked by how often the group was asked in all.
+  const { results: groups } = await env.DB.prepare(
+    `SELECT COALESCE(group_id, id) AS grp, SUM(ask_count) AS asked, MAX(last_asked_at) AS last
+     FROM questions WHERE ${FEED_WHERE}
+     GROUP BY grp ORDER BY asked DESC, last DESC LIMIT ? OFFSET ?`,
   )
-    .bind(limit)
-    .all<Pick<QuestionRow, "id" | "question" | "tldr" | "ask_count" | "last_asked_at">>();
-  return json(
-    request,
-    env,
-    results.map((row) => ({
-      id: row.id,
-      question: row.question,
-      tldr: row.tldr,
-      askCount: row.ask_count,
-      lastAskedAt: row.last_asked_at,
-    })),
-  );
+    .bind(limit, offset)
+    .all<{ grp: string; asked: number; last: string }>();
+  if (!groups.length) return json(request, env, { total, items: [] });
+
+  const marks = groups.map(() => "?").join(", ");
+  const ids = groups.map((group) => group.grp);
+  const [{ results: members }, { results: asks }] = await Promise.all([
+    env.DB.prepare(`SELECT ${columns} FROM questions WHERE ${FEED_WHERE} AND COALESCE(group_id, id) IN (${marks})`)
+      .bind(...ids)
+      .all<FeedRow>(),
+    env.DB.prepare(
+      `SELECT a.question_id, a.question, a.asked_at, COALESCE(q.group_id, q.id) AS grp
+       FROM question_asks a JOIN questions q ON q.id = a.question_id
+       WHERE q.status = 'answered' AND q.hidden = 0 AND COALESCE(q.group_id, q.id) IN (${marks})
+       ORDER BY a.asked_at DESC LIMIT 500`,
+    )
+      .bind(...ids)
+      .all<{ question_id: string; question: string; asked_at: string; grp: string }>(),
+  ]);
+
+  const items = groups.flatMap((group) => {
+    const inGroup = members.filter((row) => row.grp === group.grp);
+    if (!inGroup.length) return [];
+    // The question shown is the one asked most, then the most helpful, then the latest.
+    const [lead] = [...inGroup].sort(
+      (a, b) => b.ask_count - a.ask_count || b.votes - a.votes || b.last_asked_at.localeCompare(a.last_asked_at),
+    );
+    const seen = new Set([lead.question_norm]);
+    const others = [
+      ...inGroup.filter((row) => row.id !== lead.id).map((row) => ({ id: row.id, question: row.question, askedAt: row.created_at })),
+      ...asks.filter((ask) => ask.grp === group.grp).map((ask) => ({ id: ask.question_id, question: ask.question, askedAt: ask.asked_at })),
+    ]
+      .sort((a, b) => b.askedAt.localeCompare(a.askedAt))
+      .filter((other) => {
+        const norm = normalizeQuestion(other.question);
+        if (seen.has(norm)) return false;
+        seen.add(norm);
+        return true;
+      })
+      .slice(0, SIMILAR_SHOWN);
+    return [
+      {
+        id: lead.id,
+        question: lead.question,
+        tldr: lead.tldr,
+        askCount: group.asked,
+        lastAskedAt: group.last,
+        votes: lead.votes,
+        similarCount: Math.max(0, group.asked - 1),
+        similar: others,
+      },
+    ];
+  });
+  return json(request, env, { total, items });
+}
+
+async function handleVote(request: Request, env: Env, id: string): Promise<Response> {
+  const payload = (await request.json().catch(() => null)) as { on?: unknown } | null;
+  if (typeof payload?.on !== "boolean") return fail(request, env, 400, "The vote could not be read.");
+  const exists = await env.DB.prepare(`SELECT 1 AS ok FROM questions WHERE id = ? AND ${FEED_WHERE}`).bind(id).first("ok");
+  if (!exists) return fail(request, env, 404, "That question could not be found.");
+  const voter = await hashIp(request, env);
+  if (payload.on) {
+    const added = await env.DB.prepare("INSERT OR IGNORE INTO votes (question_id, voter_hash) VALUES (?, ?)")
+      .bind(id, voter)
+      .run();
+    if (added.meta.changes) await env.DB.prepare("UPDATE questions SET votes = votes + 1 WHERE id = ?").bind(id).run();
+  } else {
+    const removed = await env.DB.prepare("DELETE FROM votes WHERE question_id = ? AND voter_hash = ?").bind(id, voter).run();
+    if (removed.meta.changes) {
+      await env.DB.prepare("UPDATE questions SET votes = MAX(votes - 1, 0) WHERE id = ?").bind(id).run();
+    }
+  }
+  const votes = (await env.DB.prepare("SELECT votes FROM questions WHERE id = ?").bind(id).first<number>("votes")) ?? 0;
+  return json(request, env, { votes, voted: payload.on });
 }
 
 async function handleQuestion(request: Request, env: Env, id: string): Promise<Response> {
@@ -485,10 +673,12 @@ export default {
     }
     const url = new URL(request.url);
     const questionMatch = url.pathname.match(/^\/api\/questions\/([\w-]+)$/);
+    const voteMatch = url.pathname.match(/^\/api\/questions\/([\w-]+)\/vote$/);
 
     try {
       if (request.method === "POST" && url.pathname === "/api/ask") return await handleAsk(request, env, ctx);
-      if (request.method === "GET" && url.pathname === "/api/questions") return await handleFeed(request, env, url);
+      if (request.method === "GET" && url.pathname === "/api/questions") return await handleFeed(request, env, url, ctx);
+      if (request.method === "POST" && voteMatch) return await handleVote(request, env, voteMatch[1]);
       if (request.method === "GET" && questionMatch) return await handleQuestion(request, env, questionMatch[1]);
       if (request.method === "GET" && url.pathname === "/api/health") {
         return json(request, env, { ok: true, kbVersion: KB_VERSION, articles: knowledge.articles.size });

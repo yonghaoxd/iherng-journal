@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import { MessageCircleQuestion } from 'lucide-react';
-import { AskSeanChat } from '@/components/ask-sean-chat';
+import { RedirectHome } from '@/components/redirect-home';
 import { AIherngName } from '@/components/aiherng-name';
-import { JsonLd } from '@/components/json-ld';
-import { DEFAULT_OG_IMAGE, SITE_NAME, breadcrumbJsonLd } from '@/lib/seo';
+import { DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo';
 
 const TITLE = 'AIherng — ask a Malaysian property question';
 const DESCRIPTION =
@@ -12,7 +10,8 @@ const DESCRIPTION =
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: '/ask' },
+  alternates: { canonical: '/' },
+  robots: { index: false, follow: true },
   openGraph: {
     type: 'website' as const,
     url: '/ask',
@@ -30,46 +29,14 @@ export const metadata = {
   },
 };
 
-/**
- * The same chat as the home page, plus the public feed of questions. Shared answer
- * links (/ask?q=<id>) from before the home page redesign keep working here.
- */
+/** AIherng now lives on the home page; this page only forwards old links there. */
 export default function AskPage() {
   return (
     <main id="main" className="container askbot-page">
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Home', path: '/' },
-          { name: 'AIherng', path: '/ask' },
-        ])}
-      />
-
-      <div className="breadcrumb">
-        <Link href="/">Home</Link>
-        <span className="slash">/</span>
-        <span className="active">
-          <AIherngName />
-        </span>
-      </div>
-
-      <section className="series-hero-banner">
-        <div className="hero-badge">
-          <MessageCircleQuestion size={13} />
-          <span>AI Q&amp;A · from Sean&apos;s episodes</span>
-        </div>
-        <h1 className="series-heading">
-          <AIherngName variant="serif" />
-          <span className="orange-dot">.</span>
-        </h1>
-        <div className="series-intro-row">
-          <p className="series-intro-text">
-            Ask any property question and get a straight answer worked out the way Sean does it,
-            with the episode it comes from. Below: what others have asked.
-          </p>
-        </div>
-      </section>
-
-      <AskSeanChat />
+      <RedirectHome />
+      <p className="askbot-hint">
+        <AIherngName /> has moved to the <Link href="/">home page</Link>.
+      </p>
     </main>
   );
 }

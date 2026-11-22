@@ -49,12 +49,31 @@ export interface AskSituation {
   tried?: string;
 }
 
+/** Another way the same question was asked, listed under a popular question. */
+export interface SimilarAsk {
+  /** The question that answers it (for a reused answer, the original question). */
+  id: string;
+  question: string;
+  askedAt: string;
+}
+
 export interface AskFeedItem {
   id: string;
   question: string;
   tldr: string | null;
+  /** Recent: times this question was asked. Most asked: times its whole group was asked. */
   askCount: number;
   lastAskedAt: string;
+  votes: number;
+  /** How many other times a question with the same meaning was asked. */
+  similarCount: number;
+  /** Most asked only: the other wordings, newest first. */
+  similar?: SimilarAsk[];
+}
+
+export interface AskFeedPage {
+  total: number;
+  items: AskFeedItem[];
 }
 
 /** Keep in step with ask-sean/lib/ask.ts, which enforces them. */
@@ -185,7 +204,13 @@ export function splitDraft(text: string): { tldr: string; body: string } {
   return { tldr: '', body: body(text) };
 }
 
-export const fetchFeed = (sort: 'recent' | 'popular') =>
-  request<AskFeedItem[]>(`/api/questions?sort=${sort}&limit=20`);
+export const FEED_PAGE = 20;
+
+export const fetchFeed = (sort: 'recent' | 'popular', offset = 0) =>
+  request<AskFeedPage>(`/api/questions?v=2&sort=${sort}&limit=${FEED_PAGE}&offset=${offset}`);
+
+/** One helpful vote per visitor; the server keys it on a hashed IP. */
+export const voteQuestion = (id: string, on: boolean) =>
+  request<{ votes: number; voted: boolean }>(`/api/questions/${encodeURIComponent(id)}/vote`, { on });
 
 export const fetchQuestion = (id: string) => request<AskAnswer>(`/api/questions/${encodeURIComponent(id)}`);
