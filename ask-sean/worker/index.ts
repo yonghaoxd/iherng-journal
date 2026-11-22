@@ -383,7 +383,12 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
           created_at: now,
           last_asked_at: now,
         },
-        { reused: false, private: true },
+        {
+          reused: false,
+          private: true,
+          // The held-out eval measures cost per answer; only its calls (with exclude) get token counts.
+          ...(exclude.length ? { usage: result.usage } : {}),
+        },
       );
     }
 
