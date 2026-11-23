@@ -581,9 +581,9 @@ export function AskSeanChat() {
   const show = useCallback(
     (next: AskAnswer, scroll = true) => {
       setAnswer(next);
-      // A private answer is not stored, so it has no link to share.
-      const page = window.location.pathname;
-      window.history.replaceState(null, '', next.private ? page : `${page}?q=${next.parentId ?? next.id}`);
+      // The address bar stays the plain page, so sharing the site never shares an answer
+      // by accident; only "Copy link to this answer" makes a link to one.
+      window.history.replaceState(null, '', window.location.pathname);
       if (scroll) scrollToAnswer();
     },
     [scrollToAnswer],
@@ -700,7 +700,9 @@ export function AskSeanChat() {
   };
 
   const copyLink = async () => {
-    await navigator.clipboard.writeText(window.location.href);
+    if (!answer || answer.private) return;
+    const link = `${window.location.origin}${window.location.pathname}?q=${answer.parentId ?? answer.id}`;
+    await navigator.clipboard.writeText(link);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
