@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ChevronDown, Triangle } from 'lucide-react';
-import { fetchFeed, voteQuestion, type AskFeedItem } from '@/lib/ask-api';
+import { fetchFeed, FEED_MORE, FEED_PAGE, voteQuestion, type AskFeedItem } from '@/lib/ask-api';
 import { ASKED_EVENT, OPEN_QUESTION_EVENT } from '@/components/ask-sean-chat';
 
 type Sort = 'recent' | 'popular';
@@ -53,6 +53,8 @@ export function AskFeed() {
   const [sort, setSort] = useState<Sort>('recent');
   const [items, setItems] = useState<AskFeedItem[] | null>(null);
   const [total, setTotal] = useState(0);
+  const [hasMore, setHasMore] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [fresh, setFresh] = useState(0);
   const [open, setOpen] = useState<Set<string>>(() => new Set());
   // Items only load after mount, so reading storage here cannot change the server render.
@@ -64,6 +66,7 @@ export function AskFeed() {
       .then((page) => {
         setItems(page.items);
         setTotal(page.total);
+        setHasMore(page.items.length === FEED_PAGE);
         setFresh(0);
         if (order === 'recent') newest.current = page.items[0]?.lastAskedAt ?? '';
       })
@@ -97,6 +100,18 @@ export function AskFeed() {
     }, POLL_MS);
     return () => window.clearInterval(timer);
   }, []);
+
+  const loadMore = () => {
+    if (!items) return;
+    setLoadingMore(true);
+    fetchFeed(sort, items.length, FEED_MORE)
+      .then((page) => {
+        setItems([...items, ...page.items.filter((item) => !items.some((shown) => shown.id === item.id))]);
+        setHasMore(page.items.length === FEED_MORE);
+      })
+      .catch(() => setHasMore(false))
+      .finally(() => setLoadingMore(false));
+  };
 
   const toggleVote = (item: AskFeedItem) => {
     const on = !voted.has(item.id);
@@ -215,6 +230,14 @@ export function AskFeed() {
             </article>
           );
         })}
+        {hasMore && (
+          <div className="askfeed-more-row">
+            <button type="button" className="askfeed-more" onClick={loadMore} disabled={loadingMore}>
+              {loadingMore ? 'Loading…' : 'See more questions'}
+              <ChevronDown size={15} aria-hidden="true" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
