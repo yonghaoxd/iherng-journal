@@ -50,6 +50,16 @@ import affordableHousing from '@/content/articles/affordable-housing-rumawip.jso
 import furnishingRentalUnit from '@/content/articles/furnishing-rental-unit-worth-it.json';
 import parentsBuyingForChildren from '@/content/articles/parents-buying-property-for-children.json';
 import buyingWithPartner from '@/content/articles/buying-property-with-partner.json';
+import theJalil from '@/content/articles/the-jalil-puncak-jalil.json';
+import hausOn15 from '@/content/articles/haus-on-15-subang-jaya.json';
+import soOxley from '@/content/articles/so-oxley-tower-kuala-lumpur.json';
+import seirasResidences from '@/content/articles/seiras-residences-batu-kawan.json';
+import kenshoResidence from '@/content/articles/kensho-residence-taman-danau-desa.json';
+import dorsettHartamas from '@/content/articles/dorsett-residence-sri-hartamas.json';
+import mapleResidences from '@/content/articles/the-maple-residences-taman-oug.json';
+import centrumCaspia from '@/content/articles/centrum-caspia-cameron-highlands.json';
+import ecoSun from '@/content/articles/eco-sun-batu-kawan.json';
+import isolaCoast from '@/content/articles/isola-coast-senibong-cove.json';
 import timurbay from '@/content/articles/timurbay-seafront-residence-kuantan.json';
 import teja from '@/content/articles/teja-subang-jaya.json';
 import selayangMulia from '@/content/articles/selayang-mulia-selayang.json';
@@ -240,6 +250,13 @@ import stateList from '@/content/states.json';
 
 export const articles = [
   // Property reviews, newest first; the homepage and series page keep this order.
+  theJalil,
+  hausOn15,
+  soOxley,
+  seirasResidences,
+  kenshoResidence,
+  dorsettHartamas,
+  mapleResidences,
   timurbay,
   teja,
   selayangMulia,
@@ -258,6 +275,7 @@ export const articles = [
   sunwayDhill,
   mAria,
   waltzResidence,
+  centrumCaspia,
   skylineKl,
   summerSuites,
   mAurora,
@@ -288,6 +306,8 @@ export const articles = [
   coreResidence,
   beldon,
   theHarmony,
+  ecoSun,
+  isolaCoast,
   allevia,
   avisa,
   metaResidences,

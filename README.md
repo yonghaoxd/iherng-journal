@@ -46,7 +46,7 @@ Design notes, trade-offs (catalog routing rather than vectors or BM25, answer re
 
 ## The Journal
 
-The site has fifty-three property-review articles, sixty-six Asking Sean podcast articles and seventy buyer guides.
+The site has sixty-three property-review articles, sixty-six Asking Sean podcast articles and seventy buyer guides.
 
 ## Run locally
 
