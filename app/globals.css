@@ -7265,6 +7265,17 @@ p {
   color: var(--text-body);
 }
 
+.fs-icon-btn.shown.on {
+  border-color: rgba(255, 107, 61, 0.45);
+  background: rgba(255, 107, 61, 0.12);
+  color: var(--accent-text);
+}
+
+.fs-table tbody tr.skipped th,
+.fs-table tbody tr.skipped td:not(.center) {
+  opacity: 0.45;
+}
+
 .fs-icon-btn.quiet {
   border-color: transparent;
 }

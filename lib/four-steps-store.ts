@@ -14,6 +14,8 @@ export interface Viewing {
   channel: Channel;
   price: number;
   rent: number;
+  /** Left out of Step 4's pick, though it still counts as viewed. */
+  skip: boolean;
   /** The median transacted price for similar units nearby, filled in at Step 4. */
   median: number | null;
   /** Monthly maintenance and sinking fund, filled in at Step 4. */
@@ -117,6 +119,7 @@ function sanitize(raw: unknown): FourStepsState {
         channel: CHANNELS.includes(item.channel as Channel) ? (item.channel as Channel) : 'Subsale',
         price: num(item.price, 0),
         rent: num(item.rent, 0),
+        skip: item.skip === true,
         median: typeof item.median === 'number' && item.median > 0 ? item.median : null,
         maint: num(item.maint, 0),
         room: num(item.room, 0),

@@ -2,7 +2,7 @@
 
 import { useState, type SyntheticEvent } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Check, Info, Plus, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, Eye, EyeOff, Info, Plus, X } from 'lucide-react';
 import { formatMYR } from '@/lib/calculator';
 import { NumericInput } from '@/components/numeric-input';
 import {
@@ -254,6 +254,7 @@ export function FourSteps() {
           channel: draft.channel,
           price,
           rent: Number(draft.rent) || 0,
+          skip: false,
           median: null,
           maint: 0,
           room: 0,
@@ -266,8 +267,9 @@ export function FourSteps() {
     setDraft({ ...EMPTY_DRAFT, channel: draft.channel });
   };
 
-  // Step 4: the one property picked from every viewing in Step 3, against Sean's checks.
-  const pick = viewings.find((viewing) => viewing.id === state.pick) ?? viewings[0] ?? null;
+  // Step 4: the one property picked from the viewings not hidden in Step 3, against Sean's checks.
+  const choices = viewings.filter((viewing) => !viewing.skip);
+  const pick = choices.find((viewing) => viewing.id === state.pick) ?? choices[0] ?? null;
   const decision = pick ? decide(pick, state, isInvest) : null;
 
   const readyCount = READINESS.filter((item) => state.readiness[item.id]).length;
@@ -284,7 +286,9 @@ export function FourSteps() {
       title: 'Decide',
       status: decision
         ? `${pick?.name} · ${decision.passed} of 2 checks`
-        : 'Add a property in Step 3',
+        : viewings.length
+          ? 'Show a property in Step 3'
+          : 'Add a property in Step 3',
       done: false,
     },
   ];
@@ -486,6 +490,7 @@ export function FourSteps() {
                   <th scope="col">Property</th>
                   <th scope="col">Price</th>
                   <th scope="col">Rent / instalment</th>
+                  <th scope="col">In Step 4</th>
                   <th scope="col">
                     <span className="sr-only">Remove</span>
                   </th>
@@ -493,7 +498,7 @@ export function FourSteps() {
               </thead>
               <tbody>
                 {viewings.map((viewing) => (
-                  <tr key={viewing.id}>
+                  <tr key={viewing.id} className={viewing.skip ? 'skipped' : undefined}>
                     <th scope="row">
                       <strong>{viewing.name}</strong>
                       <span>{viewing.channel}</span>
@@ -512,6 +517,18 @@ export function FourSteps() {
                         {Math.round(viewing.ratio * 100)}% covered · {viewing.pass ? 'passes' : 'fails'}
                         {isInvest ? ' the full-cover test' : ' the 85% rule'}
                       </span>
+                    </td>
+                    <td className="center">
+                      <button
+                        type="button"
+                        className={`fs-icon-btn shown ${viewing.skip ? '' : 'on'}`}
+                        aria-pressed={!viewing.skip}
+                        aria-label={`${viewing.skip ? 'Show in Step 4' : 'Hide from Step 4'}: ${viewing.name}`}
+                        title={viewing.skip ? 'Hidden from Step 4' : 'Shown in Step 4'}
+                        onClick={() => setViewing(viewing.id, { skip: !viewing.skip })}
+                      >
+                        {viewing.skip ? <EyeOff size={17} aria-hidden="true" /> : <Eye size={17} aria-hidden="true" />}
+                      </button>
                     </td>
                     <td className="center">
                       <button
@@ -632,7 +649,7 @@ export function FourSteps() {
                 </span>
               </div>
               <div className="fs-picks" role="radiogroup" aria-label="The property you are deciding on">
-                {viewings.map((viewing) => (
+                {choices.map((viewing) => (
                   <button
                     key={viewing.id}
                     type="button"
@@ -929,7 +946,11 @@ export function FourSteps() {
             </div>
           </>
         ) : (
-          <p className="fs-empty">Add the properties you view in Step 3, then pick the one here.</p>
+          <p className="fs-empty">
+            {viewings.length
+              ? 'Every property is hidden. Show one in Step 3 to pick it here.'
+              : 'Add the properties you view in Step 3, then pick the one here.'}
+          </p>
         )}
 
         <div className="fs-next">
