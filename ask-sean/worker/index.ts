@@ -13,7 +13,7 @@
  *                             With v=2 (and optional offset): { total, items } where popular is
  *                             one item per group of similar questions, with votes and the other
  *                             wordings ("similar"); recent items carry votes and similarCount.
- *   GET  /api/questions/:id   one question with its sources and follow-ups
+ *   GET  /api/questions/:id   one top-level question with its sources (never anyone's follow-ups)
  *   POST /api/questions/:id/vote  { on } → { votes, voted }: one helpful vote per visitor
  *   GET  /api/health
  */
@@ -296,7 +296,12 @@ async function handleAsk(request: Request, env: Env, ctx: ExecutionContext): Pro
           checked.question,
         ),
       ]);
-      return json(request, env, present({ ...reusable, ask_count: reusable.ask_count + 1 }, { reused: true }));
+      // The reader sees their own wording, never the earlier asker's.
+      return json(
+        request,
+        env,
+        present({ ...reusable, question: checked.question, ask_count: reusable.ask_count + 1 }, { reused: true }),
+      );
     }
   }
 
@@ -650,14 +655,13 @@ async function handleVote(request: Request, env: Env, id: string): Promise<Respo
 }
 
 async function handleQuestion(request: Request, env: Env, id: string): Promise<Response> {
-  const row = await env.DB.prepare("SELECT * FROM questions WHERE id = ? AND hidden = 0").bind(id).first<QuestionRow>();
-  if (!row) return fail(request, env, 404, "That question could not be found.");
-  const { results } = await env.DB.prepare(
-    "SELECT * FROM questions WHERE parent_id = ? AND hidden = 0 ORDER BY created_at",
-  )
+  // Only a top-level question opens by link. A follow-up belongs to the visitor who asked it,
+  // so it is never shown to anyone else, here or under its parent.
+  const row = await env.DB.prepare("SELECT * FROM questions WHERE id = ? AND parent_id IS NULL AND hidden = 0")
     .bind(id)
-    .all<QuestionRow>();
-  return json(request, env, present(row, { followUps: results.map((child) => present(child)) }));
+    .first<QuestionRow>();
+  if (!row) return fail(request, env, 404, "That question could not be found.");
+  return json(request, env, present(row, { followUps: [] }));
 }
 
 export default {
