@@ -14,7 +14,6 @@ export interface Viewing {
   channel: Channel;
   price: number;
   rent: number;
-  star: boolean;
   /** The median transacted price for similar units nearby, filled in at Step 4. */
   median: number | null;
   /** Monthly maintenance and sinking fund, filled in at Step 4. */
@@ -51,7 +50,7 @@ export interface FourStepsState {
   readiness: Readiness;
   pitch: PitchChecks;
   viewings: Viewing[];
-  /** The starred viewing picked at Step 4. */
+  /** The viewing picked at Step 4. */
   pick: number | null;
   /** Step 4's worst case: months without a tenant (or income), and how far rent falls. */
   emptyMonths: number;
@@ -118,7 +117,6 @@ function sanitize(raw: unknown): FourStepsState {
         channel: CHANNELS.includes(item.channel as Channel) ? (item.channel as Channel) : 'Subsale',
         price: num(item.price, 0),
         rent: num(item.rent, 0),
-        star: item.star === true,
         median: typeof item.median === 'number' && item.median > 0 ? item.median : null,
         maint: num(item.maint, 0),
         room: num(item.room, 0),

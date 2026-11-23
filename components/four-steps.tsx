@@ -2,7 +2,7 @@
 
 import { useState, type SyntheticEvent } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Check, Info, Plus, Star, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, Info, Plus, X } from 'lucide-react';
 import { formatMYR } from '@/lib/calculator';
 import { NumericInput } from '@/components/numeric-input';
 import {
@@ -254,7 +254,6 @@ export function FourSteps() {
           channel: draft.channel,
           price,
           rent: Number(draft.rent) || 0,
-          star: false,
           median: null,
           maint: 0,
           room: 0,
@@ -267,9 +266,8 @@ export function FourSteps() {
     setDraft({ ...EMPTY_DRAFT, channel: draft.channel });
   };
 
-  // Step 4: the one property picked from the starred viewings, against Sean's checks.
-  const starred = viewings.filter((viewing) => viewing.star);
-  const pick = starred.find((viewing) => viewing.id === state.pick) ?? starred[0] ?? null;
+  // Step 4: the one property picked from every viewing in Step 3, against Sean's checks.
+  const pick = viewings.find((viewing) => viewing.id === state.pick) ?? viewings[0] ?? null;
   const decision = pick ? decide(pick, state, isInvest) : null;
 
   const readyCount = READINESS.filter((item) => state.readiness[item.id]).length;
@@ -286,9 +284,7 @@ export function FourSteps() {
       title: 'Decide',
       status: decision
         ? `${pick?.name} · ${decision.passed} of 2 checks`
-        : starred.length
-          ? 'Pick the one'
-          : 'Star a property in Step 3',
+        : 'Add a property in Step 3',
       done: false,
     },
   ];
@@ -490,7 +486,6 @@ export function FourSteps() {
                   <th scope="col">Property</th>
                   <th scope="col">Price</th>
                   <th scope="col">Rent / instalment</th>
-                  <th scope="col">Shortlist</th>
                   <th scope="col">
                     <span className="sr-only">Remove</span>
                   </th>
@@ -521,17 +516,6 @@ export function FourSteps() {
                     <td className="center">
                       <button
                         type="button"
-                        className={`fs-icon-btn star ${viewing.star ? 'on' : ''}`}
-                        aria-pressed={viewing.star}
-                        aria-label={`${viewing.star ? 'Remove from shortlist' : 'Add to shortlist'}: ${viewing.name}`}
-                        onClick={() => setViewing(viewing.id, { star: !viewing.star })}
-                      >
-                        <Star size={18} fill={viewing.star ? 'currentColor' : 'none'} aria-hidden="true" />
-                      </button>
-                    </td>
-                    <td className="center">
-                      <button
-                        type="button"
                         className="fs-icon-btn quiet"
                         aria-label={`Remove ${viewing.name}`}
                         onClick={() => removeViewing(viewing.id)}
@@ -545,7 +529,7 @@ export function FourSteps() {
             </table>
           </div>
         ) : (
-          <p className="fs-empty">No viewings yet. Add each property you visit below, and star the ones you like.</p>
+          <p className="fs-empty">No viewings yet. Add each property you visit below.</p>
         )}
 
         <form className="fs-add" onSubmit={addViewing} aria-labelledby="fs-add-title">
@@ -644,11 +628,11 @@ export function FourSteps() {
               <div className="fs-block-head">
                 <h3>1. Pick the one</h3>
                 <span>
-                  From the properties you starred in Step 3 · buying for <strong>{isInvest ? 'investment' : 'own stay'}</strong>
+                  From the properties you viewed in Step 3 · buying for <strong>{isInvest ? 'investment' : 'own stay'}</strong>
                 </span>
               </div>
               <div className="fs-picks" role="radiogroup" aria-label="The property you are deciding on">
-                {starred.map((viewing) => (
+                {viewings.map((viewing) => (
                   <button
                     key={viewing.id}
                     type="button"
@@ -945,11 +929,7 @@ export function FourSteps() {
             </div>
           </>
         ) : (
-          <p className="fs-empty">
-            {viewings.length
-              ? 'Star the properties you like in Step 3, then pick the one here.'
-              : 'Add the properties you view in Step 3 and star the ones you like. Then pick the one here.'}
-          </p>
+          <p className="fs-empty">Add the properties you view in Step 3, then pick the one here.</p>
         )}
 
         <div className="fs-next">
