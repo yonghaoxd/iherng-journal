@@ -7,7 +7,6 @@ import {
   ArrowUpRight,
   ChevronDown,
   CornerDownRight,
-  Link2,
   Loader2,
   Lock,
   Play,
@@ -557,7 +556,6 @@ export function AskSeanChat() {
   const [answer, setAnswer] = useState<AskAnswer | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
-  const [copied, setCopied] = useState(false);
   const answerRef = useRef<HTMLDivElement>(null);
   // An old article link redirects here as ?ask=<its question>: fill it in, never send it.
   const prefill = useAskParam().slice(0, MAX_QUESTION_CHARS);
@@ -581,8 +579,7 @@ export function AskSeanChat() {
   const show = useCallback(
     (next: AskAnswer, scroll = true) => {
       setAnswer(next);
-      // The address bar stays the plain page, so sharing the site never shares an answer
-      // by accident; only "Copy link to this answer" makes a link to one.
+      // The address bar stays the plain page, so sharing the site never shares an answer.
       window.history.replaceState(null, '', window.location.pathname);
       if (scroll) scrollToAnswer();
     },
@@ -699,14 +696,6 @@ export function AskSeanChat() {
     }
   };
 
-  const copyLink = async () => {
-    if (!answer || answer.private) return;
-    const link = `${window.location.origin}${window.location.pathname}?q=${answer.parentId ?? answer.id}`;
-    await navigator.clipboard.writeText(link);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   const canFollowUp = answer?.status === 'answered' && !answer.parentId && !answer.followUps?.length;
 
   /** Back to the full form at the top, keeping whatever situation was entered. */
@@ -761,11 +750,6 @@ export function AskSeanChat() {
             <AnswerView answer={answer} />
             {answer.followUps?.map((followUp) => <AnswerView key={followUp.id} answer={followUp} nested />)}
             <div className="askbot-thread-actions">
-              {!answer.private && !answer.streaming && (
-                <button type="button" className="askbot-share" onClick={() => void copyLink()}>
-                  <Link2 size={14} /> {copied ? 'Link copied' : 'Copy link to this answer'}
-                </button>
-              )}
               <button type="button" className="askbot-share" onClick={startOver}>
                 <RotateCcw size={14} /> Ask a new question
               </button>
