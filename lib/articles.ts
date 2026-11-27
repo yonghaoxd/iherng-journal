@@ -265,6 +265,26 @@ import oldWalkUp from '@/content/articles/old-walk-up-apartment-in-penang.json';
 import uncleDownPayment from '@/content/articles/uncle-offers-down-payment-for-landed-home.json';
 import rentalIncomeAt60 from '@/content/articles/rental-income-for-retirement-at-60.json';
 import portfolioAt43 from '@/content/articles/rebuilding-a-portfolio-at-43.json';
+import quinnResidenceWangsaMaju from '@/content/articles/quinn-residence-wangsa-maju.json';
+import menaraAlphaWangsaMaju from '@/content/articles/menara-alpha-wangsa-maju.json';
+import suntrackHub2SalakTinggi from '@/content/articles/suntrack-hub-2-salak-tinggi.json';
+import pv22ResidencesSetapak from '@/content/articles/pv22-residences-setapak.json';
+import aliraMetroparkSubang from '@/content/articles/alira-metropark-subang.json';
+import sunwaySerene2PetalingJaya from '@/content/articles/sunway-serene-2-petaling-jaya.json';
+import honeydaleResidenceTamanImpianEmas from '@/content/articles/honeydale-residence-taman-impian-emas.json';
+import myPlaceSs15SubangJaya from '@/content/articles/my-place-ss15-subang-jaya.json';
+import bangsarHillParkBangsar from '@/content/articles/bangsar-hill-park-bangsar.json';
+import majesticResidenceKlCityCentre from '@/content/articles/majestic-residence-kl-city-centre.json';
+import edgewoodResidencesSkysanctuary from '@/content/articles/edgewood-residences-skysanctuary.json';
+import terraEcoArdence from '@/content/articles/terra-eco-ardence.json';
+import residensiAlamandaPantaiSentralPark from '@/content/articles/residensi-alamanda-pantai-sentral-park.json';
+import mArisaSentul from '@/content/articles/m-arisa-sentul.json';
+import dorchesterSriHartamas from '@/content/articles/dorchester-sri-hartamas.json';
+import residensiDutamasDahlia from '@/content/articles/residensi-dutamas-dahlia.json';
+import skyAwaniResidence5Sentul from '@/content/articles/sky-awani-residence-5-sentul.json';
+import viera15ShahAlam from '@/content/articles/viera-15-shah-alam.json';
+import anisaSereniaCity from '@/content/articles/anisa-serenia-city.json';
+import danauPuchong from '@/content/articles/danau-puchong.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -272,6 +292,7 @@ import stateList from '@/content/states.json';
 
 export const articles = [
   // Property reviews, newest first; the homepage and series page keep this order.
+  quinnResidenceWangsaMaju,
   theJalil,
   hausOn15,
   soOxley,
@@ -330,7 +351,26 @@ export const articles = [
   theHarmony,
   ecoSun,
   isolaCoast,
+  menaraAlphaWangsaMaju,
+  suntrackHub2SalakTinggi,
+  pv22ResidencesSetapak,
+  aliraMetroparkSubang,
+  sunwaySerene2PetalingJaya,
+  honeydaleResidenceTamanImpianEmas,
+  myPlaceSs15SubangJaya,
+  bangsarHillParkBangsar,
+  majesticResidenceKlCityCentre,
+  edgewoodResidencesSkysanctuary,
+  terraEcoArdence,
+  residensiAlamandaPantaiSentralPark,
+  mArisaSentul,
   allevia,
+  dorchesterSriHartamas,
+  residensiDutamasDahlia,
+  skyAwaniResidence5Sentul,
+  viera15ShahAlam,
+  anisaSereniaCity,
+  danauPuchong,
   avisa,
   metaResidences,
   manor,
