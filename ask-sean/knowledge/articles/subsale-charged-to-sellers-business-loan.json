@@ -1,0 +1,52 @@
+{
+  "id": "subsale-charged-to-sellers-business-loan",
+  "series": "iherng-podcast",
+  "title": "The seller's unit is pledged to his business loan. Should I still buy?",
+  "excerpt": "A 28-year-old found her ideal RM300,000 subsale near work in PJ, then learnt it was charged to the seller's business loan, with only a master title. Sean says walk away while the deposit is refundable.",
+  "date": "2023-02-08",
+  "tag": "Title and ownership risk",
+  "question": {
+    "asker": "From Miss V, a viewer who wrote in by email",
+    "context": "Miss V is 28 and has commuted an hour each way for almost ten years. She found a two-room, 800 sq ft apartment in PJ near her work for about RM300,000, and her loan was approved quickly. After she signed the booking form, the agent said the seller had pledged the unit for a business loan and might not get the original documents back from his bank. The building has only a master title, and she can still withdraw and get her deposit back.",
+    "text": "Should she sign the SPA and accept the risk that her bank won't release the loan, or give up the unit?"
+  },
+  "answer": {
+    "quote": "The greatest risk is not losing money, the greatest risk is losing ownership.",
+    "summary": "Walk away. If the documents can't be cleared, the bank may refuse to release her loan after she has already paid legal fees, and her ownership would stay uncertain. Better deals will come; she was lucky to find out before signing the SPA."
+  },
+  "reasons": [
+    {
+      "title": "Ownership is what the paperwork protects",
+      "body": "Malaysia's land system records exactly who owns each property, which is why a subsale transfer must be documented properly. A unit pledged to someone else's loan breaks that chain until the seller's bank releases it."
+    },
+    {
+      "title": "A master title adds a second risk",
+      "body": "Many older apartments still sit on one master title, so transfers need the developer's or landowner's power of attorney. Where no landowner remains, banks often refuse to finance at all."
+    },
+    {
+      "title": "New launches are more standardised",
+      "body": "Residential projects under the Housing Development Act use a standard SPA and billing schedule. Commercial titles, including SOHOs and serviced suites, are not standardised in the same way."
+    },
+    {
+      "title": "Paying for a deal that may collapse wastes money",
+      "body": "If the bank won't release her loan, the sale falls through, the legal fees are gone, and she would struggle to move on to the next unit."
+    }
+  ],
+  "actions": [
+    "Withdraw now while the deposit is still refundable.",
+    "Ask the agent to find other units in the same building, above or below, or nearby within the budget.",
+    "Before booking any subsale, ask whether the unit is charged to a bank and what title it has.",
+    "For new launches, check whether the project is under the Housing Development Act."
+  ],
+  "caveat": "If the seller's bank fully discharges the unit and clean documents are in hand before she signs, the risk largely disappears. Units bought for cash at auction are a different case.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #200. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in February 2023. This is general information, not legal advice; ask a lawyer about a specific title.",
+  "askingSeanEpisode": 200,
+  "video": {
+    "id": "o1Q1T34fats",
+    "title": "ASKING SEAN #200 | NOT WORTH THE RISK",
+    "duration": "11:20",
+    "url": "https://www.youtube.com/watch?v=o1Q1T34fats"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/subsale-charged-to-sellers-business-loan"
+}

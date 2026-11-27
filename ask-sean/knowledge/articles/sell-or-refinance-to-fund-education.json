@@ -1,0 +1,53 @@
+{
+  "id": "sell-or-refinance-to-fund-education",
+  "series": "iherng-podcast",
+  "title": "Should I sell or refinance a paid-off flat to fund my son's degree?",
+  "excerpt": "A divorced father of 50 wants to send his son to Australia and owns a paid-off leasehold flat in Ampang. Sean compares selling with refinancing only as much as the rent can repay.",
+  "date": "2023-03-02",
+  "tag": "Education funding",
+  "question": {
+    "asker": "From K, a viewer who wrote in by email",
+    "context": "K is 50, divorced, and his son is in Form 5. He lives in a corner terrace in Puchong that still has a loan, and owns a fully paid leasehold apartment in Ampang, bought in 2002 for RM142,000, with about 78 years left on the lease. It rents for about RM1,500 a month and similar units ask RM340,000 to RM380,000. He doesn't have the cash to send his son to Australia for a degree.",
+    "text": "Should he sell the apartment or refinance it to pay for his son's education?"
+  },
+  "answer": {
+    "quote": "I really believe that money is only valuable when it flows.",
+    "summary": "Talk to his son first, because that decides how much money he really needs. If he wants a clean break, sell and use the rest to cut his own housing loan. If he wants to keep the flat for retirement, refinance only up to the amount the RM1,500 rent can repay, so the flat still pays for itself."
+  },
+  "reasons": [
+    {
+      "title": "Selling is simple but slower for leasehold",
+      "body": "At about RM350,000, the money would arrive in six to nine months, since leasehold sales need two to three extra months for state consent."
+    },
+    {
+      "title": "A full refinance adds a new burden",
+      "body": "Banks usually lend about 80% of value. On a RM400,000 valuation that is about RM320,000, costing roughly RM1,900 a month over 20 years at 4%, about RM500 more than the rent. Refinancing about RM230,000 to RM250,000 keeps the instalment near the rent."
+    },
+    {
+      "title": "Leasehold value holds until about 60 years left",
+      "body": "Prices drop when banks become reluctant to lend on short leases, but rent barely changes. A paid-off flat bringing RM18,000 a year is useful in retirement, especially for someone without a business."
+    },
+    {
+      "title": "A foreign degree may not be needed",
+      "body": "Sean, educated entirely in Malaysia, saw starting salaries differ by only a few hundred ringgit, and after three to five years performance matters more. A twinning or one-year exchange programme, or a scholarship, could cost far less."
+    }
+  ],
+  "actions": [
+    "Ask his son what he actually wants, and whether a local degree, twinning or exchange would do.",
+    "Push his son to apply for scholarships.",
+    "If refinancing, ask the bank for an amount whose instalment matches the rent.",
+    "If selling, use part of the money to reduce the loan on his own home.",
+    "Compare keeping the flat with what the money would earn in EPF, fixed deposits or other investments."
+  ],
+  "caveat": "Refinancing at 50 depends on his income and credit record; banks lend to about age 70, some to 75. If he is uncomfortable with debt after his divorce, selling outright is a perfectly fair choice.",
+  "basis": "captions",
+  "sourceNote": "Summarised from Sean's full English captions for Asking Sean #204. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in March 2023; loan rates have changed since. Sean mentions a mortgage contact who helped him refinance two of his own properties.",
+  "askingSeanEpisode": 204,
+  "video": {
+    "id": "yupsg7LgxI4",
+    "title": "ASKING SEAN #204 | USE PROPERTY TO FINANCE CHILD'S EDUCATION",
+    "duration": "14:45",
+    "url": "https://www.youtube.com/watch?v=yupsg7LgxI4"
+  },
+  "articleUrl": "https://iherng-journal.pages.dev/articles/sell-or-refinance-to-fund-education"
+}

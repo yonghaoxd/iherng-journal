@@ -1,0 +1,24 @@
+{
+  "id": "vandalised-apartment-sell-fix-or-rent",
+  "sourceHash": "38da9f9f0502",
+  "reviewed": false,
+  "aliases": [
+    "abandoned unit",
+    "vandalised flat",
+    "bukit beruntung",
+    "sell below market",
+    "repair before selling",
+    "renovation cost",
+    "rent out old unit",
+    "inherited property",
+    "low occupancy building",
+    "infrastructure hype"
+  ],
+  "questions": [
+    "Should I sell a neglected flat cheaply or fix it first?",
+    "Is it worth repairing an old unit before selling?",
+    "Can I rent out a flat in a low occupancy building?",
+    "How much does it cost to fix up an old apartment?",
+    "Should I hold a property with no capital growth?"
+  ]
+}

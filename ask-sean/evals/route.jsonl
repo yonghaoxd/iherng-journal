@@ -54,3 +54,7 @@
 {"q":"Should I refinance my housing loan into a flexi loan?","expect":["housing-loan-interest-flexi-explained","settle-housing-loan-early","refinancing-housing-loan-reasons"],"note":"buyer guide #15 explains full and semi-flexi loans"}
 {"q": "How much is the penalty if I settle my loan during the lock-in period?", "expect": [], "note": "trap: lock-in penalties are not covered"}
 {"q": "Is a freehold or leasehold condo better?", "expect": ["leasehold-condo-resale-risk"], "note": "covered by buyer guide #12 since October 2026"}
+{"q":"The seller's unit is still charged to his bank for a business loan. Is it safe to sign the SPA?","expect":["subsale-charged-to-sellers-business-loan"],"note":"Asking Sean #200, added November 2026"}
+{"q":"Can I still make money flipping old landed houses in Malaysia?","expect":["house-flipping-in-malaysia"],"note":"Asking Sean #191, added November 2026"}
+{"q":"Is a 30-year-old walk-up apartment without a lift hard to resell?","expect":["old-walk-up-apartment-in-penang"],"note":"Asking Sean #190, added November 2026"}
+{"q":"My mum's empty flat was broken into and vandalised. Should we sell it cheap or repair it first?","expect":["vandalised-apartment-sell-fix-or-rent"],"note":"Asking Sean #194, added November 2026"}

@@ -1,0 +1,24 @@
+{
+  "id": "subsale-charged-to-sellers-business-loan",
+  "sourceHash": "fbdfdd2e5cf1",
+  "reviewed": false,
+  "aliases": [
+    "property charged to bank",
+    "seller's business loan",
+    "master title",
+    "strata title",
+    "title risk",
+    "booking form refund",
+    "loan release risk",
+    "housing development act",
+    "pj subsale",
+    "walk away from a deal"
+  ],
+  "questions": [
+    "The seller's unit is pledged for his loan. Should I buy?",
+    "What is the risk of buying a unit with only a master title?",
+    "Can my bank refuse to release the loan after the SPA?",
+    "Should I withdraw after paying a booking fee?",
+    "What should I check before booking a subsale?"
+  ]
+}

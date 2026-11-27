@@ -3,6 +3,9 @@
     "affordable-housing-rumawip": {
       "hash": "46fac98b3644"
     },
+    "ancestral-landed-home-with-twins-coming": {
+      "hash": "6b099ef5e904"
+    },
     "apartment-for-ageing-parent": {
       "hash": "1fccba9a07cc"
     },
@@ -81,6 +84,9 @@
     "couple-cash-or-housing-loan": {
       "hash": "977261f74fb8"
     },
+    "cut-losses-to-free-up-loan-slots": {
+      "hash": "143a9771a81e"
+    },
     "defect-inspection-checklist": {
       "hash": "c3f166f08af5"
     },
@@ -90,8 +96,17 @@
     "discount-price-still-losing-money": {
       "hash": "e333ccd948a1"
     },
+    "discounted-jb-condo-below-launch-price": {
+      "hash": "772728054db9"
+    },
     "doctor-between-jobs-first-property": {
       "hash": "7626d1eddace"
+    },
+    "doctors-on-postings-rent-or-buy-jb": {
+      "hash": "5dcc37bf8df0"
+    },
+    "dream-landed-home-at-30": {
+      "hash": "aab65608766c"
     },
     "early-retirement-in-malaysia-on-rent": {
       "hash": "7168bc8f5fcc"
@@ -144,6 +159,12 @@
     "four-types-of-property-investors": {
       "hash": "c0cc54d05314"
     },
+    "four-units-underwater-after-agents-advice": {
+      "hash": "9b4b5b9a2bf5"
+    },
+    "fresh-graduate-checklist-before-investing": {
+      "hash": "f06c545cf072"
+    },
     "full-cash-or-housing-loan": {
       "hash": "27251e485507"
     },
@@ -173,6 +194,9 @@
     },
     "hotel-scheme-unit-gone-wrong": {
       "hash": "e31c278bbc3b"
+    },
+    "house-flipping-in-malaysia": {
+      "hash": "84db9e14848f"
     },
     "house-for-tuition-centre": {
       "hash": "f789d68e307e"
@@ -225,6 +249,9 @@
     "judging-a-buildings-architecture": {
       "hash": "e3852200369a"
     },
+    "landed-home-for-parents-or-keep-renting": {
+      "hash": "4ff0a54acd5a"
+    },
     "landed-home-for-semi-retirement": {
       "hash": "2160d4f451b3"
     },
@@ -236,6 +263,9 @@
     },
     "late-delivery-damages-and-booking-fees": {
       "hash": "537a30fb13cb"
+    },
+    "laundromat-business-or-rental-property": {
+      "hash": "aeb8336f4eb8"
     },
     "leasehold-condo-resale-risk": {
       "hash": "3d8ccbe70300"
@@ -297,11 +327,17 @@
     "old-house-vs-new-property": {
       "hash": "73eb6f469f93"
     },
+    "old-walk-up-apartment-in-penang": {
+      "hash": "15c85b46638c"
+    },
     "outskirts-landed-or-city-condo": {
       "hash": "9cb4a8085b67"
     },
     "overpaid-sunway-student-unit": {
       "hash": "bb9e9a8cdec4"
+    },
+    "overpriced-unit-and-revived-abandoned-project": {
+      "hash": "2c883d3892a1"
     },
     "oversupply-and-first-time-buyers": {
       "hash": "eed507d314db"
@@ -357,6 +393,9 @@
     "property-versus-fixed-deposit": {
       "hash": "c69217370f69"
     },
+    "rebuilding-a-portfolio-at-43": {
+      "hash": "f57a9db577f0"
+    },
     "rebuilding-credit-after-bankruptcy": {
       "hash": "f845acef33df"
     },
@@ -393,6 +432,9 @@
     "rent-your-home-buy-to-invest": {
       "hash": "9c4ba30177eb"
     },
+    "rental-income-for-retirement-at-60": {
+      "hash": "aba5483fa2ee"
+    },
     "retire-at-40-on-rental-income": {
       "hash": "4b5869e8b66b"
     },
@@ -411,11 +453,17 @@
     "second-property-vs-equities": {
       "hash": "e2ca83914228"
     },
+    "sell-all-properties-at-retirement": {
+      "hash": "1c1abb91c001"
+    },
     "sell-at-loss-or-rent-out": {
       "hash": "09657d57c156"
     },
     "sell-leasehold-house-at-60": {
       "hash": "398ff4354c56"
+    },
+    "sell-or-refinance-to-fund-education": {
+      "hash": "82e73baf28dc"
     },
     "selling-family-home-to-clear-debt": {
       "hash": "171b3e2695ab"
@@ -459,6 +507,9 @@
     "stalled-project-projek-sakit": {
       "hash": "ae48f9fb119e"
     },
+    "start-investing-early-or-build-income-first": {
+      "hash": "35fb03aa74ea"
+    },
     "steps-before-your-first-property": {
       "hash": "37d2c39974f9"
     },
@@ -473,6 +524,12 @@
     },
     "student-rental-first-investment": {
       "hash": "c55d1502b16a"
+    },
+    "subsale-charged-to-sellers-business-loan": {
+      "hash": "fbdfdd2e5cf1"
+    },
+    "subsale-or-new-launch-in-melaka": {
+      "hash": "980b3c9d983b"
     },
     "supporting-parents-own-space": {
       "hash": "143c5a22dce5"
@@ -498,14 +555,23 @@
     "three-tod-projects-equal-cash-flow": {
       "hash": "4a740e8f93c5"
     },
+    "tiny-airbnb-suite-at-21": {
+      "hash": "29f61d4e4f43"
+    },
     "transit-oriented-development-explained": {
       "hash": "20877498e6f6"
+    },
+    "uncle-offers-down-payment-for-landed-home": {
+      "hash": "8cb6fb727bfc"
     },
     "unsold-units-near-completion": {
       "hash": "2d77b4490b5b"
     },
     "using-transacted-price-data": {
       "hash": "98e396802072"
+    },
+    "vandalised-apartment-sell-fix-or-rent": {
+      "hash": "38da9f9f0502"
     },
     "visiting-a-sales-gallery": {
       "hash": "36bebf57177f"

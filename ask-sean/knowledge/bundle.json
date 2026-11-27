@@ -1,6 +1,6 @@
 {
   "catalog": {
-    "version": "2110bdf28bc0",
+    "version": "f7a778066b96",
     "articles": [
       {
         "id": "affordable-housing-rumawip",
@@ -38,6 +38,42 @@
           "Can I rent out my affordable housing unit?",
           "How do affordable housing schemes affect other buyers?",
           "Should I buy an affordable unit or an open-market unit?"
+        ]
+      },
+      {
+        "id": "ancestral-landed-home-with-twins-coming",
+        "title": "Twins are coming. Should we stretch for a RM1 million family house?",
+        "date": "2023-02-24",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 203,
+        "tag": "Family home",
+        "excerpt": "A 30-year-old banker with twins on the way wants a RM1 million Kota Damansara house shared with his brother. Sean suggests renting on and buying an apartment one income can carry first.",
+        "viewerQuestion": "Should he commit to the house and work hard to pay for it, or keep renting until his early 40s?",
+        "answer": "Keep renting for now, and buy a home on his own that fits one person's budget, around RM500,000 to RM600,000, ideally a subsale with a three-bedroom layout. Live there for five to eight years, then upgrade to a bigger family home once the twins start school.",
+        "points": [
+          "Newborns strain both money and time",
+          "Shared names need a clear exit",
+          "If he buys, keep the savings",
+          "A landed home costs more than the instalment"
+        ],
+        "aliases": [
+          "ancestral home",
+          "family home",
+          "twins",
+          "kota damansara",
+          "co-own with brother",
+          "leasehold landed",
+          "new baby budget",
+          "rent then upgrade",
+          "three bedroom apartment for family",
+          "flexi loan emergency fund"
+        ],
+        "questions": [
+          "We're expecting a baby. Should we buy a bigger landed house?",
+          "Should I buy a family home with my brother?",
+          "Is a landed house necessary for young children?",
+          "Should we keep renting until our kids are older?",
+          "How do I keep savings after buying a house?"
         ]
       },
       {
@@ -1004,6 +1040,42 @@
         ]
       },
       {
+        "id": "cut-losses-to-free-up-loan-slots",
+        "title": "Should I sell my Penang condo at a loss to free up a 90% loan?",
+        "date": "2022-11-25",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 192,
+        "tag": "Cutting losses",
+        "excerpt": "A 38-year-old already sold a Cyberjaya unit at a loss and now wants to sell a Penang condo below cost to buy something better. Sean agrees with cutting losses, and explains room rental and getting past two loans.",
+        "viewerQuestion": "Is cutting his losses wise, is renting room by room better than a normal tenancy, and how can someone with both 90% loans used buy a third property?",
+        "answer": "Yes, sell, if the money and loan it frees can go into a clearly better property. A monthly drain hurts more than a one-off loss. Renting by the room works near offices and colleges but not in family areas. Beyond two 90% loans you need partners, refinancing outside CCRIS, or bulk-purchase discounts.",
+        "points": [
+          "Opportunity cost outweighs a one-off loss",
+          "Rent shows demand before prices do",
+          "Room rental depends on the tenants nearby",
+          "Past the second loan takes more work"
+        ],
+        "aliases": [
+          "cut losses",
+          "sell at a loss",
+          "free up 90% loan",
+          "cyberjaya high-rise",
+          "penang condo",
+          "co-living",
+          "room rental",
+          "third property loan",
+          "refinance outside ccris",
+          "hearsay investing"
+        ],
+        "questions": [
+          "Should I sell a property at a loss to buy a better one?",
+          "Is renting room by room better than a normal tenancy?",
+          "How do I buy a third property after two 90% loans?",
+          "Why did Cyberjaya condos lose value?",
+          "Should I trust a friend's property recommendation?"
+        ]
+      },
+      {
         "id": "defect-inspection-checklist",
         "title": "What should you check when you get your keys?",
         "date": "2020-01-08",
@@ -1115,6 +1187,42 @@
         ]
       },
       {
+        "id": "discounted-jb-condo-below-launch-price",
+        "title": "A JB condo now sells 60% below launch price. Is it a bargain?",
+        "date": "2023-02-04",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 199,
+        "tag": "Johor Bahru high-rise",
+        "excerpt": "A 24-year-old in Singapore can buy a Danga Bay subsale launched at about RM1 million for RM380,000, with rent covering the loan. Sean calls it only an okay deal and suggests other options.",
+        "viewerQuestion": "Is this a sensible buy, should he take a full loan and cash out the difference, and is this the right way to play the property game?",
+        "answer": "Among JB apartments it is an okay deal and he understands the risks, but Sean would look further. At 24, E could afford more risk: a landed home in JB, which still has room to appreciate, or a completed, sold-out project from another developer. He should also weigh keeping his savings in Singapore dollars.",
+        "points": [
+          "Buying below launch price isn't the same as cheap",
+          "JB high-rise has little room to grow",
+          "Stigma and unsold stock affect resale",
+          "The currency is part of the return"
+        ],
+        "aliases": [
+          "johor bahru condo",
+          "danga bay",
+          "price dropped from launch",
+          "below market value",
+          "jb high-rise oversupply",
+          "developer reputation",
+          "landed in jb",
+          "singapore income",
+          "exchange rate",
+          "rental yield 5.6%"
+        ],
+        "questions": [
+          "Is a JB condo selling far below its launch price a bargain?",
+          "Do JB high-rise properties appreciate?",
+          "Should I buy a landed home in JB instead of a condo?",
+          "Does a developer's bad reputation affect resale?",
+          "Should I invest my Singapore income in JB property?"
+        ]
+      },
+      {
         "id": "doctor-between-jobs-first-property",
         "title": "I'm between jobs with savings. Should I buy my first property now?",
         "date": "2025-10-06",
@@ -1150,6 +1258,78 @@
           "How do I choose a property in an area I don't know well?",
           "Does view or floor level matter when buying for rental income?",
           "Should I buy a new launch or a completed unit for cash flow?"
+        ]
+      },
+      {
+        "id": "doctors-on-postings-rent-or-buy-jb",
+        "title": "We're doctors who may be posted anywhere. Should we buy a home in JB?",
+        "date": "2023-01-05",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 196,
+        "tag": "Rent while uncertain",
+        "excerpt": "Two government doctors in JB with a baby on the way weigh a condo near the hospital against a strata landed home further out. Sean says rent close to work and buy a home only when you need it.",
+        "viewerQuestion": "Should they buy a condo near the hospital now and upgrade to landed later, or buy the landed home?",
+        "answer": "Prioritise flexibility. Rent an apartment close to the hospital, which is cheap while JB condo prices are low, and don't tie themselves to a home they may have to leave. If they want property, buy it purely as an investment that generates cash flow, and buy the family home in their early 40s once their careers settle and their child needs space.",
+        "points": [
+          "Postings make ownership a burden",
+          "Babies need convenience, not a big house",
+          "JB high-rise and landed behave differently",
+          "A home bought early rarely makes money"
+        ],
+        "aliases": [
+          "government doctor",
+          "posting",
+          "johor bahru",
+          "rent near work",
+          "condo vs landed jb",
+          "mount austin",
+          "baby on the way",
+          "just in time home",
+          "lppsa",
+          "flexibility"
+        ],
+        "questions": [
+          "We may be posted elsewhere. Should we buy a home now?",
+          "Should we rent near the hospital or buy further away?",
+          "Do babies need a landed house?",
+          "Are JB condos a good buy?",
+          "When should a young family buy their long-term home?"
+        ]
+      },
+      {
+        "id": "dream-landed-home-at-30",
+        "title": "We can afford a RM700,000 landed home at 30. Should we buy it now?",
+        "date": "2023-03-31",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 208,
+        "tag": "Dream home vs investment",
+        "excerpt": "A couple of 30 renting in KL weigh a subsale terrace in Elmina against a new launch nearby. Sean says either works, but he would buy neither until they need it.",
+        "viewerQuestion": "Should they buy the landed home now before prices rise, keep renting, or pick the new launch instead?",
+        "answer": "They can afford either, and the subsale is the better value, so it comes down to how much they want to pay for the dream. Sean himself would buy neither yet: he would use the loan on an investment unit that earns rent, and buy the dream home only when it is actually needed.",
+        "points": [
+          "The fear is about your own income",
+          "Renting is only wasted if it isn't working for you",
+          "Subsale for value, new launch for timing",
+          "A dream home uses up the slot and the savings"
+        ],
+        "aliases": [
+          "dream home",
+          "landed home at 30",
+          "elmina",
+          "subsale vs new launch",
+          "rent or buy",
+          "joint income",
+          "first family home",
+          "90% loan slot",
+          "investment unit first",
+          "fear of rising prices"
+        ],
+        "questions": [
+          "Should we buy our dream landed home now or invest first?",
+          "Is renting a waste of money if we can afford to buy?",
+          "Subsale or new launch for our first family home?",
+          "Will landed homes become unaffordable if we wait?",
+          "Should I use my 90% loan on a home or an investment?"
         ]
       },
       {
@@ -1791,6 +1971,80 @@
         ]
       },
       {
+        "id": "four-units-underwater-after-agents-advice",
+        "title": "My agent's plan left me RM8,000 short every month. What now?",
+        "date": "2023-03-10",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 205,
+        "tag": "Over-leveraged",
+        "excerpt": "On a friend's agent's advice, a buyer bought four units with cashback and now owes more than they are worth. Sean explains what went wrong and how to dig out over three to five years.",
+        "viewerQuestion": "How can he reduce his debt, and should he sell one of the Bukit Mertajam units at a loss?",
+        "answer": "Selling now only turns the shortfall into a personal loan. Sean would cut his spending, earn every extra ringgit he can and pay every instalment on time to repair his credit record. He would also fully furnish the units at each change of tenant to lift the rent, and sell only when prices come closer to what he owes.",
+        "points": [
+          "Overpriced units can't be sold or refinanced",
+          "Cashback is the bank's money, not profit",
+          "Furnishing can lift both rent and value",
+          "Auction is the last resort"
+        ],
+        "aliases": [
+          "over-leveraged",
+          "cashback trap",
+          "agent advice",
+          "negative cash flow",
+          "ccris damaged",
+          "cannot refinance",
+          "underwater property",
+          "fully furnish to raise rent",
+          "auction last resort",
+          "bukit mertajam",
+          "puchong"
+        ],
+        "questions": [
+          "My agent sold me four units and now I'm losing money. What do I do?",
+          "Can I refinance if the property is worth less than the loan?",
+          "How do I fix a bad CCRIS record?",
+          "Does furnishing a unit really raise its value?",
+          "Should I sell or hold a unit worth less than my loan?"
+        ]
+      },
+      {
+        "id": "fresh-graduate-checklist-before-investing",
+        "title": "I bought a cheap studio three months into my first job. Too soon?",
+        "date": "2023-02-17",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 202,
+        "tag": "First job, first property",
+        "excerpt": "A graduate from Sarawak signed for a RM200,000-plus studio near KL city centre three months into his first job. Sean says it was too soon, and sets out what he would do first at 23.",
+        "viewerQuestion": "Is his interest rate fair, is this the right way to start, and should he have saved his first-home advantages for a better property?",
+        "answer": "Yes, it was too soon. He skipped the basics: an emergency fund, insurance, a stable career and comparing about 20 properties nearby. A cheap total price isn't the same as a good price per square foot. The interest rate matters less than these, since small loans to new borrowers usually carry higher rates.",
+        "points": [
+          "Check the list before buying",
+          "Small, cheap units are a marketing trend",
+          "Subsale first builds the next loan",
+          "Your income drives the portfolio"
+        ],
+        "aliases": [
+          "fresh graduate",
+          "first job",
+          "first property",
+          "emergency fund",
+          "medical card",
+          "small studio near klcc",
+          "cheap unit price per square foot",
+          "subsale first",
+          "epf account 2",
+          "credit card history",
+          "too early to invest"
+        ],
+        "questions": [
+          "Is it too early to buy property in my first job?",
+          "What should I do before buying my first property?",
+          "Are cheap studios near KLCC a good investment?",
+          "Should my first property be a subsale or new launch?",
+          "How do fresh graduates build a credit record?"
+        ]
+      },
+      {
         "id": "full-cash-or-housing-loan",
         "title": "My dad will pay cash for my house. Should I still take a loan?",
         "date": "2023-11-28",
@@ -2162,6 +2416,42 @@
           "What happens if I sell below my outstanding loan?",
           "Should I buy a property with a guaranteed rental return scheme?",
           "What can I do if there is no strata title or joint management body?"
+        ]
+      },
+      {
+        "id": "house-flipping-in-malaysia",
+        "title": "Can I make money flipping old houses in Malaysia?",
+        "date": "2022-11-07",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 191,
+        "tag": "Property flipping",
+        "excerpt": "A 24-year-old bank employee wants to buy dated houses below market value, renovate them and resell within months. Sean explains why flipping only pays for contractors, and suggests selling property instead.",
+        "viewerQuestion": "Is house flipping a viable way to make money in Malaysia, and can he take a long loan for a short flip?",
+        "answer": "For him, no. Flipping pays mainly for renovation contractors and interior designers who profit from the building work itself, while an outsider takes all the risk. Sean suggests he sell property as an agent instead: little risk, he learns the market, and his income depends on his own effort.",
+        "points": [
+          "The numbers only work at the bank's valuation",
+          "Tax on a quick sale removes much of the gain",
+          "The deals and the work are hard to find",
+          "Contractors profit regardless"
+        ],
+        "aliases": [
+          "property flipping",
+          "house flipping",
+          "buy renovate sell",
+          "below market value",
+          "bank valuation vs market value",
+          "rpgt",
+          "renovation costs",
+          "contractor",
+          "become a property agent",
+          "fast money"
+        ],
+        "questions": [
+          "Can I make money flipping houses in Malaysia?",
+          "Does property gains tax make flipping unprofitable?",
+          "What's the difference between bank valuation and market value?",
+          "Should I become a property agent instead?",
+          "How much does renovating an old house cost?"
         ]
       },
       {
@@ -2799,6 +3089,42 @@
         ]
       },
       {
+        "id": "landed-home-for-parents-or-keep-renting",
+        "title": "Should I buy a RM1 million landed house for my parents to live in?",
+        "date": "2023-03-23",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 207,
+        "tag": "Buying for parents",
+        "excerpt": "A Malaysian working in Singapore wants to buy her renting parents a landed home in Cheras. Sean explains why landed rents are so low, how to judge a renovated house, and a cheaper option first.",
+        "viewerQuestion": "Is such a low rent normal for landed homes, and should she pay a premium for a renovated house, renovate an old one herself, or keep looking?",
+        "answer": "Yes, it is normal: a RM1 million landed house on a 90% loan costs about RM4,000 a month, while it rents for about RM2,000. Sean would first try to secure her parents' current rental with the landlord. If she still buys, choose between renovated and unrenovated by the bank's valuation and the cash she has left for works.",
+        "points": [
+          "Landed homes rarely pay for themselves",
+          "Renting's only real risk can be managed",
+          "Banks value the house, not your renovation",
+          "Count the full cash before the keys"
+        ],
+        "aliases": [
+          "buy house for parents",
+          "parents renting",
+          "landed rental yield",
+          "rent vs instalment landed",
+          "renovated house premium",
+          "bank valuation renovation",
+          "first refusal landlord",
+          "cheras",
+          "working in singapore",
+          "upfront cost landed"
+        ],
+        "questions": [
+          "Should I buy a landed house for my parents to live in?",
+          "Why is landed rent so low compared to the instalment?",
+          "Should I pay more for a renovated house or renovate an old one?",
+          "Do banks value renovations?",
+          "How can my parents keep renting safely?"
+        ]
+      },
+      {
         "id": "landed-home-for-semi-retirement",
         "title": "We're in our 50s. Should we sell our house and buy a new landed home for semi-retirement?",
         "date": "2023-07-14",
@@ -2944,6 +3270,42 @@
           "How do I file a late-delivery claim at the homebuyer tribunal?",
           "What happens to buyers if booking fees are banned?",
           "Do I need a lawyer to claim liquidated damages from a developer?"
+        ]
+      },
+      {
+        "id": "laundromat-business-or-rental-property",
+        "title": "With RM70,000 at 25, should I start a business or buy property first?",
+        "date": "2022-12-10",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 193,
+        "tag": "Business vs property",
+        "excerpt": "A 25-year-old with RM70,000 saved wants to escape the rat race, either with a self-service laundry or rental properties. Sean says start the business first: property keeps you rich rather than making you rich.",
+        "viewerQuestion": "Should he start the business or the property investment first, and how many rental units would it take to live off rent?",
+        "answer": "Start the business first, carefully and if possible while keeping his job. At 25 with no commitments he can afford to fail, and running a business teaches him far more than a salary does. Once the business makes money, buy properties whose rent covers the instalment, and use them to store that wealth.",
+        "points": [
+          "Living off rent takes many units and years",
+          "Positive cash flow comes from time or crafted deals",
+          "A business teaches what a job can't",
+          "Property compounds quietly"
+        ],
+        "aliases": [
+          "business or property",
+          "laundromat",
+          "self service laundry",
+          "rat race",
+          "financial freedom",
+          "passive income from rent",
+          "how many properties to retire",
+          "cash flow quadrant",
+          "property keeps you rich",
+          "rm70000 savings"
+        ],
+        "questions": [
+          "Should I start a business or buy property first?",
+          "How many rental properties do I need to live off rent?",
+          "Can property make me rich?",
+          "Is RM5,000 a month from rent realistic?",
+          "How do investors find positive cash flow deals?"
         ]
       },
       {
@@ -3697,6 +4059,42 @@
         ]
       },
       {
+        "id": "old-walk-up-apartment-in-penang",
+        "title": "Will a 33-year-old walk-up apartment be hard to sell in 15 years?",
+        "date": "2022-10-29",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 190,
+        "tag": "Walk-up apartments",
+        "excerpt": "A buyer likes a first-floor freehold walk-up in Green Lane, Penang, near his parents, but worries about its age and resale. Sean explains walk-up pricing and the checks that matter.",
+        "viewerQuestion": "Is an old walk-up apartment a sound buy, or will its age and low demand make it hard to sell later?",
+        "answer": "It will sell in 15 years; the question is at what price, and nobody can promise a profit. Do the checks now: compare the asking price with other walk-ups and recent transactions nearby, get the bank's valuation, and look at the rents. Then negotiate with that data, and expect growth roughly in line with inflation.",
+        "points": [
+          "In a walk-up, lower floors cost more",
+          "Owner-occupiers keep a building in good shape",
+          "Data gives you room to negotiate",
+          "There will always be buyers like him"
+        ],
+        "aliases": [
+          "walk-up apartment",
+          "no lift",
+          "green lane penang",
+          "old apartment resale",
+          "floor level pricing",
+          "first floor",
+          "freehold apartment",
+          "bank valuation",
+          "penang rental yield",
+          "owner occupied building"
+        ],
+        "questions": [
+          "Is an old walk-up apartment a good buy?",
+          "Will an old apartment be hard to sell?",
+          "Which floor is best in a walk-up?",
+          "How do I negotiate the price of a subsale?",
+          "Do old apartments appreciate in value?"
+        ]
+      },
+      {
         "id": "outskirts-landed-or-city-condo",
         "title": "RM700,000: a terrace house in the outskirts or a condo in the city?",
         "date": "2019-10-16",
@@ -3768,6 +4166,42 @@
           "How do I keep buying one property after another?",
           "Will a property in a mature area still appreciate?",
           "Should I use an overdraft or refinance to buy more?"
+        ]
+      },
+      {
+        "id": "overpriced-unit-and-revived-abandoned-project",
+        "title": "I overpaid for one unit and another was abandoned. Should I sell?",
+        "date": "2023-03-16",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 206,
+        "tag": "Fixing past purchases",
+        "excerpt": "A 31-year-old owns a Mont Kiara unit bought at the peak, a once-abandoned studio in Selayang and a new home that stretches her budget. Sean says hold both investments for now and get the numbers first.",
+        "viewerQuestion": "Should she sell the Mont Kiara unit or keep renting it out, and should she sell the Selayang studio once she gets the keys or rent it out?",
+        "answer": "Hold both for now. For the Mont Kiara unit, find out what she still owes the bank and test short-term rental, since the area is picking up. For the Selayang studio, wait until the keys are handed over, then decide from real rents, prices and what is left on the loan.",
+        "points": [
+          "Selling below the loan still leaves a debt",
+          "Short stays may beat a long-term tenant",
+          "Mont Kiara is picking up",
+          "Banks still collect on abandoned projects"
+        ],
+        "aliases": [
+          "bought at peak price",
+          "mont kiara",
+          "abandoned project",
+          "white knight developer",
+          "revived project",
+          "selling below loan",
+          "short stay operator",
+          "commercial title loan tenure",
+          "selayang",
+          "cut losses or hold"
+        ],
+        "questions": [
+          "I bought at the peak. Should I sell at a loss?",
+          "What happens if I sell for less than my loan?",
+          "My project was abandoned. Do I still pay the bank?",
+          "Should I rent my unit out as a short stay?",
+          "Should I keep a revived abandoned project after handover?"
         ]
       },
       {
@@ -4446,6 +4880,42 @@
         ]
       },
       {
+        "id": "rebuilding-a-portfolio-at-43",
+        "title": "One bad tenant made me sell. Is 43 too late to build a portfolio?",
+        "date": "2022-08-24",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 187,
+        "tag": "Building a portfolio",
+        "excerpt": "A 43-year-old sold his condo near an LRT station after a tenant broke the lease. Sean answers his rapid-fire questions on age, tenants, renovation budgets, price points and transit.",
+        "viewerQuestion": "Is 43 too late to build a portfolio, and how do investors handle rent collection, renovation budgets, bad tenants, price points and locations near rail?",
+        "answer": "It isn't too late, but it is harder: banks lend to about 65 or 70, so a shorter loan means higher instalments that rents struggle to cover. Sean builds equity slowly with units whose rent covers the instalment, uses a management company, and judges a price against the area's median rather than looking for the cheapest unit.",
+        "points": [
+          "Deposits and stamped agreements protect you",
+          "Furnishing budgets depend on use",
+          "Rent collection is active work",
+          "Transit helps only if it shortens the trip"
+        ],
+        "aliases": [
+          "too old to invest",
+          "investing at 43",
+          "bad tenant",
+          "broken tenancy agreement",
+          "tenancy deposit",
+          "stamped tenancy agreement",
+          "renovation budget",
+          "median price",
+          "lrt near property",
+          "property management"
+        ],
+        "questions": [
+          "Is 43 too late to build a property portfolio?",
+          "What deposits should I collect from tenants?",
+          "How much should I spend furnishing a rental unit?",
+          "Must an investment property be near the LRT?",
+          "How do I deal with tenants who don't pay?"
+        ]
+      },
+      {
         "id": "rebuilding-credit-after-bankruptcy",
         "title": "Out of bankruptcy at 41. Should I take a loan to rebuild my credit?",
         "date": "2024-11-16",
@@ -4893,6 +5363,42 @@
         ]
       },
       {
+        "id": "rental-income-for-retirement-at-60",
+        "title": "At 60, can we still buy property to live off the rent?",
+        "date": "2022-09-02",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 188,
+        "tag": "Late starters",
+        "excerpt": "A couple in their 60s with RM450,000 in EPF and a flat that barely appreciated hope a rental unit can fund their retirement. Sean explains why that is hard now, and what he would do first.",
+        "viewerQuestion": "Is it too late to buy a property that generates rental income, how could they get a loan at 63, and should they sell or rent out their flat?",
+        "answer": "Keep their flat as the family home and safety net. At their age, a unit whose rent exceeds its instalment by RM1,000 or more is rare, perhaps 3% to 5% of properties, and hard to finance. Focus first on active income, like part-time agency or customer service work. Learn how property investing works before committing their EPF.",
+        "points": [
+          "Late loans are hard to get",
+          "Retail buyers pay the highest price",
+          "Their flat did appreciate",
+          "Tenants can be managed"
+        ],
+        "aliases": [
+          "retire on rental income",
+          "investing at 60",
+          "loan at 63",
+          "epf savings",
+          "late starter",
+          "no insurance",
+          "old klang road",
+          "tenant screening",
+          "active income in retirement",
+          "son as borrower"
+        ],
+        "questions": [
+          "Is it too late to invest in property at 60?",
+          "Can I get a housing loan at 63?",
+          "Should I use my EPF to buy a rental property?",
+          "Can rental income fund my retirement?",
+          "Should I sell my home to invest?"
+        ]
+      },
+      {
         "id": "retire-at-40-on-rental-income",
         "title": "I sold my business at 40. Live on rent, or buy more properties?",
         "date": "2024-11-28",
@@ -5119,6 +5625,42 @@
         ]
       },
       {
+        "id": "sell-all-properties-at-retirement",
+        "title": "I retire next year with no children. Should I sell all my properties?",
+        "date": "2023-01-20",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 198,
+        "tag": "Retirement drawdown",
+        "excerpt": "A single woman retiring next year owns a PJ terrace and three paid-off rented units, plus a condo under construction. Sean says set a budget for the life she wants, then sell or refinance to fund it.",
+        "viewerQuestion": "Should she sell everything because managing the properties will get harder with age, and if so, when, since people say the market is always slow?",
+        "answer": "Don't let the market decide. Work out what her retirement will cost, then choose how to fund it: hold everything for the rent, sell one unit every few years, or refinance each unit only as far as its rent can repay and keep the cash. A mix of the last two gives her both income and a lump sum.",
+        "points": [
+          "Rent already pays for a comfortable life",
+          "Nobody knows how long the money must last",
+          "Refinancing unlocks cash faster than selling",
+          "Sell the weakest first"
+        ],
+        "aliases": [
+          "retirement",
+          "sell properties at retirement",
+          "no children",
+          "rental income in retirement",
+          "paid-off properties",
+          "refinance for cash",
+          "when to sell",
+          "time the market",
+          "which property to sell first",
+          "ipoh"
+        ],
+        "questions": [
+          "Should I sell all my properties when I retire?",
+          "When is the right time to sell?",
+          "Can I live off rental income in retirement?",
+          "Should I refinance paid-off properties for cash?",
+          "Which property should I sell first?"
+        ]
+      },
+      {
         "id": "sell-at-loss-or-rent-out",
         "title": "My condo is worth less than my loan. Sell at a loss or rent it out?",
         "date": "2024-04-27",
@@ -5188,6 +5730,42 @@
           "Do banks lend on properties with less than 60 years lease?",
           "Should I refinance instead of selling for cash?",
           "Should retirees keep rental properties?"
+        ]
+      },
+      {
+        "id": "sell-or-refinance-to-fund-education",
+        "title": "Should I sell or refinance a paid-off flat to fund my son's degree?",
+        "date": "2023-03-02",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 204,
+        "tag": "Education funding",
+        "excerpt": "A divorced father of 50 wants to send his son to Australia and owns a paid-off leasehold flat in Ampang. Sean compares selling with refinancing only as much as the rent can repay.",
+        "viewerQuestion": "Should he sell the apartment or refinance it to pay for his son's education?",
+        "answer": "Talk to his son first, because that decides how much money he really needs. If he wants a clean break, sell and use the rest to cut his own housing loan. If he wants to keep the flat for retirement, refinance only up to the amount the RM1,500 rent can repay, so the flat still pays for itself.",
+        "points": [
+          "Selling is simple but slower for leasehold",
+          "A full refinance adds a new burden",
+          "Leasehold value holds until about 60 years left",
+          "A foreign degree may not be needed"
+        ],
+        "aliases": [
+          "fund child's education",
+          "study in australia",
+          "refinance paid-off property",
+          "sell or refinance",
+          "leasehold lease left",
+          "refinance at 50",
+          "state consent",
+          "rental covers instalment",
+          "ampang",
+          "single father"
+        ],
+        "questions": [
+          "Should I sell or refinance my property to pay for my child's degree?",
+          "How much can I refinance on a paid-off flat?",
+          "Can I get a refinancing loan at 50?",
+          "When does a leasehold property lose value?",
+          "Is an overseas degree worth selling property for?"
         ]
       },
       {
@@ -5709,6 +6287,42 @@
         ]
       },
       {
+        "id": "start-investing-early-or-build-income-first",
+        "title": "You say start early but also wait. Which is right for a fresh graduate?",
+        "date": "2022-12-30",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 195,
+        "tag": "Young investors",
+        "excerpt": "A fresh graduate points out that Sean tells young people both to start early and to build a safety net first. Sean explains it depends on your career, risk appetite and goals.",
+        "viewerQuestion": "What mindset should fresh graduates and first-time buyers have about when to start in property?",
+        "answer": "It depends on who you are. If you are on a stable salaried career path, buying an investment property early makes sense. If you want to get rich, or are building a business or side project, invest in yourself and the business first, and put money into property once you have earned it.",
+        "points": [
+          "Property suits people with certain income",
+          "Property is too slow to make you rich",
+          "A loan takes away flexibility",
+          "Never has building a business been cheaper"
+        ],
+        "aliases": [
+          "invest early",
+          "fresh graduate",
+          "rat race",
+          "start a business",
+          "salary vs commission",
+          "flexibility",
+          "property too slow",
+          "priced out",
+          "first investment",
+          "career first"
+        ],
+        "questions": [
+          "Should I invest in property early or build my income first?",
+          "Will young people be priced out of property?",
+          "Is property a way to get rich quickly?",
+          "Should I start a business before buying property?",
+          "How do I know if I'm ready to invest?"
+        ]
+      },
+      {
         "id": "steps-before-your-first-property",
         "title": "What should I do before buying my first property?",
         "date": "2017-07-26",
@@ -5893,6 +6507,78 @@
           "Are partitioned rooms legal in Kuala Lumpur?",
           "Should I buy a home or a second investment first?",
           "How much cash do I need upfront for a subsale?"
+        ]
+      },
+      {
+        "id": "subsale-charged-to-sellers-business-loan",
+        "title": "The seller's unit is pledged to his business loan. Should I still buy?",
+        "date": "2023-02-08",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 200,
+        "tag": "Title and ownership risk",
+        "excerpt": "A 28-year-old found her ideal RM300,000 subsale near work in PJ, then learnt it was charged to the seller's business loan, with only a master title. Sean says walk away while the deposit is refundable.",
+        "viewerQuestion": "Should she sign the SPA and accept the risk that her bank won't release the loan, or give up the unit?",
+        "answer": "Walk away. If the documents can't be cleared, the bank may refuse to release her loan after she has already paid legal fees, and her ownership would stay uncertain. Better deals will come; she was lucky to find out before signing the SPA.",
+        "points": [
+          "Ownership is what the paperwork protects",
+          "A master title adds a second risk",
+          "New launches are more standardised",
+          "Paying for a deal that may collapse wastes money"
+        ],
+        "aliases": [
+          "property charged to bank",
+          "seller's business loan",
+          "master title",
+          "strata title",
+          "title risk",
+          "booking form refund",
+          "loan release risk",
+          "housing development act",
+          "pj subsale",
+          "walk away from a deal"
+        ],
+        "questions": [
+          "The seller's unit is pledged for his loan. Should I buy?",
+          "What is the risk of buying a unit with only a master title?",
+          "Can my bank refuse to release the loan after the SPA?",
+          "Should I withdraw after paying a booking fee?",
+          "What should I check before booking a subsale?"
+        ]
+      },
+      {
+        "id": "subsale-or-new-launch-in-melaka",
+        "title": "I rent a room in Melaka for work. Subsale or new launch home?",
+        "date": "2023-02-14",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 201,
+        "tag": "Own stay vs investment",
+        "excerpt": "A single first-time buyer posted to Melaka wants to stop renting and is torn between a subsale and a new project. Sean asks why buy a home there at all, and suggests an investment unit first.",
+        "viewerQuestion": "Should a first-time buyer pick a subsale or a new project, and what are the pros and cons of each?",
+        "answer": "First ask why C needs a home in Melaka now. Unless C's career or partner means settling there, Sean would rent on and buy an investment unit in KL whose rent covers the instalment. A home to live in can come later, when life is settled.",
+        "points": [
+          "Renting fits a temporary posting",
+          "Subsale and new launch differ in cash and time",
+          "An own-stay home rarely makes money",
+          "Let tenants build your equity"
+        ],
+        "aliases": [
+          "subsale vs new launch",
+          "melaka",
+          "posted to another state",
+          "rent or buy",
+          "first home buyer",
+          "leasehold transfer time",
+          "state consent",
+          "upfront cost subsale",
+          "own stay vs investment",
+          "rental yield 5%"
+        ],
+        "questions": [
+          "Subsale or new launch for a first-time buyer?",
+          "Should I buy a home where I'm posted for work?",
+          "How long does a subsale take to complete?",
+          "Does buying a home to live in make money?",
+          "Should I invest in KL instead of buying where I work?"
         ]
       },
       {
@@ -6197,6 +6883,43 @@
         ]
       },
       {
+        "id": "tiny-airbnb-suite-at-21",
+        "title": "At 21, should I buy a 430 sq ft suite in KL with RM80,000 cashback?",
+        "date": "2023-01-11",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 197,
+        "tag": "Small units and Airbnb",
+        "excerpt": "A 21-year-old wants a tiny dual-key suite on Jalan Ampang for Airbnb, financed with a big cashback. Sean lists the numbers he must check first, and says missing a deal beats a 35-year mistake.",
+        "viewerQuestion": "Is this a good first investment, or is he making a mistake that will become a financial burden?",
+        "answer": "He hasn't done the homework yet, and at 21 he doesn't need to own property. He should first work out the real rents, nightly rates, occupancy and price per square foot against nearby projects, and check he could survive six months with no guest. Only buy if the numbers clearly cover the instalment.",
+        "points": [
+          "Cheap is not the same as a good deal",
+          "Airbnb needs its own maths",
+          "Every property needs a plan B and C",
+          "At 21, flexibility is worth more"
+        ],
+        "aliases": [
+          "small unit",
+          "430 sq ft suite",
+          "jalan ampang",
+          "airbnb investment",
+          "dual key",
+          "cashback",
+          "occupancy rate",
+          "short stay ban",
+          "price per square foot",
+          "fomo",
+          "investing at 21"
+        ],
+        "questions": [
+          "Is a tiny suite in KL a good Airbnb investment?",
+          "Should I buy property at 21?",
+          "How do I calculate Airbnb returns?",
+          "Can my building ban short stays?",
+          "Is a big cashback a good reason to buy?"
+        ]
+      },
+      {
         "id": "transit-oriented-development-explained",
         "title": "Is a condo linked to a train station a better buy?",
         "date": "2018-05-18",
@@ -6232,6 +6955,42 @@
           "Do TODs have higher rental demand?",
           "What are the downsides of living in a TOD?",
           "How can I check if a project is truly connected to a station?"
+        ]
+      },
+      {
+        "id": "uncle-offers-down-payment-for-landed-home",
+        "title": "My uncle will pay RM80,000 if I buy a landed home. Should I take it?",
+        "date": "2022-09-24",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 189,
+        "tag": "Family money",
+        "excerpt": "A 32-year-old father renting in Ampang is offered RM80,000 by his uncle, but only for a landed home to live in. Sean shows the real cash needed and why he would politely decline.",
+        "viewerQuestion": "Should he accept and buy a landed home now, or keep renting and build investment properties first as planned?",
+        "answer": "Sean would decline. RM80,000 doesn't come close to covering a landed home, which would eat most of his income and block his loan eligibility for investments. Keep renting, keep building investment properties, and upgrade to a landed home in about ten years with his own money.",
+        "points": [
+          "The real cash needed is far more than RM80,000",
+          "It would leave no room for shocks",
+          "His loan eligibility would be tied up",
+          "A small monthly top-up can be acceptable"
+        ],
+        "aliases": [
+          "family gift",
+          "uncle pays down payment",
+          "landed home",
+          "dsr",
+          "debt service ratio",
+          "upfront cost 18%",
+          "negative cash flow rental",
+          "rent or buy",
+          "ampang",
+          "independence"
+        ],
+        "questions": [
+          "Should I accept money from family to buy a landed home?",
+          "How much cash do I really need to buy a house?",
+          "Will buying a home stop me from investing?",
+          "Is a small negative cash flow acceptable?",
+          "When should a young family upgrade to landed?"
         ]
       },
       {
@@ -6308,6 +7067,42 @@
           "How do I know if a project's price is reasonable?",
           "What does it mean if there are very few recent transactions in an area?",
           "How do I research a project before booking a unit?"
+        ]
+      },
+      {
+        "id": "vandalised-apartment-sell-fix-or-rent",
+        "title": "Mum's paid-off flat is vandalised. Sell cheap, fix it up or rent it?",
+        "date": "2022-12-20",
+        "series": "iherng-podcast",
+        "askingSeanEpisode": 194,
+        "tag": "Neglected property",
+        "excerpt": "An 18-year-old asks what to do with his mother's paid-off, vandalised flat in Bukit Beruntung, offered at RM50,000. Sean says get repair costs and rents before deciding, then aim to sell.",
+        "viewerQuestion": "Should they sell it cheaply, fix it up to sell for more, or furnish it and rent it out?",
+        "answer": "Get quotes for fixing the windows, cleaning and painting, and find out the rents for a basic and a fully furnished unit, before choosing. If a modest repair turns a RM50,000 sale into about RM150,000, it is worth doing. Either way, Sean would sell rather than hold, since he sees little room for the price to grow.",
+        "points": [
+          "Announced infrastructure isn't a guarantee",
+          "Repair costs decide between selling cheap or later",
+          "Renting may not be worth the trouble",
+          "Holding brings little gain"
+        ],
+        "aliases": [
+          "abandoned unit",
+          "vandalised flat",
+          "bukit beruntung",
+          "sell below market",
+          "repair before selling",
+          "renovation cost",
+          "rent out old unit",
+          "inherited property",
+          "low occupancy building",
+          "infrastructure hype"
+        ],
+        "questions": [
+          "Should I sell a neglected flat cheaply or fix it first?",
+          "Is it worth repairing an old unit before selling?",
+          "Can I rent out a flat in a low occupancy building?",
+          "How much does it cost to fix up an old apartment?",
+          "Should I hold a property with no capital growth?"
         ]
       },
       {
@@ -6846,6 +7641,59 @@
         "url": "https://www.youtube.com/watch?v=Ugo2fWcaj0A"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/affordable-housing-rumawip"
+    },
+    {
+      "id": "ancestral-landed-home-with-twins-coming",
+      "series": "iherng-podcast",
+      "title": "Twins are coming. Should we stretch for a RM1 million family house?",
+      "excerpt": "A 30-year-old banker with twins on the way wants a RM1 million Kota Damansara house shared with his brother. Sean suggests renting on and buying an apartment one income can carry first.",
+      "date": "2023-02-24",
+      "tag": "Family home",
+      "question": {
+        "asker": "From J, a viewer who wrote in by email",
+        "context": "J is 30 and earns about RM7,000 a month; his fiancée's commission income ranges from RM4,000 to RM12,000, and they are expecting twins. They rent a single-storey house in PJ for RM1,300 and have about RM100,000 in savings. He wants a RM1 million leasehold double-storey house in Kota Damansara as a family home for his father and siblings too, which would take about RM200,000 up front with touch-ups and RM4,000 a month, shared with his brother.",
+        "text": "Should he commit to the house and work hard to pay for it, or keep renting until his early 40s?"
+      },
+      "answer": {
+        "quote": "You don't actually need it now, it's only for romantic reasons.",
+        "summary": "Keep renting for now, and buy a home on his own that fits one person's budget, around RM500,000 to RM600,000, ideally a subsale with a three-bedroom layout. Live there for five to eight years, then upgrade to a bigger family home once the twins start school."
+      },
+      "reasons": [
+        {
+          "title": "Newborns strain both money and time",
+          "body": "With savings used up and RM4,000 a month to pay, every sick day and every difficult boss becomes a crisis. Babies may also mean daycare costs, and they don't need a landed house, only space for their carers."
+        },
+        {
+          "title": "Shared names need a clear exit",
+          "body": "If his brother puts in money, agree his share and the price at which J would buy him out later. A leasehold house can lose value nearer 60 years left, though leases in Selangor have often been extended."
+        },
+        {
+          "title": "If he buys, keep the savings",
+          "body": "If the seller agrees to a higher selling price, the bank may lend more for renovation and costs. Keep the savings in a flexi loan account as an emergency fund."
+        },
+        {
+          "title": "A landed home costs more than the instalment",
+          "body": "Roofs, plumbing, gates and air conditioners all need fixing. A three-bedroom apartment can house his father and sister just as well, and is far easier to run."
+        }
+      ],
+      "actions": [
+        "Stay in the current rental through the birth and the first year.",
+        "Shortlist PJ apartments or homes within one income's budget, ideally where rent covers 85% to 90% of the instalment.",
+        "Work out the new monthly budget, including childcare, before committing to anything.",
+        "If buying with his brother, put the ownership split and buy-out terms in writing first.",
+        "Plan to upgrade to a family home once the twins reach primary school."
+      ],
+      "caveat": "If they are comfortable with the stress and the bank approves a larger loan that preserves their savings, buying the landed house is workable. Sean admits he has seen many big family homes left empty, so his view reflects his own experience.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #203. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in February 2023.",
+      "askingSeanEpisode": 203,
+      "video": {
+        "id": "QcUNkaEBGSk",
+        "title": "ASKING SEAN #203 | WORK LIKE DOG FOR A LANDED HOME. WORTH IT?",
+        "duration": "26:40",
+        "url": "https://www.youtube.com/watch?v=QcUNkaEBGSk"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/ancestral-landed-home-with-twins-coming"
     },
     {
       "id": "apartment-for-ageing-parent",
@@ -8216,6 +9064,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/couple-cash-or-housing-loan"
     },
     {
+      "id": "cut-losses-to-free-up-loan-slots",
+      "series": "iherng-podcast",
+      "title": "Should I sell my Penang condo at a loss to free up a 90% loan?",
+      "excerpt": "A 38-year-old already sold a Cyberjaya unit at a loss and now wants to sell a Penang condo below cost to buy something better. Sean agrees with cutting losses, and explains room rental and getting past two loans.",
+      "date": "2022-11-25",
+      "tag": "Cutting losses",
+      "question": {
+        "asker": "From R, a viewer who wrote in by email",
+        "context": "R is 38 and lives in Perak. He and his wife bought two investment properties on hearsay. He sold the Cyberjaya unit after six years for RM210,000, about RM40,000 less than he paid. He bought a Penang condo five years ago for RM610,000; agents now value it at about RM560,000, and it is let for RM1,800. He wants to sell it to free up his 90% loan for a property with cashback and cash flow, possibly rented out room by room.",
+        "text": "Is cutting his losses wise, is renting room by room better than a normal tenancy, and how can someone with both 90% loans used buy a third property?"
+      },
+      "answer": {
+        "quote": "I'm absolutely agreeable to cutting losses just to open up slots to get more.",
+        "summary": "Yes, sell, if the money and loan it frees can go into a clearly better property. A monthly drain hurts more than a one-off loss. Renting by the room works near offices and colleges but not in family areas. Beyond two 90% loans you need partners, refinancing outside CCRIS, or bulk-purchase discounts."
+      },
+      "reasons": [
+        {
+          "title": "Opportunity cost outweighs a one-off loss",
+          "body": "Sean sold his own semi-detached house at a loss because its large monthly instalments held him back more than the loss did. Cash flow matters more than paper losses."
+        },
+        {
+          "title": "Rent shows demand before prices do",
+          "body": "Cyberjaya has jobs, universities, malls and good roads, yet high-rise rents and prices kept falling while its landed homes did well. Checking rents before buying would have shown the weak demand."
+        },
+        {
+          "title": "Room rental depends on the tenants nearby",
+          "body": "Splitting a unit into rooms, and turning unused common areas into more rooms or a pantry, can raise income near offices and colleges. Large operators should clear it with the management body first, since it affects security and facilities."
+        },
+        {
+          "title": "Past the second loan takes more work",
+          "body": "Options include buying with family or friends under a proper agreement, refinancing existing loans into a facility outside CCRIS at a somewhat higher rate, as Sean has done, or bulk purchases with larger discounts."
+        }
+      ],
+      "actions": [
+        "Find out exactly what is owed on the Penang condo before selling.",
+        "Check the rents of any next property before committing to it.",
+        "Assess who rents near a unit before splitting it into rooms.",
+        "Check the advice of anyone recommending a property, especially if they earn commission on it.",
+        "Do your own due diligence even when a trusted person recommends a project."
+      ],
+      "caveat": "The old flipping stories no longer work, partly because of property gains tax on early sales. Selling only helps if the next deal is genuinely better, so line it up before cutting the loss.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #192. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in November 2022. Sean shares the contact of a mortgage specialist who helped him refinance, and mentions bulk-purchase companies; loan and tax rules change, so check current ones.",
+      "askingSeanEpisode": 192,
+      "video": {
+        "id": "oCWD1V_dzag",
+        "title": "ASKING SEAN #192 | CUTTING LOSSES",
+        "duration": "11:57",
+        "url": "https://www.youtube.com/watch?v=oCWD1V_dzag"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/cut-losses-to-free-up-loan-slots"
+    },
+    {
       "id": "defect-inspection-checklist",
       "series": "buyer-guides",
       "title": "What should you check when you get your keys?",
@@ -8375,6 +9276,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/discount-price-still-losing-money"
     },
     {
+      "id": "discounted-jb-condo-below-launch-price",
+      "series": "iherng-podcast",
+      "title": "A JB condo now sells 60% below launch price. Is it a bargain?",
+      "excerpt": "A 24-year-old in Singapore can buy a Danga Bay subsale launched at about RM1 million for RM380,000, with rent covering the loan. Sean calls it only an okay deal and suggests other options.",
+      "date": "2023-02-04",
+      "tag": "Johor Bahru high-rise",
+      "question": {
+        "asker": "From E, a viewer who wrote in by email",
+        "context": "E is 24, works in Singapore and earns about S$7,000 a month. He prefers subsales because he can negotiate and calculate the yield. He has found an 881 sq ft two-bedroom unit in a Danga Bay high-rise, launched at about RM1 million and now valued around RM470,000, and negotiated it down to RM380,000. It is tenanted at about RM1,700 to RM1,800, a yield of about 5.6%, but the developer has a poor reputation online, many units remain unsold, and the township is on reclaimed land.",
+        "text": "Is this a sensible buy, should he take a full loan and cash out the difference, and is this the right way to play the property game?"
+      },
+      "answer": {
+        "quote": "Great deals are crafted.",
+        "summary": "Among JB apartments it is an okay deal and he understands the risks, but Sean would look further. At 24, E could afford more risk: a landed home in JB, which still has room to appreciate, or a completed, sold-out project from another developer. He should also weigh keeping his savings in Singapore dollars."
+      },
+      "reasons": [
+        {
+          "title": "Buying below launch price isn't the same as cheap",
+          "body": "Buyers who paid RM1 million on a 90% loan may still owe RM700,000 to RM800,000 on units now worth RM380,000. That shows the risk of buying with no check of rents and surrounding prices; the launch price is no measure of value."
+        },
+        {
+          "title": "JB high-rise has little room to grow",
+          "body": "With plenty of land and supply, even well-run JB condos see little capital gain. Many Malaysians working there would rather pay a bit more for a landed home than RM380,000 for an apartment."
+        },
+        {
+          "title": "Stigma and unsold stock affect resale",
+          "body": "While the developer still has unsold units and a poor reputation, the market can't correct itself, and the next buyer's perception sets the selling price. Check who runs the mall and how the building is managed."
+        },
+        {
+          "title": "The currency is part of the return",
+          "body": "Keeping money in Singapore dollars already gains against the ringgit. Advertised rents for small units or Airbnb are often marketing claims, so rely on the real long-term rents around the building."
+        }
+      ],
+      "actions": [
+        "Compare this unit with completed, sold-out projects by other JB developers offering similar discounts.",
+        "Run the same rent-versus-instalment check on landed homes near the border, even if they cost about RM1,000 a month to hold.",
+        "Weigh the return in ringgit against keeping the capital in Singapore dollars.",
+        "If he buys, decide on the loan size by how much monthly shortfall he is comfortable with.",
+        "Look up complaints and the mall's management before committing."
+      ],
+      "caveat": "For an older, conservative investor who wants a unit that pays for itself with little risk, this deal makes more sense. Sean has no insight into the build quality or the reclaimed land, so E should check those himself.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #199. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in February 2023; prices and exchange rates have changed since.",
+      "askingSeanEpisode": 199,
+      "video": {
+        "id": "UPRpjdc4jS0",
+        "title": "ASKING SEAN #199 | PRICES OF JB APARTMENTS DROPPED 70%",
+        "duration": "18:27",
+        "url": "https://www.youtube.com/watch?v=UPRpjdc4jS0"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/discounted-jb-condo-below-launch-price"
+    },
+    {
       "id": "doctor-between-jobs-first-property",
       "series": "iherng-podcast",
       "title": "I'm between jobs with savings. Should I buy my first property now?",
@@ -8426,6 +9380,112 @@
         "url": "https://www.youtube.com/watch?v=0kpOfQd9wZY"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/doctor-between-jobs-first-property"
+    },
+    {
+      "id": "doctors-on-postings-rent-or-buy-jb",
+      "series": "iherng-podcast",
+      "title": "We're doctors who may be posted anywhere. Should we buy a home in JB?",
+      "excerpt": "Two government doctors in JB with a baby on the way weigh a condo near the hospital against a strata landed home further out. Sean says rent close to work and buy a home only when you need it.",
+      "date": "2023-01-05",
+      "tag": "Rent while uncertain",
+      "question": {
+        "asker": "From W, a viewer who wrote in by email",
+        "context": "W, 35, and his wife, 33, are newly qualified medical specialists in government service in JB, on call at night and expecting a baby. They will stay in JB for at least two years, after which he may be posted elsewhere for three to four years of training, followed by a seven-year bond before private practice. They are weighing a condo 15 minutes from work against a RM700,000 to RM800,000 strata landed home in Mount Austin, 30 to 40 minutes away, while JB condo prices keep falling.",
+        "text": "Should they buy a condo near the hospital now and upgrade to landed later, or buy the landed home?"
+      },
+      "answer": {
+        "quote": "I should get that particular home just in time when I need it.",
+        "summary": "Prioritise flexibility. Rent an apartment close to the hospital, which is cheap while JB condo prices are low, and don't tie themselves to a home they may have to leave. If they want property, buy it purely as an investment that generates cash flow, and buy the family home in their early 40s once their careers settle and their child needs space."
+      },
+      "reasons": [
+        {
+          "title": "Postings make ownership a burden",
+          "body": "If they are sent to another state soon after buying, they end up renting the house out, maintaining it from afar and topping up the instalment. A rented flat near work lets them get home quickly between calls."
+        },
+        {
+          "title": "Babies need convenience, not a big house",
+          "body": "A single-level apartment makes it easier to feed, clean and work while the baby sleeps, and pools and playgrounds downstairs are what young children enjoy. Space and privacy matter later, around ages 10 to 12."
+        },
+        {
+          "title": "JB high-rise and landed behave differently",
+          "body": "Condos were built largely for Singapore investors and have fallen in value, partly through oversupply, while landed homes stay expensive because many Malaysians working in Singapore buy them for their families."
+        },
+        {
+          "title": "A home bought early rarely makes money",
+          "body": "Interest and instalments over 15 years account for much of a house's rise in value. A rental property that tenants pay for builds equity even without capital gains, and can be sold later to fund the family home."
+        }
+      ],
+      "actions": [
+        "Rent an apartment within a short drive of the hospital.",
+        "If they invest, judge each JB project only on whether its rent covers the instalment.",
+        "Add a second rental property after two or three years if the first works.",
+        "Buy the long-term family home once private practice and their child's needs are clear.",
+        "As government employees, look into the LPPSA housing loan."
+      ],
+      "caveat": "If having their own home now is a real need for the family rather than fear of missing out, buying is a legitimate choice. Sean also notes property may not suit them at all, and stocks, bonds or ETFs could be more flexible.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #196. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in January 2023. Sean says he is a VIP member of FAR Capital, a bulk-purchase company linked in the video description.",
+      "askingSeanEpisode": 196,
+      "video": {
+        "id": "6SPlXVLUwUE",
+        "title": "ASKING SEAN #196 | GET A HOME ONLY WHEN YOU NEED IT",
+        "duration": "16:14",
+        "url": "https://www.youtube.com/watch?v=6SPlXVLUwUE"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/doctors-on-postings-rent-or-buy-jb"
+    },
+    {
+      "id": "dream-landed-home-at-30",
+      "series": "iherng-podcast",
+      "title": "We can afford a RM700,000 landed home at 30. Should we buy it now?",
+      "excerpt": "A couple of 30 renting in KL weigh a subsale terrace in Elmina against a new launch nearby. Sean says either works, but he would buy neither until they need it.",
+      "date": "2023-03-31",
+      "tag": "Dream home vs investment",
+      "question": {
+        "asker": "From V, a viewer who wrote in by email",
+        "context": "V and his partner are both 30, in white-collar jobs, with a joint income of about RM15,000 a month. They rent a unit in KL for RM2,000 and work from the office only one or two days a week. They are looking at a RM700,000 subsale landed home in Elmina Green, or a pricier new launch nearby, so they can start a family in one to two years. They already own a subsidised apartment in PJ.",
+        "text": "Should they buy the landed home now before prices rise, keep renting, or pick the new launch instead?"
+      },
+      "answer": {
+        "quote": "I would buy neither because I don't need it yet.",
+        "summary": "They can afford either, and the subsale is the better value, so it comes down to how much they want to pay for the dream. Sean himself would buy neither yet: he would use the loan on an investment unit that earns rent, and buy the dream home only when it is actually needed."
+      },
+      "reasons": [
+        {
+          "title": "The fear is about your own income",
+          "body": "Worrying that you won't afford a home later really means doubting your future earnings. At 30, their best earning years, roughly 35 to 45, are still ahead, so this is the time to build momentum."
+        },
+        {
+          "title": "Renting is only wasted if it isn't working for you",
+          "body": "Rent pays for being close to work. If they rarely go to the office, a RM700,000 subsale on a 90% loan costs about RM3,000 a month, only about RM1,000 more than their rent."
+        },
+        {
+          "title": "Subsale for value, new launch for timing",
+          "body": "The subsale is better value for money. A new launch costs more and its keys may be about two and a half years away, so they should check that the timing suits their family plans. Being closer to the township's centre helps capital appreciation, but a mall nearby can also bring congestion."
+        },
+        {
+          "title": "A dream home uses up the slot and the savings",
+          "body": "After buying, they would need years to rebuild their savings and could miss other opportunities. Sean would instead use the 90% loan on an investment apartment that can be rented out or lived in, and repeat."
+        }
+      ],
+      "actions": [
+        "Decide whether this home is meant to be the last one, or whether you want to keep building wealth first.",
+        "Compare the instalment on a 90% loan with the rent you pay now.",
+        "For a new launch, check when the keys will be handed over and whether that suits your plans for a family.",
+        "Weigh distance to the park, highway, shops and mall against the price.",
+        "Make sure any savings you keep are doing more than sitting in a savings account."
+      ],
+      "caveat": "There is no right or wrong here. If they see this as their home for life and are happy raising a family there, buying it within their means is fine; Sean's own choice reflects his risk appetite and ambition, not a rule for everyone.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #208. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in March 2023, when a 90% loan was available to them; loan rates and prices have changed since.",
+      "askingSeanEpisode": 208,
+      "video": {
+        "id": "bC6IDjDLOm0",
+        "title": "ASKING SEAN #208 | INVESTMENT OR DREAM HOME FIRST?",
+        "duration": "13:36",
+        "url": "https://www.youtube.com/watch?v=bC6IDjDLOm0"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/dream-landed-home-at-30"
     },
     {
       "id": "early-retirement-in-malaysia-on-rent",
@@ -9329,6 +10389,112 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/four-types-of-property-investors"
     },
     {
+      "id": "four-units-underwater-after-agents-advice",
+      "series": "iherng-podcast",
+      "title": "My agent's plan left me RM8,000 short every month. What now?",
+      "excerpt": "On a friend's agent's advice, a buyer bought four units with cashback and now owes more than they are worth. Sean explains what went wrong and how to dig out over three to five years.",
+      "date": "2023-03-10",
+      "tag": "Over-leveraged",
+      "question": {
+        "asker": "From D, a viewer who wrote in by email",
+        "context": "D is 32, works in Singapore and saves about RM7,000 a month. In 2019, on the advice of a friend's agent, he bought four investment units: two in Puchong and two in Bukit Mertajam. Each loan is now RM80,000 to RM300,000 more than the unit's market value, and he is about RM8,000 a month short. The agent promised the cashback would cover the instalments, managed the units badly, then handed them back. D's CCRIS record is now damaged, so he can't refinance or get a personal loan.",
+        "text": "How can he reduce his debt, and should he sell one of the Bukit Mertajam units at a loss?"
+      },
+      "answer": {
+        "quote": "Not all properties make money, not all agents can be trusted.",
+        "summary": "Selling now only turns the shortfall into a personal loan. Sean would cut his spending, earn every extra ringgit he can and pay every instalment on time to repair his credit record. He would also fully furnish the units at each change of tenant to lift the rent, and sell only when prices come closer to what he owes."
+      },
+      "reasons": [
+        {
+          "title": "Overpriced units can't be sold or refinanced",
+          "body": "If a unit is worth RM600,000 and he owes RM900,000, selling still leaves RM300,000 owed to the bank. Refinancing only works when the property is worth more than the loan, and a damaged CCRIS or CTOS record shuts that door anyway."
+        },
+        {
+          "title": "Cashback is the bank's money, not profit",
+          "body": "Prices inflated by rebates let him borrow far more than the units are worth. Sean takes extra financing only when the rent he is sure of still covers the larger instalment, and parks spare cash in a flexi account rather than investing it elsewhere."
+        },
+        {
+          "title": "Furnishing can lift both rent and value",
+          "body": "A fully furnished unit rents faster and recovers first. At about RM500 a month per RM100,000 of loan, raising the rent by about RM500 roughly justifies a RM100,000 higher price. He estimates a careful refit of a semi-furnished unit at RM12,000 to RM15,000."
+        },
+        {
+          "title": "Auction is the last resort",
+          "body": "Bidding usually starts about 30% below market value, and whatever is still owed becomes a personal loan. Bankruptcy follows only if that goes unpaid."
+        }
+      ],
+      "actions": [
+        "Pay every instalment on time for at least six months to clean up CCRIS and CTOS.",
+        "Audit his spending, take overtime and side work, and push monthly savings above RM9,000.",
+        "Fully furnish each unit in the gap between tenancies, with help from family or friends on the ground.",
+        "Check fully furnished rents in each building to see which unit can be sold closest to its loan.",
+        "Check his CCRIS and CTOS reports regularly from now on."
+      ],
+      "caveat": "Recovery depends partly on the market, which he can't control, and could take three to five years. Sean sees the lakeside unit in Puchong as the hardest to fix, since even fully furnished it rents for about RM2,500.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #205. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in March 2023. Sean says he works at The Makeover Guys, a furnishing company, and that his advice to fully furnish is not a push for it; owners can do it themselves.",
+      "askingSeanEpisode": 205,
+      "video": {
+        "id": "NWclUU3iwRM",
+        "title": "ASKING SEAN #205 | DON'T BLINDLY TRUST AGENTS",
+        "duration": "29:05",
+        "url": "https://www.youtube.com/watch?v=NWclUU3iwRM"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/four-units-underwater-after-agents-advice"
+    },
+    {
+      "id": "fresh-graduate-checklist-before-investing",
+      "series": "iherng-podcast",
+      "title": "I bought a cheap studio three months into my first job. Too soon?",
+      "excerpt": "A graduate from Sarawak signed for a RM200,000-plus studio near KL city centre three months into his first job. Sean says it was too soon, and sets out what he would do first at 23.",
+      "date": "2023-02-17",
+      "tag": "First job, first property",
+      "question": {
+        "asker": "From 874, a viewer who wrote in by email",
+        "context": "The viewer is from Sarawak and started his first job in KL three months before writing. He has signed for a studio not far from KL city centre for a little over RM200,000, with a full loan at about 4.25% interest, hoping the rent will give positive cash flow and raise his loan eligibility for more units.",
+        "text": "Is his interest rate fair, is this the right way to start, and should he have saved his first-home advantages for a better property?"
+      },
+      "answer": {
+        "quote": "Property is a very very slow game, but we can play very long.",
+        "summary": "Yes, it was too soon. He skipped the basics: an emergency fund, insurance, a stable career and comparing about 20 properties nearby. A cheap total price isn't the same as a good price per square foot. The interest rate matters less than these, since small loans to new borrowers usually carry higher rates."
+      },
+      "reasons": [
+        {
+          "title": "Check the list before buying",
+          "body": "First six months of living costs as an emergency fund, then medical insurance, then confidence that his job is stable and that he can live with a big loan. Only then compare the project's price per square foot with others around it."
+        },
+        {
+          "title": "Small, cheap units are a marketing trend",
+          "body": "Developers sell units of about 450 sq ft for under RM250,000 near KLCC with promises of high Airbnb returns. Divided by the size, the price often isn't cheap at all."
+        },
+        {
+          "title": "Subsale first builds the next loan",
+          "body": "A subsale can be rented out at once. After about six months the rent counts as income for the bank, raising loan eligibility instead of cutting it. The SPA also lets him withdraw from EPF Account 2 to help with the next purchase."
+        },
+        {
+          "title": "Your income drives the portfolio",
+          "body": "Banks still need a strong active income before each new loan. Sean would spend his first years investing in his career and in people who can teach him, until his salary reaches about RM5,000."
+        }
+      ],
+      "actions": [
+        "Build six months of emergency savings and buy a medical card before any purchase.",
+        "Get a credit card for essentials only, to build a credit record, and never treat the limit as savings.",
+        "Visit about 20 properties around any project and compare price per square foot.",
+        "Aim first for a subsale of RM300,000 to RM500,000 whose rent covers the instalment, then furnish and rent it out.",
+        "Use the second 90% loan on a new project, and expect later loans to need more cash."
+      ],
+      "caveat": "Whether this purchase was right will only be clear once the project is completed and rented out. If it produces positive cash flow, it can still work.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #202. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in February 2023; loan margins and EPF withdrawal rules change, so check current ones. Sean mentions joining FAR Capital, a bulk-purchase group linked in the video description.",
+      "askingSeanEpisode": 202,
+      "video": {
+        "id": "I3JYzJklrZU",
+        "title": "ASKING SEAN #202 | CHECKLIST FOR FRESH GRADUATES BEFORE INVESTMENT",
+        "duration": "16:26",
+        "url": "https://www.youtube.com/watch?v=I3JYzJklrZU"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/fresh-graduate-checklist-before-investing"
+    },
+    {
       "id": "full-cash-or-housing-loan",
       "series": "iherng-podcast",
       "title": "My dad will pay cash for my house. Should I still take a loan?",
@@ -9857,6 +11023,58 @@
         "url": "https://www.youtube.com/watch?v=0jRa3NSrrUg"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/hotel-scheme-unit-gone-wrong"
+    },
+    {
+      "id": "house-flipping-in-malaysia",
+      "series": "iherng-podcast",
+      "title": "Can I make money flipping old houses in Malaysia?",
+      "excerpt": "A 24-year-old bank employee wants to buy dated houses below market value, renovate them and resell within months. Sean explains why flipping only pays for contractors, and suggests selling property instead.",
+      "date": "2022-11-07",
+      "tag": "Property flipping",
+      "question": {
+        "asker": "From F, a viewer who wrote in on Instagram",
+        "context": "F is 24, has worked at a bank for a year and a half, lives with his parents and has low expenses. He enjoys interior design and wants to buy abandoned or dated houses below market value, renovate them and sell at market price within about six months, rather than hold rentals for years. He hopes his job gives him better loan rates.",
+        "text": "Is house flipping a viable way to make money in Malaysia, and can he take a long loan for a short flip?"
+      },
+      "answer": {
+        "quote": "Property investment was supposed to be slow.",
+        "summary": "For him, no. Flipping pays mainly for renovation contractors and interior designers who profit from the building work itself, while an outsider takes all the risk. Sean suggests he sell property as an agent instead: little risk, he learns the market, and his income depends on his own effort."
+      },
+      "reasons": [
+        {
+          "title": "The numbers only work at the bank's valuation",
+          "body": "If a house sells for RM800,000 but the bank values it at RM1 million, a buyer who qualifies for a RM900,000 loan has room for renovation. But a newcomer often doesn't know what a kitchen, roof, water tank or auto gate costs, and each one eats into the margin."
+        },
+        {
+          "title": "Tax on a quick sale removes much of the gain",
+          "body": "Property gains tax is highest in the first years after the SPA, so on a RM100,000 gain perhaps RM30,000 goes in tax. The third and later loans also can't get 90% financing, which limits repeat flips."
+        },
+        {
+          "title": "The deals and the work are hard to find",
+          "body": "Neighbours snap up genuinely cheap houses first. Contractors can abandon jobs, and coordinating cabinet makers, ceiling installers and electricians takes far more hours than people expect, while the instalment keeps running."
+        },
+        {
+          "title": "Contractors profit regardless",
+          "body": "A builder or interior design firm prices the works at cost and knows from past projects what a house will fetch. An outside buyer pays their margin and still has to find a buyer after tax."
+        }
+      ],
+      "actions": [
+        "Learn the difference between bank valuation and the price buyers actually pay nearby.",
+        "Check current property gains tax rates on sales in the first few years.",
+        "Consider working as a property agent part-time to learn the market with little risk.",
+        "If you still want to flip, partner with an experienced contractor rather than going alone."
+      ],
+      "caveat": "A refurbished house in a good location can still sell above neighbouring prices, because buyers will pay to skip the hassle. Flipping isn't impossible, just poorly suited to a newcomer financing it alone.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #191. The quoted line is verbatim; everything else is paraphrased. Figures are as Sean stated them in November 2022; property gains tax rates and loan limits change, so check current ones. Sean refers to his work at The Makeover Guys, a furnishing company.",
+      "askingSeanEpisode": 191,
+      "video": {
+        "id": "u6tPMrSc4_E",
+        "title": "ASKING SEAN #191 | PROPERTY FLIPPING STILL WORK?",
+        "duration": "15:13",
+        "url": "https://www.youtube.com/watch?v=u6tPMrSc4_E"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/house-flipping-in-malaysia"
     },
     {
       "id": "house-for-tuition-centre",
@@ -10762,6 +11980,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/judging-a-buildings-architecture"
     },
     {
+      "id": "landed-home-for-parents-or-keep-renting",
+      "series": "iherng-podcast",
+      "title": "Should I buy a RM1 million landed house for my parents to live in?",
+      "excerpt": "A Malaysian working in Singapore wants to buy her renting parents a landed home in Cheras. Sean explains why landed rents are so low, how to judge a renovated house, and a cheaper option first.",
+      "date": "2023-03-23",
+      "tag": "Buying for parents",
+      "question": {
+        "asker": "From Miss R, a viewer who wrote in by email",
+        "context": "Miss R is in her mid-30s and works in Singapore. Her parents rent a house in the Cheras area and didn't like the condos they viewed, so she raised her budget for a landed house from RM800,000 to about RM1 million. Renovated houses ask around RM1 million while unrenovated ones nearby sell for RM800,000 to RM900,000, and similar houses rent for only about RM2,000 a month, less than half her expected instalment.",
+        "text": "Is such a low rent normal for landed homes, and should she pay a premium for a renovated house, renovate an old one herself, or keep looking?"
+      },
+      "answer": {
+        "quote": "I don't think that renting is all that bad.",
+        "summary": "Yes, it is normal: a RM1 million landed house on a 90% loan costs about RM4,000 a month, while it rents for about RM2,000. Sean would first try to secure her parents' current rental with the landlord. If she still buys, choose between renovated and unrenovated by the bank's valuation and the cash she has left for works."
+      },
+      "reasons": [
+        {
+          "title": "Landed homes rarely pay for themselves",
+          "body": "Rent on a landed house is often barely half the instalment, which is why Sean favours high-rise units whose rent covers the loan. His one exception is a house near Johor's Second Link, where rent from cross-border workers almost covers the instalment."
+        },
+        {
+          "title": "Renting's only real risk can be managed",
+          "body": "The setback of renting is the owner selling and asking the tenants to leave, so older people lose their neighbours and routines. A longer lease, and a written promise that the landlord offers them the house first if he sells, deals with most of that."
+        },
+        {
+          "title": "Banks value the house, not your renovation",
+          "body": "A renovated house is worth the premium only if the bank values it near the asking price, so the loan covers it. Valuers count only legal structural extensions, usually for about three years. If a RM800,000 house values at RM850,000, the extra room helps pay for her own works."
+        },
+        {
+          "title": "Count the full cash before the keys",
+          "body": "On a RM1 million house, about 18% up front for the down payment, stamp duty and legal fees, plus about RM200,000 of renovation, comes to roughly RM380,000. Renovating an old landed house from Singapore can also take three to six months."
+        }
+      ],
+      "actions": [
+        "Ask her parents' landlord for a longer lease, a slightly lower rent, and first refusal in writing if the house is sold.",
+        "Use the money she saves to buy an investment unit whose rent covers its instalment.",
+        "If she buys, ask the agent for the bank's valuation of each house before deciding.",
+        "Budget the renovation separately from the loan she qualifies for.",
+        "Decide what will happen to the house later, including whether she may want to settle in Singapore."
+      ],
+      "caveat": "Landed houses are one of a kind, so if her parents fall in love with one house and she has the capital, paying for it can still make sense. Sean also notes that many older people don't want to move, which argues for keeping them where they are.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #207. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in March 2023. Sean mentions he owns a landed house near Johor's Second Link whose rent almost covers its instalment.",
+      "askingSeanEpisode": 207,
+      "video": {
+        "id": "fIH7olV05mA",
+        "title": "ASKING SEAN #207 | RENTAL RATES ARE TERRIBLE FOR LANDED HOMES",
+        "duration": "20:02",
+        "url": "https://www.youtube.com/watch?v=fIH7olV05mA"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/landed-home-for-parents-or-keep-renting"
+    },
+    {
       "id": "landed-home-for-semi-retirement",
       "series": "iherng-podcast",
       "title": "We're in our 50s. Should we sell our house and buy a new landed home for semi-retirement?",
@@ -10972,6 +12243,59 @@
         "url": "https://www.youtube.com/watch?v=rOZdL2vOuxA"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/late-delivery-damages-and-booking-fees"
+    },
+    {
+      "id": "laundromat-business-or-rental-property",
+      "series": "iherng-podcast",
+      "title": "With RM70,000 at 25, should I start a business or buy property first?",
+      "excerpt": "A 25-year-old with RM70,000 saved wants to escape the rat race, either with a self-service laundry or rental properties. Sean says start the business first: property keeps you rich rather than making you rich.",
+      "date": "2022-12-10",
+      "tag": "Business vs property",
+      "question": {
+        "asker": "From C, a viewer who wrote in by email",
+        "context": "C is 25, lives with his parents, earns a little over RM3,000 a month and has about RM70,000 in savings. He wants to escape the rat race, either by opening a self-service laundry or by building rental properties, and hopes to reach RM5,000 to RM6,000 a month from rent. He fears a failed business would send him back to a job, while buying property would leave no money for the business.",
+        "text": "Should he start the business or the property investment first, and how many rental units would it take to live off rent?"
+      },
+      "answer": {
+        "quote": "Real estate don't really make you rich, real estate keeps you rich.",
+        "summary": "Start the business first, carefully and if possible while keeping his job. At 25 with no commitments he can afford to fail, and running a business teaches him far more than a salary does. Once the business makes money, buy properties whose rent covers the instalment, and use them to store that wealth."
+      },
+      "reasons": [
+        {
+          "title": "Living off rent takes many units and years",
+          "body": "A unit with a surplus of RM500 a month after its instalment is already a good one, so RM5,000 to RM6,000 would take about ten such units bought years ago, with the risk that some sit empty."
+        },
+        {
+          "title": "Positive cash flow comes from time or crafted deals",
+          "body": "Sean's Puchong apartment, bought for about RM300,000, only broke even for its first three to five years before rents rose. Otherwise, the deals come from motivated sellers known through specialist agents, or from buying in bulk for a developer discount."
+        },
+        {
+          "title": "A business teaches what a job can't",
+          "body": "Customers, capital and operating costs, hiring, company registration, accounts and the rent versus footfall of a location are all lessons for later wealth. If it fails at 25, he can simply go back to work."
+        },
+        {
+          "title": "Property compounds quietly",
+          "body": "After ten years his tenants had paid his Puchong loan below RM300,000 while the unit was worth about RM400,000, so he could refinance and buy again. Repeating that builds two or three paid-off units by about 60."
+        }
+      ],
+      "actions": [
+        "Plan the laundry business carefully, with costs, location and footfall, and don't spend all RM70,000 at once.",
+        "Keep his job while the business is starting, if he can.",
+        "Once the business earns money, buy properties whose current rent covers the instalment.",
+        "Expect each unit to give a modest surplus, and let tenants build the equity over time.",
+        "Read up on the cash flow quadrant idea of employees, self-employed, business owners and investors."
+      ],
+      "caveat": "Rents rarely jump, so a unit's surplus stays modest unless it is improved. Sean chose a corporate career and property in his early 20s himself, so the right order depends on the path you want.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #193. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in December 2022.",
+      "askingSeanEpisode": 193,
+      "video": {
+        "id": "mwHeT8bJ6XM",
+        "title": "ASKING SEAN #193 | START A BUSINESS OR INVEST IN PROPERTY?",
+        "duration": "13:16",
+        "url": "https://www.youtube.com/watch?v=mwHeT8bJ6XM"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/laundromat-business-or-rental-property"
     },
     {
       "id": "leasehold-condo-resale-risk",
@@ -12044,6 +13368,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/old-house-vs-new-property"
     },
     {
+      "id": "old-walk-up-apartment-in-penang",
+      "series": "iherng-podcast",
+      "title": "Will a 33-year-old walk-up apartment be hard to sell in 15 years?",
+      "excerpt": "A buyer likes a first-floor freehold walk-up in Green Lane, Penang, near his parents, but worries about its age and resale. Sean explains walk-up pricing and the checks that matter.",
+      "date": "2022-10-29",
+      "tag": "Walk-up apartments",
+      "question": {
+        "asker": "From A viewer who wrote in by email and asked to stay anonymous",
+        "context": "The viewer is looking at a 1,000 sq ft first-floor unit in a 33-year-old freehold walk-up apartment in Green Lane, Penang, asking RM520,000. The established neighbourhood is central and quiet, the unit is well kept, parking is easy, and it is close to his parents' home. He would live there for about 15 years, and doesn't want a new launch because they are dense, small and far away.",
+        "text": "Is an old walk-up apartment a sound buy, or will its age and low demand make it hard to sell later?"
+      },
+      "answer": {
+        "quote": "The only question is how much you want to sell.",
+        "summary": "It will sell in 15 years; the question is at what price, and nobody can promise a profit. Do the checks now: compare the asking price with other walk-ups and recent transactions nearby, get the bank's valuation, and look at the rents. Then negotiate with that data, and expect growth roughly in line with inflation."
+      },
+      "reasons": [
+        {
+          "title": "In a walk-up, lower floors cost more",
+          "body": "Without lifts, buildings stop at about five storeys, and the top floors are cheapest because of the stairs. The first floor is often the sweet spot: one flight of stairs, with a little more privacy than the ground floor."
+        },
+        {
+          "title": "Owner-occupiers keep a building in good shape",
+          "body": "A building mostly lived in by its owners tends to be maintained by residents who care, unlike one full of investors' tenants. Check who lives there."
+        },
+        {
+          "title": "Data gives you room to negotiate",
+          "body": "If similar units nearby ask RM500,000, he can use that to bring the price down. If the bank values the unit below the price, the difference must be paid in cash."
+        },
+        {
+          "title": "There will always be buyers like him",
+          "body": "Some buyers will always prefer a quieter, lower-density walk-up to Penang's dense new blocks, as he does. Penang rents are lower than KL's, at about 2.5% to 3% of value, but higher rents still show demand."
+        }
+      ],
+      "actions": [
+        "Compare the asking price with about 20 walk-ups and recent transactions in Green Lane.",
+        "Ask for the bank's valuation before agreeing a price.",
+        "Check rents for similar units nearby.",
+        "Find out whether most residents are owners or tenants.",
+        "Look up past transaction prices for Penang walk-ups to set realistic expectations."
+      ],
+      "caveat": "Being freehold removes any concern about the lease. A new highway or rail line nearby could change the area's prospects either way, which no one can predict.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #190. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in October 2022.",
+      "askingSeanEpisode": 190,
+      "video": {
+        "id": "PkRpKoNRKRI",
+        "title": "ASKING SEAN #190 | IT'S ALL ABOUT THE SELLING PRICE",
+        "duration": "10:55",
+        "url": "https://www.youtube.com/watch?v=PkRpKoNRKRI"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/old-walk-up-apartment-in-penang"
+    },
+    {
       "id": "outskirts-landed-or-city-condo",
       "series": "buyer-guides",
       "title": "RM700,000: a terrace house in the outskirts or a condo in the city?",
@@ -12148,6 +13525,59 @@
         "url": "https://www.youtube.com/watch?v=PnyHQRPVQQ4"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/overpaid-sunway-student-unit"
+    },
+    {
+      "id": "overpriced-unit-and-revived-abandoned-project",
+      "series": "iherng-podcast",
+      "title": "I overpaid for one unit and another was abandoned. Should I sell?",
+      "excerpt": "A 31-year-old owns a Mont Kiara unit bought at the peak, a once-abandoned studio in Selayang and a new home that stretches her budget. Sean says hold both investments for now and get the numbers first.",
+      "date": "2023-03-16",
+      "tag": "Fixing past purchases",
+      "question": {
+        "asker": "From Miss E, a viewer who wrote in by email",
+        "context": "Miss E and her husband are 31. At 24 they bought a 494 sq ft commercial-titled unit in Mont Kiara for RM560,000, about RM1,200 psf, where listings now ask RM700 to RM900 psf; the 25-year loan costs about RM3,000 a month and it rents for RM1,700 to RM1,900. She also co-owns a studio in Selayang with her brother, bought in 2014 with their parents paying the down payment; the project was abandoned, is now being completed by a new developer, and they have kept paying the loan. Last year the couple bought their own home, and money now feels tight.",
+        "text": "Should she sell the Mont Kiara unit or keep renting it out, and should she sell the Selayang studio once she gets the keys or rent it out?"
+      },
+      "answer": {
+        "quote": "It's just very dangerous to buy a particular location at its peak price.",
+        "summary": "Hold both for now. For the Mont Kiara unit, find out what she still owes the bank and test short-term rental, since the area is picking up. For the Selayang studio, wait until the keys are handed over, then decide from real rents, prices and what is left on the loan."
+      },
+      "reasons": [
+        {
+          "title": "Selling below the loan still leaves a debt",
+          "body": "If she owes the bank RM500,000 and sells for RM450,000, she loses the unit and still has to pay the RM50,000 difference. Knowing the outstanding loan comes before any decision to sell."
+        },
+        {
+          "title": "Short stays may beat a long-term tenant",
+          "body": "The building feels like a hotel and short-stay rates have recovered since Covid. Run it herself, which is close to a full-time job, or partner with an operator on a profit split, and compare the result with RM1,700 to RM1,900 a month."
+        },
+        {
+          "title": "Mont Kiara is picking up",
+          "body": "New completions, a mixed development, more launches and a possible MRT line nearby should bring more people. Holding is about reducing her loss rather than counting on big gains."
+        },
+        {
+          "title": "Banks still collect on abandoned projects",
+          "body": "Buyers must repay what the bank has already released to the developer, even with no home to move into. Standard billing schedules for developers only limit the damage, and a revived project is close to a miracle, so the next step is to see it completed."
+        }
+      ],
+      "actions": [
+        "Ask the bank exactly how much is still owed on each property.",
+        "Check daily and weekend short-stay rates in the Mont Kiara building and talk to operators there.",
+        "Hold the Selayang studio until vacant possession, then check its rent, latest selling prices and the mall's anchor tenants.",
+        "Before any future purchase, compare the price per square foot with the area's median price.",
+        "Look at price per square foot, not just the total price, when a unit seems affordable."
+      ],
+      "caveat": "Sean doubts the Selayang location, where few projects have done well, so the decision on that studio may change once the real rents and prices are known. With three incomes sharing the loans and her age on her side, he sees the situation as fixable rather than the end of the world.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #206. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in March 2023.",
+      "askingSeanEpisode": 206,
+      "video": {
+        "id": "cYFAd7EPm2Y",
+        "title": "ASKING SEAN #206 | OVERPRICED AND ABANDONED PROJECT, WHAT SHOULD I DO?",
+        "duration": "22:18",
+        "url": "https://www.youtube.com/watch?v=cYFAd7EPm2Y"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/overpriced-unit-and-revived-abandoned-project"
     },
     {
       "id": "oversupply-and-first-time-buyers",
@@ -13098,6 +14528,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/property-versus-fixed-deposit"
     },
     {
+      "id": "rebuilding-a-portfolio-at-43",
+      "series": "iherng-podcast",
+      "title": "One bad tenant made me sell. Is 43 too late to build a portfolio?",
+      "excerpt": "A 43-year-old sold his condo near an LRT station after a tenant broke the lease. Sean answers his rapid-fire questions on age, tenants, renovation budgets, price points and transit.",
+      "date": "2022-08-24",
+      "tag": "Building a portfolio",
+      "question": {
+        "asker": "From L, a viewer who wrote in on Facebook",
+        "context": "L is 43. He bought a condo next to an LRT station to rent out but struggled to find tenants at a good rent. An expat tenant asked for many new items before signing a one-year agreement, then left after two months without compensation, so L sold the property.",
+        "text": "Is 43 too late to build a portfolio, and how do investors handle rent collection, renovation budgets, bad tenants, price points and locations near rail?"
+      },
+      "answer": {
+        "quote": "Every location will have its median price.",
+        "summary": "It isn't too late, but it is harder: banks lend to about 65 or 70, so a shorter loan means higher instalments that rents struggle to cover. Sean builds equity slowly with units whose rent covers the instalment, uses a management company, and judges a price against the area's median rather than looking for the cheapest unit."
+      },
+      "reasons": [
+        {
+          "title": "Deposits and stamped agreements protect you",
+          "body": "The usual two months' deposit, half a month for utilities and one month in advance cover a tenant who breaks the lease early. A stamped tenancy agreement holds up better and lets you declare the rent as income for your next loan."
+        },
+        {
+          "title": "Furnishing budgets depend on use",
+          "body": "For an investment unit, Sean puts a one-bedroom at about RM25,000 to RM28,000, and a larger unit with a better kitchen at about RM45,000 to RM55,000. A three-bedroom own-stay unit might be about RM80,000, and landed homes can cost far more."
+        },
+        {
+          "title": "Rent collection is active work",
+          "body": "Well-presented units attract tenants who treat them well. Send a warning letter after the first missed payment rather than chasing six months later; passive income is not the same as doing nothing."
+        },
+        {
+          "title": "Transit helps only if it shortens the trip",
+          "body": "A station is worth more when the CBD is a few stops away, parking is easy and malls and offices are part of the development. If the train takes an hour and a half, tenants will still drive."
+        }
+      ],
+      "actions": [
+        "Collect the standard deposits and use a stamped tenancy agreement.",
+        "Act on the first late payment.",
+        "Find the median price per square foot for each area and aim below it.",
+        "Check how many stops and minutes a project is from the CBD, not just whether it has a station.",
+        "Work through Sean's four basic steps before choosing an area and project."
+      ],
+      "caveat": "Rail access isn't a guarantee: some new projects set the area's highest prices, while some pricier areas still rent best. Price point is always relative to the location.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #187. The quoted line is verbatim; everything else is paraphrased. Figures are as Sean stated them in August 2022. Sean says he works at The Makeover Guys, a furnishing company; a property management company manages his units; and he learnt the median-price method from FAR Capital.",
+      "askingSeanEpisode": 187,
+      "video": {
+        "id": "UetAvzXayOw",
+        "title": "ASKING SEAN #187 | MAKE PROPERTY INVESTMENT A DINNER TABLE CONVERSATION",
+        "duration": "16:17",
+        "url": "https://www.youtube.com/watch?v=UetAvzXayOw"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/rebuilding-a-portfolio-at-43"
+    },
+    {
       "id": "rebuilding-credit-after-bankruptcy",
       "series": "iherng-podcast",
       "title": "Out of bankruptcy at 41. Should I take a loan to rebuild my credit?",
@@ -13733,6 +15216,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/rent-your-home-buy-to-invest"
     },
     {
+      "id": "rental-income-for-retirement-at-60",
+      "series": "iherng-podcast",
+      "title": "At 60, can we still buy property to live off the rent?",
+      "excerpt": "A couple in their 60s with RM450,000 in EPF and a flat that barely appreciated hope a rental unit can fund their retirement. Sean explains why that is hard now, and what he would do first.",
+      "date": "2022-09-02",
+      "tag": "Late starters",
+      "question": {
+        "asker": "From A viewer in her 60s who wrote in by email",
+        "context": "She is 60 and her husband, 63, a company driver earning about RM4,300 with overtime, wants to stop working. They have about RM450,000 in EPF and no insurance. Their own flat off Old Klang Road, bought 22 years ago for RM166,000, sells for about RM270,000 and would rent for about RM1,000, though tenants there often pay late or leave. They need about RM3,000 a month to live, also want a separate place for an adult son who needs his own space, and a relative has offered RM2,500 a month for four years.",
+        "text": "Is it too late to buy a property that generates rental income, how could they get a loan at 63, and should they sell or rent out their flat?"
+      },
+      "answer": {
+        "quote": "Take control of your life instead of hoping for things to happen.",
+        "summary": "Keep their flat as the family home and safety net. At their age, a unit whose rent exceeds its instalment by RM1,000 or more is rare, perhaps 3% to 5% of properties, and hard to finance. Focus first on active income, like part-time agency or customer service work. Learn how property investing works before committing their EPF."
+      },
+      "reasons": [
+        {
+          "title": "Late loans are hard to get",
+          "body": "Banks lend to about age 70, so at 63 a loan is very difficult. Their younger son could apply once he has worked six months to a year, with a parent supporting the application."
+        },
+        {
+          "title": "Retail buyers pay the highest price",
+          "body": "Developers sell the best units to staff, relatives and associates first, so the public pays the most. A unit that pays out more than its instalment usually needs a below-market price and active management, such as renting room by room."
+        },
+        {
+          "title": "Their flat did appreciate",
+          "body": "Rising from RM166,000 to about RM270,000 is a gain of more than 50%, even if it felt slow. Selling it would leave them needing somewhere else to live."
+        },
+        {
+          "title": "Tenants can be managed",
+          "body": "Screening where tenants work and how many will live there, offering one-year leases and furnishing the unit well all reduce late payments and damage."
+        }
+      ],
+      "actions": [
+        "Keep the current flat as their home and last resort.",
+        "Look for active income both can do, such as property agency, customer service from home, or sharing their experience online.",
+        "Learn about property investing before spending any EPF savings on it.",
+        "Plan any future loan around their younger son's income once he is working.",
+        "Look after their health, since they have no insurance."
+      ],
+      "caveat": "Sean can't give a precise plan for their family situation, which involves care decisions only they can make. His point is that rental income is a slow tool, best started young, and not a quick fix at 60.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #188. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in September 2022, and family details are kept to what the answer needs. Sean says he is a client of FAR Capital, a bulk-purchase company, and suggests learning from it.",
+      "askingSeanEpisode": 188,
+      "video": {
+        "id": "Ome1KfT8dzc",
+        "title": "ASKING SEAN #188 | 60 YEARS OLD AUNTIE",
+        "duration": "23:29",
+        "url": "https://www.youtube.com/watch?v=Ome1KfT8dzc"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/rental-income-for-retirement-at-60"
+    },
+    {
       "id": "retire-at-40-on-rental-income",
       "series": "iherng-podcast",
       "title": "I sold my business at 40. Live on rent, or buy more properties?",
@@ -14051,6 +15587,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/second-property-vs-equities"
     },
     {
+      "id": "sell-all-properties-at-retirement",
+      "series": "iherng-podcast",
+      "title": "I retire next year with no children. Should I sell all my properties?",
+      "excerpt": "A single woman retiring next year owns a PJ terrace and three paid-off rented units, plus a condo under construction. Sean says set a budget for the life she wants, then sell or refinance to fund it.",
+      "date": "2023-01-20",
+      "tag": "Retirement drawdown",
+      "question": {
+        "asker": "From Miss I, a viewer who wrote in by email",
+        "context": "Miss I retires next year and has no children. She lives in a double-storey terrace in PJ and owns three fully paid units, a medium-cost condo and a studio in PJ and a condo in Wangsa Maju, rented out at RM1,000, RM1,300 and RM1,400. A condo in Cyberjaya, near a hospital and a nursing home, is under construction. She plans to move to Ipoh near her sister, and later into the Cyberjaya condo.",
+        "text": "Should she sell everything because managing the properties will get harder with age, and if so, when, since people say the market is always slow?"
+      },
+      "answer": {
+        "quote": "If you can actually time the market, everyone here will be a millionaire already.",
+        "summary": "Don't let the market decide. Work out what her retirement will cost, then choose how to fund it: hold everything for the rent, sell one unit every few years, or refinance each unit only as far as its rent can repay and keep the cash. A mix of the last two gives her both income and a lump sum."
+      },
+      "reasons": [
+        {
+          "title": "Rent already pays for a comfortable life",
+          "body": "The three units bring in roughly RM3,000 to RM3,700 a month with no loans. With some part-time or consulting work in Ipoh, that could make a very easy life with zero commitments."
+        },
+        {
+          "title": "Nobody knows how long the money must last",
+          "body": "Spending RM15,000 a month, about RM180,000 a year, a large sale might last only about ten years with inflation. Steady cash flow handles a long life better than a pile of cash she is afraid to spend."
+        },
+        {
+          "title": "Refinancing unlocks cash faster than selling",
+          "body": "Refinancing each unit only up to the amount its rent can repay could release a lump sum of maybe RM400,000 to RM500,000 while the units still pay for themselves. Selling a property takes close to a year from finding a buyer to receiving the money."
+        },
+        {
+          "title": "Sell the weakest first",
+          "body": "If she sells, start with the units least likely to appreciate, the PJ studio and the Wangsa Maju condo, then the medium-cost condo, and keep the PJ terrace longest to benefit most from inflation."
+        }
+      ],
+      "actions": [
+        "Write down the lifestyle she wants in retirement and what it will cost each year.",
+        "Set a target selling price for each property and sell only when the market reaches it.",
+        "Consider releasing cash by refinancing to the point where each unit's rent covers the new instalment.",
+        "Allow about a year for each sale.",
+        "Prepare a will and decide where she wants to live in her final years."
+      ],
+      "caveat": "Selling everything mainly buys liquidity, for example to invest in dividend stocks. Sean himself would refinance and keep buying rather than hold paid-off units, but says there is no single right way.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #198. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in January 2023; values are his rough estimates. Refinancing in retirement depends on age and income, so check with banks.",
+      "askingSeanEpisode": 198,
+      "video": {
+        "id": "hjW80fdgSkU",
+        "title": "ASKING SEAN #198 | DO I SELL ALL PROPERTIES AFTER RETIREMENT?",
+        "duration": "12:50",
+        "url": "https://www.youtube.com/watch?v=hjW80fdgSkU"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/sell-all-properties-at-retirement"
+    },
+    {
       "id": "sell-at-loss-or-rent-out",
       "series": "iherng-podcast",
       "title": "My condo is worth less than my loan. Sell at a loss or rent it out?",
@@ -14155,6 +15744,59 @@
         "url": "https://www.youtube.com/watch?v=a7iMddWlM2s"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/sell-leasehold-house-at-60"
+    },
+    {
+      "id": "sell-or-refinance-to-fund-education",
+      "series": "iherng-podcast",
+      "title": "Should I sell or refinance a paid-off flat to fund my son's degree?",
+      "excerpt": "A divorced father of 50 wants to send his son to Australia and owns a paid-off leasehold flat in Ampang. Sean compares selling with refinancing only as much as the rent can repay.",
+      "date": "2023-03-02",
+      "tag": "Education funding",
+      "question": {
+        "asker": "From K, a viewer who wrote in by email",
+        "context": "K is 50, divorced, and his son is in Form 5. He lives in a corner terrace in Puchong that still has a loan, and owns a fully paid leasehold apartment in Ampang, bought in 2002 for RM142,000, with about 78 years left on the lease. It rents for about RM1,500 a month and similar units ask RM340,000 to RM380,000. He doesn't have the cash to send his son to Australia for a degree.",
+        "text": "Should he sell the apartment or refinance it to pay for his son's education?"
+      },
+      "answer": {
+        "quote": "I really believe that money is only valuable when it flows.",
+        "summary": "Talk to his son first, because that decides how much money he really needs. If he wants a clean break, sell and use the rest to cut his own housing loan. If he wants to keep the flat for retirement, refinance only up to the amount the RM1,500 rent can repay, so the flat still pays for itself."
+      },
+      "reasons": [
+        {
+          "title": "Selling is simple but slower for leasehold",
+          "body": "At about RM350,000, the money would arrive in six to nine months, since leasehold sales need two to three extra months for state consent."
+        },
+        {
+          "title": "A full refinance adds a new burden",
+          "body": "Banks usually lend about 80% of value. On a RM400,000 valuation that is about RM320,000, costing roughly RM1,900 a month over 20 years at 4%, about RM500 more than the rent. Refinancing about RM230,000 to RM250,000 keeps the instalment near the rent."
+        },
+        {
+          "title": "Leasehold value holds until about 60 years left",
+          "body": "Prices drop when banks become reluctant to lend on short leases, but rent barely changes. A paid-off flat bringing RM18,000 a year is useful in retirement, especially for someone without a business."
+        },
+        {
+          "title": "A foreign degree may not be needed",
+          "body": "Sean, educated entirely in Malaysia, saw starting salaries differ by only a few hundred ringgit, and after three to five years performance matters more. A twinning or one-year exchange programme, or a scholarship, could cost far less."
+        }
+      ],
+      "actions": [
+        "Ask his son what he actually wants, and whether a local degree, twinning or exchange would do.",
+        "Push his son to apply for scholarships.",
+        "If refinancing, ask the bank for an amount whose instalment matches the rent.",
+        "If selling, use part of the money to reduce the loan on his own home.",
+        "Compare keeping the flat with what the money would earn in EPF, fixed deposits or other investments."
+      ],
+      "caveat": "Refinancing at 50 depends on his income and credit record; banks lend to about age 70, some to 75. If he is uncomfortable with debt after his divorce, selling outright is a perfectly fair choice.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #204. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in March 2023; loan rates have changed since. Sean mentions a mortgage contact who helped him refinance two of his own properties.",
+      "askingSeanEpisode": 204,
+      "video": {
+        "id": "yupsg7LgxI4",
+        "title": "ASKING SEAN #204 | USE PROPERTY TO FINANCE CHILD'S EDUCATION",
+        "duration": "14:45",
+        "url": "https://www.youtube.com/watch?v=yupsg7LgxI4"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/sell-or-refinance-to-fund-education"
     },
     {
       "id": "selling-family-home-to-clear-debt",
@@ -14898,6 +16540,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/stalled-project-projek-sakit"
     },
     {
+      "id": "start-investing-early-or-build-income-first",
+      "series": "iherng-podcast",
+      "title": "You say start early but also wait. Which is right for a fresh graduate?",
+      "excerpt": "A fresh graduate points out that Sean tells young people both to start early and to build a safety net first. Sean explains it depends on your career, risk appetite and goals.",
+      "date": "2022-12-30",
+      "tag": "Young investors",
+      "question": {
+        "asker": "",
+        "context": "A fresh graduate wrote in about advice that seems to contradict itself: start accumulating property early to make use of the 35-year loan, yet earn at least RM5,000 and build a safety net first. Meanwhile prices keep rising faster than salaries, and he fears young people will be priced out.",
+        "text": "What mindset should fresh graduates and first-time buyers have about when to start in property?"
+      },
+      "answer": {
+        "quote": "Property investment is only a way of wealth building.",
+        "summary": "It depends on who you are. If you are on a stable salaried career path, buying an investment property early makes sense. If you want to get rich, or are building a business or side project, invest in yourself and the business first, and put money into property once you have earned it."
+      },
+      "reasons": [
+        {
+          "title": "Property suits people with certain income",
+          "body": "Sean bought early because he planned to climb the corporate ladder, with a salary arriving every month. Over about ten years the rent and value rose, and he refinanced to take out the equity his tenants built."
+        },
+        {
+          "title": "Property is too slow to make you rich",
+          "body": "Quick flips are largely over. A RM400,000 unit may rise only about 15% in ten years, far slower than young people expect."
+        },
+        {
+          "title": "A loan takes away flexibility",
+          "body": "You need an emergency fund and money for repairs and empty months, and you can no longer quit a job or join a friend's venture freely. That is a real cost while your career is still taking shape."
+        },
+        {
+          "title": "Never has building a business been cheaper",
+          "body": "Online shops, social media and free tutorials make starting a business far easier than before. Commission-based work, like property or insurance agency, rewards effort directly; invest the earnings afterwards."
+        }
+      ],
+      "actions": [
+        "Decide whether your path is a stable salaried career, commission work, or a business.",
+        "If salaried and certain, consider an investment property early, even renting a room yourself while it is let out.",
+        "If you are building something on the side, put your money into that first.",
+        "Don't overspend on a first own-stay home just to own a landed house.",
+        "Compare property with other options, such as ETFs, index funds and stocks, before committing."
+      ],
+      "caveat": "Fear of being priced out often reflects doubt about your own future income. If you are willing to work hard and invest in yourself, waiting a few years is rarely the end of the world.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #195. The quoted line is verbatim; everything else is paraphrased. Figures are as Sean stated them in December 2022.",
+      "askingSeanEpisode": 195,
+      "video": {
+        "id": "oSGeqigLGpc",
+        "title": "ASKING SEAN #195 | SHOULD YOUTH INVEST IN PROPERTY?",
+        "duration": "14:09",
+        "url": "https://www.youtube.com/watch?v=oSGeqigLGpc"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/start-investing-early-or-build-income-first"
+    },
+    {
       "id": "steps-before-your-first-property",
       "series": "buyer-guides",
       "title": "What should I do before buying my first property?",
@@ -15157,6 +16852,111 @@
         "url": "https://www.youtube.com/watch?v=voy5mjm9rZ4"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/student-rental-first-investment"
+    },
+    {
+      "id": "subsale-charged-to-sellers-business-loan",
+      "series": "iherng-podcast",
+      "title": "The seller's unit is pledged to his business loan. Should I still buy?",
+      "excerpt": "A 28-year-old found her ideal RM300,000 subsale near work in PJ, then learnt it was charged to the seller's business loan, with only a master title. Sean says walk away while the deposit is refundable.",
+      "date": "2023-02-08",
+      "tag": "Title and ownership risk",
+      "question": {
+        "asker": "From Miss V, a viewer who wrote in by email",
+        "context": "Miss V is 28 and has commuted an hour each way for almost ten years. She found a two-room, 800 sq ft apartment in PJ near her work for about RM300,000, and her loan was approved quickly. After she signed the booking form, the agent said the seller had pledged the unit for a business loan and might not get the original documents back from his bank. The building has only a master title, and she can still withdraw and get her deposit back.",
+        "text": "Should she sign the SPA and accept the risk that her bank won't release the loan, or give up the unit?"
+      },
+      "answer": {
+        "quote": "The greatest risk is not losing money, the greatest risk is losing ownership.",
+        "summary": "Walk away. If the documents can't be cleared, the bank may refuse to release her loan after she has already paid legal fees, and her ownership would stay uncertain. Better deals will come; she was lucky to find out before signing the SPA."
+      },
+      "reasons": [
+        {
+          "title": "Ownership is what the paperwork protects",
+          "body": "Malaysia's land system records exactly who owns each property, which is why a subsale transfer must be documented properly. A unit pledged to someone else's loan breaks that chain until the seller's bank releases it."
+        },
+        {
+          "title": "A master title adds a second risk",
+          "body": "Many older apartments still sit on one master title, so transfers need the developer's or landowner's power of attorney. Where no landowner remains, banks often refuse to finance at all."
+        },
+        {
+          "title": "New launches are more standardised",
+          "body": "Residential projects under the Housing Development Act use a standard SPA and billing schedule. Commercial titles, including SOHOs and serviced suites, are not standardised in the same way."
+        },
+        {
+          "title": "Paying for a deal that may collapse wastes money",
+          "body": "If the bank won't release her loan, the sale falls through, the legal fees are gone, and she would struggle to move on to the next unit."
+        }
+      ],
+      "actions": [
+        "Withdraw now while the deposit is still refundable.",
+        "Ask the agent to find other units in the same building, above or below, or nearby within the budget.",
+        "Before booking any subsale, ask whether the unit is charged to a bank and what title it has.",
+        "For new launches, check whether the project is under the Housing Development Act."
+      ],
+      "caveat": "If the seller's bank fully discharges the unit and clean documents are in hand before she signs, the risk largely disappears. Units bought for cash at auction are a different case.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #200. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer stated them in February 2023. This is general information, not legal advice; ask a lawyer about a specific title.",
+      "askingSeanEpisode": 200,
+      "video": {
+        "id": "o1Q1T34fats",
+        "title": "ASKING SEAN #200 | NOT WORTH THE RISK",
+        "duration": "11:20",
+        "url": "https://www.youtube.com/watch?v=o1Q1T34fats"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/subsale-charged-to-sellers-business-loan"
+    },
+    {
+      "id": "subsale-or-new-launch-in-melaka",
+      "series": "iherng-podcast",
+      "title": "I rent a room in Melaka for work. Subsale or new launch home?",
+      "excerpt": "A single first-time buyer posted to Melaka wants to stop renting and is torn between a subsale and a new project. Sean asks why buy a home there at all, and suggests an investment unit first.",
+      "date": "2023-02-14",
+      "tag": "Own stay vs investment",
+      "question": {
+        "asker": "From C, a viewer who wrote in by email",
+        "context": "C works in Melaka but isn't from there, and rents a room. C is a first-time buyer, single, and wants a place of their own soon. Subsales seem to involve more paperwork, a slower loan and an older house, while the new project C likes won't be ready until June 2024.",
+        "text": "Should a first-time buyer pick a subsale or a new project, and what are the pros and cons of each?"
+      },
+      "answer": {
+        "quote": "Build cash flow vehicles first before seeking for comfort.",
+        "summary": "First ask why C needs a home in Melaka now. Unless C's career or partner means settling there, Sean would rent on and buy an investment unit in KL whose rent covers the instalment. A home to live in can come later, when life is settled."
+      },
+      "reasons": [
+        {
+          "title": "Renting fits a temporary posting",
+          "body": "Rent pays for space you need for a few uncertain years. If C may be transferred, owning a home there loses flexibility, and buyers who move often end up paying for an empty house and a rental elsewhere."
+        },
+        {
+          "title": "Subsale and new launch differ in cash and time",
+          "body": "A freehold subsale takes about three to six months to transfer, and leasehold three or four months more for state consent, which varies by state. It needs about 18% up front in cash, while a new launch is a one-stop deal with financing but is often priced higher for the wait."
+        },
+        {
+          "title": "An own-stay home rarely makes money",
+          "body": "Over 35 years the interest roughly doubles what you pay, so a RM500,000 home sold for RM1 million later barely breaks even. What you get is certainty and a form of forced saving."
+        },
+        {
+          "title": "Let tenants build your equity",
+          "body": "A unit renting at about 4.5% to 5% of its price can cover its own instalment, so tenants pay it off while the value grows. Sean found several KL projects that would roughly break even at current rents."
+        }
+      ],
+      "actions": [
+        "Decide first whether you are settling in Melaka for career or family.",
+        "If not, keep renting there and look for an investment unit in KL with a 4.5% to 5% rental yield.",
+        "If buying a subsale, budget about 18% of the price in cash and allow extra months for a leasehold title.",
+        "If buying a new launch, check the handover date against how long you will keep renting.",
+        "Keep the bigger own-stay or landed home for when your family and career are settled."
+      ],
+      "caveat": "If C has settled in Melaka to build a career or family, buying a home to live in there makes sense, and the subsale versus new launch choice then comes down to cash and timing.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #201. The quoted line is verbatim; everything else is paraphrased. Figures are as Sean stated them in February 2023. Transfer times and state consent rules differ by state and change over time.",
+      "askingSeanEpisode": 201,
+      "video": {
+        "id": "jRVwX4JtM6k",
+        "title": "ASKING SEAN #201 | LANDED HOME IS ONLY A TEMPORARY NEED",
+        "duration": "12:15",
+        "url": "https://www.youtube.com/watch?v=jRVwX4JtM6k"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/subsale-or-new-launch-in-melaka"
     },
     {
       "id": "supporting-parents-own-space",
@@ -15582,6 +17382,59 @@
       "articleUrl": "https://iherng-journal.pages.dev/articles/three-tod-projects-equal-cash-flow"
     },
     {
+      "id": "tiny-airbnb-suite-at-21",
+      "series": "iherng-podcast",
+      "title": "At 21, should I buy a 430 sq ft suite in KL with RM80,000 cashback?",
+      "excerpt": "A 21-year-old wants a tiny dual-key suite on Jalan Ampang for Airbnb, financed with a big cashback. Sean lists the numbers he must check first, and says missing a deal beats a 35-year mistake.",
+      "date": "2023-01-11",
+      "tag": "Small units and Airbnb",
+      "question": {
+        "asker": "From A, a viewer who wrote in by email",
+        "context": "A is 21 and new to the channel. He is considering a 430 sq ft dual-key suite on Jalan Ampang with a RM410,000 loan and RM80,000 cashback. He would use the cashback to furnish the unit and keep a reserve. He plans to run it on Airbnb, since he doubts anyone would live long-term in so small a space, and worries he can't otherwise afford a property.",
+        "text": "Is this a good first investment, or is he making a mistake that will become a financial burden?"
+      },
+      "answer": {
+        "quote": "Would you rather have missed a deal or would you live with a mistake?",
+        "summary": "He hasn't done the homework yet, and at 21 he doesn't need to own property. He should first work out the real rents, nightly rates, occupancy and price per square foot against nearby projects, and check he could survive six months with no guest. Only buy if the numbers clearly cover the instalment."
+      },
+      "reasons": [
+        {
+          "title": "Cheap is not the same as a good deal",
+          "body": "A good deal is priced below market value and either earns cash flow, has strong potential to appreciate, or is structured for the cashback. After the cashback this unit costs about RM330,000, which may be RM900 to RM1,000 psf when neighbours sell at about RM700."
+        },
+        {
+          "title": "Airbnb needs its own maths",
+          "body": "A RM410,000 loan costs about RM2,000 a month. He needs the nightly rate, an occupancy of perhaps 70% to 80%, and the operator's cut, and must check that the building still allows short stays, as some ban them."
+        },
+        {
+          "title": "Every property needs a plan B and C",
+          "body": "If short stays fail, who would rent it long-term, and can a 430 sq ft unit be split further? Thousands of similar small units nearby, and auctions in the area, could push rents down."
+        },
+        {
+          "title": "At 21, flexibility is worth more",
+          "body": "Start with an emergency fund of six months, insurance and a stable career. Starting at 25 or 28 with real data is no loss."
+        }
+      ],
+      "actions": [
+        "Collect long-term rents and nightly rates for similar units on Jalan Ampang.",
+        "Ask operators about real occupancy and their profit split, and check the building's rules on short stays.",
+        "Compare the price per square foot with neighbouring projects.",
+        "Make sure you can pay the instalment for six months with no income from the unit.",
+        "View about 20 projects before booking any of them."
+      ],
+      "caveat": "Sean has nothing against small units or high risk. If the data shows the rent comfortably covers the instalment and he can afford six empty months, going ahead is a calculated risk.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #197. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in January 2023.",
+      "askingSeanEpisode": 197,
+      "video": {
+        "id": "VvVB14_SEls",
+        "title": "ASKING SEAN #197 | MISS OUT OR MISTAKE?",
+        "duration": "12:24",
+        "url": "https://www.youtube.com/watch?v=VvVB14_SEls"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/tiny-airbnb-suite-at-21"
+    },
+    {
       "id": "transit-oriented-development-explained",
       "series": "buyer-guides",
       "title": "Is a condo linked to a train station a better buy?",
@@ -15633,6 +17486,59 @@
         "url": "https://www.youtube.com/watch?v=PtJ3F1-8sIQ"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/transit-oriented-development-explained"
+    },
+    {
+      "id": "uncle-offers-down-payment-for-landed-home",
+      "series": "iherng-podcast",
+      "title": "My uncle will pay RM80,000 if I buy a landed home. Should I take it?",
+      "excerpt": "A 32-year-old father renting in Ampang is offered RM80,000 by his uncle, but only for a landed home to live in. Sean shows the real cash needed and why he would politely decline.",
+      "date": "2022-09-24",
+      "tag": "Family money",
+      "question": {
+        "asker": "From H, a viewer who wrote in by email",
+        "context": "H is 32, married with a two-year-old, earns RM6,500 a month and his wife about RM4,500. They rent a 900 sq ft unit in Ampang and have RM50,000 in ASB as an emergency fund. He owns one investment unit, completed in 2019, that costs him about RM400 a month above its rent. His uncle has offered up to RM80,000 for the down payment on a RM700,000 to RM800,000 landed home, but only for his own stay, with instalments of RM3,500 to RM4,500.",
+        "text": "Should he accept and buy a landed home now, or keep renting and build investment properties first as planned?"
+      },
+      "answer": {
+        "quote": "My first property is not my only property.",
+        "summary": "Sean would decline. RM80,000 doesn't come close to covering a landed home, which would eat most of his income and block his loan eligibility for investments. Keep renting, keep building investment properties, and upgrade to a landed home in about ten years with his own money."
+      },
+      "reasons": [
+        {
+          "title": "The real cash needed is far more than RM80,000",
+          "body": "A RM700,000 subsale needs about 18% up front, roughly RM126,000 for the down payment, stamp duty and fees, plus at least RM50,000 to make it livable. He would still need about RM100,000 of his own."
+        },
+        {
+          "title": "It would leave no room for shocks",
+          "body": "With RM3,500 to RM4,500 going on the loan before his car, insurance and family costs, every rate rise or family emergency would be stressful."
+        },
+        {
+          "title": "His loan eligibility would be tied up",
+          "body": "A RM700,000 loan on his credit record would use up his debt service ratio, ending the plan of buying investment units whose rent eventually pays for his home."
+        },
+        {
+          "title": "A small monthly top-up can be acceptable",
+          "body": "Paying RM400 a month still builds equity. Before selling his investment unit, check its market value against what he owes, and consider refreshing it to raise the rent."
+        }
+      ],
+      "actions": [
+        "Work out the full cash needed for a landed home, including fees and renovation.",
+        "Check what is still owed on the investment unit and its current market value before selling.",
+        "Consider small improvements to raise its rent instead.",
+        "Plan to upgrade to a landed home once his investments and income can carry it.",
+        "Ask why the offer is only for a landed home, and what may be expected in return."
+      ],
+      "caveat": "If his only goal is one family home and he accepts five to ten years of tight finances, taking the gift is reasonable. Family dynamics differ, and Sean admits his preference for independence is personal.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #189. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in September 2022. Sean says he, like the viewer, is a client of FAR Capital, a bulk-purchase company.",
+      "askingSeanEpisode": 189,
+      "video": {
+        "id": "mK6b4kRkfzY",
+        "title": "ASKING SEAN #189 | UNCLE DONATE MONEY TO BUY PROPERTY",
+        "duration": "14:00",
+        "url": "https://www.youtube.com/watch?v=mK6b4kRkfzY"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/uncle-offers-down-payment-for-landed-home"
     },
     {
       "id": "unsold-units-near-completion",
@@ -15739,6 +17645,58 @@
         "url": "https://www.youtube.com/watch?v=hCQwgIdEW-4"
       },
       "articleUrl": "https://iherng-journal.pages.dev/articles/using-transacted-price-data"
+    },
+    {
+      "id": "vandalised-apartment-sell-fix-or-rent",
+      "series": "iherng-podcast",
+      "title": "Mum's paid-off flat is vandalised. Sell cheap, fix it up or rent it?",
+      "excerpt": "An 18-year-old asks what to do with his mother's paid-off, vandalised flat in Bukit Beruntung, offered at RM50,000. Sean says get repair costs and rents before deciding, then aim to sell.",
+      "date": "2022-12-20",
+      "tag": "Neglected property",
+      "question": {
+        "asker": "From Y, a viewer who wrote in on Instagram",
+        "context": "Y is 18. His mother's first property, a fully paid apartment in Bukit Beruntung, has stood empty for years: people have broken in, the windows are smashed and it is full of rubbish, and the building has low occupancy. It costs about RM90 a month in fees. Units in move-in condition sell for about RM130,000 to RM140,000, but the best offer for theirs is about RM50,000. His father passed away two years ago and his mother has three children to support.",
+        "text": "Should they sell it cheaply, fix it up to sell for more, or furnish it and rent it out?"
+      },
+      "answer": {
+        "quote": "What we need here is actually more data.",
+        "summary": "Get quotes for fixing the windows, cleaning and painting, and find out the rents for a basic and a fully furnished unit, before choosing. If a modest repair turns a RM50,000 sale into about RM150,000, it is worth doing. Either way, Sean would sell rather than hold, since he sees little room for the price to grow."
+      },
+      "reasons": [
+        {
+          "title": "Announced infrastructure isn't a guarantee",
+          "body": "The township drew buyers because major infrastructure was expected there, but the plans moved elsewhere and values fell. The same rush happened around proposed rail stations that were later cancelled."
+        },
+        {
+          "title": "Repair costs decide between selling cheap or later",
+          "body": "If windows, labour, cleaning and paint come to maybe RM5,000 to RM15,000, spending that to sell nearer RM150,000 is worthwhile. If repairs cost RM30,000 to RM40,000 and the family doesn't have it, selling at RM50,000 may be the practical choice."
+        },
+        {
+          "title": "Renting may not be worth the trouble",
+          "body": "A clean unit with basic fittings might rent for about RM800 a month, perhaps RM1,200 fully furnished with their own effort. Compare that with the repair cost and the work of managing tenants."
+        },
+        {
+          "title": "Holding brings little gain",
+          "body": "With no real prospect of capital appreciation over the next five years, money released from the flat can work harder somewhere else."
+        }
+      ],
+      "actions": [
+        "Ask a contractor, or a family friend, for quotes to replace the windows, clean and repaint.",
+        "Check what clean, basic and fully furnished units in the building rent for.",
+        "Decide with his mother how soon the family needs the cash.",
+        "If the numbers work, repair it, then sell close to the move-in median price."
+      ],
+      "caveat": "If the family urgently needs cash or can't fund repairs, accepting a low offer now is reasonable. The answer depends on their time and money, not just the potential profit.",
+      "basis": "captions",
+      "sourceNote": "Summarised from Sean's full English captions for Asking Sean #194. The quoted line is verbatim; everything else is paraphrased. Figures are as the viewer and Sean stated them in December 2022; repair figures are Sean's rough examples.",
+      "askingSeanEpisode": 194,
+      "video": {
+        "id": "swZ6xwzfC14",
+        "title": "ASKING SEAN #194 | STRATEGY FOR ABANDONED APARTMENT?",
+        "duration": "10:30",
+        "url": "https://www.youtube.com/watch?v=swZ6xwzfC14"
+      },
+      "articleUrl": "https://iherng-journal.pages.dev/articles/vandalised-apartment-sell-fix-or-rent"
     },
     {
       "id": "visiting-a-sales-gallery",
