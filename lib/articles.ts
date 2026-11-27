@@ -243,6 +243,28 @@ import graduateAbroad from '@/content/articles/young-graduate-abroad-kl-sentral-
 import secondPropertyWhen from '@/content/articles/when-to-buy-second-property.json';
 import shopLotHoldOrSell from '@/content/articles/paid-off-shop-lot-hold-or-sell.json';
 import investingAt45 from '@/content/articles/investing-at-45-penang-or-klang-valley.json';
+import dreamLandedHomeAt30 from '@/content/articles/dream-landed-home-at-30.json';
+import landedHomeForParents from '@/content/articles/landed-home-for-parents-or-keep-renting.json';
+import overpricedAndAbandoned from '@/content/articles/overpriced-unit-and-revived-abandoned-project.json';
+import fourUnitsUnderwater from '@/content/articles/four-units-underwater-after-agents-advice.json';
+import fundEducation from '@/content/articles/sell-or-refinance-to-fund-education.json';
+import twinsFamilyHouse from '@/content/articles/ancestral-landed-home-with-twins-coming.json';
+import freshGraduateChecklist from '@/content/articles/fresh-graduate-checklist-before-investing.json';
+import melakaSubsaleOrNew from '@/content/articles/subsale-or-new-launch-in-melaka.json';
+import chargedSubsale from '@/content/articles/subsale-charged-to-sellers-business-loan.json';
+import discountedJbCondo from '@/content/articles/discounted-jb-condo-below-launch-price.json';
+import sellAllAtRetirement from '@/content/articles/sell-all-properties-at-retirement.json';
+import tinyAirbnbSuite from '@/content/articles/tiny-airbnb-suite-at-21.json';
+import doctorsOnPostings from '@/content/articles/doctors-on-postings-rent-or-buy-jb.json';
+import investEarlyOrWait from '@/content/articles/start-investing-early-or-build-income-first.json';
+import vandalisedApartment from '@/content/articles/vandalised-apartment-sell-fix-or-rent.json';
+import businessOrProperty from '@/content/articles/laundromat-business-or-rental-property.json';
+import cutLosses from '@/content/articles/cut-losses-to-free-up-loan-slots.json';
+import houseFlipping from '@/content/articles/house-flipping-in-malaysia.json';
+import oldWalkUp from '@/content/articles/old-walk-up-apartment-in-penang.json';
+import uncleDownPayment from '@/content/articles/uncle-offers-down-payment-for-landed-home.json';
+import rentalIncomeAt60 from '@/content/articles/rental-income-for-retirement-at-60.json';
+import portfolioAt43 from '@/content/articles/rebuilding-a-portfolio-at-43.json';
 import seriesData from '@/content/series.json';
 import viewCounts from '@/content/view-counts.json';
 import categoryList from '@/content/categories.json';
@@ -424,6 +446,28 @@ export const articles = [
   secondPropertyWhen,
   shopLotHoldOrSell,
   investingAt45,
+  dreamLandedHomeAt30,
+  landedHomeForParents,
+  overpricedAndAbandoned,
+  fourUnitsUnderwater,
+  fundEducation,
+  twinsFamilyHouse,
+  freshGraduateChecklist,
+  melakaSubsaleOrNew,
+  chargedSubsale,
+  discountedJbCondo,
+  sellAllAtRetirement,
+  tinyAirbnbSuite,
+  doctorsOnPostings,
+  investEarlyOrWait,
+  vandalisedApartment,
+  businessOrProperty,
+  cutLosses,
+  houseFlipping,
+  oldWalkUp,
+  uncleDownPayment,
+  rentalIncomeAt60,
+  portfolioAt43,
   defects,
   channels,
   hiddenCosts,
